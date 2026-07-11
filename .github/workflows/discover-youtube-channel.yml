@@ -24,70 +24,156 @@ jobs:
       - name: Install dependencies
         run: pip install -U yt-dlp requests
 
-      - name: Discover channel videos and cross-platform links
+      - name: Discover channel videos and distributed music catalog
         shell: python
         run: |
-          import json, subprocess, requests, time, os
+          import json, subprocess, requests, time, os, re
+          from urllib.parse import urlparse, parse_qs
 
+          UA = {'User-Agent': 'ShareCapsuleCatalogSync/1.0'}
           channel = 'https://www.youtube.com/channel/UCejnFIrCLi0MaskXd2HNi5w/videos'
+
+          # 1) Enumerate every public upload in the channel.
           raw = subprocess.check_output([
               'yt-dlp', '--flat-playlist', '--dump-single-json', '--no-warnings', channel
           ], text=True)
           data = json.loads(raw)
           entries = data.get('entries') or []
-          out = []
+          videos = []
           for e in entries:
               vid = e.get('id')
               if not vid:
                   continue
-              youtube_url = f'https://www.youtube.com/watch?v={vid}'
-              item = {
+              videos.append({
                   'videoId': vid,
                   'title': e.get('title') or '',
-                  'youtube': youtube_url,
+                  'youtube': f'https://www.youtube.com/watch?v={vid}',
+                  'youtubeMusic': f'https://music.youtube.com/watch?v={vid}',
                   'thumbnail': f'https://img.youtube.com/vi/{vid}/hqdefault.jpg',
                   'duration': e.get('duration'),
-                  'timestamp': e.get('timestamp'),
-                  'platforms': {}
-              }
+                  'timestamp': e.get('timestamp')
+              })
+
+          # 2) Discover Apple Music artist IDs from already verified Apple Music links.
+          with open('data/releases.json', encoding='utf-8') as f:
+              releases = json.load(f).get('releases', [])
+
+          apple_ids = set()
+          for rel in releases:
+              for p in rel.get('platforms', []):
+                  if str(p.get('label', '')).lower() != 'apple music' or not p.get('url'):
+                      continue
+                  u = urlparse(p['url'])
+                  nums = re.findall(r'\d{6,}', u.path)
+                  apple_ids.update(nums)
+                  q = parse_qs(u.query)
+                  apple_ids.update(q.get('i', []))
+
+          lookup_results = []
+          artist_ids = set()
+          for aid in sorted(apple_ids):
+              try:
+                  r = requests.get('https://itunes.apple.com/lookup', params={'id': aid, 'country': 'US'}, headers=UA, timeout=30)
+                  if r.ok:
+                      payload = r.json()
+                      lookup_results.extend(payload.get('results', []))
+                      for row in payload.get('results', []):
+                          if row.get('artistId'):
+                              artist_ids.add(str(row['artistId']))
+              except Exception:
+                  pass
+
+          # 3) Fetch all songs for those Apple Music artist IDs.
+          apple_tracks = {}
+          for artist_id in sorted(artist_ids):
               try:
                   r = requests.get(
-                      'https://api.song.link/v1-alpha.1/links',
-                      params={'url': youtube_url, 'userCountry': 'US'},
-                      timeout=30,
-                      headers={'User-Agent': 'ShareCapsuleCatalogSync/1.0'}
+                      'https://itunes.apple.com/lookup',
+                      params={'id': artist_id, 'entity': 'song', 'limit': 200, 'country': 'US'},
+                      headers=UA, timeout=30
                   )
-                  if r.ok:
-                      links = (r.json().get('linksByPlatform') or {})
-                      for src, dest in {
-                          'spotify': 'spotify',
-                          'appleMusic': 'appleMusic',
-                          'amazonMusic': 'amazonMusic',
-                          'youtubeMusic': 'youtubeMusic',
-                          'youtube': 'youtube'
-                      }.items():
-                          url = links.get(src, {}).get('url')
-                          if url:
-                              item['platforms'][dest] = url
-                  else:
-                      item['songlinkStatus'] = f'HTTP {r.status_code}'
-              except Exception as ex:
-                  item['songlinkStatus'] = str(ex)
-              out.append(item)
-              time.sleep(0.25)
+                  if not r.ok:
+                      continue
+                  for row in r.json().get('results', []):
+                      if row.get('wrapperType') != 'track' or row.get('kind') != 'song':
+                          continue
+                      key = str(row.get('trackId') or row.get('trackViewUrl') or row.get('trackName'))
+                      apple_tracks[key] = {
+                          'trackId': row.get('trackId'),
+                          'title': row.get('trackName'),
+                          'artist': row.get('artistName'),
+                          'artistId': row.get('artistId'),
+                          'collection': row.get('collectionName'),
+                          'releaseDate': row.get('releaseDate'),
+                          'appleMusic': row.get('trackViewUrl'),
+                          'artwork': (row.get('artworkUrl100') or '').replace('100x100bb', '1200x1200bb')
+                      }
+              except Exception:
+                  pass
+
+          # 4) Resolve each canonical Apple Music song through Songlink/Odesli.
+          def songlink(url):
+              if not url:
+                  return {}
+              for attempt in range(5):
+                  try:
+                      r = requests.get(
+                          'https://api.song.link/v1-alpha.1/links',
+                          params={'url': url, 'userCountry': 'US'},
+                          headers=UA, timeout=30
+                      )
+                      if r.ok:
+                          links = r.json().get('linksByPlatform') or {}
+                          out = {}
+                          for src, dest in {
+                              'spotify': 'spotify',
+                              'appleMusic': 'appleMusic',
+                              'amazonMusic': 'amazonMusic',
+                              'youtubeMusic': 'youtubeMusic',
+                              'youtube': 'youtube'
+                          }.items():
+                              found = links.get(src, {}).get('url')
+                              if found:
+                                  out[dest] = found
+                          return out
+                      if r.status_code == 429:
+                          time.sleep(6 + attempt * 4)
+                          continue
+                      return {'_status': f'HTTP {r.status_code}'}
+                  except Exception as ex:
+                      if attempt == 4:
+                          return {'_status': str(ex)}
+                      time.sleep(3)
+              return {}
+
+          catalog = []
+          for track in sorted(apple_tracks.values(), key=lambda x: ((x.get('releaseDate') or ''), (x.get('title') or '')), reverse=True):
+              links = songlink(track.get('appleMusic'))
+              track['platforms'] = links
+              catalog.append(track)
+              time.sleep(1.5)
 
           os.makedirs('output', exist_ok=True)
           with open('output/youtube-channel-discovery.json', 'w', encoding='utf-8') as f:
               json.dump({
                   'channel': channel,
                   'channelId': 'UCejnFIrCLi0MaskXd2HNi5w',
-                  'count': len(out),
-                  'videos': out
+                  'count': len(videos),
+                  'videos': videos
+              }, f, ensure_ascii=False, indent=2)
+
+          with open('output/apple-artist-catalog.json', 'w', encoding='utf-8') as f:
+              json.dump({
+                  'seedAppleIds': sorted(apple_ids),
+                  'artistIds': sorted(artist_ids),
+                  'lookupResults': lookup_results,
+                  'count': len(catalog),
+                  'tracks': catalog
               }, f, ensure_ascii=False, indent=2)
 
       - name: Upload discovery output
         uses: actions/upload-artifact@v4
         with:
           name: youtube-channel-discovery
-          path: output/youtube-channel-discovery.json
+          path: output/
           retention-days: 7
