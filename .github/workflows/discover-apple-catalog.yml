@@ -64,6 +64,7 @@ jobs:
                           'collection': row.get('collectionName'),
                           'collectionId': row.get('collectionId'),
                           'releaseDate': row.get('releaseDate'),
+                          'durationMs': row.get('trackTimeMillis'),
                           'appleMusic': row.get('trackViewUrl'),
                           'artwork': (row.get('artworkUrl100') or '').replace('100x100bb','1200x1200bb')
                       }
