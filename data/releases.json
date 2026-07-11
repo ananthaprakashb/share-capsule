@@ -1,0 +1,37 @@
+{
+  "site": {
+    "name": "Share Capsule",
+    "tagline": "Audio worth passing on"
+  },
+  "releases": [
+    {
+      "slug": "ennungal-ennangal",
+      "title": "எண்ணுங்கள் எண்ணங்கள்",
+      "artist": "தமிழாலே",
+      "type": "Audio release",
+      "category": "Mind & Memory",
+      "language": "Tamil",
+      "publishedAt": "2026-07-11",
+      "description": "A Tamil audio release focused on thought, memory and the mind.",
+      "featured": true,
+      "coverImage": "",
+      "coverBackground": "radial-gradient(circle at 22% 22%, rgba(255,255,255,.82) 0 4%, transparent 5%), radial-gradient(circle at 76% 29%, rgba(255,255,255,.35) 0 6%, transparent 7%), linear-gradient(145deg,#d99c5e,#a35b45 43%,#56364f)",
+      "coverEyebrow": "New release",
+      "coverLines": ["எண்ணுங்கள்", "எண்ணங்கள்"],
+      "previewUrl": "",
+      "demoTone": true,
+      "demoDuration": 12,
+      "platforms": [
+        {"label": "YouTube", "icon": "▶", "url": ""},
+        {"label": "Spotify", "icon": "●", "url": ""},
+        {"label": "Apple Music", "icon": "♫", "url": ""}
+      ],
+      "shareMessages": {
+        "friend": {"label": "Close friend", "icon": "💛", "text": "Thought you might enjoy this 🎧"},
+        "family": {"label": "Family", "icon": "👨‍👩‍👧", "text": "Sharing this with the family — give it a listen ❤️"},
+        "music": {"label": "Music lover", "icon": "🎵", "text": "Found a new Tamil track. Curious what you think 🎵"},
+        "special": {"label": "Someone special", "icon": "✨", "text": "This song made me think of you ❤️ Listen when you get a minute 🎧"}
+      }
+    }
+  ]
+}
