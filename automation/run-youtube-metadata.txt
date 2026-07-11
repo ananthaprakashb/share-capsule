@@ -1,1 +1,2 @@
 Fetch full metadata for all public videos in UCejnFIrCLi0MaskXd2HNi5w.
+Fault-tolerant retry.
