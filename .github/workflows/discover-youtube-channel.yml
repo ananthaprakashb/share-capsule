@@ -1,0 +1,96 @@
+name: Discover YouTube channel catalog
+
+on:
+  push:
+    paths:
+      - '.github/workflows/discover-youtube-channel.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -U yt-dlp requests
+
+      - name: Discover channel videos and cross-platform links
+        shell: python
+        run: |
+          import json, subprocess, requests, time, os
+          from urllib.parse import quote
+
+          channel = 'https://www.youtube.com/channel/UCejnFIrCLi0MaskXd2HNi5w/videos'
+          raw = subprocess.check_output([
+              'yt-dlp', '--flat-playlist', '--dump-single-json', '--no-warnings', channel
+          ], text=True)
+          data = json.loads(raw)
+          entries = data.get('entries') or []
+          out = []
+          for e in entries:
+              vid = e.get('id')
+              if not vid:
+                  continue
+              youtube_url = f'https://www.youtube.com/watch?v={vid}'
+              item = {
+                  'videoId': vid,
+                  'title': e.get('title') or '',
+                  'youtube': youtube_url,
+                  'thumbnail': f'https://img.youtube.com/vi/{vid}/hqdefault.jpg',
+                  'duration': e.get('duration'),
+                  'timestamp': e.get('timestamp'),
+                  'platforms': {}
+              }
+              try:
+                  r = requests.get(
+                      'https://api.song.link/v1-alpha.1/links',
+                      params={'url': youtube_url, 'userCountry': 'US'},
+                      timeout=30,
+                      headers={'User-Agent': 'ShareCapsuleCatalogSync/1.0'}
+                  )
+                  if r.ok:
+                      links = (r.json().get('linksByPlatform') or {})
+                      mapping = {
+                          'spotify': 'spotify',
+                          'appleMusic': 'appleMusic',
+                          'amazonMusic': 'amazonMusic',
+                          'youtubeMusic': 'youtubeMusic',
+                          'youtube': 'youtube'
+                      }
+                      for src, dest in mapping.items():
+                          if links.get(src, {}).get('url'):
+                              item['platforms'][dest] = links[src]['url']
+                  else:
+                      item['songlinkStatus'] = f'HTTP {r.status_code}'
+              except Exception as ex:
+                  item['songlinkStatus'] = str(ex)
+              out.append(item)
+              time.sleep(0.25)
+
+          os.makedirs('data', exist_ok=True)
+          with open('data/youtube-channel-discovery.json', 'w', encoding='utf-8') as f:
+              json.dump({
+                  'channel': channel,
+                  'channelId': 'UCejnFIrCLi0MaskXd2HNi5w',
+                  'count': len(out),
+                  'videos': out
+              }, f, ensure_ascii=False, indent=2)
+
+      - name: Commit discovery output
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/youtube-channel-discovery.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Discover YouTube channel catalog [skip ci]'
+          git push
