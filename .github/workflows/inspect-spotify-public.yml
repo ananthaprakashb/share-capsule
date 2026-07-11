@@ -1,0 +1,77 @@
+name: Inspect Spotify public metadata
+
+on:
+  pull_request:
+    paths:
+      - 'automation/run-spotify-inspection.txt'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests beautifulsoup4
+      - name: Inspect public Spotify pages
+        shell: python
+        run: |
+          import requests, json, re, os
+          from urllib.parse import quote
+          from bs4 import BeautifulSoup
+
+          ua={'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126 Safari/537.36'}
+          urls=[
+            'https://open.spotify.com/track/4CFJxkzHtFYCFvPnvp1JeD',
+            'https://open.spotify.com/album/18EMjJMk9sWpNuflwKlvMD',
+            'https://open.spotify.com/album/50UNnLcAMBwCwZ4TkdTjy3',
+            'https://open.spotify.com/album/1YbFwBJvYUfkOz0gzZMRt6',
+            'https://open.spotify.com/album/10xxmbxjknmpKhrfBMJzmI',
+            'https://open.spotify.com/album/1ooanTy8rNeG4D39i38nBN'
+          ]
+          out={'pages':[],'searches':[]}
+          for url in urls:
+              item={'url':url}
+              try:
+                  r=requests.get(url,headers=ua,timeout=30)
+                  item['status']=r.status_code
+                  item['length']=len(r.text)
+                  item['artistUris']=sorted(set(re.findall(r'spotify:artist:[A-Za-z0-9]+',r.text)))
+                  item['artistLinks']=sorted(set(re.findall(r'https?://open\.spotify\.com/artist/[A-Za-z0-9]+|/artist/[A-Za-z0-9]+',r.text)))[:50]
+                  soup=BeautifulSoup(r.text,'html.parser')
+                  item['title']=soup.title.string if soup.title and soup.title.string else None
+                  item['meta']={m.get('property') or m.get('name'):m.get('content') for m in soup.find_all('meta') if m.get('content') and (m.get('property') or m.get('name')) in ['og:title','og:description','og:url','twitter:title','twitter:description']}
+                  item['snippet']=r.text[:5000]
+              except Exception as ex:
+                  item['error']=str(ex)
+              out['pages'].append(item)
+
+          queries=['தமிழாலே','Merry Christmas தமிழாலே','Mass Machaan தமிழாலே','காதல் காதல் தமிழாலே']
+          for q in queries:
+              url='https://open.spotify.com/search/'+quote(q,safe='')
+              item={'query':q,'url':url}
+              try:
+                  r=requests.get(url,headers=ua,timeout=30)
+                  item['status']=r.status_code
+                  item['length']=len(r.text)
+                  item['trackLinks']=sorted(set(re.findall(r'/track/[A-Za-z0-9]+',r.text)))[:100]
+                  item['albumLinks']=sorted(set(re.findall(r'/album/[A-Za-z0-9]+',r.text)))[:100]
+                  item['artistLinks']=sorted(set(re.findall(r'/artist/[A-Za-z0-9]+',r.text)))[:100]
+                  item['snippet']=r.text[:5000]
+              except Exception as ex:
+                  item['error']=str(ex)
+              out['searches'].append(item)
+
+          os.makedirs('output',exist_ok=True)
+          with open('output/spotify-public-inspection.json','w',encoding='utf-8') as f:
+              json.dump(out,f,ensure_ascii=False,indent=2)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: spotify-public-inspection
+          path: output/spotify-public-inspection.json
+          retention-days: 7
