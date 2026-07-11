@@ -6,6 +6,10 @@ on:
     paths:
       - 'data/channel-catalog.json'
       - '.github/workflows/sync-channel-catalog.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'automation/run-channel-sync.txt'
   workflow_dispatch:
 
 permissions:
@@ -15,8 +19,10 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout main
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Merge channel catalog
         shell: python
@@ -162,4 +168,4 @@ jobs:
           git add data/releases.json
           git diff --cached --quiet && exit 0
           git commit -m 'Sync YouTube channel catalog into releases [skip ci]'
-          git push
+          git push origin HEAD:main
