@@ -1,0 +1,31 @@
+{
+  "channelId": "UCejnFIrCLi0MaskXd2HNi5w",
+  "uploadsProcessed": 30,
+  "channelCapsules": 24,
+  "duplicateUploadGroupsConsolidated": 6,
+  "musicCapsules": 19,
+  "nonMusicVideoCapsules": 5,
+  "verifiedDistributedMusicMatches": 17,
+  "verifiedSpotifyLinks": 17,
+  "verifiedAppleMusicLinks": 17,
+  "verifiedAmazonMusicLinks": 10,
+  "amazonSearchFallbacksForVerifiedMusic": [
+    "suththi-paakka",
+    "ai-kaatru",
+    "onnu-mannu",
+    "maanatpu",
+    "tasty-prachanai",
+    "paarvaiyai-maathu",
+    "needoozhi-vazhgave"
+  ],
+  "musicVideosWithoutVerifiedDistributedStoreMatch": [
+    "pongal-wishes",
+    "teacher-song"
+  ],
+  "notes": [
+    "Duplicate YouTube uploads are grouped into one capsule and all source video IDs are retained.",
+    "Verified Spotify links are used as the default inline player for matched music releases.",
+    "YouTube Music links point to the corresponding channel music video on music.youtube.com.",
+    "Where an exact Amazon Music release URL was not verified, the generated capsule uses a clearly labeled Amazon Music search fallback instead of inventing a direct URL."
+  ]
+}
