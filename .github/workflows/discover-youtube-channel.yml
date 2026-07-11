@@ -1,13 +1,13 @@
 name: Discover YouTube channel catalog
 
 on:
-  push:
+  pull_request:
     paths:
-      - '.github/workflows/discover-youtube-channel.yml'
+      - 'automation/run-channel-discovery.txt'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   discover:
@@ -28,7 +28,6 @@ jobs:
         shell: python
         run: |
           import json, subprocess, requests, time, os
-          from urllib.parse import quote
 
           channel = 'https://www.youtube.com/channel/UCejnFIrCLi0MaskXd2HNi5w/videos'
           raw = subprocess.check_output([
@@ -60,16 +59,16 @@ jobs:
                   )
                   if r.ok:
                       links = (r.json().get('linksByPlatform') or {})
-                      mapping = {
+                      for src, dest in {
                           'spotify': 'spotify',
                           'appleMusic': 'appleMusic',
                           'amazonMusic': 'amazonMusic',
                           'youtubeMusic': 'youtubeMusic',
                           'youtube': 'youtube'
-                      }
-                      for src, dest in mapping.items():
-                          if links.get(src, {}).get('url'):
-                              item['platforms'][dest] = links[src]['url']
+                      }.items():
+                          url = links.get(src, {}).get('url')
+                          if url:
+                              item['platforms'][dest] = url
                   else:
                       item['songlinkStatus'] = f'HTTP {r.status_code}'
               except Exception as ex:
@@ -77,8 +76,8 @@ jobs:
               out.append(item)
               time.sleep(0.25)
 
-          os.makedirs('data', exist_ok=True)
-          with open('data/youtube-channel-discovery.json', 'w', encoding='utf-8') as f:
+          os.makedirs('output', exist_ok=True)
+          with open('output/youtube-channel-discovery.json', 'w', encoding='utf-8') as f:
               json.dump({
                   'channel': channel,
                   'channelId': 'UCejnFIrCLi0MaskXd2HNi5w',
@@ -86,11 +85,9 @@ jobs:
                   'videos': out
               }, f, ensure_ascii=False, indent=2)
 
-      - name: Commit discovery output
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/youtube-channel-discovery.json
-          git diff --cached --quiet && exit 0
-          git commit -m 'Discover YouTube channel catalog [skip ci]'
-          git push
+      - name: Upload discovery output
+        uses: actions/upload-artifact@v4
+        with:
+          name: youtube-channel-discovery
+          path: output/youtube-channel-discovery.json
+          retention-days: 7
