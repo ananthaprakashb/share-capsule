@@ -1,0 +1,96 @@
+name: Scrape public Spotify discography
+
+on:
+  pull_request:
+    paths:
+      - 'automation/run-spotify-discography.txt'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser
+        run: |
+          pip install playwright requests beautifulsoup4
+          playwright install chromium --with-deps
+      - name: Browse public artist page and extract discography
+        shell: python
+        run: |
+          import asyncio, json, os, re, requests
+          from bs4 import BeautifulSoup
+          from playwright.async_api import async_playwright
+
+          artist_id='2EOVUKoABSwyShnSx23A2k'
+          artist_url=f'https://open.spotify.com/artist/{artist_id}'
+
+          async def main():
+              async with async_playwright() as p:
+                  browser=await p.chromium.launch(headless=True)
+                  page=await browser.new_page(viewport={'width':1440,'height':1200}, locale='en-US')
+                  await page.goto(artist_url, wait_until='domcontentloaded', timeout=90000)
+                  await page.wait_for_timeout(12000)
+                  # Dismiss common cookie banner if present.
+                  for label in ['Accept Cookies','Accept cookies','Accept all cookies']:
+                      try:
+                          b=page.get_by_role('button', name=label)
+                          if await b.count():
+                              await b.first.click(timeout=2000)
+                              await page.wait_for_timeout(2000)
+                              break
+                      except Exception:
+                          pass
+                  # Scroll through the page so lazy-loaded discography sections render.
+                  for _ in range(12):
+                      await page.mouse.wheel(0, 1200)
+                      await page.wait_for_timeout(800)
+                  anchors=await page.locator('a[href]').evaluate_all("els => els.map(a => ({href:a.href, text:(a.innerText||a.textContent||'').trim(), aria:a.getAttribute('aria-label')}))")
+                  title=await page.title()
+                  body=(await page.locator('body').inner_text())[:100000]
+                  await page.screenshot(path='output/spotify-artist-page.png', full_page=True)
+                  await browser.close()
+
+              album_map={}
+              for a in anchors:
+                  m=re.search(r'https://open\\.spotify\\.com/(album|track)/([A-Za-z0-9]+)', a.get('href') or '')
+                  if m:
+                      album_map[(m.group(1),m.group(2))]=a
+
+              ua={'User-Agent':'Mozilla/5.0'}
+              entities=[]
+              for (kind,item_id),anchor in album_map.items():
+                  if kind!='album':
+                      continue
+                  url=f'https://open.spotify.com/embed/album/{item_id}'
+                  try:
+                      r=requests.get(url,headers=ua,timeout=30)
+                      soup=BeautifulSoup(r.text,'html.parser')
+                      entity=None
+                      for s in soup.find_all('script'):
+                          txt=(s.string or s.get_text() or '').strip()
+                          if not txt.startswith('{'): continue
+                          try: payload=json.loads(txt)
+                          except Exception: continue
+                          entity=payload.get('props',{}).get('pageProps',{}).get('state',{}).get('data',{}).get('entity')
+                          if entity: break
+                      entities.append({'albumId':item_id,'href':anchor.get('href'),'anchorText':anchor.get('text'),'entity':entity,'status':r.status_code})
+                  except Exception as ex:
+                      entities.append({'albumId':item_id,'href':anchor.get('href'),'error':str(ex)})
+
+              with open('output/spotify-public-discography.json','w',encoding='utf-8') as f:
+                  json.dump({'artistId':artist_id,'artistUrl':artist_url,'pageTitle':title,'bodyText':body,'anchors':anchors,'entities':entities},f,ensure_ascii=False,indent=2)
+
+          os.makedirs('output',exist_ok=True)
+          asyncio.run(main())
+      - uses: actions/upload-artifact@v4
+        with:
+          name: spotify-public-discography
+          path: output/
+          retention-days: 7
