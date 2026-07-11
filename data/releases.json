@@ -430,11 +430,6 @@
           "label": "YouTube",
           "icon": "▶",
           "url": "https://www.youtube.com/watch?v=os_Cbzr0tZA"
-        },
-        {
-          "label": "YouTube Music",
-          "icon": "♫",
-          "url": "https://music.youtube.com/watch?v=os_Cbzr0tZA"
         }
       ],
       "shareMessages": {
@@ -487,11 +482,6 @@
           "label": "YouTube",
           "icon": "▶",
           "url": "https://www.youtube.com/watch?v=BGWiSOL_CE4"
-        },
-        {
-          "label": "YouTube Music",
-          "icon": "♫",
-          "url": "https://music.youtube.com/watch?v=BGWiSOL_CE4"
         }
       ],
       "shareMessages": {
@@ -543,11 +533,6 @@
           "label": "YouTube",
           "icon": "▶",
           "url": "https://www.youtube.com/watch?v=a9noakJypEE"
-        },
-        {
-          "label": "YouTube Music",
-          "icon": "♫",
-          "url": "https://music.youtube.com/watch?v=a9noakJypEE"
         }
       ],
       "shareMessages": {
@@ -599,11 +584,6 @@
           "label": "YouTube",
           "icon": "▶",
           "url": "https://www.youtube.com/watch?v=37CIVbS5tJI"
-        },
-        {
-          "label": "YouTube Music",
-          "icon": "♫",
-          "url": "https://music.youtube.com/watch?v=37CIVbS5tJI"
         }
       ],
       "shareMessages": {
@@ -1686,11 +1666,6 @@
           "label": "YouTube",
           "icon": "▶",
           "url": "https://www.youtube.com/watch?v=DcVe76X3toE"
-        },
-        {
-          "label": "YouTube Music",
-          "icon": "♫",
-          "url": "https://music.youtube.com/watch?v=DcVe76X3toE"
         }
       ],
       "shareMessages": {
