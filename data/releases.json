@@ -18,20 +18,58 @@
       "coverBackground": "radial-gradient(circle at 22% 22%, rgba(255,255,255,.82) 0 4%, transparent 5%), radial-gradient(circle at 76% 29%, rgba(255,255,255,.35) 0 6%, transparent 7%), linear-gradient(145deg,#d99c5e,#a35b45 43%,#56364f)",
       "coverEyebrow": "New release",
       "coverLines": ["எண்ணுங்கள்", "எண்ணங்கள்"],
+      "primaryPlayer": {
+        "provider": "spotify",
+        "url": "https://open.spotify.com/track/4CFJxkzHtFYCFvPnvp1JeD?si=564a243b058a48eb"
+      },
       "previewUrl": "",
-      "demoTone": true,
+      "demoTone": false,
       "demoDuration": 12,
       "platforms": [
-        {"label": "YouTube", "icon": "▶", "url": ""},
-        {"label": "Spotify", "icon": "●", "url": ""},
-        {"label": "Apple Music", "icon": "♫", "url": ""}
+        {
+          "label": "Spotify",
+          "icon": "●",
+          "url": "https://open.spotify.com/track/4CFJxkzHtFYCFvPnvp1JeD?si=564a243b058a48eb"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://youtu.be/SRA-PETLKLM?si=H6Eyfs0nS2GpRBXP"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/%E0%AE%8E%E0%AE%A3-%E0%AE%A3-%E0%AE%99-%E0%AE%95%E0%AE%B3-%E0%AE%8E%E0%AE%A3-%E0%AE%A3%E0%AE%99-%E0%AE%95%E0%AE%B3/1876601889?i=1876601890"
+        },
+        {
+          "label": "Amazon Music",
+          "icon": "a",
+          "url": "https://amazon.com/music/player/albums/B0GMQB5KCN?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_L2aK6X6xOvEujylldncVc4PF6"
+        }
       ],
       "shareMessages": {
-        "friend": {"label": "Close friend", "icon": "💛", "text": "Thought you might enjoy this 🎧"},
-        "family": {"label": "Family", "icon": "👨‍👩‍👧", "text": "Sharing this with the family — give it a listen ❤️"},
-        "music": {"label": "Music lover", "icon": "🎵", "text": "Found a new Tamil track. Curious what you think 🎵"},
-        "special": {"label": "Someone special", "icon": "✨", "text": "This song made me think of you ❤️ Listen when you get a minute 🎧"}
-      }
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this with the family — give it a listen ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a new Tamil track. Curious what you think 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This song made me think of you ❤️ Listen when you get a minute 🎧"
+        }
+      },
+      "tags": ["Tamil", "memory", "mind", "music"]
     }
   ]
 }
