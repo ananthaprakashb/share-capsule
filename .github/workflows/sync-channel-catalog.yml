@@ -1,0 +1,165 @@
+name: Sync channel catalog into releases
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/channel-catalog.json'
+      - '.github/workflows/sync-channel-catalog.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Merge channel catalog
+        shell: python
+        run: |
+          import json
+          from urllib.parse import quote
+
+          with open('data/releases.json', encoding='utf-8') as f:
+              base = json.load(f)
+          with open('data/channel-catalog.json', encoding='utf-8') as f:
+              source = json.load(f)
+
+          music_messages = {
+              'friend': {'label': 'Close friend', 'icon': '💛', 'text': 'Thought you might enjoy this Tamil release 🎧'},
+              'family': {'label': 'Family', 'icon': '👨‍👩‍👧', 'text': 'Sharing this Tamil song with the family ❤️'},
+              'music': {'label': 'Music lover', 'icon': '🎵', 'text': 'Found a Tamil track you may enjoy 🎵'},
+              'special': {'label': 'Someone special', 'icon': '✨', 'text': 'This made me think of you ❤️'}
+          }
+          video_messages = {
+              'friend': {'label': 'Close friend', 'icon': '💛', 'text': 'Thought you might enjoy this video 🎥'},
+              'family': {'label': 'Family', 'icon': '👨‍👩‍👧', 'text': 'Sharing this video with the family ❤️'},
+              'curious': {'label': 'Curious learner', 'icon': '💡', 'text': 'This looked useful and worth a quick watch.'},
+              'special': {'label': 'Someone special', 'icon': '✨', 'text': 'This video made me think of you ❤️'}
+          }
+
+          def spotify_search(title):
+              return 'https://open.spotify.com/search/' + quote(f'{title} தமிழாலே', safe='')
+
+          def apple_search(title):
+              return 'https://music.apple.com/us/search?term=' + quote(f'{title} தமிழாலே', safe='')
+
+          def amazon_search(title):
+              return 'https://music.amazon.com/search/' + quote(f'{title} தமிழாலே', safe='')
+
+          def expand(item):
+              video_ids = item.get('videoIds') or []
+              first_video = video_ids[0] if video_ids else None
+              is_music = bool(item.get('music'))
+              title = item['title']
+              store_title = item.get('storeTitle') or title
+
+              platforms = []
+              if is_music:
+                  if item.get('spotifyUrl'):
+                      platforms.append({'label': 'Spotify', 'icon': '●', 'url': item['spotifyUrl']})
+                  else:
+                      platforms.append({'label': 'Spotify search', 'icon': '●', 'url': spotify_search(store_title)})
+
+                  if item.get('appleUrl'):
+                      platforms.append({'label': 'Apple Music', 'icon': '♫', 'url': item['appleUrl']})
+                  else:
+                      platforms.append({'label': 'Apple Music search', 'icon': '♫', 'url': apple_search(store_title)})
+
+                  if item.get('amazonUrl'):
+                      platforms.append({'label': 'Amazon Music', 'icon': 'a', 'url': item['amazonUrl']})
+                  else:
+                      platforms.append({'label': 'Amazon Music search', 'icon': 'a', 'url': amazon_search(store_title)})
+
+              for index, video_id in enumerate(video_ids):
+                  platforms.append({
+                      'label': 'YouTube' if index == 0 else f'YouTube {index + 1}',
+                      'icon': '▶',
+                      'url': f'https://www.youtube.com/watch?v={video_id}'
+                  })
+
+              for index, url in enumerate(item.get('youtubeExtra') or []):
+                  platforms.append({
+                      'label': 'YouTube official' if index == 0 else f'YouTube official {index + 1}',
+                      'icon': '▶',
+                      'url': url
+                  })
+
+              if first_video:
+                  platforms.append({
+                      'label': 'YouTube Music',
+                      'icon': '♫',
+                      'url': f'https://music.youtube.com/watch?v={first_video}'
+                  })
+
+              if item.get('spotifyUrl'):
+                  primary = {'provider': 'spotify', 'url': item['spotifyUrl']}
+              elif first_video:
+                  primary = {'provider': 'youtube', 'url': f'https://www.youtube.com/watch?v={first_video}'}
+              else:
+                  primary = None
+
+              release = {
+                  'slug': item['slug'],
+                  'title': title,
+                  'artist': item.get('artist') or 'தமிழாலே',
+                  'type': 'Music release' if is_music else 'Video release',
+                  'category': item.get('category') or ('Tamil Music' if is_music else 'Video'),
+                  'language': item.get('language') or ('Tamil' if is_music else 'English'),
+                  'description': item.get('description') or ('A Tamil music release by தமிழாலே.' if is_music else 'A video release by தமிழாலே.'),
+                  'coverImage': item.get('artwork') or (f'https://img.youtube.com/vi/{first_video}/hqdefault.jpg' if first_video else ''),
+                  'coverBackground': 'linear-gradient(145deg,#2b5876,#4e4376)' if is_music else 'linear-gradient(145deg,#141e30,#243b55)',
+                  'coverEyebrow': 'Tamil release' if is_music else (item.get('category') or 'Video'),
+                  'coverLines': item.get('coverLines') or [title],
+                  'previewUrl': '',
+                  'demoTone': False,
+                  'platforms': platforms,
+                  'shareMessages': music_messages if is_music else video_messages
+              }
+              if primary:
+                  release['primaryPlayer'] = primary
+              if item.get('publishedAt'):
+                  release['publishedAt'] = item['publishedAt']
+              if item.get('featured') is not None:
+                  release['featured'] = item['featured']
+              return release
+
+          expanded = [expand(item) for item in source.get('items', [])]
+          replacements = {release['slug']: release for release in expanded}
+          merged = []
+          seen = set()
+
+          for release in base.get('releases', []):
+              slug = release.get('slug')
+              if slug in replacements:
+                  merged.append(replacements[slug])
+                  seen.add(slug)
+              else:
+                  merged.append(release)
+                  if slug:
+                      seen.add(slug)
+
+          for release in expanded:
+              if release['slug'] not in seen:
+                  merged.append(release)
+                  seen.add(release['slug'])
+
+          base['site'] = {**base.get('site', {}), **source.get('site', {})}
+          base['releases'] = merged
+
+          with open('data/releases.json', 'w', encoding='utf-8') as f:
+              json.dump(base, f, ensure_ascii=False, indent=2)
+              f.write('\n')
+
+      - name: Commit generated releases
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/releases.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Sync YouTube channel catalog into releases [skip ci]'
+          git push
