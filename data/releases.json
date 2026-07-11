@@ -275,7 +275,7 @@
         {
           "label": "Spotify",
           "icon": "●",
-          "url": "https://open.spotify.com/album/10xxmbxjknmpKhrfBMJzmI"
+          "url": "https://open.spotify.com/track/0GdujnU6awBDMRqJZHNge1"
         },
         {
           "label": "Apple Music",
@@ -327,7 +327,7 @@
       },
       "primaryPlayer": {
         "provider": "spotify",
-        "url": "https://open.spotify.com/album/10xxmbxjknmpKhrfBMJzmI"
+        "url": "https://open.spotify.com/track/0GdujnU6awBDMRqJZHNge1"
       },
       "publishedAt": "2025-07-19"
     },
@@ -352,7 +352,7 @@
         {
           "label": "Spotify",
           "icon": "●",
-          "url": "https://open.spotify.com/album/1ooanTy8rNeG4D39i38nBN"
+          "url": "https://open.spotify.com/track/5CN6jwRruDQZQaHd5XRp49"
         },
         {
           "label": "Apple Music",
@@ -360,9 +360,9 @@
           "url": "https://music.apple.com/us/album/%E0%AE%85%E0%AE%B4%E0%AE%95-oh-beauty/1843641288?i=1843641289&uo=4"
         },
         {
-          "label": "Amazon Music search",
+          "label": "Amazon Music",
           "icon": "a",
-          "url": "https://music.amazon.com/search/%E0%AE%85%E0%AE%B4%E0%AE%95%E0%AF%87%21%20%28Oh%20beauty%29%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://music.amazon.com/albums/B0FT9WXYN5"
         },
         {
           "label": "YouTube",
@@ -404,7 +404,7 @@
       },
       "primaryPlayer": {
         "provider": "spotify",
-        "url": "https://open.spotify.com/album/1ooanTy8rNeG4D39i38nBN"
+        "url": "https://open.spotify.com/track/5CN6jwRruDQZQaHd5XRp49"
       },
       "publishedAt": "2025-09-30"
     },
@@ -708,9 +708,9 @@
       "demoTone": false,
       "platforms": [
         {
-          "label": "Spotify search",
+          "label": "Spotify",
           "icon": "●",
-          "url": "https://open.spotify.com/search/%E0%AE%95%E0%AE%BE%E0%AE%B2%E0%AE%BF%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AE%BE%E0%AE%A9%E0%AF%88%20%E0%AE%A8%E0%AE%A3%E0%AF%8D%E0%AE%9F%E0%AF%81%20%E0%AE%9A%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AE%AE%E0%AF%8D%20%28Crabby%20Noise%29%20Kaalippaanai%20nandu%20saththam%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://open.spotify.com/track/1TK01a32pDCrJ1Qa4ppIzW"
         },
         {
           "label": "Apple Music",
@@ -718,9 +718,9 @@
           "url": "https://music.apple.com/us/album/%E0%AE%95-%E0%AE%B2-%E0%AE%AA-%E0%AE%AA-%E0%AE%A9-%E0%AE%A8%E0%AE%A3-%E0%AE%9F-%E0%AE%9A%E0%AE%A4-%E0%AE%A4%E0%AE%AE-crabby-noise-kaalippaanai-nandu-saththam/1854039774?i=1854039775&uo=4"
         },
         {
-          "label": "Amazon Music search",
+          "label": "Amazon Music",
           "icon": "a",
-          "url": "https://music.amazon.com/search/%E0%AE%95%E0%AE%BE%E0%AE%B2%E0%AE%BF%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AE%BE%E0%AE%A9%E0%AF%88%20%E0%AE%A8%E0%AE%A3%E0%AF%8D%E0%AE%9F%E0%AF%81%20%E0%AE%9A%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AE%AE%E0%AF%8D%20%28Crabby%20Noise%29%20Kaalippaanai%20nandu%20saththam%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://music.amazon.com/albums/B0G2754DYQ"
         },
         {
           "label": "YouTube",
@@ -756,8 +756,8 @@
         }
       },
       "primaryPlayer": {
-        "provider": "youtube",
-        "url": "https://www.youtube.com/watch?v=VyGepvXkvyk"
+        "provider": "spotify",
+        "url": "https://open.spotify.com/track/1TK01a32pDCrJ1Qa4ppIzW"
       },
       "publishedAt": "2025-11-13"
     },
@@ -780,9 +780,9 @@
       "demoTone": false,
       "platforms": [
         {
-          "label": "Spotify search",
+          "label": "Spotify",
           "icon": "●",
-          "url": "https://open.spotify.com/search/Happy%202026%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://open.spotify.com/track/6jxHbdCvHKwkDGOeoFiMPF"
         },
         {
           "label": "Apple Music",
@@ -790,9 +790,9 @@
           "url": "https://music.apple.com/us/album/happy-2026/1865782530?i=1865782531&uo=4"
         },
         {
-          "label": "Amazon Music search",
+          "label": "Amazon Music",
           "icon": "a",
-          "url": "https://music.amazon.com/search/Happy%202026%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://music.amazon.com/albums/B0GDLTG4H7"
         },
         {
           "label": "YouTube",
@@ -833,8 +833,8 @@
         }
       },
       "primaryPlayer": {
-        "provider": "youtube",
-        "url": "https://www.youtube.com/watch?v=UBYs9PPLcu8"
+        "provider": "spotify",
+        "url": "https://open.spotify.com/track/6jxHbdCvHKwkDGOeoFiMPF"
       },
       "publishedAt": "2025-12-31"
     },
@@ -857,9 +857,9 @@
       "demoTone": false,
       "platforms": [
         {
-          "label": "Spotify search",
+          "label": "Spotify",
           "icon": "●",
-          "url": "https://open.spotify.com/search/Merry%20Christmas%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://open.spotify.com/track/0LD2nmlcm1WVYckzrwtqjq"
         },
         {
           "label": "Apple Music",
@@ -867,9 +867,9 @@
           "url": "https://music.apple.com/us/album/merry-christmas/1864094158?i=1864094159&uo=4"
         },
         {
-          "label": "Amazon Music search",
+          "label": "Amazon Music",
           "icon": "a",
-          "url": "https://music.amazon.com/search/Merry%20Christmas%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://music.amazon.com/albums/B0GCDN4Q4K"
         },
         {
           "label": "YouTube",
@@ -905,8 +905,8 @@
         }
       },
       "primaryPlayer": {
-        "provider": "youtube",
-        "url": "https://www.youtube.com/watch?v=dGSu78_nL3k"
+        "provider": "spotify",
+        "url": "https://open.spotify.com/track/0LD2nmlcm1WVYckzrwtqjq"
       },
       "publishedAt": "2025-12-23"
     },
@@ -929,9 +929,9 @@
       "demoTone": false,
       "platforms": [
         {
-          "label": "Spotify search",
+          "label": "Spotify",
           "icon": "●",
-          "url": "https://open.spotify.com/search/AI%20%E0%AE%95%E0%AE%BE%E0%AE%B1%E0%AF%8D%E0%AE%B1%E0%AF%81%20%E2%80%93%20Confusing%20Vibes%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://open.spotify.com/track/2j3NtA9B0VG9ULS6u3Z7tK"
         },
         {
           "label": "Apple Music",
@@ -982,8 +982,8 @@
         }
       },
       "primaryPlayer": {
-        "provider": "youtube",
-        "url": "https://www.youtube.com/watch?v=TdUdQj2GLNI"
+        "provider": "spotify",
+        "url": "https://open.spotify.com/track/2j3NtA9B0VG9ULS6u3Z7tK"
       },
       "publishedAt": "2025-09-19"
     },
@@ -1006,9 +1006,9 @@
       "demoTone": false,
       "platforms": [
         {
-          "label": "Spotify search",
+          "label": "Spotify",
           "icon": "●",
-          "url": "https://open.spotify.com/search/%E0%AE%92%E0%AE%A9%E0%AF%8D%E0%AE%A9%E0%AF%81%20%E0%AE%AE%E0%AE%A3%E0%AF%8D%E0%AE%A3%E0%AF%81%20%28Onnu%20mannu%29%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://open.spotify.com/track/3qkgHVlTh7aBh2H4Wb1Zj6"
         },
         {
           "label": "Apple Music",
@@ -1054,8 +1054,8 @@
         }
       },
       "primaryPlayer": {
-        "provider": "youtube",
-        "url": "https://www.youtube.com/watch?v=TQay0QctagA"
+        "provider": "spotify",
+        "url": "https://open.spotify.com/track/3qkgHVlTh7aBh2H4Wb1Zj6"
       },
       "publishedAt": "2025-09-26"
     },
@@ -1078,9 +1078,9 @@
       "demoTone": false,
       "platforms": [
         {
-          "label": "Spotify search",
+          "label": "Spotify",
           "icon": "●",
-          "url": "https://open.spotify.com/search/%E0%AE%AE%E0%AE%BE%E0%AE%A8%E0%AE%9F%E0%AF%8D%E0%AE%AA%E0%AF%81%20%28maanatpu%29%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://open.spotify.com/track/2uvTIeTF8FI0qlQFvOad5n"
         },
         {
           "label": "Apple Music",
@@ -1126,8 +1126,8 @@
         }
       },
       "primaryPlayer": {
-        "provider": "youtube",
-        "url": "https://www.youtube.com/watch?v=ov0ma2zRzew"
+        "provider": "spotify",
+        "url": "https://open.spotify.com/track/2uvTIeTF8FI0qlQFvOad5n"
       },
       "publishedAt": "2025-09-26"
     },
@@ -1150,9 +1150,9 @@
       "demoTone": false,
       "platforms": [
         {
-          "label": "Spotify search",
+          "label": "Spotify",
           "icon": "●",
-          "url": "https://open.spotify.com/search/%E0%AE%AE%E0%AE%BE%E0%AE%B8%E0%AF%8D%20%E0%AE%AE%E0%AE%9A%E0%AF%8D%E0%AE%9A%E0%AE%BE%E0%AE%A9%E0%AF%8D%20%28Mass%20Machaan%29%20-%20The%20Kind%20Superstar%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://open.spotify.com/track/1LiE01K9uzenSAM9GBlByf"
         },
         {
           "label": "Apple Music",
@@ -1160,9 +1160,9 @@
           "url": "https://music.apple.com/us/album/%E0%AE%AE-%E0%AE%B8-%E0%AE%AE%E0%AE%9A-%E0%AE%9A-%E0%AE%A9-mass-machaan-the-kind-superstar/1861096910?i=1861096911&uo=4"
         },
         {
-          "label": "Amazon Music search",
+          "label": "Amazon Music",
           "icon": "a",
-          "url": "https://music.amazon.com/search/%E0%AE%AE%E0%AE%BE%E0%AE%B8%E0%AF%8D%20%E0%AE%AE%E0%AE%9A%E0%AF%8D%E0%AE%9A%E0%AE%BE%E0%AE%A9%E0%AF%8D%20%28Mass%20Machaan%29%20-%20The%20Kind%20Superstar%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://music.amazon.com/albums/B0G6SX85ZJ"
         },
         {
           "label": "YouTube",
@@ -1198,8 +1198,8 @@
         }
       },
       "primaryPlayer": {
-        "provider": "youtube",
-        "url": "https://www.youtube.com/watch?v=JUu-xRcNzbc"
+        "provider": "spotify",
+        "url": "https://open.spotify.com/track/1LiE01K9uzenSAM9GBlByf"
       },
       "publishedAt": "2025-12-12"
     },
@@ -1222,9 +1222,9 @@
       "demoTone": false,
       "platforms": [
         {
-          "label": "Spotify search",
+          "label": "Spotify",
           "icon": "●",
-          "url": "https://open.spotify.com/search/%E0%AE%AA%E0%AE%BE%E0%AE%9F%E0%AF%8D%E0%AE%9F%E0%AE%A9%E0%AF%8D%20%28paattan%29%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://open.spotify.com/track/2yBpWl6yWLYgy4Fz0mkGAK"
         },
         {
           "label": "Apple Music",
@@ -1232,9 +1232,9 @@
           "url": "https://music.apple.com/us/album/%E0%AE%AA-%E0%AE%9F-%E0%AE%9F%E0%AE%A9-paattan/1860256176?i=1860256177&uo=4"
         },
         {
-          "label": "Amazon Music search",
+          "label": "Amazon Music",
           "icon": "a",
-          "url": "https://music.amazon.com/search/%E0%AE%AA%E0%AE%BE%E0%AE%9F%E0%AF%8D%E0%AE%9F%E0%AE%A9%E0%AF%8D%20%28paattan%29%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://music.amazon.com/albums/B0G64KQBBQ"
         },
         {
           "label": "YouTube",
@@ -1270,8 +1270,8 @@
         }
       },
       "primaryPlayer": {
-        "provider": "youtube",
-        "url": "https://www.youtube.com/watch?v=m6e1VblPJlc"
+        "provider": "spotify",
+        "url": "https://open.spotify.com/track/2yBpWl6yWLYgy4Fz0mkGAK"
       },
       "publishedAt": "2025-12-10"
     },
@@ -1294,9 +1294,9 @@
       "demoTone": false,
       "platforms": [
         {
-          "label": "Spotify search",
+          "label": "Spotify",
           "icon": "●",
-          "url": "https://open.spotify.com/search/%E0%AE%AA%E0%AE%9F%E0%AF%88%E0%AE%AF%E0%AE%B2%E0%AF%81%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AF%81%20%E0%AE%95%E0%AE%9F%E0%AE%B5%E0%AF%81%E0%AE%B3%E0%AF%81%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AF%81%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://open.spotify.com/track/0Dm2jLmK7GB8dtWQuxcRXN"
         },
         {
           "label": "Apple Music",
@@ -1304,9 +1304,9 @@
           "url": "https://music.apple.com/us/album/%E0%AE%AA%E0%AE%9F-%E0%AE%AF%E0%AE%B2-%E0%AE%95-%E0%AE%95-%E0%AE%95%E0%AE%9F%E0%AE%B5-%E0%AE%B3-%E0%AE%95-%E0%AE%95/1859162239?i=1859162240&uo=4"
         },
         {
-          "label": "Amazon Music search",
+          "label": "Amazon Music",
           "icon": "a",
-          "url": "https://music.amazon.com/search/%E0%AE%AA%E0%AE%9F%E0%AF%88%E0%AE%AF%E0%AE%B2%E0%AF%81%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AF%81%20%E0%AE%95%E0%AE%9F%E0%AE%B5%E0%AF%81%E0%AE%B3%E0%AF%81%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AF%81%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://music.amazon.com/albums/B0G5FL7HXY?trackAsin=B0G5F92ZWD"
         },
         {
           "label": "YouTube",
@@ -1347,8 +1347,8 @@
         }
       },
       "primaryPlayer": {
-        "provider": "youtube",
-        "url": "https://www.youtube.com/watch?v=7FfnCC1Uebo"
+        "provider": "spotify",
+        "url": "https://open.spotify.com/track/0Dm2jLmK7GB8dtWQuxcRXN"
       },
       "publishedAt": "2025-12-05"
     },
@@ -1371,9 +1371,9 @@
       "demoTone": false,
       "platforms": [
         {
-          "label": "Spotify search",
+          "label": "Spotify",
           "icon": "●",
-          "url": "https://open.spotify.com/search/%E0%AE%95%E0%AE%BE%E0%AE%A4%E0%AE%B2%E0%AF%8D%20%E0%AE%95%E0%AE%BE%E0%AE%A4%E0%AE%B2%E0%AF%8D%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://open.spotify.com/track/4w0ehJD638urX3JN4A71oA"
         },
         {
           "label": "Apple Music",
@@ -1381,9 +1381,9 @@
           "url": "https://music.apple.com/us/album/%E0%AE%95-%E0%AE%A4%E0%AE%B2-%E0%AE%95-%E0%AE%A4%E0%AE%B2/1839597945?i=1839597946&uo=4"
         },
         {
-          "label": "Amazon Music search",
+          "label": "Amazon Music",
           "icon": "a",
-          "url": "https://music.amazon.com/search/%E0%AE%95%E0%AE%BE%E0%AE%A4%E0%AE%B2%E0%AF%8D%20%E0%AE%95%E0%AE%BE%E0%AE%A4%E0%AE%B2%E0%AF%8D%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://music.amazon.com/albums/B0FQRBR9L1"
         },
         {
           "label": "YouTube",
@@ -1419,8 +1419,8 @@
         }
       },
       "primaryPlayer": {
-        "provider": "youtube",
-        "url": "https://www.youtube.com/watch?v=ipyv5MKbThk"
+        "provider": "spotify",
+        "url": "https://open.spotify.com/track/4w0ehJD638urX3JN4A71oA"
       },
       "publishedAt": "2025-09-11"
     },
@@ -1514,9 +1514,9 @@
       "demoTone": false,
       "platforms": [
         {
-          "label": "Spotify search",
+          "label": "Spotify",
           "icon": "●",
-          "url": "https://open.spotify.com/search/tasty%20%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%9A%E0%AF%8D%E0%AE%9A%E0%AE%BF%E0%AE%A9%E0%AF%88%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://open.spotify.com/track/1fEVM2CAuzuWvYl69GO6bC"
         },
         {
           "label": "Apple Music",
@@ -1562,8 +1562,8 @@
         }
       },
       "primaryPlayer": {
-        "provider": "youtube",
-        "url": "https://www.youtube.com/watch?v=KpWhCsCqSIQ"
+        "provider": "spotify",
+        "url": "https://open.spotify.com/track/1fEVM2CAuzuWvYl69GO6bC"
       },
       "publishedAt": "2025-05-28"
     },
@@ -1586,9 +1586,9 @@
       "demoTone": false,
       "platforms": [
         {
-          "label": "Spotify search",
+          "label": "Spotify",
           "icon": "●",
-          "url": "https://open.spotify.com/search/%E0%AE%AA%E0%AE%BE%E0%AE%B0%E0%AF%8D%E0%AE%B5%E0%AF%88%E0%AE%AF%E0%AF%88%20%E0%AE%AE%E0%AE%BE%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AF%81%20%28Male%29%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://open.spotify.com/track/1bfSFq7sMM6hZTw8KidYeb"
         },
         {
           "label": "Apple Music",
@@ -1639,8 +1639,8 @@
         }
       },
       "primaryPlayer": {
-        "provider": "youtube",
-        "url": "https://www.youtube.com/watch?v=U3MDay_XIPg"
+        "provider": "spotify",
+        "url": "https://open.spotify.com/track/1bfSFq7sMM6hZTw8KidYeb"
       },
       "publishedAt": "2025-05-28"
     },
@@ -1714,9 +1714,9 @@
       "demoTone": false,
       "platforms": [
         {
-          "label": "Spotify search",
+          "label": "Spotify",
           "icon": "●",
-          "url": "https://open.spotify.com/search/%E0%AE%A8%E0%AE%BE%E0%AE%B3%E0%AF%81%E0%AE%AE%E0%AF%8D%20%E0%AE%95%E0%AF%87%E0%AE%9F%E0%AF%8D%E0%AE%AA%E0%AE%B5%E0%AF%88%20%20%E0%AE%85%E0%AE%B0%E0%AF%81%E0%AE%B3%E0%AE%BF%E0%AE%9F%E0%AF%81%E0%AE%AE%E0%AF%87%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://open.spotify.com/track/5gJ5R2suhdMSFnKpI4BHM5"
         },
         {
           "label": "Apple Music",
@@ -1724,9 +1724,9 @@
           "url": "https://music.apple.com/us/album/%E0%AE%A8-%E0%AE%B3-%E0%AE%AE-%E0%AE%95-%E0%AE%9F-%E0%AE%AA%E0%AE%B5-%E0%AE%85%E0%AE%B0-%E0%AE%B3-%E0%AE%9F-%E0%AE%AE/1813705567?i=1813705571&uo=4"
         },
         {
-          "label": "Amazon Music search",
+          "label": "Amazon Music",
           "icon": "a",
-          "url": "https://music.amazon.com/search/%E0%AE%A8%E0%AE%BE%E0%AE%B3%E0%AF%81%E0%AE%AE%E0%AF%8D%20%E0%AE%95%E0%AF%87%E0%AE%9F%E0%AF%8D%E0%AE%AA%E0%AE%B5%E0%AF%88%20%20%E0%AE%85%E0%AE%B0%E0%AF%81%E0%AE%B3%E0%AE%BF%E0%AE%9F%E0%AF%81%E0%AE%AE%E0%AF%87%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://music.amazon.com/albums/B0F88LTKHJ?trackAsin=B0F88LVRM9"
         },
         {
           "label": "YouTube",
@@ -1762,8 +1762,8 @@
         }
       },
       "primaryPlayer": {
-        "provider": "youtube",
-        "url": "https://www.youtube.com/watch?v=YSE0TKtFo60"
+        "provider": "spotify",
+        "url": "https://open.spotify.com/track/5gJ5R2suhdMSFnKpI4BHM5"
       },
       "publishedAt": "2025-05-11"
     },
@@ -1786,9 +1786,9 @@
       "demoTone": false,
       "platforms": [
         {
-          "label": "Spotify search",
+          "label": "Spotify",
           "icon": "●",
-          "url": "https://open.spotify.com/search/%E0%AE%A8%E0%AF%80%20%E0%AE%A8%E0%AF%80%E0%AE%9F%E0%AF%82%E0%AE%B4%E0%AE%BF%20%E0%AE%B5%E0%AE%BE%E0%AE%B4%E0%AE%B5%E0%AF%87%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://open.spotify.com/track/606FrCH9GTm5iGcmjLrH1c"
         },
         {
           "label": "Apple Music",
@@ -1834,8 +1834,8 @@
         }
       },
       "primaryPlayer": {
-        "provider": "youtube",
-        "url": "https://www.youtube.com/watch?v=zxgMkjqnpr8"
+        "provider": "spotify",
+        "url": "https://open.spotify.com/track/606FrCH9GTm5iGcmjLrH1c"
       },
       "publishedAt": "2025-04-20"
     },
@@ -1858,9 +1858,9 @@
       "demoTone": false,
       "platforms": [
         {
-          "label": "Spotify search",
+          "label": "Spotify",
           "icon": "●",
-          "url": "https://open.spotify.com/search/%E0%AE%95%E0%AE%A9%E0%AE%BF%E0%AE%A4%E0%AE%B0%E0%AF%81%20%E0%AE%9A%E0%AE%BF%E0%AE%B1%E0%AF%81%E0%AE%AE%E0%AE%B0%E0%AE%AE%E0%AF%8D%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://open.spotify.com/track/45MrTRKwqBKTJm2IAWF2yz"
         },
         {
           "label": "Apple Music",
@@ -1868,9 +1868,9 @@
           "url": "https://music.apple.com/us/album/%E0%AE%95%E0%AE%A9-%E0%AE%A4%E0%AE%B0-%E0%AE%9A-%E0%AE%B1-%E0%AE%AE%E0%AE%B0%E0%AE%AE/1809722387?i=1809722388&uo=4"
         },
         {
-          "label": "Amazon Music search",
+          "label": "Amazon Music",
           "icon": "a",
-          "url": "https://music.amazon.com/search/%E0%AE%95%E0%AE%A9%E0%AE%BF%E0%AE%A4%E0%AE%B0%E0%AF%81%20%E0%AE%9A%E0%AE%BF%E0%AE%B1%E0%AF%81%E0%AE%AE%E0%AE%B0%E0%AE%AE%E0%AF%8D%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+          "url": "https://music.amazon.com/albums/B0F5PTVCYQ"
         },
         {
           "label": "YouTube",
@@ -1906,8 +1906,8 @@
         }
       },
       "primaryPlayer": {
-        "provider": "youtube",
-        "url": "https://www.youtube.com/watch?v=zjJmSyHkO9c"
+        "provider": "spotify",
+        "url": "https://open.spotify.com/track/45MrTRKwqBKTJm2IAWF2yz"
       },
       "publishedAt": "2025-04-20"
     }
