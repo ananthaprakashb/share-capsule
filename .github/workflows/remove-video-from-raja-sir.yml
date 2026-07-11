@@ -1,0 +1,48 @@
+name: Remove video-from-raja-sir release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'automation/remove-video-from-raja-sir.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  remove:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Remove release from source and generated catalog
+        shell: python
+        run: |
+          import json
+
+          slug = 'video-from-raja-sir'
+          for path, key in [
+              ('data/channel-catalog.json', 'items'),
+              ('data/releases.json', 'releases'),
+          ]:
+              with open(path, encoding='utf-8') as f:
+                  data = json.load(f)
+              before = len(data.get(key, []))
+              data[key] = [item for item in data.get(key, []) if item.get('slug') != slug]
+              after = len(data[key])
+              print(f'{path}: removed {before - after} item(s)')
+              with open(path, 'w', encoding='utf-8') as f:
+                  json.dump(data, f, ensure_ascii=False, indent=2)
+                  f.write('\n')
+
+      - name: Commit removal
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/channel-catalog.json data/releases.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Remove video-from-raja-sir release [skip ci]'
+          git push origin HEAD:main
