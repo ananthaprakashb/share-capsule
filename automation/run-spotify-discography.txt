@@ -1,1 +1,1 @@
-Browse the public Spotify artist page and extract visible discography links.
+Browse the full public Spotify discography page and extract all visible release links.
