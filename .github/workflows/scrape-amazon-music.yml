@@ -1,0 +1,84 @@
+name: Scrape Amazon Music matches
+
+on:
+  pull_request:
+    paths:
+      - 'automation/run-amazon-music.txt'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser
+        run: |
+          pip install playwright
+          playwright install chromium --with-deps
+      - name: Search public Amazon Music pages
+        shell: python
+        run: |
+          import asyncio, json, os
+          from urllib.parse import quote
+          from playwright.async_api import async_playwright
+
+          tracks=[
+            {'key':'crabby-noise','title':'காலிப்பானை நண்டு சத்தம் Crabby Noise','artist':'தமிழாலே'},
+            {'key':'suththi-paakka','title':'சுத்திப்பாக்க Suththi pakka','artist':'தமிழாலே'},
+            {'key':'happy-2026','title':'Happy 2026','artist':'தமிழாலே'},
+            {'key':'merry-christmas','title':'Merry Christmas','artist':'தமிழாலே'},
+            {'key':'ai-kaatru','title':'AI காற்று Confusing Vibes','artist':'தமிழாலே'},
+            {'key':'onnu-mannu','title':'ஒன்னு மண்ணு Onnu Mannu','artist':'தமிழாலே'},
+            {'key':'azhagu-oh-beauty','title':'அழகே Oh beauty','artist':'தமிழாலே'},
+            {'key':'maanatpu','title':'மாநட்பு maanatpu','artist':'தமிழாலே'},
+            {'key':'mass-machaan','title':'மாஸ் மச்சான் Mass Machaan','artist':'தமிழாலே'},
+            {'key':'paattan-bharathi','title':'பாட்டன் paattan','artist':'தமிழாலே'},
+            {'key':'padayalukku-kadavulukku','title':'படையலுக்கு கடவுளுக்கு','artist':'தமிழாலே'},
+            {'key':'kaadhal-kaadhal','title':'காதல் காதல்','artist':'தமிழாலே'},
+            {'key':'tasty-prachanai','title':'tasty பிரச்சினை','artist':'தமிழாலே'},
+            {'key':'paarvaiyai-maathu','title':'பார்வையை மாத்து Male','artist':'தமிழாலே'},
+            {'key':'naalum-ketpavai-arulidume','title':'நாளும் கேட்பவை அருளிடுமே','artist':'தமிழாலே'},
+            {'key':'needoozhi-vazhgave','title':'நீ நீடூழி வாழவே','artist':'தமிழாலே'},
+            {'key':'kanitharu-sirumaram','title':'கனிதரு சிறுமரம்','artist':'தமிழாலே'}
+          ]
+
+          async def main():
+              results=[]
+              async with async_playwright() as p:
+                  browser=await p.chromium.launch(headless=True)
+                  page=await browser.new_page(viewport={'width':1440,'height':1200}, locale='en-US')
+                  for i,t in enumerate(tracks):
+                      query=f"{t['title']} {t['artist']}"
+                      url='https://music.amazon.com/search/'+quote(query,safe='')
+                      item={**t,'query':query,'searchUrl':url,'anchors':[],'bodyText':''}
+                      try:
+                          await page.goto(url,wait_until='domcontentloaded',timeout=90000)
+                          await page.wait_for_timeout(7000)
+                          for _ in range(4):
+                              await page.mouse.wheel(0,1000); await page.wait_for_timeout(500)
+                          item['titleTag']=await page.title()
+                          item['bodyText']=(await page.locator('body').inner_text())[:30000]
+                          anchors=await page.locator('a[href]').evaluate_all("els => els.map(a => ({href:a.href,text:(a.innerText||a.textContent||'').trim(),aria:a.getAttribute('aria-label'),title:a.getAttribute('title')}))")
+                          item['anchors']=[a for a in anchors if any(x in (a.get('href') or '') for x in ['/albums/','/tracks/','/music/player/albums/','/music/player/tracks/'])]
+                          if i<3:
+                              await page.screenshot(path=f"output/amazon-{t['key']}.png",full_page=True)
+                      except Exception as ex:
+                          item['error']=str(ex)
+                      results.append(item)
+                  await browser.close()
+              with open('output/amazon-music-search-results.json','w',encoding='utf-8') as f:
+                  json.dump({'results':results},f,ensure_ascii=False,indent=2)
+
+          os.makedirs('output',exist_ok=True)
+          asyncio.run(main())
+      - uses: actions/upload-artifact@v4
+        with:
+          name: amazon-music-search-results
+          path: output/
+          retention-days: 7
