@@ -1,0 +1,84 @@
+name: Discover Apple Music artist catalog
+
+on:
+  pull_request:
+    paths:
+      - 'automation/run-apple-catalog.txt'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - name: Fetch artist catalog
+        shell: python
+        run: |
+          import json, requests, re, os
+          from urllib.parse import urlparse, parse_qs
+
+          with open('data/releases.json', encoding='utf-8') as f:
+              releases = json.load(f).get('releases', [])
+
+          ids = set()
+          for rel in releases:
+              for p in rel.get('platforms', []):
+                  if str(p.get('label', '')).lower() != 'apple music' or not p.get('url'):
+                      continue
+                  u = urlparse(p['url'])
+                  ids.update(re.findall(r'\d{6,}', u.path))
+                  ids.update(parse_qs(u.query).get('i', []))
+
+          artist_ids = set()
+          seeds = []
+          for item_id in sorted(ids):
+              r = requests.get('https://itunes.apple.com/lookup', params={'id': item_id, 'country': 'US'}, timeout=30)
+              if not r.ok:
+                  continue
+              for row in r.json().get('results', []):
+                  seeds.append(row)
+                  if row.get('artistId'):
+                      artist_ids.add(str(row['artistId']))
+
+          tracks = {}
+          for artist_id in sorted(artist_ids):
+              r = requests.get('https://itunes.apple.com/lookup', params={
+                  'id': artist_id, 'entity': 'song', 'limit': 200, 'country': 'US'
+              }, timeout=30)
+              if not r.ok:
+                  continue
+              for row in r.json().get('results', []):
+                  if row.get('wrapperType') == 'track' and row.get('kind') == 'song':
+                      tracks[str(row.get('trackId'))] = {
+                          'trackId': row.get('trackId'),
+                          'title': row.get('trackName'),
+                          'artist': row.get('artistName'),
+                          'artistId': row.get('artistId'),
+                          'collection': row.get('collectionName'),
+                          'collectionId': row.get('collectionId'),
+                          'releaseDate': row.get('releaseDate'),
+                          'appleMusic': row.get('trackViewUrl'),
+                          'artwork': (row.get('artworkUrl100') or '').replace('100x100bb','1200x1200bb')
+                      }
+
+          os.makedirs('output', exist_ok=True)
+          with open('output/apple-artist-catalog-only.json', 'w', encoding='utf-8') as f:
+              json.dump({
+                  'seedIds': sorted(ids),
+                  'artistIds': sorted(artist_ids),
+                  'seeds': seeds,
+                  'count': len(tracks),
+                  'tracks': sorted(tracks.values(), key=lambda x: (x.get('releaseDate') or '', x.get('title') or ''), reverse=True)
+              }, f, ensure_ascii=False, indent=2)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apple-artist-catalog-only
+          path: output/apple-artist-catalog-only.json
+          retention-days: 7
