@@ -1,0 +1,89 @@
+name: Search public Spotify titles
+
+on:
+  pull_request:
+    paths:
+      - 'automation/run-spotify-search.txt'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser
+        run: |
+          pip install playwright
+          playwright install chromium --with-deps
+      - name: Search public Spotify UI
+        shell: python
+        run: |
+          import asyncio, json, os
+          from urllib.parse import quote
+          from playwright.async_api import async_playwright
+
+          tracks=[
+            {'key':'crabby-noise','title':'காலிப்பானை நண்டு சத்தம் Crabby Noise','duration':124800},
+            {'key':'suththi-paakka','title':'சுத்திப்பாக்க Suththi pakka','duration':190000},
+            {'key':'happy-2026','title':'Happy 2026','duration':192100},
+            {'key':'merry-christmas','title':'Merry Christmas','duration':129600},
+            {'key':'ai-kaatru','title':'AI காற்று Confusing Vibes','duration':199000},
+            {'key':'onnu-mannu','title':'ஒன்னு மண்ணு Onnu Mannu','duration':150000},
+            {'key':'azhagu-oh-beauty','title':'அழகே Oh beauty','duration':147900},
+            {'key':'maanatpu','title':'மாநட்பு maanatpu','duration':136800},
+            {'key':'mass-machaan','title':'மாஸ் மச்சான் Mass Machaan','duration':182700},
+            {'key':'paattan-bharathi','title':'பாட்டன் paattan','duration':226000},
+            {'key':'padayalukku-kadavulukku','title':'படையலுக்கு கடவுளுக்கு','duration':240000},
+            {'key':'kaadhal-kaadhal','title':'காதல் காதல்','duration':181900},
+            {'key':'tasty-prachanai','title':'tasty பிரச்சினை','duration':136800},
+            {'key':'paarvaiyai-maathu','title':'பார்வையை மாத்து Male','duration':201600},
+            {'key':'naalum-ketpavai-arulidume','title':'நாளும் கேட்பவை அருளிடுமே','duration':206200},
+            {'key':'needoozhi-vazhgave','title':'நீ நீடூழி வாழவே','duration':173100},
+            {'key':'kanitharu-sirumaram','title':'கனிதரு சிறுமரம்','duration':156100}
+          ]
+          artist='தமிழாலே'
+
+          async def main():
+              results=[]
+              async with async_playwright() as p:
+                  browser=await p.chromium.launch(headless=True)
+                  page=await browser.new_page(viewport={'width':1440,'height':1200}, locale='en-US')
+                  for i,t in enumerate(tracks):
+                      query=f"{t['title']} {artist}"
+                      url='https://open.spotify.com/search/'+quote(query,safe='')
+                      item={**t,'query':query,'searchUrl':url,'anchors':[],'bodyText':''}
+                      try:
+                          await page.goto(url,wait_until='domcontentloaded',timeout=90000)
+                          await page.wait_for_timeout(7000)
+                          for label in ['Accept Cookies','Accept cookies','Accept all cookies']:
+                              try:
+                                  b=page.get_by_role('button',name=label)
+                                  if await b.count(): await b.first.click(timeout=1500); await page.wait_for_timeout(1000); break
+                              except Exception: pass
+                          for _ in range(3):
+                              await page.mouse.wheel(0,1000); await page.wait_for_timeout(500)
+                          item['titleTag']=await page.title()
+                          item['bodyText']=(await page.locator('body').inner_text())[:30000]
+                          anchors=await page.locator('a[href]').evaluate_all("els => els.map(a => ({href:a.href,text:(a.innerText||a.textContent||'').trim(),aria:a.getAttribute('aria-label'),title:a.getAttribute('title')}))")
+                          item['anchors']=[a for a in anchors if '/track/' in (a.get('href') or '') or '/album/' in (a.get('href') or '') or '/artist/' in (a.get('href') or '')]
+                          if i<2: await page.screenshot(path=f"output/spotify-search-{t['key']}.png",full_page=True)
+                      except Exception as ex:
+                          item['error']=str(ex)
+                      results.append(item)
+                  await browser.close()
+              with open('output/spotify-search-results.json','w',encoding='utf-8') as f:
+                  json.dump({'artist':artist,'results':results},f,ensure_ascii=False,indent=2)
+
+          os.makedirs('output',exist_ok=True)
+          asyncio.run(main())
+      - uses: actions/upload-artifact@v4
+        with:
+          name: spotify-search-results
+          path: output/
+          retention-days: 7
