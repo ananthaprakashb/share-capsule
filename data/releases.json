@@ -1645,57 +1645,6 @@
       "publishedAt": "2025-05-28"
     },
     {
-      "slug": "video-from-raja-sir",
-      "title": "Video from Raja Sir",
-      "artist": "தமிழாலே",
-      "type": "Video release",
-      "category": "Video",
-      "language": "Tamil",
-      "description": "A short video shared as “Video from Raja Sir.”",
-      "coverImage": "https://img.youtube.com/vi/DcVe76X3toE/hqdefault.jpg",
-      "coverBackground": "linear-gradient(145deg,#141e30,#243b55)",
-      "coverEyebrow": "Video",
-      "coverLines": [
-        "Video from",
-        "Raja Sir"
-      ],
-      "previewUrl": "",
-      "demoTone": false,
-      "platforms": [
-        {
-          "label": "YouTube",
-          "icon": "▶",
-          "url": "https://www.youtube.com/watch?v=DcVe76X3toE"
-        }
-      ],
-      "shareMessages": {
-        "friend": {
-          "label": "Close friend",
-          "icon": "💛",
-          "text": "Thought you might enjoy this video 🎥"
-        },
-        "family": {
-          "label": "Family",
-          "icon": "👨‍👩‍👧",
-          "text": "Sharing this video with the family ❤️"
-        },
-        "curious": {
-          "label": "Curious learner",
-          "icon": "💡",
-          "text": "This looked useful and worth a quick watch."
-        },
-        "special": {
-          "label": "Someone special",
-          "icon": "✨",
-          "text": "This video made me think of you ❤️"
-        }
-      },
-      "primaryPlayer": {
-        "provider": "youtube",
-        "url": "https://www.youtube.com/watch?v=DcVe76X3toE"
-      }
-    },
-    {
       "slug": "naalum-ketpavai-arulidume",
       "title": "நாளும் கேட்பவை அருளிடுமே",
       "artist": "தமிழாலே",
