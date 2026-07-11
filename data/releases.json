@@ -26,50 +26,167 @@
       "demoTone": false,
       "demoDuration": 12,
       "platforms": [
-        {
-          "label": "Spotify",
-          "icon": "●",
-          "url": "https://open.spotify.com/track/4CFJxkzHtFYCFvPnvp1JeD?si=564a243b058a48eb"
-        },
-        {
-          "label": "YouTube",
-          "icon": "▶",
-          "url": "https://youtu.be/SRA-PETLKLM?si=H6Eyfs0nS2GpRBXP"
-        },
-        {
-          "label": "Apple Music",
-          "icon": "♫",
-          "url": "https://music.apple.com/us/album/%E0%AE%8E%E0%AE%A3-%E0%AE%A3-%E0%AE%99-%E0%AE%95%E0%AE%B3-%E0%AE%8E%E0%AE%A3-%E0%AE%A3%E0%AE%99-%E0%AE%95%E0%AE%B3/1876601889?i=1876601890"
-        },
-        {
-          "label": "Amazon Music",
-          "icon": "a",
-          "url": "https://amazon.com/music/player/albums/B0GMQB5KCN?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_L2aK6X6xOvEujylldncVc4PF6"
-        }
+        {"label": "Spotify", "icon": "●", "url": "https://open.spotify.com/track/4CFJxkzHtFYCFvPnvp1JeD?si=564a243b058a48eb"},
+        {"label": "YouTube", "icon": "▶", "url": "https://youtu.be/SRA-PETLKLM?si=H6Eyfs0nS2GpRBXP"},
+        {"label": "Apple Music", "icon": "♫", "url": "https://music.apple.com/us/album/%E0%AE%8E%E0%AE%A3-%E0%AE%A3-%E0%AE%99-%E0%AE%95%E0%AE%B3-%E0%AE%8E%E0%AE%A3-%E0%AE%A3%E0%AE%99-%E0%AE%95%E0%AE%B3/1876601889?i=1876601890"},
+        {"label": "Amazon Music", "icon": "a", "url": "https://amazon.com/music/player/albums/B0GMQB5KCN?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_L2aK6X6xOvEujylldncVc4PF6"}
       ],
       "shareMessages": {
-        "friend": {
-          "label": "Close friend",
-          "icon": "💛",
-          "text": "Thought you might enjoy this 🎧"
-        },
-        "family": {
-          "label": "Family",
-          "icon": "👨‍👩‍👧",
-          "text": "Sharing this with the family — give it a listen ❤️"
-        },
-        "music": {
-          "label": "Music lover",
-          "icon": "🎵",
-          "text": "Found a new Tamil track. Curious what you think 🎵"
-        },
-        "special": {
-          "label": "Someone special",
-          "icon": "✨",
-          "text": "This song made me think of you ❤️ Listen when you get a minute 🎧"
-        }
+        "friend": {"label": "Close friend", "icon": "💛", "text": "Thought you might enjoy this 🎧"},
+        "family": {"label": "Family", "icon": "👨‍👩‍👧", "text": "Sharing this with the family — give it a listen ❤️"},
+        "music": {"label": "Music lover", "icon": "🎵", "text": "Found a new Tamil track. Curious what you think 🎵"},
+        "special": {"label": "Someone special", "icon": "✨", "text": "This song made me think of you ❤️ Listen when you get a minute 🎧"}
+      }
+    },
+    {
+      "slug": "vaazhthugirom",
+      "title": "வாழ்த்துகிறோம்",
+      "artist": "தமிழாலே",
+      "type": "Single",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#7b4397,#dc2430)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": ["வாழ்த்துகிறோம்"],
+      "primaryPlayer": {
+        "provider": "spotify",
+        "url": "https://open.spotify.com/album/18EMjJMk9sWpNuflwKlvMD"
       },
-      "tags": ["Tamil", "memory", "mind", "music"]
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {"label": "Spotify", "icon": "●", "url": "https://open.spotify.com/album/18EMjJMk9sWpNuflwKlvMD"},
+        {"label": "Apple Music", "icon": "♫", "url": "https://music.apple.com/us/album/%E0%AE%B5-%E0%AE%B4-%E0%AE%A4-%E0%AE%A4-%E0%AE%95-%E0%AE%B1-%E0%AE%AE-single/6777044121?at=1001lry3&ct=dashboard&uo=4"},
+        {"label": "YouTube", "icon": "▶", "url": "https://www.youtube.com/watch?v=H1iMEbQKgnQ&list=OLAK5uy_lZ7X9hxJCWJ4XRWeHaGMuhbM_Cv5hqoOE"}
+      ],
+      "shareMessages": {
+        "friend": {"label": "Close friend", "icon": "💛", "text": "Thought you might enjoy this Tamil release 🎧"},
+        "family": {"label": "Family", "icon": "👨‍👩‍👧", "text": "Sharing this Tamil song with the family ❤️"},
+        "music": {"label": "Music lover", "icon": "🎵", "text": "Found a Tamil track you may enjoy 🎵"},
+        "special": {"label": "Someone special", "icon": "✨", "text": "This made me think of you ❤️"}
+      }
+    },
+    {
+      "slug": "sick-aagik-konden",
+      "title": "Sick ஆகிக் கொண்டேன்",
+      "artist": "தமிழாலே",
+      "type": "Single",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#134e5e,#71b280)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": ["Sick", "ஆகிக் கொண்டேன்"],
+      "primaryPlayer": {
+        "provider": "spotify",
+        "url": "https://open.spotify.com/album/50UNnLcAMBwCwZ4TkdTjy3?si=tTO5nzb-Tk-Vs9Dk07LrZA"
+      },
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {"label": "Spotify", "icon": "●", "url": "https://open.spotify.com/album/50UNnLcAMBwCwZ4TkdTjy3?si=tTO5nzb-Tk-Vs9Dk07LrZA"},
+        {"label": "Apple Music", "icon": "♫", "url": "https://music.apple.com/us/album/sick-%E0%AE%95-%E0%AE%95-%E0%AE%95-%E0%AE%A3-%E0%AE%9F-%E0%AE%A9/1896125540?i=6765916536"},
+        {"label": "YouTube Music", "icon": "▶", "url": "https://music.youtube.com/watch?v=IHDuZ6duQnk"}
+      ],
+      "shareMessages": {
+        "friend": {"label": "Close friend", "icon": "💛", "text": "Thought you might enjoy this Tamil release 🎧"},
+        "family": {"label": "Family", "icon": "👨‍👩‍👧", "text": "Sharing this Tamil song with the family ❤️"},
+        "music": {"label": "Music lover", "icon": "🎵", "text": "Found a Tamil track you may enjoy 🎵"},
+        "special": {"label": "Someone special", "icon": "✨", "text": "This made me think of you ❤️"}
+      }
+    },
+    {
+      "slug": "idhuvum-kadanthu-pogum",
+      "title": "இதுவும் கடந்து போகும்",
+      "artist": "தமிழாலே",
+      "type": "Single",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#355c7d,#6c5b7b,#c06c84)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": ["இதுவும்", "கடந்து போகும்"],
+      "primaryPlayer": {
+        "provider": "spotify",
+        "url": "https://open.spotify.com/album/1YbFwBJvYUfkOz0gzZMRt6?si=sdDcwu5iTW2iHYm8BspjDA"
+      },
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {"label": "Spotify", "icon": "●", "url": "https://open.spotify.com/album/1YbFwBJvYUfkOz0gzZMRt6?si=sdDcwu5iTW2iHYm8BspjDA"},
+        {"label": "Apple Music", "icon": "♫", "url": "https://music.apple.com/us/album/%E0%AE%87%E0%AE%A4-%E0%AE%B5-%E0%AE%AE-%E0%AE%95%E0%AE%9F%E0%AE%A8-%E0%AE%A4-%E0%AE%AA-%E0%AE%95-%E0%AE%AE/1894511711?i=1894511712"},
+        {"label": "YouTube", "icon": "▶", "url": "https://www.youtube.com/watch?v=JOUWoIIPLnU"}
+      ],
+      "shareMessages": {
+        "friend": {"label": "Close friend", "icon": "💛", "text": "Thought you might enjoy this Tamil release 🎧"},
+        "family": {"label": "Family", "icon": "👨‍👩‍👧", "text": "Sharing this Tamil song with the family ❤️"},
+        "music": {"label": "Music lover", "icon": "🎵", "text": "Found a Tamil track you may enjoy 🎵"},
+        "special": {"label": "Someone special", "icon": "✨", "text": "This made me think of you ❤️"}
+      }
+    },
+    {
+      "slug": "suththi-paakka",
+      "title": "சுத்திப்பாக்க",
+      "artist": "தமிழாலே",
+      "type": "Single",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#42275a,#734b6d)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": ["சுத்திப்பாக்க"],
+      "primaryPlayer": {
+        "provider": "spotify",
+        "url": "https://open.spotify.com/album/10xxmbxjknmpKhrfBMJzmI"
+      },
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {"label": "Spotify", "icon": "●", "url": "https://open.spotify.com/album/10xxmbxjknmpKhrfBMJzmI"},
+        {"label": "Apple Music", "icon": "♫", "url": "https://music.apple.com/us/album/%E0%AE%9A-%E0%AE%A4-%E0%AE%A4-%E0%AE%AA-%E0%AE%AA-%E0%AE%95-%E0%AE%95-single/1827795268"},
+        {"label": "YouTube Music", "icon": "▶", "url": "https://music.youtube.com/podcast/8aeXKFW5oas"}
+      ],
+      "shareMessages": {
+        "friend": {"label": "Close friend", "icon": "💛", "text": "Thought you might enjoy this Tamil release 🎧"},
+        "family": {"label": "Family", "icon": "👨‍👩‍👧", "text": "Sharing this Tamil song with the family ❤️"},
+        "music": {"label": "Music lover", "icon": "🎵", "text": "Found a Tamil track you may enjoy 🎵"},
+        "special": {"label": "Someone special", "icon": "✨", "text": "This made me think of you ❤️"}
+      }
+    },
+    {
+      "slug": "azhagu-oh-beauty",
+      "title": "அழகு (Oh Beauty)",
+      "artist": "தமிழாலே",
+      "type": "Single",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#ee9ca7,#ffdde1)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": ["அழகு", "Oh Beauty"],
+      "primaryPlayer": {
+        "provider": "spotify",
+        "url": "https://open.spotify.com/album/1ooanTy8rNeG4D39i38nBN"
+      },
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {"label": "Spotify", "icon": "●", "url": "https://open.spotify.com/album/1ooanTy8rNeG4D39i38nBN"},
+        {"label": "Apple Music", "icon": "♫", "url": "https://music.apple.com/us/album/%E0%AE%85%E0%AE%B4%E0%AE%95-oh-beauty-single/1843641288"},
+        {"label": "YouTube", "icon": "▶", "url": "https://www.youtube.com/watch?v=WCfBYqLUiDw"}
+      ],
+      "shareMessages": {
+        "friend": {"label": "Close friend", "icon": "💛", "text": "Thought you might enjoy this Tamil release 🎧"},
+        "family": {"label": "Family", "icon": "👨‍👩‍👧", "text": "Sharing this Tamil song with the family ❤️"},
+        "music": {"label": "Music lover", "icon": "🎵", "text": "Found a Tamil track you may enjoy 🎵"},
+        "special": {"label": "Someone special", "icon": "✨", "text": "This made me think of you ❤️"}
+      }
     }
   ]
 }
