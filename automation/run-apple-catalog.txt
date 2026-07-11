@@ -1,0 +1,1 @@
+Fetch Apple Music artist catalog for Share Capsule matching.
