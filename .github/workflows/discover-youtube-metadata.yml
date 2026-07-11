@@ -1,0 +1,52 @@
+name: Discover full YouTube video metadata
+
+on:
+  pull_request:
+    paths:
+      - 'automation/run-youtube-metadata.txt'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -U yt-dlp
+      - name: Fetch full metadata
+        shell: python
+        run: |
+          import subprocess, json, os
+          channel = 'https://www.youtube.com/channel/UCejnFIrCLi0MaskXd2HNi5w/videos'
+          proc = subprocess.run([
+              'yt-dlp', '--skip-download', '--dump-json', '--no-warnings', channel
+          ], text=True, capture_output=True, check=True)
+          videos=[]
+          for line in proc.stdout.splitlines():
+              if not line.strip():
+                  continue
+              row=json.loads(line)
+              videos.append({
+                  'id': row.get('id'),
+                  'title': row.get('title'),
+                  'description': row.get('description'),
+                  'upload_date': row.get('upload_date'),
+                  'timestamp': row.get('timestamp'),
+                  'duration': row.get('duration'),
+                  'tags': row.get('tags'),
+                  'categories': row.get('categories'),
+                  'webpage_url': row.get('webpage_url')
+              })
+          os.makedirs('output', exist_ok=True)
+          with open('output/youtube-full-metadata.json','w',encoding='utf-8') as f:
+              json.dump({'count':len(videos),'videos':videos},f,ensure_ascii=False,indent=2)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: youtube-full-metadata
+          path: output/youtube-full-metadata.json
+          retention-days: 7
