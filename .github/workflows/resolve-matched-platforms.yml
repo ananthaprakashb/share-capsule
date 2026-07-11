@@ -1,0 +1,79 @@
+name: Resolve matched music platform links
+
+on:
+  pull_request:
+    paths:
+      - 'automation/run-targeted-platform-resolution.txt'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  resolve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - name: Resolve matched tracks
+        shell: python
+        run: |
+          import requests, json, time, os
+
+          track_ids = [
+            1854039775, 1827795269, 1865782531, 1864094159,
+            1841066284, 1842630884, 1843641289, 1842630885,
+            1861096911, 1860256177, 1859162240, 1839597946,
+            1817349096, 1817349094, 1813705571, 1809626282,
+            1809722388
+          ]
+          ua={'User-Agent':'ShareCapsuleCatalogSync/1.0'}
+          results=[]
+
+          for idx, track_id in enumerate(track_ids):
+              lookup=requests.get('https://itunes.apple.com/lookup',params={'id':track_id,'country':'US'},headers=ua,timeout=30)
+              rows=lookup.json().get('results',[]) if lookup.ok else []
+              row=next((x for x in rows if x.get('wrapperType')=='track'), rows[0] if rows else {})
+              apple=row.get('trackViewUrl')
+              item={
+                'trackId':track_id,
+                'title':row.get('trackName'),
+                'artist':row.get('artistName'),
+                'durationMs':row.get('trackTimeMillis'),
+                'releaseDate':row.get('releaseDate'),
+                'artwork':(row.get('artworkUrl100') or '').replace('100x100bb','1200x1200bb'),
+                'platforms':{'appleMusic':apple} if apple else {}
+              }
+              if apple:
+                  for attempt in range(6):
+                      r=requests.get('https://api.song.link/v1-alpha.1/links',params={'url':apple,'userCountry':'US'},headers=ua,timeout=30)
+                      if r.ok:
+                          links=r.json().get('linksByPlatform') or {}
+                          for src,dest in {
+                            'spotify':'spotify','appleMusic':'appleMusic','amazonMusic':'amazonMusic',
+                            'youtubeMusic':'youtubeMusic','youtube':'youtube'
+                          }.items():
+                              url=links.get(src,{}).get('url')
+                              if url:item['platforms'][dest]=url
+                          item['songlinkStatus']='ok'
+                          break
+                      if r.status_code==429:
+                          item['songlinkStatus']='rate_limited'
+                          time.sleep(12 + attempt*8)
+                          continue
+                      item['songlinkStatus']=f'HTTP {r.status_code}'
+                      break
+              results.append(item)
+              time.sleep(6)
+
+          os.makedirs('output',exist_ok=True)
+          with open('output/matched-platform-links.json','w',encoding='utf-8') as f:
+              json.dump({'count':len(results),'tracks':results},f,ensure_ascii=False,indent=2)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: matched-platform-links
+          path: output/matched-platform-links.json
+          retention-days: 7
