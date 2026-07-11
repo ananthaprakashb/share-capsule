@@ -1,1 +1,2 @@
 Fetch Apple Music artist catalog for Share Capsule matching.
+Include track duration for ambiguous YouTube title matching.
