@@ -1,0 +1,1 @@
+Merge the verified channel catalog into the live Share Capsule release list.
