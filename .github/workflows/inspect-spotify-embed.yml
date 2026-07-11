@@ -25,6 +25,7 @@ jobs:
           from bs4 import BeautifulSoup
 
           urls=[
+            'https://open.spotify.com/embed/artist/2EOVUKoABSwyShnSx23A2k',
             'https://open.spotify.com/embed/track/4CFJxkzHtFYCFvPnvp1JeD',
             'https://open.spotify.com/embed/album/18EMjJMk9sWpNuflwKlvMD',
             'https://open.spotify.com/embed/album/50UNnLcAMBwCwZ4TkdTjy3',
@@ -46,12 +47,12 @@ jobs:
                   for s in soup.find_all('script'):
                       txt=s.string or s.get_text() or ''
                       if txt.strip():
-                          item['scripts'].append(txt[:200000])
+                          item['scripts'].append(txt[:500000])
                   item['artistLinks']=sorted(set(re.findall(r'(?:https://open\.spotify\.com)?/artist/[A-Za-z0-9]+',r.text)))
                   item['trackLinks']=sorted(set(re.findall(r'(?:https://open\.spotify\.com)?/track/[A-Za-z0-9]+',r.text)))
                   item['albumLinks']=sorted(set(re.findall(r'(?:https://open\.spotify\.com)?/album/[A-Za-z0-9]+',r.text)))
                   item['spotifyUris']=sorted(set(re.findall(r'spotify:(?:artist|track|album):[A-Za-z0-9]+',r.text)))
-                  item['html']=r.text[:250000]
+                  item['html']=r.text[:500000]
               except Exception as ex:
                   item['error']=str(ex)
               out.append(item)
