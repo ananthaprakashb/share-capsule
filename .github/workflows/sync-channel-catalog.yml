@@ -95,7 +95,7 @@ jobs:
                       'url': url
                   })
 
-              if first_video:
+              if first_video and is_music:
                   platforms.append({
                       'label': 'YouTube Music',
                       'icon': '♫',
