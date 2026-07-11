@@ -1,1 +1,1 @@
-Inspect Spotify embed pages for public artist and track metadata.
+Inspect Spotify artist embed and verified release embeds for public catalog metadata.
