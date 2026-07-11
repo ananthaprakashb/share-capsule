@@ -1,1 +1,0 @@
-Remove the video-from-raja-sir capsule from source and generated release catalogs.
