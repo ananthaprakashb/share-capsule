@@ -6,54 +6,82 @@
     {
       "slug": "youtube-os-cbzr0tza",
       "title": "Mastering Personal Finance",
-      "videoIds": ["os_Cbzr0tZA"],
+      "videoIds": [
+        "os_Cbzr0tZA"
+      ],
       "category": "Personal Finance",
       "language": "English",
+      "publishedAt": "2026-07-11",
       "description": "A practical introduction to personal finance, budgeting and long-term financial growth.",
-      "coverLines": ["Mastering", "Personal Finance"],
-      "publishedAt": "2026-07-11"
+      "coverLines": [
+        "Mastering",
+        "Personal Finance"
+      ]
     },
     {
       "slug": "trading-basics",
       "title": "Trading Basics",
-      "videoIds": ["BGWiSOL_CE4"],
+      "videoIds": [
+        "BGWiSOL_CE4"
+      ],
       "category": "Personal Finance",
       "language": "English",
       "description": "A beginner-friendly video covering trading basics.",
-      "coverLines": ["Trading", "Basics"]
+      "coverLines": [
+        "Trading",
+        "Basics"
+      ]
     },
     {
       "slug": "magic-write-ai-canva",
       "title": "Magic Write AI Canva",
-      "videoIds": ["a9noakJypEE"],
+      "videoIds": [
+        "a9noakJypEE"
+      ],
       "category": "AI & Creativity",
       "language": "English",
       "description": "A quick guide to using Magic Write AI in Canva.",
-      "coverLines": ["Magic Write", "AI + Canva"]
+      "coverLines": [
+        "Magic Write",
+        "AI + Canva"
+      ]
     },
     {
       "slug": "magic-write-ai-canva-tamil",
       "title": "Magic Write AI Canva — Tamil",
-      "videoIds": ["37CIVbS5tJI"],
+      "videoIds": [
+        "37CIVbS5tJI"
+      ],
       "category": "AI & Creativity",
       "language": "Tamil",
       "description": "A Tamil-language quick guide to using Magic Write AI in Canva.",
-      "coverLines": ["Magic Write", "தமிழ்"]
+      "coverLines": [
+        "Magic Write",
+        "தமிழ்"
+      ]
     },
     {
       "slug": "pongal-wishes",
       "title": "Pongal Wishes",
-      "videoIds": ["i72WhnIbTWg", "1tnjNCVBlPY"],
+      "videoIds": [
+        "i72WhnIbTWg",
+        "1tnjNCVBlPY"
+      ],
       "category": "Tamil Music",
       "language": "Tamil",
       "music": true,
       "description": "A Tamil Pongal wishes music video.",
-      "coverLines": ["Pongal", "Wishes"]
+      "coverLines": [
+        "Pongal",
+        "Wishes"
+      ]
     },
     {
       "slug": "crabby-noise",
       "title": "காலிப்பானை நண்டு சத்தம் (Crabby Noise)",
-      "videoIds": ["VyGepvXkvyk"],
+      "videoIds": [
+        "VyGepvXkvyk"
+      ],
       "category": "Tamil Music",
       "language": "Tamil",
       "music": true,
@@ -61,12 +89,21 @@
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f0/3e/1c/f03e1cd3-7151-dac9-cdb7-d37123b738ff/artwork.jpg/1200x1200bb.jpg",
       "publishedAt": "2025-11-13",
       "storeTitle": "காலிப்பானை நண்டு சத்தம் (Crabby Noise) Kaalippaanai nandu saththam",
-      "coverLines": ["காலிப்பானை", "நண்டு சத்தம்"]
+      "spotifyUrl": "https://open.spotify.com/track/1TK01a32pDCrJ1Qa4ppIzW",
+      "amazonUrl": "https://music.amazon.com/albums/B0G2754DYQ",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverLines": [
+        "காலிப்பானை",
+        "நண்டு சத்தம்"
+      ]
     },
     {
       "slug": "suththi-paakka",
       "title": "சுத்திப்பாக்க",
-      "videoIds": ["1j6UfRN9Ov8", "8aeXKFW5oas"],
+      "videoIds": [
+        "1j6UfRN9Ov8",
+        "8aeXKFW5oas"
+      ],
       "category": "Tamil Music",
       "language": "Tamil",
       "music": true,
@@ -74,13 +111,19 @@
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ef/44/12/ef441252-05c1-075b-3e02-a78a5a2afc3f/artwork.jpg/1200x1200bb.jpg",
       "publishedAt": "2025-07-19",
       "storeTitle": "சுத்திப்பாக்க(Suththi pakka)",
-      "spotifyUrl": "https://open.spotify.com/album/10xxmbxjknmpKhrfBMJzmI",
-      "coverLines": ["சுத்திப்பாக்க"]
+      "spotifyUrl": "https://open.spotify.com/track/0GdujnU6awBDMRqJZHNge1",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverLines": [
+        "சுத்திப்பாக்க"
+      ]
     },
     {
       "slug": "happy-2026",
       "title": "Happy 2026",
-      "videoIds": ["UBYs9PPLcu8", "R2bDWm7lNbY"],
+      "videoIds": [
+        "UBYs9PPLcu8",
+        "R2bDWm7lNbY"
+      ],
       "category": "Tamil Music",
       "language": "Tamil",
       "music": true,
@@ -88,12 +131,20 @@
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/24/30/b2/2430b238-969a-d496-c6b5-9782a7ba8619/artwork.jpg/1200x1200bb.jpg",
       "publishedAt": "2025-12-31",
       "storeTitle": "Happy 2026",
-      "coverLines": ["Happy", "2026"]
+      "spotifyUrl": "https://open.spotify.com/track/6jxHbdCvHKwkDGOeoFiMPF",
+      "amazonUrl": "https://music.amazon.com/albums/B0GDLTG4H7",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverLines": [
+        "Happy",
+        "2026"
+      ]
     },
     {
       "slug": "merry-christmas",
       "title": "Merry Christmas",
-      "videoIds": ["dGSu78_nL3k"],
+      "videoIds": [
+        "dGSu78_nL3k"
+      ],
       "category": "Tamil Music",
       "language": "Tamil",
       "music": true,
@@ -101,12 +152,21 @@
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/23/b0/a5/23b0a5cc-061f-c11f-60ff-ebdd1d2efe90/artwork.jpg/1200x1200bb.jpg",
       "publishedAt": "2025-12-23",
       "storeTitle": "Merry Christmas",
-      "coverLines": ["Merry", "Christmas"]
+      "spotifyUrl": "https://open.spotify.com/track/0LD2nmlcm1WVYckzrwtqjq",
+      "amazonUrl": "https://music.amazon.com/albums/B0GCDN4Q4K",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverLines": [
+        "Merry",
+        "Christmas"
+      ]
     },
     {
       "slug": "ai-kaatru",
       "title": "AI காற்று – Confusing Vibes",
-      "videoIds": ["TdUdQj2GLNI", "XVX65lEEgwk"],
+      "videoIds": [
+        "TdUdQj2GLNI",
+        "XVX65lEEgwk"
+      ],
       "category": "Tamil Music",
       "language": "Tamil",
       "music": true,
@@ -114,12 +174,19 @@
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/50/7d/96/507d9684-1ad0-c8b3-b768-66b268d30448/artwork.jpg/1200x1200bb.jpg",
       "publishedAt": "2025-09-19",
       "storeTitle": "AI காற்று – Confusing Vibes",
-      "coverLines": ["AI காற்று", "Confusing Vibes"]
+      "spotifyUrl": "https://open.spotify.com/track/2j3NtA9B0VG9ULS6u3Z7tK",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverLines": [
+        "AI காற்று",
+        "Confusing Vibes"
+      ]
     },
     {
       "slug": "onnu-mannu",
       "title": "ஒன்னு மண்ணு (Onnu Mannu)",
-      "videoIds": ["TQay0QctagA"],
+      "videoIds": [
+        "TQay0QctagA"
+      ],
       "category": "Tamil Music",
       "language": "Tamil",
       "music": true,
@@ -127,12 +194,19 @@
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/da/96/87/da96879c-1529-664e-7474-f459e0fbc548/artwork.jpg/1200x1200bb.jpg",
       "publishedAt": "2025-09-26",
       "storeTitle": "ஒன்னு மண்ணு (Onnu mannu)",
-      "coverLines": ["ஒன்னு மண்ணு", "Onnu Mannu"]
+      "spotifyUrl": "https://open.spotify.com/track/3qkgHVlTh7aBh2H4Wb1Zj6",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverLines": [
+        "ஒன்னு மண்ணு",
+        "Onnu Mannu"
+      ]
     },
     {
       "slug": "azhagu-oh-beauty",
       "title": "அழகே! (Oh Beauty)",
-      "videoIds": ["j6hEJQA1QGQ"],
+      "videoIds": [
+        "j6hEJQA1QGQ"
+      ],
       "category": "Tamil Music",
       "language": "Tamil",
       "music": true,
@@ -140,14 +214,23 @@
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/1a/ab/ee/1aabeed4-2b6f-5ef0-b600-f35e7e6cd17f/artwork.jpg/1200x1200bb.jpg",
       "publishedAt": "2025-09-30",
       "storeTitle": "அழகே! (Oh beauty)",
-      "spotifyUrl": "https://open.spotify.com/album/1ooanTy8rNeG4D39i38nBN",
-      "coverLines": ["அழகே!", "Oh Beauty"],
-      "youtubeExtra": ["https://www.youtube.com/watch?v=WCfBYqLUiDw"]
+      "spotifyUrl": "https://open.spotify.com/track/5CN6jwRruDQZQaHd5XRp49",
+      "amazonUrl": "https://music.amazon.com/albums/B0FT9WXYN5",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverLines": [
+        "அழகே!",
+        "Oh Beauty"
+      ],
+      "youtubeExtra": [
+        "https://www.youtube.com/watch?v=WCfBYqLUiDw"
+      ]
     },
     {
       "slug": "maanatpu",
       "title": "மாநட்பு (Maanatpu)",
-      "videoIds": ["ov0ma2zRzew"],
+      "videoIds": [
+        "ov0ma2zRzew"
+      ],
       "category": "Tamil Music",
       "language": "Tamil",
       "music": true,
@@ -155,12 +238,19 @@
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/da/96/87/da96879c-1529-664e-7474-f459e0fbc548/artwork.jpg/1200x1200bb.jpg",
       "publishedAt": "2025-09-26",
       "storeTitle": "மாநட்பு (maanatpu)",
-      "coverLines": ["மாநட்பு", "Maanatpu"]
+      "spotifyUrl": "https://open.spotify.com/track/2uvTIeTF8FI0qlQFvOad5n",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverLines": [
+        "மாநட்பு",
+        "Maanatpu"
+      ]
     },
     {
       "slug": "mass-machaan",
       "title": "மாஸ் மச்சான் (Mass Machaan)",
-      "videoIds": ["JUu-xRcNzbc"],
+      "videoIds": [
+        "JUu-xRcNzbc"
+      ],
       "category": "Tamil Music",
       "language": "Tamil",
       "music": true,
@@ -168,12 +258,20 @@
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7f/72/26/7f72268b-6a24-404e-18c6-83498940db0a/artwork.jpg/1200x1200bb.jpg",
       "publishedAt": "2025-12-12",
       "storeTitle": "மாஸ் மச்சான் (Mass Machaan) - The Kind Superstar",
-      "coverLines": ["மாஸ் மச்சான்", "Mass Machaan"]
+      "spotifyUrl": "https://open.spotify.com/track/1LiE01K9uzenSAM9GBlByf",
+      "amazonUrl": "https://music.amazon.com/albums/B0G6SX85ZJ",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverLines": [
+        "மாஸ் மச்சான்",
+        "Mass Machaan"
+      ]
     },
     {
       "slug": "paattan-bharathi",
       "title": "பாட்டன் (Paattan) — Bharathi",
-      "videoIds": ["m6e1VblPJlc"],
+      "videoIds": [
+        "m6e1VblPJlc"
+      ],
       "category": "Tamil Music",
       "language": "Tamil",
       "music": true,
@@ -181,13 +279,21 @@
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/72/fe/be/72febeb5-f648-a3f1-5468-704f1e9919ef/artwork.jpg/1200x1200bb.jpg",
       "publishedAt": "2025-12-10",
       "storeTitle": "பாட்டன் (paattan)",
+      "spotifyUrl": "https://open.spotify.com/track/2yBpWl6yWLYgy4Fz0mkGAK",
+      "amazonUrl": "https://music.amazon.com/albums/B0G64KQBBQ",
       "description": "A Tamil music release presented on YouTube as “Bharathi,” matched to the distributed track “பாட்டன் (Paattan).”",
-      "coverLines": ["பாட்டன்", "Bharathi"]
+      "coverLines": [
+        "பாட்டன்",
+        "Bharathi"
+      ]
     },
     {
       "slug": "padayalukku-kadavulukku",
       "title": "படையலுக்கு கடவுளுக்கு",
-      "videoIds": ["7FfnCC1Uebo", "XCf47ctUtIg"],
+      "videoIds": [
+        "7FfnCC1Uebo",
+        "XCf47ctUtIg"
+      ],
       "category": "Tamil Music",
       "language": "Tamil",
       "music": true,
@@ -195,12 +301,20 @@
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/50/71/43/50714340-c4f9-c5e5-0aa2-e8df1f1c896a/artwork.jpg/1200x1200bb.jpg",
       "publishedAt": "2025-12-05",
       "storeTitle": "படையலுக்கு கடவுளுக்கு",
-      "coverLines": ["படையலுக்கு", "கடவுளுக்கு"]
+      "spotifyUrl": "https://open.spotify.com/track/0Dm2jLmK7GB8dtWQuxcRXN",
+      "amazonUrl": "https://music.amazon.com/albums/B0G5FL7HXY?trackAsin=B0G5F92ZWD",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverLines": [
+        "படையலுக்கு",
+        "கடவுளுக்கு"
+      ]
     },
     {
       "slug": "kaadhal-kaadhal",
       "title": "காதல் காதல்",
-      "videoIds": ["ipyv5MKbThk"],
+      "videoIds": [
+        "ipyv5MKbThk"
+      ],
       "category": "Tamil Music",
       "language": "Tamil",
       "music": true,
@@ -208,22 +322,35 @@
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1e/52/66/1e5266ec-9f6e-c598-1dea-a7b9c0a7af07/artwork.jpg/1200x1200bb.jpg",
       "publishedAt": "2025-09-11",
       "storeTitle": "காதல் காதல்",
-      "coverLines": ["காதல்", "காதல்"]
+      "spotifyUrl": "https://open.spotify.com/track/4w0ehJD638urX3JN4A71oA",
+      "amazonUrl": "https://music.amazon.com/albums/B0FQRBR9L1",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverLines": [
+        "காதல்",
+        "காதல்"
+      ]
     },
     {
       "slug": "teacher-song",
       "title": "டீச்சர் போல உண்டா ஆகப்போறேன் டீச்சர்",
-      "videoIds": ["4XzJ307Kc50"],
+      "videoIds": [
+        "4XzJ307Kc50"
+      ],
       "category": "Tamil Music",
       "language": "Tamil",
       "music": true,
       "description": "A Tamil teacher-themed music video. A matching distributed store release was not verified yet.",
-      "coverLines": ["டீச்சர்", "பாடல்"]
+      "coverLines": [
+        "டீச்சர்",
+        "பாடல்"
+      ]
     },
     {
       "slug": "tasty-prachanai",
       "title": "tasty பிரச்சினை",
-      "videoIds": ["KpWhCsCqSIQ"],
+      "videoIds": [
+        "KpWhCsCqSIQ"
+      ],
       "category": "Tamil Music",
       "language": "Tamil",
       "music": true,
@@ -231,12 +358,20 @@
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/01/df/1b/01df1b47-cf07-7309-567c-2b1368f5045c/artwork.jpg/1200x1200bb.jpg",
       "publishedAt": "2025-05-28",
       "storeTitle": "tasty பிரச்சினை",
-      "coverLines": ["tasty", "பிரச்சினை"]
+      "spotifyUrl": "https://open.spotify.com/track/1fEVM2CAuzuWvYl69GO6bC",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverLines": [
+        "tasty",
+        "பிரச்சினை"
+      ]
     },
     {
       "slug": "paarvaiyai-maathu",
       "title": "பார்வையை மாத்து (Change the Gaze)",
-      "videoIds": ["U3MDay_XIPg", "0vlu54xgi18"],
+      "videoIds": [
+        "U3MDay_XIPg",
+        "0vlu54xgi18"
+      ],
       "category": "Tamil Music",
       "language": "Tamil",
       "music": true,
@@ -244,21 +379,33 @@
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/01/df/1b/01df1b47-cf07-7309-567c-2b1368f5045c/artwork.jpg/1200x1200bb.jpg",
       "publishedAt": "2025-05-28",
       "storeTitle": "பார்வையை மாத்து (Male)",
-      "coverLines": ["பார்வையை", "மாத்து"]
+      "spotifyUrl": "https://open.spotify.com/track/1bfSFq7sMM6hZTw8KidYeb",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverLines": [
+        "பார்வையை",
+        "மாத்து"
+      ]
     },
     {
       "slug": "video-from-raja-sir",
       "title": "Video from Raja Sir",
-      "videoIds": ["DcVe76X3toE"],
+      "videoIds": [
+        "DcVe76X3toE"
+      ],
       "category": "Video",
       "language": "Tamil",
       "description": "A short video shared as “Video from Raja Sir.”",
-      "coverLines": ["Video from", "Raja Sir"]
+      "coverLines": [
+        "Video from",
+        "Raja Sir"
+      ]
     },
     {
       "slug": "naalum-ketpavai-arulidume",
       "title": "நாளும் கேட்பவை அருளிடுமே",
-      "videoIds": ["YSE0TKtFo60"],
+      "videoIds": [
+        "YSE0TKtFo60"
+      ],
       "category": "Tamil Music",
       "language": "Tamil",
       "music": true,
@@ -266,12 +413,20 @@
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/97/72/07/97720753-34c6-3e06-53ae-b08d2a8fd622/artwork.jpg/1200x1200bb.jpg",
       "publishedAt": "2025-05-11",
       "storeTitle": "நாளும் கேட்பவை  அருளிடுமே",
-      "coverLines": ["நாளும் கேட்பவை", "அருளிடுமே"]
+      "spotifyUrl": "https://open.spotify.com/track/5gJ5R2suhdMSFnKpI4BHM5",
+      "amazonUrl": "https://music.amazon.com/albums/B0F88LTKHJ?trackAsin=B0F88LVRM9",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverLines": [
+        "நாளும் கேட்பவை",
+        "அருளிடுமே"
+      ]
     },
     {
       "slug": "needoozhi-vazhgave",
       "title": "நீடூழி வாழ்கவே",
-      "videoIds": ["zxgMkjqnpr8"],
+      "videoIds": [
+        "zxgMkjqnpr8"
+      ],
       "category": "Tamil Music",
       "language": "Tamil",
       "music": true,
@@ -279,13 +434,19 @@
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b9/e4/27/b9e427f5-4973-3039-ff60-700a01432afb/artwork.jpg/1200x1200bb.jpg",
       "publishedAt": "2025-04-20",
       "storeTitle": "நீ நீடூழி வாழவே",
+      "spotifyUrl": "https://open.spotify.com/track/606FrCH9GTm5iGcmjLrH1c",
       "description": "A Tamil wishes video matched to the distributed track “நீ நீடூழி வாழவே.”",
-      "coverLines": ["நீடூழி", "வாழ்கவே"]
+      "coverLines": [
+        "நீடூழி",
+        "வாழ்கவே"
+      ]
     },
     {
       "slug": "kanitharu-sirumaram",
       "title": "கனிதரு சிறுமரம்",
-      "videoIds": ["zjJmSyHkO9c"],
+      "videoIds": [
+        "zjJmSyHkO9c"
+      ],
       "category": "Tamil Music",
       "language": "Tamil",
       "music": true,
@@ -293,7 +454,13 @@
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/09/fb/c1/09fbc147-5d7b-0ecb-2020-89709acfcdaa/artwork.jpg/1200x1200bb.jpg",
       "publishedAt": "2025-04-20",
       "storeTitle": "கனிதரு சிறுமரம்",
-      "coverLines": ["கனிதரு", "சிறுமரம்"]
+      "spotifyUrl": "https://open.spotify.com/track/45MrTRKwqBKTJm2IAWF2yz",
+      "amazonUrl": "https://music.amazon.com/albums/B0F5PTVCYQ",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverLines": [
+        "கனிதரு",
+        "சிறுமரம்"
+      ]
     }
   ]
 }
