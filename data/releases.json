@@ -1,7 +1,7 @@
 {
   "site": {
     "name": "Share Capsule",
-    "tagline": "Audio worth passing on"
+    "tagline": "Audio, video and ideas worth passing on"
   },
   "releases": [
     {
@@ -17,7 +17,10 @@
       "coverImage": "",
       "coverBackground": "radial-gradient(circle at 22% 22%, rgba(255,255,255,.82) 0 4%, transparent 5%), radial-gradient(circle at 76% 29%, rgba(255,255,255,.35) 0 6%, transparent 7%), linear-gradient(145deg,#d99c5e,#a35b45 43%,#56364f)",
       "coverEyebrow": "New release",
-      "coverLines": ["எண்ணுங்கள்", "எண்ணங்கள்"],
+      "coverLines": [
+        "எண்ணுங்கள்",
+        "எண்ணங்கள்"
+      ],
       "primaryPlayer": {
         "provider": "spotify",
         "url": "https://open.spotify.com/track/4CFJxkzHtFYCFvPnvp1JeD?si=564a243b058a48eb"
@@ -26,16 +29,48 @@
       "demoTone": false,
       "demoDuration": 12,
       "platforms": [
-        {"label": "Spotify", "icon": "●", "url": "https://open.spotify.com/track/4CFJxkzHtFYCFvPnvp1JeD?si=564a243b058a48eb"},
-        {"label": "YouTube", "icon": "▶", "url": "https://youtu.be/SRA-PETLKLM?si=H6Eyfs0nS2GpRBXP"},
-        {"label": "Apple Music", "icon": "♫", "url": "https://music.apple.com/us/album/%E0%AE%8E%E0%AE%A3-%E0%AE%A3-%E0%AE%99-%E0%AE%95%E0%AE%B3-%E0%AE%8E%E0%AE%A3-%E0%AE%A3%E0%AE%99-%E0%AE%95%E0%AE%B3/1876601889?i=1876601890"},
-        {"label": "Amazon Music", "icon": "a", "url": "https://amazon.com/music/player/albums/B0GMQB5KCN?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_L2aK6X6xOvEujylldncVc4PF6"}
+        {
+          "label": "Spotify",
+          "icon": "●",
+          "url": "https://open.spotify.com/track/4CFJxkzHtFYCFvPnvp1JeD?si=564a243b058a48eb"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://youtu.be/SRA-PETLKLM?si=H6Eyfs0nS2GpRBXP"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/%E0%AE%8E%E0%AE%A3-%E0%AE%A3-%E0%AE%99-%E0%AE%95%E0%AE%B3-%E0%AE%8E%E0%AE%A3-%E0%AE%A3%E0%AE%99-%E0%AE%95%E0%AE%B3/1876601889?i=1876601890"
+        },
+        {
+          "label": "Amazon Music",
+          "icon": "a",
+          "url": "https://amazon.com/music/player/albums/B0GMQB5KCN?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_L2aK6X6xOvEujylldncVc4PF6"
+        }
       ],
       "shareMessages": {
-        "friend": {"label": "Close friend", "icon": "💛", "text": "Thought you might enjoy this 🎧"},
-        "family": {"label": "Family", "icon": "👨‍👩‍👧", "text": "Sharing this with the family — give it a listen ❤️"},
-        "music": {"label": "Music lover", "icon": "🎵", "text": "Found a new Tamil track. Curious what you think 🎵"},
-        "special": {"label": "Someone special", "icon": "✨", "text": "This song made me think of you ❤️ Listen when you get a minute 🎧"}
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this with the family — give it a listen ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a new Tamil track. Curious what you think 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This song made me think of you ❤️ Listen when you get a minute 🎧"
+        }
       }
     },
     {
@@ -49,7 +84,9 @@
       "coverImage": "",
       "coverBackground": "linear-gradient(145deg,#7b4397,#dc2430)",
       "coverEyebrow": "Tamil release",
-      "coverLines": ["வாழ்த்துகிறோம்"],
+      "coverLines": [
+        "வாழ்த்துகிறோம்"
+      ],
       "primaryPlayer": {
         "provider": "spotify",
         "url": "https://open.spotify.com/album/18EMjJMk9sWpNuflwKlvMD"
@@ -57,15 +94,43 @@
       "previewUrl": "",
       "demoTone": false,
       "platforms": [
-        {"label": "Spotify", "icon": "●", "url": "https://open.spotify.com/album/18EMjJMk9sWpNuflwKlvMD"},
-        {"label": "Apple Music", "icon": "♫", "url": "https://music.apple.com/us/album/%E0%AE%B5-%E0%AE%B4-%E0%AE%A4-%E0%AE%A4-%E0%AE%95-%E0%AE%B1-%E0%AE%AE-single/6777044121?at=1001lry3&ct=dashboard&uo=4"},
-        {"label": "YouTube", "icon": "▶", "url": "https://www.youtube.com/watch?v=H1iMEbQKgnQ&list=OLAK5uy_lZ7X9hxJCWJ4XRWeHaGMuhbM_Cv5hqoOE"}
+        {
+          "label": "Spotify",
+          "icon": "●",
+          "url": "https://open.spotify.com/album/18EMjJMk9sWpNuflwKlvMD"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/%E0%AE%B5-%E0%AE%B4-%E0%AE%A4-%E0%AE%A4-%E0%AE%95-%E0%AE%B1-%E0%AE%AE-single/6777044121?at=1001lry3&ct=dashboard&uo=4"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=H1iMEbQKgnQ&list=OLAK5uy_lZ7X9hxJCWJ4XRWeHaGMuhbM_Cv5hqoOE"
+        }
       ],
       "shareMessages": {
-        "friend": {"label": "Close friend", "icon": "💛", "text": "Thought you might enjoy this Tamil release 🎧"},
-        "family": {"label": "Family", "icon": "👨‍👩‍👧", "text": "Sharing this Tamil song with the family ❤️"},
-        "music": {"label": "Music lover", "icon": "🎵", "text": "Found a Tamil track you may enjoy 🎵"},
-        "special": {"label": "Someone special", "icon": "✨", "text": "This made me think of you ❤️"}
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
       }
     },
     {
@@ -79,7 +144,10 @@
       "coverImage": "",
       "coverBackground": "linear-gradient(145deg,#134e5e,#71b280)",
       "coverEyebrow": "Tamil release",
-      "coverLines": ["Sick", "ஆகிக் கொண்டேன்"],
+      "coverLines": [
+        "Sick",
+        "ஆகிக் கொண்டேன்"
+      ],
       "primaryPlayer": {
         "provider": "spotify",
         "url": "https://open.spotify.com/album/50UNnLcAMBwCwZ4TkdTjy3?si=tTO5nzb-Tk-Vs9Dk07LrZA"
@@ -87,15 +155,43 @@
       "previewUrl": "",
       "demoTone": false,
       "platforms": [
-        {"label": "Spotify", "icon": "●", "url": "https://open.spotify.com/album/50UNnLcAMBwCwZ4TkdTjy3?si=tTO5nzb-Tk-Vs9Dk07LrZA"},
-        {"label": "Apple Music", "icon": "♫", "url": "https://music.apple.com/us/album/sick-%E0%AE%95-%E0%AE%95-%E0%AE%95-%E0%AE%A3-%E0%AE%9F-%E0%AE%A9/1896125540?i=6765916536"},
-        {"label": "YouTube Music", "icon": "▶", "url": "https://music.youtube.com/watch?v=IHDuZ6duQnk"}
+        {
+          "label": "Spotify",
+          "icon": "●",
+          "url": "https://open.spotify.com/album/50UNnLcAMBwCwZ4TkdTjy3?si=tTO5nzb-Tk-Vs9Dk07LrZA"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/sick-%E0%AE%95-%E0%AE%95-%E0%AE%95-%E0%AE%A3-%E0%AE%9F-%E0%AE%A9/1896125540?i=6765916536"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "▶",
+          "url": "https://music.youtube.com/watch?v=IHDuZ6duQnk"
+        }
       ],
       "shareMessages": {
-        "friend": {"label": "Close friend", "icon": "💛", "text": "Thought you might enjoy this Tamil release 🎧"},
-        "family": {"label": "Family", "icon": "👨‍👩‍👧", "text": "Sharing this Tamil song with the family ❤️"},
-        "music": {"label": "Music lover", "icon": "🎵", "text": "Found a Tamil track you may enjoy 🎵"},
-        "special": {"label": "Someone special", "icon": "✨", "text": "This made me think of you ❤️"}
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
       }
     },
     {
@@ -109,7 +205,10 @@
       "coverImage": "",
       "coverBackground": "linear-gradient(145deg,#355c7d,#6c5b7b,#c06c84)",
       "coverEyebrow": "Tamil release",
-      "coverLines": ["இதுவும்", "கடந்து போகும்"],
+      "coverLines": [
+        "இதுவும்",
+        "கடந்து போகும்"
+      ],
       "primaryPlayer": {
         "provider": "spotify",
         "url": "https://open.spotify.com/album/1YbFwBJvYUfkOz0gzZMRt6?si=sdDcwu5iTW2iHYm8BspjDA"
@@ -117,106 +216,1725 @@
       "previewUrl": "",
       "demoTone": false,
       "platforms": [
-        {"label": "Spotify", "icon": "●", "url": "https://open.spotify.com/album/1YbFwBJvYUfkOz0gzZMRt6?si=sdDcwu5iTW2iHYm8BspjDA"},
-        {"label": "Apple Music", "icon": "♫", "url": "https://music.apple.com/us/album/%E0%AE%87%E0%AE%A4-%E0%AE%B5-%E0%AE%AE-%E0%AE%95%E0%AE%9F%E0%AE%A8-%E0%AE%A4-%E0%AE%AA-%E0%AE%95-%E0%AE%AE/1894511711?i=1894511712"},
-        {"label": "YouTube", "icon": "▶", "url": "https://www.youtube.com/watch?v=JOUWoIIPLnU"}
+        {
+          "label": "Spotify",
+          "icon": "●",
+          "url": "https://open.spotify.com/album/1YbFwBJvYUfkOz0gzZMRt6?si=sdDcwu5iTW2iHYm8BspjDA"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/%E0%AE%87%E0%AE%A4-%E0%AE%B5-%E0%AE%AE-%E0%AE%95%E0%AE%9F%E0%AE%A8-%E0%AE%A4-%E0%AE%AA-%E0%AE%95-%E0%AE%AE/1894511711?i=1894511712"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=JOUWoIIPLnU"
+        }
       ],
       "shareMessages": {
-        "friend": {"label": "Close friend", "icon": "💛", "text": "Thought you might enjoy this Tamil release 🎧"},
-        "family": {"label": "Family", "icon": "👨‍👩‍👧", "text": "Sharing this Tamil song with the family ❤️"},
-        "music": {"label": "Music lover", "icon": "🎵", "text": "Found a Tamil track you may enjoy 🎵"},
-        "special": {"label": "Someone special", "icon": "✨", "text": "This made me think of you ❤️"}
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
       }
     },
     {
       "slug": "suththi-paakka",
       "title": "சுத்திப்பாக்க",
       "artist": "தமிழாலே",
-      "type": "Single",
+      "type": "Music release",
       "category": "Tamil Music",
       "language": "Tamil",
       "description": "A Tamil music release by தமிழாலே.",
-      "coverImage": "",
-      "coverBackground": "linear-gradient(145deg,#42275a,#734b6d)",
+      "coverImage": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ef/44/12/ef441252-05c1-075b-3e02-a78a5a2afc3f/artwork.jpg/1200x1200bb.jpg",
+      "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
       "coverEyebrow": "Tamil release",
-      "coverLines": ["சுத்திப்பாக்க"],
+      "coverLines": [
+        "சுத்திப்பாக்க"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify",
+          "icon": "●",
+          "url": "https://open.spotify.com/album/10xxmbxjknmpKhrfBMJzmI"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/%E0%AE%9A-%E0%AE%A4-%E0%AE%A4-%E0%AE%AA-%E0%AE%AA-%E0%AE%95-%E0%AE%95-suththi-pakka/1827795268?i=1827795269&uo=4"
+        },
+        {
+          "label": "Amazon Music search",
+          "icon": "a",
+          "url": "https://music.amazon.com/search/%E0%AE%9A%E0%AF%81%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AE%BF%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AE%BE%E0%AE%95%E0%AF%8D%E0%AE%95%28Suththi%20pakka%29%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=1j6UfRN9Ov8"
+        },
+        {
+          "label": "YouTube 2",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=8aeXKFW5oas"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=1j6UfRN9Ov8"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
+      },
       "primaryPlayer": {
         "provider": "spotify",
         "url": "https://open.spotify.com/album/10xxmbxjknmpKhrfBMJzmI"
       },
-      "previewUrl": "",
-      "demoTone": false,
-      "platforms": [
-        {"label": "Spotify", "icon": "●", "url": "https://open.spotify.com/album/10xxmbxjknmpKhrfBMJzmI"},
-        {"label": "Apple Music", "icon": "♫", "url": "https://music.apple.com/us/album/%E0%AE%9A-%E0%AE%A4-%E0%AE%A4-%E0%AE%AA-%E0%AE%AA-%E0%AE%95-%E0%AE%95-single/1827795268"},
-        {"label": "YouTube Music", "icon": "▶", "url": "https://music.youtube.com/podcast/8aeXKFW5oas"}
-      ],
-      "shareMessages": {
-        "friend": {"label": "Close friend", "icon": "💛", "text": "Thought you might enjoy this Tamil release 🎧"},
-        "family": {"label": "Family", "icon": "👨‍👩‍👧", "text": "Sharing this Tamil song with the family ❤️"},
-        "music": {"label": "Music lover", "icon": "🎵", "text": "Found a Tamil track you may enjoy 🎵"},
-        "special": {"label": "Someone special", "icon": "✨", "text": "This made me think of you ❤️"}
-      }
+      "publishedAt": "2025-07-19"
     },
     {
       "slug": "azhagu-oh-beauty",
-      "title": "அழகு (Oh Beauty)",
+      "title": "அழகே! (Oh Beauty)",
       "artist": "தமிழாலே",
-      "type": "Single",
+      "type": "Music release",
       "category": "Tamil Music",
       "language": "Tamil",
       "description": "A Tamil music release by தமிழாலே.",
-      "coverImage": "",
-      "coverBackground": "linear-gradient(145deg,#ee9ca7,#ffdde1)",
+      "coverImage": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/1a/ab/ee/1aabeed4-2b6f-5ef0-b600-f35e7e6cd17f/artwork.jpg/1200x1200bb.jpg",
+      "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
       "coverEyebrow": "Tamil release",
-      "coverLines": ["அழகு", "Oh Beauty"],
+      "coverLines": [
+        "அழகே!",
+        "Oh Beauty"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify",
+          "icon": "●",
+          "url": "https://open.spotify.com/album/1ooanTy8rNeG4D39i38nBN"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/%E0%AE%85%E0%AE%B4%E0%AE%95-oh-beauty/1843641288?i=1843641289&uo=4"
+        },
+        {
+          "label": "Amazon Music search",
+          "icon": "a",
+          "url": "https://music.amazon.com/search/%E0%AE%85%E0%AE%B4%E0%AE%95%E0%AF%87%21%20%28Oh%20beauty%29%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=j6hEJQA1QGQ"
+        },
+        {
+          "label": "YouTube official",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=WCfBYqLUiDw"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=j6hEJQA1QGQ"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
+      },
       "primaryPlayer": {
         "provider": "spotify",
         "url": "https://open.spotify.com/album/1ooanTy8rNeG4D39i38nBN"
       },
-      "previewUrl": "",
-      "demoTone": false,
-      "platforms": [
-        {"label": "Spotify", "icon": "●", "url": "https://open.spotify.com/album/1ooanTy8rNeG4D39i38nBN"},
-        {"label": "Apple Music", "icon": "♫", "url": "https://music.apple.com/us/album/%E0%AE%85%E0%AE%B4%E0%AE%95-oh-beauty-single/1843641288"},
-        {"label": "YouTube", "icon": "▶", "url": "https://www.youtube.com/watch?v=WCfBYqLUiDw"}
-      ],
-      "shareMessages": {
-        "friend": {"label": "Close friend", "icon": "💛", "text": "Thought you might enjoy this Tamil release 🎧"},
-        "family": {"label": "Family", "icon": "👨‍👩‍👧", "text": "Sharing this Tamil song with the family ❤️"},
-        "music": {"label": "Music lover", "icon": "🎵", "text": "Found a Tamil track you may enjoy 🎵"},
-        "special": {"label": "Someone special", "icon": "✨", "text": "This made me think of you ❤️"}
-      }
+      "publishedAt": "2025-09-30"
     },
     {
       "slug": "youtube-os-cbzr0tza",
-      "title": "தமிழாலே Video",
+      "title": "Mastering Personal Finance",
+      "artist": "தமிழாலே",
+      "type": "Video release",
+      "category": "Personal Finance",
+      "language": "English",
+      "description": "A practical introduction to personal finance, budgeting and long-term financial growth.",
+      "coverImage": "https://img.youtube.com/vi/os_Cbzr0tZA/hqdefault.jpg",
+      "coverBackground": "linear-gradient(145deg,#141e30,#243b55)",
+      "coverEyebrow": "Personal Finance",
+      "coverLines": [
+        "Mastering",
+        "Personal Finance"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=os_Cbzr0tZA"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=os_Cbzr0tZA"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this video 🎥"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this video with the family ❤️"
+        },
+        "curious": {
+          "label": "Curious learner",
+          "icon": "💡",
+          "text": "This looked useful and worth a quick watch."
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This video made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=os_Cbzr0tZA"
+      },
+      "publishedAt": "2026-07-11"
+    },
+    {
+      "slug": "trading-basics",
+      "title": "Trading Basics",
+      "artist": "தமிழாலே",
+      "type": "Video release",
+      "category": "Personal Finance",
+      "language": "English",
+      "description": "A beginner-friendly video covering trading basics.",
+      "coverImage": "https://img.youtube.com/vi/BGWiSOL_CE4/hqdefault.jpg",
+      "coverBackground": "linear-gradient(145deg,#141e30,#243b55)",
+      "coverEyebrow": "Personal Finance",
+      "coverLines": [
+        "Trading",
+        "Basics"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=BGWiSOL_CE4"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=BGWiSOL_CE4"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this video 🎥"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this video with the family ❤️"
+        },
+        "curious": {
+          "label": "Curious learner",
+          "icon": "💡",
+          "text": "This looked useful and worth a quick watch."
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This video made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=BGWiSOL_CE4"
+      }
+    },
+    {
+      "slug": "magic-write-ai-canva",
+      "title": "Magic Write AI Canva",
+      "artist": "தமிழாலே",
+      "type": "Video release",
+      "category": "AI & Creativity",
+      "language": "English",
+      "description": "A quick guide to using Magic Write AI in Canva.",
+      "coverImage": "https://img.youtube.com/vi/a9noakJypEE/hqdefault.jpg",
+      "coverBackground": "linear-gradient(145deg,#141e30,#243b55)",
+      "coverEyebrow": "AI & Creativity",
+      "coverLines": [
+        "Magic Write",
+        "AI + Canva"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=a9noakJypEE"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=a9noakJypEE"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this video 🎥"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this video with the family ❤️"
+        },
+        "curious": {
+          "label": "Curious learner",
+          "icon": "💡",
+          "text": "This looked useful and worth a quick watch."
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This video made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=a9noakJypEE"
+      }
+    },
+    {
+      "slug": "magic-write-ai-canva-tamil",
+      "title": "Magic Write AI Canva — Tamil",
+      "artist": "தமிழாலே",
+      "type": "Video release",
+      "category": "AI & Creativity",
+      "language": "Tamil",
+      "description": "A Tamil-language quick guide to using Magic Write AI in Canva.",
+      "coverImage": "https://img.youtube.com/vi/37CIVbS5tJI/hqdefault.jpg",
+      "coverBackground": "linear-gradient(145deg,#141e30,#243b55)",
+      "coverEyebrow": "AI & Creativity",
+      "coverLines": [
+        "Magic Write",
+        "தமிழ்"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=37CIVbS5tJI"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=37CIVbS5tJI"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this video 🎥"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this video with the family ❤️"
+        },
+        "curious": {
+          "label": "Curious learner",
+          "icon": "💡",
+          "text": "This looked useful and worth a quick watch."
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This video made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=37CIVbS5tJI"
+      }
+    },
+    {
+      "slug": "pongal-wishes",
+      "title": "Pongal Wishes",
+      "artist": "தமிழாலே",
+      "type": "Music release",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil Pongal wishes music video.",
+      "coverImage": "https://img.youtube.com/vi/i72WhnIbTWg/hqdefault.jpg",
+      "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": [
+        "Pongal",
+        "Wishes"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify search",
+          "icon": "●",
+          "url": "https://open.spotify.com/search/Pongal%20Wishes%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "Apple Music search",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/search?term=Pongal%20Wishes%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "Amazon Music search",
+          "icon": "a",
+          "url": "https://music.amazon.com/search/Pongal%20Wishes%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=i72WhnIbTWg"
+        },
+        {
+          "label": "YouTube 2",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=1tnjNCVBlPY"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=i72WhnIbTWg"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=i72WhnIbTWg"
+      }
+    },
+    {
+      "slug": "crabby-noise",
+      "title": "காலிப்பானை நண்டு சத்தம் (Crabby Noise)",
+      "artist": "தமிழாலே",
+      "type": "Music release",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverImage": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f0/3e/1c/f03e1cd3-7151-dac9-cdb7-d37123b738ff/artwork.jpg/1200x1200bb.jpg",
+      "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": [
+        "காலிப்பானை",
+        "நண்டு சத்தம்"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify search",
+          "icon": "●",
+          "url": "https://open.spotify.com/search/%E0%AE%95%E0%AE%BE%E0%AE%B2%E0%AE%BF%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AE%BE%E0%AE%A9%E0%AF%88%20%E0%AE%A8%E0%AE%A3%E0%AF%8D%E0%AE%9F%E0%AF%81%20%E0%AE%9A%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AE%AE%E0%AF%8D%20%28Crabby%20Noise%29%20Kaalippaanai%20nandu%20saththam%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/%E0%AE%95-%E0%AE%B2-%E0%AE%AA-%E0%AE%AA-%E0%AE%A9-%E0%AE%A8%E0%AE%A3-%E0%AE%9F-%E0%AE%9A%E0%AE%A4-%E0%AE%A4%E0%AE%AE-crabby-noise-kaalippaanai-nandu-saththam/1854039774?i=1854039775&uo=4"
+        },
+        {
+          "label": "Amazon Music search",
+          "icon": "a",
+          "url": "https://music.amazon.com/search/%E0%AE%95%E0%AE%BE%E0%AE%B2%E0%AE%BF%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AE%BE%E0%AE%A9%E0%AF%88%20%E0%AE%A8%E0%AE%A3%E0%AF%8D%E0%AE%9F%E0%AF%81%20%E0%AE%9A%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AE%AE%E0%AF%8D%20%28Crabby%20Noise%29%20Kaalippaanai%20nandu%20saththam%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=VyGepvXkvyk"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=VyGepvXkvyk"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=VyGepvXkvyk"
+      },
+      "publishedAt": "2025-11-13"
+    },
+    {
+      "slug": "happy-2026",
+      "title": "Happy 2026",
+      "artist": "தமிழாலே",
+      "type": "Music release",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverImage": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/24/30/b2/2430b238-969a-d496-c6b5-9782a7ba8619/artwork.jpg/1200x1200bb.jpg",
+      "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": [
+        "Happy",
+        "2026"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify search",
+          "icon": "●",
+          "url": "https://open.spotify.com/search/Happy%202026%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/happy-2026/1865782530?i=1865782531&uo=4"
+        },
+        {
+          "label": "Amazon Music search",
+          "icon": "a",
+          "url": "https://music.amazon.com/search/Happy%202026%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=UBYs9PPLcu8"
+        },
+        {
+          "label": "YouTube 2",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=R2bDWm7lNbY"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=UBYs9PPLcu8"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=UBYs9PPLcu8"
+      },
+      "publishedAt": "2025-12-31"
+    },
+    {
+      "slug": "merry-christmas",
+      "title": "Merry Christmas",
+      "artist": "தமிழாலே",
+      "type": "Music release",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverImage": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/23/b0/a5/23b0a5cc-061f-c11f-60ff-ebdd1d2efe90/artwork.jpg/1200x1200bb.jpg",
+      "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": [
+        "Merry",
+        "Christmas"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify search",
+          "icon": "●",
+          "url": "https://open.spotify.com/search/Merry%20Christmas%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/merry-christmas/1864094158?i=1864094159&uo=4"
+        },
+        {
+          "label": "Amazon Music search",
+          "icon": "a",
+          "url": "https://music.amazon.com/search/Merry%20Christmas%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=dGSu78_nL3k"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=dGSu78_nL3k"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=dGSu78_nL3k"
+      },
+      "publishedAt": "2025-12-23"
+    },
+    {
+      "slug": "ai-kaatru",
+      "title": "AI காற்று – Confusing Vibes",
+      "artist": "தமிழாலே",
+      "type": "Music release",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverImage": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/50/7d/96/507d9684-1ad0-c8b3-b768-66b268d30448/artwork.jpg/1200x1200bb.jpg",
+      "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": [
+        "AI காற்று",
+        "Confusing Vibes"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify search",
+          "icon": "●",
+          "url": "https://open.spotify.com/search/AI%20%E0%AE%95%E0%AE%BE%E0%AE%B1%E0%AF%8D%E0%AE%B1%E0%AF%81%20%E2%80%93%20Confusing%20Vibes%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/ai-%E0%AE%95-%E0%AE%B1-%E0%AE%B1-confusing-vibes/1841066279?i=1841066284&uo=4"
+        },
+        {
+          "label": "Amazon Music search",
+          "icon": "a",
+          "url": "https://music.amazon.com/search/AI%20%E0%AE%95%E0%AE%BE%E0%AE%B1%E0%AF%8D%E0%AE%B1%E0%AF%81%20%E2%80%93%20Confusing%20Vibes%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=TdUdQj2GLNI"
+        },
+        {
+          "label": "YouTube 2",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=XVX65lEEgwk"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=TdUdQj2GLNI"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=TdUdQj2GLNI"
+      },
+      "publishedAt": "2025-09-19"
+    },
+    {
+      "slug": "onnu-mannu",
+      "title": "ஒன்னு மண்ணு (Onnu Mannu)",
+      "artist": "தமிழாலே",
+      "type": "Music release",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverImage": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/da/96/87/da96879c-1529-664e-7474-f459e0fbc548/artwork.jpg/1200x1200bb.jpg",
+      "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": [
+        "ஒன்னு மண்ணு",
+        "Onnu Mannu"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify search",
+          "icon": "●",
+          "url": "https://open.spotify.com/search/%E0%AE%92%E0%AE%A9%E0%AF%8D%E0%AE%A9%E0%AF%81%20%E0%AE%AE%E0%AE%A3%E0%AF%8D%E0%AE%A3%E0%AF%81%20%28Onnu%20mannu%29%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/%E0%AE%92%E0%AE%A9-%E0%AE%A9-%E0%AE%AE%E0%AE%A3-%E0%AE%A3-onnu-mannu/1842630881?i=1842630884&uo=4"
+        },
+        {
+          "label": "Amazon Music search",
+          "icon": "a",
+          "url": "https://music.amazon.com/search/%E0%AE%92%E0%AE%A9%E0%AF%8D%E0%AE%A9%E0%AF%81%20%E0%AE%AE%E0%AE%A3%E0%AF%8D%E0%AE%A3%E0%AF%81%20%28Onnu%20mannu%29%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=TQay0QctagA"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=TQay0QctagA"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=TQay0QctagA"
+      },
+      "publishedAt": "2025-09-26"
+    },
+    {
+      "slug": "maanatpu",
+      "title": "மாநட்பு (Maanatpu)",
+      "artist": "தமிழாலே",
+      "type": "Music release",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverImage": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/da/96/87/da96879c-1529-664e-7474-f459e0fbc548/artwork.jpg/1200x1200bb.jpg",
+      "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": [
+        "மாநட்பு",
+        "Maanatpu"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify search",
+          "icon": "●",
+          "url": "https://open.spotify.com/search/%E0%AE%AE%E0%AE%BE%E0%AE%A8%E0%AE%9F%E0%AF%8D%E0%AE%AA%E0%AF%81%20%28maanatpu%29%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/%E0%AE%AE-%E0%AE%A8%E0%AE%9F-%E0%AE%AA-maanatpu/1842630881?i=1842630885&uo=4"
+        },
+        {
+          "label": "Amazon Music search",
+          "icon": "a",
+          "url": "https://music.amazon.com/search/%E0%AE%AE%E0%AE%BE%E0%AE%A8%E0%AE%9F%E0%AF%8D%E0%AE%AA%E0%AF%81%20%28maanatpu%29%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=ov0ma2zRzew"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=ov0ma2zRzew"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=ov0ma2zRzew"
+      },
+      "publishedAt": "2025-09-26"
+    },
+    {
+      "slug": "mass-machaan",
+      "title": "மாஸ் மச்சான் (Mass Machaan)",
+      "artist": "தமிழாலே",
+      "type": "Music release",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverImage": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/7f/72/26/7f72268b-6a24-404e-18c6-83498940db0a/artwork.jpg/1200x1200bb.jpg",
+      "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": [
+        "மாஸ் மச்சான்",
+        "Mass Machaan"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify search",
+          "icon": "●",
+          "url": "https://open.spotify.com/search/%E0%AE%AE%E0%AE%BE%E0%AE%B8%E0%AF%8D%20%E0%AE%AE%E0%AE%9A%E0%AF%8D%E0%AE%9A%E0%AE%BE%E0%AE%A9%E0%AF%8D%20%28Mass%20Machaan%29%20-%20The%20Kind%20Superstar%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/%E0%AE%AE-%E0%AE%B8-%E0%AE%AE%E0%AE%9A-%E0%AE%9A-%E0%AE%A9-mass-machaan-the-kind-superstar/1861096910?i=1861096911&uo=4"
+        },
+        {
+          "label": "Amazon Music search",
+          "icon": "a",
+          "url": "https://music.amazon.com/search/%E0%AE%AE%E0%AE%BE%E0%AE%B8%E0%AF%8D%20%E0%AE%AE%E0%AE%9A%E0%AF%8D%E0%AE%9A%E0%AE%BE%E0%AE%A9%E0%AF%8D%20%28Mass%20Machaan%29%20-%20The%20Kind%20Superstar%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=JUu-xRcNzbc"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=JUu-xRcNzbc"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=JUu-xRcNzbc"
+      },
+      "publishedAt": "2025-12-12"
+    },
+    {
+      "slug": "paattan-bharathi",
+      "title": "பாட்டன் (Paattan) — Bharathi",
+      "artist": "தமிழாலே",
+      "type": "Music release",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil music release presented on YouTube as “Bharathi,” matched to the distributed track “பாட்டன் (Paattan).”",
+      "coverImage": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/72/fe/be/72febeb5-f648-a3f1-5468-704f1e9919ef/artwork.jpg/1200x1200bb.jpg",
+      "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": [
+        "பாட்டன்",
+        "Bharathi"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify search",
+          "icon": "●",
+          "url": "https://open.spotify.com/search/%E0%AE%AA%E0%AE%BE%E0%AE%9F%E0%AF%8D%E0%AE%9F%E0%AE%A9%E0%AF%8D%20%28paattan%29%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/%E0%AE%AA-%E0%AE%9F-%E0%AE%9F%E0%AE%A9-paattan/1860256176?i=1860256177&uo=4"
+        },
+        {
+          "label": "Amazon Music search",
+          "icon": "a",
+          "url": "https://music.amazon.com/search/%E0%AE%AA%E0%AE%BE%E0%AE%9F%E0%AF%8D%E0%AE%9F%E0%AE%A9%E0%AF%8D%20%28paattan%29%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=m6e1VblPJlc"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=m6e1VblPJlc"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=m6e1VblPJlc"
+      },
+      "publishedAt": "2025-12-10"
+    },
+    {
+      "slug": "padayalukku-kadavulukku",
+      "title": "படையலுக்கு கடவுளுக்கு",
+      "artist": "தமிழாலே",
+      "type": "Music release",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverImage": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/50/71/43/50714340-c4f9-c5e5-0aa2-e8df1f1c896a/artwork.jpg/1200x1200bb.jpg",
+      "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": [
+        "படையலுக்கு",
+        "கடவுளுக்கு"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify search",
+          "icon": "●",
+          "url": "https://open.spotify.com/search/%E0%AE%AA%E0%AE%9F%E0%AF%88%E0%AE%AF%E0%AE%B2%E0%AF%81%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AF%81%20%E0%AE%95%E0%AE%9F%E0%AE%B5%E0%AF%81%E0%AE%B3%E0%AF%81%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AF%81%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/%E0%AE%AA%E0%AE%9F-%E0%AE%AF%E0%AE%B2-%E0%AE%95-%E0%AE%95-%E0%AE%95%E0%AE%9F%E0%AE%B5-%E0%AE%B3-%E0%AE%95-%E0%AE%95/1859162239?i=1859162240&uo=4"
+        },
+        {
+          "label": "Amazon Music search",
+          "icon": "a",
+          "url": "https://music.amazon.com/search/%E0%AE%AA%E0%AE%9F%E0%AF%88%E0%AE%AF%E0%AE%B2%E0%AF%81%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AF%81%20%E0%AE%95%E0%AE%9F%E0%AE%B5%E0%AF%81%E0%AE%B3%E0%AF%81%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AF%81%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=7FfnCC1Uebo"
+        },
+        {
+          "label": "YouTube 2",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=XCf47ctUtIg"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=7FfnCC1Uebo"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=7FfnCC1Uebo"
+      },
+      "publishedAt": "2025-12-05"
+    },
+    {
+      "slug": "kaadhal-kaadhal",
+      "title": "காதல் காதல்",
+      "artist": "தமிழாலே",
+      "type": "Music release",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverImage": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1e/52/66/1e5266ec-9f6e-c598-1dea-a7b9c0a7af07/artwork.jpg/1200x1200bb.jpg",
+      "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": [
+        "காதல்",
+        "காதல்"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify search",
+          "icon": "●",
+          "url": "https://open.spotify.com/search/%E0%AE%95%E0%AE%BE%E0%AE%A4%E0%AE%B2%E0%AF%8D%20%E0%AE%95%E0%AE%BE%E0%AE%A4%E0%AE%B2%E0%AF%8D%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/%E0%AE%95-%E0%AE%A4%E0%AE%B2-%E0%AE%95-%E0%AE%A4%E0%AE%B2/1839597945?i=1839597946&uo=4"
+        },
+        {
+          "label": "Amazon Music search",
+          "icon": "a",
+          "url": "https://music.amazon.com/search/%E0%AE%95%E0%AE%BE%E0%AE%A4%E0%AE%B2%E0%AF%8D%20%E0%AE%95%E0%AE%BE%E0%AE%A4%E0%AE%B2%E0%AF%8D%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=ipyv5MKbThk"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=ipyv5MKbThk"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=ipyv5MKbThk"
+      },
+      "publishedAt": "2025-09-11"
+    },
+    {
+      "slug": "teacher-song",
+      "title": "டீச்சர் போல உண்டா ஆகப்போறேன் டீச்சர்",
+      "artist": "தமிழாலே",
+      "type": "Music release",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil teacher-themed music video. A matching distributed store release was not verified yet.",
+      "coverImage": "https://img.youtube.com/vi/4XzJ307Kc50/hqdefault.jpg",
+      "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": [
+        "டீச்சர்",
+        "பாடல்"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify search",
+          "icon": "●",
+          "url": "https://open.spotify.com/search/%E0%AE%9F%E0%AF%80%E0%AE%9A%E0%AF%8D%E0%AE%9A%E0%AE%B0%E0%AF%8D%20%E0%AE%AA%E0%AF%8B%E0%AE%B2%20%E0%AE%89%E0%AE%A3%E0%AF%8D%E0%AE%9F%E0%AE%BE%20%E0%AE%86%E0%AE%95%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AF%8B%E0%AE%B1%E0%AF%87%E0%AE%A9%E0%AF%8D%20%E0%AE%9F%E0%AF%80%E0%AE%9A%E0%AF%8D%E0%AE%9A%E0%AE%B0%E0%AF%8D%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "Apple Music search",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/search?term=%E0%AE%9F%E0%AF%80%E0%AE%9A%E0%AF%8D%E0%AE%9A%E0%AE%B0%E0%AF%8D%20%E0%AE%AA%E0%AF%8B%E0%AE%B2%20%E0%AE%89%E0%AE%A3%E0%AF%8D%E0%AE%9F%E0%AE%BE%20%E0%AE%86%E0%AE%95%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AF%8B%E0%AE%B1%E0%AF%87%E0%AE%A9%E0%AF%8D%20%E0%AE%9F%E0%AF%80%E0%AE%9A%E0%AF%8D%E0%AE%9A%E0%AE%B0%E0%AF%8D%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "Amazon Music search",
+          "icon": "a",
+          "url": "https://music.amazon.com/search/%E0%AE%9F%E0%AF%80%E0%AE%9A%E0%AF%8D%E0%AE%9A%E0%AE%B0%E0%AF%8D%20%E0%AE%AA%E0%AF%8B%E0%AE%B2%20%E0%AE%89%E0%AE%A3%E0%AF%8D%E0%AE%9F%E0%AE%BE%20%E0%AE%86%E0%AE%95%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AF%8B%E0%AE%B1%E0%AF%87%E0%AE%A9%E0%AF%8D%20%E0%AE%9F%E0%AF%80%E0%AE%9A%E0%AF%8D%E0%AE%9A%E0%AE%B0%E0%AF%8D%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=4XzJ307Kc50"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=4XzJ307Kc50"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=4XzJ307Kc50"
+      }
+    },
+    {
+      "slug": "tasty-prachanai",
+      "title": "tasty பிரச்சினை",
+      "artist": "தமிழாலே",
+      "type": "Music release",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverImage": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/01/df/1b/01df1b47-cf07-7309-567c-2b1368f5045c/artwork.jpg/1200x1200bb.jpg",
+      "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": [
+        "tasty",
+        "பிரச்சினை"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify search",
+          "icon": "●",
+          "url": "https://open.spotify.com/search/tasty%20%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%9A%E0%AF%8D%E0%AE%9A%E0%AE%BF%E0%AE%A9%E0%AF%88%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/tasty-%E0%AE%AA-%E0%AE%B0%E0%AE%9A-%E0%AE%9A-%E0%AE%A9/1817349093?i=1817349096&uo=4"
+        },
+        {
+          "label": "Amazon Music search",
+          "icon": "a",
+          "url": "https://music.amazon.com/search/tasty%20%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%9A%E0%AF%8D%E0%AE%9A%E0%AE%BF%E0%AE%A9%E0%AF%88%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=KpWhCsCqSIQ"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=KpWhCsCqSIQ"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=KpWhCsCqSIQ"
+      },
+      "publishedAt": "2025-05-28"
+    },
+    {
+      "slug": "paarvaiyai-maathu",
+      "title": "பார்வையை மாத்து (Change the Gaze)",
+      "artist": "தமிழாலே",
+      "type": "Music release",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverImage": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/01/df/1b/01df1b47-cf07-7309-567c-2b1368f5045c/artwork.jpg/1200x1200bb.jpg",
+      "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": [
+        "பார்வையை",
+        "மாத்து"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify search",
+          "icon": "●",
+          "url": "https://open.spotify.com/search/%E0%AE%AA%E0%AE%BE%E0%AE%B0%E0%AF%8D%E0%AE%B5%E0%AF%88%E0%AE%AF%E0%AF%88%20%E0%AE%AE%E0%AE%BE%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AF%81%20%28Male%29%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/%E0%AE%AA-%E0%AE%B0-%E0%AE%B5-%E0%AE%AF-%E0%AE%AE-%E0%AE%A4-%E0%AE%A4-male/1817349093?i=1817349094&uo=4"
+        },
+        {
+          "label": "Amazon Music search",
+          "icon": "a",
+          "url": "https://music.amazon.com/search/%E0%AE%AA%E0%AE%BE%E0%AE%B0%E0%AF%8D%E0%AE%B5%E0%AF%88%E0%AE%AF%E0%AF%88%20%E0%AE%AE%E0%AE%BE%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AF%81%20%28Male%29%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=U3MDay_XIPg"
+        },
+        {
+          "label": "YouTube 2",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=0vlu54xgi18"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=U3MDay_XIPg"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=U3MDay_XIPg"
+      },
+      "publishedAt": "2025-05-28"
+    },
+    {
+      "slug": "video-from-raja-sir",
+      "title": "Video from Raja Sir",
       "artist": "தமிழாலே",
       "type": "Video release",
       "category": "Video",
       "language": "Tamil",
-      "publishedAt": "2026-07-11",
-      "description": "A new video release by தமிழாலே.",
-      "featured": false,
-      "coverImage": "https://img.youtube.com/vi/os_Cbzr0tZA/hqdefault.jpg",
+      "description": "A short video shared as “Video from Raja Sir.”",
+      "coverImage": "https://img.youtube.com/vi/DcVe76X3toE/hqdefault.jpg",
       "coverBackground": "linear-gradient(145deg,#141e30,#243b55)",
-      "coverEyebrow": "New video",
-      "coverLines": ["தமிழாலே", "Video"],
-      "primaryPlayer": {
-        "provider": "youtube",
-        "url": "https://youtu.be/os_Cbzr0tZA"
-      },
+      "coverEyebrow": "Video",
+      "coverLines": [
+        "Video from",
+        "Raja Sir"
+      ],
       "previewUrl": "",
       "demoTone": false,
       "platforms": [
-        {"label": "YouTube", "icon": "▶", "url": "https://youtu.be/os_Cbzr0tZA"}
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=DcVe76X3toE"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=DcVe76X3toE"
+        }
       ],
       "shareMessages": {
-        "friend": {"label": "Close friend", "icon": "💛", "text": "Thought you might enjoy this video 🎥"},
-        "family": {"label": "Family", "icon": "👨‍👩‍👧", "text": "Sharing this video with the family ❤️"},
-        "music": {"label": "Music lover", "icon": "🎵", "text": "Found a new Tamil video you may enjoy 🎵"},
-        "special": {"label": "Someone special", "icon": "✨", "text": "This video made me think of you ❤️"}
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this video 🎥"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this video with the family ❤️"
+        },
+        "curious": {
+          "label": "Curious learner",
+          "icon": "💡",
+          "text": "This looked useful and worth a quick watch."
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This video made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=DcVe76X3toE"
       }
+    },
+    {
+      "slug": "naalum-ketpavai-arulidume",
+      "title": "நாளும் கேட்பவை அருளிடுமே",
+      "artist": "தமிழாலே",
+      "type": "Music release",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverImage": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/97/72/07/97720753-34c6-3e06-53ae-b08d2a8fd622/artwork.jpg/1200x1200bb.jpg",
+      "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": [
+        "நாளும் கேட்பவை",
+        "அருளிடுமே"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify search",
+          "icon": "●",
+          "url": "https://open.spotify.com/search/%E0%AE%A8%E0%AE%BE%E0%AE%B3%E0%AF%81%E0%AE%AE%E0%AF%8D%20%E0%AE%95%E0%AF%87%E0%AE%9F%E0%AF%8D%E0%AE%AA%E0%AE%B5%E0%AF%88%20%20%E0%AE%85%E0%AE%B0%E0%AF%81%E0%AE%B3%E0%AE%BF%E0%AE%9F%E0%AF%81%E0%AE%AE%E0%AF%87%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/%E0%AE%A8-%E0%AE%B3-%E0%AE%AE-%E0%AE%95-%E0%AE%9F-%E0%AE%AA%E0%AE%B5-%E0%AE%85%E0%AE%B0-%E0%AE%B3-%E0%AE%9F-%E0%AE%AE/1813705567?i=1813705571&uo=4"
+        },
+        {
+          "label": "Amazon Music search",
+          "icon": "a",
+          "url": "https://music.amazon.com/search/%E0%AE%A8%E0%AE%BE%E0%AE%B3%E0%AF%81%E0%AE%AE%E0%AF%8D%20%E0%AE%95%E0%AF%87%E0%AE%9F%E0%AF%8D%E0%AE%AA%E0%AE%B5%E0%AF%88%20%20%E0%AE%85%E0%AE%B0%E0%AF%81%E0%AE%B3%E0%AE%BF%E0%AE%9F%E0%AF%81%E0%AE%AE%E0%AF%87%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=YSE0TKtFo60"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=YSE0TKtFo60"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=YSE0TKtFo60"
+      },
+      "publishedAt": "2025-05-11"
+    },
+    {
+      "slug": "needoozhi-vazhgave",
+      "title": "நீடூழி வாழ்கவே",
+      "artist": "தமிழாலே",
+      "type": "Music release",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil wishes video matched to the distributed track “நீ நீடூழி வாழவே.”",
+      "coverImage": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b9/e4/27/b9e427f5-4973-3039-ff60-700a01432afb/artwork.jpg/1200x1200bb.jpg",
+      "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": [
+        "நீடூழி",
+        "வாழ்கவே"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify search",
+          "icon": "●",
+          "url": "https://open.spotify.com/search/%E0%AE%A8%E0%AF%80%20%E0%AE%A8%E0%AF%80%E0%AE%9F%E0%AF%82%E0%AE%B4%E0%AE%BF%20%E0%AE%B5%E0%AE%BE%E0%AE%B4%E0%AE%B5%E0%AF%87%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/%E0%AE%A8-%E0%AE%A8-%E0%AE%9F-%E0%AE%B4-%E0%AE%B5-%E0%AE%B4%E0%AE%B5/1809626281?i=1809626282&uo=4"
+        },
+        {
+          "label": "Amazon Music search",
+          "icon": "a",
+          "url": "https://music.amazon.com/search/%E0%AE%A8%E0%AF%80%20%E0%AE%A8%E0%AF%80%E0%AE%9F%E0%AF%82%E0%AE%B4%E0%AE%BF%20%E0%AE%B5%E0%AE%BE%E0%AE%B4%E0%AE%B5%E0%AF%87%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=zxgMkjqnpr8"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=zxgMkjqnpr8"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=zxgMkjqnpr8"
+      },
+      "publishedAt": "2025-04-20"
+    },
+    {
+      "slug": "kanitharu-sirumaram",
+      "title": "கனிதரு சிறுமரம்",
+      "artist": "தமிழாலே",
+      "type": "Music release",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil music release by தமிழாலே.",
+      "coverImage": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/09/fb/c1/09fbc147-5d7b-0ecb-2020-89709acfcdaa/artwork.jpg/1200x1200bb.jpg",
+      "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": [
+        "கனிதரு",
+        "சிறுமரம்"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify search",
+          "icon": "●",
+          "url": "https://open.spotify.com/search/%E0%AE%95%E0%AE%A9%E0%AE%BF%E0%AE%A4%E0%AE%B0%E0%AF%81%20%E0%AE%9A%E0%AE%BF%E0%AE%B1%E0%AF%81%E0%AE%AE%E0%AE%B0%E0%AE%AE%E0%AF%8D%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/%E0%AE%95%E0%AE%A9-%E0%AE%A4%E0%AE%B0-%E0%AE%9A-%E0%AE%B1-%E0%AE%AE%E0%AE%B0%E0%AE%AE/1809722387?i=1809722388&uo=4"
+        },
+        {
+          "label": "Amazon Music search",
+          "icon": "a",
+          "url": "https://music.amazon.com/search/%E0%AE%95%E0%AE%A9%E0%AE%BF%E0%AE%A4%E0%AE%B0%E0%AF%81%20%E0%AE%9A%E0%AE%BF%E0%AE%B1%E0%AF%81%E0%AE%AE%E0%AE%B0%E0%AE%AE%E0%AF%8D%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=zjJmSyHkO9c"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=zjJmSyHkO9c"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=zjJmSyHkO9c"
+      },
+      "publishedAt": "2025-04-20"
     }
   ]
 }
