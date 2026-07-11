@@ -187,6 +187,36 @@
         "music": {"label": "Music lover", "icon": "🎵", "text": "Found a Tamil track you may enjoy 🎵"},
         "special": {"label": "Someone special", "icon": "✨", "text": "This made me think of you ❤️"}
       }
+    },
+    {
+      "slug": "youtube-os-cbzr0tza",
+      "title": "தமிழாலே Video",
+      "artist": "தமிழாலே",
+      "type": "Video release",
+      "category": "Video",
+      "language": "Tamil",
+      "publishedAt": "2026-07-11",
+      "description": "A new video release by தமிழாலே.",
+      "featured": false,
+      "coverImage": "https://img.youtube.com/vi/os_Cbzr0tZA/hqdefault.jpg",
+      "coverBackground": "linear-gradient(145deg,#141e30,#243b55)",
+      "coverEyebrow": "New video",
+      "coverLines": ["தமிழாலே", "Video"],
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://youtu.be/os_Cbzr0tZA"
+      },
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {"label": "YouTube", "icon": "▶", "url": "https://youtu.be/os_Cbzr0tZA"}
+      ],
+      "shareMessages": {
+        "friend": {"label": "Close friend", "icon": "💛", "text": "Thought you might enjoy this video 🎥"},
+        "family": {"label": "Family", "icon": "👨‍👩‍👧", "text": "Sharing this video with the family ❤️"},
+        "music": {"label": "Music lover", "icon": "🎵", "text": "Found a new Tamil video you may enjoy 🎵"},
+        "special": {"label": "Someone special", "icon": "✨", "text": "This video made me think of you ❤️"}
+      }
     }
   ]
 }
