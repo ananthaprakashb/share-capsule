@@ -1,6 +1,10 @@
 name: Scrape Amazon Music matches
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'automation/run-amazon-retry-main.txt'
   pull_request:
     paths:
       - 'automation/run-amazon-music.txt'
