@@ -17,74 +17,85 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install requests
+      - run: pip install requests beautifulsoup4
       - name: Fetch Spotify catalog
         shell: python
         run: |
           import requests, json, os, time
+          from bs4 import BeautifulSoup
 
           s=requests.Session()
           s.headers.update({'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126 Safari/537.36'})
           diagnostics=[]
           token=None
-          for url in [
-            'https://open.spotify.com/api/token',
-            'https://open.spotify.com/get_access_token?reason=transport&productType=web_player'
-          ]:
-              try:
-                  r=s.get(url,timeout=30)
-                  item={'url':url,'status':r.status_code,'text':r.text[:1000]}
-                  diagnostics.append(item)
-                  if r.ok:
-                      j=r.json()
-                      token=j.get('accessToken') or j.get('access_token')
-                      if token: break
-              except Exception as ex:
-                  diagnostics.append({'url':url,'error':str(ex)})
+          artist_id='2EOVUKoABSwyShnSx23A2k'
 
-          output={'diagnostics':diagnostics,'tokenFound':bool(token),'artist':None,'albums':[],'tracks':[]}
+          # Spotify embeds contain the anonymous web-player session used by the public embed itself.
+          embed='https://open.spotify.com/embed/track/4CFJxkzHtFYCFvPnvp1JeD'
+          try:
+              r=s.get(embed,timeout=30)
+              diagnostics.append({'url':embed,'status':r.status_code,'length':len(r.text)})
+              if r.ok:
+                  soup=BeautifulSoup(r.text,'html.parser')
+                  scripts=[x.string or x.get_text() or '' for x in soup.find_all('script')]
+                  for text in scripts:
+                      text=text.strip()
+                      if not text.startswith('{'):
+                          continue
+                      try:
+                          payload=json.loads(text)
+                      except Exception:
+                          continue
+                      state=payload.get('props',{}).get('pageProps',{}).get('state',{})
+                      token=state.get('settings',{}).get('session',{}).get('accessToken') or token
+                      entity=state.get('data',{}).get('entity',{})
+                      artists=entity.get('artists') or []
+                      if artists and artists[0].get('uri','').startswith('spotify:artist:'):
+                          artist_id=artists[0]['uri'].split(':')[-1]
+                      if token:
+                          break
+          except Exception as ex:
+              diagnostics.append({'url':embed,'error':str(ex)})
+
+          output={'diagnostics':diagnostics,'tokenFound':bool(token),'artistId':artist_id,'artist':None,'albums':[],'tracks':[]}
           if token:
               headers={'Authorization':f'Bearer {token}'}
-              # Resolve the artist from a verified track first.
-              r=s.get('https://api.spotify.com/v1/tracks/4CFJxkzHtFYCFvPnvp1JeD',headers=headers,params={'market':'US'},timeout=30)
+              r=s.get(f'https://api.spotify.com/v1/artists/{artist_id}',headers=headers,timeout=30)
               if r.ok:
-                  track=r.json()
-                  artists=track.get('artists') or []
-                  if artists:
-                      output['artist']=artists[0]
-              if not output['artist']:
-                  r=s.get('https://api.spotify.com/v1/search',headers=headers,params={'q':'தமிழாலே','type':'artist','limit':10,'market':'US'},timeout=30)
-                  if r.ok:
-                      items=(r.json().get('artists') or {}).get('items') or []
-                      if items: output['artist']=items[0]
+                  output['artist']=r.json()
+              else:
+                  output['diagnostics'].append({'artistApiStatus':r.status_code,'artistApiText':r.text[:500]})
 
-              artist_id=(output['artist'] or {}).get('id')
-              if artist_id:
-                  albums=[]
-                  url=f'https://api.spotify.com/v1/artists/{artist_id}/albums'
-                  params={'include_groups':'album,single','limit':50,'market':'US'}
-                  while url:
-                      r=s.get(url,headers=headers,params=params if '?' not in url else None,timeout=30)
-                      if not r.ok: break
-                      j=r.json(); albums.extend(j.get('items') or []); url=j.get('next'); params=None
-                  # dedupe albums
-                  seen=set(); unique=[]
-                  for a in albums:
-                      if a.get('id') in seen: continue
-                      seen.add(a.get('id')); unique.append(a)
-                  output['albums']=unique
-                  tracks=[]
-                  for a in unique:
-                      r=s.get(f"https://api.spotify.com/v1/albums/{a['id']}/tracks",headers=headers,params={'limit':50,'market':'US'},timeout=30)
-                      if not r.ok: continue
-                      for t in r.json().get('items') or []:
-                          tracks.append({
-                            'id':t.get('id'),'name':t.get('name'),'duration_ms':t.get('duration_ms'),
-                            'artists':t.get('artists'),'albumId':a.get('id'),'albumName':a.get('name'),
-                            'releaseDate':a.get('release_date'),'spotify':(t.get('external_urls') or {}).get('spotify')
-                          })
-                      time.sleep(.2)
-                  output['tracks']=tracks
+              albums=[]
+              url=f'https://api.spotify.com/v1/artists/{artist_id}/albums'
+              params={'include_groups':'album,single','limit':50,'market':'US'}
+              while url:
+                  r=s.get(url,headers=headers,params=params if '?' not in url else None,timeout=30)
+                  if not r.ok:
+                      output['diagnostics'].append({'albumsApiStatus':r.status_code,'albumsApiText':r.text[:500]})
+                      break
+                  j=r.json(); albums.extend(j.get('items') or []); url=j.get('next'); params=None
+              seen=set(); unique=[]
+              for a in albums:
+                  if not a.get('id') or a['id'] in seen: continue
+                  seen.add(a['id']); unique.append(a)
+              output['albums']=unique
+
+              tracks=[]
+              for a in unique:
+                  r=s.get(f"https://api.spotify.com/v1/albums/{a['id']}/tracks",headers=headers,params={'limit':50,'market':'US'},timeout=30)
+                  if not r.ok:
+                      output['diagnostics'].append({'albumId':a['id'],'tracksApiStatus':r.status_code})
+                      continue
+                  for t in r.json().get('items') or []:
+                      tracks.append({
+                        'id':t.get('id'),'name':t.get('name'),'duration_ms':t.get('duration_ms'),
+                        'artists':t.get('artists'),'albumId':a.get('id'),'albumName':a.get('name'),
+                        'releaseDate':a.get('release_date'),'images':a.get('images'),
+                        'spotify':(t.get('external_urls') or {}).get('spotify')
+                      })
+                  time.sleep(.1)
+              output['tracks']=tracks
 
           os.makedirs('output',exist_ok=True)
           with open('output/spotify-artist-catalog.json','w',encoding='utf-8') as f:
