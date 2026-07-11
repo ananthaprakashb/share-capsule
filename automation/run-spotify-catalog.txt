@@ -1,0 +1,1 @@
+Fetch Spotify artist catalog using anonymous web-player token.
