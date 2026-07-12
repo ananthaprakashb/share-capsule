@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ta">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#df6f91">
+  <meta name="description" content="சரிபார்க்கப்பட்ட ஹைக்கூத் தொகுப்பு — ஒவ்வொரு கவிதையும் ஒருமுறை மட்டும்.">
+  <title>ஹைக்கூத் தொகுப்பு — Tulip · துளிப்</title>
+  <style>
+    :root{--ink:#2b2225;--muted:#776b70;--line:#ecdde2;--rose:#a83f65;--shadow:0 18px 52px rgba(99,45,66,.11)}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 10% 0,#fff 0,transparent 30%),radial-gradient(circle at 90% 8%,#ffdce9 0,transparent 27%),linear-gradient(150deg,#f7f1f4,#eef7f1 58%,#fff1df);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans Tamil","Tamil Sangam MN","Latha",sans-serif;-webkit-font-smoothing:antialiased}.shell{width:min(100%,840px);margin:auto;padding:max(18px,env(safe-area-inset-top)) 16px calc(46px + env(safe-area-inset-bottom))}.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font-size:24px;font-weight:950;color:var(--ink);text-decoration:none}.back{color:var(--muted);text-decoration:none;font-size:13px;font-weight:850;padding:10px 13px;border:1px solid rgba(255,255,255,.92);border-radius:999px;background:rgba(255,255,255,.78)}.hero{padding:38px 2px 26px}.hero h1{margin:0;font-size:clamp(42px,10vw,72px);line-height:.95;letter-spacing:-.06em}.hero p{margin:14px 0 0;color:var(--muted);line-height:1.65}.notice{margin-top:17px;background:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.94);border-radius:20px;padding:15px 17px;color:#6c5860;font-size:13px;line-height:1.6}.count{margin-top:14px;color:var(--rose);font-size:12px;font-weight:950}.list{display:grid;gap:14px;margin-top:20px}.item{display:block;color:inherit;text-decoration:none;background:rgba(255,253,251,.97);border:1px solid rgba(255,255,255,.96);border-radius:26px;padding:22px;box-shadow:var(--shadow);transition:.18s}.item:hover{transform:translateY(-2px)}.number{color:var(--rose);font-size:11px;font-weight:950;letter-spacing:.08em;text-transform:uppercase}.badges{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}.badge{display:inline-flex;padding:6px 9px;border-radius:999px;font-size:10px;font-weight:950}.mood{background:#fde7ef;color:#8e3657}.type{background:#e7f4eb;color:#347053}.title{margin:13px 0 0;font-size:clamp(29px,6vw,42px);line-height:1.05;letter-spacing:-.045em}.poem{margin:15px 0 0;font:700 clamp(21px,4.5vw,30px)/1.7 Georgia,"Noto Serif Tamil","Tamil MN",serif;white-space:pre-line}.author{margin-top:13px;color:var(--muted);font-weight:850}.verify{margin-top:10px;color:#357a58;font-size:12px;font-weight:900}.empty{background:#fff;border-radius:22px;padding:28px;text-align:center;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="top"><a class="brand" href="/tulip/">Tulip · துளிப்</a><a class="back" href="/tulip/">இன்றைய ஹைக்கூ</a></header>
+    <section class="hero"><h1>ஹைக்கூத் தொகுப்பு</h1><p>ஒவ்வொரு ஹைக்கூவும் ஒருமுறை மட்டுமே பட்டியலிடப்படுகிறது. அசல் உரை, தமிழாக்கம், கவிஞர் வாழ்க்கை வரலாறு மற்றும் கவிதை மூலத்தைத் திறக்க ஒவ்வொரு பதிவையும் தேர்ந்தெடுக்கலாம்.</p><div class="notice">அசல் தமிழ்க் ஹைக்கூ, கவிஞர் பெயரும் முதன்மை வெளியீட்டு மூலமும் உறுதிப்படுத்தப்பட்ட பின்னரே சேர்க்கப்படும். இப்போது உள்ள உலகச் செவ்வியல் கவிதைகள் தெளிவாக “தமிழாக்க ஹைக்கூ” எனக் குறிக்கப்படுகின்றன.</div><div class="count" id="count"></div></section>
+    <div class="list" id="list"><div class="empty">சரிபார்க்கப்பட்ட ஹைக்கூக்கள் ஏற்றப்படுகின்றன…</div></div>
+  </main>
+  <script>
+    const list=document.getElementById('list'),count=document.getElementById('count');
+    const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const shiftDate=(date,delta)=>{const d=new Date(date+'T12:00:00');d.setDate(d.getDate()+delta);const p=n=>String(n).padStart(2,'0');return`${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}`};
+    async function load(){try{const r=await fetch(`data.json?v=${Date.now()}`,{cache:'no-store'});if(!r.ok)throw new Error(`HTTP ${r.status}`);const data=await r.json();const unique=[];const seen=new Set();for(const h of data.haiku||[]){const key=h.id||`${h.author}|${h.originalScript?.join('|')}`;if(seen.has(key))continue;seen.add(key);unique.push(h)}count.textContent=`${unique.length} தனித்துச் சரிபார்க்கப்பட்ட ஹைக்கூ${unique.length===1?'':'க்கள்'}`;const start=data.site?.startDate||'2026-07-12';list.innerHTML=unique.length?unique.map((h,index)=>{const date=shiftDate(start,index);return`<a class="item" href="index.html?date=${encodeURIComponent(date)}"><div class="number">ஹைக்கூ ${index+1}</div><div class="badges"><span class="badge mood">${esc(h.mood)}</span><span class="badge type">${h.originalTamil?'அசல் தமிழ்':'தமிழாக்கம்'}</span></div><h2 class="title">${esc(h.title)}</h2><div class="poem">${esc(h.tamilRendering.join('\n'))}</div><div class="author">— ${esc(h.authorTamil)} · ${esc(h.author)}</div><div class="verify">✓ கவிதை மூலமும் ஆசிரியர் தகவலும் பதிவு செய்யப்பட்டுள்ளன</div></a>`}).join(''):'<div class="empty">சரிபார்க்கப்பட்ட ஹைக்கூக்கள் இல்லை.</div>'}catch(e){count.textContent='';list.innerHTML=`<div class="empty">தொகுப்பை ஏற்ற இயலவில்லை. ${esc(e.message)}</div>`}}
+    load();
+  </script>
+</body>
+</html>
