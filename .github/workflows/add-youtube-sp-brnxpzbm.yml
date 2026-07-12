@@ -1,0 +1,78 @@
+name: Add YouTube video sp-BrnxPzBM
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'automation/add-youtube-sp-brnxpzbm.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install yt-dlp
+        run: pip install -U yt-dlp
+
+      - name: Fetch YouTube metadata and add source entry
+        shell: python
+        run: |
+          import json, subprocess
+
+          video_id = 'sp-BrnxPzBM'
+          slug = 'youtube-sp-brnxpzbm'
+          url = f'https://www.youtube.com/watch?v={video_id}'
+
+          raw = subprocess.check_output([
+              'yt-dlp', '--skip-download', '--dump-single-json', '--no-warnings', url
+          ], text=True)
+          meta = json.loads(raw)
+
+          title = (meta.get('title') or 'தமிழாலே Video').strip()
+          upload_date = meta.get('upload_date') or ''
+          published_at = f'{upload_date[:4]}-{upload_date[4:6]}-{upload_date[6:8]}' if len(upload_date) == 8 else None
+          description = (meta.get('description') or '').strip().split('\n')[0][:240]
+
+          with open('data/channel-catalog.json', encoding='utf-8') as f:
+              catalog = json.load(f)
+
+          items = catalog.setdefault('items', [])
+          items = [item for item in items if item.get('slug') != slug and video_id not in (item.get('videoIds') or [])]
+          entry = {
+              'slug': slug,
+              'title': title,
+              'videoIds': [video_id],
+              'category': 'Video',
+              'language': 'Tamil',
+              'description': description or 'A video release by தமிழாலே.',
+              'coverLines': [title]
+          }
+          if published_at:
+              entry['publishedAt'] = published_at
+          items.insert(0, entry)
+          catalog['items'] = items
+
+          with open('data/channel-catalog.json', 'w', encoding='utf-8') as f:
+              json.dump(catalog, f, ensure_ascii=False, indent=2)
+              f.write('\n')
+
+      - name: Commit source catalog update
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/channel-catalog.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Add YouTube video sp-BrnxPzBM to channel catalog [skip ci]'
+          git push origin HEAD:main
