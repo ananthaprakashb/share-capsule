@@ -1,0 +1,102 @@
+{
+  "site": {
+    "name": "Tulip · துளிப்",
+    "tagline": "ஒவ்வொரு நாளும் மூலத்துடன் சரிபார்க்கப்பட்ட ஒரு ஹைக்கூ",
+    "startDate": "2026-07-12",
+    "scopeNote": "இந்தத் தொடர் தமிழில் வாசிக்கக்கூடிய ஹைக்கூக்களை வழங்குகிறது. அசல் தமிழ்க் கவிதைகள், கவிஞர் மற்றும் முதன்மை வெளியீட்டு மூலம் இரண்டும் உறுதிப்படுத்தப்பட்ட பின்னரே சேர்க்கப்படும். உலகச் செவ்வியல் ஹைக்கூக்கள் தமிழாக்கமாக வழங்கப்படும்; அவை அசல் தமிழ்ப் படைப்புகள் எனக் கூறப்படாது.",
+    "validationPolicy": "ஒவ்வொரு பதிவும் அசல் மொழி உரை, கவிஞர் பெயர், கவிதை மூல இணைப்பு, தனித்த வாழ்க்கை வரலாறு இணைப்பு, தமிழாக்கக் குறிப்பு மற்றும் சரிபார்ப்பு தேதியை கொண்டிருக்க வேண்டும். உறுதிப்படுத்த முடியாத ஆசிரியர் பெயர் அல்லது இணையத்தில் பரவும் பெயரற்ற வரிகள் வெளியிடப்படாது."
+  },
+  "haiku": [
+    {
+      "id": "basho-old-pond",
+      "title": "பழைய குளம்",
+      "mood": "அமைதி · விழிப்பு",
+      "originalLanguage": "Japanese",
+      "originalScript": [
+        "古池や",
+        "蛙飛びこむ",
+        "水の音"
+      ],
+      "romanization": [
+        "furu ike ya",
+        "kawazu tobikomu",
+        "mizu no oto"
+      ],
+      "tamilRendering": [
+        "பழைய குளம்—",
+        "தவளை குதிக்கிறது;",
+        "தண்ணீரின் ஒலி."
+      ],
+      "translationCredit": "தமிழாக்கம்: Share Capsule",
+      "author": "Matsuo Bashō",
+      "authorTamil": "மத்சுவோ பாஷோ",
+      "authorBio": "1644–1694 காலத்தைச் சேர்ந்த ஜப்பானிய ஹைக்காய் கவிஞர். இன்று ஹைக்கூ மரபின் முக்கியமான செவ்வியல் ஆளுமைகளில் ஒருவராக அறியப்படுகிறார்.",
+      "authorBioUrl": "https://en.wikipedia.org/wiki/Matsuo_Bash%C5%8D",
+      "poemSourceTitle": "Haiga — Bashō’s old-pond haiku and attribution",
+      "poemSourceUrl": "https://en.wikipedia.org/wiki/Haiga",
+      "sourceEvidence": "The source displays the poem’s romanization, identifies it as one of Bashō’s most famous haiku, and links the verse to his calligraphy.",
+      "interpretation": "நீண்ட அமைதியை ஒரு சிறிய தண்ணீர் ஒலி உடைக்கிறது. வெளிப்புற நிகழ்வு மிகச் சிறியது; ஆனால் கவனமாகக் கேட்பவருக்குள் அது ஒரு முழு உலகைத் திறக்கிறது.",
+      "originalTamil": false,
+      "publicDomain": true,
+      "verifiedOn": "2026-07-12"
+    },
+    {
+      "id": "buson-plum-blossoms",
+      "title": "மூலைகளில் குளிர்",
+      "mood": "வசந்தம் · மென்மை",
+      "originalLanguage": "Japanese",
+      "originalScript": [
+        "隅々に残る寒さや梅の花"
+      ],
+      "romanization": [
+        "sumizumi ni nokoru samusa ya ume no hana"
+      ],
+      "tamilRendering": [
+        "மூலை முடுக்கெல்லாம்",
+        "குளிர் இன்னும் தங்குகிறது—",
+        "பிளம் மலர்கள்."
+      ],
+      "translationCredit": "தமிழாக்கம்: Share Capsule",
+      "author": "Yosa Buson",
+      "authorTamil": "யோசா புசோன்",
+      "authorBio": "1716–1784 காலத்தைச் சேர்ந்த ஜப்பானிய கவிஞரும் ஓவியரும். பாஷோ மற்றும் இஸ்ஸாவுடன் எடோ காலத்தின் சிறந்த ஹைக்கூ ஆளுமைகளில் ஒருவராகக் கருதப்படுகிறார்.",
+      "authorBioUrl": "https://en.wikipedia.org/wiki/Yosa_Buson",
+      "poemSourceTitle": "Yosa Buson — sample poem",
+      "poemSourceUrl": "https://en.wikipedia.org/wiki/Yosa_Buson",
+      "sourceEvidence": "The cited biography page prints the Japanese poem, its romanization and an attributed translation under Buson’s sample poems.",
+      "interpretation": "வசந்த மலர்கள் வந்துவிட்டாலும் குளிர் முழுவதும் போகவில்லை. ஒரு பருவம் மற்றொன்றாக மாறும் இடைநேரத்தை இந்தக் காட்சி பிடிக்கிறது.",
+      "originalTamil": false,
+      "publicDomain": true,
+      "verifiedOn": "2026-07-12"
+    },
+    {
+      "id": "issa-snail-fuji",
+      "title": "மெதுவாக ஏறு",
+      "mood": "ஊக்கம் · பொறுமை",
+      "originalLanguage": "Japanese",
+      "originalScript": [
+        "蝸牛そろそろ登れ富士の山"
+      ],
+      "romanization": [
+        "katatsumuri sorosoro nobore Fuji no yama"
+      ],
+      "tamilRendering": [
+        "நத்தையே—",
+        "மெதுவாக, மெதுவாக ஏறு",
+        "புஜி மலையை."
+      ],
+      "translationCredit": "தமிழாக்கம்: Share Capsule",
+      "author": "Kobayashi Issa",
+      "authorTamil": "கொபயாஷி இஸ்ஸா",
+      "authorBio": "1763–1828 காலத்தைச் சேர்ந்த ஜப்பானிய ஹைக்கூ கவிஞர். அன்றாட உயிரினங்கள், நகைச்சுவை மற்றும் மனித நேயம் நிறைந்த கவிதைகளுக்காகப் புகழ்பெற்றவர்.",
+      "authorBioUrl": "https://en.wikipedia.org/wiki/Kobayashi_Issa",
+      "poemSourceTitle": "Kobayashi Issa — writings and drawings",
+      "poemSourceUrl": "https://en.wikipedia.org/wiki/Kobayashi_Issa",
+      "sourceEvidence": "The cited biography page gives the Japanese text, romanization and attribution to Issa in its discussion of his writings.",
+      "interpretation": "இலக்கு மிகப்பெரியது என்றாலும் நகர்வு சிறியதாக இருக்கலாம். வேகத்தைவிட தொடர்ச்சியே முன்னேற்றத்தை உருவாக்கும் என்ற நம்பிக்கையை இந்த ஹைக்கூ தருகிறது.",
+      "originalTamil": false,
+      "publicDomain": true,
+      "verifiedOn": "2026-07-12"
+    }
+  ]
+}
