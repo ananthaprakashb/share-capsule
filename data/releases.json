@@ -1859,6 +1859,56 @@
         "url": "https://open.spotify.com/track/45MrTRKwqBKTJm2IAWF2yz"
       },
       "publishedAt": "2025-04-20"
+    },
+    {
+      "slug": "youtube-sp-brnxpzbm",
+      "title": "AI architecture",
+      "artist": "தமிழாலே",
+      "type": "Video release",
+      "category": "Video",
+      "language": "Tamil",
+      "description": "A video release from தமிழாலே.",
+      "coverImage": "https://img.youtube.com/vi/sp-BrnxPzBM/hqdefault.jpg",
+      "coverBackground": "linear-gradient(145deg,#141e30,#243b55)",
+      "coverEyebrow": "Video",
+      "coverLines": [
+        "AI architecture"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=sp-BrnxPzBM"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this video 🎥"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this video with the family ❤️"
+        },
+        "curious": {
+          "label": "Curious learner",
+          "icon": "💡",
+          "text": "This looked useful and worth a quick watch."
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This video made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=sp-BrnxPzBM"
+      }
     }
   ]
 }
