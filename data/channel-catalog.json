@@ -4,6 +4,25 @@
   },
   "items": [
     {
+      "slug": "sakthi-kooda-saranam-ayyappa",
+      "title": "சரணம் ஐயப்பா",
+      "artist": "தமிழாலே",
+      "videoIds": [
+        "GB5C6Uf-aVs"
+      ],
+      "category": "Tamil Devotional",
+      "language": "Tamil",
+      "music": true,
+      "spotifyUrl": "https://open.spotify.com/track/35zsu1UWLZjZqkUazDlJIj",
+      "appleUrl": "https://music.apple.com/us/album/%E0%AE%9A%E0%AE%95-%E0%AE%A4-%E0%AE%95-%E0%AE%9F-%E0%AE%9A%E0%AE%B0%E0%AE%A3%E0%AE%AE-%E0%AE%90%E0%AE%AF%E0%AE%AA-%E0%AE%AA-single/1838677675",
+      "description": "A Tamil Ayyappa devotional music release by தமிழாலே.",
+      "coverLines": [
+        "சரணம் ஐயப்பா"
+      ],
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1f/43/ba/1f43ba15-baf6-78e4-0a35-f7e1855b1e7d/artwork.jpg/1200x1200bb.jpg",
+      "publishedAt": "2025-09-08"
+    },
+    {
       "slug": "arupadai-anandham",
       "title": "ஆறுபடை ஆனந்தம்",
       "artist": "தமிழாலே",
