@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#173b36">
+  <meta name="description" content="Previous validated life hacks from Share Capsule.">
+  <title>Previous Tips — Share Capsule</title>
+  <style>
+    :root{--bg:#eef4f0;--paper:#fffefa;--ink:#18231f;--muted:#65716c;--line:#dce8e1;--accent:#176b5b;--shadow:0 16px 48px rgba(27,66,56,.09)}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 12% 0,#fff 0,transparent 34%),linear-gradient(160deg,#eef6f1,#e5eee9);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}.shell{width:min(100%,840px);margin:auto;padding:max(18px,env(safe-area-inset-top)) 16px calc(46px + env(safe-area-inset-bottom))}.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font-weight:900;letter-spacing:-.045em;color:var(--ink);text-decoration:none;font-size:20px}.back{color:var(--muted);text-decoration:none;font-size:13px;font-weight:850;padding:10px 13px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.78)}.hero{padding:38px 2px 24px}.hero h1{margin:0;font-size:clamp(42px,10vw,72px);line-height:.95;letter-spacing:-.06em}.hero p{margin:14px 0 0;color:var(--muted);line-height:1.6}.list{display:grid;gap:14px}.item{display:block;color:inherit;text-decoration:none;background:rgba(255,254,250,.97);border:1px solid rgba(255,255,255,.94);border-radius:24px;padding:22px;box-shadow:var(--shadow);transition:.18s}.item:hover{transform:translateY(-2px)}.date{color:var(--accent);font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.category{display:inline-flex;margin-top:11px;background:#e2f1ea;color:var(--accent);padding:6px 9px;border-radius:999px;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.title{margin:13px 0 0;font-size:clamp(25px,5vw,37px);line-height:1.08;letter-spacing:-.045em}.action{margin:11px 0 0;color:#3f4d47;line-height:1.55}.source{margin-top:13px;color:var(--muted);font-size:12px;font-weight:750}.empty{background:#fff;border-radius:22px;padding:28px;text-align:center;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="top"><a class="brand" href="/tip/">Share Capsule Tips</a><a class="back" href="/tip/">Today’s tip</a></header>
+    <section class="hero"><h1>Previous tips</h1><p>The most recent 30 days are reconstructed from the same validated tip library. Each dated page retains its source, evidence and sharing options.</p></section>
+    <div class="list" id="list"><div class="empty">Loading validated tips…</div></div>
+  </main>
+  <script>
+    const list=document.getElementById('list');
+    const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const fmt=d=>new Date(d+'T12:00:00').toLocaleDateString(undefined,{weekday:'short',year:'numeric',month:'long',day:'numeric'});
+    const localDate=()=>{const d=new Date(),p=n=>String(n).padStart(2,'0');return`${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}`};
+    const shiftDate=(date,delta)=>{const d=new Date(date+'T12:00:00');d.setDate(d.getDate()+delta);const p=n=>String(n).padStart(2,'0');return`${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}`};
+    const daysBetween=(a,b)=>Math.floor((new Date(b+'T12:00:00')-new Date(a+'T12:00:00'))/86400000);
+    function tipForDate(data,date){const tips=data.tips||[];if(!tips.length)return null;const offset=daysBetween(data.site?.startDate||'2026-07-12',date);return tips[((offset%tips.length)+tips.length)%tips.length]}
+    async function load(){try{const r=await fetch(`data.json?v=${Date.now()}`,{cache:'no-store'});if(!r.ok)throw new Error(`HTTP ${r.status}`);const data=await r.json();const today=localDate();const rows=[];for(let i=1;i<=30;i++){const date=shiftDate(today,-i),tip=tipForDate(data,date);if(tip)rows.push({date,tip})}list.innerHTML=rows.length?rows.map(({date,tip})=>`<a class="item" href="index.html?date=${encodeURIComponent(date)}"><div class="date">${esc(fmt(date))}</div><div class="category">${esc(tip.category)}</div><h2 class="title">${esc(tip.title)}</h2><p class="action">${esc(tip.action)}</p><div class="source">✓ ${esc(tip.sourceOrganization)}</div></a>`).join(''):'<div class="empty">No previous tips are available.</div>'}catch(e){list.innerHTML=`<div class="empty">Unable to load the archive. ${esc(e.message)}</div>`}}
+    load();
+  </script>
+</body>
+</html>
