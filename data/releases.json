@@ -1991,7 +1991,7 @@
       "description": "A Tamil Ayyappa devotional music release by தமிழாலே.",
       "coverImage": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1f/43/ba/1f43ba15-baf6-78e4-0a35-f7e1855b1e7d/artwork.jpg/1200x1200bb.jpg",
       "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
-      "coverEyebrow": "Tamil devotional",
+      "coverEyebrow": "Tamil release",
       "coverLines": [
         "சரணம்",
         "ஐயப்பா"
@@ -2029,22 +2029,22 @@
         "friend": {
           "label": "Close friend",
           "icon": "💛",
-          "text": "Thought you might enjoy this Tamil devotional release 🎧"
+          "text": "Thought you might enjoy this Tamil release 🎧"
         },
         "family": {
           "label": "Family",
           "icon": "👨‍👩‍👧",
-          "text": "Sharing this Ayyappa devotional song with the family 🙏"
+          "text": "Sharing this Tamil song with the family ❤️"
         },
-        "devotional": {
-          "label": "Devotional listener",
-          "icon": "🙏",
-          "text": "A Tamil Ayyappa devotional song you may enjoy."
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
         },
         "special": {
           "label": "Someone special",
           "icon": "✨",
-          "text": "Sharing this devotional song with you 🙏"
+          "text": "This made me think of you ❤️"
         }
       },
       "primaryPlayer": {
@@ -2052,6 +2052,82 @@
         "url": "https://open.spotify.com/track/35zsu1UWLZjZqkUazDlJIj"
       },
       "publishedAt": "2025-09-08"
+    },
+    {
+      "slug": "perungaviyame",
+      "title": "பெருங்கவியமே",
+      "artist": "தமிழாலே",
+      "type": "Music release",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil music release by தமிழாலே, with a YouTube Short and full audio links.",
+      "coverImage": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0f/9d/95/0f9d9572-b896-04f5-7028-add715d2652f/artwork.jpg/1200x1200bb.jpg",
+      "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": [
+        "பெருங்கவியமே"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify",
+          "icon": "●",
+          "url": "https://open.spotify.com/track/3CUjEmBp1drcCP8ek7MOQo"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/song/%E0%AE%AA-%E0%AE%B0-%E0%AE%99-%E0%AE%95%E0%AE%B5-%E0%AE%AF%E0%AE%AE/1809626579"
+        },
+        {
+          "label": "Amazon Music",
+          "icon": "a",
+          "url": "https://amazon.com/music/player/tracks/B0F5NX5YZC?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_Dn8UT1kqNT0nBaBxPC6YXyRXU"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=M6iorJ7Srrc"
+        },
+        {
+          "label": "YouTube official",
+          "icon": "▶",
+          "url": "https://youtube.com/shorts/DI8u-2zQsyg"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=M6iorJ7Srrc"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "spotify",
+        "url": "https://open.spotify.com/track/3CUjEmBp1drcCP8ek7MOQo"
+      },
+      "publishedAt": "2025-04-19"
     }
   ]
 }
