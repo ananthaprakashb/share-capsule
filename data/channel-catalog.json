@@ -4,6 +4,19 @@
   },
   "items": [
     {
+      "slug": "youtube-sp-brnxpzbm",
+      "title": "AI architecture",
+      "videoIds": [
+        "sp-BrnxPzBM"
+      ],
+      "category": "Video",
+      "language": "Tamil",
+      "description": "A video release from தமிழாலே.",
+      "coverLines": [
+        "AI architecture"
+      ]
+    },
+    {
       "slug": "youtube-os-cbzr0tza",
       "title": "Mastering Personal Finance",
       "videoIds": [
