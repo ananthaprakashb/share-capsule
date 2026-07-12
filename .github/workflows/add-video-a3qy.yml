@@ -31,9 +31,9 @@ jobs:
           video_id='A3QYfySjVUU'
           url=f'https://www.youtube.com/watch?v={video_id}'
           slug='youtube-a3qyfysjvuu'
-          title='தமிழாலே Video'
-          artist='தமிழாலே'
-          description='A video release by தமிழாலே.'
+          title='Bone structure and growth'
+          artist='EveryBasics'
+          description='An educational video about bone structure and growth.'
           published_at=None
           headers={'User-Agent':'Mozilla/5.0'}
 
@@ -66,10 +66,10 @@ jobs:
           entry={
               'slug':slug,
               'title':title,
-              'artist':artist or 'தமிழாலே',
+              'artist':artist or 'EveryBasics',
               'videoIds':[video_id],
-              'category':'Video',
-              'language':'Tamil',
+              'category':'Education',
+              'language':'English',
               'description':description,
               'coverLines':[title]
           }
