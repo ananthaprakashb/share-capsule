@@ -1,5 +1,6 @@
 name: Sync channel catalog into releases
 
+# Regenerates data/releases.json whenever the source channel catalog changes.
 on:
   push:
     branches: [main]
