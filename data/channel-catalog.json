@@ -4,9 +4,9 @@
   },
   "items": [
     {
-      "slug": "spotify-52gsuh3w3kmrpkt2fsj6ga",
+      "slug": "arupadai-anandham",
       "title": "ஆறுபடை ஆனந்தம்",
-      "artist": "தமிழாலே - Topic",
+      "artist": "தமிழாலே",
       "videoIds": [
         "6CS-lSdOkzA"
       ],
@@ -14,9 +14,10 @@
       "language": "Tamil",
       "music": true,
       "spotifyUrl": "https://open.spotify.com/album/52gsUH3W3KMRpkt2fSj6gA",
-      "description": "A Tamil music release by தமிழாலே.",
+      "description": "A Tamil devotional music release by தமிழாலே.",
       "coverLines": [
-        "ஆறுபடை ஆனந்தம்"
+        "ஆறுபடை",
+        "ஆனந்தம்"
       ],
       "artwork": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02b4a166555570abc182a80517"
     },
