@@ -1909,6 +1909,77 @@
         "provider": "youtube",
         "url": "https://www.youtube.com/watch?v=sp-BrnxPzBM"
       }
+    },
+    {
+      "slug": "arupadai-anandham",
+      "title": "ஆறுபடை ஆனந்தம்",
+      "artist": "தமிழாலே",
+      "type": "Music release",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil devotional music release by தமிழாலே.",
+      "coverImage": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02b4a166555570abc182a80517",
+      "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": [
+        "ஆறுபடை",
+        "ஆனந்தம்"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify",
+          "icon": "●",
+          "url": "https://open.spotify.com/album/52gsUH3W3KMRpkt2fSj6gA"
+        },
+        {
+          "label": "Apple Music search",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/search?term=%E0%AE%86%E0%AE%B1%E0%AF%81%E0%AE%AA%E0%AE%9F%E0%AF%88%20%E0%AE%86%E0%AE%A9%E0%AE%A8%E0%AF%8D%E0%AE%A4%E0%AE%AE%E0%AF%8D%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "Amazon Music search",
+          "icon": "a",
+          "url": "https://music.amazon.com/search/%E0%AE%86%E0%AE%B1%E0%AF%81%E0%AE%AA%E0%AE%9F%E0%AF%88%20%E0%AE%86%E0%AE%A9%E0%AE%A8%E0%AF%8D%E0%AE%A4%E0%AE%AE%E0%AF%8D%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=6CS-lSdOkzA"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=6CS-lSdOkzA"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "spotify",
+        "url": "https://open.spotify.com/album/52gsUH3W3KMRpkt2fSj6gA"
+      }
     }
   ]
 }
