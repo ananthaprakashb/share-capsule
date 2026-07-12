@@ -1,0 +1,104 @@
+name: Audit own Tamil poetry blog for haiku
+
+on:
+  pull_request:
+    paths:
+      - 'automation/audit-own-tamil-poetry-blog.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install requests beautifulsoup4
+
+      - name: Crawl author-owned Blogspot archive
+        shell: python
+        run: |
+          import json, re, requests
+          from pathlib import Path
+          from bs4 import BeautifulSoup
+
+          blog='https://ananthkavithaigal.blogspot.com'
+          headers={'User-Agent':'ShareCapsuleTamilHaikuVerifier/1.3 (ananthaprakashb@gmail.com)'}
+          entries=[]; start=1
+
+          def clean_html(html):
+              soup=BeautifulSoup(html or '','html.parser')
+              for tag in soup(['script','style','noscript']): tag.decompose()
+              lines=[]
+              for line in soup.get_text('\n').splitlines():
+                  line=re.sub(r'\s+',' ',line).strip()
+                  if line: lines.append(line)
+              return lines
+
+          while start<=1000:
+              r=requests.get(blog+'/feeds/posts/default',params={'alt':'json','max-results':150,'start-index':start},headers=headers,timeout=60)
+              if not r.ok:
+                  break
+              feed=r.json().get('feed') or {}
+              rows=feed.get('entry') or []
+              if not rows: break
+              for row in rows:
+                  title=(row.get('title') or {}).get('$t','').strip()
+                  content=(row.get('content') or row.get('summary') or {}).get('$t','')
+                  lines=clean_html(content)
+                  labels=[x.get('term') for x in row.get('category') or [] if x.get('term')]
+                  url=''
+                  for link in row.get('link') or []:
+                      if link.get('rel')=='alternate': url=link.get('href') or ''
+                  author_names=[(a.get('name') or {}).get('$t','').strip() for a in row.get('author') or []]
+                  three=[]
+                  for i in range(len(lines)-2):
+                      block=lines[i:i+3]
+                      if all(1<=len(x)<=100 for x in block) and sum(map(len,block))<=200:
+                          three.append(block)
+                  keyword=any(k in (title+' '+' '.join(labels)+' '+'\n'.join(lines)).casefold() for k in ['ஹைக்கூ','ஹைகூ','துளிப்பா','haiku'])
+                  short_post=3<=len(lines)<=8 and sum(map(len,lines))<=450
+                  if keyword or short_post:
+                      entries.append({
+                          'title':title,'url':url,'published':(row.get('published') or {}).get('$t'),
+                          'updated':(row.get('updated') or {}).get('$t'),'labels':labels,
+                          'feedAuthors':author_names,'lines':lines,'candidateThreeLineBlocks':three,
+                          'keywordMatch':keyword,'shortPost':short_post
+                      })
+              start+=len(rows)
+              total=int((feed.get('openSearch$totalResults') or {}).get('$t','0') or 0)
+              if start>total: break
+
+          # Blog homepage/profile evidence.
+          home=requests.get(blog,headers=headers,timeout=60)
+          home_lines=clean_html(home.text) if home.ok else []
+          output={
+              'blog':blog,
+              'blogTitle':'',
+              'candidateCount':len(entries),
+              'candidates':entries,
+              'homepageStatus':home.status_code,
+              'homepageEvidence':home_lines[:300],
+              'decisionRule':'Only import a three-line poem when it is present verbatim on this author-owned blog and the post/feed identifies the author account. Do not classify an arbitrary short poem as haiku unless the post or author labels it haiku/tulippaa, or the user explicitly approves that classification.'
+          }
+          if home.ok:
+              soup=BeautifulSoup(home.text,'html.parser')
+              output['blogTitle']=soup.title.get_text(' ',strip=True) if soup.title else ''
+          Path('tulip/own-blog-haiku-audit.json').write_text(json.dumps(output,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          Path('automation/audit-own-tamil-poetry-blog.txt').unlink(missing_ok=True)
+
+      - name: Commit blog audit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tulip/own-blog-haiku-audit.json automation/audit-own-tamil-poetry-blog.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'Audit author-owned Tamil poetry blog for haiku'
+          git push origin HEAD:${{ github.head_ref }}
