@@ -1,0 +1,1 @@
+Finalize the சரணம் ஐயப்பா release in data/releases.json.
