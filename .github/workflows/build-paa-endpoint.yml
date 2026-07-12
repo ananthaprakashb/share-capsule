@@ -1,0 +1,125 @@
+name: Build validated Tamil poem endpoint
+
+on:
+  pull_request:
+    paths:
+      - 'automation/build-paa.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install requests beautifulsoup4
+
+      - name: Validate source text and write poem data
+        shell: python
+        run: |
+          import json, re, requests
+          from pathlib import Path
+          from urllib.parse import quote
+          from bs4 import BeautifulSoup
+
+          api='https://ta.wikisource.org/w/api.php'
+          headers={'User-Agent':'ShareCapsulePoemVerifier/1.0 (ananthaprakashb@gmail.com)'}
+          search=requests.get(api,params={
+              'action':'query','list':'search','srsearch':'"ஓடி விளையாடு பாப்பா"',
+              'srnamespace':0,'srlimit':20,'format':'json','formatversion':2
+          },headers=headers,timeout=30)
+          search.raise_for_status()
+          candidates=search.json().get('query',{}).get('search',[])
+
+          expected=[
+              'ஓடி விளையாடு பாப்பா',
+              'ஓய்ந்திருக்க லாகாது பாப்பா',
+              'கூடி விளையாடு பாப்பா',
+              'ஒரு குழந்தையை வையாதே பாப்பா',
+              'சின்னஞ் சிறு குருவி போலே',
+              'திரிந்து பறந்துவா பாப்பா',
+              'வண்ணப் பறவைகளைக் கண்டு',
+              'மனதில் மகிழ்ச்சி கொள்ளு பாப்பா'
+          ]
+
+          def norm(s):
+              return re.sub(r'[^\w\u0B80-\u0BFF]+','',str(s or '').casefold())
+
+          selected=None
+          source_text=''
+          for row in candidates:
+              title=row.get('title')
+              if not title:
+                  continue
+              parsed=requests.get(api,params={
+                  'action':'parse','page':title,'prop':'text|wikitext','format':'json','formatversion':2
+              },headers=headers,timeout=30)
+              if not parsed.ok:
+                  continue
+              payload=parsed.json().get('parse') or {}
+              html=(payload.get('text') or '')
+              text=BeautifulSoup(html,'html.parser').get_text('\n')
+              if all(norm(line) in norm(text) for line in expected):
+                  selected=title
+                  source_text=text
+                  break
+
+          if not selected:
+              raise SystemExit('Could not verify the selected Bharati excerpt in Tamil Wikisource')
+
+          source_url='https://ta.wikisource.org/wiki/'+quote(selected.replace(' ','_'),safe='/:_')
+          poem={
+              'site':{
+                  'name':'பா',
+                  'tagline':'மகிழ்ச்சி தரும் சரிபார்க்கப்பட்ட தமிழ்க் கவிதை',
+                  'startDate':'2026-07-12'
+              },
+              'poems':[
+                  {
+                      'date':'2026-07-12',
+                      'id':'odi-vilaiyadu-pappa',
+                      'title':'ஓடி விளையாடு பாப்பா',
+                      'mood':'மகிழ்ச்சி',
+                      'excerptLines':[
+                          'ஓடி விளையாடு பாப்பா — நீ',
+                          'ஓய்ந்திருக்க லாகாது பாப்பா;',
+                          'கூடி விளையாடு பாப்பா — ஒரு',
+                          'குழந்தையை வையாதே பாப்பா.',
+                          '',
+                          'சின்னஞ் சிறு குருவி போலே — நீ',
+                          'திரிந்து பறந்துவா பாப்பா;',
+                          'வண்ணப் பறவைகளைக் கண்டு — நீ',
+                          'மனதில் மகிழ்ச்சி கொள்ளு பாப்பா.'
+                      ],
+                      'author':'சுப்பிரமணிய பாரதி',
+                      'authorBio':'தமிழ் கவிஞர், பத்திரிகையாளர், சமூகச் சீர்திருத்தவாதி மற்றும் இந்திய விடுதலை இயக்கப் போராளி; நவீன தமிழ் கவிதையின் முன்னோடிகளில் ஒருவர்.',
+                      'authorEncyclopediaUrl':'https://ta.wikipedia.org/wiki/%E0%AE%9A%E0%AF%81%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%AE%E0%AE%A3%E0%AE%BF%E0%AE%AF_%E0%AE%AA%E0%AE%BE%E0%AE%B0%E0%AE%A4%E0%AE%BF',
+                      'sourceTitle':selected,
+                      'sourceUrl':source_url,
+                      'sourceType':'Tamil Wikisource public-domain text',
+                      'verificationNote':'Displayed lines were checked programmatically against the Tamil Wikisource text before publication. The page attribution identifies the work as Bharati’s “பாப்பா பாட்டு”.',
+                      'verifiedOn':'2026-07-12',
+                      'happyNote':'விளையாட்டு, நட்பு, பறவைகள், சுதந்திரமான அசைவு—இவை அனைத்தையும் குழந்தையின் மகிழ்ச்சியுடன் இணைக்கும் ஒளிவான பாடல்.'
+                  }
+              ]
+          }
+          Path('paa').mkdir(exist_ok=True)
+          Path('paa/data.json').write_text(json.dumps(poem,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          Path('automation/build-paa.txt').unlink(missing_ok=True)
+
+      - name: Commit validated poem data
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add paa/data.json automation/build-paa.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'Add validated Tamil poem data for /paa'
+          git push origin HEAD:${{ github.head_ref }}
