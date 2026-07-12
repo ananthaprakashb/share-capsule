@@ -1,0 +1,123 @@
+{
+  "site": {
+    "name": "Share Capsule Law",
+    "tagline": "One globally recognized legal principle each day",
+    "startDate": "2026-07-12",
+    "scopeNote": "There is no single law that applies identically in every country. This page explains widely recognized international legal principles and documented incidents. Local constitutions, statutes, procedures and remedies can differ.",
+    "validationPolicy": "Every entry must identify the international instrument, article number, official source, documented incident, incident source and validation date before publication."
+  },
+  "principles": [
+    {
+      "id": "privacy-of-correspondence",
+      "category": "Privacy",
+      "title": "Your private life and messages deserve legal protection",
+      "plainRule": "No one should face arbitrary or unlawful interference with their privacy, family, home or correspondence, and the law should protect people against such interference.",
+      "globalBasis": "Universal Declaration of Human Rights, Article 12; International Covenant on Civil and Political Rights, Article 17",
+      "globalSourceTitle": "International Covenant on Civil and Political Rights",
+      "globalSourceUrl": "https://www.ohchr.org/en/instruments-mechanisms/instruments/international-covenant-civil-and-political-rights",
+      "secondaryGlobalSourceTitle": "Universal Declaration of Human Rights",
+      "secondaryGlobalSourceUrl": "https://www.un.org/en/about-us/universal-declaration-of-human-rights",
+      "everydayMeaning": "Employers, platforms, landlords and public authorities may have legitimate reasons to collect or review information, but the action generally needs a lawful basis, a legitimate purpose and safeguards against unnecessary intrusion.",
+      "practicalSteps": [
+        "Read workplace and app privacy notices before using an account for personal messages.",
+        "Keep sensitive conversations on accounts and devices you control.",
+        "Ask what data is collected, why it is needed, how long it is kept and who can access it.",
+        "Use local privacy, employment or data-protection procedures when you believe monitoring was excessive."
+      ],
+      "incidentTitle": "Bărbulescu v. Romania",
+      "incidentDate": "2017-09-05",
+      "incidentJurisdiction": "European Court of Human Rights",
+      "incidentSummary": "A Romanian employee was dismissed after his employer monitored messages on a workplace Yahoo Messenger account. The Grand Chamber held that the national courts had not adequately protected his private life and correspondence because they did not sufficiently examine notice, scope, reasons and safeguards surrounding the monitoring.",
+      "incidentOutcome": "The Court found a violation of Article 8 of the European Convention on Human Rights. The case is a regional judgment, but it is a useful real-world illustration of the broader international privacy principle.",
+      "incidentSourceTitle": "Bărbulescu v. Romania, Application no. 61496/08",
+      "incidentSourceUrl": "https://hudoc.echr.coe.int/eng?i=001-177082",
+      "takeaway": "A company policy does not automatically erase every privacy interest. Notice, necessity, proportionality and safeguards matter.",
+      "localLawWarning": "The exact rights of employees and the admissibility of monitoring evidence depend on local law.",
+      "validatedOn": "2026-07-12"
+    },
+    {
+      "id": "lawyer-before-questioning",
+      "category": "Criminal procedure",
+      "title": "Ask for legal assistance before police questioning",
+      "plainRule": "A person accused of a crime should have a fair opportunity to defend themselves, including access to legal assistance under the rules of the jurisdiction.",
+      "globalBasis": "International Covenant on Civil and Political Rights, Article 14, including Article 14(3)(d)",
+      "globalSourceTitle": "International Covenant on Civil and Political Rights",
+      "globalSourceUrl": "https://www.ohchr.org/en/instruments-mechanisms/instruments/international-covenant-civil-and-political-rights",
+      "secondaryGlobalSourceTitle": "Universal Declaration of Human Rights, Articles 10 and 11",
+      "secondaryGlobalSourceUrl": "https://www.un.org/en/about-us/universal-declaration-of-human-rights",
+      "everydayMeaning": "Statements made during an early interview can shape the entire case. The timing, availability and scope of legal assistance differ by country, but requesting counsel early is a widely recognized safeguard.",
+      "practicalSteps": [
+        "Stay calm and ask whether you are free to leave or are being detained.",
+        "Ask for a lawyer before answering substantive questions about an alleged offence.",
+        "Do not sign a statement you do not understand.",
+        "Ask for an interpreter when language affects your ability to understand the process."
+      ],
+      "incidentTitle": "Salduz v. Turkey",
+      "incidentDate": "2008-11-27",
+      "incidentJurisdiction": "European Court of Human Rights",
+      "incidentSummary": "A 17-year-old was questioned by police without access to a lawyer, and statements from that interview were later used in the criminal proceedings. The Grand Chamber treated early access to legal assistance as a fundamental fair-trial safeguard.",
+      "incidentOutcome": "The Court found a violation of the fair-trial guarantee because the restriction on legal assistance affected the proceedings as a whole.",
+      "incidentSourceTitle": "Salduz v. Turkey, Application no. 36391/02",
+      "incidentSourceUrl": "https://hudoc.echr.coe.int/eng?i=001-89893",
+      "takeaway": "Legal help is most useful before an irreversible statement or waiver is made, not only when the trial begins.",
+      "localLawWarning": "Rules about silence, detention, free counsel and questioning differ significantly by country and sometimes by state or province.",
+      "validatedOn": "2026-07-12"
+    },
+    {
+      "id": "presumption-of-innocence",
+      "category": "Fair trial",
+      "title": "An accusation is not a conviction",
+      "plainRule": "Anyone charged with a criminal offence should be treated as innocent until guilt is proved according to law in a fair process.",
+      "globalBasis": "Universal Declaration of Human Rights, Article 11(1); International Covenant on Civil and Political Rights, Article 14(2)",
+      "globalSourceTitle": "International Covenant on Civil and Political Rights",
+      "globalSourceUrl": "https://www.ohchr.org/en/instruments-mechanisms/instruments/international-covenant-civil-and-political-rights",
+      "secondaryGlobalSourceTitle": "Universal Declaration of Human Rights",
+      "secondaryGlobalSourceUrl": "https://www.un.org/en/about-us/universal-declaration-of-human-rights",
+      "everydayMeaning": "Officials, courts and public communications should avoid treating an unproven allegation as established guilt. News reports and social-media discussion are not substitutes for evidence tested through lawful procedure.",
+      "practicalSteps": [
+        "Use words such as alleged, accused or charged until there is a final finding.",
+        "Do not publish private identifying information merely because someone was arrested.",
+        "Separate verified court outcomes from rumours and screenshots.",
+        "Remember that an acquittal, dismissal and conviction are legally different outcomes."
+      ],
+      "incidentTitle": "Allen v. the United Kingdom",
+      "incidentDate": "2013-07-12",
+      "incidentJurisdiction": "European Court of Human Rights",
+      "incidentSummary": "After a criminal conviction was quashed, Lorraine Allen sought compensation. The dispute required the Court to examine how the presumption of innocence can continue to matter in later proceedings connected to an acquittal or overturned conviction.",
+      "incidentOutcome": "The Grand Chamber confirmed that later official reasoning must respect an acquittal, although it found no violation on the particular wording and context of this case.",
+      "incidentSourceTitle": "Allen v. the United Kingdom, Application no. 25424/09",
+      "incidentSourceUrl": "https://hudoc.echr.coe.int/eng?i=001-122859",
+      "takeaway": "The presumption of innocence can remain relevant even after the main criminal case has ended.",
+      "localLawWarning": "Defamation, contempt, public-record and compensation rules vary widely across jurisdictions.",
+      "validatedOn": "2026-07-12"
+    },
+    {
+      "id": "consumer-product-safety",
+      "category": "Consumer protection",
+      "title": "Unsafe products should be recalled and consumers should have a remedy",
+      "plainRule": "Consumer-protection systems should reduce unreasonable safety risks, provide accurate information and offer effective complaint, recall and redress mechanisms.",
+      "globalBasis": "United Nations Guidelines for Consumer Protection, revised by UN General Assembly resolution 70/186",
+      "globalSourceTitle": "United Nations Guidelines for Consumer Protection",
+      "globalSourceUrl": "https://unctad.org/topic/competition-and-consumer-protection/un-guidelines-for-consumer-protection",
+      "secondaryGlobalSourceTitle": "UN General Assembly resolution 70/186",
+      "secondaryGlobalSourceUrl": "https://undocs.org/A/RES/70/186",
+      "everydayMeaning": "When a product presents a serious hazard, consumers should stop using it, follow recall instructions and preserve proof of purchase and incident evidence. National agencies decide the exact recall and compensation process.",
+      "practicalSteps": [
+        "Check the manufacturer and government recall database when a product overheats, breaks or causes injury.",
+        "Stop using a recalled product instead of attempting an unofficial repair.",
+        "Keep the serial number, receipt, photos and communications.",
+        "Report the incident to the seller, manufacturer and relevant safety authority."
+      ],
+      "incidentTitle": "Samsung Galaxy Note7 recall",
+      "incidentDate": "2016-10-13",
+      "incidentJurisdiction": "United States Consumer Product Safety Commission; worldwide product response",
+      "incidentSummary": "After reports of overheating, fires and burns involving Galaxy Note7 phones, including replacement devices, the U.S. safety regulator announced an expanded recall and told consumers to power down and stop using the phones.",
+      "incidentOutcome": "Samsung ended production and recall or exchange programs operated across multiple markets. The incident illustrates how product-safety enforcement and consumer remedies work in practice, although procedures differed by country.",
+      "incidentSourceTitle": "Samsung Expands Recall of Galaxy Note7 Smartphones",
+      "incidentSourceUrl": "https://www.cpsc.gov/Recalls/2016/Samsung-Expands-Recall-of-Galaxy-Note7-Smartphones-Based-on-Additional-Incidents-with-Replacement-Phones",
+      "takeaway": "A recall notice is a safety instruction, not merely a customer-service suggestion.",
+      "localLawWarning": "Refund, replacement, damages, reporting deadlines and agency powers depend on the country where the product was sold or used.",
+      "validatedOn": "2026-07-12"
+    }
+  ]
+}
