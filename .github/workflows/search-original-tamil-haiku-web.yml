@@ -1,0 +1,128 @@
+name: Search web for original Tamil haiku text
+
+on:
+  pull_request:
+    paths:
+      - 'automation/search-original-tamil-haiku-web.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install requests beautifulsoup4 lxml
+
+      - name: Search and inspect candidate sources
+        shell: python
+        run: |
+          import json, re, time, requests
+          from pathlib import Path
+          from bs4 import BeautifulSoup
+          from urllib.parse import quote, unquote, urlparse, parse_qs
+
+          headers={'User-Agent':'Mozilla/5.0 (compatible; ShareCapsuleTamilHaikuVerifier/1.0)'}
+          queries=[
+              '"ஈரோடு தமிழன்பன்" "ஹைக்கூ" கவிதை',
+              '"மு. முருகேஷ்" "ஹைக்கூ"',
+              '"மித்ரா" "ஹைக்கூ" தமிழ் கவிதை',
+              '"அமுதபாரதி" "ஹைக்கூ"',
+              '"கவிக்கோ அப்துல் ரகுமான்" ஹைக்கூ',
+              '"அறிவுமதி" ஹைக்கூ கவிதை',
+              '"தமிழ் ஹைக்கூ" "கவிதை" ஆசிரியர்',
+              '"ஹைக்கூ கவிதைகள்" "தமிழ்" கவிஞர்'
+          ]
+          blocked={'facebook.com','youtube.com','instagram.com','pinterest.com','x.com','twitter.com'}
+
+          def normalize_url(href):
+              if not href: return None
+              if href.startswith('//'): href='https:'+href
+              if 'duckduckgo.com/l/?' in href:
+                  qs=parse_qs(urlparse(href).query)
+                  href=unquote((qs.get('uddg') or [''])[0])
+              if not href.startswith('http'): return None
+              host=urlparse(href).netloc.lower().replace('www.','')
+              if any(host==d or host.endswith('.'+d) for d in blocked): return None
+              return href.split('#')[0]
+
+          def clean(html):
+              soup=BeautifulSoup(html or '','lxml')
+              for tag in soup(['script','style','noscript','svg']): tag.decompose()
+              lines=[]
+              for line in soup.get_text('\n').splitlines():
+                  line=re.sub(r'\s+',' ',line).strip()
+                  if line: lines.append(line)
+              return lines
+
+          def tamil_ratio(s):
+              tamil=sum(1 for c in s if '\u0B80'<=c<='\u0BFF')
+              letters=sum(1 for c in s if c.isalpha())
+              return tamil/max(letters,1)
+
+          candidates=[]; seen=set(); search_status=[]
+          for q in queries:
+              url='https://html.duckduckgo.com/html/?q='+quote(q)
+              try:
+                  r=requests.get(url,headers=headers,timeout=45)
+                  search_status.append({'query':q,'status':r.status_code,'url':r.url})
+                  soup=BeautifulSoup(r.text,'lxml')
+                  for a in soup.select('a.result__a, a[href]'):
+                      href=normalize_url(a.get('href'))
+                      if not href or href in seen: continue
+                      seen.add(href)
+                      candidates.append({'query':q,'url':href,'resultTitle':a.get_text(' ',strip=True)})
+                      if sum(1 for x in candidates if x['query']==q)>=12: break
+              except Exception as ex:
+                  search_status.append({'query':q,'error':str(ex)})
+              time.sleep(1)
+
+          inspected=[]
+          for c in candidates[:80]:
+              try:
+                  r=requests.get(c['url'],headers=headers,timeout=35,allow_redirects=True)
+                  if not r.ok or 'text/html' not in (r.headers.get('content-type') or ''):
+                      inspected.append({**c,'status':r.status_code,'contentType':r.headers.get('content-type')})
+                      continue
+                  lines=clean(r.text)
+                  joined='\n'.join(lines)
+                  relevant=any(k in joined for k in ['ஹைக்கூ','ஹைகூ'])
+                  if not relevant: continue
+                  blocks=[]
+                  for i in range(len(lines)-2):
+                      block=lines[i:i+3]
+                      if all(1<=len(x)<=90 and tamil_ratio(x)>=0.55 for x in block) and sum(map(len,block))<=180:
+                          nearby=' | '.join(lines[max(0,i-3):min(len(lines),i+6)])
+                          blocks.append({'lines':block,'context':nearby[:1000]})
+                  keyword_context=[]
+                  for i,line in enumerate(lines):
+                      if any(k in line for k in ['ஹைக்கூ','ஹைகூ','கவிஞர்','ஆசிரியர்']):
+                          keyword_context.append(' | '.join(lines[max(0,i-2):min(len(lines),i+4)])[:1200])
+                  inspected.append({
+                      **c,'status':r.status_code,'finalUrl':r.url,'pageTitle':BeautifulSoup(r.text,'lxml').title.get_text(' ',strip=True) if BeautifulSoup(r.text,'lxml').title else '',
+                      'keywordContext':keyword_context[:20],'candidateBlocks':blocks[:40]
+                  })
+              except Exception as ex:
+                  inspected.append({**c,'error':str(ex)})
+              time.sleep(.4)
+
+          output={'searchStatus':search_status,'candidateCount':len(candidates),'inspected':inspected}
+          Path('tulip/original-tamil-web-search.json').write_text(json.dumps(output,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          Path('automation/search-original-tamil-haiku-web.txt').unlink(missing_ok=True)
+
+      - name: Commit search results
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tulip/original-tamil-web-search.json automation/search-original-tamil-haiku-web.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'Search web for original Tamil haiku sources'
+          git push origin HEAD:${{ github.head_ref }}
