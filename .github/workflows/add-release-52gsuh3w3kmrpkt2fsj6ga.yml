@@ -1,0 +1,169 @@
+name: Add release 52gsUH3W3KMRpkt2fSj6gA
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'automation/add-release-52gsuh3w3kmrpkt2fsj6ga.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -U requests beautifulsoup4 yt-dlp
+
+      - name: Fetch release metadata and update source catalog
+        shell: python
+        run: |
+          import json, subprocess, requests
+          from bs4 import BeautifulSoup
+
+          spotify_id = '52gsUH3W3KMRpkt2fSj6gA'
+          video_id = '6CS-lSdOkzA'
+          slug = 'spotify-52gsuh3w3kmrpkt2fsj6ga'
+          spotify_url = f'https://open.spotify.com/album/{spotify_id}'
+          youtube_url = f'https://www.youtube.com/watch?v={video_id}'
+          title = 'New Tamil Release'
+          artist = 'தமிழாலே'
+          artwork = ''
+          description = 'A Tamil music release by தமிழாலே.'
+          published_at = None
+
+          headers = {'User-Agent': 'Mozilla/5.0'}
+
+          # Spotify oEmbed gives a reliable public title and artwork.
+          try:
+              r = requests.get(
+                  'https://open.spotify.com/oembed',
+                  params={'url': spotify_url},
+                  headers=headers,
+                  timeout=30
+              )
+              if r.ok:
+                  meta = r.json()
+                  if meta.get('title'):
+                      title = meta['title'].strip()
+                  artwork = (meta.get('thumbnail_url') or '').strip()
+          except Exception as ex:
+              print('Spotify oEmbed unavailable:', ex)
+
+          # Spotify embed JSON can expose a cleaner title and artist name.
+          try:
+              r = requests.get(
+                  f'https://open.spotify.com/embed/album/{spotify_id}',
+                  headers=headers,
+                  timeout=30
+              )
+              if r.ok:
+                  soup = BeautifulSoup(r.text, 'html.parser')
+                  for script in soup.find_all('script'):
+                      text = (script.string or script.get_text() or '').strip()
+                      if not text.startswith('{'):
+                          continue
+                      try:
+                          payload = json.loads(text)
+                      except Exception:
+                          continue
+                      entity = payload.get('props', {}).get('pageProps', {}).get('state', {}).get('data', {}).get('entity') or {}
+                      if entity.get('name'):
+                          title = str(entity['name']).strip()
+                      artists = entity.get('artists') or []
+                      if artists and isinstance(artists[0], dict) and artists[0].get('name'):
+                          artist = str(artists[0]['name']).strip()
+                      if title != 'New Tamil Release':
+                          break
+          except Exception as ex:
+              print('Spotify embed metadata unavailable:', ex)
+
+          # YouTube oEmbed is used as a fallback title source.
+          try:
+              r = requests.get(
+                  'https://www.youtube.com/oembed',
+                  params={'url': youtube_url, 'format': 'json'},
+                  headers=headers,
+                  timeout=30
+              )
+              if r.ok:
+                  meta = r.json()
+                  youtube_title = (meta.get('title') or '').strip()
+                  if title == 'New Tamil Release' and youtube_title:
+                      title = youtube_title
+                  if artist == 'தமிழாலே' and meta.get('author_name'):
+                      artist = meta['author_name'].strip()
+          except Exception as ex:
+              print('YouTube oEmbed unavailable:', ex)
+
+          # Enrich with upload date and first description line when possible.
+          try:
+              raw = subprocess.check_output([
+                  'yt-dlp', '--skip-download', '--dump-single-json', '--no-warnings', youtube_url
+              ], text=True, timeout=90)
+              meta = json.loads(raw)
+              upload_date = meta.get('upload_date') or ''
+              if len(upload_date) == 8:
+                  published_at = f'{upload_date[:4]}-{upload_date[4:6]}-{upload_date[6:8]}'
+              first_line = (meta.get('description') or '').strip().split('\n')[0][:240]
+              if first_line:
+                  description = first_line
+          except Exception as ex:
+              print('yt-dlp enrichment unavailable:', ex)
+
+          with open('data/channel-catalog.json', encoding='utf-8') as f:
+              catalog = json.load(f)
+
+          items = catalog.setdefault('items', [])
+          items = [
+              item for item in items
+              if item.get('slug') != slug
+              and spotify_id not in str(item.get('spotifyUrl') or '')
+              and video_id not in (item.get('videoIds') or [])
+          ]
+
+          entry = {
+              'slug': slug,
+              'title': title,
+              'artist': artist,
+              'videoIds': [video_id],
+              'category': 'Tamil Music',
+              'language': 'Tamil',
+              'music': True,
+              'spotifyUrl': spotify_url,
+              'description': description,
+              'coverLines': [title]
+          }
+          if artwork:
+              entry['artwork'] = artwork
+          if published_at:
+              entry['publishedAt'] = published_at
+
+          items.insert(0, entry)
+          catalog['items'] = items
+
+          with open('data/channel-catalog.json', 'w', encoding='utf-8') as f:
+              json.dump(catalog, f, ensure_ascii=False, indent=2)
+              f.write('\n')
+
+          print(json.dumps(entry, ensure_ascii=False, indent=2))
+
+      - name: Commit source catalog update
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/channel-catalog.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Add Spotify and YouTube release 52gsUH3W3KMRpkt2fSj6gA [skip ci]'
+          git push origin HEAD:main
