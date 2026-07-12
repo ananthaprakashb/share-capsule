@@ -1,0 +1,142 @@
+{
+  "site": {
+    "name": "Share Capsule Tips",
+    "tagline": "One validated life hack every day",
+    "startDate": "2026-07-12",
+    "method": "Tips rotate deterministically by local calendar date. Every tip must include an authoritative source and documented real-world evidence before publication."
+  },
+  "tips": [
+    {
+      "id": "power-outage-cold",
+      "category": "Food safety",
+      "title": "Keep the cold in during a power outage",
+      "action": "Keep refrigerator and freezer doors closed, and note when the outage started.",
+      "steps": [
+        "Avoid opening the refrigerator or freezer unless essential.",
+        "A closed refrigerator keeps food safe for up to 4 hours.",
+        "A full closed freezer holds a safe temperature for about 48 hours; a half-full freezer for about 24 hours.",
+        "Never taste food to decide whether it is safe."
+      ],
+      "whyItWorks": "Every door opening releases cold air. Preserving the cold delays the time food spends above safe temperatures.",
+      "sourceOrganization": "FoodSafety.gov — U.S. Department of Health and Human Services",
+      "sourceTitle": "Food Safety During Power Outage",
+      "sourceUrl": "https://www.foodsafety.gov/food-safety-charts/food-safety-during-power-outage",
+      "validationNote": "FoodSafety.gov states that a refrigerator keeps food safe for up to 4 hours during an outage when kept closed, and a full freezer for approximately 48 hours or a half-full freezer for 24 hours.",
+      "evidenceTitle": "2021 Texas Severe Winter Storm — FEMA disaster 4586",
+      "evidenceSummary": "The FEMA-declared February 2021 Texas winter storm produced extended power interruptions, illustrating why tracking outage time and preserving refrigerator temperature matters during real emergencies.",
+      "evidenceUrl": "https://www.fema.gov/disaster/4586",
+      "evidenceType": "Documented disaster",
+      "lastValidated": "2026-07-12"
+    },
+    {
+      "id": "generator-twenty-feet",
+      "category": "Home safety",
+      "title": "Run a portable generator outside — at least 20 feet away",
+      "action": "Place the generator outdoors at least 20 feet from the home, with exhaust facing away from doors, windows and vents.",
+      "steps": [
+        "Never run a generator inside a home, basement, shed or garage — even with doors open.",
+        "Position it at least 20 feet from the building.",
+        "Point the exhaust away from the home.",
+        "Keep working carbon-monoxide alarms on every level and outside sleeping areas."
+      ],
+      "whyItWorks": "Portable generators can produce extremely high levels of invisible, odorless carbon monoxide that can enter a building through openings.",
+      "sourceOrganization": "U.S. Consumer Product Safety Commission",
+      "sourceTitle": "Carbon Monoxide Safety",
+      "sourceUrl": "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/Carbon-Monoxide-Information-Center",
+      "validationNote": "CPSC explicitly says generators must be used outside only, at least 20 feet from homes, with exhaust facing away.",
+      "evidenceTitle": "More than 100 U.S. deaths each year are linked to portable generators",
+      "evidenceSummary": "CPSC reports more than 200 annual accidental non-fire carbon-monoxide deaths associated with consumer products, with more than 100 linked to portable generators.",
+      "evidenceUrl": "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/Carbon-Monoxide-Information-Center",
+      "evidenceType": "National fatal-incident statistics",
+      "lastValidated": "2026-07-12"
+    },
+    {
+      "id": "flooded-road",
+      "category": "Travel safety",
+      "title": "Never test a flooded road with your vehicle",
+      "action": "Turn around instead of driving or walking into floodwater, even when the water looks shallow.",
+      "steps": [
+        "Do not drive around a road barrier.",
+        "Do not assume the road still exists beneath the water.",
+        "Choose another route or wait for officials to reopen the road.",
+        "At night, treat any water-covered roadway as impassable."
+      ],
+      "whyItWorks": "Moving water can hide a washed-out roadway and generate enough force to move vehicles surprisingly quickly.",
+      "sourceOrganization": "NOAA National Weather Service",
+      "sourceTitle": "Turn Around Don't Drown®",
+      "sourceUrl": "https://www.weather.gov/safety/flood-turn-around-dont-drown",
+      "validationNote": "NWS states that 12 inches of rushing water can carry away most cars and 2 feet can carry away SUVs and trucks.",
+      "evidenceTitle": "Over half of flood-related drownings occur in vehicles",
+      "evidenceSummary": "The National Weather Service cites CDC data showing that more than half of flood-related drownings occur when a vehicle is driven into hazardous floodwater.",
+      "evidenceUrl": "https://www.weather.gov/safety/flood-turn-around-dont-drown",
+      "evidenceType": "National fatality evidence",
+      "lastValidated": "2026-07-12"
+    },
+    {
+      "id": "pan-lid-ready",
+      "category": "Kitchen safety",
+      "title": "Keep a lid beside the pan before you start cooking",
+      "action": "Before heating oil or cooking on the stovetop, place a matching metal lid or baking sheet within reach.",
+      "steps": [
+        "Stay near the pan while the burner is on.",
+        "If smoke appears or grease begins to boil, turn the burner off.",
+        "If the pan catches fire and it is safe to act, cover it with the lid or baking sheet to smother the flames.",
+        "Turn pot handles toward the back of the stove."
+      ],
+      "whyItWorks": "Covering a contained pan fire blocks oxygen, while having the lid ready avoids searching for it during an emergency.",
+      "sourceOrganization": "U.S. Fire Administration — FEMA",
+      "sourceTitle": "Cooking Fire Safety",
+      "sourceUrl": "https://www.usfa.fema.gov/prevention/home-fires/prevent-fires/cooking/",
+      "validationNote": "USFA advises keeping a pan lid or baking sheet nearby and using it to cover a pan that catches fire.",
+      "evidenceTitle": "U.S. fire departments responded to about 170,000 home cooking fires in 2021",
+      "evidenceSummary": "USFA reports that those fires caused an estimated 135 deaths, 3,000 injuries and more than $494 million in property loss; unattended equipment was the leading ignition factor in nonconfined cooking fires.",
+      "evidenceUrl": "https://www.usfa.fema.gov/prevention/home-fires/prevent-fires/cooking/",
+      "evidenceType": "National incident statistics",
+      "lastValidated": "2026-07-12"
+    },
+    {
+      "id": "close-bedroom-door",
+      "category": "Fire safety",
+      "title": "Close your bedroom door before sleeping",
+      "action": "Make closing bedroom doors part of the nightly routine after checking that smoke and carbon-monoxide alarms are working.",
+      "steps": [
+        "Close bedroom doors before going to sleep.",
+        "Keep smoke alarms working and audible inside sleeping areas.",
+        "Make sure everyone knows two ways out and the household meeting place.",
+        "If an alarm sounds, follow the escape plan immediately."
+      ],
+      "whyItWorks": "A closed door can slow the movement of heat, smoke and toxic gases, preserving more survivable conditions for longer.",
+      "sourceOrganization": "UL Research Institutes — Fire Safety Research Institute",
+      "sourceTitle": "Close Before You Doze",
+      "sourceUrl": "https://fsri.org/programs/close-before-you-doze",
+      "validationNote": "FSRI's recommendation follows more than a decade of full-scale fire research on the effect of open and closed doors.",
+      "evidenceTitle": "Full-scale home-fire experiments measured dramatic room differences",
+      "evidenceSummary": "FSRI reports average temperatures below 100°F in closed-door rooms versus more than 1,000°F in open-door rooms, with carbon monoxide around 100 ppm closed versus about 10,000 ppm open in the cited tests.",
+      "evidenceUrl": "https://fsri.org/programs/close-before-you-doze",
+      "evidenceType": "Full-scale fire experiments",
+      "lastValidated": "2026-07-12"
+    },
+    {
+      "id": "drop-cover-hold",
+      "category": "Earthquake safety",
+      "title": "At the first jolt: Drop, Cover and Hold On",
+      "action": "Immediately get low, protect your head and neck, and hold on to sturdy shelter until shaking stops.",
+      "steps": [
+        "Drop onto your hands and knees so you are less likely to be knocked down.",
+        "Cover your head and neck; crawl under a sturdy table if one is nearby.",
+        "Hold on to the shelter and be ready to move with it.",
+        "Do not run outside or stand in a doorway during the shaking."
+      ],
+      "whyItWorks": "Most earthquake injuries in modern U.S. buildings come from falling, flying or shifting objects rather than total building collapse.",
+      "sourceOrganization": "Great ShakeOut Earthquake Drills — Statewide California Earthquake Center",
+      "sourceTitle": "Drop, Cover, and Hold On",
+      "sourceUrl": "https://www.shakeout.org/dropcoverholdon/",
+      "validationNote": "Federal, state and local emergency-management experts cited by ShakeOut agree that Drop, Cover and Hold On is the appropriate protective action in most situations.",
+      "evidenceTitle": "A real magnitude 4.2 Delta earthquake triggered California's ShakeAlert in October 2023",
+      "evidenceSummary": "The earthquake occurred one day before the annual ShakeOut drill, underscoring the need to practice the protective action before an unexpected alert or shaking begins.",
+      "evidenceUrl": "https://apnews.com/article/51f7d812f269e31e625dce4080be2238",
+      "evidenceType": "Documented earthquake and public drill",
+      "lastValidated": "2026-07-12"
+    }
+  ]
+}
