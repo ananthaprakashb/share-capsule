@@ -1,1 +1,0 @@
-Add https://youtu.be/sp-BrnxPzBM to the Share Capsule catalog using fault-tolerant YouTube metadata lookup.
