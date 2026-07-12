@@ -1,0 +1,59 @@
+name: Normalize Saranam Ayyappa release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'automation/normalize-saranam-ayyappa.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Normalize source entry
+        shell: python
+        run: |
+          import json
+
+          path = 'data/channel-catalog.json'
+          spotify_id = '35zsu1UWLZjZqkUazDlJIj'
+
+          with open(path, encoding='utf-8') as f:
+              data = json.load(f)
+
+          found = False
+          for item in data.get('items', []):
+              if spotify_id in str(item.get('spotifyUrl') or ''):
+                  item['slug'] = 'saranam-ayyappa'
+                  item['title'] = 'சரணம் ஐயப்பா'
+                  item['artist'] = 'தமிழாலே'
+                  item['category'] = 'Tamil Devotional'
+                  item['language'] = 'Tamil'
+                  item['music'] = True
+                  item['description'] = 'A Tamil Ayyappa devotional music release by தமிழாலே.'
+                  item['coverLines'] = ['சரணம்', 'ஐயப்பா']
+                  found = True
+                  break
+
+          if not found:
+              raise SystemExit('Spotify release not found in source catalog')
+
+          with open(path, 'w', encoding='utf-8') as f:
+              json.dump(data, f, ensure_ascii=False, indent=2)
+              f.write('\n')
+
+      - name: Commit normalized source entry
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/channel-catalog.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Normalize Saranam Ayyappa release metadata'
+          git push origin HEAD:main
