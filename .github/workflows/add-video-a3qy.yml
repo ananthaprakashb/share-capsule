@@ -1,0 +1,91 @@
+name: Add YouTube video A3QYfySjVUU
+
+on:
+  pull_request:
+    paths:
+      - 'automation/add-video-a3qy.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install -U requests yt-dlp
+
+      - name: Fetch metadata and add video
+        shell: python
+        run: |
+          import json, subprocess, requests
+          from pathlib import Path
+
+          video_id='A3QYfySjVUU'
+          url=f'https://www.youtube.com/watch?v={video_id}'
+          slug='youtube-a3qyfysjvuu'
+          title='தமிழாலே Video'
+          artist='தமிழாலே'
+          description='A video release by தமிழாலே.'
+          published_at=None
+          headers={'User-Agent':'Mozilla/5.0'}
+
+          try:
+              r=requests.get('https://www.youtube.com/oembed',params={'url':url,'format':'json'},headers=headers,timeout=30)
+              if r.ok:
+                  data=r.json()
+                  title=(data.get('title') or title).strip()
+                  artist=(data.get('author_name') or artist).replace(' - Topic','').strip()
+          except Exception as ex:
+              print('oEmbed failed:',ex)
+
+          try:
+              raw=subprocess.check_output(['yt-dlp','--skip-download','--dump-single-json','--no-warnings',url],text=True,timeout=120)
+              meta=json.loads(raw)
+              title=(meta.get('title') or title).strip()
+              artist=(meta.get('channel') or meta.get('uploader') or artist).replace(' - Topic','').strip()
+              upload_date=meta.get('upload_date') or ''
+              if len(upload_date)==8:
+                  published_at=f'{upload_date[:4]}-{upload_date[4:6]}-{upload_date[6:8]}'
+              first_line=(meta.get('description') or '').strip().split('\n')[0][:240]
+              if first_line:
+                  description=first_line
+          except Exception as ex:
+              print('yt-dlp enrichment failed:',ex)
+
+          path=Path('data/channel-catalog.json')
+          catalog=json.loads(path.read_text(encoding='utf-8'))
+          items=[x for x in catalog.get('items',[]) if x.get('slug')!=slug and video_id not in (x.get('videoIds') or [])]
+          entry={
+              'slug':slug,
+              'title':title,
+              'artist':artist or 'தமிழாலே',
+              'videoIds':[video_id],
+              'category':'Video',
+              'language':'Tamil',
+              'description':description,
+              'coverLines':[title]
+          }
+          if published_at:
+              entry['publishedAt']=published_at
+          items.insert(0,entry)
+          catalog['items']=items
+          path.write_text(json.dumps(catalog,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          Path('automation/add-video-a3qy.txt').unlink(missing_ok=True)
+          print(json.dumps(entry,ensure_ascii=False,indent=2))
+
+      - name: Commit video to PR branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/channel-catalog.json automation/add-video-a3qy.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'Add YouTube video A3QYfySjVUU'
+          git push origin HEAD:${{ github.head_ref }}
