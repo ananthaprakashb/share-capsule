@@ -2838,6 +2838,56 @@
         "url": "https://open.spotify.com/track/3Ckt65R11uQ5DIyutC57TZ"
       },
       "publishedAt": "2025-04-19"
+    },
+    {
+      "slug": "youtube-a3qyfysjvuu",
+      "title": "Bone structure and growth",
+      "artist": "EveryBasics",
+      "type": "Video release",
+      "category": "Education",
+      "language": "English",
+      "description": "An educational video about bone structure and growth.",
+      "coverImage": "https://img.youtube.com/vi/A3QYfySjVUU/hqdefault.jpg",
+      "coverBackground": "linear-gradient(145deg,#141e30,#243b55)",
+      "coverEyebrow": "Education",
+      "coverLines": [
+        "Bone structure and growth"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=A3QYfySjVUU"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this video 🎥"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this video with the family ❤️"
+        },
+        "curious": {
+          "label": "Curious learner",
+          "icon": "💡",
+          "text": "This looked useful and worth a quick watch."
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This video made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "youtube",
+        "url": "https://www.youtube.com/watch?v=A3QYfySjVUU"
+      }
     }
   ]
 }
