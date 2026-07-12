@@ -1,0 +1,1 @@
+Retry source discovery using Bing RSS for exact original Tamil haiku text and verified poet attribution.
