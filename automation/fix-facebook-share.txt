@@ -1,1 +1,0 @@
-Fix Facebook sharing so mobile devices use the native share sheet instead of opening the Facebook home screen.
