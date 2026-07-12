@@ -23,27 +23,52 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install yt-dlp
-        run: pip install -U yt-dlp
+      - name: Install dependencies
+        run: pip install -U requests yt-dlp
 
       - name: Fetch YouTube metadata and add source entry
         shell: python
         run: |
-          import json, subprocess
+          import json, subprocess, requests
 
           video_id = 'sp-BrnxPzBM'
           slug = 'youtube-sp-brnxpzbm'
           url = f'https://www.youtube.com/watch?v={video_id}'
+          title = 'தமிழாலே Video'
+          description = 'A video release by தமிழாலே.'
+          published_at = None
 
-          raw = subprocess.check_output([
-              'yt-dlp', '--skip-download', '--dump-single-json', '--no-warnings', url
-          ], text=True)
-          meta = json.loads(raw)
+          # Prefer YouTube's public oEmbed metadata.
+          try:
+              r = requests.get(
+                  'https://www.youtube.com/oembed',
+                  params={'url': url, 'format': 'json'},
+                  timeout=30,
+                  headers={'User-Agent': 'Mozilla/5.0'}
+              )
+              if r.ok:
+                  data = r.json()
+                  title = (data.get('title') or title).strip()
+                  author = (data.get('author_name') or '').strip()
+                  if author:
+                      description = f'A video release from {author}.'
+          except Exception as ex:
+              print('oEmbed lookup failed:', ex)
 
-          title = (meta.get('title') or 'தமிழாலே Video').strip()
-          upload_date = meta.get('upload_date') or ''
-          published_at = f'{upload_date[:4]}-{upload_date[4:6]}-{upload_date[6:8]}' if len(upload_date) == 8 else None
-          description = (meta.get('description') or '').strip().split('\n')[0][:240]
+          # Enrich with upload date/description when yt-dlp is available.
+          try:
+              raw = subprocess.check_output([
+                  'yt-dlp', '--skip-download', '--dump-single-json', '--no-warnings', url
+              ], text=True, timeout=90)
+              meta = json.loads(raw)
+              title = (meta.get('title') or title).strip()
+              upload_date = meta.get('upload_date') or ''
+              published_at = f'{upload_date[:4]}-{upload_date[4:6]}-{upload_date[6:8]}' if len(upload_date) == 8 else None
+              first_line = (meta.get('description') or '').strip().split('\n')[0][:240]
+              if first_line:
+                  description = first_line
+          except Exception as ex:
+              print('yt-dlp enrichment unavailable; using oEmbed/fallback metadata:', ex)
 
           with open('data/channel-catalog.json', encoding='utf-8') as f:
               catalog = json.load(f)
@@ -56,7 +81,7 @@ jobs:
               'videoIds': [video_id],
               'category': 'Video',
               'language': 'Tamil',
-              'description': description or 'A video release by தமிழாலே.',
+              'description': description,
               'coverLines': [title]
           }
           if published_at:
