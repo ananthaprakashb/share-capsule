@@ -1,0 +1,145 @@
+name: Resolve UPC 199335514075 media links
+
+on:
+  pull_request:
+    paths:
+      - 'automation/resolve-upc-199335514075-media.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  resolve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install yt-dlp playwright
+          playwright install chromium --with-deps
+
+      - name: Resolve YouTube Music and Amazon Music
+        shell: python
+        run: |
+          import asyncio, difflib, json, re, subprocess
+          from pathlib import Path
+          from urllib.parse import quote
+          from playwright.async_api import async_playwright
+
+          source=json.loads(Path('data/upc-199335514075-platform-links.json').read_text(encoding='utf-8'))
+
+          def norm(s):
+              return re.sub(r'[^\w\u0B80-\u0BFF]+','',str(s or '').casefold())
+
+          def yt_candidates(title):
+              query=f'ytsearch8:{title} தமிழாலே'
+              try:
+                  raw=subprocess.check_output([
+                      'yt-dlp','--flat-playlist','--dump-single-json','--no-warnings',query
+                  ],text=True,timeout=120)
+                  return (json.loads(raw).get('entries') or [])
+              except Exception as ex:
+                  print('YouTube search failed',title,ex)
+                  return []
+
+          def choose_youtube(track):
+              title=track.get('title') or ''
+              target_duration=(track.get('durationMs') or 0)/1000
+              best=None
+              best_score=-1
+              for e in yt_candidates(title):
+                  eid=e.get('id')
+                  if not eid:
+                      continue
+                  etitle=str(e.get('title') or '')
+                  channel=' '.join(str(e.get(k) or '') for k in ['channel','uploader','channel_url'])
+                  similarity=difflib.SequenceMatcher(None,norm(title),norm(etitle)).ratio()
+                  duration=float(e.get('duration') or 0)
+                  duration_score=max(0,1-abs(duration-target_duration)/12) if duration and target_duration else 0
+                  artist_score=1 if ('தமிழாலே' in channel or 'தமிழாலே' in etitle or 'topic' in channel.casefold()) else 0
+                  score=similarity*0.65+duration_score*0.25+artist_score*0.10
+                  if score>best_score:
+                      best_score=score
+                      best={
+                          'id':eid,'title':etitle,'channel':channel,'duration':duration,
+                          'score':round(score,4),
+                          'youtube':f'https://www.youtube.com/watch?v={eid}',
+                          'youtubeMusic':f'https://music.youtube.com/watch?v={eid}'
+                      }
+              return best
+
+          async def amazon_candidates(page,title):
+              query=f'{title} தமிழாலே'
+              url='https://music.amazon.com/search/'+quote(query,safe='')
+              result={'searchUrl':url,'candidates':[]}
+              try:
+                  await page.goto(url,wait_until='domcontentloaded',timeout=90000)
+                  await page.wait_for_timeout(6500)
+                  for _ in range(3):
+                      await page.mouse.wheel(0,900)
+                      await page.wait_for_timeout(500)
+                  anchors=await page.locator('a[href]').evaluate_all("els => els.map(a => ({href:a.href,text:(a.innerText||a.textContent||'').trim(),aria:a.getAttribute('aria-label')||'',title:a.getAttribute('title')||''}))")
+                  for a in anchors:
+                      href=a.get('href') or ''
+                      if not any(x in href for x in ['/tracks/','/albums/','/music/player/tracks/','/music/player/albums/']):
+                          continue
+                      label=' '.join([a.get('text') or '',a.get('aria') or '',a.get('title') or '']).strip()
+                      score=difflib.SequenceMatcher(None,norm(title),norm(label)).ratio() if label else 0
+                      result['candidates'].append({'href':href,'label':label,'score':round(score,4)})
+                  result['candidates']=sorted(result['candidates'],key=lambda x:x['score'],reverse=True)[:12]
+              except Exception as ex:
+                  result['error']=str(ex)
+              return result
+
+          async def main():
+              tracks=source.get('tracks') or []
+              for t in tracks:
+                  t['youtubeMatch']=choose_youtube(t)
+
+              async with async_playwright() as p:
+                  browser=await p.chromium.launch(headless=True)
+                  page=await browser.new_page(viewport={'width':1440,'height':1200},locale='en-US')
+                  for t in tracks:
+                      t['amazonSearch']=await amazon_candidates(page,t.get('title') or '')
+                      best=(t['amazonSearch'].get('candidates') or [None])[0]
+                      if best and best.get('score',0)>=0.45:
+                          t.setdefault('platforms',{})['amazonMusic']=best['href']
+                          t['amazonMatchStatus']='candidate_exact'
+                      else:
+                          t.setdefault('platforms',{})['amazonMusicSearch']=t['amazonSearch'].get('searchUrl')
+                          t['amazonMatchStatus']='search_fallback'
+                  await browser.close()
+
+              for t in tracks:
+                  y=t.get('youtubeMatch') or {}
+                  if y.get('score',0)>=0.72:
+                      t.setdefault('platforms',{})['youtubeMusic']=y['youtubeMusic']
+                      t['platforms']['youtube']=y['youtube']
+                      t['youtubeMatchStatus']='exact_candidate'
+                  else:
+                      q=quote(f"{t.get('title')} தமிழாலே",safe='')
+                      t.setdefault('platforms',{})['youtubeMusicSearch']=f'https://music.youtube.com/search?q={q}'
+                      t['youtubeMatchStatus']='search_fallback'
+
+              Path('data/upc-199335514075-resolved-media.json').write_text(
+                  json.dumps(source,ensure_ascii=False,indent=2)+'\n',encoding='utf-8'
+              )
+              Path('automation/resolve-upc-199335514075-media.txt').unlink(missing_ok=True)
+
+          asyncio.run(main())
+
+      - name: Commit media resolution
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/upc-199335514075-resolved-media.json automation/resolve-upc-199335514075-media.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'Resolve media links for UPC 199335514075 tracks'
+          git push origin HEAD:${{ github.head_ref }}
