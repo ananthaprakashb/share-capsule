@@ -1,0 +1,106 @@
+name: Summarize original Tamil haiku sources
+
+on:
+  pull_request:
+    paths:
+      - 'automation/summarize-original-tamil-haiku.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  summarize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install requests beautifulsoup4
+
+      - name: Produce concise poem-level source summary
+        shell: python
+        run: |
+          import json, re, requests
+          from pathlib import Path
+          from bs4 import BeautifulSoup
+
+          headers={'User-Agent':'ShareCapsuleTamilHaikuVerifier/1.1 (ananthaprakashb@gmail.com)'}
+          base='https://erodetamilanban.com'
+
+          def strip_divi(raw):
+              raw=re.sub(r'\[/?et_pb_[^\]]*\]','\n',raw or '')
+              raw=re.sub(r'\[[^\]]+\]','\n',raw)
+              raw=BeautifulSoup(raw,'html.parser').get_text('\n')
+              lines=[]
+              for line in raw.splitlines():
+                  line=re.sub(r'\s+',' ',line).strip(' \t\r\n"“”')
+                  if line: lines.append(line)
+              return lines
+
+          def tamil_ratio(s):
+              tamil=sum(1 for c in s if '\u0B80'<=c<='\u0BFF')
+              letters=sum(1 for c in s if c.isalpha())
+              return tamil/max(letters,1)
+
+          rows=[]
+          for kind in ['posts','pages']:
+              r=requests.get(base+f'/wp-json/wp/v2/{kind}',params={'per_page':100,'_fields':'id,date,link,slug,title,content'},headers=headers,timeout=45)
+              r.raise_for_status()
+              for item in r.json():
+                  title=BeautifulSoup((item.get('title') or {}).get('rendered') or '','html.parser').get_text(' ',strip=True)
+                  content=(item.get('content') or {}).get('rendered') or ''
+                  lines=strip_divi(content)
+                  joined='\n'.join(lines)
+                  if not any(k in title+'\n'+joined for k in ['ஹைக்கூ','ஹைகூ','ஐந்திணை','கவின் குறு','மின்மினி']):
+                      continue
+                  blocks=[]
+                  for i in range(len(lines)-2):
+                      block=lines[i:i+3]
+                      if all(1<=len(x)<=80 and tamil_ratio(x)>=0.55 for x in block):
+                          # Exclude obvious prose paragraphs and navigation text.
+                          if sum(len(x) for x in block)<=150:
+                              blocks.append(block)
+                  rows.append({
+                      'kind':kind,'title':title,'url':item.get('link'),'date':item.get('date'),
+                      'keywordLines':[x for x in lines if any(k in x for k in ['ஹைக்கூ','ஹைகூ','ஐந்திணை','கவின் குறு','மின்மினி'])][:30],
+                      'candidateThreeLineBlocks':blocks[:60],
+                      'lineCount':len(lines)
+                  })
+
+          # Official catalogue and biography assertions.
+          books_html=requests.get(base+'/புத்தகங்கள்/',headers=headers,timeout=45).text
+          books_text=BeautifulSoup(books_html,'html.parser').get_text('\n')
+          home_html=requests.get(base+'/',headers=headers,timeout=45).text
+          home_text=BeautifulSoup(home_html,'html.parser').get_text('\n')
+          summary={
+              'source':base,
+              'author':{
+                  'name':'ஈரோடு தமிழன்பன்',
+                  'bioUrl':base+'/',
+                  'nameConfirmed':'ஈரோடு தமிழன்பன்' in home_text,
+                  'haikuRoleConfirmed':'ஹைக்கூவைத் தமிழில் பிரபலப்படுத்திய' in home_text
+              },
+              'officialCollections':[
+                  {'title':'ஐந்திணை ஹைக்கூ','confirmed': 'ஐந்திணை ஹைக்கூ' in books_text,'catalogueUrl':base+'/புத்தகங்கள்/'},
+                  {'title':'கவின் குறு நூறு','confirmed': 'கவின் குறு நூறு' in books_text,'catalogueUrl':base+'/புத்தகங்கள்/'},
+                  {'title':'ஜப்பானிய ஹைகூ 100 – குறிப்புரையுடன்','confirmed': 'ஜப்பானிய ஹைகூ 100' in books_text,'catalogueUrl':base+'/புத்தகங்கள்/'}
+              ],
+              'contentMatches':rows,
+              'decisionRule':'Only publish an individual Tamil haiku if its exact lines are present in an author-owned or primary publication source. A catalogue title confirms the collection, not the text of an individual poem.'
+          }
+          Path('tulip/original-tamil-source-summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          Path('automation/summarize-original-tamil-haiku.txt').unlink(missing_ok=True)
+
+      - name: Commit summary to PR branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tulip/original-tamil-source-summary.json automation/summarize-original-tamil-haiku.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'Summarize original Tamil haiku source evidence'
+          git push origin HEAD:${{ github.head_ref }}
