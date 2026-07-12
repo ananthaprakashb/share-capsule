@@ -1,0 +1,129 @@
+name: Add Tamil release 3CUjEmBp1drcCP8ek7MOQo
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'automation/add-release-3cujem.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Add release and support separate YouTube Music links
+        shell: python
+        run: |
+          import json, requests
+          from pathlib import Path
+          from bs4 import BeautifulSoup
+
+          spotify_id = '3CUjEmBp1drcCP8ek7MOQo'
+          apple_song_id = '1809626579'
+          short_id = 'DI8u-2zQsyg'
+          youtube_music_id = 'M6iorJ7Srrc'
+          spotify_url = f'https://open.spotify.com/track/{spotify_id}'
+          apple_url = 'https://music.apple.com/us/song/%E0%AE%AA-%E0%AE%B0-%E0%AE%99-%E0%AE%95%E0%AE%B5-%E0%AE%AF%E0%AE%AE/1809626579'
+          amazon_url = 'https://amazon.com/music/player/tracks/B0F5NX5YZC?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_Dn8UT1kqNT0nBaBxPC6YXyRXU'
+          youtube_music_url = f'https://music.youtube.com/watch?v={youtube_music_id}'
+          headers = {'User-Agent': 'Mozilla/5.0'}
+
+          title = 'தமிழாலே இசை வெளியீடு'
+          artist = 'தமிழாலே'
+          artwork = ''
+          published_at = None
+
+          try:
+              r = requests.get('https://itunes.apple.com/lookup', params={'id': apple_song_id, 'country': 'US'}, headers=headers, timeout=30)
+              if r.ok:
+                  rows = r.json().get('results') or []
+                  row = rows[0] if rows else {}
+                  if row.get('trackName'):
+                      title = str(row['trackName']).strip()
+                  if row.get('artistName'):
+                      artist = str(row['artistName']).replace(' - Topic', '').strip()
+                  if row.get('artworkUrl100'):
+                      artwork = str(row['artworkUrl100']).replace('100x100bb', '1200x1200bb')
+                  if row.get('releaseDate'):
+                      published_at = str(row['releaseDate'])[:10]
+          except Exception as ex:
+              print('Apple lookup unavailable:', ex)
+
+          try:
+              r = requests.get('https://open.spotify.com/oembed', params={'url': spotify_url}, headers=headers, timeout=30)
+              if r.ok:
+                  meta = r.json()
+                  if title == 'தமிழாலே இசை வெளியீடு' and meta.get('title'):
+                      title = str(meta['title']).strip()
+                  if not artwork:
+                      artwork = str(meta.get('thumbnail_url') or '').strip()
+          except Exception as ex:
+              print('Spotify oEmbed unavailable:', ex)
+
+          # Ensure the catalog generator can keep a distinct YouTube Music link.
+          sync_path = Path('.github/workflows/sync-channel-catalog.yml')
+          sync_text = sync_path.read_text(encoding='utf-8')
+          old = """              if first_video and is_music:\n                  platforms.append({\n                      'label': 'YouTube Music',\n                      'icon': '♫',\n                      'url': f'https://music.youtube.com/watch?v={first_video}'\n                  })"""
+          new = """              youtube_music_url = item.get('youtubeMusicUrl') or (f'https://music.youtube.com/watch?v={first_video}' if first_video else None)\n              if youtube_music_url and is_music:\n                  platforms.append({\n                      'label': 'YouTube Music',\n                      'icon': '♫',\n                      'url': youtube_music_url\n                  })"""
+          if old in sync_text:
+              sync_text = sync_text.replace(old, new, 1)
+              sync_path.write_text(sync_text, encoding='utf-8')
+          elif "item.get('youtubeMusicUrl')" not in sync_text:
+              raise SystemExit('Unable to patch YouTube Music generator support')
+
+          slug = 'apple-song-1809626579'
+          catalog_path = Path('data/channel-catalog.json')
+          catalog = json.loads(catalog_path.read_text(encoding='utf-8'))
+          items = [
+              item for item in catalog.get('items', [])
+              if item.get('slug') != slug
+              and spotify_id not in str(item.get('spotifyUrl') or '')
+              and short_id not in (item.get('videoIds') or [])
+          ]
+
+          entry = {
+              'slug': slug,
+              'title': title,
+              'artist': artist or 'தமிழாலே',
+              'videoIds': [short_id],
+              'youtubeMusicUrl': youtube_music_url,
+              'category': 'Tamil Music',
+              'language': 'Tamil',
+              'music': True,
+              'spotifyUrl': spotify_url,
+              'appleUrl': apple_url,
+              'amazonUrl': amazon_url,
+              'description': 'A Tamil music release by தமிழாலே, presented with a YouTube Short and full audio links.',
+              'coverLines': [title]
+          }
+          if artwork:
+              entry['artwork'] = artwork
+          if published_at:
+              entry['publishedAt'] = published_at
+
+          items.insert(0, entry)
+          catalog['items'] = items
+          catalog_path.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          print(json.dumps(entry, ensure_ascii=False, indent=2))
+
+      - name: Commit source and generator updates
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/channel-catalog.json .github/workflows/sync-channel-catalog.yml
+          git diff --cached --quiet && exit 0
+          git commit -m 'Add Tamil release 3CUjEmBp1drcCP8ek7MOQo [skip ci]'
+          git push origin HEAD:main
