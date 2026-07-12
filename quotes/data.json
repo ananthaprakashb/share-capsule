@@ -1,0 +1,92 @@
+{
+  "site": {
+    "name": "Share Capsule Quotes",
+    "tagline": "One verified thought for today"
+  },
+  "quotes": [
+    {
+      "date": "2026-07-12",
+      "quote": "The only way to do great work is to love what you do.",
+      "author": "Steve Jobs",
+      "authorBio": "American entrepreneur and cofounder of Apple who helped shape personal computing and digital media.",
+      "authorEncyclopediaUrl": "https://en.wikipedia.org/wiki/Steve_Jobs",
+      "sourceTitle": "Steve Jobs’ 2005 Stanford Commencement Address",
+      "sourceUrl": "https://news.stanford.edu/stories/2005/06/youve-got-find-love-jobs-says",
+      "sourceType": "Official university transcript",
+      "verificationNote": "Verified word-for-word against Stanford University’s prepared transcript of the June 12, 2005 address.",
+      "verifiedOn": "2026-07-12"
+    },
+    {
+      "date": "2026-07-11",
+      "quote": "Nothing great was ever achieved without enthusiasm.",
+      "author": "Ralph Waldo Emerson",
+      "authorBio": "American essayist, lecturer, poet, and a leading figure of transcendentalism.",
+      "authorEncyclopediaUrl": "https://en.wikipedia.org/wiki/Ralph_Waldo_Emerson",
+      "sourceTitle": "Circles, in Essays: First Series",
+      "sourceUrl": "https://www.gutenberg.org/files/2944/2944-h/2944-h.htm",
+      "sourceType": "Primary text, Project Gutenberg",
+      "verificationNote": "Verified in Emerson’s essay “Circles” in the Project Gutenberg text of Essays: First Series.",
+      "verifiedOn": "2026-07-12"
+    },
+    {
+      "date": "2026-07-10",
+      "quote": "Success is to be measured not so much by the position that one has reached in life as by the obstacles which he has overcome.",
+      "author": "Booker T. Washington",
+      "authorBio": "American educator, author, orator, and a major leader of Black education in the late nineteenth and early twentieth centuries.",
+      "authorEncyclopediaUrl": "https://en.wikipedia.org/wiki/Booker_T._Washington",
+      "sourceTitle": "Up from Slavery",
+      "sourceUrl": "https://www.gutenberg.org/files/2376/2376-h/2376-h.htm",
+      "sourceType": "Primary text, Project Gutenberg",
+      "verificationNote": "Verified in Washington’s autobiography Up from Slavery.",
+      "verifiedOn": "2026-07-12"
+    },
+    {
+      "date": "2026-07-09",
+      "quote": "It is impossible to live without failing at something.",
+      "author": "J. K. Rowling",
+      "authorBio": "British author best known for the Harry Potter series and for writing on imagination, failure, and resilience.",
+      "authorEncyclopediaUrl": "https://en.wikipedia.org/wiki/J._K._Rowling",
+      "sourceTitle": "The Fringe Benefits of Failure, and the Importance of Imagination",
+      "sourceUrl": "https://news.harvard.edu/gazette/story/2008/06/text-of-j-k-rowling-speech/",
+      "sourceType": "Official university transcript",
+      "verificationNote": "Verified as an exact sentence from Rowling’s June 5, 2008 Harvard commencement address.",
+      "verifiedOn": "2026-07-12"
+    },
+    {
+      "date": "2026-07-08",
+      "quote": "Diligence is the mother of good luck.",
+      "author": "Benjamin Franklin",
+      "authorBio": "American printer, writer, scientist, inventor, diplomat, and one of the Founding Fathers of the United States.",
+      "authorEncyclopediaUrl": "https://en.wikipedia.org/wiki/Benjamin_Franklin",
+      "sourceTitle": "The Way to Wealth, included with The Autobiography of Benjamin Franklin",
+      "sourceUrl": "https://www.gutenberg.org/files/20203/20203-h/20203-h.htm",
+      "sourceType": "Primary text, Project Gutenberg",
+      "verificationNote": "Verified in the Project Gutenberg text; capitalization was modernized without changing the words.",
+      "verifiedOn": "2026-07-12"
+    },
+    {
+      "date": "2026-07-07",
+      "quote": "Do your work, and I shall know you. Do your work, and you shall reinforce yourself.",
+      "author": "Ralph Waldo Emerson",
+      "authorBio": "American essayist, lecturer, poet, and a leading figure of transcendentalism.",
+      "authorEncyclopediaUrl": "https://en.wikipedia.org/wiki/Ralph_Waldo_Emerson",
+      "sourceTitle": "Self-Reliance, in Essays: First Series",
+      "sourceUrl": "https://www.gutenberg.org/files/2944/2944-h/2944-h.htm",
+      "sourceType": "Primary text, Project Gutenberg",
+      "verificationNote": "Verified word-for-word in Emerson’s essay “Self-Reliance.”",
+      "verifiedOn": "2026-07-12"
+    },
+    {
+      "date": "2026-07-06",
+      "quote": "One To-day is worth two To-morrows.",
+      "author": "Benjamin Franklin",
+      "authorBio": "American printer, writer, scientist, inventor, diplomat, and one of the Founding Fathers of the United States.",
+      "authorEncyclopediaUrl": "https://en.wikipedia.org/wiki/Benjamin_Franklin",
+      "sourceTitle": "The Way to Wealth, included with The Autobiography of Benjamin Franklin",
+      "sourceUrl": "https://www.gutenberg.org/files/20203/20203-h/20203-h.htm",
+      "sourceType": "Primary text, Project Gutenberg",
+      "verificationNote": "Verified in the Project Gutenberg text; the original historical spelling and hyphenation are retained.",
+      "verifiedOn": "2026-07-12"
+    }
+  ]
+}
