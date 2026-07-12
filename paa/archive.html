@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ta">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#ffb84d">
+  <meta name="description" content="சரிபார்க்கப்பட்ட தமிழ்க் கவிதைத் தொகுப்பு.">
+  <title>கவிதைத் தொகுப்பு — பா</title>
+  <style>
+    :root{--ink:#29231f;--muted:#756b63;--line:#eee2d4;--accent:#a55412;--shadow:0 18px 52px rgba(86,56,27,.11)}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 12% 3%,#fff 0,transparent 28%),radial-gradient(circle at 88% 10%,#ffe99b 0,transparent 26%),linear-gradient(155deg,#dff5ff,#fff0d8 55%,#ffe5ec);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans Tamil","Tamil Sangam MN","Latha",sans-serif;-webkit-font-smoothing:antialiased}.shell{width:min(100%,820px);margin:auto;padding:max(18px,env(safe-area-inset-top)) 16px calc(46px + env(safe-area-inset-bottom))}.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font-weight:950;font-size:26px;color:var(--ink);text-decoration:none}.back{color:var(--muted);text-decoration:none;font-size:13px;font-weight:850;padding:10px 13px;border:1px solid rgba(255,255,255,.9);border-radius:999px;background:rgba(255,255,255,.75)}.hero{padding:38px 2px 24px}.hero h1{margin:0;font-size:clamp(42px,10vw,72px);line-height:.95;letter-spacing:-.06em}.hero p{margin:14px 0 0;color:var(--muted);line-height:1.65}.list{display:grid;gap:14px}.item{display:block;color:inherit;text-decoration:none;background:rgba(255,253,248,.96);border:1px solid rgba(255,255,255,.95);border-radius:26px;padding:22px;box-shadow:var(--shadow);transition:.18s}.item:hover{transform:translateY(-2px)}.date{color:var(--accent);font-size:11px;font-weight:950;letter-spacing:.1em;text-transform:uppercase}.mood{display:inline-flex;margin-top:11px;background:#fff2c9;color:#9b5b00;padding:6px 9px;border-radius:999px;font-size:10px;font-weight:950}.title{margin:13px 0 0;font-size:clamp(28px,6vw,40px);line-height:1.05;letter-spacing:-.045em}.excerpt{margin:14px 0 0;color:#514942;line-height:1.75;white-space:pre-line}.author{margin-top:13px;color:var(--muted);font-weight:850}.verify{margin-top:10px;color:#3e8b62;font-size:12px;font-weight:900}.empty{background:#fff;border-radius:22px;padding:28px;text-align:center;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="top"><a class="brand" href="/paa/">பா</a><a class="back" href="/paa/">இன்றைய கவிதை</a></header>
+    <section class="hero"><h1>கவிதைத் தொகுப்பு</h1><p>ஒவ்வொரு பதிவிலும் கவிஞர் தகவல், மூல உரை இணைப்பு மற்றும் சரிபார்ப்பு குறிப்பு வழங்கப்படுகிறது.</p></section>
+    <div class="list" id="list"><div class="empty">கவிதைகள் ஏற்றப்படுகின்றன…</div></div>
+  </main>
+  <script>
+    const list=document.getElementById('list');
+    const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const fmt=d=>new Date(d+'T12:00:00').toLocaleDateString('ta-IN',{year:'numeric',month:'long',day:'numeric'});
+    async function load(){try{const r=await fetch(`data.json?v=${Date.now()}`,{cache:'no-store'});if(!r.ok)throw new Error(`HTTP ${r.status}`);const data=await r.json();const poems=[...(data.poems||[])].sort((a,b)=>b.date.localeCompare(a.date));list.innerHTML=poems.length?poems.map(p=>`<a class="item" href="index.html?date=${encodeURIComponent(p.date)}"><div class="date">${esc(fmt(p.date))}</div><div class="mood">☀ ${esc(p.mood)}</div><h2 class="title">${esc(p.title)}</h2><div class="excerpt">${esc(p.excerptLines.slice(0,4).join('\n'))}</div><div class="author">— ${esc(p.authorDisplay)}</div><div class="verify">✓ மூலம் சரிபார்க்கப்பட்டது</div></a>`).join(''):'<div class="empty">கவிதைகள் இன்னும் சேர்க்கப்படவில்லை.</div>'}catch(e){list.innerHTML=`<div class="empty">கவிதைத் தொகுப்பை ஏற்ற இயலவில்லை. ${esc(e.message)}</div>`}}
+    load();
+  </script>
+</body>
+</html>
