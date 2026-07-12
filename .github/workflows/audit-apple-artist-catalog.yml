@@ -1,0 +1,131 @@
+name: Audit Apple artist catalog
+
+on:
+  pull_request:
+    paths:
+      - 'automation/audit-apple-artist-catalog.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install requests
+
+      - name: Compare Apple artist catalog with Share Capsule
+        shell: python
+        run: |
+          import json, re, requests
+          from pathlib import Path
+          from urllib.parse import urlparse, parse_qs
+
+          headers={'User-Agent':'ShareCapsuleCatalogAudit/1.0'}
+          seed_track_id='1809626579'
+
+          lookup=requests.get('https://itunes.apple.com/lookup',params={'id':seed_track_id,'country':'US'},headers=headers,timeout=30)
+          lookup.raise_for_status()
+          seed_rows=lookup.json().get('results') or []
+          seed=seed_rows[0] if seed_rows else {}
+          artist_id=seed.get('artistId')
+          if not artist_id:
+              raise SystemExit('Apple artistId not found from seed track')
+
+          artist_lookup=requests.get('https://itunes.apple.com/lookup',params={
+              'id':artist_id,'entity':'song','limit':200,'country':'US'
+          },headers=headers,timeout=30)
+          artist_lookup.raise_for_status()
+
+          tracks=[]
+          for row in artist_lookup.json().get('results') or []:
+              if row.get('wrapperType')!='track' or row.get('kind')!='song':
+                  continue
+              tracks.append({
+                  'trackId':row.get('trackId'),
+                  'title':row.get('trackName'),
+                  'artist':row.get('artistName'),
+                  'artistId':row.get('artistId'),
+                  'collectionId':row.get('collectionId'),
+                  'collection':row.get('collectionName'),
+                  'releaseDate':str(row.get('releaseDate') or '')[:10],
+                  'durationMs':row.get('trackTimeMillis'),
+                  'appleUrl':row.get('trackViewUrl'),
+                  'artwork':(row.get('artworkUrl100') or '').replace('100x100bb','1200x1200bb'),
+                  'primaryGenreName':row.get('primaryGenreName'),
+                  'trackNumber':row.get('trackNumber'),
+                  'trackCount':row.get('trackCount')
+              })
+
+          catalog=json.loads(Path('data/channel-catalog.json').read_text(encoding='utf-8'))
+          live=json.loads(Path('data/releases.json').read_text(encoding='utf-8'))
+
+          def apple_ids_from_items(items):
+              ids=set()
+              titles=set()
+              for item in items:
+                  titles.add(str(item.get('title') or '').strip().casefold())
+                  url=str(item.get('appleUrl') or '')
+                  if not url:
+                      for p in item.get('platforms') or []:
+                          if str(p.get('label') or '').lower()=='apple music':
+                              url=str(p.get('url') or '')
+                              break
+                  if not url:
+                      continue
+                  try:
+                      u=urlparse(url)
+                      ids.update(re.findall(r'\d{6,}',u.path))
+                      ids.update(parse_qs(u.query).get('i',[]))
+                  except Exception:
+                      pass
+              return ids,titles
+
+          source_ids,source_titles=apple_ids_from_items(catalog.get('items') or [])
+          live_ids,live_titles=apple_ids_from_items(live.get('releases') or [])
+          known_ids=source_ids|live_ids
+          known_titles=source_titles|live_titles
+
+          for track in tracks:
+              tid=str(track.get('trackId') or '')
+              title=str(track.get('title') or '').strip().casefold()
+              track['inShareCapsule']=tid in known_ids or title in known_titles
+
+          missing=[t for t in tracks if not t['inShareCapsule']]
+          existing=[t for t in tracks if t['inShareCapsule']]
+
+          audit={
+              'recordLabel':'9373145 Records DK',
+              'distroKidUPC':'199335514075',
+              'seedTrackId':seed_track_id,
+              'artistId':artist_id,
+              'artistName':seed.get('artistName'),
+              'catalogTrackCount':len(tracks),
+              'existingTrackCount':len(existing),
+              'missingTrackCount':len(missing),
+              'existingTracks':sorted(existing,key=lambda x:(x.get('releaseDate') or '',x.get('title') or ''),reverse=True),
+              'missingTracks':sorted(missing,key=lambda x:(x.get('releaseDate') or '',x.get('title') or ''),reverse=True),
+              'allTracks':sorted(tracks,key=lambda x:(x.get('releaseDate') or '',x.get('title') or ''),reverse=True)
+          }
+
+          Path('data/apple-artist-catalog-audit.json').write_text(
+              json.dumps(audit,ensure_ascii=False,indent=2)+'\n',encoding='utf-8'
+          )
+          Path('automation/audit-apple-artist-catalog.txt').unlink(missing_ok=True)
+
+      - name: Commit audit to PR branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/apple-artist-catalog-audit.json automation/audit-apple-artist-catalog.txt
+          git diff --cached --quiet && exit 0
+          git commit -m 'Audit Apple artist catalog against Share Capsule'
+          git push origin HEAD:${{ github.head_ref }}
