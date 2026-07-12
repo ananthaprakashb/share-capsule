@@ -1,1 +1,1 @@
-Validate a cheerful Tamil poem against Tamil Wikisource and create the /paa endpoint data.
+Retry validation of the cheerful Tamil poem against Tamil Wikisource and create the /paa endpoint data.
