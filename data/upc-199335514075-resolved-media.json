@@ -1,0 +1,349 @@
+{
+  "recordLabel": "9373145 Records DK",
+  "distroKidUPC": "199335514075",
+  "collectionName": "தமிழாலே",
+  "spotifyAlbumUrl": "https://open.spotify.com/album/3cQMnRtQgGUZm0cEqv1xL6",
+  "trackCount": 10,
+  "tracks": [
+    {
+      "trackId": 1809626058,
+      "title": "திரும்ப பிறக்கணுமே",
+      "artist": "தமிழாலே",
+      "trackNumber": 1,
+      "trackCount": 11,
+      "durationMs": 161520,
+      "releaseDate": "2025-04-19",
+      "appleUrl": "https://music.apple.com/us/album/%E0%AE%A4-%E0%AE%B0-%E0%AE%AE-%E0%AE%AA-%E0%AE%AA-%E0%AE%B1%E0%AE%95-%E0%AE%95%E0%AE%A3-%E0%AE%AE/1809626057?i=1809626058&uo=4",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0f/9d/95/0f9d9572-b896-04f5-7028-add715d2652f/artwork.jpg/1200x1200bb.jpg",
+      "platforms": {
+        "appleMusic": "https://geo.music.apple.com/us/album/_/1809626057?i=1809626058&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+        "spotify": "https://open.spotify.com/track/1gc0b1vU7bOHLqTdMO6kOG",
+        "amazonMusicSearch": "https://music.amazon.com/search/%E0%AE%A4%E0%AE%BF%E0%AE%B0%E0%AF%81%E0%AE%AE%E0%AF%8D%E0%AE%AA%20%E0%AE%AA%E0%AE%BF%E0%AE%B1%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AE%A3%E0%AF%81%E0%AE%AE%E0%AF%87%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87",
+        "youtubeMusic": "https://music.youtube.com/watch?v=VTkTtT9x3RU",
+        "youtube": "https://www.youtube.com/watch?v=VTkTtT9x3RU"
+      },
+      "resolverStatus": "ok",
+      "youtubeMatch": {
+        "id": "VTkTtT9x3RU",
+        "title": "திரும்ப பிறக்கணுமே",
+        "channel": "தமிழாலே - Topic தமிழாலே - Topic https://www.youtube.com/channel/UCNprivthrJFSDwbwvkzZ6dg",
+        "duration": 162.0,
+        "score": 0.99,
+        "youtube": "https://www.youtube.com/watch?v=VTkTtT9x3RU",
+        "youtubeMusic": "https://music.youtube.com/watch?v=VTkTtT9x3RU"
+      },
+      "amazonSearch": {
+        "searchUrl": "https://music.amazon.com/search/%E0%AE%A4%E0%AE%BF%E0%AE%B0%E0%AF%81%E0%AE%AE%E0%AF%8D%E0%AE%AA%20%E0%AE%AA%E0%AE%BF%E0%AE%B1%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AE%A3%E0%AF%81%E0%AE%AE%E0%AF%87%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87",
+        "candidates": []
+      },
+      "amazonMatchStatus": "search_fallback",
+      "youtubeMatchStatus": "exact_candidate"
+    },
+    {
+      "trackId": 1809626570,
+      "title": "எனக்கென பிறந்தது",
+      "artist": "தமிழாலே",
+      "trackNumber": 2,
+      "trackCount": 11,
+      "durationMs": 206640,
+      "releaseDate": "2025-04-19",
+      "appleUrl": "https://music.apple.com/us/album/%E0%AE%8E%E0%AE%A9%E0%AE%95-%E0%AE%95-%E0%AE%A9-%E0%AE%AA-%E0%AE%B1%E0%AE%A8-%E0%AE%A4%E0%AE%A4/1809626057?i=1809626570&uo=4",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0f/9d/95/0f9d9572-b896-04f5-7028-add715d2652f/artwork.jpg/1200x1200bb.jpg",
+      "platforms": {
+        "appleMusic": "https://geo.music.apple.com/us/album/_/1809626057?i=1809626570&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+        "spotify": "https://open.spotify.com/track/2xJsGuho988eBwtyLiDBve",
+        "amazonMusicSearch": "https://music.amazon.com/search/%E0%AE%8E%E0%AE%A9%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AF%86%E0%AE%A9%20%E0%AE%AA%E0%AE%BF%E0%AE%B1%E0%AE%A8%E0%AF%8D%E0%AE%A4%E0%AE%A4%E0%AF%81%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87",
+        "youtubeMusic": "https://music.youtube.com/watch?v=S9WKHC8Xwjk",
+        "youtube": "https://www.youtube.com/watch?v=S9WKHC8Xwjk"
+      },
+      "resolverStatus": "ok",
+      "youtubeMatch": {
+        "id": "S9WKHC8Xwjk",
+        "title": "எனக்கென பிறந்தது",
+        "channel": "தமிழாலே - Topic தமிழாலே - Topic https://www.youtube.com/channel/UCNprivthrJFSDwbwvkzZ6dg",
+        "duration": 207.0,
+        "score": 0.9925,
+        "youtube": "https://www.youtube.com/watch?v=S9WKHC8Xwjk",
+        "youtubeMusic": "https://music.youtube.com/watch?v=S9WKHC8Xwjk"
+      },
+      "amazonSearch": {
+        "searchUrl": "https://music.amazon.com/search/%E0%AE%8E%E0%AE%A9%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AF%86%E0%AE%A9%20%E0%AE%AA%E0%AE%BF%E0%AE%B1%E0%AE%A8%E0%AF%8D%E0%AE%A4%E0%AE%A4%E0%AF%81%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87",
+        "candidates": []
+      },
+      "amazonMatchStatus": "search_fallback",
+      "youtubeMatchStatus": "exact_candidate"
+    },
+    {
+      "trackId": 1809626571,
+      "title": "கொடிய தீ",
+      "artist": "தமிழாலே",
+      "trackNumber": 3,
+      "trackCount": 11,
+      "durationMs": 195000,
+      "releaseDate": "2025-04-19",
+      "appleUrl": "https://music.apple.com/us/album/%E0%AE%95-%E0%AE%9F-%E0%AE%AF-%E0%AE%A4/1809626057?i=1809626571&uo=4",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0f/9d/95/0f9d9572-b896-04f5-7028-add715d2652f/artwork.jpg/1200x1200bb.jpg",
+      "platforms": {
+        "appleMusic": "https://geo.music.apple.com/us/album/_/1809626057?i=1809626571&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+        "spotify": "https://open.spotify.com/track/1Hen2Tcao6WilLFzjLDD8z",
+        "amazonMusicSearch": "https://music.amazon.com/search/%E0%AE%95%E0%AF%8A%E0%AE%9F%E0%AE%BF%E0%AE%AF%20%E0%AE%A4%E0%AF%80%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87",
+        "youtubeMusic": "https://music.youtube.com/watch?v=mcotbNEq6bU",
+        "youtube": "https://www.youtube.com/watch?v=mcotbNEq6bU"
+      },
+      "resolverStatus": "ok",
+      "youtubeMatch": {
+        "id": "mcotbNEq6bU",
+        "title": "கொடிய தீ",
+        "channel": "தமிழாலே - Topic தமிழாலே - Topic https://www.youtube.com/channel/UCNprivthrJFSDwbwvkzZ6dg",
+        "duration": 195.0,
+        "score": 1.0,
+        "youtube": "https://www.youtube.com/watch?v=mcotbNEq6bU",
+        "youtubeMusic": "https://music.youtube.com/watch?v=mcotbNEq6bU"
+      },
+      "amazonSearch": {
+        "searchUrl": "https://music.amazon.com/search/%E0%AE%95%E0%AF%8A%E0%AE%9F%E0%AE%BF%E0%AE%AF%20%E0%AE%A4%E0%AF%80%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87",
+        "candidates": []
+      },
+      "amazonMatchStatus": "search_fallback",
+      "youtubeMatchStatus": "exact_candidate"
+    },
+    {
+      "trackId": 1809626572,
+      "title": "நினைவிலே கோவிலே",
+      "artist": "தமிழாலே",
+      "trackNumber": 4,
+      "trackCount": 11,
+      "durationMs": 171800,
+      "releaseDate": "2025-04-19",
+      "appleUrl": "https://music.apple.com/us/album/%E0%AE%A8-%E0%AE%A9-%E0%AE%B5-%E0%AE%B2-%E0%AE%95-%E0%AE%B5-%E0%AE%B2/1809626057?i=1809626572&uo=4",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0f/9d/95/0f9d9572-b896-04f5-7028-add715d2652f/artwork.jpg/1200x1200bb.jpg",
+      "platforms": {
+        "appleMusic": "https://geo.music.apple.com/us/album/_/1809626057?i=1809626572&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+        "spotify": "https://open.spotify.com/track/5lh0FI3n69ECnU8DWsWCfi",
+        "amazonMusicSearch": "https://music.amazon.com/search/%E0%AE%A8%E0%AE%BF%E0%AE%A9%E0%AF%88%E0%AE%B5%E0%AE%BF%E0%AE%B2%E0%AF%87%20%E0%AE%95%E0%AF%8B%E0%AE%B5%E0%AE%BF%E0%AE%B2%E0%AF%87%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87",
+        "youtubeMusic": "https://music.youtube.com/watch?v=IU8FNSJApGQ",
+        "youtube": "https://www.youtube.com/watch?v=IU8FNSJApGQ"
+      },
+      "resolverStatus": "ok",
+      "youtubeMatch": {
+        "id": "IU8FNSJApGQ",
+        "title": "நினைவிலே கோவிலே",
+        "channel": "தமிழாலே - Topic தமிழாலே - Topic https://www.youtube.com/channel/UCNprivthrJFSDwbwvkzZ6dg",
+        "duration": 172.0,
+        "score": 0.9958,
+        "youtube": "https://www.youtube.com/watch?v=IU8FNSJApGQ",
+        "youtubeMusic": "https://music.youtube.com/watch?v=IU8FNSJApGQ"
+      },
+      "amazonSearch": {
+        "searchUrl": "https://music.amazon.com/search/%E0%AE%A8%E0%AE%BF%E0%AE%A9%E0%AF%88%E0%AE%B5%E0%AE%BF%E0%AE%B2%E0%AF%87%20%E0%AE%95%E0%AF%8B%E0%AE%B5%E0%AE%BF%E0%AE%B2%E0%AF%87%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87",
+        "candidates": []
+      },
+      "amazonMatchStatus": "search_fallback",
+      "youtubeMatchStatus": "exact_candidate"
+    },
+    {
+      "trackId": 1809626573,
+      "title": "நான் தான் Boss",
+      "artist": "தமிழாலே",
+      "trackNumber": 5,
+      "trackCount": 11,
+      "durationMs": 176280,
+      "releaseDate": "2025-04-19",
+      "appleUrl": "https://music.apple.com/us/album/%E0%AE%A8-%E0%AE%A9-%E0%AE%A4-%E0%AE%A9-boss/1809626057?i=1809626573&uo=4",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0f/9d/95/0f9d9572-b896-04f5-7028-add715d2652f/artwork.jpg/1200x1200bb.jpg",
+      "platforms": {
+        "appleMusic": "https://geo.music.apple.com/us/album/_/1809626057?i=1809626573&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+        "spotify": "https://open.spotify.com/track/4QpfMwia9GCzA3ifT46XWu",
+        "amazonMusicSearch": "https://music.amazon.com/search/%E0%AE%A8%E0%AE%BE%E0%AE%A9%E0%AF%8D%20%E0%AE%A4%E0%AE%BE%E0%AE%A9%E0%AF%8D%20Boss%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87",
+        "youtubeMusic": "https://music.youtube.com/watch?v=VQBbMAvzdh4",
+        "youtube": "https://www.youtube.com/watch?v=VQBbMAvzdh4"
+      },
+      "resolverStatus": "ok",
+      "youtubeMatch": {
+        "id": "VQBbMAvzdh4",
+        "title": "நான் தான் Boss",
+        "channel": "தமிழாலே - Topic தமிழாலே - Topic https://www.youtube.com/channel/UCNprivthrJFSDwbwvkzZ6dg",
+        "duration": 177.0,
+        "score": 0.985,
+        "youtube": "https://www.youtube.com/watch?v=VQBbMAvzdh4",
+        "youtubeMusic": "https://music.youtube.com/watch?v=VQBbMAvzdh4"
+      },
+      "amazonSearch": {
+        "searchUrl": "https://music.amazon.com/search/%E0%AE%A8%E0%AE%BE%E0%AE%A9%E0%AF%8D%20%E0%AE%A4%E0%AE%BE%E0%AE%A9%E0%AF%8D%20Boss%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87",
+        "candidates": []
+      },
+      "amazonMatchStatus": "search_fallback",
+      "youtubeMatchStatus": "exact_candidate"
+    },
+    {
+      "trackId": 1809626574,
+      "title": "யார்ரா இந்த பொண்ணு",
+      "artist": "தமிழாலே",
+      "trackNumber": 6,
+      "trackCount": 11,
+      "durationMs": 117640,
+      "releaseDate": "2025-04-19",
+      "appleUrl": "https://music.apple.com/us/album/%E0%AE%AF-%E0%AE%B0-%E0%AE%B0-%E0%AE%87%E0%AE%A8-%E0%AE%A4-%E0%AE%AA-%E0%AE%A3-%E0%AE%A3/1809626057?i=1809626574&uo=4",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0f/9d/95/0f9d9572-b896-04f5-7028-add715d2652f/artwork.jpg/1200x1200bb.jpg",
+      "platforms": {
+        "appleMusic": "https://geo.music.apple.com/us/album/_/1809626057?i=1809626574&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+        "spotify": "https://open.spotify.com/track/680iq5YxmEJGNj5nWhh9Vo",
+        "amazonMusicSearch": "https://music.amazon.com/search/%E0%AE%AF%E0%AE%BE%E0%AE%B0%E0%AF%8D%E0%AE%B0%E0%AE%BE%20%E0%AE%87%E0%AE%A8%E0%AF%8D%E0%AE%A4%20%E0%AE%AA%E0%AF%8A%E0%AE%A3%E0%AF%8D%E0%AE%A3%E0%AF%81%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87",
+        "youtubeMusic": "https://music.youtube.com/watch?v=yIvZyTxp1M8",
+        "youtube": "https://www.youtube.com/watch?v=yIvZyTxp1M8"
+      },
+      "resolverStatus": "ok",
+      "youtubeMatch": {
+        "id": "yIvZyTxp1M8",
+        "title": "யார்ரா இந்த பொண்ணு",
+        "channel": "தமிழாலே - Topic தமிழாலே - Topic https://www.youtube.com/channel/UCNprivthrJFSDwbwvkzZ6dg",
+        "duration": 118.0,
+        "score": 0.9925,
+        "youtube": "https://www.youtube.com/watch?v=yIvZyTxp1M8",
+        "youtubeMusic": "https://music.youtube.com/watch?v=yIvZyTxp1M8"
+      },
+      "amazonSearch": {
+        "searchUrl": "https://music.amazon.com/search/%E0%AE%AF%E0%AE%BE%E0%AE%B0%E0%AF%8D%E0%AE%B0%E0%AE%BE%20%E0%AE%87%E0%AE%A8%E0%AF%8D%E0%AE%A4%20%E0%AE%AA%E0%AF%8A%E0%AE%A3%E0%AF%8D%E0%AE%A3%E0%AF%81%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87",
+        "candidates": []
+      },
+      "amazonMatchStatus": "search_fallback",
+      "youtubeMatchStatus": "exact_candidate"
+    },
+    {
+      "trackId": 1809626575,
+      "title": "பெருக பெருக",
+      "artist": "தமிழாலே",
+      "trackNumber": 7,
+      "trackCount": 11,
+      "durationMs": 155440,
+      "releaseDate": "2025-04-19",
+      "appleUrl": "https://music.apple.com/us/album/%E0%AE%AA-%E0%AE%B0-%E0%AE%95-%E0%AE%AA-%E0%AE%B0-%E0%AE%95/1809626057?i=1809626575&uo=4",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0f/9d/95/0f9d9572-b896-04f5-7028-add715d2652f/artwork.jpg/1200x1200bb.jpg",
+      "platforms": {
+        "appleMusic": "https://geo.music.apple.com/us/album/_/1809626057?i=1809626575&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+        "spotify": "https://open.spotify.com/track/3d3IHxjU7J0ZAtSdtrROdF",
+        "amazonMusicSearch": "https://music.amazon.com/search/%E0%AE%AA%E0%AF%86%E0%AE%B0%E0%AF%81%E0%AE%95%20%E0%AE%AA%E0%AF%86%E0%AE%B0%E0%AF%81%E0%AE%95%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87",
+        "youtubeMusic": "https://music.youtube.com/watch?v=kyPFpcKl8zA",
+        "youtube": "https://www.youtube.com/watch?v=kyPFpcKl8zA"
+      },
+      "resolverStatus": "ok",
+      "youtubeMatch": {
+        "id": "kyPFpcKl8zA",
+        "title": "பெருக பெருக",
+        "channel": "தமிழாலே - Topic தமிழாலே - Topic https://www.youtube.com/channel/UCNprivthrJFSDwbwvkzZ6dg",
+        "duration": 156.0,
+        "score": 0.9883,
+        "youtube": "https://www.youtube.com/watch?v=kyPFpcKl8zA",
+        "youtubeMusic": "https://music.youtube.com/watch?v=kyPFpcKl8zA"
+      },
+      "amazonSearch": {
+        "searchUrl": "https://music.amazon.com/search/%E0%AE%AA%E0%AF%86%E0%AE%B0%E0%AF%81%E0%AE%95%20%E0%AE%AA%E0%AF%86%E0%AE%B0%E0%AF%81%E0%AE%95%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87",
+        "candidates": []
+      },
+      "amazonMatchStatus": "search_fallback",
+      "youtubeMatchStatus": "exact_candidate"
+    },
+    {
+      "trackId": 1809626576,
+      "title": "பால கணைகள்",
+      "artist": "தமிழாலே",
+      "trackNumber": 8,
+      "trackCount": 11,
+      "durationMs": 157000,
+      "releaseDate": "2025-04-19",
+      "appleUrl": "https://music.apple.com/us/album/%E0%AE%AA-%E0%AE%B2-%E0%AE%95%E0%AE%A3-%E0%AE%95%E0%AE%B3/1809626057?i=1809626576&uo=4",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0f/9d/95/0f9d9572-b896-04f5-7028-add715d2652f/artwork.jpg/1200x1200bb.jpg",
+      "platforms": {
+        "appleMusic": "https://geo.music.apple.com/us/album/_/1809626057?i=1809626576&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+        "spotify": "https://open.spotify.com/track/2KQt3M6tLOqfR11ZGKrpR4",
+        "amazonMusicSearch": "https://music.amazon.com/search/%E0%AE%AA%E0%AE%BE%E0%AE%B2%20%E0%AE%95%E0%AE%A3%E0%AF%88%E0%AE%95%E0%AE%B3%E0%AF%8D%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87",
+        "youtubeMusic": "https://music.youtube.com/watch?v=tXbKl3oRXps",
+        "youtube": "https://www.youtube.com/watch?v=tXbKl3oRXps"
+      },
+      "resolverStatus": "ok",
+      "youtubeMatch": {
+        "id": "tXbKl3oRXps",
+        "title": "பால கணைகள்",
+        "channel": "தமிழாலே - Topic தமிழாலே - Topic https://www.youtube.com/channel/UCNprivthrJFSDwbwvkzZ6dg",
+        "duration": 157.0,
+        "score": 1.0,
+        "youtube": "https://www.youtube.com/watch?v=tXbKl3oRXps",
+        "youtubeMusic": "https://music.youtube.com/watch?v=tXbKl3oRXps"
+      },
+      "amazonSearch": {
+        "searchUrl": "https://music.amazon.com/search/%E0%AE%AA%E0%AE%BE%E0%AE%B2%20%E0%AE%95%E0%AE%A3%E0%AF%88%E0%AE%95%E0%AE%B3%E0%AF%8D%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87",
+        "candidates": []
+      },
+      "amazonMatchStatus": "search_fallback",
+      "youtubeMatchStatus": "exact_candidate"
+    },
+    {
+      "trackId": 1809626577,
+      "title": "ஓட்டமது குறையவில்லை",
+      "artist": "தமிழாலே",
+      "trackNumber": 9,
+      "trackCount": 11,
+      "durationMs": 174480,
+      "releaseDate": "2025-04-19",
+      "appleUrl": "https://music.apple.com/us/album/%E0%AE%93%E0%AE%9F-%E0%AE%9F%E0%AE%AE%E0%AE%A4-%E0%AE%95-%E0%AE%B1-%E0%AE%AF%E0%AE%B5-%E0%AE%B2-%E0%AE%B2/1809626057?i=1809626577&uo=4",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0f/9d/95/0f9d9572-b896-04f5-7028-add715d2652f/artwork.jpg/1200x1200bb.jpg",
+      "platforms": {
+        "appleMusic": "https://geo.music.apple.com/us/album/_/1809626057?i=1809626577&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+        "spotify": "https://open.spotify.com/track/0G3efLRKL0BXO1MffrOaSD",
+        "amazonMusicSearch": "https://music.amazon.com/search/%E0%AE%93%E0%AE%9F%E0%AF%8D%E0%AE%9F%E0%AE%AE%E0%AE%A4%E0%AF%81%20%E0%AE%95%E0%AF%81%E0%AE%B1%E0%AF%88%E0%AE%AF%E0%AE%B5%E0%AE%BF%E0%AE%B2%E0%AF%8D%E0%AE%B2%E0%AF%88%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87",
+        "youtubeMusic": "https://music.youtube.com/watch?v=fV-yUGPEUA4",
+        "youtube": "https://www.youtube.com/watch?v=fV-yUGPEUA4"
+      },
+      "resolverStatus": "ok",
+      "youtubeMatch": {
+        "id": "fV-yUGPEUA4",
+        "title": "ஓட்டமது குறையவில்லை",
+        "channel": "தமிழாலே - Topic தமிழாலே - Topic https://www.youtube.com/channel/UCNprivthrJFSDwbwvkzZ6dg",
+        "duration": 175.0,
+        "score": 0.9892,
+        "youtube": "https://www.youtube.com/watch?v=fV-yUGPEUA4",
+        "youtubeMusic": "https://music.youtube.com/watch?v=fV-yUGPEUA4"
+      },
+      "amazonSearch": {
+        "searchUrl": "https://music.amazon.com/search/%E0%AE%93%E0%AE%9F%E0%AF%8D%E0%AE%9F%E0%AE%AE%E0%AE%A4%E0%AF%81%20%E0%AE%95%E0%AF%81%E0%AE%B1%E0%AF%88%E0%AE%AF%E0%AE%B5%E0%AE%BF%E0%AE%B2%E0%AF%8D%E0%AE%B2%E0%AF%88%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87",
+        "candidates": []
+      },
+      "amazonMatchStatus": "search_fallback",
+      "youtubeMatchStatus": "exact_candidate"
+    },
+    {
+      "trackId": 1809626578,
+      "title": "விழி ஒளி நீயே",
+      "artist": "தமிழாலே",
+      "trackNumber": 10,
+      "trackCount": 11,
+      "durationMs": 182520,
+      "releaseDate": "2025-04-19",
+      "appleUrl": "https://music.apple.com/us/album/%E0%AE%B5-%E0%AE%B4-%E0%AE%92%E0%AE%B3-%E0%AE%A8-%E0%AE%AF/1809626057?i=1809626578&uo=4",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0f/9d/95/0f9d9572-b896-04f5-7028-add715d2652f/artwork.jpg/1200x1200bb.jpg",
+      "platforms": {
+        "appleMusic": "https://geo.music.apple.com/us/album/_/1809626057?i=1809626578&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+        "spotify": "https://open.spotify.com/track/3Ckt65R11uQ5DIyutC57TZ",
+        "amazonMusicSearch": "https://music.amazon.com/search/%E0%AE%B5%E0%AE%BF%E0%AE%B4%E0%AE%BF%20%E0%AE%92%E0%AE%B3%E0%AE%BF%20%E0%AE%A8%E0%AF%80%E0%AE%AF%E0%AF%87%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87",
+        "youtubeMusic": "https://music.youtube.com/watch?v=kK8uswZwzPg",
+        "youtube": "https://www.youtube.com/watch?v=kK8uswZwzPg"
+      },
+      "resolverStatus": "ok",
+      "youtubeMatch": {
+        "id": "kK8uswZwzPg",
+        "title": "விழி ஒளி நீயே",
+        "channel": "தமிழாலே - Topic தமிழாலே - Topic https://www.youtube.com/channel/UCNprivthrJFSDwbwvkzZ6dg",
+        "duration": 183.0,
+        "score": 0.99,
+        "youtube": "https://www.youtube.com/watch?v=kK8uswZwzPg",
+        "youtubeMusic": "https://music.youtube.com/watch?v=kK8uswZwzPg"
+      },
+      "amazonSearch": {
+        "searchUrl": "https://music.amazon.com/search/%E0%AE%B5%E0%AE%BF%E0%AE%B4%E0%AE%BF%20%E0%AE%92%E0%AE%B3%E0%AE%BF%20%E0%AE%A8%E0%AF%80%E0%AE%AF%E0%AF%87%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87",
+        "candidates": []
+      },
+      "amazonMatchStatus": "search_fallback",
+      "youtubeMatchStatus": "exact_candidate"
+    }
+  ]
+}
