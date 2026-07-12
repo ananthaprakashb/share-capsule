@@ -1,0 +1,45 @@
+name: Fix Tamil author name
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'automation/fix-aanandha-prakash-name.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Correct Tamil author spelling
+        shell: python
+        run: |
+          from pathlib import Path
+          path = Path('tulip/data.json')
+          text = path.read_text(encoding='utf-8')
+          old = 'அனந்த பிரகாஷ்'
+          new = 'ஆனந்த பிரகாஷ்'
+          count = text.count(old)
+          if count == 0:
+              raise SystemExit('No incorrect Tamil author spelling found')
+          path.write_text(text.replace(old, new), encoding='utf-8')
+          print(f'Replaced {count} occurrence(s)')
+
+      - name: Commit correction
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tulip/data.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Correct Tamil author name to ஆனந்த பிரகாஷ் [skip ci]'
+          git push origin HEAD:main
