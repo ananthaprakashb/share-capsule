@@ -63,7 +63,7 @@ jobs:
               and youtube_music_id not in (item.get('videoIds') or [])
           ]
           entry = {
-              'slug': 'apple-song-1809626579',
+              'slug': 'perungaviyame',
               'title': title,
               'artist': artist or 'தமிழாலே',
               'videoIds': [youtube_music_id],
