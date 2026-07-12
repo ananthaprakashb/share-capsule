@@ -1980,6 +1980,78 @@
         "provider": "spotify",
         "url": "https://open.spotify.com/album/52gsUH3W3KMRpkt2fSj6gA"
       }
+    },
+    {
+      "slug": "saranam-ayyappa",
+      "title": "சரணம் ஐயப்பா",
+      "artist": "தமிழாலே",
+      "type": "Music release",
+      "category": "Tamil Devotional",
+      "language": "Tamil",
+      "description": "A Tamil Ayyappa devotional music release by தமிழாலே.",
+      "coverImage": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1f/43/ba/1f43ba15-baf6-78e4-0a35-f7e1855b1e7d/artwork.jpg/1200x1200bb.jpg",
+      "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
+      "coverEyebrow": "Tamil devotional",
+      "coverLines": [
+        "சரணம்",
+        "ஐயப்பா"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify",
+          "icon": "●",
+          "url": "https://open.spotify.com/track/35zsu1UWLZjZqkUazDlJIj"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/%E0%AE%9A%E0%AE%95-%E0%AE%A4-%E0%AE%95-%E0%AE%9F-%E0%AE%9A%E0%AE%B0%E0%AE%A3%E0%AE%AE-%E0%AE%90%E0%AE%AF%E0%AE%AA-%E0%AE%AA-single/1838677675"
+        },
+        {
+          "label": "Amazon Music search",
+          "icon": "a",
+          "url": "https://music.amazon.com/search/%E0%AE%9A%E0%AE%B0%E0%AE%A3%E0%AE%AE%E0%AF%8D%20%E0%AE%90%E0%AE%AF%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AE%BE%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://www.youtube.com/watch?v=GB5C6Uf-aVs"
+        },
+        {
+          "label": "YouTube Music",
+          "icon": "♫",
+          "url": "https://music.youtube.com/watch?v=GB5C6Uf-aVs"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil devotional release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Ayyappa devotional song with the family 🙏"
+        },
+        "devotional": {
+          "label": "Devotional listener",
+          "icon": "🙏",
+          "text": "A Tamil Ayyappa devotional song you may enjoy."
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "Sharing this devotional song with you 🙏"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "spotify",
+        "url": "https://open.spotify.com/track/35zsu1UWLZjZqkUazDlJIj"
+      },
+      "publishedAt": "2025-09-08"
     }
   ]
 }
