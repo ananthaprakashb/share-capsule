@@ -1,0 +1,35 @@
+name: Seed today verified news quote
+
+on:
+  push:
+    branches: [agent/daily-news-quote]
+    paths: [.github/workflows/seed-daily-news-quote.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: agent/daily-news-quote
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "24"
+      - name: Publish today’s authenticated quote
+        env:
+          SEED_THEME: "diplomacy war peace alliance negotiation ukraine security international"
+          SEED_HEADLINE: "European leaders coordinate support for Ukraine and discuss protection, sanctions and diplomacy"
+          SEED_NEWS_URL: "https://www.theguardian.com/world/live/2026/jul/13/emmanuel-macron-keir-starmer-friedrich-merz-volodymyr-zelenskyy-coalition-of-the-willing-ukraine-russia-latest-news-updates"
+        run: node quotes/publish-daily-news-quote.mjs
+      - name: Validate and commit
+        run: |
+          node --check quotes/publish-daily-news-quote.mjs
+          git config user.name share-capsule-bot
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add quotes/data.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Publish July 13 verified news quote"
+          git push
