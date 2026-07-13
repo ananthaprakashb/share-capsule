@@ -1,0 +1,120 @@
+name: Add Tamil music releases
+
+on:
+  push:
+    branches: [agent/add-kadhal-mavusu-kalam-releases]
+    paths: [.github/workflows/add-two-music-releases.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: agent/add-kadhal-mavusu-kalam-releases
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Add releases once
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('data/releases.json')
+          data = json.loads(path.read_text())
+          releases = data.setdefault('releases', [])
+          existing = {r.get('slug') for r in releases}
+
+          additions = [
+            {
+              'slug': 'kadhal-mavusu',
+              'title': 'காதல் மவுசு',
+              'artist': 'தமிழாலே',
+              'type': 'Single',
+              'category': 'Tamil Music',
+              'language': 'Tamil',
+              'description': 'A Tamil music release by தமிழாலே.',
+              'featured': True,
+              'coverImage': '',
+              'coverBackground': 'linear-gradient(145deg,#7c3aed,#db2777,#f97316)',
+              'coverEyebrow': 'Tamil release',
+              'coverLines': ['காதல்', 'மவுசு'],
+              'primaryPlayer': {
+                'provider': 'spotify',
+                'url': 'https://open.spotify.com/album/4HgcGkE7m5y2AgLznP42Bi'
+              },
+              'previewUrl': '',
+              'demoTone': False,
+              'platforms': [
+                {'label': 'Spotify', 'icon': '●', 'url': 'https://open.spotify.com/album/4HgcGkE7m5y2AgLznP42Bi'},
+                {'label': 'Apple Music', 'icon': '♫', 'url': 'https://music.apple.com/us/album/%E0%AE%95-%E0%AE%A4%E0%AE%B2-%E0%AE%AE%E0%AE%B5-%E0%AE%9A-single/1875810280'},
+                {'label': 'YouTube', 'icon': '▶', 'url': 'https://youtu.be/cT20N6c-s68?si=jeeH4TuPgxREEPh4'}
+              ],
+              'shareMessages': {
+                'friend': {'label': 'Close friend', 'icon': '💛', 'text': 'Thought you might enjoy this Tamil release 🎧'},
+                'family': {'label': 'Family', 'icon': '👨‍👩‍👧', 'text': 'Sharing this Tamil song with the family ❤️'},
+                'music': {'label': 'Music lover', 'icon': '🎵', 'text': 'Found a Tamil track you may enjoy 🎵'},
+                'special': {'label': 'Someone special', 'icon': '✨', 'text': 'This made me think of you ❤️'}
+              }
+            },
+            {
+              'slug': 'kalam-kalam-the-visionary',
+              'title': 'கலாம் கலாம் (Kalam Kalam – The Visionary)',
+              'artist': 'தமிழாலே',
+              'type': 'Single',
+              'category': 'Inspirational Tamil Music',
+              'language': 'Tamil',
+              'description': 'An inspirational Tamil tribute to Dr. A. P. J. Abdul Kalam by தமிழாலே.',
+              'featured': True,
+              'coverImage': '',
+              'coverBackground': 'linear-gradient(145deg,#0f172a,#1d4ed8,#f59e0b)',
+              'coverEyebrow': 'Inspirational release',
+              'coverLines': ['கலாம்', 'கலாம்'],
+              'primaryPlayer': {
+                'provider': 'spotify',
+                'url': 'https://open.spotify.com/album/6lUTPMdhzXKXyrzhsh9qHK?si=OfFt8PUeQnux0BRVi_cQZg'
+              },
+              'previewUrl': '',
+              'demoTone': False,
+              'platforms': [
+                {'label': 'Spotify', 'icon': '●', 'url': 'https://open.spotify.com/album/6lUTPMdhzXKXyrzhsh9qHK?si=OfFt8PUeQnux0BRVi_cQZg'},
+                {'label': 'Apple Music', 'icon': '♫', 'url': 'https://music.apple.com/us/song/%E0%AE%95%E0%AE%B2-%E0%AE%AE-%E0%AE%95%E0%AE%B2-%E0%AE%AE-kalam-kalam-the-visionary/1850695048'},
+                {'label': 'YouTube', 'icon': '▶', 'url': 'https://youtu.be/KFG8xi-ZuIU?si=6hkaf3q-okD4p4_Y'},
+                {'label': 'Amazon Music', 'icon': 'a', 'url': 'https://amazon.com/music/player/albums/B0FYSD6KH2?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_EHmYzWS9jppIiuw5ZX9edQxop'}
+              ],
+              'shareMessages': {
+                'friend': {'label': 'Close friend', 'icon': '💛', 'text': 'Sharing an inspiring Tamil tribute to Dr. Kalam 🎧'},
+                'family': {'label': 'Family', 'icon': '👨‍👩‍👧', 'text': 'Sharing this Dr. Kalam tribute with the family ❤️'},
+                'music': {'label': 'Music lover', 'icon': '🎵', 'text': 'Found an inspiring Tamil track about Dr. Kalam 🎵'},
+                'special': {'label': 'Someone inspired by Kalam', 'icon': '🚀', 'text': 'This Dr. Kalam tribute made me think of you.'}
+              }
+            }
+          ]
+
+          new_items = [item for item in additions if item['slug'] not in existing]
+          if new_items:
+            releases[0:0] = new_items
+            path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
+          PY
+      - name: Validate catalog
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('data/releases.json').read_text())
+          slugs = [r.get('slug') for r in data.get('releases', [])]
+          for required in ['kadhal-mavusu', 'kalam-kalam-the-visionary']:
+            assert slugs.count(required) == 1, f'{required} missing or duplicated'
+          PY
+      - name: Commit catalog update
+        run: |
+          if git diff --quiet; then exit 0; fi
+          git config user.name share-capsule-bot
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/releases.json
+          git commit -m "Add Kadhal Mavusu and Kalam Kalam releases"
+          git push
