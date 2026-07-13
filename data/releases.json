@@ -5,6 +5,51 @@
   },
   "releases": [
     {
+      "slug": "trading-holy-grail-tamil",
+      "title": "ட்ரேடிங்கின் ஹோலி க்ரெயில்",
+      "artist": "Share Capsule",
+      "type": "Audio article",
+      "category": "Tamil Personal Finance",
+      "language": "Tamil",
+      "publishedAt": "2026-07-13",
+      "description": "ட்ரேடிங்கில் வெற்றியைத் தேடும் அணுகுமுறைகள், ஒழுக்கம் மற்றும் நடைமுறை சிந்தனைகளை ஆராயும் தமிழ் ஆடியோ கட்டுரை.",
+      "featured": true,
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#172554,#1d4ed8 55%,#f59e0b)",
+      "coverEyebrow": "தமிழ் நிதி ஆடியோ",
+      "coverLines": [
+        "ட்ரேடிங்கின்",
+        "ஹோலி க்ரெயில்"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "audioPageUrl": "/audio/?id=trading-holy-grail-tamil",
+      "platforms": [
+        {
+          "label": "Listen",
+          "icon": "▶",
+          "url": "/audio/?id=trading-holy-grail-tamil"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Friend",
+          "icon": "🎧",
+          "text": "இந்த தமிழ் ஆடியோ கட்டுரையை கேளுங்கள்: ட்ரேடிங்கின் ஹோலி க்ரெயில்"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "குடும்பத்துடன் பகிர வேண்டிய தமிழ் ஆடியோ: ட்ரேடிங்கின் ஹோலி க்ரெயில்"
+        },
+        "topic": {
+          "label": "தமிழ் கேட்பவர்",
+          "icon": "🧠",
+          "text": "ட்ரேடிங்கில் வெற்றியைத் தேடும் அணுகுமுறைகள், ஒழுக்கம் மற்றும் நடைமுறை சிந்தனைகளை ஆராயும் தமிழ் ஆடியோ கட்டுரை."
+        }
+      }
+    },
+    {
       "slug": "thoranaiyum-unavum",
       "title": "Thoranaiyum Unavum",
       "artist": "Share Capsule",
