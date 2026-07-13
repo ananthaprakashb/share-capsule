@@ -5,6 +5,135 @@
   },
   "releases": [
     {
+      "slug": "kadhal-mavusu",
+      "title": "காதல் மவுசு",
+      "artist": "தமிழாலே",
+      "type": "Single",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil music release by தமிழாலே.",
+      "featured": true,
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#7c3aed,#db2777,#f97316)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": [
+        "காதல்",
+        "மவுசு"
+      ],
+      "primaryPlayer": {
+        "provider": "spotify",
+        "url": "https://open.spotify.com/album/4HgcGkE7m5y2AgLznP42Bi"
+      },
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify",
+          "icon": "●",
+          "url": "https://open.spotify.com/album/4HgcGkE7m5y2AgLznP42Bi"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/%E0%AE%95-%E0%AE%A4%E0%AE%B2-%E0%AE%AE%E0%AE%B5-%E0%AE%9A-single/1875810280"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://youtu.be/cT20N6c-s68?si=jeeH4TuPgxREEPh4"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
+      }
+    },
+    {
+      "slug": "kalam-kalam-the-visionary",
+      "title": "கலாம் கலாம் (Kalam Kalam – The Visionary)",
+      "artist": "தமிழாலே",
+      "type": "Single",
+      "category": "Inspirational Tamil Music",
+      "language": "Tamil",
+      "description": "An inspirational Tamil tribute to Dr. A. P. J. Abdul Kalam by தமிழாலே.",
+      "featured": true,
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#0f172a,#1d4ed8,#f59e0b)",
+      "coverEyebrow": "Inspirational release",
+      "coverLines": [
+        "கலாம்",
+        "கலாம்"
+      ],
+      "primaryPlayer": {
+        "provider": "spotify",
+        "url": "https://open.spotify.com/album/6lUTPMdhzXKXyrzhsh9qHK?si=OfFt8PUeQnux0BRVi_cQZg"
+      },
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify",
+          "icon": "●",
+          "url": "https://open.spotify.com/album/6lUTPMdhzXKXyrzhsh9qHK?si=OfFt8PUeQnux0BRVi_cQZg"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/song/%E0%AE%95%E0%AE%B2-%E0%AE%AE-%E0%AE%95%E0%AE%B2-%E0%AE%AE-kalam-kalam-the-visionary/1850695048"
+        },
+        {
+          "label": "YouTube",
+          "icon": "▶",
+          "url": "https://youtu.be/KFG8xi-ZuIU?si=6hkaf3q-okD4p4_Y"
+        },
+        {
+          "label": "Amazon Music",
+          "icon": "a",
+          "url": "https://amazon.com/music/player/albums/B0FYSD6KH2?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_EHmYzWS9jppIiuw5ZX9edQxop"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Sharing an inspiring Tamil tribute to Dr. Kalam 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Dr. Kalam tribute with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found an inspiring Tamil track about Dr. Kalam 🎵"
+        },
+        "special": {
+          "label": "Someone inspired by Kalam",
+          "icon": "🚀",
+          "text": "This Dr. Kalam tribute made me think of you."
+        }
+      }
+    },
+    {
       "slug": "economic-indicators",
       "title": "Economic Indicators",
       "artist": "Share Capsule",
