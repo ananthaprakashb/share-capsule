@@ -1,0 +1,51 @@
+name: Publish daily verified news quote
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 15 * * *"
+    - cron: "0 16 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-news-quote
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "24"
+      - name: Enforce 8 AM Pacific schedule
+        if: github.event_name == 'schedule'
+        run: |
+          hour=$(TZ=America/Los_Angeles date +%H)
+          if [ "$hour" != "08" ]; then
+            echo "Current Pacific hour is $hour; skipping duplicate UTC trigger."
+            exit 78
+          fi
+      - name: Select and authenticate today’s quote
+        run: node quotes/publish-daily-news-quote.mjs
+      - name: Validate quote catalog
+        run: |
+          node --check quotes/publish-daily-news-quote.mjs
+          node -e "const d=require('./quotes/data.json');const dates=d.quotes.map(q=>q.date),texts=d.quotes.map(q=>q.quote);if(new Set(dates).size!==dates.length)throw new Error('Duplicate quote date');if(new Set(texts).size!==texts.length)throw new Error('Duplicate quote text');for(const q of d.quotes){if(!q.sourceUrl?.startsWith('https://')||!q.verificationNote)throw new Error('Unverified quote record')}"
+      - name: Commit today’s quote
+        run: |
+          if git diff --quiet -- quotes/data.json; then
+            echo "No quote change."
+            exit 0
+          fi
+          git config user.name share-capsule-bot
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add quotes/data.json
+          git commit -m "Publish verified daily news quote"
+          git push
