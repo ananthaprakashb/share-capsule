@@ -5,6 +5,25 @@
   },
   "quotes": [
     {
+      "date": "2026-07-13",
+      "quote": "Let us never negotiate out of fear. But let us never fear to negotiate.",
+      "author": "John F. Kennedy",
+      "authorBio": "Thirty-fifth president of the United States, known for speeches on diplomacy, civic responsibility, freedom, and international cooperation.",
+      "authorEncyclopediaUrl": "https://www.jfklibrary.org/learn/about-jfk/life-of-john-f-kennedy",
+      "sourceTitle": "Inaugural Address, January 20, 1961",
+      "sourceUrl": "https://www.jfklibrary.org/archives/other-resources/john-f-kennedy-speeches/inaugural-address-19610120",
+      "sourceType": "Official presidential library transcript",
+      "verificationNote": "Verified word-for-word in the John F. Kennedy Presidential Library transcript of the January 20, 1961 inaugural address.",
+      "verifiedOn": "2026-07-13",
+      "libraryId": "jfk-negotiate-without-fear",
+      "newsFit": {
+        "headline": "European leaders coordinate support for Ukraine and discuss protection, sanctions and diplomacy",
+        "newsUrl": "https://www.theguardian.com/world/live/2026/jul/13/emmanuel-macron-keir-starmer-friedrich-merz-volodymyr-zelenskyy-coalition-of-the-willing-ukraine-russia-latest-news-updates",
+        "source": "Verified current-news context",
+        "explanation": "Selected for today’s focus on military support, international coordination, and the continued need for diplomacy."
+      }
+    },
+    {
       "date": "2026-07-12",
       "quote": "The only way to do great work is to love what you do.",
       "author": "Steve Jobs",
