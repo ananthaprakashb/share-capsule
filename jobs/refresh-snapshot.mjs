@@ -1,0 +1,18 @@
+import { readFile, writeFile } from 'node:fs/promises';
+import { canonicalJob, classifyRole, cleanText, isUsJob, usRegions } from './rules.mjs';
+
+const config=JSON.parse(await readFile(new URL('./sources.json',import.meta.url),'utf8'));
+const blocked=JSON.parse(await readFile(new URL('./blocked.json',import.meta.url),'utf8'));
+const noVisa=[/will not (?:offer|provide).*sponsorship/i,/do not (?:offer|provide).*sponsorship/i,/unable to (?:offer|provide).*sponsorship/i,/without (?:current or future )?(?:visa |employment )?sponsorship/i,/not eligible for (?:visa |employment )?sponsorship/i,/must be .*authorized to work.*without.*sponsorship/i];
+const yesVisa=[/(?:visa|employment|immigration) sponsorship (?:is )?(?:available|provided|offered)/i,/we (?:will|can) sponsor/i,/eligible for (?:visa|employment) sponsorship/i,/sponsorship may be available/i];
+const seen=new Set(),jobs=[],sources=[];
+const blockedKeys=new Set(blocked.jobKeys||[]),blockedUrls=new Set(blocked.urls||[]);
+const allowed=(raw,hosts=[])=>{try{const u=new URL(raw);return u.protocol==='https:'&&hosts.some(h=>u.hostname===h||u.hostname.endsWith('.'+h))}catch{return false}};
+const visa=content=>{const text=cleanText(content);if(noVisa.some(r=>r.test(text)))return'no';if(yesVisa.some(r=>r.test(text)))return'yes';return'unknown'};
+for(const source of config.sources||[]){const report={id:source.id,company:source.company,status:'failed',total:0,accepted:0,error:null};try{if(source.type!=='greenhouse'||!allowed(source.apiUrl,['boards-api.greenhouse.io']))throw new Error('Untrusted source');const response=await fetch(source.apiUrl,{headers:{'user-agent':'share-capsule-job-refresh/1.0'}});if(!response.ok)throw new Error(`HTTP ${response.status}`);const data=await response.json();if(!Array.isArray(data.jobs))throw new Error('Invalid jobs payload');report.total=data.jobs.length;for(const raw of data.jobs){const role=classifyRole(raw);if(!role||!isUsJob(raw)||!allowed(raw.absolute_url,source.allowedApplyHosts))continue;const key=`${source.id}:${raw.id}`,url=raw.absolute_url||'';if(blockedKeys.has(key)||blockedUrls.has(url))continue;const canonical=canonicalJob(raw,source.company);if(seen.has(canonical))continue;seen.add(canonical);jobs.push({key,id:String(raw.id),title:cleanText(raw.title),company:source.company,location:cleanText(raw.location?.name||'Location not stated'),url,updatedAt:raw.updated_at||null,role,regions:usRegions(raw),visa:{code:visa(raw.content)},sourceId:source.id});report.accepted++}report.status='passed'}catch(e){report.error=e instanceof Error?e.message:String(e)}sources.push(report)}
+jobs.sort((a,b)=>String(b.updatedAt||'').localeCompare(String(a.updatedAt||''))||a.company.localeCompare(b.company)||a.title.localeCompare(b.title));
+const roleCounts={};const regionCounts={};const visaCounts={};for(const job of jobs){roleCounts[job.role.code]=(roleCounts[job.role.code]||0)+1;visaCounts[job.visa.code]=(visaCounts[job.visa.code]||0)+1;for(const r of job.regions)regionCounts[r]=(regionCounts[r]||0)+1}
+const snapshot={generatedAt:new Date().toISOString(),scope:'United States: all 50 states, Washington D.C., and explicitly U.S.-based remote roles',sourceCount:sources.length,workingSourceCount:sources.filter(s=>s.status==='passed').length,totalJobs:jobs.length,roleCounts,visaCounts,regionCounts,sources,jobs};
+if(!jobs.length)throw new Error('No verified jobs found; refusing to replace snapshot');
+await writeFile(new URL('./snapshot.json',import.meta.url),JSON.stringify(snapshot,null,2)+'\n');
+console.log(`Wrote ${jobs.length} verified jobs from ${snapshot.workingSourceCount}/${snapshot.sourceCount} sources`);
