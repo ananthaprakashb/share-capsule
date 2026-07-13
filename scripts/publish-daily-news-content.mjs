@@ -7,6 +7,7 @@ const pacificDate=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Ang
 const today=pacificDate();
 const norm=s=>String(s||'').normalize('NFKC').toLowerCase().replace(/\s+/g,' ').trim();
 const replaceDate=value=>JSON.parse(JSON.stringify(value).replaceAll('__DATE__',today));
+const daysBetween=(a,b)=>Math.floor((new Date(b+'T12:00:00Z')-new Date(a+'T12:00:00Z'))/86400000);
 
 async function headlines(){
   if(process.env.SEED_NEWS_CONTEXT==='true') return [{title:'Record-warm nights intensify a dangerous U.S. heat wave; courts and Tamil literature also lead today’s news',url:'https://apnews.com/article/fb7664f71743f71beca4ce7447562ca2',source:'Seeded verified context'}];
@@ -21,9 +22,17 @@ async function verified(candidate){
 }
 
 function score(candidate,news){const text=norm(news.map(x=>x.title).join(' '));return candidate.themes.reduce((n,t)=>n+(text.includes(norm(t))?1:0),0)}
-function inferCandidate(type,item){
+function inferCandidate(item){
   const text=[item.title,item.category,item.mood,item.action,item.plainRule,item.interpretation,item.happyNote].filter(Boolean).join(' ');
   return {themes:norm(text).split(/[^\p{L}\p{N}]+/u).filter(x=>x.length>3).slice(0,25),verifyNeedle:item.title||item.id,sourceUrl:item.sourceUrl||item.globalSourceUrl||item.poemSourceUrl,item};
+}
+function exposeSelection(type,data,key,id){
+  const index=data[key].findIndex(x=>x.id===id); if(index<0)throw new Error(`Selected ${type} item missing: ${id}`);
+  const [item]=data[key].splice(index,1);
+  if(type==='paa'){item.date=today;item.featured=true;data[key].unshift(item);return}
+  const start=data.site?.startDate||'2026-07-12';
+  const target=((daysBetween(start,today)%Math.max(data[key].length+1,1))+Math.max(data[key].length+1,1))%Math.max(data[key].length+1,1);
+  data[key].splice(Math.min(target,data[key].length),0,item);
 }
 
 const news=await headlines();
@@ -31,10 +40,12 @@ for(const type of Object.keys(paths)){
   const data=JSON.parse(await readFile(paths[type],'utf8')); const key=arrays[type]; data[key]||=[]; data.site||={};
   for(const entry of library[type]||[]){const item=replaceDate(entry.item);if(!data[key].some(x=>x.id===item.id))data[key].unshift(item)}
   const recent=(data.site.dailyNewsSelections||[]).slice(0,7).map(x=>x.id);
-  const candidates=[...(library[type]||[]),...data[key].map(x=>inferCandidate(type,x))].filter((x,i,a)=>x.item?.id&&a.findIndex(y=>y.item?.id===x.item.id)===i&&!recent.includes(x.item.id));
+  let candidates=[...(library[type]||[]),...data[key].map(x=>inferCandidate(x))].filter((x,i,a)=>x.item?.id&&a.findIndex(y=>y.item?.id===x.item.id)===i&&!recent.includes(x.item.id));
+  if(!candidates.length)candidates=[...(library[type]||[]),...data[key].map(x=>inferCandidate(x))].filter((x,i,a)=>x.item?.id&&a.findIndex(y=>y.item?.id===x.item.id)===i);
   candidates.sort((a,b)=>score(b,news)-score(a,news));
   let chosen=null; for(const c of candidates){try{if(c.sourceUrl&&await verified(c)){chosen=c;break}}catch{}}
   if(!chosen)throw new Error(`No authenticated ${type} candidate passed source validation`);
+  exposeSelection(type,data,key,chosen.item.id);
   const top=news[0]; const selection={date:today,id:chosen.item.id,headline:top.title,newsUrl:top.url,newsSource:top.source,explanation:`Selected from authenticated ${type} content because its themes best matched the previous 24 hours of news.`,verifiedOn:today};
   data.site.dailyNewsSelections=[selection,...(data.site.dailyNewsSelections||[]).filter(x=>x.date!==today)].slice(0,120);
   await writeFile(paths[type],JSON.stringify(data,null,2)+'\n');
