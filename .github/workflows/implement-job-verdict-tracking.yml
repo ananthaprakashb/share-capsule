@@ -1,0 +1,29 @@
+name: Implement shared job verdict tracking
+
+on:
+  push:
+    branches: [agent/job-verdict-tracking]
+    paths: [.github/workflows/implement-job-verdict-tracking.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  implement:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: agent/job-verdict-tracking
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+      - name: Patch jobs page and Worker
+        run: node .github/scripts/implement-job-verdict-tracking.mjs
+      - name: Commit changes
+        run: |
+          git config user.name share-capsule-bot
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add jobs/index.html jobs/sources.json jobs/verdict-tracking.mjs workers/reactions/src/index.js workers/reactions/migrations/0002_job_verdicts.sql workers/reactions/README.md
+          git commit -m "Track shared job confirmations and invalid reports"
+          git push
