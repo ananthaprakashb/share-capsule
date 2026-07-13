@@ -63,17 +63,26 @@ For many releases, avoid storing large full-length audio files directly in the G
 
 ## Verified jobs endpoint
 
-`https://sharecapsule.app/jobs/` lists focused data-engineering and analytics openings from allowlisted official employer ATS feeds.
+`https://sharecapsule.app/jobs/` lists verified U.S. openings in these categories:
+
+- software engineering
+- frontend engineering
+- Java engineering
+- data engineering
+- analytics
+
+The location gate accepts jobs in any of the 50 states, Washington D.C., and remote jobs only when the posting explicitly identifies the role as U.S.-based. Foreign and ambiguously remote postings are excluded.
 
 Files:
 
-- `jobs/sources.json` — official source allowlist and visa-evidence metadata
+- `jobs/sources.json` — official source allowlist, U.S. scope and visa-evidence metadata
+- `jobs/rules.mjs` — shared role classification, all-state location recognition, U.S.-remote validation and canonical job keys
 - `jobs/blocked.json` — globally hidden jobs confirmed invalid by maintainers
-- `jobs/index.html` — live search, filters, deduplication, sponsorship-language detection and user validation controls
-- `jobs/validate-sources.mjs` — automated source, link, role and duplicate validation
-- `.github/workflows/revalidate-jobs.yml` — daily validation workflow
+- `jobs/index.html` — live search, role/state/visa filters, deduplication and user validation controls
+- `jobs/validate-sources.mjs` — automated source, official-link, role, U.S.-location and duplicate validation
+- `.github/workflows/revalidate-jobs.yml` — validation on relevant pushes, pull requests, manual runs and a daily schedule
 
-The first version intentionally distinguishes three different facts:
+The jobs feature intentionally distinguishes three different facts:
 
 1. what the live job posting explicitly says about sponsorship;
 2. whether company-level historical federal filing evidence is available;
