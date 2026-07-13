@@ -1,0 +1,16 @@
+{
+  "objects": {
+    "ட்ரேடிங்கின்_ஹோலி_க்ரெயில்.mp4": {
+      "id": "trading-holy-grail-tamil",
+      "title": "ட்ரேடிங்கின் ஹோலி க்ரெயில்",
+      "creator": "Share Capsule",
+      "description": "ட்ரேடிங்கில் வெற்றியைத் தேடும் அணுகுமுறைகள், ஒழுக்கம் மற்றும் நடைமுறை சிந்தனைகளை ஆராயும் தமிழ் ஆடியோ கட்டுரை.",
+      "category": "Tamil Personal Finance",
+      "language": "Tamil",
+      "coverEyebrow": "தமிழ் நிதி ஆடியோ",
+      "coverLines": ["ட்ரேடிங்கின்", "ஹோலி க்ரெயில்"],
+      "coverBackground": "linear-gradient(145deg,#172554,#1d4ed8 55%,#f59e0b)",
+      "forcePublish": true
+    }
+  }
+}
