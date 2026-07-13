@@ -36,12 +36,11 @@
     }
 
     function socialUrl(type,item){const u=encodeURIComponent(pageUrl(item.id)),t=encodeURIComponent(shareText(item));return type==='whatsapp'?`https://wa.me/?text=${t}`:type==='facebook'?`https://www.facebook.com/sharer/sharer.php?u=${u}`:type==='x'?`https://twitter.com/intent/tweet?text=${t}`:type==='linkedin'?`https://www.linkedin.com/sharing/share-offsite/?url=${u}`:type==='email'?`mailto:?subject=${encodeURIComponent(item.title)}&body=${t}`:'#'}
-
-    function getReaction(item){return reactionState.get(item.id)||{audioId:item.id,claps:0,likes:0,yourClaps:0,yourLike:false,loading:item.reactionsEnabled!==false,error:''}}
+    function getReaction(item){return reactionState.get(item.id)||{audioId:item.id,claps:0,likes:0,yourClaps:0,yourLike:false,loading:true,error:''}}
 
     function renderCard(item,site){
-      const reaction=getReaction(item),src=resolveUrl(item,site),base=apiBase(site),reactionsEnabled=item.reactionsEnabled!==false;
-      return `<article class="card" data-card="${esc(item.id)}"><div class="cover" style="background:${esc(item.coverBackground)}"><div class="coverText">${(item.coverLines||[item.title]).map(esc).join('<br>')}</div></div><div class="meta"><h2>${esc(item.title)}</h2><p>${esc(item.description)}</p>${src?`<audio class="player" controls preload="metadata" ${item.autoplay?'autoplay':''} src="${esc(src)}"></audio>`:`<div class="notice"><strong>Public R2 URL required.</strong><br>The object is recorded as <code>${esc(item.objectKey)}</code>.</div>`}<div class="actions"><button data-like="${esc(item.id)}" class="${reaction.yourLike?'active':''}" ${!reactionsEnabled||reaction.loading?'disabled':''}>♥ Like <span>${reaction.likes}</span></button><button data-clap="${esc(item.id)}" ${!reactionsEnabled||reaction.loading||reaction.yourClaps>=50?'disabled':''}>👏 Clap <span>${reaction.claps}</span></button><button data-native="${esc(item.id)}">↗ Share</button></div><div class="shareGrid"><a target="_blank" rel="noopener" href="${esc(socialUrl('whatsapp',item))}">WhatsApp</a><a target="_blank" rel="noopener" href="${esc(socialUrl('facebook',item))}">Facebook</a><a target="_blank" rel="noopener" href="${esc(socialUrl('x',item))}">X</a><a target="_blank" rel="noopener" href="${esc(socialUrl('linkedin',item))}">LinkedIn</a><a href="${esc(socialUrl('email',item))}">Email</a><button data-copy="${esc(item.id)}">Copy link</button></div><div class="status ${reaction.error?'error':''}">${!reactionsEnabled?'Reactions will be enabled after this audio ID is added to the shared reaction service.':reaction.loading?'Loading combined reactions…':reaction.error?esc(reaction.error):base?`Combined reactions · You clapped ${reaction.yourClaps} time${reaction.yourClaps===1?'':'s'}.`:'Reaction API is not configured yet.'}</div></div></article>`
+      const reaction=getReaction(item),src=resolveUrl(item,site),base=apiBase(site);
+      return `<article class="card" data-card="${esc(item.id)}"><div class="cover" style="background:${esc(item.coverBackground)}"><div class="coverText">${(item.coverLines||[item.title]).map(esc).join('<br>')}</div></div><div class="meta"><h2>${esc(item.title)}</h2><p>${esc(item.description)}</p>${src?`<audio class="player" controls preload="metadata" ${item.autoplay?'autoplay':''} src="${esc(src)}"></audio>`:`<div class="notice"><strong>Public R2 URL required.</strong><br>The object is recorded as <code>${esc(item.objectKey)}</code>.</div>`}<div class="actions"><button data-like="${esc(item.id)}" class="${reaction.yourLike?'active':''}" ${reaction.loading?'disabled':''}>♥ Like <span>${reaction.likes}</span></button><button data-clap="${esc(item.id)}" ${reaction.loading||reaction.yourClaps>=50?'disabled':''}>👏 Clap <span>${reaction.claps}</span></button><button data-native="${esc(item.id)}">↗ Share</button></div><div class="shareGrid"><a target="_blank" rel="noopener" href="${esc(socialUrl('whatsapp',item))}">WhatsApp</a><a target="_blank" rel="noopener" href="${esc(socialUrl('facebook',item))}">Facebook</a><a target="_blank" rel="noopener" href="${esc(socialUrl('x',item))}">X</a><a target="_blank" rel="noopener" href="${esc(socialUrl('linkedin',item))}">LinkedIn</a><a href="${esc(socialUrl('email',item))}">Email</a><button data-copy="${esc(item.id)}">Copy link</button></div><div class="status ${reaction.error?'error':''}">${reaction.loading?'Loading combined reactions…':reaction.error?esc(reaction.error):base?`Combined reactions · You clapped ${reaction.yourClaps} time${reaction.yourClaps===1?'':'s'}.`:'Reaction API is not configured yet.'}</div></div></article>`
     }
 
     function render(items,site){grid.innerHTML=items.length?items.map(x=>renderCard(x,site)).join(''):'<div class="empty">No audio found.</div>';bind(items,site);attemptAutoplay()}
@@ -55,7 +54,6 @@
     }
 
     async function loadReaction(item,site,items){
-      if(item.reactionsEnabled===false)return;
       try{
         const result=await apiRequest(site,`/api/audio/${encodeURIComponent(item.id)}/reactions?visitorId=${encodeURIComponent(getVisitorId())}`);
         reactionState.set(item.id,{...result,loading:false,error:''});
@@ -64,7 +62,6 @@
     }
 
     async function mutateReaction(item,site,items,kind){
-      if(item.reactionsEnabled===false)return;
       const current=getReaction(item);
       reactionState.set(item.id,{...current,loading:true,error:''});render(items,site);
       try{
@@ -79,9 +76,9 @@
       try{
         const r=await fetch(`data.json?v=${Date.now()}`,{cache:'no-store'});if(!r.ok)throw new Error(`HTTP ${r.status}`);
         const data=await r.json(),wanted=new URLSearchParams(location.search).get('id'),items=wanted?(data.audio||[]).filter(x=>x.id===wanted):(data.audio||[]),site=data.site||{};
-        items.forEach(item=>reactionState.set(item.id,{audioId:item.id,claps:0,likes:0,yourClaps:0,yourLike:false,loading:item.reactionsEnabled!==false&&Boolean(apiBase(site)),error:item.reactionsEnabled===false?'':apiBase(site)?'':'Reaction API is not configured yet.'}));
+        items.forEach(item=>reactionState.set(item.id,{audioId:item.id,claps:0,likes:0,yourClaps:0,yourLike:false,loading:Boolean(apiBase(site)),error:apiBase(site)?'':'Reaction API is not configured yet.'}));
         render(items,site);
-        if(apiBase(site))await Promise.all(items.filter(item=>item.reactionsEnabled!==false).map(item=>loadReaction(item,site,items)));
+        if(apiBase(site))await Promise.all(items.map(item=>loadReaction(item,site,items)));
       }catch(e){grid.innerHTML=`<div class="empty">Unable to load audio. ${esc(e.message)}</div>`}
     }
 

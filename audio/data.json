@@ -6,7 +6,7 @@
     "publicBaseUrl": "https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev",
     "publicUrlNote": "Public Cloudflare R2 development domain supplied by the bucket owner. Object keys are URL-encoded before playback.",
     "reactionsApiBaseUrl": "https://sharecapsule-reactions.subhafash-86.workers.dev",
-    "reactionsApiNote": "Cloudflare Worker origin for shared D1-backed clap and like counts. Do not include a trailing slash."
+    "reactionsApiNote": "Cloudflare Worker origin for shared D1-backed clap and like counts. Every valid audio ID is supported automatically."
   },
   "audio": [
     {
@@ -21,7 +21,6 @@
       "mediaUrl": "https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev/Economic%20Indicators.m4a",
       "mimeType": "audio/mp4",
       "autoplay": true,
-      "reactionsEnabled": true,
       "dashboardUrl": "https://dash.cloudflare.com/8a7b80d3a3f2c8a87c408645f46cd910/r2/default/buckets/techvideos/objects/Economic%20Indicators.m4a/details",
       "coverBackground": "linear-gradient(145deg,#0f766e,#164e63 55%,#312e81)",
       "coverLines": ["Economic", "Indicators"],
@@ -39,7 +38,6 @@
       "mediaUrl": "https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev/Google%20AI%20Vector%20Search.m4a",
       "mimeType": "audio/mp4",
       "autoplay": true,
-      "reactionsEnabled": false,
       "coverBackground": "linear-gradient(145deg,#111827,#2563eb 55%,#7c3aed)",
       "coverLines": ["Google AI", "Vector Search"],
       "references": []
@@ -56,7 +54,6 @@
       "mediaUrl": "https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev/Psychology%20of%20Spending.m4a",
       "mimeType": "audio/mp4",
       "autoplay": true,
-      "reactionsEnabled": false,
       "coverBackground": "linear-gradient(145deg,#3f3cbb,#7b2cbf 55%,#c9184a)",
       "coverLines": ["Psychology", "of Spending"],
       "references": []
