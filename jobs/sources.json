@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-07-12",
+  "method": "Only allowlisted official applicant-tracking-system feeds are queried. A role is shown as sponsorship-supported or unsupported only when its own live posting says so. Company filing history is shown only after separate evidence is verified and linked; it is never treated as a guarantee for a specific role.",
+  "federalVisaEvidence": {
+    "label": "U.S. Department of Labor — OFLC disclosure data",
+    "url": "https://www.dol.gov/agencies/eta/foreign-labor/performance",
+    "note": "Federal disclosure records can show historical H-1B/LCA activity, but an employer's past filings do not guarantee sponsorship for a current opening."
+  },
+  "sources": [
+    {
+      "id": "databricks",
+      "company": "Databricks",
+      "type": "greenhouse",
+      "apiUrl": "https://boards-api.greenhouse.io/v1/boards/databricks/jobs?content=true",
+      "officialBoardUrl": "https://job-boards.greenhouse.io/databricks",
+      "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "databricks.com"],
+      "visaHistory": "not-independently-verified",
+      "visaHistoryReviewedAt": "2026-07-12"
+    },
+    {
+      "id": "anthropic",
+      "company": "Anthropic",
+      "type": "greenhouse",
+      "apiUrl": "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs?content=true",
+      "officialBoardUrl": "https://job-boards.greenhouse.io/anthropic",
+      "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "anthropic.com"],
+      "visaHistory": "not-independently-verified",
+      "visaHistoryReviewedAt": "2026-07-12"
+    },
+    {
+      "id": "scaleai",
+      "company": "Scale AI",
+      "type": "greenhouse",
+      "apiUrl": "https://boards-api.greenhouse.io/v1/boards/scaleai/jobs?content=true",
+      "officialBoardUrl": "https://job-boards.greenhouse.io/scaleai",
+      "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "scale.com"],
+      "visaHistory": "not-independently-verified",
+      "visaHistoryReviewedAt": "2026-07-12"
+    },
+    {
+      "id": "figma",
+      "company": "Figma",
+      "type": "greenhouse",
+      "apiUrl": "https://boards-api.greenhouse.io/v1/boards/figma/jobs?content=true",
+      "officialBoardUrl": "https://job-boards.greenhouse.io/figma",
+      "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "figma.com"],
+      "visaHistory": "not-independently-verified",
+      "visaHistoryReviewedAt": "2026-07-12"
+    },
+    {
+      "id": "airtable",
+      "company": "Airtable",
+      "type": "greenhouse",
+      "apiUrl": "https://boards-api.greenhouse.io/v1/boards/airtable/jobs?content=true",
+      "officialBoardUrl": "https://job-boards.greenhouse.io/airtable",
+      "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "airtable.com"],
+      "visaHistory": "not-independently-verified",
+      "visaHistoryReviewedAt": "2026-07-12"
+    }
+  ]
+}

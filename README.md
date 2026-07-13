@@ -61,10 +61,30 @@ Add one more object inside the `releases` array in `data/releases.json`.
 
 For many releases, avoid storing large full-length audio files directly in the GitHub repository. Use a public HTTPS media URL from object storage or a CDN and place it in `previewUrl`. Cover art can also use an external HTTPS URL in `coverImage`.
 
+## Verified jobs endpoint
+
+`https://sharecapsule.app/jobs/` lists focused data-engineering and analytics openings from allowlisted official employer ATS feeds.
+
+Files:
+
+- `jobs/sources.json` — official source allowlist and visa-evidence metadata
+- `jobs/blocked.json` — globally hidden jobs confirmed invalid by maintainers
+- `jobs/index.html` — live search, filters, deduplication, sponsorship-language detection and user validation controls
+- `jobs/validate-sources.mjs` — automated source, link, role and duplicate validation
+- `.github/workflows/revalidate-jobs.yml` — daily validation workflow
+
+The first version intentionally distinguishes three different facts:
+
+1. what the live job posting explicitly says about sponsorship;
+2. whether company-level historical federal filing evidence is available;
+3. whether a user has confirmed or hidden the listing in their own browser.
+
+An invalid-job button hides the role locally and opens a prefilled GitHub issue. After a maintainer confirms the report, add the job key or official URL to `jobs/blocked.json` to hide it for everyone.
+
 ## Current architecture
 
 This version intentionally stays serverless and inexpensive:
 
-`GitHub Pages + releases.json + browser JavaScript`
+`GitHub Pages + JSON data + browser JavaScript`
 
-A future build step can generate permanent static URLs such as `/release/my-new-audio/` for unique social-preview metadata on WhatsApp and other platforms.
+A future build step can generate permanent static URLs such as `/release/my-new-audio/` for unique social-preview metadata on WhatsApp and other platforms. A small serverless database can later add shared job-validation vote totals without changing the public jobs URL.
