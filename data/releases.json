@@ -5,6 +5,51 @@
   },
   "releases": [
     {
+      "slug": "psychology-of-spending",
+      "title": "Psychology of Spending",
+      "artist": "Share Capsule",
+      "type": "Audio article",
+      "category": "Personal Finance",
+      "language": "English",
+      "publishedAt": "2026-07-12",
+      "description": "An audio article exploring the emotions, habits, and behavioral patterns that influence spending decisions.",
+      "featured": true,
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#3f3cbb,#7b2cbf 55%,#c9184a)",
+      "coverEyebrow": "Money psychology",
+      "coverLines": [
+        "Psychology",
+        "of Spending"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "audioPageUrl": "/audio/?id=psychology-of-spending",
+      "platforms": [
+        {
+          "label": "Listen",
+          "icon": "▶",
+          "url": "/audio/?id=psychology-of-spending"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Friend",
+          "icon": "🎧",
+          "text": "Here is an insightful audio article about why we spend the way we do."
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this useful audio about spending habits and money psychology."
+        },
+        "topic": {
+          "label": "Finance learner",
+          "icon": "🧠",
+          "text": "This Psychology of Spending audio article may be useful for you."
+        }
+      }
+    },
+    {
       "slug": "google-ai-vector-search",
       "title": "Google AI Vector Search",
       "artist": "Share Capsule",
