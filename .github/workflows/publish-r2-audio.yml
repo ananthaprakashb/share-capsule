@@ -4,6 +4,12 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "23 * * * *"
+  push:
+    branches: [main]
+    paths:
+      - "audio/publish-overrides.json"
+      - "audio/publish-r2.mjs"
+      - ".github/workflows/publish-r2-audio.yml"
 
 permissions:
   contents: write
@@ -13,7 +19,34 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  publish:
+  seed-overrides:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "24"
+      - name: Publish explicitly configured objects
+        env:
+          SEED_ONLY: "true"
+          R2_BUCKET: techvideos
+          R2_PUBLIC_BASE_URL: https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev
+        run: node audio/publish-r2.mjs
+      - name: Validate and commit seeded releases
+        run: |
+          node --check audio/publish-r2.mjs
+          if git diff --quiet -- audio/data.json data/releases.json; then exit 0; fi
+          git config user.name share-capsule-bot
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add audio/data.json data/releases.json
+          git commit -m "Publish configured R2 audio"
+          git push
+
+  discover-r2:
+    if: github.event_name != 'push'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
