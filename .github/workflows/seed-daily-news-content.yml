@@ -1,0 +1,31 @@
+name: Seed daily news content
+on:
+  push:
+    branches: [agent/daily-news-content]
+    paths: [.github/workflows/seed-daily-news-content.yml]
+permissions:
+  contents: write
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: agent/daily-news-content
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+      - name: Patch pages and seed today
+        env:
+          SEED_NEWS_CONTEXT: 'true'
+        run: |
+          node scripts/patch-daily-news-pages.mjs
+          node scripts/publish-daily-news-content.mjs
+          node --check scripts/publish-daily-news-content.mjs
+      - name: Commit
+        run: |
+          git config user.name share-capsule-bot
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add tip/index.html law/index.html paa/index.html tulip/index.html tip/data.json law/data.json paa/data.json tulip/data.json
+          git commit -m "Seed verified daily news content and selection support"
+          git push
