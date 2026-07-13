@@ -1,0 +1,60 @@
+name: Correct today news quote selection
+
+on:
+  push:
+    branches: [agent/daily-news-quote]
+    paths: [.github/workflows/correct-today-news-quote.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  correct:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: agent/daily-news-quote
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "24"
+      - name: Replace today with independently verified JFK quote
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const data=require('./quotes/data.json');
+          const library=require('./quotes/verified-library.json');
+          const q=library.quotes.find(x=>x.id==='jfk-negotiate-without-fear');
+          if(!q) throw new Error('JFK quote missing from verified library');
+          const today='2026-07-13';
+          const item={
+            date:today,
+            quote:q.quote,
+            author:q.author,
+            authorBio:q.authorBio,
+            authorEncyclopediaUrl:q.authorEncyclopediaUrl,
+            sourceTitle:q.sourceTitle,
+            sourceUrl:q.sourceUrl,
+            sourceType:q.sourceType,
+            verificationNote:q.verificationNote,
+            verifiedOn:today,
+            libraryId:q.id,
+            newsFit:{
+              headline:'European leaders coordinate support for Ukraine and discuss protection, sanctions and diplomacy',
+              newsUrl:'https://www.theguardian.com/world/live/2026/jul/13/emmanuel-macron-keir-starmer-friedrich-merz-volodymyr-zelenskyy-coalition-of-the-willing-ukraine-russia-latest-news-updates',
+              source:'Verified current-news context',
+              explanation:'Selected for today’s focus on military support, international coordination, and the continued need for diplomacy.'
+            }
+          };
+          data.quotes=data.quotes.filter(x=>x.date!==today&&x.quote!==q.quote);
+          data.quotes.unshift(item);
+          fs.writeFileSync('./quotes/data.json',JSON.stringify(data,null,2)+'\n');
+          NODE
+      - name: Validate and commit
+        run: |
+          node -e "const d=require('./quotes/data.json');const dates=d.quotes.map(q=>q.date),texts=d.quotes.map(q=>q.quote);if(new Set(dates).size!==dates.length||new Set(texts).size!==texts.length)throw new Error('Duplicate quote');if(d.quotes[0].libraryId!=='jfk-negotiate-without-fear')throw new Error('Correction failed')"
+          git config user.name share-capsule-bot
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add quotes/data.json
+          git commit -m "Correct July 13 verified news quote"
+          git push
