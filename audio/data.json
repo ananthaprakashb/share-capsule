@@ -1,0 +1,28 @@
+{
+  "site": {
+    "name": "Share Capsule Audio",
+    "tagline": "Audio ideas worth listening to and sharing",
+    "r2Bucket": "techvideos",
+    "publicBaseUrl": "",
+    "publicUrlNote": "Set this to the bucket's public custom domain or r2.dev domain. The Cloudflare dashboard URL is private and cannot be used as an audio source."
+  },
+  "audio": [
+    {
+      "id": "economic-indicators",
+      "title": "Economic Indicators",
+      "creator": "Share Capsule",
+      "description": "An audio capsule about economic indicators.",
+      "category": "Personal Finance",
+      "language": "English",
+      "publishedAt": "2026-07-12",
+      "objectKey": "Economic Indicators.m4a",
+      "mediaUrl": "",
+      "mimeType": "audio/mp4",
+      "autoplay": true,
+      "dashboardUrl": "https://dash.cloudflare.com/8a7b80d3a3f2c8a87c408645f46cd910/r2/default/buckets/techvideos/objects/Economic%20Indicators.m4a/details",
+      "coverBackground": "linear-gradient(145deg,#0f766e,#164e63 55%,#312e81)",
+      "coverLines": ["Economic", "Indicators"],
+      "references": []
+    }
+  ]
+}
