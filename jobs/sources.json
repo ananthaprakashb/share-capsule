@@ -57,6 +57,46 @@
       "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "airtable.com"],
       "visaHistory": "not-independently-verified",
       "visaHistoryReviewedAt": "2026-07-12"
+    },
+    {
+      "id": "robinhood",
+      "company": "Robinhood",
+      "type": "greenhouse",
+      "apiUrl": "https://boards-api.greenhouse.io/v1/boards/robinhood/jobs?content=true",
+      "officialBoardUrl": "https://job-boards.greenhouse.io/robinhood",
+      "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "robinhood.com"],
+      "visaHistory": "not-independently-verified",
+      "visaHistoryReviewedAt": "2026-07-12"
+    },
+    {
+      "id": "pinterest",
+      "company": "Pinterest",
+      "type": "greenhouse",
+      "apiUrl": "https://boards-api.greenhouse.io/v1/boards/pinterest/jobs?content=true",
+      "officialBoardUrl": "https://job-boards.greenhouse.io/pinterest",
+      "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "pinterest.com", "pinterestcareers.com"],
+      "visaHistory": "not-independently-verified",
+      "visaHistoryReviewedAt": "2026-07-12"
+    },
+    {
+      "id": "confluent",
+      "company": "Confluent",
+      "type": "greenhouse",
+      "apiUrl": "https://boards-api.greenhouse.io/v1/boards/confluent/jobs?content=true",
+      "officialBoardUrl": "https://job-boards.greenhouse.io/confluent",
+      "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "confluent.io"],
+      "visaHistory": "not-independently-verified",
+      "visaHistoryReviewedAt": "2026-07-12"
+    },
+    {
+      "id": "elastic",
+      "company": "Elastic",
+      "type": "greenhouse",
+      "apiUrl": "https://boards-api.greenhouse.io/v1/boards/elastic/jobs?content=true",
+      "officialBoardUrl": "https://job-boards.greenhouse.io/elastic",
+      "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "elastic.co"],
+      "visaHistory": "not-independently-verified",
+      "visaHistoryReviewedAt": "2026-07-12"
     }
   ]
 }
