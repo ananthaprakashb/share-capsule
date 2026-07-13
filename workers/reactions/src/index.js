@@ -231,7 +231,21 @@ export default {
       });
     }
 
-    const route = parseRoute(url.pathname);
+    const pathname = url.pathname;
+    if (request.method === 'POST' && pathname === '/api/jobs/verdicts/batch') {
+      return await handleJobVerdictBatch(request, env);
+    }
+    if (request.method === 'GET' && pathname === '/api/jobs/follow-up') {
+      return await handleJobFollowUp(request, env);
+    }
+    const jobMatch = pathname.match(/^\/api\/jobs\/([^/]+)\/verdict$/);
+    if (request.method === 'POST' && jobMatch) {
+      const jobKey = decodeURIComponent(jobMatch[1]);
+      if (!validJobKey(jobKey)) return json(request, { error: 'Invalid job key' }, 400);
+      return await handleJobVerdict(request, env, jobKey);
+    }
+
+    const route = parseRoute(pathname);
     if (!route) {
       return json(request, { error: "Invalid reaction route" }, 404);
     }

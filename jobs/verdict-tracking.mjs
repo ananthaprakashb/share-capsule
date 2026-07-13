@@ -70,7 +70,7 @@ document.addEventListener('click', event=>{
 
 try{
   const config=await fetch('./sources.json',{cache:'no-store'}).then(r=>r.json());
-  apiBase=String(config.jobTrackingApiBaseUrl||'').replace(//$/,'');
+  apiBase=String(config.jobTrackingApiBaseUrl||'').replace(/\/$/,'');
   const observer=new MutationObserver(()=>{clearTimeout(observerTimer);observerTimer=setTimeout(refreshVisible,120)});
   observer.observe(document.getElementById('grid'),{childList:true,subtree:true});
   refreshVisible();
