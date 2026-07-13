@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reviewedAt": "2026-07-12",
-  "method": "Only allowlisted official applicant-tracking-system feeds are queried. A role is shown as sponsorship-supported only when its own posting says so; company filing history is displayed separately and never treated as a guarantee for a specific role.",
+  "method": "Only allowlisted official applicant-tracking-system feeds are queried. A role is shown as sponsorship-supported or unsupported only when its own live posting says so. Company filing history is shown only after separate evidence is verified and linked; it is never treated as a guarantee for a specific role.",
   "federalVisaEvidence": {
     "label": "U.S. Department of Labor — OFLC disclosure data",
     "url": "https://www.dol.gov/agencies/eta/foreign-labor/performance",
@@ -15,7 +15,7 @@
       "apiUrl": "https://boards-api.greenhouse.io/v1/boards/databricks/jobs?content=true",
       "officialBoardUrl": "https://job-boards.greenhouse.io/databricks",
       "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "databricks.com"],
-      "visaHistory": "historical-federal-records",
+      "visaHistory": "not-independently-verified",
       "visaHistoryReviewedAt": "2026-07-12"
     },
     {
@@ -25,7 +25,7 @@
       "apiUrl": "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs?content=true",
       "officialBoardUrl": "https://job-boards.greenhouse.io/anthropic",
       "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "anthropic.com"],
-      "visaHistory": "historical-federal-records",
+      "visaHistory": "not-independently-verified",
       "visaHistoryReviewedAt": "2026-07-12"
     },
     {
@@ -35,7 +35,7 @@
       "apiUrl": "https://boards-api.greenhouse.io/v1/boards/scaleai/jobs?content=true",
       "officialBoardUrl": "https://job-boards.greenhouse.io/scaleai",
       "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "scale.com"],
-      "visaHistory": "historical-federal-records",
+      "visaHistory": "not-independently-verified",
       "visaHistoryReviewedAt": "2026-07-12"
     },
     {
@@ -45,17 +45,7 @@
       "apiUrl": "https://boards-api.greenhouse.io/v1/boards/figma/jobs?content=true",
       "officialBoardUrl": "https://job-boards.greenhouse.io/figma",
       "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "figma.com"],
-      "visaHistory": "historical-federal-records",
-      "visaHistoryReviewedAt": "2026-07-12"
-    },
-    {
-      "id": "plaid",
-      "company": "Plaid",
-      "type": "greenhouse",
-      "apiUrl": "https://boards-api.greenhouse.io/v1/boards/plaid/jobs?content=true",
-      "officialBoardUrl": "https://job-boards.greenhouse.io/plaid",
-      "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "plaid.com"],
-      "visaHistory": "historical-federal-records",
+      "visaHistory": "not-independently-verified",
       "visaHistoryReviewedAt": "2026-07-12"
     },
     {
@@ -65,7 +55,7 @@
       "apiUrl": "https://boards-api.greenhouse.io/v1/boards/airtable/jobs?content=true",
       "officialBoardUrl": "https://job-boards.greenhouse.io/airtable",
       "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "airtable.com"],
-      "visaHistory": "verify-in-federal-records",
+      "visaHistory": "not-independently-verified",
       "visaHistoryReviewedAt": "2026-07-12"
     }
   ]
