@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-13T14:50:40.816Z",
+  "generatedAt": "2026-07-13T16:44:12.576Z",
   "scope": "United States: all 50 states, Washington D.C., and explicitly U.S.-based remote roles",
   "sourceCount": 8,
   "workingSourceCount": 8,
@@ -42,7 +42,7 @@
       "id": "anthropic",
       "company": "Anthropic",
       "status": "passed",
-      "total": 407,
+      "total": 406,
       "accepted": 56,
       "error": null
     },
@@ -50,7 +50,7 @@
       "id": "scaleai",
       "company": "Scale AI",
       "status": "passed",
-      "total": 183,
+      "total": 184,
       "accepted": 21,
       "error": null
     },
@@ -58,7 +58,7 @@
       "id": "figma",
       "company": "Figma",
       "status": "passed",
-      "total": 169,
+      "total": 170,
       "accepted": 28,
       "error": null
     },
@@ -66,7 +66,7 @@
       "id": "airtable",
       "company": "Airtable",
       "status": "passed",
-      "total": 37,
+      "total": 38,
       "accepted": 6,
       "error": null
     },
@@ -82,7 +82,7 @@
       "id": "pinterest",
       "company": "Pinterest",
       "status": "passed",
-      "total": 187,
+      "total": 188,
       "accepted": 55,
       "error": null
     },
@@ -451,12 +451,12 @@
       "sourceId": "robinhood"
     },
     {
-      "key": "robinhood:7975530",
-      "id": "7975530",
+      "key": "robinhood:7975529",
+      "id": "7975529",
       "title": "Software Engineer",
       "company": "Robinhood",
       "location": "Menlo Park, CA",
-      "url": "https://boards.greenhouse.io/robinhood/jobs/7975530?t=gh_src=&gh_jid=7975530",
+      "url": "https://boards.greenhouse.io/robinhood/jobs/7975529?t=gh_src=&gh_jid=7975529",
       "updatedAt": "2026-07-09T19:02:18-04:00",
       "role": {
         "code": "software",
@@ -2031,12 +2031,12 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:8367022002",
-      "id": "8367022002",
+      "key": "databricks:8367021002",
+      "id": "8367021002",
       "title": "Staff Backend Software Engineer- (AI Platform)",
       "company": "Databricks",
       "location": "San Francisco, California",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8367022002",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8367021002",
       "updatedAt": "2026-07-01T18:31:29-04:00",
       "role": {
         "code": "software",
@@ -2211,12 +2211,32 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:8220836002",
-      "id": "8220836002",
+      "key": "databricks:8220840002",
+      "id": "8220840002",
       "title": "Staff Fullstack Engineer, Agentic Applications",
       "company": "Databricks",
       "location": "Mountain View, California",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8220836002",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8220840002",
+      "updatedAt": "2026-07-01T18:31:26-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8482037002",
+      "id": "8482037002",
+      "title": "Systems PhD - Software Engineer",
+      "company": "Databricks",
+      "location": "Mountain View, California; San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8482037002",
       "updatedAt": "2026-07-01T18:31:26-04:00",
       "role": {
         "code": "software",
@@ -2244,26 +2264,6 @@
       },
       "regions": [
         "WA"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
-      "key": "databricks:8482037002",
-      "id": "8482037002",
-      "title": "Systems PhD - Software Engineer",
-      "company": "Databricks",
-      "location": "Mountain View, California; San Francisco, California",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8482037002",
-      "updatedAt": "2026-07-01T18:31:26-04:00",
-      "role": {
-        "code": "software",
-        "label": "Software engineering"
-      },
-      "regions": [
-        "CA"
       ],
       "visa": {
         "code": "unknown"
@@ -2752,26 +2752,6 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:7994801002",
-      "id": "7994801002",
-      "title": "Staff Software Engineer - IAM",
-      "company": "Databricks",
-      "location": "Mountain View, California",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7994801002",
-      "updatedAt": "2026-07-01T18:31:13-04:00",
-      "role": {
-        "code": "software",
-        "label": "Software engineering"
-      },
-      "regions": [
-        "CA"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
       "key": "databricks:7994790002",
       "id": "7994790002",
       "title": "Staff Software Engineer - IAM",
@@ -2785,6 +2765,26 @@
       },
       "regions": [
         "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:7994801002",
+      "id": "7994801002",
+      "title": "Staff Software Engineer - IAM",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7994801002",
+      "updatedAt": "2026-07-01T18:31:13-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
       ],
       "visa": {
         "code": "unknown"
@@ -3032,12 +3032,12 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:7898766002",
-      "id": "7898766002",
+      "key": "databricks:5445641002",
+      "id": "5445641002",
       "title": "Senior Software Engineer - Fullstack",
       "company": "Databricks",
       "location": "Mountain View, California; San Francisco, California",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7898766002",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=5445641002",
       "updatedAt": "2026-07-01T18:31:09-04:00",
       "role": {
         "code": "software",
@@ -3172,26 +3172,6 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:4799387002",
-      "id": "4799387002",
-      "title": "Senior Software Engineer - Backend",
-      "company": "Databricks",
-      "location": "San Francisco, California",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=4799387002",
-      "updatedAt": "2026-07-01T18:31:08-04:00",
-      "role": {
-        "code": "software",
-        "label": "Software engineering"
-      },
-      "regions": [
-        "CA"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
       "key": "databricks:6544435002",
       "id": "6544435002",
       "title": "Senior Software Engineer - Backend",
@@ -3212,12 +3192,12 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:6544383002",
-      "id": "6544383002",
-      "title": "Senior Software Engineer - Database Engine Internals",
+      "key": "databricks:4799387002",
+      "id": "4799387002",
+      "title": "Senior Software Engineer - Backend",
       "company": "Databricks",
-      "location": "Mountain View, California",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6544383002",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=4799387002",
       "updatedAt": "2026-07-01T18:31:08-04:00",
       "role": {
         "code": "software",
@@ -3238,6 +3218,26 @@
       "company": "Databricks",
       "location": "San Francisco, California",
       "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=5048461002",
+      "updatedAt": "2026-07-01T18:31:08-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:6544383002",
+      "id": "6544383002",
+      "title": "Senior Software Engineer - Database Engine Internals",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6544383002",
       "updatedAt": "2026-07-01T18:31:08-04:00",
       "role": {
         "code": "software",
@@ -3452,12 +3452,12 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:6544443002",
-      "id": "6544443002",
+      "key": "databricks:5408888002",
+      "id": "5408888002",
       "title": "Staff Software Engineer - Backend",
       "company": "Databricks",
-      "location": "Mountain View, California",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6544443002",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=5408888002",
       "updatedAt": "2026-07-01T18:31:08-04:00",
       "role": {
         "code": "software",
@@ -3472,12 +3472,12 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:5408888002",
-      "id": "5408888002",
+      "key": "databricks:6544443002",
+      "id": "6544443002",
       "title": "Staff Software Engineer - Backend",
       "company": "Databricks",
-      "location": "San Francisco, California",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=5408888002",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6544443002",
       "updatedAt": "2026-07-01T18:31:08-04:00",
       "role": {
         "code": "software",
