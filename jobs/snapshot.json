@@ -1,12 +1,5766 @@
 {
-  "generatedAt": null,
+  "generatedAt": "2026-07-13T14:47:55.718Z",
   "scope": "United States: all 50 states, Washington D.C., and explicitly U.S.-based remote roles",
-  "sourceCount": 0,
-  "workingSourceCount": 0,
-  "totalJobs": 0,
-  "roleCounts": {},
-  "visaCounts": {},
-  "regionCounts": {},
-  "sources": [],
-  "jobs": []
+  "sourceCount": 8,
+  "workingSourceCount": 8,
+  "totalJobs": 276,
+  "roleCounts": {
+    "software": 233,
+    "data-engineering": 9,
+    "analytics": 31,
+    "frontend": 2,
+    "java": 1
+  },
+  "visaCounts": {
+    "unknown": 276
+  },
+  "regionCounts": {
+    "IL": 1,
+    "REMOTE": 44,
+    "WA": 80,
+    "DC": 15,
+    "CA": 152,
+    "NY": 113,
+    "CO": 1,
+    "HI": 1,
+    "MO": 5,
+    "US": 6,
+    "VA": 2,
+    "MA": 1,
+    "TX": 1
+  },
+  "sources": [
+    {
+      "id": "databricks",
+      "company": "Databricks",
+      "status": "passed",
+      "total": 790,
+      "accepted": 94,
+      "error": null
+    },
+    {
+      "id": "anthropic",
+      "company": "Anthropic",
+      "status": "passed",
+      "total": 407,
+      "accepted": 56,
+      "error": null
+    },
+    {
+      "id": "scaleai",
+      "company": "Scale AI",
+      "status": "passed",
+      "total": 183,
+      "accepted": 21,
+      "error": null
+    },
+    {
+      "id": "figma",
+      "company": "Figma",
+      "status": "passed",
+      "total": 169,
+      "accepted": 28,
+      "error": null
+    },
+    {
+      "id": "airtable",
+      "company": "Airtable",
+      "status": "passed",
+      "total": 37,
+      "accepted": 6,
+      "error": null
+    },
+    {
+      "id": "robinhood",
+      "company": "Robinhood",
+      "status": "passed",
+      "total": 112,
+      "accepted": 13,
+      "error": null
+    },
+    {
+      "id": "pinterest",
+      "company": "Pinterest",
+      "status": "passed",
+      "total": 187,
+      "accepted": 55,
+      "error": null
+    },
+    {
+      "id": "elastic",
+      "company": "Elastic",
+      "status": "passed",
+      "total": 180,
+      "accepted": 3,
+      "error": null
+    }
+  ],
+  "jobs": [
+    {
+      "key": "pinterest:7494708",
+      "id": "7494708",
+      "title": "Sr. Security Software Engineer, Application Security",
+      "company": "Pinterest",
+      "location": "Chicago, IL, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7494708",
+      "updatedAt": "2026-07-11T07:35:04-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "IL",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "scaleai:4713597005",
+      "id": "4713597005",
+      "title": "Senior Data Engineer, Public Sector",
+      "company": "Scale AI",
+      "location": "Washington, DC",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4713597005",
+      "updatedAt": "2026-07-10T22:29:34-04:00",
+      "role": {
+        "code": "data-engineering",
+        "label": "Data engineering"
+      },
+      "regions": [
+        "WA",
+        "DC"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "scaleai"
+    },
+    {
+      "key": "pinterest:7746946",
+      "id": "7746946",
+      "title": "Sr. Staff Software Engineer, Data Product Platform",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7746946",
+      "updatedAt": "2026-07-10T22:17:11-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "airtable:8400373002",
+      "id": "8400373002",
+      "title": "Software Engineer, Infrastructure (4-8 YOE)",
+      "company": "Airtable",
+      "location": "San Francisco, CA; New York, NY; Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/airtable/jobs/8400373002",
+      "updatedAt": "2026-07-10T19:13:30-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "airtable"
+    },
+    {
+      "key": "anthropic:5325909008",
+      "id": "5325909008",
+      "title": "Staff+ Software Engineer, Financial Fraud",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5325909008",
+      "updatedAt": "2026-07-10T16:42:40-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "airtable:8400388002",
+      "id": "8400388002",
+      "title": "Software Engineer, Infrastructure (8+ YOE)",
+      "company": "Airtable",
+      "location": "San Francisco, CA; New York, NY; Remote - US (Seattle, WA only)",
+      "url": "https://job-boards.greenhouse.io/airtable/jobs/8400388002",
+      "updatedAt": "2026-07-10T12:33:45-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "NY",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "airtable"
+    },
+    {
+      "key": "pinterest:8036273",
+      "id": "8036273",
+      "title": "Staff Data Scientist, Finance & Business Ops",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=8036273",
+      "updatedAt": "2026-07-10T11:59:18-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "anthropic:4778843008",
+      "id": "4778843008",
+      "title": "Staff+ Software Engineer, Safeguards ML Infrastructure",
+      "company": "Anthropic",
+      "location": "San Francisco, CA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4778843008",
+      "updatedAt": "2026-07-10T08:21:53-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:5212119008",
+      "id": "5212119008",
+      "title": "Data Scientist, Supply",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5212119008",
+      "updatedAt": "2026-07-10T00:14:03-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "scaleai:4713608005",
+      "id": "4713608005",
+      "title": "Staff Software Engineer, Full Stack - Gen AI",
+      "company": "Scale AI",
+      "location": "New York, NY; San Francisco, CA; Seattle, WA; New York, NY",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4713608005",
+      "updatedAt": "2026-07-09T23:11:01-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "scaleai"
+    },
+    {
+      "key": "anthropic:5289450008",
+      "id": "5289450008",
+      "title": "Staff+ Software Engineer, Vertical AI Products (Multiple Roles)",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5289450008",
+      "updatedAt": "2026-07-09T22:35:00-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "robinhood:8008723",
+      "id": "8008723",
+      "title": "Full Stack Software Engineer, Credit Cards & Banking",
+      "company": "Robinhood",
+      "location": "Bellevue, WA; Menlo Park, CA; New York, NY",
+      "url": "https://boards.greenhouse.io/robinhood/jobs/8008723?t=gh_src=&gh_jid=8008723",
+      "updatedAt": "2026-07-09T19:02:18-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "robinhood"
+    },
+    {
+      "key": "robinhood:7975544",
+      "id": "7975544",
+      "title": "Senior Software Engineer",
+      "company": "Robinhood",
+      "location": "Menlo Park, CA",
+      "url": "https://boards.greenhouse.io/robinhood/jobs/7975544?t=gh_src=&gh_jid=7975544",
+      "updatedAt": "2026-07-09T19:02:18-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "robinhood"
+    },
+    {
+      "key": "robinhood:7838644",
+      "id": "7838644",
+      "title": "Senior Software Engineer - Robinhood Command Center",
+      "company": "Robinhood",
+      "location": "Menlo Park, CA",
+      "url": "https://boards.greenhouse.io/robinhood/jobs/7838644?t=gh_src=&gh_jid=7838644",
+      "updatedAt": "2026-07-09T19:02:18-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "robinhood"
+    },
+    {
+      "key": "robinhood:7993511",
+      "id": "7993511",
+      "title": "Senior Software Engineer, Robinhood Command Center",
+      "company": "Robinhood",
+      "location": "New York, NY",
+      "url": "https://boards.greenhouse.io/robinhood/jobs/7993511?t=gh_src=&gh_jid=7993511",
+      "updatedAt": "2026-07-09T19:02:18-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "robinhood"
+    },
+    {
+      "key": "robinhood:7899482",
+      "id": "7899482",
+      "title": "Senior Software Engineer, Security Platform",
+      "company": "Robinhood",
+      "location": "Bellevue, WA",
+      "url": "https://boards.greenhouse.io/robinhood/jobs/7899482?t=gh_src=&gh_jid=7899482",
+      "updatedAt": "2026-07-09T19:02:18-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "robinhood"
+    },
+    {
+      "key": "robinhood:7729014",
+      "id": "7729014",
+      "title": "Senior Staff Software Engineer, Data Platform",
+      "company": "Robinhood",
+      "location": "Bellevue, WA",
+      "url": "https://boards.greenhouse.io/robinhood/jobs/7729014?t=gh_src=&gh_jid=7729014",
+      "updatedAt": "2026-07-09T19:02:18-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "robinhood"
+    },
+    {
+      "key": "robinhood:7975530",
+      "id": "7975530",
+      "title": "Software Engineer",
+      "company": "Robinhood",
+      "location": "Menlo Park, CA",
+      "url": "https://boards.greenhouse.io/robinhood/jobs/7975530?t=gh_src=&gh_jid=7975530",
+      "updatedAt": "2026-07-09T19:02:18-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "robinhood"
+    },
+    {
+      "key": "robinhood:7263592",
+      "id": "7263592",
+      "title": "Software Engineer, Backend",
+      "company": "Robinhood",
+      "location": "Menlo Park, CA",
+      "url": "https://boards.greenhouse.io/robinhood/jobs/7263592?t=gh_src=&gh_jid=7263592",
+      "updatedAt": "2026-07-09T19:02:18-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "robinhood"
+    },
+    {
+      "key": "robinhood:7997218",
+      "id": "7997218",
+      "title": "Staff Data Scientist, ML (Credit Risk)",
+      "company": "Robinhood",
+      "location": "Menlo Park, CA; New York, NY; Washington, DC",
+      "url": "https://boards.greenhouse.io/robinhood/jobs/7997218?t=gh_src=&gh_jid=7997218",
+      "updatedAt": "2026-07-09T19:02:18-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "CA",
+        "NY",
+        "WA",
+        "DC"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "robinhood"
+    },
+    {
+      "key": "robinhood:7804599",
+      "id": "7804599",
+      "title": "Staff Software Engineer, Government Products",
+      "company": "Robinhood",
+      "location": "New York, NY",
+      "url": "https://boards.greenhouse.io/robinhood/jobs/7804599?t=gh_src=&gh_jid=7804599",
+      "updatedAt": "2026-07-09T19:02:18-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "robinhood"
+    },
+    {
+      "key": "robinhood:7819461",
+      "id": "7819461",
+      "title": "Staff Software Engineer, Security",
+      "company": "Robinhood",
+      "location": "Bellevue, WA",
+      "url": "https://boards.greenhouse.io/robinhood/jobs/7819461?t=gh_src=&gh_jid=7819461",
+      "updatedAt": "2026-07-09T19:02:18-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "robinhood"
+    },
+    {
+      "key": "robinhood:8044227",
+      "id": "8044227",
+      "title": "Staff Software Engineer, Storage Platform",
+      "company": "Robinhood",
+      "location": "Bellevue, WA",
+      "url": "https://boards.greenhouse.io/robinhood/jobs/8044227?t=gh_src=&gh_jid=8044227",
+      "updatedAt": "2026-07-09T19:02:18-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "robinhood"
+    },
+    {
+      "key": "robinhood:7489950",
+      "id": "7489950",
+      "title": "Staff Software Engineer, Web3",
+      "company": "Robinhood",
+      "location": "Menlo Park, CA; New York, NY",
+      "url": "https://boards.greenhouse.io/robinhood/jobs/7489950?t=gh_src=&gh_jid=7489950",
+      "updatedAt": "2026-07-09T19:02:18-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "robinhood"
+    },
+    {
+      "key": "pinterest:7963755",
+      "id": "7963755",
+      "title": "Staff Data Scientist, Ads Product",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Seattle, WA, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7963755",
+      "updatedAt": "2026-07-09T14:23:06-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "CA",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "scaleai:4481921005",
+      "id": "4481921005",
+      "title": "Forward Deployed Software Engineer, Public Sector",
+      "company": "Scale AI",
+      "location": "Colorado Springs, CO; Honolulu, HI; St. Louis, MO; Washington, DC",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4481921005",
+      "updatedAt": "2026-07-09T12:47:57-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CO",
+        "HI",
+        "MO",
+        "WA",
+        "DC"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "scaleai"
+    },
+    {
+      "key": "scaleai:4665557005",
+      "id": "4665557005",
+      "title": "Infrastructure Software Engineer, Enterprise GenAI",
+      "company": "Scale AI",
+      "location": "San Francisco, CA; New York, NY",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4665557005",
+      "updatedAt": "2026-07-09T12:47:57-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "scaleai"
+    },
+    {
+      "key": "scaleai:4654897005",
+      "id": "4654897005",
+      "title": "Senior Software Engineer - Agentic Tooling & Productivity",
+      "company": "Scale AI",
+      "location": "San Francisco, CA",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4654897005",
+      "updatedAt": "2026-07-09T12:47:57-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "scaleai"
+    },
+    {
+      "key": "scaleai:4637484005",
+      "id": "4637484005",
+      "title": "Senior Software Engineer, Full-Stack – Scale GP",
+      "company": "Scale AI",
+      "location": "San Francisco, CA; New York, NY",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4637484005",
+      "updatedAt": "2026-07-09T12:47:57-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "scaleai"
+    },
+    {
+      "key": "scaleai:4591298005",
+      "id": "4591298005",
+      "title": "Senior Software Engineer, GenAI",
+      "company": "Scale AI",
+      "location": "San Francisco, CA; New York, NY",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4591298005",
+      "updatedAt": "2026-07-09T12:47:57-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "scaleai"
+    },
+    {
+      "key": "scaleai:4711898005",
+      "id": "4711898005",
+      "title": "Senior Software Engineer, Identity",
+      "company": "Scale AI",
+      "location": "San Francisco, CA; New York, NY; Washington, DC",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4711898005",
+      "updatedAt": "2026-07-09T12:47:57-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "NY",
+        "WA",
+        "DC"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "scaleai"
+    },
+    {
+      "key": "scaleai:4674911005",
+      "id": "4674911005",
+      "title": "Senior Software Engineer, Public Sector",
+      "company": "Scale AI",
+      "location": "San Francisco, CA; St. Louis, MO; New York, NY; Washington, DC",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4674911005",
+      "updatedAt": "2026-07-09T12:47:57-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "MO",
+        "NY",
+        "WA",
+        "DC"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "scaleai"
+    },
+    {
+      "key": "scaleai:4673771005",
+      "id": "4673771005",
+      "title": "Software Engineer, ARC Team",
+      "company": "Scale AI",
+      "location": "San Francisco, CA; St. Louis, MO; New York, NY; Washington, DC",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4673771005",
+      "updatedAt": "2026-07-09T12:47:57-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "MO",
+        "NY",
+        "WA",
+        "DC"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "scaleai"
+    },
+    {
+      "key": "scaleai:4708221005",
+      "id": "4708221005",
+      "title": "Software Engineer, Data Infrastructure",
+      "company": "Scale AI",
+      "location": "New York, NY; Washington, DC",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4708221005",
+      "updatedAt": "2026-07-09T12:47:57-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA",
+        "DC"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "scaleai"
+    },
+    {
+      "key": "scaleai:4513943005",
+      "id": "4513943005",
+      "title": "Software Engineer, Enterprise AI",
+      "company": "Scale AI",
+      "location": "New York, NY; San Francisco, CA",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4513943005",
+      "updatedAt": "2026-07-09T12:47:57-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "scaleai"
+    },
+    {
+      "key": "scaleai:4363623005",
+      "id": "4363623005",
+      "title": "Software Engineer, Frontier AI Infrastructure",
+      "company": "Scale AI",
+      "location": "San Francisco, CA; St. Louis, MO; New York, NY; Washington, DC",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4363623005",
+      "updatedAt": "2026-07-09T12:47:57-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "MO",
+        "NY",
+        "WA",
+        "DC"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "scaleai"
+    },
+    {
+      "key": "scaleai:4591300005",
+      "id": "4591300005",
+      "title": "Software Engineer, Gen AI",
+      "company": "Scale AI",
+      "location": "San Francisco, CA; New York, NY",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4591300005",
+      "updatedAt": "2026-07-09T12:47:57-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "scaleai"
+    },
+    {
+      "key": "scaleai:4710484005",
+      "id": "4710484005",
+      "title": "Software Engineer, Identity",
+      "company": "Scale AI",
+      "location": "San Francisco, CA; New York, NY; Washington, DC",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4710484005",
+      "updatedAt": "2026-07-09T12:47:57-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "NY",
+        "WA",
+        "DC"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "scaleai"
+    },
+    {
+      "key": "scaleai:4618065005",
+      "id": "4618065005",
+      "title": "Software Engineer, Robotics & Autonomous Systems",
+      "company": "Scale AI",
+      "location": "San Francisco, CA",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4618065005",
+      "updatedAt": "2026-07-09T12:47:57-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "scaleai"
+    },
+    {
+      "key": "scaleai:4599700005",
+      "id": "4599700005",
+      "title": "Staff Infrastructure Software Engineer, Enterprise AI",
+      "company": "Scale AI",
+      "location": "New York, NY; San Francisco, CA",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4599700005",
+      "updatedAt": "2026-07-09T12:47:57-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "scaleai"
+    },
+    {
+      "key": "scaleai:4649903005",
+      "id": "4649903005",
+      "title": "Staff Software Engineer, Data Platform",
+      "company": "Scale AI",
+      "location": "San Francisco, CA; New York, NY",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4649903005",
+      "updatedAt": "2026-07-09T12:47:57-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "scaleai"
+    },
+    {
+      "key": "scaleai:4569678005",
+      "id": "4569678005",
+      "title": "Staff Software Engineer, Enterprise GenAI",
+      "company": "Scale AI",
+      "location": "San Francisco, CA; New York, NY",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4569678005",
+      "updatedAt": "2026-07-09T12:47:57-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "scaleai"
+    },
+    {
+      "key": "scaleai:4529529005",
+      "id": "4529529005",
+      "title": "Staff Software Engineer, Full-Stack - Enterprise Gen AI",
+      "company": "Scale AI",
+      "location": "New York, NY; San Francisco, CA",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4529529005",
+      "updatedAt": "2026-07-09T12:47:57-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "scaleai"
+    },
+    {
+      "key": "scaleai:4674913005",
+      "id": "4674913005",
+      "title": "Staff Software Engineer, Public Sector",
+      "company": "Scale AI",
+      "location": "San Francisco, CA; St. Louis, MO; New York, NY; Washington, DC",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4674913005",
+      "updatedAt": "2026-07-09T12:47:57-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "MO",
+        "NY",
+        "WA",
+        "DC"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "scaleai"
+    },
+    {
+      "key": "figma:5691911004",
+      "id": "5691911004",
+      "title": "Software Engineer, Full Stack",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/5691911004?gh_jid=5691911004",
+      "updatedAt": "2026-07-09T11:41:47-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "figma:5552549004",
+      "id": "5552549004",
+      "title": "Software Engineer, Distributed Systems",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/5552549004?gh_jid=5552549004",
+      "updatedAt": "2026-07-09T11:35:37-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "figma:6100023004",
+      "id": "6100023004",
+      "title": "Software Engineer, Mobile Web",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/6100023004?gh_jid=6100023004",
+      "updatedAt": "2026-07-08T19:17:47-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "anthropic:5251671008",
+      "id": "5251671008",
+      "title": "Staff+ Software Engineer, Safeguards Evals",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5251671008",
+      "updatedAt": "2026-07-08T18:08:51-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:4951844008",
+      "id": "4951844008",
+      "title": "Staff+ Software Engineer, Safeguards",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4951844008",
+      "updatedAt": "2026-07-08T18:08:07-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:5304425008",
+      "id": "5304425008",
+      "title": "Staff Software Engineer, Labs: Applied AI",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5304425008",
+      "updatedAt": "2026-07-08T15:55:29-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "elastic:8047349",
+      "id": "8047349",
+      "title": "Platform Engineer - Kubernetes",
+      "company": "Elastic",
+      "location": "United States",
+      "url": "https://jobs.elastic.co/jobs?gh_jid=8047349&gh_jid=8047349",
+      "updatedAt": "2026-07-08T13:59:47-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "US"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "elastic"
+    },
+    {
+      "key": "pinterest:7732971",
+      "id": "7732971",
+      "title": "Security Software Engineer II, Corporate Security",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7732971",
+      "updatedAt": "2026-07-08T12:35:39-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "anthropic:5157847008",
+      "id": "5157847008",
+      "title": "Staff+ Software Engineer, Platform",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5157847008",
+      "updatedAt": "2026-07-08T12:33:35-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:5285557008",
+      "id": "5285557008",
+      "title": "Staff + Senior Software Engineer, Inference Deployment",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5285557008",
+      "updatedAt": "2026-07-08T09:35:20-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:5245851008",
+      "id": "5245851008",
+      "title": "Staff + Senior Software Engineer, Inference",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5245851008",
+      "updatedAt": "2026-07-08T09:34:20-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "pinterest:5432095",
+      "id": "5432095",
+      "title": "Sr. Software Engineer, Android",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=5432095",
+      "updatedAt": "2026-07-08T00:42:32-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "databricks:8026634002",
+      "id": "8026634002",
+      "title": "Staff Security Software Engineer, AI Security",
+      "company": "Databricks",
+      "location": "Remote - California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8026634002",
+      "updatedAt": "2026-07-07T20:16:51-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "anthropic:5238606008",
+      "id": "5238606008",
+      "title": "Software Engineer, RL Data",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5238606008",
+      "updatedAt": "2026-07-07T19:02:49-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "pinterest:8001913",
+      "id": "8001913",
+      "title": "Sr. Staff Software Engineer, iOS Search and Shopping Journeys",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=8001913",
+      "updatedAt": "2026-07-07T16:28:52-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:8024966",
+      "id": "8024966",
+      "title": "Sr. Data Scientist, Infrastructure",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=8024966",
+      "updatedAt": "2026-07-07T16:19:01-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:7782546",
+      "id": "7782546",
+      "title": "Software Engineer II, Big Data, tvScientific",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7782546",
+      "updatedAt": "2026-07-07T15:17:24-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:7642272",
+      "id": "7642272",
+      "title": "Sr. Software Engineer, Big Data, tvScientific",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7642272",
+      "updatedAt": "2026-07-07T15:17:22-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:7642253",
+      "id": "7642253",
+      "title": "Staff Software Engineer, Big Data, tvScientific",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7642253",
+      "updatedAt": "2026-07-07T15:17:19-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "anthropic:5197529008",
+      "id": "5197529008",
+      "title": "Data Scientist, Developer Productivity",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5197529008",
+      "updatedAt": "2026-07-07T14:52:28-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:5301750008",
+      "id": "5301750008",
+      "title": "Staff+ Software Engineer, Databases",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5301750008",
+      "updatedAt": "2026-07-07T13:08:46-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:5301737008",
+      "id": "5301737008",
+      "title": "Staff+ Software Engineer, Caching",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5301737008",
+      "updatedAt": "2026-07-07T13:08:44-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "pinterest:6510646",
+      "id": "6510646",
+      "title": "Sr. Software Engineer - Full Stack",
+      "company": "Pinterest",
+      "location": "Toronto, ON, CA",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=6510646",
+      "updatedAt": "2026-07-07T12:18:30-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "anthropic:5209196008",
+      "id": "5209196008",
+      "title": "Data Scientist, Safeguards",
+      "company": "Anthropic",
+      "location": "New York City, NY; San Francisco, CA; Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5209196008",
+      "updatedAt": "2026-07-07T00:36:51-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "CA",
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "pinterest:7990090",
+      "id": "7990090",
+      "title": "Staff Software Engineer, Edge",
+      "company": "Pinterest",
+      "location": "US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7990090",
+      "updatedAt": "2026-07-06T14:08:45-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "REMOTE",
+        "US"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:7990086",
+      "id": "7990086",
+      "title": "Staff Software Engineer, Service Communications",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7990086",
+      "updatedAt": "2026-07-06T14:08:40-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "anthropic:5283063008",
+      "id": "5283063008",
+      "title": "Software Engineer, Research Infrastructure",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5283063008",
+      "updatedAt": "2026-07-06T10:30:58-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "pinterest:8015490",
+      "id": "8015490",
+      "title": "Security Software Engineer II, Detection and Response",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=8015490",
+      "updatedAt": "2026-07-02T18:39:35-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "anthropic:5290468008",
+      "id": "5290468008",
+      "title": "[Pipeline] Staff+ Software Engineer, Experimentation",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5290468008",
+      "updatedAt": "2026-07-02T14:49:44-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "figma:5691886004",
+      "id": "5691886004",
+      "title": "Software Engineer, AI Platforms",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/5691886004?gh_jid=5691886004",
+      "updatedAt": "2026-07-02T14:34:52-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "anthropic:5290360008",
+      "id": "5290360008",
+      "title": "[Pipeline] Staff+ Software Engineer, Developer Acceleration",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5290360008",
+      "updatedAt": "2026-07-02T13:52:12-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "databricks:8570023002",
+      "id": "8570023002",
+      "title": "Specialist Solutions Architect - Data Engineering & Warehousing",
+      "company": "Databricks",
+      "location": "United States",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8570023002",
+      "updatedAt": "2026-07-01T18:31:42-04:00",
+      "role": {
+        "code": "data-engineering",
+        "label": "Data engineering"
+      },
+      "regions": [
+        "US"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8568122002",
+      "id": "8568122002",
+      "title": "Sr. Specialist Solutions Architect - Data Engineering & Warehousing",
+      "company": "Databricks",
+      "location": "United States",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8568122002",
+      "updatedAt": "2026-07-01T18:31:40-04:00",
+      "role": {
+        "code": "data-engineering",
+        "label": "Data engineering"
+      },
+      "regions": [
+        "US"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8560779002",
+      "id": "8560779002",
+      "title": "Software Engineer, Web Products",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8560779002",
+      "updatedAt": "2026-07-01T18:31:39-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8560783002",
+      "id": "8560783002",
+      "title": "Staff Software Engineer, AI Native Web Platform",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8560783002",
+      "updatedAt": "2026-07-01T18:31:39-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8509230002",
+      "id": "8509230002",
+      "title": "Senior Software Engineer - AI Platform (NYC)",
+      "company": "Databricks",
+      "location": "New York City, New York",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8509230002",
+      "updatedAt": "2026-07-01T18:31:36-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8509096002",
+      "id": "8509096002",
+      "title": "Senior Software Engineer, Fullstack - AI Product (NYC)",
+      "company": "Databricks",
+      "location": "New York City, New York",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8509096002",
+      "updatedAt": "2026-07-01T18:31:36-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8512856002",
+      "id": "8512856002",
+      "title": "Sr Software Engineer -Public Sector",
+      "company": "Databricks",
+      "location": "McLean, Virginia",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8512856002",
+      "updatedAt": "2026-07-01T18:31:36-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "VA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8493170002",
+      "id": "8493170002",
+      "title": "Sr Software Engineer, Infrastructure",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8493170002",
+      "updatedAt": "2026-07-01T18:31:36-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8509536002",
+      "id": "8509536002",
+      "title": "Staff Software Engineer - AI Platform (NYC)",
+      "company": "Databricks",
+      "location": "New York City, New York",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8509536002",
+      "updatedAt": "2026-07-01T18:31:36-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8517555002",
+      "id": "8517555002",
+      "title": "Staff Software Engineer- Public Sector",
+      "company": "Databricks",
+      "location": "Virginia",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8517555002",
+      "updatedAt": "2026-07-01T18:31:36-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "VA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8509534002",
+      "id": "8509534002",
+      "title": "Staff Software Engineer, Fullstack - AI Product (NYC)",
+      "company": "Databricks",
+      "location": "New York City, New York",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8509534002",
+      "updatedAt": "2026-07-01T18:31:36-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8456277002",
+      "id": "8456277002",
+      "title": "Principal Data Scientist",
+      "company": "Databricks",
+      "location": "Mountain View, California; San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8456277002",
+      "updatedAt": "2026-07-01T18:31:34-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8527117002",
+      "id": "8527117002",
+      "title": "Senior Software Engineer, Compute Infrastructure",
+      "company": "Databricks",
+      "location": "Mountain View, California; San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8527117002",
+      "updatedAt": "2026-07-01T18:31:33-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8579135002",
+      "id": "8579135002",
+      "title": "Staff Software Engineer, Compute Infrastructure",
+      "company": "Databricks",
+      "location": "Bellevue, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8579135002",
+      "updatedAt": "2026-07-01T18:31:33-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8416951002",
+      "id": "8416951002",
+      "title": "Sr Software Engineer- Customer Experience Intelligence (CXI)",
+      "company": "Databricks",
+      "location": "Mountain View, California; San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8416951002",
+      "updatedAt": "2026-07-01T18:31:31-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8416959002",
+      "id": "8416959002",
+      "title": "Staff Software Engineer – Customer Experience Intelligence (CXI)",
+      "company": "Databricks",
+      "location": "Mountain View, California; San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8416959002",
+      "updatedAt": "2026-07-01T18:31:31-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8384595002",
+      "id": "8384595002",
+      "title": "Staff Software Engineer - Frontend (NYC)",
+      "company": "Databricks",
+      "location": "New York City, New York",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8384595002",
+      "updatedAt": "2026-07-01T18:31:30-04:00",
+      "role": {
+        "code": "frontend",
+        "label": "Frontend engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8468436002",
+      "id": "8468436002",
+      "title": "Staff Backend Software Engineer",
+      "company": "Databricks",
+      "location": "New York",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8468436002",
+      "updatedAt": "2026-07-01T18:31:29-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8367022002",
+      "id": "8367022002",
+      "title": "Staff Backend Software Engineer- (AI Platform)",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8367022002",
+      "updatedAt": "2026-07-01T18:31:29-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8582271002",
+      "id": "8582271002",
+      "title": "Staff Software Engineer, AI Runtime",
+      "company": "Databricks",
+      "location": "Mountain View, California; San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8582271002",
+      "updatedAt": "2026-07-01T18:31:29-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8578177002",
+      "id": "8578177002",
+      "title": "Staff Software Engineer, AI Search",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8578177002",
+      "updatedAt": "2026-07-01T18:31:29-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8391889002",
+      "id": "8391889002",
+      "title": "Sr. Staff Software Engineer, Observability",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8391889002",
+      "updatedAt": "2026-07-01T18:31:27-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8298247002",
+      "id": "8298247002",
+      "title": "Staff Software Engineer, Metrics and Logging",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8298247002",
+      "updatedAt": "2026-07-01T18:31:27-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8328675002",
+      "id": "8328675002",
+      "title": "Staff Software Engineer, Observability",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8328675002",
+      "updatedAt": "2026-07-01T18:31:27-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8220814002",
+      "id": "8220814002",
+      "title": "Sr Software Engineer, Agentic Applications",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8220814002",
+      "updatedAt": "2026-07-01T18:31:26-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8220902002",
+      "id": "8220902002",
+      "title": "Sr. Staff Fullstack Engineer, Agentic Applications",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8220902002",
+      "updatedAt": "2026-07-01T18:31:26-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8285949002",
+      "id": "8285949002",
+      "title": "Sr. Staff Software Engineer - Money Team",
+      "company": "Databricks",
+      "location": "Bellevue, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8285949002",
+      "updatedAt": "2026-07-01T18:31:26-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8220836002",
+      "id": "8220836002",
+      "title": "Staff Fullstack Engineer, Agentic Applications",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8220836002",
+      "updatedAt": "2026-07-01T18:31:26-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8482086002",
+      "id": "8482086002",
+      "title": "Systems PhD - Software Engineer",
+      "company": "Databricks",
+      "location": "Bellevue, Washington; Seattle, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8482086002",
+      "updatedAt": "2026-07-01T18:31:26-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8482037002",
+      "id": "8482037002",
+      "title": "Systems PhD - Software Engineer",
+      "company": "Databricks",
+      "location": "Mountain View, California; San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8482037002",
+      "updatedAt": "2026-07-01T18:31:26-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8202670002",
+      "id": "8202670002",
+      "title": "Software Engineer - GenAI inference",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8202670002",
+      "updatedAt": "2026-07-01T18:31:25-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8211452002",
+      "id": "8211452002",
+      "title": "Sr Software Engineer-Networking",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8211452002",
+      "updatedAt": "2026-07-01T18:31:25-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8211450002",
+      "id": "8211450002",
+      "title": "Sr Software Engineer-Networking",
+      "company": "Databricks",
+      "location": "Bellevue, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8211450002",
+      "updatedAt": "2026-07-01T18:31:25-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8202698002",
+      "id": "8202698002",
+      "title": "Staff Software Engineer - GenAI inference",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8202698002",
+      "updatedAt": "2026-07-01T18:31:25-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8202700002",
+      "id": "8202700002",
+      "title": "Staff Software Engineer - GenAI Performance and Kernel",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8202700002",
+      "updatedAt": "2026-07-01T18:31:25-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8027404002",
+      "id": "8027404002",
+      "title": "Senior Software Engineer - Money Team",
+      "company": "Databricks",
+      "location": "Bellevue, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8027404002",
+      "updatedAt": "2026-07-01T18:31:21-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8582276002",
+      "id": "8582276002",
+      "title": "Senior Software Engineer, AI Runtime",
+      "company": "Databricks",
+      "location": "Mountain View, California; San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8582276002",
+      "updatedAt": "2026-07-01T18:31:21-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8211648002",
+      "id": "8211648002",
+      "title": "Senior Software Engineer, Model Serving",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8211648002",
+      "updatedAt": "2026-07-01T18:31:21-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8224683002",
+      "id": "8224683002",
+      "title": "Staff Software Engineer, Foundational Model Serving",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8224683002",
+      "updatedAt": "2026-07-01T18:31:21-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8211647002",
+      "id": "8211647002",
+      "title": "Staff Software Engineer, Model Serving",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8211647002",
+      "updatedAt": "2026-07-01T18:31:21-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:7807722002",
+      "id": "7807722002",
+      "title": "Senior Staff Software Engineer - App and Partner Ecosystem",
+      "company": "Databricks",
+      "location": "Seattle, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7807722002",
+      "updatedAt": "2026-07-01T18:31:17-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8575248002",
+      "id": "8575248002",
+      "title": "Sr. Staff Software Engineer — Observability, Insights & Governance",
+      "company": "Databricks",
+      "location": "Mountain View, California; San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8575248002",
+      "updatedAt": "2026-07-01T18:31:17-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8575251002",
+      "id": "8575251002",
+      "title": "Sr. Staff Software Engineer — Observability, Insights & Governance",
+      "company": "Databricks",
+      "location": "Bellevue, Washington; Seattle, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8575251002",
+      "updatedAt": "2026-07-01T18:31:17-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:7934466002",
+      "id": "7934466002",
+      "title": "Senior Staff Software Engineer - Enzyme",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7934466002",
+      "updatedAt": "2026-07-01T18:31:15-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8493002002",
+      "id": "8493002002",
+      "title": "Senior Staff Software Engineer - Lakeflow Pipelines Datasets",
+      "company": "Databricks",
+      "location": "Mountain View, California; San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8493002002",
+      "updatedAt": "2026-07-01T18:31:15-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8532682002",
+      "id": "8532682002",
+      "title": "Staff Software Engineer - AI Research Infrastructure",
+      "company": "Databricks",
+      "location": "New York City, New York; San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8532682002",
+      "updatedAt": "2026-07-01T18:31:15-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:7274459002",
+      "id": "7274459002",
+      "title": "Senior Software Engineer - Security",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7274459002",
+      "updatedAt": "2026-07-01T18:31:14-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8532681002",
+      "id": "8532681002",
+      "title": "Staff Software Engineer - Agent Quality",
+      "company": "Databricks",
+      "location": "New York City, New York",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8532681002",
+      "updatedAt": "2026-07-01T18:31:14-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:7274557002",
+      "id": "7274557002",
+      "title": "Senior Staff Software Engineer - IAM",
+      "company": "Databricks",
+      "location": "Seattle, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7274557002",
+      "updatedAt": "2026-07-01T18:31:13-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:7274563002",
+      "id": "7274563002",
+      "title": "Senior Staff Software Engineer - IAM",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7274563002",
+      "updatedAt": "2026-07-01T18:31:13-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:7274908002",
+      "id": "7274908002",
+      "title": "Senior Staff Software Engineer - Security Infrastructure",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7274908002",
+      "updatedAt": "2026-07-01T18:31:13-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:7274902002",
+      "id": "7274902002",
+      "title": "Senior Staff Software Engineer - Security Infrastructure",
+      "company": "Databricks",
+      "location": "Bellevue, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7274902002",
+      "updatedAt": "2026-07-01T18:31:13-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8555864002",
+      "id": "8555864002",
+      "title": "Sr. Staff Software Engineer - Managed Tables",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8555864002",
+      "updatedAt": "2026-07-01T18:31:13-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:7993609002",
+      "id": "7993609002",
+      "title": "Sr. Staff Software Engineer - Unity Catalog Data Governance",
+      "company": "Databricks",
+      "location": "Bellevue, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7993609002",
+      "updatedAt": "2026-07-01T18:31:13-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:7994801002",
+      "id": "7994801002",
+      "title": "Staff Software Engineer - IAM",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7994801002",
+      "updatedAt": "2026-07-01T18:31:13-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:7994790002",
+      "id": "7994790002",
+      "title": "Staff Software Engineer - IAM",
+      "company": "Databricks",
+      "location": "Bellevue, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7994790002",
+      "updatedAt": "2026-07-01T18:31:13-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:7994770002",
+      "id": "7994770002",
+      "title": "Staff Software Engineer - Security Infrastructure",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7994770002",
+      "updatedAt": "2026-07-01T18:31:13-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:7994759002",
+      "id": "7994759002",
+      "title": "Staff Software Engineer - Security Infrastructure",
+      "company": "Databricks",
+      "location": "Bellevue, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7994759002",
+      "updatedAt": "2026-07-01T18:31:13-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:6936994002",
+      "id": "6936994002",
+      "title": "Senior Software Engineer - Distributed Data Systems",
+      "company": "Databricks",
+      "location": "Bellevue, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6936994002",
+      "updatedAt": "2026-07-01T18:31:12-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8399551002",
+      "id": "8399551002",
+      "title": "Staff Frontend Engineer - Seattle",
+      "company": "Databricks",
+      "location": "Seattle, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8399551002",
+      "updatedAt": "2026-07-01T18:31:12-04:00",
+      "role": {
+        "code": "frontend",
+        "label": "Frontend engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:6937001002",
+      "id": "6937001002",
+      "title": "Staff Software Engineer - Distributed Data Systems",
+      "company": "Databricks",
+      "location": "Bellevue, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6937001002",
+      "updatedAt": "2026-07-01T18:31:12-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:6779084002",
+      "id": "6779084002",
+      "title": "Senior Software Engineer - Backend",
+      "company": "Databricks",
+      "location": "Bellevue, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6779084002",
+      "updatedAt": "2026-07-01T18:31:11-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:6779233002",
+      "id": "6779233002",
+      "title": "Staff Software Engineer - Backend",
+      "company": "Databricks",
+      "location": "Bellevue, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6779233002",
+      "updatedAt": "2026-07-01T18:31:11-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:6779232002",
+      "id": "6779232002",
+      "title": "Staff Software Engineer - Backend",
+      "company": "Databricks",
+      "location": "Seattle, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6779232002",
+      "updatedAt": "2026-07-01T18:31:11-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:7111068002",
+      "id": "7111068002",
+      "title": "Staff Software Engineer - Money Team",
+      "company": "Databricks",
+      "location": "Bellevue, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7111068002",
+      "updatedAt": "2026-07-01T18:31:11-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:6704975002",
+      "id": "6704975002",
+      "title": "Staff Fullstack Engineer",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6704975002",
+      "updatedAt": "2026-07-01T18:31:10-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:7979523002",
+      "id": "7979523002",
+      "title": "Staff Software Engineer - User Activation",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7979523002",
+      "updatedAt": "2026-07-01T18:31:10-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:5634684002",
+      "id": "5634684002",
+      "title": "Senior Data Scientist",
+      "company": "Databricks",
+      "location": "Mountain View, California; San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=5634684002",
+      "updatedAt": "2026-07-01T18:31:09-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:7898766002",
+      "id": "7898766002",
+      "title": "Senior Software Engineer - Fullstack",
+      "company": "Databricks",
+      "location": "Mountain View, California; San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7898766002",
+      "updatedAt": "2026-07-01T18:31:09-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:6544403002",
+      "id": "6544403002",
+      "title": "Senior Software Engineer - Fullstack",
+      "company": "Databricks",
+      "location": "Seattle, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6544403002",
+      "updatedAt": "2026-07-01T18:31:09-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:6544386002",
+      "id": "6544386002",
+      "title": "Staff Software Engineer - Database Engine Internals",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6544386002",
+      "updatedAt": "2026-07-01T18:31:09-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:5646866002",
+      "id": "5646866002",
+      "title": "Staff Software Engineer - Database Engine Internals",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=5646866002",
+      "updatedAt": "2026-07-01T18:31:09-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:5646855002",
+      "id": "5646855002",
+      "title": "Staff Software Engineer - Distributed Data Systems",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=5646855002",
+      "updatedAt": "2026-07-01T18:31:09-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:6544364002",
+      "id": "6544364002",
+      "title": "Staff Software Engineer - Distributed Data Systems",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6544364002",
+      "updatedAt": "2026-07-01T18:31:09-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8183195002",
+      "id": "8183195002",
+      "title": "Senior Software Engineer - Application Traffic team",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8183195002",
+      "updatedAt": "2026-07-01T18:31:08-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:4799387002",
+      "id": "4799387002",
+      "title": "Senior Software Engineer - Backend",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=4799387002",
+      "updatedAt": "2026-07-01T18:31:08-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:6544435002",
+      "id": "6544435002",
+      "title": "Senior Software Engineer - Backend",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6544435002",
+      "updatedAt": "2026-07-01T18:31:08-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:6544383002",
+      "id": "6544383002",
+      "title": "Senior Software Engineer - Database Engine Internals",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6544383002",
+      "updatedAt": "2026-07-01T18:31:08-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:5048461002",
+      "id": "5048461002",
+      "title": "Senior Software Engineer - Database Engine Internals",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=5048461002",
+      "updatedAt": "2026-07-01T18:31:08-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:6544325002",
+      "id": "6544325002",
+      "title": "Senior Software Engineer - Distributed Data Systems",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6544325002",
+      "updatedAt": "2026-07-01T18:31:08-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:4513122002",
+      "id": "4513122002",
+      "title": "Senior Software Engineer - Distributed Data Systems",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=4513122002",
+      "updatedAt": "2026-07-01T18:31:08-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:6318503002",
+      "id": "6318503002",
+      "title": "Senior Software Engineer - Infrastructure and Tools",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6318503002",
+      "updatedAt": "2026-07-01T18:31:08-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8233899002",
+      "id": "8233899002",
+      "title": "Senior Software Engineer (Backend) - AI/ML Environments",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8233899002",
+      "updatedAt": "2026-07-01T18:31:08-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:6322654002",
+      "id": "6322654002",
+      "title": "Sr. Product Manager, Data Engineering",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6322654002",
+      "updatedAt": "2026-07-01T18:31:08-04:00",
+      "role": {
+        "code": "data-engineering",
+        "label": "Data engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:6569774002",
+      "id": "6569774002",
+      "title": "Sr. Software Engineer - Performance",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6569774002",
+      "updatedAt": "2026-07-01T18:31:08-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:6569772002",
+      "id": "6569772002",
+      "title": "Sr. Software Engineer - Performance",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6569772002",
+      "updatedAt": "2026-07-01T18:31:08-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:5507088002",
+      "id": "5507088002",
+      "title": "Staff Data Scientist",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=5507088002",
+      "updatedAt": "2026-07-01T18:31:08-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:7069793002",
+      "id": "7069793002",
+      "title": "Staff Data Scientist - Infrastructure",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7069793002",
+      "updatedAt": "2026-07-01T18:31:08-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8178287002",
+      "id": "8178287002",
+      "title": "Staff Data Scientist - Trust and Safety",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8178287002",
+      "updatedAt": "2026-07-01T18:31:08-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:6544443002",
+      "id": "6544443002",
+      "title": "Staff Software Engineer - Backend",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6544443002",
+      "updatedAt": "2026-07-01T18:31:08-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:5408888002",
+      "id": "5408888002",
+      "title": "Staff Software Engineer - Backend",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=5408888002",
+      "updatedAt": "2026-07-01T18:31:08-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8032546002",
+      "id": "8032546002",
+      "title": "Staff Software Engineer - Customer Engagement & Docs Platform",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8032546002",
+      "updatedAt": "2026-07-01T18:31:08-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8295792002",
+      "id": "8295792002",
+      "title": "Staff Software Engineer, Search Quality",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8295792002",
+      "updatedAt": "2026-07-01T18:31:08-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "anthropic:5288742008",
+      "id": "5288742008",
+      "title": "Staff+ Software Engineer, Enterprise",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5288742008",
+      "updatedAt": "2026-07-01T15:52:07-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:5113224008",
+      "id": "5113224008",
+      "title": "Staff Software Engineer, AI Reliability",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5113224008",
+      "updatedAt": "2026-07-01T14:56:37-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:5196852008",
+      "id": "5196852008",
+      "title": "Data Scientist, GTM",
+      "company": "Anthropic",
+      "location": "New York City, NY; San Francisco, CA | New York City, NY",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5196852008",
+      "updatedAt": "2026-07-01T14:07:16-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "pinterest:8024883",
+      "id": "8024883",
+      "title": "Software Engineer II, Web",
+      "company": "Pinterest",
+      "location": "Toronto, ON, CA",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=8024883",
+      "updatedAt": "2026-07-01T13:15:45-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:8001932",
+      "id": "8001932",
+      "title": "Staff Data Scientist, Forecasting",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=8001932",
+      "updatedAt": "2026-07-01T12:10:58-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:7985294",
+      "id": "7985294",
+      "title": "Staff Data Scientist, Ads Delivery",
+      "company": "Pinterest",
+      "location": "Seattle, WA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7985294",
+      "updatedAt": "2026-07-01T12:10:44-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "WA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:7816424",
+      "id": "7816424",
+      "title": "Data Scientist II, Infrastructure",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7816424",
+      "updatedAt": "2026-07-01T12:09:16-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:7642251",
+      "id": "7642251",
+      "title": "Sr. Data Scientist, tvScientific",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7642251",
+      "updatedAt": "2026-07-01T12:07:16-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:7494915",
+      "id": "7494915",
+      "title": "Staff Software Engineer, Ads Measurement Products",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7494915",
+      "updatedAt": "2026-07-01T12:06:46-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "anthropic:4956672008",
+      "id": "4956672008",
+      "title": "Data Engineer",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4956672008",
+      "updatedAt": "2026-07-01T10:46:39-04:00",
+      "role": {
+        "code": "data-engineering",
+        "label": "Data engineering"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:5270442008",
+      "id": "5270442008",
+      "title": "Staff+ Software Engineer, Identity & Access Controls",
+      "company": "Anthropic",
+      "location": "Remote-Friendly (Travel-Required) | San Francisco, CA | Seattle, WA | New York City, NY",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5270442008",
+      "updatedAt": "2026-06-30T16:53:34-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:5123039008",
+      "id": "5123039008",
+      "title": "Staff+ Software Engineer, Account Abuse",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5123039008",
+      "updatedAt": "2026-06-30T16:52:16-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "pinterest:7793344",
+      "id": "7793344",
+      "title": "Sr. Data Scientist, Trust and Safety",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, CA, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7793344",
+      "updatedAt": "2026-06-30T13:10:03-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "anthropic:5286493008",
+      "id": "5286493008",
+      "title": "Engineering Manager, Data Architecture",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5286493008",
+      "updatedAt": "2026-06-30T12:28:34-04:00",
+      "role": {
+        "code": "data-engineering",
+        "label": "Data engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "pinterest:7958766",
+      "id": "7958766",
+      "title": "Software Engineer II",
+      "company": "Pinterest",
+      "location": "Palo Alto, CA, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7958766",
+      "updatedAt": "2026-06-29T18:39:46-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "anthropic:5174755008",
+      "id": "5174755008",
+      "title": "Staff+ Software Engineer, Backend",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5174755008",
+      "updatedAt": "2026-06-29T14:44:55-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "pinterest:7679640",
+      "id": "7679640",
+      "title": "Senior Staff Software Engineer, Configuration & Coordination",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7679640",
+      "updatedAt": "2026-06-29T13:01:29-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:8014770",
+      "id": "8014770",
+      "title": "Sr. Data Scientist, Performance Marketing",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=8014770",
+      "updatedAt": "2026-06-26T18:31:31-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "figma:6102379004",
+      "id": "6102379004",
+      "title": "Software Engineer, Traffic",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/6102379004?gh_jid=6102379004",
+      "updatedAt": "2026-06-26T12:43:35-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "pinterest:7999050",
+      "id": "7999050",
+      "title": "Sr. Software Engineer, Machine Learning, tvScientific",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7999050",
+      "updatedAt": "2026-06-26T03:11:24-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "anthropic:5271426008",
+      "id": "5271426008",
+      "title": "Staff Software Engineer, Developer Productivity (Dev Environments) - Claude Code",
+      "company": "Anthropic",
+      "location": "San Francisco, CA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5271426008",
+      "updatedAt": "2026-06-25T16:59:40-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:5271428008",
+      "id": "5271428008",
+      "title": "Staff Software Engineer, Developer Productivity (CI/CD) - Claude Code",
+      "company": "Anthropic",
+      "location": "San Francisco, CA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5271428008",
+      "updatedAt": "2026-06-25T16:59:11-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "pinterest:8024868",
+      "id": "8024868",
+      "title": "Sr. Software Engineer, Web",
+      "company": "Pinterest",
+      "location": "Toronto, ON, CA",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=8024868",
+      "updatedAt": "2026-06-25T15:48:42-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:7832348",
+      "id": "7832348",
+      "title": "Staff Software Engineer, Batch Processing Platform",
+      "company": "Pinterest",
+      "location": "Seattle, WA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7832348",
+      "updatedAt": "2026-06-25T13:33:46-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "anthropic:5232055008",
+      "id": "5232055008",
+      "title": "Data Scientist, Policy",
+      "company": "Anthropic",
+      "location": "New York City, NY; San Francisco, CA | New York City, NY; Washington, DC",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5232055008",
+      "updatedAt": "2026-06-25T12:30:17-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "NY",
+        "WA",
+        "DC"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:5161402008",
+      "id": "5161402008",
+      "title": "Data Scientist, Marketing",
+      "company": "Anthropic",
+      "location": "New York City, NY | Seattle, WA; San Francisco, CA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5161402008",
+      "updatedAt": "2026-06-25T12:29:59-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "CA",
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "pinterest:7960984",
+      "id": "7960984",
+      "title": "Staff Software Engineer, Trends Machine Learning Infrastructure",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7960984",
+      "updatedAt": "2026-06-23T17:35:09-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "airtable:8397618002",
+      "id": "8397618002",
+      "title": "Software Engineer, Product Backend (8+ YOE)",
+      "company": "Airtable",
+      "location": "San Francisco, CA; New York, NY",
+      "url": "https://job-boards.greenhouse.io/airtable/jobs/8397618002",
+      "updatedAt": "2026-06-23T16:33:51-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "airtable"
+    },
+    {
+      "key": "pinterest:8011547",
+      "id": "8011547",
+      "title": "Sr. Software Engineer, iOS",
+      "company": "Pinterest",
+      "location": "Toronto, ON, CA",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=8011547",
+      "updatedAt": "2026-06-22T14:24:24-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "airtable:8397228002",
+      "id": "8397228002",
+      "title": "Software Engineer, Product Frontend (8+ YOE)",
+      "company": "Airtable",
+      "location": "San Francisco, CA; New York, NY",
+      "url": "https://job-boards.greenhouse.io/airtable/jobs/8397228002",
+      "updatedAt": "2026-06-22T12:40:42-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "airtable"
+    },
+    {
+      "key": "anthropic:5026097008",
+      "id": "5026097008",
+      "title": "Staff Software Engineer, Claude.ai",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5026097008",
+      "updatedAt": "2026-06-22T12:23:20-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "elastic:7843348",
+      "id": "7843348",
+      "title": "Principal Software Engineer - Vector Search - Elasticsearch",
+      "company": "Elastic",
+      "location": "United States",
+      "url": "https://jobs.elastic.co/jobs?gh_jid=7843348&gh_jid=7843348",
+      "updatedAt": "2026-06-22T10:01:30-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "US"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "elastic"
+    },
+    {
+      "key": "anthropic:5159146008",
+      "id": "5159146008",
+      "title": "Staff+ Software Engineer, Privacy",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5159146008",
+      "updatedAt": "2026-06-20T09:36:29-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:5116820008",
+      "id": "5116820008",
+      "title": "Lead Data Scientist, Platform Product",
+      "company": "Anthropic",
+      "location": "New York City, NY | Seattle, WA; San Francisco, CA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5116820008",
+      "updatedAt": "2026-06-18T16:43:33-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "CA",
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "pinterest:8011376",
+      "id": "8011376",
+      "title": "Sr. Data Scientist, Marketing",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=8011376",
+      "updatedAt": "2026-06-18T12:40:48-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "figma:6092906004",
+      "id": "6092906004",
+      "title": "Manager, Software Engineering - Payload",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/6092906004?gh_jid=6092906004",
+      "updatedAt": "2026-06-18T12:12:19-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "figma:6013303004",
+      "id": "6013303004",
+      "title": "Data Scientist, Marketing",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/6013303004?gh_jid=6013303004",
+      "updatedAt": "2026-06-17T23:52:06-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "anthropic:5203868008",
+      "id": "5203868008",
+      "title": "Senior Staff+ Software Engineer, Node Infra",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5203868008",
+      "updatedAt": "2026-06-17T19:29:17-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:5211241008",
+      "id": "5211241008",
+      "title": "Senior Staff+ Software Engineer, Kubernetes Platform",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5211241008",
+      "updatedAt": "2026-06-17T19:29:13-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "figma:6084344004",
+      "id": "6084344004",
+      "title": "Manager, Software Engineering - Storage Platform",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/6084344004?gh_jid=6084344004",
+      "updatedAt": "2026-06-17T12:29:55-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "anthropic:5125387008",
+      "id": "5125387008",
+      "title": "Data Engineering Manager, Product",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5125387008",
+      "updatedAt": "2026-06-16T13:26:44-04:00",
+      "role": {
+        "code": "data-engineering",
+        "label": "Data engineering"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:5065894008",
+      "id": "5065894008",
+      "title": "Staff+ Software Engineer, Claude App Infrastructure",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5065894008",
+      "updatedAt": "2026-06-16T13:21:08-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "pinterest:5459622",
+      "id": "5459622",
+      "title": "Software Engineer II, Full Stack",
+      "company": "Pinterest",
+      "location": "Toronto, ON, CA",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=5459622",
+      "updatedAt": "2026-06-16T10:59:56-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:5773689",
+      "id": "5773689",
+      "title": "Sr. Software Engineer, Android",
+      "company": "Pinterest",
+      "location": "Toronto, ON, CA",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=5773689",
+      "updatedAt": "2026-06-16T10:59:21-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "figma:5790627004",
+      "id": "5790627004",
+      "title": "Software Engineer, Developer Experience",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/5790627004?gh_jid=5790627004",
+      "updatedAt": "2026-06-15T13:22:11-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "pinterest:6922682",
+      "id": "6922682",
+      "title": "Software Engineer, iOS",
+      "company": "Pinterest",
+      "location": "Toronto, ON, CA",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=6922682",
+      "updatedAt": "2026-06-15T09:52:27-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:7782563",
+      "id": "7782563",
+      "title": "Sr. Software Engineer, Simulation, tvScientific",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7782563",
+      "updatedAt": "2026-06-13T06:17:08-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "anthropic:5257650008",
+      "id": "5257650008",
+      "title": "Staff+ Software Engineer, Inference Runtime",
+      "company": "Anthropic",
+      "location": "Remote-Friendly (Travel-Required) | San Francisco, CA | Seattle, WA | New York City, NY",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5257650008",
+      "updatedAt": "2026-06-12T16:17:38-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:5255853008",
+      "id": "5255853008",
+      "title": "IT Systems Engineer, Client Platform Engineer",
+      "company": "Anthropic",
+      "location": "Boston, MA; New York City, NY; Remote-Friendly (Travel-Required) | Washington, DC",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5255853008",
+      "updatedAt": "2026-06-12T16:01:23-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "MA",
+        "NY",
+        "WA",
+        "DC",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "figma:6013304004",
+      "id": "6013304004",
+      "title": "Data Scientist, Finance",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/6013304004?gh_jid=6013304004",
+      "updatedAt": "2026-06-12T15:20:07-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "pinterest:4902175",
+      "id": "4902175",
+      "title": "Sr. Software Engineer, Backend",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=4902175",
+      "updatedAt": "2026-06-12T13:10:33-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:4813946",
+      "id": "4813946",
+      "title": "Software Engineer II, Backend",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Seattle, WA, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=4813946",
+      "updatedAt": "2026-06-12T13:00:43-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "elastic:7734567",
+      "id": "7734567",
+      "title": "Senior Java Engineer - Distributed Systems - Elasticsearch",
+      "company": "Elastic",
+      "location": "United States",
+      "url": "https://jobs.elastic.co/jobs?gh_jid=7734567&gh_jid=7734567",
+      "updatedAt": "2026-06-12T06:24:15-04:00",
+      "role": {
+        "code": "java",
+        "label": "Java engineering"
+      },
+      "regions": [
+        "US"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "elastic"
+    },
+    {
+      "key": "pinterest:7782478",
+      "id": "7782478",
+      "title": "Sr. Staff Software Engineer, Ads Measurement",
+      "company": "Pinterest",
+      "location": "Seattle, WA, US; Palo Alto, CA, US; San Francisco, CA, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7782478",
+      "updatedAt": "2026-06-11T12:51:57-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "anthropic:5119468008",
+      "id": "5119468008",
+      "title": "Staff Software Engineer, People Products",
+      "company": "Anthropic",
+      "location": "Remote-Friendly (Travel Required) | San Francisco, CA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5119468008",
+      "updatedAt": "2026-06-10T20:21:00-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "pinterest:7842999",
+      "id": "7842999",
+      "title": "Sr. Staff Software Engineer, Advertiser and Seller Experience",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Palo Alto, CA, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7842999",
+      "updatedAt": "2026-06-10T17:43:07-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:7987854",
+      "id": "7987854",
+      "title": "Software Engineer II, Android",
+      "company": "Pinterest",
+      "location": "Toronto, ON, CA",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7987854",
+      "updatedAt": "2026-06-10T12:21:48-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:6816337",
+      "id": "6816337",
+      "title": "Software Engineer I, Backend",
+      "company": "Pinterest",
+      "location": "Seattle, WA, US; San Francisco, CA, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=6816337",
+      "updatedAt": "2026-06-09T16:30:17-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "anthropic:5250091008",
+      "id": "5250091008",
+      "title": "Staff+ Software Engineer, GRC Platform",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5250091008",
+      "updatedAt": "2026-06-08T13:16:56-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "pinterest:7437356",
+      "id": "7437356",
+      "title": "Staff Software Engineer, Big Data Storage",
+      "company": "Pinterest",
+      "location": "Palo Alto, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7437356",
+      "updatedAt": "2026-06-05T15:48:24-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "anthropic:5205704008",
+      "id": "5205704008",
+      "title": "Staff+ Software Engineer, Public Sector",
+      "company": "Anthropic",
+      "location": "Remote-Friendly, United States; San Francisco, CA | New York City, NY | Washington, DC",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5205704008",
+      "updatedAt": "2026-06-05T13:50:33-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA",
+        "DC",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:5174743008",
+      "id": "5174743008",
+      "title": "Senior Software Engineer, Full-stack",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5174743008",
+      "updatedAt": "2026-06-04T19:42:45-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:5174747008",
+      "id": "5174747008",
+      "title": "Staff+ Software Engineer, Full-stack",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5174747008",
+      "updatedAt": "2026-06-04T18:47:16-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "pinterest:7896291",
+      "id": "7896291",
+      "title": "Data Scientist II, Experimentation",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7896291",
+      "updatedAt": "2026-06-04T16:28:58-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:7770918",
+      "id": "7770918",
+      "title": "Sr. Staff Software Engineer, Merchants",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Palo Alto, CA, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7770918",
+      "updatedAt": "2026-06-04T16:28:58-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:7874931",
+      "id": "7874931",
+      "title": "Staff Software Engineer- Growth Performance Marketing",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7874931",
+      "updatedAt": "2026-06-04T16:28:58-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:7747067",
+      "id": "7747067",
+      "title": "Staff Software Engineer, Cache Infra",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Palo Alto, CA, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7747067",
+      "updatedAt": "2026-06-04T16:28:58-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:7954753",
+      "id": "7954753",
+      "title": "Staff Software Engineer, Observability",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7954753",
+      "updatedAt": "2026-06-04T16:28:58-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:4912949",
+      "id": "4912949",
+      "title": "Data Scientist",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, CA, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=4912949",
+      "updatedAt": "2026-06-04T16:28:57-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:5601228",
+      "id": "5601228",
+      "title": "Software Engineer, iOS",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=5601228",
+      "updatedAt": "2026-06-04T16:28:57-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:5740948",
+      "id": "5740948",
+      "title": "Sr. Data Scientist, Monetization",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Seattle, WA, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=5740948",
+      "updatedAt": "2026-06-04T16:28:57-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "CA",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:7494904",
+      "id": "7494904",
+      "title": "Staff Software Engineer, Ads Measurement Signal",
+      "company": "Pinterest",
+      "location": "Seattle, WA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7494904",
+      "updatedAt": "2026-06-04T16:28:57-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:7890197",
+      "id": "7890197",
+      "title": "Lead Product Analyst, Pinner Engagement",
+      "company": "Pinterest",
+      "location": "New York, NY, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7890197",
+      "updatedAt": "2026-06-04T15:57:21-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "NY",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:7782552",
+      "id": "7782552",
+      "title": "Software Engineer II, Backend, tvScientific",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7782552",
+      "updatedAt": "2026-06-04T15:57:20-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:5132899",
+      "id": "5132899",
+      "title": "Software Engineer II, Backend",
+      "company": "Pinterest",
+      "location": "Toronto, ON, CA",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=5132899",
+      "updatedAt": "2026-06-04T15:57:17-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "pinterest:5572858",
+      "id": "5572858",
+      "title": "Sr. Software Engineer, Backend",
+      "company": "Pinterest",
+      "location": "Toronto, ON, CA",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=5572858",
+      "updatedAt": "2026-06-04T15:57:17-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "anthropic:5134895008",
+      "id": "5134895008",
+      "title": "Senior Staff Software Engineer, API",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5134895008",
+      "updatedAt": "2026-06-04T15:41:58-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "figma:6010279004",
+      "id": "6010279004",
+      "title": "Manager, Software Engineering - Growth Platform",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/6010279004?gh_jid=6010279004",
+      "updatedAt": "2026-06-03T16:02:13-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "figma:6008752004",
+      "id": "6008752004",
+      "title": "Manager, Software Engineering - DevEx AI Tools",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/6008752004?gh_jid=6008752004",
+      "updatedAt": "2026-06-03T16:01:07-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "anthropic:5231496008",
+      "id": "5231496008",
+      "title": "Staff + Sr. Software Engineer, Cloud Inference",
+      "company": "Anthropic",
+      "location": "San Francisco, CA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5231496008",
+      "updatedAt": "2026-06-03T11:34:18-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "figma:5976930004",
+      "id": "5976930004",
+      "title": "Data Scientist, Core Data - PhD (2026)",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY",
+      "url": "https://boards.greenhouse.io/figma/jobs/5976930004?gh_jid=5976930004",
+      "updatedAt": "2026-06-02T15:03:57-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "airtable:8124953002",
+      "id": "8124953002",
+      "title": "Software Engineer, Data",
+      "company": "Airtable",
+      "location": "San Francisco, CA; Austin, TX; New York, NY",
+      "url": "https://job-boards.greenhouse.io/airtable/jobs/8124953002",
+      "updatedAt": "2026-05-29T17:40:48-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "NY",
+        "TX"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "airtable"
+    },
+    {
+      "key": "anthropic:5098025008",
+      "id": "5098025008",
+      "title": "Model Performance Software Engineer, Claude Code",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5098025008",
+      "updatedAt": "2026-05-22T16:16:50-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:4673416008",
+      "id": "4673416008",
+      "title": "Staff Software Engineer, Accessibility",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4673416008",
+      "updatedAt": "2026-05-19T17:06:11-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "airtable:8442397002",
+      "id": "8442397002",
+      "title": "Software Engineer, Compute (8+ YOE)",
+      "company": "Airtable",
+      "location": "San Francisco, CA; New York, NY; Remote - US",
+      "url": "https://job-boards.greenhouse.io/airtable/jobs/8442397002",
+      "updatedAt": "2026-05-13T15:37:26-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "NY",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "airtable"
+    },
+    {
+      "key": "anthropic:5110511008",
+      "id": "5110511008",
+      "title": "Staff+ Software Engineer, Developer Productivity",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5110511008",
+      "updatedAt": "2026-05-06T10:46:33-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:5146298008",
+      "id": "5146298008",
+      "title": "Staff Software Engineer, Billing Platform",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5146298008",
+      "updatedAt": "2026-05-05T12:23:06-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "figma:5551730004",
+      "id": "5551730004",
+      "title": "Software Engineer, AI Product",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/5551730004?gh_jid=5551730004",
+      "updatedAt": "2026-05-04T13:53:54-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "anthropic:4572744008",
+      "id": "4572744008",
+      "title": "Staff Software Engineer, iOS",
+      "company": "Anthropic",
+      "location": "San Francisco, CA, New York City, NY, Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4572744008",
+      "updatedAt": "2026-05-01T20:00:53-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "figma:5759501004",
+      "id": "5759501004",
+      "title": "Software Engineer, Code Platform",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/5759501004?gh_jid=5759501004",
+      "updatedAt": "2026-04-22T15:53:49-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "anthropic:4595463008",
+      "id": "4595463008",
+      "title": "Security Software Engineer, Detection & Response Platform",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA; Washington, DC",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4595463008",
+      "updatedAt": "2026-04-16T14:53:37-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA",
+        "DC"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "figma:5220003004",
+      "id": "5220003004",
+      "title": "Data Engineer",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/5220003004?gh_jid=5220003004",
+      "updatedAt": "2026-04-15T15:32:40-04:00",
+      "role": {
+        "code": "data-engineering",
+        "label": "Data engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "figma:5840332004",
+      "id": "5840332004",
+      "title": "Data Platform Engineer",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/5840332004?gh_jid=5840332004",
+      "updatedAt": "2026-04-15T15:32:40-04:00",
+      "role": {
+        "code": "data-engineering",
+        "label": "Data engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "figma:5552580004",
+      "id": "5552580004",
+      "title": "Data Scientist",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/5552580004?gh_jid=5552580004",
+      "updatedAt": "2026-04-15T15:32:40-04:00",
+      "role": {
+        "code": "analytics",
+        "label": "Analytics"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "figma:5838098004",
+      "id": "5838098004",
+      "title": "Manager, Software Engineering - AI Product",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/5838098004?gh_jid=5838098004",
+      "updatedAt": "2026-04-15T15:32:40-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "figma:5722244004",
+      "id": "5722244004",
+      "title": "Manager, Software Engineering - Billing",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/5722244004?gh_jid=5722244004",
+      "updatedAt": "2026-04-15T15:32:40-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "figma:5778796004",
+      "id": "5778796004",
+      "title": "Manager, Software Engineering - Interaction Design",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/5778796004?gh_jid=5778796004",
+      "updatedAt": "2026-04-15T15:32:40-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "figma:5807963004",
+      "id": "5807963004",
+      "title": "Manager, Software Engineering - Observability",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/5807963004?gh_jid=5807963004",
+      "updatedAt": "2026-04-15T15:32:40-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "figma:5552530004",
+      "id": "5552530004",
+      "title": "Software Engineer, C++",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/5552530004?gh_jid=5552530004",
+      "updatedAt": "2026-04-15T15:32:40-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "figma:5551686004",
+      "id": "5551686004",
+      "title": "Software Engineer, Data Infrastructure",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/5551686004?gh_jid=5551686004",
+      "updatedAt": "2026-04-15T15:32:40-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "figma:5552522004",
+      "id": "5552522004",
+      "title": "Software Engineer, Graphics & Media",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/5552522004?gh_jid=5552522004",
+      "updatedAt": "2026-04-15T15:32:40-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "figma:5552560004",
+      "id": "5552560004",
+      "title": "Software Engineer, Growth & Monetization",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/5552560004?gh_jid=5552560004",
+      "updatedAt": "2026-04-15T15:32:40-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "figma:5551532004",
+      "id": "5551532004",
+      "title": "Software Engineer, Machine Learning",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/5551532004?gh_jid=5551532004",
+      "updatedAt": "2026-04-15T15:32:40-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "figma:5551649004",
+      "id": "5551649004",
+      "title": "Software Engineer, Production Engineering",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY • United States",
+      "url": "https://boards.greenhouse.io/figma/jobs/5551649004?gh_jid=5551649004",
+      "updatedAt": "2026-04-15T15:32:40-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "figma"
+    },
+    {
+      "key": "anthropic:5186067008",
+      "id": "5186067008",
+      "title": "Full-Stack Software Engineer, Reinforcement Learning",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5186067008",
+      "updatedAt": "2026-04-14T06:09:04-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:5109273008",
+      "id": "5109273008",
+      "title": "Software Engineer, Human Data Interface",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5109273008",
+      "updatedAt": "2026-04-03T12:07:48-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:4981828008",
+      "id": "4981828008",
+      "title": "Senior+ Software Engineer, Research Tools",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4981828008",
+      "updatedAt": "2026-04-01T10:49:08-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "anthropic:5063007008",
+      "id": "5063007008",
+      "title": "Software Engineer, Cybersecurity Products",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA; Washington, DC",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5063007008",
+      "updatedAt": "2026-04-01T10:49:08-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA",
+        "DC"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    }
+  ]
 }
