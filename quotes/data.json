@@ -5,6 +5,25 @@
   },
   "quotes": [
     {
+      "date": "2026-07-13",
+      "quote": "Nothing great was ever achieved without enthusiasm.",
+      "author": "Ralph Waldo Emerson",
+      "authorBio": "American essayist, lecturer, poet, and a leading figure of transcendentalism.",
+      "authorEncyclopediaUrl": "https://www.loc.gov/item/n78095541/ralph-waldo-emerson/",
+      "sourceTitle": "Circles, in Essays: First Series",
+      "sourceUrl": "https://www.gutenberg.org/files/2944/2944-h/2944-h.htm",
+      "sourceType": "Primary text, Project Gutenberg",
+      "verificationNote": "Verified in Emerson's essay Circles in the Project Gutenberg text.",
+      "verifiedOn": "2026-07-13",
+      "libraryId": "emerson-enthusiasm",
+      "newsFit": {
+        "headline": "European leaders coordinate support for Ukraine and discuss protection, sanctions and diplomacy",
+        "newsUrl": "https://www.theguardian.com/world/live/2026/jul/13/emmanuel-macron-keir-starmer-friedrich-merz-volodymyr-zelenskyy-coalition-of-the-willing-ukraine-russia-latest-news-updates",
+        "source": "Seeded verified news context",
+        "explanation": "Selected because today’s leading news context matched the quote themes: innovation, science, technology, ai, achievement, sports, education."
+      }
+    },
+    {
       "date": "2026-07-12",
       "quote": "The only way to do great work is to love what you do.",
       "author": "Steve Jobs",
