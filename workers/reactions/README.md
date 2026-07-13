@@ -46,3 +46,7 @@ POST /api/audio/:audioId/like
 - Clap increments are restricted to 1–5 per request.
 - SQL values use D1 prepared statements and bindings.
 - CORS is restricted to Share Capsule origins.
+
+## Job verdict tracking
+
+Run migration `workers/reactions/migrations/0002_job_verdicts.sql` against the same D1 database, then redeploy `workers/reactions/src/index.js`. The jobs page uses batch reads and one shared verdict per browser/job. Invalid reports enter follow-up immediately and are hidden by default after three net invalid reports.

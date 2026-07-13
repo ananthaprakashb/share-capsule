@@ -204,6 +204,14 @@ async function handleLike(request, env, audioId) {
   return json(request, await getReactionState(env, audioId, visitorId));
 }
 
+
+function validJobKey(value){return typeof value==='string'&&value.length>=3&&value.length<=180&&/^[a-z0-9_-]+:[a-zA-Z0-9_-]+$/.test(value)}
+function jobStatus(confirmCount,invalidCount){if(invalidCount>=3&&invalidCount>confirmCount)return'hidden';if(invalidCount>0)return'needs_review';return'active'}
+async function jobVerdictState(env,jobKey,visitorId){const row=await env.DB.prepare('SELECT confirm_count, invalid_count, status, last_reported_at FROM job_verdicts WHERE job_key=?').bind(jobKey).first();let mine=null;if(visitorId&&validVisitorId(visitorId))mine=await env.DB.prepare('SELECT verdict, reason, updated_at FROM job_verdict_events WHERE job_key=? AND visitor_id=?').bind(jobKey,visitorId).first();return{jobKey,confirmCount:Number(row?.confirm_count||0),invalidCount:Number(row?.invalid_count||0),status:row?.status||'active',lastReportedAt:row?.last_reported_at||null,yourVerdict:mine?.verdict||null,yourReason:mine?.reason||''}}
+async function handleJobVerdictBatch(request,env){const body=await readJson(request);const keys=Array.isArray(body.jobKeys)?body.jobKeys.filter(validJobKey).slice(0,500):[];if(!keys.length)return json(request,{verdicts:{}});const placeholders=keys.map(()=>'?').join(',');const result=await env.DB.prepare('SELECT job_key,confirm_count,invalid_count,status,last_reported_at FROM job_verdicts WHERE job_key IN ('+placeholders+')').bind(...keys).all();const verdicts={};for(const key of keys)verdicts[key]={jobKey:key,confirmCount:0,invalidCount:0,status:'active',lastReportedAt:null};for(const row of result.results||[])verdicts[row.job_key]={jobKey:row.job_key,confirmCount:Number(row.confirm_count||0),invalidCount:Number(row.invalid_count||0),status:row.status||'active',lastReportedAt:row.last_reported_at||null};return json(request,{verdicts})}
+async function handleJobVerdict(request,env,jobKey){const body=await readJson(request);const visitorId=body.visitorId,verdict=body.verdict,reason=String(body.reason||'').slice(0,500);if(!validVisitorId(visitorId)||!['confirm','invalid'].includes(verdict))return json(request,{error:'Invalid job verdict request'},400);const previous=await env.DB.prepare('SELECT verdict FROM job_verdict_events WHERE job_key=? AND visitor_id=?').bind(jobKey,visitorId).first();let confirms=0,invalids=0;if(previous?.verdict==='confirm')confirms--;if(previous?.verdict==='invalid')invalids--;if(verdict==='confirm')confirms++;else invalids++;await env.DB.batch([env.DB.prepare("INSERT INTO job_verdicts(job_key,company,title,location,url,confirm_count,invalid_count,status,first_reported_at,last_reported_at,updated_at) VALUES(?,?,?,?,?,?,?,'active',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP) ON CONFLICT(job_key) DO UPDATE SET company=excluded.company,title=excluded.title,location=excluded.location,url=excluded.url,confirm_count=MAX(0,confirm_count+?),invalid_count=MAX(0,invalid_count+?),last_reported_at=CURRENT_TIMESTAMP,updated_at=CURRENT_TIMESTAMP").bind(jobKey,String(body.company||'').slice(0,160),String(body.title||'').slice(0,240),String(body.location||'').slice(0,180),String(body.url||'').slice(0,1000),Math.max(confirms,0),Math.max(invalids,0),confirms,invalids),env.DB.prepare("INSERT INTO job_verdict_events(job_key,visitor_id,verdict,reason,created_at,updated_at) VALUES(?,?,?,?,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP) ON CONFLICT(job_key,visitor_id) DO UPDATE SET verdict=excluded.verdict,reason=excluded.reason,updated_at=CURRENT_TIMESTAMP").bind(jobKey,visitorId,verdict,reason)]);const counts=await env.DB.prepare('SELECT confirm_count,invalid_count FROM job_verdicts WHERE job_key=?').bind(jobKey).first();const status=jobStatus(Number(counts?.confirm_count||0),Number(counts?.invalid_count||0));await env.DB.prepare('UPDATE job_verdicts SET status=? WHERE job_key=?').bind(status,jobKey).run();return json(request,await jobVerdictState(env,jobKey,visitorId))}
+async function handleJobFollowUp(request,env){const result=await env.DB.prepare("SELECT job_key,company,title,location,url,confirm_count,invalid_count,status,first_reported_at,last_reported_at FROM job_verdicts WHERE status IN ('needs_review','hidden') ORDER BY invalid_count DESC,last_reported_at DESC LIMIT 500").all();return json(request,{generatedAt:new Date().toISOString(),jobs:result.results||[]})}
+
 export default {
   async fetch(request, env) {
     if (request.method === "OPTIONS") {
@@ -223,7 +231,21 @@ export default {
       });
     }
 
-    const route = parseRoute(url.pathname);
+    const pathname = url.pathname;
+    if (request.method === 'POST' && pathname === '/api/jobs/verdicts/batch') {
+      return await handleJobVerdictBatch(request, env);
+    }
+    if (request.method === 'GET' && pathname === '/api/jobs/follow-up') {
+      return await handleJobFollowUp(request, env);
+    }
+    const jobMatch = pathname.match(/^\/api\/jobs\/([^/]+)\/verdict$/);
+    if (request.method === 'POST' && jobMatch) {
+      const jobKey = decodeURIComponent(jobMatch[1]);
+      if (!validJobKey(jobKey)) return json(request, { error: 'Invalid job key' }, 400);
+      return await handleJobVerdict(request, env, jobKey);
+    }
+
+    const route = parseRoute(pathname);
     if (!route) {
       return json(request, { error: "Invalid reaction route" }, 404);
     }
