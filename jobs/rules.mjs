@@ -14,7 +14,7 @@ export const US_STATES = [
 
 const excludedTitlePattern = /(building engineer|facilities|electrical engineer|mechanical engineer|civil engineer|manufacturing engineer|field service engineer|data center capacity|commissioning engineer|network engineer|security engineer|sales engineer|solutions engineer|support engineer)/i;
 const dataEngineeringPattern = /(data\s+(?:platform\s+|warehouse\s+|infrastructure\s+|pipeline\s+)?engineer|data\s+architect|etl\s+(?:engineer|developer)|database\s+engineer)/i;
-const analyticsPattern = /(analytics?\s+engineer|data\s+analyst|product\s+analyst|business\s+intelligence|bi\s+engineer|decision\s+scientist)/i;
+const analyticsPattern = /(analytics?\s+(?:engineer|manager)|data\s+(?:analyst|scientist)|product\s+(?:analyst|scientist)|business\s+intelligence|bi\s+engineer|decision\s+scientist|quantitative\s+analyst|insights?\s+analyst)/i;
 const frontendPattern = /(front[\s-]?end\s+(?:software\s+)?(?:engineer|developer)|(?:software\s+)?engineer[,\s-]+front[\s-]?end|ui\s+engineer|react\s+(?:engineer|developer)|web\s+application\s+engineer)/i;
 const javaTitlePattern = /(?:^|\b)(?:senior\s+|staff\s+|principal\s+|lead\s+)?java\s+(?:software\s+)?(?:engineer|developer)\b/i;
 const softwarePattern = /(software\s+(?:development\s+)?engineer|software\s+developer|full[\s-]?stack\s+(?:engineer|developer)|back[\s-]?end\s+(?:engineer|developer)|application\s+(?:engineer|developer)|platform\s+(?:software\s+)?engineer)/i;
