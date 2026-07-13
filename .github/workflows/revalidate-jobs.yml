@@ -21,9 +21,17 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          node-version: "20"
+          node-version: "24"
       - name: Validate official feeds, role filters, links and duplicates
         run: node jobs/validate-sources.mjs
+      - name: Upload source-by-source validation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jobs-validation-report
+          path: validation-report.json
+          if-no-files-found: error
+          retention-days: 14
