@@ -21,9 +21,27 @@
       "mediaUrl": "https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev/Economic%20Indicators.m4a",
       "mimeType": "audio/mp4",
       "autoplay": true,
+      "reactionsEnabled": true,
       "dashboardUrl": "https://dash.cloudflare.com/8a7b80d3a3f2c8a87c408645f46cd910/r2/default/buckets/techvideos/objects/Economic%20Indicators.m4a/details",
       "coverBackground": "linear-gradient(145deg,#0f766e,#164e63 55%,#312e81)",
       "coverLines": ["Economic", "Indicators"],
+      "references": []
+    },
+    {
+      "id": "google-ai-vector-search",
+      "title": "Google AI Vector Search",
+      "creator": "Share Capsule",
+      "description": "An audio article introducing Google AI Vector Search concepts and use cases.",
+      "category": "Artificial Intelligence",
+      "language": "English",
+      "publishedAt": "2026-07-12",
+      "objectKey": "Google AI Vector Search.m4a",
+      "mediaUrl": "https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev/Google%20AI%20Vector%20Search.m4a",
+      "mimeType": "audio/mp4",
+      "autoplay": true,
+      "reactionsEnabled": false,
+      "coverBackground": "linear-gradient(145deg,#111827,#2563eb 55%,#7c3aed)",
+      "coverLines": ["Google AI", "Vector Search"],
       "references": []
     }
   ]
