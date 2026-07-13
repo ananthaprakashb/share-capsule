@@ -8,6 +8,10 @@ on:
     paths:
       - "jobs/**"
       - ".github/workflows/revalidate-jobs.yml"
+  pull_request:
+    paths:
+      - "jobs/**"
+      - ".github/workflows/revalidate-jobs.yml"
 
 permissions:
   contents: read
