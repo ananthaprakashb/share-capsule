@@ -4,7 +4,9 @@
     "tagline": "Audio ideas worth listening to and sharing",
     "r2Bucket": "techvideos",
     "publicBaseUrl": "https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev",
-    "publicUrlNote": "Public Cloudflare R2 development domain supplied by the bucket owner. Object keys are URL-encoded before playback."
+    "publicUrlNote": "Public Cloudflare R2 development domain supplied by the bucket owner. Object keys are URL-encoded before playback.",
+    "reactionsApiBaseUrl": "https://sharecapsule-reactions.subhafash-86.workers.dev",
+    "reactionsApiNote": "Cloudflare Worker origin for shared D1-backed clap and like counts. Do not include a trailing slash."
   },
   "audio": [
     {
