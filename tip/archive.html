@@ -14,7 +14,7 @@
 <body>
   <main class="shell">
     <header class="top"><a class="brand" href="/tip/">Share Capsule Tips</a><a class="back" href="/tip/">Today’s tip</a></header>
-    <section class="hero"><h1>Previous tips</h1><p>The most recent 30 days are reconstructed from the same validated tip library. Each dated page retains its source, evidence and sharing options.</p></section>
+    <section class="hero"><h1>Previous tips</h1><p>Browse recent validated tips without duplicate posts. Each dated page retains its source, evidence and sharing options.</p></section>
     <div class="list" id="list"><div class="empty">Loading validated tips…</div></div>
   </main>
   <script>
@@ -24,8 +24,10 @@
     const localDate=()=>{const d=new Date(),p=n=>String(n).padStart(2,'0');return`${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}`};
     const shiftDate=(date,delta)=>{const d=new Date(date+'T12:00:00');d.setDate(d.getDate()+delta);const p=n=>String(n).padStart(2,'0');return`${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}`};
     const daysBetween=(a,b)=>Math.floor((new Date(b+'T12:00:00')-new Date(a+'T12:00:00'))/86400000);
+    const tipKey=tip=>String(tip?.id||`${tip?.title||''}|${tip?.action||''}`).trim().toLowerCase();
+    const uniqueTips=tips=>[...new Map((tips||[]).filter(Boolean).map(tip=>[tipKey(tip),tip])).values()];
     function tipForDate(data,date){const tips=data.tips||[];if(!tips.length)return null;const offset=daysBetween(data.site?.startDate||'2026-07-12',date);return tips[((offset%tips.length)+tips.length)%tips.length]}
-    async function load(){try{const r=await fetch(`data.json?v=${Date.now()}`,{cache:'no-store'});if(!r.ok)throw new Error(`HTTP ${r.status}`);const data=await r.json();const today=localDate();const rows=[];for(let i=1;i<=30;i++){const date=shiftDate(today,-i),tip=tipForDate(data,date);if(tip)rows.push({date,tip})}list.innerHTML=rows.length?rows.map(({date,tip})=>`<a class="item" href="index.html?date=${encodeURIComponent(date)}"><div class="date">${esc(fmt(date))}</div><div class="category">${esc(tip.category)}</div><h2 class="title">${esc(tip.title)}</h2><p class="action">${esc(tip.action)}</p><div class="source">✓ ${esc(tip.sourceOrganization)}</div></a>`).join(''):'<div class="empty">No previous tips are available.</div>'}catch(e){list.innerHTML=`<div class="empty">Unable to load the archive. ${esc(e.message)}</div>`}}
+    async function load(){try{const v=Date.now(),[baseResponse,moneyResponse]=await Promise.all([fetch(`data.json?v=${v}`,{cache:'no-store'}),fetch(`money-data.json?v=${v}`,{cache:'no-store'})]);if(!baseResponse.ok)throw new Error(`HTTP ${baseResponse.status}`);if(!moneyResponse.ok)throw new Error(`Money tips HTTP ${moneyResponse.status}`);const base=await baseResponse.json(),money=await moneyResponse.json(),data={...base,tips:uniqueTips([...(base.tips||[]),...(money.tips||[])])};const today=localDate(),rows=[],seen=new Set(),target=Math.min(30,data.tips.length);for(let i=1;i<=365&&rows.length<target;i++){const date=shiftDate(today,-i),tip=tipForDate(data,date);if(!tip)continue;const key=tipKey(tip);if(seen.has(key))continue;seen.add(key);rows.push({date,tip})}list.innerHTML=rows.length?rows.map(({date,tip})=>`<a class="item" href="index.html?date=${encodeURIComponent(date)}"><div class="date">${esc(fmt(date))}</div><div class="category">${esc(tip.category)}</div><h2 class="title">${esc(tip.title)}</h2><p class="action">${esc(tip.action)}</p><div class="source">✓ ${esc(tip.sourceOrganization)}</div></a>`).join(''):'<div class="empty">No previous tips are available.</div>'}catch(e){list.innerHTML=`<div class="empty">Unable to load the archive. ${esc(e.message)}</div>`}}
     load();
   </script>
 </body>

@@ -1,0 +1,180 @@
+{
+  "tips": [
+    {
+      "id": "automate-payday-savings",
+      "category": "Money — Saving",
+      "title": "Automate a small transfer every payday",
+      "action": "Schedule a fixed transfer to savings for the day each paycheck arrives, starting with an amount you can sustain.",
+      "steps": [
+        "Choose a separate savings account for emergencies or a specific goal.",
+        "Set a fixed automatic transfer for every payday.",
+        "Start small enough that you will not repeatedly cancel the transfer.",
+        "Review the amount after two pay cycles and raise it gradually when affordable."
+      ],
+      "whyItWorks": "A guaranteed payday rule makes saving happen before discretionary spending and does not depend on making purchases or remembering to transfer money.",
+      "sourceOrganization": "Consumer Financial Protection Bureau",
+      "sourceTitle": "Consumer Savings App Strategies and Savings Outcomes",
+      "sourceUrl": "https://www.consumerfinance.gov/data-research/research-reports/consumer-savings-app-strategies-and-savings-outcomes/",
+      "validationNote": "CFPB researchers found that guaranteed saving rules, such as saving every payday, were associated with substantially greater savings than contingent rules such as purchase round-ups.",
+      "evidenceTitle": "Observed app data: guaranteed rules were linked to 1.5–3.5× stronger outcomes",
+      "evidenceSummary": "Using Qapital app data, CFPB found guaranteed rules were associated with roughly 1.5 to 3.5 times larger increases in maximum savings and in the likelihood of reaching $500 or $1,000 milestones within a year.",
+      "evidenceUrl": "https://www.consumerfinance.gov/data-research/research-reports/consumer-savings-app-strategies-and-savings-outcomes/",
+      "evidenceType": "Observed consumer app-data study",
+      "lastValidated": "2026-07-12"
+    },
+    {
+      "id": "track-spending-month",
+      "category": "Money — Budgeting",
+      "title": "Track every expense for one month",
+      "action": "Record every purchase and bill for a month, then total each category before deciding what to cut.",
+      "steps": [
+        "Save receipts or record each transaction in a note or spreadsheet.",
+        "Group spending into useful categories such as housing, food, transport, debt and subscriptions.",
+        "Add category totals at the end of each week and month.",
+        "Mark expenses that do not match your priorities and redirect one amount to savings or debt."
+      ],
+      "whyItWorks": "A complete month exposes recurring bills and small purchases that are easy to overlook, giving you real numbers for a workable budget.",
+      "sourceOrganization": "Consumer Financial Protection Bureau",
+      "sourceTitle": "Your Money, Your Goals — Spending Tracker",
+      "sourceUrl": "https://files.consumerfinance.gov/f/documents/cfpb_your-money-your-goals_spending_tracker_2018-11_ADA.pdf",
+      "validationNote": "The CFPB recommends tracking income and all spending for a month, or at least one to two weeks, and then analyzing category totals and trends.",
+      "evidenceTitle": "Field guidance: tracked spending often reveals money for emergencies and goals",
+      "evidenceSummary": "The CFPB toolkit reports that many people who track spending discover small expenses that add up; after reviewing them, many find room to save for emergencies or balance their budgets.",
+      "evidenceUrl": "https://files.consumerfinance.gov/f/documents/cfpb_your-money-your-goals_spending_tracker_2018-11_ADA.pdf",
+      "evidenceType": "Federal financial-empowerment guidance",
+      "lastValidated": "2026-07-12"
+    },
+    {
+      "id": "highest-interest-debt",
+      "category": "Money — Debt",
+      "title": "Send extra debt payments to the highest rate",
+      "action": "After making every required minimum payment, direct available extra money to the debt with the highest interest rate.",
+      "steps": [
+        "List each debt with its balance, minimum payment and interest rate.",
+        "Pay every minimum by the due date.",
+        "Apply extra money to the highest-rate debt.",
+        "When it is paid off, roll that full payment into the next-highest-rate debt."
+      ],
+      "whyItWorks": "Interest is the price of carrying debt. Reducing the most expensive balance first lowers the total interest and fees paid when you consistently follow the plan.",
+      "sourceOrganization": "Consumer Financial Protection Bureau",
+      "sourceTitle": "Your Money, Your Goals — Debt Action Plan",
+      "sourceUrl": "https://files.consumerfinance.gov/f/documents/cfpb_your-money-your-goals_debt-action-plan_tool_2018-11.pdf",
+      "validationNote": "The CFPB compares smallest-balance-first and highest-rate-first approaches and states that paying the highest interest and fees first saves money overall.",
+      "evidenceTitle": "CFPB side-by-side debt strategy comparison",
+      "evidenceSummary": "The federal worksheet documents the trade-off: smallest-balance-first may create faster visible wins, while highest-interest-first reduces total interest and fees.",
+      "evidenceUrl": "https://files.consumerfinance.gov/f/documents/cfpb_your-money-your-goals_debt-action-plan_tool_2018-11.pdf",
+      "evidenceType": "Federal repayment-method comparison",
+      "lastValidated": "2026-07-12"
+    },
+    {
+      "id": "review-credit-reports",
+      "category": "Money — Credit",
+      "title": "Check all three credit reports for errors",
+      "action": "Request your reports through AnnualCreditReport.com and review every account, balance, payment status and inquiry.",
+      "steps": [
+        "Use AnnualCreditReport.com, the federally authorized source.",
+        "Review reports from Equifax, Experian and TransUnion because the information can differ.",
+        "Flag accounts, late payments, balances, addresses or inquiries you do not recognize.",
+        "Dispute errors with the reporting company and the business that supplied the information."
+      ],
+      "whyItWorks": "Incorrect credit data can affect loan decisions, interest rates and fraud detection; errors can only be corrected after they are found and disputed.",
+      "sourceOrganization": "Consumer Financial Protection Bureau",
+      "sourceTitle": "Requesting and Reviewing Your Free Credit Reports",
+      "sourceUrl": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
+      "validationNote": "CFPB guidance says to obtain reports from all three nationwide reporting companies and review them regularly for mistakes, identity theft and fraud.",
+      "evidenceTitle": "FTC study: one in five participants found an error on a credit report",
+      "evidenceSummary": "In a congressionally mandated study of 1,001 consumers and 2,968 reports, the FTC found one in five had an error on at least one report; five percent had errors that could lead to less favorable loan or insurance terms.",
+      "evidenceUrl": "https://www.ftc.gov/news-events/news/press-releases/2013/02/ftc-study-five-percent-consumers-had-errors-their-credit-reports-could-result-less-favorable-terms",
+      "evidenceType": "Federal consumer credit accuracy study",
+      "lastValidated": "2026-07-12"
+    },
+    {
+      "id": "capture-employer-match",
+      "category": "Money — Retirement",
+      "title": "Check whether you are missing an employer match",
+      "action": "Read your retirement plan summary and, when affordable, contribute enough to receive the full employer contribution available to you.",
+      "steps": [
+        "Find the plan's matching formula and employee contribution requirement.",
+        "Check the vesting schedule for employer contributions.",
+        "Compare your current contribution rate with the rate needed for the full match.",
+        "Increase gradually if cash flow or high-priority debt makes an immediate increase difficult."
+      ],
+      "whyItWorks": "An employer match adds money to retirement savings based on your contribution, while payroll deductions make the habit automatic; plan formulas and vesting rules vary.",
+      "sourceOrganization": "U.S. Department of Labor — Employee Benefits Security Administration",
+      "sourceTitle": "Top 10 Ways to Prepare for Retirement",
+      "sourceUrl": "https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/publications/top-10-ways-to-prepare-for-retirement",
+      "validationNote": "The Department of Labor advises workers to find out how much they must contribute to receive the full employer contribution and how long they must remain to vest.",
+      "evidenceTitle": "More than a quarter of eligible private-industry workers did not participate in 2022",
+      "evidenceSummary": "The Department of Labor reports that over one-quarter of private-industry workers with access to a defined-contribution plan did not participate, showing how available workplace benefits can go unused.",
+      "evidenceUrl": "https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/publications/top-10-ways-to-prepare-for-retirement",
+      "evidenceType": "Federal retirement participation statistics",
+      "lastValidated": "2026-07-12"
+    },
+    {
+      "id": "compare-investment-fees",
+      "category": "Money — Investing",
+      "title": "Compare the total fee before investing",
+      "action": "Before buying a fund or advisory service, write down its annual percentage cost, transaction fees and any account or sales charges.",
+      "steps": [
+        "Find the expense ratio and advisory or platform fee.",
+        "Check purchase, sales, account, transfer and redemption charges.",
+        "Compare similar options that meet the same goal and risk level.",
+        "Use a fee calculator to estimate the long-term dollar impact."
+      ],
+      "whyItWorks": "Fees are deducted from assets and returns year after year, so even a small percentage difference compounds into a large long-term gap.",
+      "sourceOrganization": "Investor.gov — U.S. Securities and Exchange Commission",
+      "sourceTitle": "Understanding Fees",
+      "sourceUrl": "https://www.investor.gov/introduction-investing/getting-started/understanding-fees",
+      "validationNote": "Investor.gov warns that seemingly small fees can have a major portfolio impact and recommends comparing total and ongoing costs.",
+      "evidenceTitle": "$100,000 example: a 1% fee left about $29,000 less than a 0.25% fee",
+      "evidenceSummary": "In the SEC's 20-year hypothetical at 4% annual growth, the portfolio with a 0.25% annual fee reached about $208,000, while the portfolio with a 1% fee reached about $179,000.",
+      "evidenceUrl": "https://www.investor.gov/introduction-investing/getting-started/understanding-fees",
+      "evidenceType": "SEC long-term fee illustration",
+      "lastValidated": "2026-07-12"
+    },
+    {
+      "id": "diversify-investments",
+      "category": "Money — Investing",
+      "title": "Do not let one investment dominate your future",
+      "action": "Review whether one stock, sector, employer or asset type represents too much of your long-term portfolio.",
+      "steps": [
+        "List your major holdings and their percentage of the total portfolio.",
+        "Include employer stock and overlapping funds when measuring concentration.",
+        "Compare the mix with your time horizon, goals and ability to tolerate losses.",
+        "Rebalance gradually and consider tax consequences before selling."
+      ],
+      "whyItWorks": "Spreading money among different investments reduces dependence on a single company or market segment, although diversification cannot prevent every loss.",
+      "sourceOrganization": "Investor.gov — U.S. Securities and Exchange Commission",
+      "sourceTitle": "Diversification",
+      "sourceUrl": "https://www.investor.gov/introduction-investing/investing-basics/glossary/diversification",
+      "validationNote": "Investor.gov defines diversification as spreading money among investments so losses in one may be offset by others.",
+      "evidenceTitle": "The Department of Labor also recommends different investment types to reduce risk",
+      "evidenceSummary": "Federal retirement guidance tells workers to understand plan investments and diversify across different types because doing so is more likely to reduce risk.",
+      "evidenceUrl": "https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/resource-center/publications/top-10-ways-to-prepare-for-retirement",
+      "evidenceType": "Cross-agency investor guidance",
+      "lastValidated": "2026-07-12"
+    },
+    {
+      "id": "verify-deposit-insurance",
+      "category": "Money — Banking",
+      "title": "Verify where your cash is actually insured",
+      "action": "Confirm that savings and emergency cash are in covered deposit accounts at an FDIC-insured bank, and check coverage when balances are large.",
+      "steps": [
+        "Use FDIC BankFind to verify the institution.",
+        "Confirm the product is a deposit account such as checking, savings, a money-market deposit account or CD.",
+        "Use the FDIC insurance calculator when balances approach coverage limits.",
+        "Remember that stocks, bonds, mutual funds, annuities and crypto assets are not FDIC-insured deposits."
+      ],
+      "whyItWorks": "FDIC insurance protects covered deposits if an insured bank fails, but coverage depends on the institution, account ownership category and product type.",
+      "sourceOrganization": "Federal Deposit Insurance Corporation",
+      "sourceTitle": "Deposit Insurance",
+      "sourceUrl": "https://www.fdic.gov/resources/deposit-insurance/",
+      "validationNote": "The FDIC states that covered deposits are automatically insured to at least $250,000 at each FDIC-insured bank and lists which deposit products qualify.",
+      "evidenceTitle": "Republic First Bank depositors retained access after its 2024 failure",
+      "evidenceSummary": "When Republic First Bank failed in April 2024, the FDIC arranged for Fulton Bank to assume substantially all deposits, and customers could continue accessing funds by check or ATM.",
+      "evidenceUrl": "https://apnews.com/article/ac3caeb6eb7a77b12b01c02d5a289750",
+      "evidenceType": "Documented FDIC bank-failure resolution",
+      "lastValidated": "2026-07-12"
+    }
+  ]
+}
