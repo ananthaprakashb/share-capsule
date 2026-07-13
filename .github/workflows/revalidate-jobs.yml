@@ -1,9 +1,9 @@
-name: Revalidate jobs sources
+name: Refresh and validate jobs
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 13 * * *"
+    - cron: "0 10,11 * * *"
   push:
     paths:
       - "jobs/**"
@@ -14,21 +14,45 @@ on:
       - ".github/workflows/revalidate-jobs.yml"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  validate:
+  refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
           node-version: "24"
+      - name: Run only at 3 AM America/Los_Angeles
+        id: local-time
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          HOUR=$(TZ=America/Los_Angeles date +%H)
+          if [ "$HOUR" = "03" ]; then echo "run=true" >> "$GITHUB_OUTPUT"; else echo "run=false" >> "$GITHUB_OUTPUT"; fi
       - name: Validate official feeds, role filters, links and duplicates
+        if: steps.local-time.outputs.run == 'true'
         run: node jobs/validate-sources.mjs
+      - name: Build latest verified jobs snapshot
+        if: steps.local-time.outputs.run == 'true'
+        run: node jobs/refresh-snapshot.mjs
+      - name: Commit refreshed snapshot
+        if: steps.local-time.outputs.run == 'true' && github.event_name != 'pull_request'
+        shell: bash
+        run: |
+          if git diff --quiet -- jobs/snapshot.json; then exit 0; fi
+          git config user.name share-capsule-bot
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add jobs/snapshot.json
+          git commit -m "Refresh verified jobs snapshot"
+          git push
       - name: Upload source-by-source validation report
-        if: always()
+        if: always() && steps.local-time.outputs.run == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: jobs-validation-report
