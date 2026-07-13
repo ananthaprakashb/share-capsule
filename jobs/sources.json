@@ -14,7 +14,11 @@
       "type": "greenhouse",
       "apiUrl": "https://boards-api.greenhouse.io/v1/boards/databricks/jobs?content=true",
       "officialBoardUrl": "https://job-boards.greenhouse.io/databricks",
-      "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "databricks.com"],
+      "allowedApplyHosts": [
+        "job-boards.greenhouse.io",
+        "boards.greenhouse.io",
+        "databricks.com"
+      ],
       "visaHistory": "not-independently-verified",
       "visaHistoryReviewedAt": "2026-07-12"
     },
@@ -24,7 +28,11 @@
       "type": "greenhouse",
       "apiUrl": "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs?content=true",
       "officialBoardUrl": "https://job-boards.greenhouse.io/anthropic",
-      "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "anthropic.com"],
+      "allowedApplyHosts": [
+        "job-boards.greenhouse.io",
+        "boards.greenhouse.io",
+        "anthropic.com"
+      ],
       "visaHistory": "not-independently-verified",
       "visaHistoryReviewedAt": "2026-07-12"
     },
@@ -34,7 +42,11 @@
       "type": "greenhouse",
       "apiUrl": "https://boards-api.greenhouse.io/v1/boards/scaleai/jobs?content=true",
       "officialBoardUrl": "https://job-boards.greenhouse.io/scaleai",
-      "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "scale.com"],
+      "allowedApplyHosts": [
+        "job-boards.greenhouse.io",
+        "boards.greenhouse.io",
+        "scale.com"
+      ],
       "visaHistory": "not-independently-verified",
       "visaHistoryReviewedAt": "2026-07-12"
     },
@@ -44,7 +56,11 @@
       "type": "greenhouse",
       "apiUrl": "https://boards-api.greenhouse.io/v1/boards/figma/jobs?content=true",
       "officialBoardUrl": "https://job-boards.greenhouse.io/figma",
-      "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "figma.com"],
+      "allowedApplyHosts": [
+        "job-boards.greenhouse.io",
+        "boards.greenhouse.io",
+        "figma.com"
+      ],
       "visaHistory": "not-independently-verified",
       "visaHistoryReviewedAt": "2026-07-12"
     },
@@ -54,7 +70,11 @@
       "type": "greenhouse",
       "apiUrl": "https://boards-api.greenhouse.io/v1/boards/airtable/jobs?content=true",
       "officialBoardUrl": "https://job-boards.greenhouse.io/airtable",
-      "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "airtable.com"],
+      "allowedApplyHosts": [
+        "job-boards.greenhouse.io",
+        "boards.greenhouse.io",
+        "airtable.com"
+      ],
       "visaHistory": "not-independently-verified",
       "visaHistoryReviewedAt": "2026-07-12"
     },
@@ -64,7 +84,11 @@
       "type": "greenhouse",
       "apiUrl": "https://boards-api.greenhouse.io/v1/boards/robinhood/jobs?content=true",
       "officialBoardUrl": "https://job-boards.greenhouse.io/robinhood",
-      "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "robinhood.com"],
+      "allowedApplyHosts": [
+        "job-boards.greenhouse.io",
+        "boards.greenhouse.io",
+        "robinhood.com"
+      ],
       "visaHistory": "not-independently-verified",
       "visaHistoryReviewedAt": "2026-07-12"
     },
@@ -74,7 +98,12 @@
       "type": "greenhouse",
       "apiUrl": "https://boards-api.greenhouse.io/v1/boards/pinterest/jobs?content=true",
       "officialBoardUrl": "https://job-boards.greenhouse.io/pinterest",
-      "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "pinterest.com", "pinterestcareers.com"],
+      "allowedApplyHosts": [
+        "job-boards.greenhouse.io",
+        "boards.greenhouse.io",
+        "pinterest.com",
+        "pinterestcareers.com"
+      ],
       "visaHistory": "not-independently-verified",
       "visaHistoryReviewedAt": "2026-07-12"
     },
@@ -84,9 +113,15 @@
       "type": "greenhouse",
       "apiUrl": "https://boards-api.greenhouse.io/v1/boards/elastic/jobs?content=true",
       "officialBoardUrl": "https://job-boards.greenhouse.io/elastic",
-      "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "elastic.co"],
+      "allowedApplyHosts": [
+        "job-boards.greenhouse.io",
+        "boards.greenhouse.io",
+        "elastic.co"
+      ],
       "visaHistory": "not-independently-verified",
       "visaHistoryReviewedAt": "2026-07-12"
     }
-  ]
+  ],
+  "jobTrackingApiBaseUrl": "https://sharecapsule-reactions.subhafash-86.workers.dev",
+  "jobTrackingNote": "Shared D1-backed confirmation and invalid-report tracking. Three net invalid reports place a job in the follow-up queue and hide it by default."
 }
