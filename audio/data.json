@@ -43,6 +43,23 @@
       "coverBackground": "linear-gradient(145deg,#111827,#2563eb 55%,#7c3aed)",
       "coverLines": ["Google AI", "Vector Search"],
       "references": []
+    },
+    {
+      "id": "psychology-of-spending",
+      "title": "Psychology of Spending",
+      "creator": "Share Capsule",
+      "description": "An audio article exploring the emotions, habits, and behavioral patterns that influence spending decisions.",
+      "category": "Personal Finance",
+      "language": "English",
+      "publishedAt": "2026-07-12",
+      "objectKey": "Psychology of Spending.m4a",
+      "mediaUrl": "https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev/Psychology%20of%20Spending.m4a",
+      "mimeType": "audio/mp4",
+      "autoplay": true,
+      "reactionsEnabled": false,
+      "coverBackground": "linear-gradient(145deg,#3f3cbb,#7b2cbf 55%,#c9184a)",
+      "coverLines": ["Psychology", "of Spending"],
+      "references": []
     }
   ]
 }
