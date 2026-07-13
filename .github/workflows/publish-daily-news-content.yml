@@ -2,6 +2,12 @@ name: Publish verified daily news content
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/publish-daily-news-content.mjs
+      - scripts/daily-news-content-library.json
+      - .github/workflows/publish-daily-news-content.yml
   schedule:
     - cron: "0 15 * * *"
     - cron: "0 16 * * *"
