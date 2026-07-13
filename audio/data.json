@@ -10,6 +10,25 @@
   },
   "audio": [
     {
+      "id": "trading-holy-grail-tamil",
+      "title": "ட்ரேடிங்கின் ஹோலி க்ரெயில்",
+      "creator": "Share Capsule",
+      "description": "ட்ரேடிங்கில் வெற்றியைத் தேடும் அணுகுமுறைகள், ஒழுக்கம் மற்றும் நடைமுறை சிந்தனைகளை ஆராயும் தமிழ் ஆடியோ கட்டுரை.",
+      "category": "Tamil Personal Finance",
+      "language": "Tamil",
+      "publishedAt": "2026-07-13",
+      "objectKey": "ட்ரேடிங்கின்_ஹோலி_க்ரெயில்.mp4",
+      "mediaUrl": "https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev/%E0%AE%9F%E0%AF%8D%E0%AE%B0%E0%AF%87%E0%AE%9F%E0%AE%BF%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AE%BF%E0%AE%A9%E0%AF%8D_%E0%AE%B9%E0%AF%8B%E0%AE%B2%E0%AE%BF_%E0%AE%95%E0%AF%8D%E0%AE%B0%E0%AF%86%E0%AE%AF%E0%AE%BF%E0%AE%B2%E0%AF%8D.mp4",
+      "mimeType": "video/mp4",
+      "autoplay": true,
+      "coverBackground": "linear-gradient(145deg,#172554,#1d4ed8 55%,#f59e0b)",
+      "coverLines": [
+        "ட்ரேடிங்கின்",
+        "ஹோலி க்ரெயில்"
+      ],
+      "references": []
+    },
+    {
       "id": "thoranaiyum-unavum",
       "title": "Thoranaiyum Unavum",
       "creator": "Share Capsule",
@@ -22,7 +41,10 @@
       "mimeType": "audio/mp4",
       "autoplay": true,
       "coverBackground": "linear-gradient(145deg,#14532d,#0f766e 55%,#ca8a04)",
-      "coverLines": ["Thoranaiyum", "Unavum"],
+      "coverLines": [
+        "Thoranaiyum",
+        "Unavum"
+      ],
       "references": []
     },
     {
@@ -39,7 +61,10 @@
       "autoplay": true,
       "dashboardUrl": "https://dash.cloudflare.com/8a7b80d3a3f2c8a87c408645f46cd910/r2/default/buckets/techvideos/objects/Economic%20Indicators.m4a/details",
       "coverBackground": "linear-gradient(145deg,#0f766e,#164e63 55%,#312e81)",
-      "coverLines": ["Economic", "Indicators"],
+      "coverLines": [
+        "Economic",
+        "Indicators"
+      ],
       "references": []
     },
     {
@@ -55,7 +80,10 @@
       "mimeType": "audio/mp4",
       "autoplay": true,
       "coverBackground": "linear-gradient(145deg,#111827,#2563eb 55%,#7c3aed)",
-      "coverLines": ["Google AI", "Vector Search"],
+      "coverLines": [
+        "Google AI",
+        "Vector Search"
+      ],
       "references": []
     },
     {
@@ -71,7 +99,10 @@
       "mimeType": "audio/mp4",
       "autoplay": true,
       "coverBackground": "linear-gradient(145deg,#3f3cbb,#7b2cbf 55%,#c9184a)",
-      "coverLines": ["Psychology", "of Spending"],
+      "coverLines": [
+        "Psychology",
+        "of Spending"
+      ],
       "references": []
     }
   ]
