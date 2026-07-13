@@ -1,7 +1,7 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "reviewedAt": "2026-07-12",
-  "method": "Only allowlisted official applicant-tracking-system feeds are queried. A role is shown as sponsorship-supported or unsupported only when its own live posting says so. Company filing history is shown only after separate evidence is verified and linked; it is never treated as a guarantee for a specific role.",
+  "method": "Only allowlisted official applicant-tracking-system feeds are queried. Results are limited to software engineering, frontend engineering, Java engineering, data engineering and analytics roles whose live posting identifies a location in one of the 50 U.S. states, Washington, D.C., or explicitly U.S.-based remote work. Sponsorship is classified only from the current posting; company filing history is informational and never a guarantee.",
   "federalVisaEvidence": {
     "label": "U.S. Department of Labor — OFLC disclosure data",
     "url": "https://www.dol.gov/agencies/eta/foreign-labor/performance",
@@ -55,6 +55,36 @@
       "apiUrl": "https://boards-api.greenhouse.io/v1/boards/airtable/jobs?content=true",
       "officialBoardUrl": "https://job-boards.greenhouse.io/airtable",
       "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "airtable.com"],
+      "visaHistory": "not-independently-verified",
+      "visaHistoryReviewedAt": "2026-07-12"
+    },
+    {
+      "id": "robinhood",
+      "company": "Robinhood",
+      "type": "greenhouse",
+      "apiUrl": "https://boards-api.greenhouse.io/v1/boards/robinhood/jobs?content=true",
+      "officialBoardUrl": "https://job-boards.greenhouse.io/robinhood",
+      "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "robinhood.com"],
+      "visaHistory": "not-independently-verified",
+      "visaHistoryReviewedAt": "2026-07-12"
+    },
+    {
+      "id": "pinterest",
+      "company": "Pinterest",
+      "type": "greenhouse",
+      "apiUrl": "https://boards-api.greenhouse.io/v1/boards/pinterest/jobs?content=true",
+      "officialBoardUrl": "https://job-boards.greenhouse.io/pinterest",
+      "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "pinterest.com", "pinterestcareers.com"],
+      "visaHistory": "not-independently-verified",
+      "visaHistoryReviewedAt": "2026-07-12"
+    },
+    {
+      "id": "elastic",
+      "company": "Elastic",
+      "type": "greenhouse",
+      "apiUrl": "https://boards-api.greenhouse.io/v1/boards/elastic/jobs?content=true",
+      "officialBoardUrl": "https://job-boards.greenhouse.io/elastic",
+      "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "elastic.co"],
       "visaHistory": "not-independently-verified",
       "visaHistoryReviewedAt": "2026-07-12"
     }
