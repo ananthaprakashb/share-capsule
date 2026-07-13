@@ -1,0 +1,65 @@
+name: Add Google AI Vector Search release
+
+on:
+  push:
+    branches: [agent/post-google-ai-vector-search]
+    paths: [.github/workflows/add-google-ai-vector-search-release.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: agent/post-google-ai-vector-search
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Add release once
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('data/releases.json')
+          data = json.loads(path.read_text())
+          slug = 'google-ai-vector-search'
+          if not any(r.get('slug') == slug for r in data.get('releases', [])):
+              data['releases'].insert(0, {
+                'slug': slug,
+                'title': 'Google AI Vector Search',
+                'artist': 'Share Capsule',
+                'type': 'Audio article',
+                'category': 'Artificial Intelligence',
+                'language': 'English',
+                'publishedAt': '2026-07-12',
+                'description': 'An audio article introducing Google AI Vector Search concepts and use cases.',
+                'featured': True,
+                'coverImage': '',
+                'coverBackground': 'linear-gradient(145deg,#111827,#2563eb 55%,#7c3aed)',
+                'coverEyebrow': 'AI audio article',
+                'coverLines': ['Google AI', 'Vector Search'],
+                'previewUrl': '',
+                'demoTone': False,
+                'audioPageUrl': '/audio/?id=google-ai-vector-search',
+                'platforms': [
+                  {'label': 'Listen', 'icon': '▶', 'url': '/audio/?id=google-ai-vector-search'}
+                ],
+                'shareMessages': {
+                  'friend': {'label': 'Friend', 'icon': '🎧', 'text': 'Here is a useful audio article about Google AI Vector Search.'},
+                  'family': {'label': 'Family', 'icon': '👨‍👩‍👧', 'text': 'Sharing this AI audio article with you.'},
+                  'topic': {'label': 'AI learner', 'icon': '🧠', 'text': 'This Google AI Vector Search audio article may be useful for you.'}
+                }
+              })
+              path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
+          PY
+      - name: Commit catalog update
+        run: |
+          if git diff --quiet; then exit 0; fi
+          git config user.name share-capsule-bot
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/releases.json
+          git commit -m "Add Google AI Vector Search release"
+          git push
