@@ -1,0 +1,118 @@
+{
+  "tip": [
+    {
+      "themes": ["heat", "temperature", "weather", "climate", "wildfire"],
+      "verifyNeedle": "stay cool",
+      "sourceUrl": "https://www.cdc.gov/heat-health/about/index.html",
+      "item": {
+        "id": "heat-check-cool-hydrate",
+        "category": "Heat safety",
+        "title": "Cool down, hydrate and check on people during extreme heat",
+        "action": "Move to air conditioning or a cooler place, drink water regularly, reduce strenuous activity and check older adults, children and people without reliable cooling.",
+        "steps": ["Use an air-conditioned location when possible.", "Drink water regularly instead of waiting until you feel thirsty.", "Move outdoor activity to cooler hours and take more breaks.", "Check people at higher risk and never leave children or pets in a parked vehicle."],
+        "whyItWorks": "Heat illness develops when the body cannot shed heat. Cooling, hydration, rest and early attention to symptoms reduce the chance that heat exhaustion progresses to heat stroke.",
+        "sourceOrganization": "U.S. Centers for Disease Control and Prevention",
+        "sourceTitle": "About Heat and Your Health",
+        "sourceUrl": "https://www.cdc.gov/heat-health/about/index.html",
+        "validationNote": "CDC guidance emphasizes staying cool, staying hydrated, recognizing symptoms and checking people at greater risk during hot weather.",
+        "evidenceTitle": "Record-warm nights during the July 2026 U.S. heat wave",
+        "evidenceSummary": "Current reporting describes unusually hot days and nights across much of the United States, increasing health risks because the body has less opportunity to cool and recover overnight.",
+        "evidenceUrl": "https://apnews.com/article/fb7664f71743f71beca4ce7447562ca2",
+        "evidenceType": "Current documented heat emergency",
+        "lastValidated": "__DATE__"
+      }
+    }
+  ],
+  "paa": [
+    {
+      "themes": ["tamil", "poet", "literature", "language", "award", "culture"],
+      "verifyNeedle": "யாமறிந்த மொழிகளிலே",
+      "sourceUrl": "https://ta.wikisource.org/wiki/%E0%AE%AF%E0%AE%BE%E0%AE%AE%E0%AE%B1%E0%AE%BF%E0%AE%A8%E0%AF%8D%E0%AE%A4_%E0%AE%AE%E0%AF%8A%E0%AE%B4%E0%AE%BF%E0%AE%95%E0%AE%B3%E0%AE%BF%E0%AE%B2%E0%AF%87",
+      "item": {
+        "id": "yam-arindha-mozhigalile",
+        "title": "யாமறிந்த மொழிகளிலே",
+        "mood": "தமிழ் · மொழிப்பற்று",
+        "era": "heritage",
+        "featured": true,
+        "contentType": "public-domain-excerpt",
+        "publicationYear": 1917,
+        "excerptLabel": "தொடக்க வரிகள்",
+        "excerptLines": ["யாமறிந்த மொழிகளிலே தமிழ்மொழிபோல்", "இனிதாவது எங்கும் காணோம்"],
+        "author": "சுப்பிரமணிய பாரதி",
+        "authorDisplay": "மகாகவி பாரதியார்",
+        "authorBio": "தமிழ் கவிஞர், பத்திரிகையாளர், சமூகச் சீர்திருத்தவாதி மற்றும் இந்திய விடுதலை இயக்கப் போராளி.",
+        "authorEncyclopediaUrl": "https://www.britannica.com/biography/Subramania-Bharati",
+        "sourceTitle": "யாமறிந்த மொழிகளிலே — தமிழ் விக்கிமூலம்",
+        "sourceUrl": "https://ta.wikisource.org/wiki/%E0%AE%AF%E0%AE%BE%E0%AE%AE%E0%AE%B1%E0%AE%BF%E0%AE%A8%E0%AF%8D%E0%AE%A4_%E0%AE%AE%E0%AF%8A%E0%AE%B4%E0%AE%BF%E0%AE%95%E0%AE%B3%E0%AE%BF%E0%AE%B2%E0%AF%87",
+        "sourceType": "தமிழ் விக்கிமூலம் — பொதுக் களஞ்சிய மூலநூல்",
+        "verificationNote": "காட்சிப்படுத்தப்பட்ட தொடக்க வரிகள் தமிழ் விக்கிமூல உரையுடன் ஒப்பிட்டுச் சரிபார்க்கப்பட்டன.",
+        "verifiedOn": "__DATE__",
+        "happyNote": "தமிழ் இலக்கியமும் கவிஞர்களும் செய்திகளில் இடம்பிடிக்கும் நாளில், மொழியின் இனிமையையும் பொது நினைவையும் கொண்டாடும் வரிகள்.",
+        "rightsNote": "பாரதியாரின் படைப்பு பொதுக் களஞ்சியத்தில் உள்ளது; மூல இணைப்பும் ஆசிரியர் விவரமும் வழங்கப்படுகின்றன.",
+        "archiveSection": "மரபுக் கவிதை"
+      }
+    }
+  ],
+  "law": [
+    {
+      "themes": ["court", "supreme court", "appeal", "stay", "judgment", "rights"],
+      "verifyNeedle": "effective remedy",
+      "sourceUrl": "https://www.ohchr.org/en/instruments-mechanisms/instruments/international-covenant-civil-and-political-rights",
+      "item": {
+        "id": "effective-remedy-and-review",
+        "category": "Access to justice",
+        "title": "Courts should provide an effective remedy and meaningful review",
+        "plainRule": "When protected rights are violated, people should have access to a competent authority that can examine the claim and provide an effective remedy.",
+        "globalBasis": "International Covenant on Civil and Political Rights, Article 2(3)",
+        "globalSourceTitle": "International Covenant on Civil and Political Rights",
+        "globalSourceUrl": "https://www.ohchr.org/en/instruments-mechanisms/instruments/international-covenant-civil-and-political-rights",
+        "secondaryGlobalSourceTitle": "Universal Declaration of Human Rights, Article 8",
+        "secondaryGlobalSourceUrl": "https://www.un.org/en/about-us/universal-declaration-of-human-rights",
+        "everydayMeaning": "Appeals, stays and judicial review can prevent irreversible consequences while a higher or competent court examines whether a decision is lawful. The exact procedure and effect of a stay depend on local law.",
+        "practicalSteps": ["Read the actual court order rather than relying on a headline.", "Check whether an order is final, stayed, appealed or limited to particular parties.", "Record filing and appeal deadlines immediately.", "Seek advice from a qualified lawyer in the relevant jurisdiction."],
+        "incidentTitle": "Supreme Court of India stays a Madras High Court direction pending further review",
+        "incidentDate": "2026-07-13",
+        "incidentJurisdiction": "Supreme Court of India",
+        "incidentSummary": "Current reporting says the Supreme Court stayed a Madras High Court direction concerning enforcement during Bakrid, illustrating how a higher court can pause an order while legal questions remain under review.",
+        "incidentOutcome": "The reported stay pauses the lower-court direction; it is not a final determination of all underlying legal issues.",
+        "incidentSourceTitle": "Supreme Court stays Madras High Court order",
+        "incidentSourceUrl": "https://timesofindia.indiatimes.com/india/sc-stays-madras-hc-order-directing-total-ban-on-cow-slaughter-during-bakrid/articleshow/132359294.cms",
+        "takeaway": "A court stay changes what is enforceable now, but it does not necessarily decide the final merits.",
+        "localLawWarning": "Appeal rights, standing, deadlines and the legal effect of interim orders vary by jurisdiction. This is general educational information, not legal advice.",
+        "validatedOn": "__DATE__"
+      }
+    }
+  ],
+  "haiku": [
+    {
+      "themes": ["heat", "summer", "weather", "nature", "climate"],
+      "verifyNeedle": "閑さや",
+      "sourceUrl": "https://ja.wikisource.org/wiki/%E9%96%91%E3%81%95%E3%82%84%E5%B2%A9%E3%81%AB%E3%81%97%E3%81%BF%E5%85%A5%E3%82%8B%E8%9D%89%E3%81%AE%E5%A3%B0",
+      "item": {
+        "id": "basho-shizukesa-ya",
+        "title": "அமைதிக்குள் சிள்வண்டின் குரல்",
+        "titleNote": "காட்சித் தலைப்பு தமிழ் மொழிபெயர்ப்புக்காக வழங்கப்பட்டது.",
+        "mood": "கோடை · அமைதி · இயற்கை",
+        "formLabel": "ஜப்பானிய செவ்வியல் ஹைக்கூ — தமிழ் நேரடி மொழிபெயர்ப்பு",
+        "originalLanguage": "Japanese",
+        "originalScript": ["閑さや", "岩にしみ入る", "蝉の声"],
+        "romanization": ["shizukesa ya", "iwa ni shimiiru", "semi no koe"],
+        "tamilRendering": ["ஆழ்ந்த அமைதி—", "பாறைக்குள் ஊடுருவுகிறது", "சிள்வண்டின் குரல்"],
+        "translationCredit": "தமிழ் நேரடி மொழிபெயர்ப்பு: Share Capsule; அசல்: மட்சுவோ பாஷோ",
+        "author": "Matsuo Bashō",
+        "authorTamil": "மட்சுவோ பாஷோ",
+        "authorBio": "எடோ கால ஜப்பானியக் கவிஞர்; ஹைக்கூ மரபின் மிகப் புகழ்பெற்ற ஆளுமைகளில் ஒருவர்.",
+        "authorBioUrl": "https://www.britannica.com/biography/Basho-Japanese-poet",
+        "poemSourceTitle": "閑さや岩にしみ入る蝉の声 — Japanese Wikisource",
+        "poemSourceUrl": "https://ja.wikisource.org/wiki/%E9%96%91%E3%81%95%E3%82%84%E5%B2%A9%E3%81%AB%E3%81%97%E3%81%BF%E5%85%A5%E3%82%8B%E8%9D%89%E3%81%AE%E5%A3%B0",
+        "sourceEvidence": "ஜப்பானிய மூன்று வரிகளும் மேற்கோள் காட்டப்பட்ட விக்கிமூல உரையில் சரிபார்க்கப்படுகின்றன; தமிழ் வடிவம் நேரடி பொருள் மொழிபெயர்ப்பு எனத் தெளிவாகக் குறிக்கப்பட்டுள்ளது.",
+        "interpretation": "கோடையின் செறிந்த ஒலி கூட ஆழ்ந்த அமைதியை உடைப்பதில்லை; அந்த அமைதியின் ஆழத்தை உணரச் செய்கிறது.",
+        "originalTamil": false,
+        "publicDomain": true,
+        "rightsNote": "பாஷோவின் அசல் படைப்பு பொதுக் களஞ்சியத்தில் உள்ளது. தமிழ் மொழிபெயர்ப்பு புதிய நேரடி வடிவம்.",
+        "publishedOn": "1689-01-01",
+        "verifiedOn": "__DATE__"
+      }
+    }
+  ]
+}
