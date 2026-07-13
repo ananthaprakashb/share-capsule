@@ -1,0 +1,27 @@
+name: Validate Tamil poetry data
+
+on:
+  pull_request:
+    paths:
+      - "paa/**"
+      - ".github/workflows/validate-paa.yml"
+  push:
+    paths:
+      - "paa/**"
+      - ".github/workflows/validate-paa.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "24"
+      - name: Validate author, source and shareability metadata
+        run: node paa/validate-data.mjs
