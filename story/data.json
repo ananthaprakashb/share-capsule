@@ -1,0 +1,14 @@
+{
+  "site": {
+    "name": "Five-Minute Stories",
+    "tagline": "One thoughtful story every day",
+    "sourceName": "Think Five Minutes",
+    "sourceHomeUrl": "https://thinkfiveminutes.blogspot.com",
+    "feedUrl": "https://thinkfiveminutes.blogspot.com/feeds/posts/default?alt=json&max-results=500",
+    "seedSourceUrl": "https://thinkfiveminutes.blogspot.com/2026/03/1.html",
+    "publishTime": "08:00",
+    "publishTimeZone": "America/Los_Angeles",
+    "contentPolicy": "Content is republished from the site owner's Think Five Minutes blog with the original title, author, publication date, and source link preserved."
+  },
+  "stories": []
+}
