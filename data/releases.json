@@ -5,6 +5,51 @@
   },
   "releases": [
     {
+      "slug": "economic-indicators",
+      "title": "Economic Indicators",
+      "artist": "Share Capsule",
+      "type": "Audio capsule",
+      "category": "Personal Finance",
+      "language": "English",
+      "publishedAt": "2026-07-12",
+      "description": "An audio capsule about economic indicators, hosted in Cloudflare R2.",
+      "featured": true,
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#0f766e,#164e63 55%,#312e81)",
+      "coverEyebrow": "Audio capsule",
+      "coverLines": [
+        "Economic",
+        "Indicators"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "audioPageUrl": "/audio/?id=economic-indicators",
+      "platforms": [
+        {
+          "label": "Listen",
+          "icon": "▶",
+          "url": "/audio/?id=economic-indicators"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Friend",
+          "icon": "🎧",
+          "text": "Here is a useful audio capsule about economic indicators."
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this simple audio explanation of economic indicators."
+        },
+        "topic": {
+          "label": "Finance learner",
+          "icon": "📈",
+          "text": "This economic indicators audio may be useful for you."
+        }
+      }
+    },
+    {
       "slug": "ennungal-ennangal",
       "title": "எண்ணுங்கள் எண்ணங்கள்",
       "artist": "தமிழாலே",
