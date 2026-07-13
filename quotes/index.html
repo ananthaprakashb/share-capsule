@@ -37,5 +37,8 @@
     function social(n,q){const u=encodeURIComponent(quoteUrl(q)),t=encodeURIComponent(`“${q.quote}” — ${q.author}`),full=encodeURIComponent(shareText(q));if(n==='facebook'){if(navigator.share){native(q);return}window.open(`https://www.facebook.com/sharer/sharer.php?display=popup&u=${u}`,'_blank','noopener,noreferrer,width=720,height=640');return}const urls={x:`https://twitter.com/intent/tweet?text=${t}&url=${u}`,telegram:`https://t.me/share/url?url=${u}&text=${t}`,linkedin:`https://www.linkedin.com/sharing/share-offsite/?url=${u}`};if(n==='email'){location.href=`mailto:?subject=${encodeURIComponent('A quote worth sharing')}&body=${full}`;return}window.open(urls[n],'_blank','noopener,noreferrer,width=720,height=640')}
     load();
   </script>
+  <!-- Cloudflare Web Analytics -->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0eea133492b342da911e8cc91271e622"}'></script>
+  <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
