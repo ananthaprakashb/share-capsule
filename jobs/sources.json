@@ -79,16 +79,6 @@
       "visaHistoryReviewedAt": "2026-07-12"
     },
     {
-      "id": "confluent",
-      "company": "Confluent",
-      "type": "greenhouse",
-      "apiUrl": "https://boards-api.greenhouse.io/v1/boards/confluent/jobs?content=true",
-      "officialBoardUrl": "https://job-boards.greenhouse.io/confluent",
-      "allowedApplyHosts": ["job-boards.greenhouse.io", "boards.greenhouse.io", "confluent.io"],
-      "visaHistory": "not-independently-verified",
-      "visaHistoryReviewedAt": "2026-07-12"
-    },
-    {
       "id": "elastic",
       "company": "Elastic",
       "type": "greenhouse",
