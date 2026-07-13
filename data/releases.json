@@ -5,6 +5,51 @@
   },
   "releases": [
     {
+      "slug": "google-ai-vector-search",
+      "title": "Google AI Vector Search",
+      "artist": "Share Capsule",
+      "type": "Audio article",
+      "category": "Artificial Intelligence",
+      "language": "English",
+      "publishedAt": "2026-07-12",
+      "description": "An audio article introducing Google AI Vector Search concepts and use cases.",
+      "featured": true,
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#111827,#2563eb 55%,#7c3aed)",
+      "coverEyebrow": "AI audio article",
+      "coverLines": [
+        "Google AI",
+        "Vector Search"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "audioPageUrl": "/audio/?id=google-ai-vector-search",
+      "platforms": [
+        {
+          "label": "Listen",
+          "icon": "▶",
+          "url": "/audio/?id=google-ai-vector-search"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Friend",
+          "icon": "🎧",
+          "text": "Here is a useful audio article about Google AI Vector Search."
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this AI audio article with you."
+        },
+        "topic": {
+          "label": "AI learner",
+          "icon": "🧠",
+          "text": "This Google AI Vector Search audio article may be useful for you."
+        }
+      }
+    },
+    {
       "slug": "kadhal-mavusu",
       "title": "காதல் மவுசு",
       "artist": "தமிழாலே",
