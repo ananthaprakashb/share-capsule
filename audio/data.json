@@ -3,8 +3,8 @@
     "name": "Share Capsule Audio",
     "tagline": "Audio ideas worth listening to and sharing",
     "r2Bucket": "techvideos",
-    "publicBaseUrl": "",
-    "publicUrlNote": "Set this to the bucket's public custom domain or r2.dev domain. The Cloudflare dashboard URL is private and cannot be used as an audio source."
+    "publicBaseUrl": "https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev",
+    "publicUrlNote": "Public Cloudflare R2 development domain supplied by the bucket owner. Object keys are URL-encoded before playback."
   },
   "audio": [
     {
@@ -16,7 +16,7 @@
       "language": "English",
       "publishedAt": "2026-07-12",
       "objectKey": "Economic Indicators.m4a",
-      "mediaUrl": "",
+      "mediaUrl": "https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev/Economic%20Indicators.m4a",
       "mimeType": "audio/mp4",
       "autoplay": true,
       "dashboardUrl": "https://dash.cloudflare.com/8a7b80d3a3f2c8a87c408645f46cd910/r2/default/buckets/techvideos/objects/Economic%20Indicators.m4a/details",
