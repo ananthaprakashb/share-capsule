@@ -30,5 +30,8 @@
     async function load(){try{const v=Date.now(),[baseResponse,moneyResponse]=await Promise.all([fetch(`data.json?v=${v}`,{cache:'no-store'}),fetch(`money-data.json?v=${v}`,{cache:'no-store'})]);if(!baseResponse.ok)throw new Error(`HTTP ${baseResponse.status}`);if(!moneyResponse.ok)throw new Error(`Money tips HTTP ${moneyResponse.status}`);const base=await baseResponse.json(),money=await moneyResponse.json(),data={...base,tips:uniqueTips([...(base.tips||[]),...(money.tips||[])])};const today=localDate(),rows=[],seen=new Set(),target=Math.min(30,data.tips.length);for(let i=1;i<=365&&rows.length<target;i++){const date=shiftDate(today,-i),tip=tipForDate(data,date);if(!tip)continue;const key=tipKey(tip);if(seen.has(key))continue;seen.add(key);rows.push({date,tip})}list.innerHTML=rows.length?rows.map(({date,tip})=>`<a class="item" href="index.html?date=${encodeURIComponent(date)}"><div class="date">${esc(fmt(date))}</div><div class="category">${esc(tip.category)}</div><h2 class="title">${esc(tip.title)}</h2><p class="action">${esc(tip.action)}</p><div class="source">✓ ${esc(tip.sourceOrganization)}</div></a>`).join(''):'<div class="empty">No previous tips are available.</div>'}catch(e){list.innerHTML=`<div class="empty">Unable to load the archive. ${esc(e.message)}</div>`}}
     load();
   </script>
+  <!-- Cloudflare Web Analytics -->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0eea133492b342da911e8cc91271e622"}'></script>
+  <!-- End Cloudflare Web Analytics -->
 </body>
 </html>

@@ -60,5 +60,8 @@
     async function copyShare(){try{await navigator.clipboard.writeText(shareText());showToast('Share text copied')}catch{showToast('Copy unavailable')}}
     document.getElementById('homeButton').onclick=goHome;document.getElementById('topShare').onclick=nativeShare;window.addEventListener('popstate',route);load();
   </script>
+  <!-- Cloudflare Web Analytics -->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0eea133492b342da911e8cc91271e622"}'></script>
+  <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
