@@ -1,0 +1,63 @@
+name: Add Thoranaiyum Unavum release
+
+on:
+  push:
+    branches: [agent/post-thoranaiyum-unavum]
+    paths: [.github/workflows/add-thoranaiyum-unavum-release.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: agent/post-thoranaiyum-unavum
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Add release once
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('data/releases.json')
+          data = json.loads(path.read_text())
+          slug = 'thoranaiyum-unavum'
+          if not any(r.get('slug') == slug for r in data.get('releases', [])):
+              data['releases'].insert(0, {
+                'slug': slug,
+                'title': 'Thoranaiyum Unavum',
+                'artist': 'Share Capsule',
+                'type': 'Audio article',
+                'category': 'Tamil Wellness',
+                'language': 'Tamil',
+                'publishedAt': '2026-07-13',
+                'description': 'A Tamil audio article exploring the relationship between தோரணை, food, and everyday well-being.',
+                'featured': True,
+                'coverImage': '',
+                'coverBackground': 'linear-gradient(145deg,#14532d,#0f766e 55%,#ca8a04)',
+                'coverEyebrow': 'Tamil audio article',
+                'coverLines': ['Thoranaiyum', 'Unavum'],
+                'previewUrl': '',
+                'demoTone': False,
+                'audioPageUrl': '/audio/?id=thoranaiyum-unavum',
+                'platforms': [{'label': 'Listen', 'icon': '▶', 'url': '/audio/?id=thoranaiyum-unavum'}],
+                'shareMessages': {
+                  'friend': {'label': 'Friend', 'icon': '🎧', 'text': 'Here is a Tamil audio article about food and everyday well-being.'},
+                  'family': {'label': 'Family', 'icon': '👨‍👩‍👧', 'text': 'Sharing this Tamil audio article about food and well-being.'},
+                  'topic': {'label': 'Wellness learner', 'icon': '🌿', 'text': 'This Tamil wellness audio article may be useful for you.'}
+                }
+              })
+              path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')
+          PY
+      - name: Commit catalog update
+        run: |
+          if git diff --quiet; then exit 0; fi
+          git config user.name share-capsule-bot
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/releases.json
+          git commit -m "Add Thoranaiyum Unavum release"
+          git push
