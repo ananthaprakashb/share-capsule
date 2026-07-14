@@ -7,6 +7,7 @@ on:
     paths:
       - scripts/publish-daily-news-content.mjs
       - scripts/daily-news-content-library.json
+      - scripts/validate-law.mjs
       - .github/workflows/publish-daily-news-content.yml
   schedule:
     - cron: "0 15 * * *"
@@ -22,7 +23,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5
         with:
@@ -35,19 +36,21 @@ jobs:
         run: |
           HOUR=$(TZ=America/Los_Angeles date +%H)
           test "$HOUR" = "08" || { echo "Not 8 AM Pacific; exiting."; exit 0; }
-      - name: Select and validate daily items
+      - name: Select daily items
         run: node scripts/publish-daily-news-content.mjs
+      - name: Revalidate all legal authorities and case references
+        run: node scripts/validate-law.mjs
       - name: Validate generated JSON
         run: |
-          node -e "for(const p of ['tip/data.json','paa/data.json','law/data.json','tulip/data.json'])JSON.parse(require('fs').readFileSync(p))"
+          node -e "for(const p of ['tip/data.json','paa/data.json','law/data.json','law/validation-report.json','tulip/data.json'])JSON.parse(require('fs').readFileSync(p))"
       - name: Commit daily items
         run: |
-          if git diff --quiet -- tip/data.json paa/data.json law/data.json tulip/data.json; then
+          if git diff --quiet -- tip/data.json paa/data.json law/data.json law/validation-report.json tulip/data.json; then
             echo "No daily content changes."
             exit 0
           fi
           git config user.name share-capsule-bot
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add tip/data.json paa/data.json law/data.json tulip/data.json
-          git commit -m "Publish verified daily news-matched content"
+          git add tip/data.json paa/data.json law/data.json law/validation-report.json tulip/data.json
+          git commit -m "Publish and revalidate daily content"
           git push
