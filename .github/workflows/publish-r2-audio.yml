@@ -46,7 +46,8 @@ jobs:
           git push
 
   discover-r2:
-    if: github.event_name != 'push'
+    needs: seed-overrides
+    if: always() && (github.event_name != 'push' || needs.seed-overrides.result == 'success')
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -73,7 +74,7 @@ jobs:
       - name: Commit newly discovered releases
         run: |
           if git diff --quiet -- audio/data.json data/releases.json; then
-            echo "No new R2 audio objects found."
+            echo "No new R2 audio objects found. Review the discovery JSON above for skipped or unsupported objects."
             exit 0
           fi
           git config user.name share-capsule-bot
