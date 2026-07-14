@@ -1,11 +1,16 @@
 {
-  "schemaVersion": 2,
-  "reviewedAt": "2026-07-12",
-  "method": "Only allowlisted official applicant-tracking-system feeds are queried. Results are limited to software engineering, frontend engineering, Java engineering, data engineering and analytics roles whose live posting identifies a location in one of the 50 U.S. states, Washington, D.C., or explicitly U.S.-based remote work. Sponsorship is classified only from the current posting; company filing history is informational and never a guarantee.",
+  "schemaVersion": 3,
+  "reviewedAt": "2026-07-13",
+  "method": "Only allowlisted official applicant-tracking-system feeds are queried. Results are limited to broad U.S. technical and specialty-occupation role families aligned with the federal Standard Occupational Classification framework, including software, AI/ML, data, cloud/SRE, cybersecurity, network and systems, database, QA automation, technical product/program management, solutions engineering, hardware and embedded systems, electrical, mechanical, civil, biotechnology, healthcare technology, quantitative finance, UX/product design and technical writing. A posting must identify a location in one of the 50 U.S. states, Washington, D.C., or explicitly U.S.-based remote work. Categories describe occupations rather than nationality. Sponsorship is classified only from the current posting; company filing history is informational and never a guarantee.",
+  "occupationTaxonomy": {
+    "label": "U.S. Bureau of Labor Statistics — Standard Occupational Classification",
+    "url": "https://www.bls.gov/soc/",
+    "note": "The category expansion is grounded in nationally recognized computer, mathematical, architecture, engineering, science, healthcare technical, business and design occupation families."
+  },
   "federalVisaEvidence": {
     "label": "U.S. Department of Labor — OFLC disclosure data",
     "url": "https://www.dol.gov/agencies/eta/foreign-labor/performance",
-    "note": "Federal disclosure records can show historical H-1B/LCA activity, but an employer's past filings do not guarantee sponsorship for a current opening."
+    "note": "Federal disclosure records can show historical H-1B/LCA activity across specialty occupations, but an employer's past filings do not guarantee sponsorship for a current opening."
   },
   "sources": [
     {
@@ -14,13 +19,9 @@
       "type": "greenhouse",
       "apiUrl": "https://boards-api.greenhouse.io/v1/boards/databricks/jobs?content=true",
       "officialBoardUrl": "https://job-boards.greenhouse.io/databricks",
-      "allowedApplyHosts": [
-        "job-boards.greenhouse.io",
-        "boards.greenhouse.io",
-        "databricks.com"
-      ],
+      "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","databricks.com"],
       "visaHistory": "not-independently-verified",
-      "visaHistoryReviewedAt": "2026-07-12"
+      "visaHistoryReviewedAt": "2026-07-13"
     },
     {
       "id": "anthropic",
@@ -28,13 +29,9 @@
       "type": "greenhouse",
       "apiUrl": "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs?content=true",
       "officialBoardUrl": "https://job-boards.greenhouse.io/anthropic",
-      "allowedApplyHosts": [
-        "job-boards.greenhouse.io",
-        "boards.greenhouse.io",
-        "anthropic.com"
-      ],
+      "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","anthropic.com"],
       "visaHistory": "not-independently-verified",
-      "visaHistoryReviewedAt": "2026-07-12"
+      "visaHistoryReviewedAt": "2026-07-13"
     },
     {
       "id": "scaleai",
@@ -42,13 +39,9 @@
       "type": "greenhouse",
       "apiUrl": "https://boards-api.greenhouse.io/v1/boards/scaleai/jobs?content=true",
       "officialBoardUrl": "https://job-boards.greenhouse.io/scaleai",
-      "allowedApplyHosts": [
-        "job-boards.greenhouse.io",
-        "boards.greenhouse.io",
-        "scale.com"
-      ],
+      "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","scale.com"],
       "visaHistory": "not-independently-verified",
-      "visaHistoryReviewedAt": "2026-07-12"
+      "visaHistoryReviewedAt": "2026-07-13"
     },
     {
       "id": "figma",
@@ -56,13 +49,9 @@
       "type": "greenhouse",
       "apiUrl": "https://boards-api.greenhouse.io/v1/boards/figma/jobs?content=true",
       "officialBoardUrl": "https://job-boards.greenhouse.io/figma",
-      "allowedApplyHosts": [
-        "job-boards.greenhouse.io",
-        "boards.greenhouse.io",
-        "figma.com"
-      ],
+      "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","figma.com"],
       "visaHistory": "not-independently-verified",
-      "visaHistoryReviewedAt": "2026-07-12"
+      "visaHistoryReviewedAt": "2026-07-13"
     },
     {
       "id": "airtable",
@@ -70,13 +59,9 @@
       "type": "greenhouse",
       "apiUrl": "https://boards-api.greenhouse.io/v1/boards/airtable/jobs?content=true",
       "officialBoardUrl": "https://job-boards.greenhouse.io/airtable",
-      "allowedApplyHosts": [
-        "job-boards.greenhouse.io",
-        "boards.greenhouse.io",
-        "airtable.com"
-      ],
+      "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","airtable.com"],
       "visaHistory": "not-independently-verified",
-      "visaHistoryReviewedAt": "2026-07-12"
+      "visaHistoryReviewedAt": "2026-07-13"
     },
     {
       "id": "robinhood",
@@ -84,13 +69,9 @@
       "type": "greenhouse",
       "apiUrl": "https://boards-api.greenhouse.io/v1/boards/robinhood/jobs?content=true",
       "officialBoardUrl": "https://job-boards.greenhouse.io/robinhood",
-      "allowedApplyHosts": [
-        "job-boards.greenhouse.io",
-        "boards.greenhouse.io",
-        "robinhood.com"
-      ],
+      "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","robinhood.com"],
       "visaHistory": "not-independently-verified",
-      "visaHistoryReviewedAt": "2026-07-12"
+      "visaHistoryReviewedAt": "2026-07-13"
     },
     {
       "id": "pinterest",
@@ -98,14 +79,9 @@
       "type": "greenhouse",
       "apiUrl": "https://boards-api.greenhouse.io/v1/boards/pinterest/jobs?content=true",
       "officialBoardUrl": "https://job-boards.greenhouse.io/pinterest",
-      "allowedApplyHosts": [
-        "job-boards.greenhouse.io",
-        "boards.greenhouse.io",
-        "pinterest.com",
-        "pinterestcareers.com"
-      ],
+      "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","pinterest.com","pinterestcareers.com"],
       "visaHistory": "not-independently-verified",
-      "visaHistoryReviewedAt": "2026-07-12"
+      "visaHistoryReviewedAt": "2026-07-13"
     },
     {
       "id": "elastic",
@@ -113,13 +89,9 @@
       "type": "greenhouse",
       "apiUrl": "https://boards-api.greenhouse.io/v1/boards/elastic/jobs?content=true",
       "officialBoardUrl": "https://job-boards.greenhouse.io/elastic",
-      "allowedApplyHosts": [
-        "job-boards.greenhouse.io",
-        "boards.greenhouse.io",
-        "elastic.co"
-      ],
+      "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","elastic.co"],
       "visaHistory": "not-independently-verified",
-      "visaHistoryReviewedAt": "2026-07-12"
+      "visaHistoryReviewedAt": "2026-07-13"
     }
   ],
   "jobTrackingApiBaseUrl": "https://sharecapsule-reactions.subhafash-86.workers.dev",
