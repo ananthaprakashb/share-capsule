@@ -2239,7 +2239,7 @@
       "type": "Music release",
       "category": "Tamil Music",
       "language": "Tamil",
-      "description": "A Tamil music release by தமிழாலே.",
+      "description": "A Tamil music release by தமிழாலே, available on Spotify, Apple Music and YouTube.",
       "coverImage": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/09/fb/c1/09fbc147-5d7b-0ecb-2020-89709acfcdaa/artwork.jpg/1200x1200bb.jpg",
       "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
       "coverEyebrow": "Tamil release",
@@ -2253,12 +2253,12 @@
         {
           "label": "Spotify",
           "icon": "●",
-          "url": "https://open.spotify.com/track/45MrTRKwqBKTJm2IAWF2yz"
+          "url": "https://open.spotify.com/track/45MrTRKwqBKTJm2IAWF2yz?si=cb330717c60747ef"
         },
         {
           "label": "Apple Music",
           "icon": "♫",
-          "url": "https://music.apple.com/us/album/%E0%AE%95%E0%AE%A9-%E0%AE%A4%E0%AE%B0-%E0%AE%9A-%E0%AE%B1-%E0%AE%AE%E0%AE%B0%E0%AE%AE/1809722387?i=1809722388&uo=4"
+          "url": "https://music.apple.com/fr/album/%E0%AE%95%E0%AE%A9-%E0%AE%A4%E0%AE%B0-%E0%AE%9A-%E0%AE%B1-%E0%AE%AE%E0%AE%B0%E0%AE%AE-ep/1809722387"
         },
         {
           "label": "Amazon Music",
@@ -2269,6 +2269,11 @@
           "label": "YouTube",
           "icon": "▶",
           "url": "https://www.youtube.com/watch?v=zjJmSyHkO9c"
+        },
+        {
+          "label": "YouTube official",
+          "icon": "▶",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kpF5G8qtX6v6sX0pHmObY-iQYlg1h5hvg"
         },
         {
           "label": "YouTube Music",
@@ -2300,9 +2305,10 @@
       },
       "primaryPlayer": {
         "provider": "spotify",
-        "url": "https://open.spotify.com/track/45MrTRKwqBKTJm2IAWF2yz"
+        "url": "https://open.spotify.com/track/45MrTRKwqBKTJm2IAWF2yz?si=cb330717c60747ef"
       },
-      "publishedAt": "2025-04-20"
+      "publishedAt": "2025-04-20",
+      "featured": true
     },
     {
       "slug": "youtube-sp-brnxpzbm",
@@ -3332,6 +3338,73 @@
         "provider": "youtube",
         "url": "https://www.youtube.com/watch?v=A3QYfySjVUU"
       }
+    },
+    {
+      "slug": "suvasa-kaathu",
+      "title": "சுவாசக் காத்து (Suvasa Kaathu)",
+      "artist": "தமிழாலே",
+      "type": "Music release",
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "description": "A Tamil music single by தமிழாலே, available on Spotify, Apple Music and YouTube.",
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#2b5876,#4e4376)",
+      "coverEyebrow": "Tamil release",
+      "coverLines": [
+        "சுவாசக் காத்து",
+        "Suvasa Kaathu"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Spotify",
+          "icon": "●",
+          "url": "https://open.spotify.com/album/5m23u5kdndz2ovRV4zIHPr"
+        },
+        {
+          "label": "Apple Music",
+          "icon": "♫",
+          "url": "https://music.apple.com/us/album/%E0%AE%9A-%E0%AE%B5-%E0%AE%9A%E0%AE%95-%E0%AE%95-%E0%AE%A4-%E0%AE%A4-suvasa-kaathu-single/1846962693"
+        },
+        {
+          "label": "Amazon Music search",
+          "icon": "a",
+          "url": "https://music.amazon.com/search/%E0%AE%9A%E0%AF%81%E0%AE%B5%E0%AE%BE%E0%AE%9A%E0%AE%95%E0%AF%8D%20%E0%AE%95%E0%AE%BE%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AF%81%20%28Suvasa%20Kaathu%29%20%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AE%BE%E0%AE%B2%E0%AF%87"
+        },
+        {
+          "label": "YouTube official",
+          "icon": "▶",
+          "url": "https://www.youtube.com/playlist?list=OLAK5uy_kaAwXph_HSsoQTds7GIP5GBhy2Nlr9Bxs"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "💛",
+          "text": "Thought you might enjoy this Tamil release 🎧"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this Tamil song with the family ❤️"
+        },
+        "music": {
+          "label": "Music lover",
+          "icon": "🎵",
+          "text": "Found a Tamil track you may enjoy 🎵"
+        },
+        "special": {
+          "label": "Someone special",
+          "icon": "✨",
+          "text": "This made me think of you ❤️"
+        }
+      },
+      "primaryPlayer": {
+        "provider": "spotify",
+        "url": "https://open.spotify.com/album/5m23u5kdndz2ovRV4zIHPr"
+      },
+      "featured": true
     }
   ]
 }
