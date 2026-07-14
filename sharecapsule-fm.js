@@ -1,4 +1,12 @@
 (()=>{
+  const ENDPOINTS=[
+    {href:'/',label:'Releases'},
+    {href:'/audio/',label:'Audio'},
+    {href:'/jobs/',label:'Jobs'},
+    {href:'/law/',label:'Law'},
+    {href:'/parking/',label:'Parking'}
+  ];
+
   const installBrand=top=>{
     if(!document.querySelector('link[rel="icon"][data-sharecapsule]')){
       const icon=document.createElement('link');
@@ -15,14 +23,31 @@
     }
   };
 
+  const installEndpointNav=anchor=>{
+    if(!anchor||document.getElementById('sharecapsuleEndpoints'))return;
+    const normalize=value=>{const path=String(value||'/').replace(/\/+$/,'');return path||'/'};
+    const current=normalize(location.pathname);
+    const nav=document.createElement('nav');
+    nav.id='sharecapsuleEndpoints';
+    nav.className='endpointNav';
+    nav.setAttribute('aria-label','Explore Share Capsule sections');
+    nav.innerHTML=`<span class="endpointLabel">Explore</span>${ENDPOINTS.map(item=>{
+      const active=normalize(item.href)===current;
+      return `<a class="endpointLink${active?' active':''}" href="${item.href}"${active?' aria-current="page"':''}>${item.label}</a>`;
+    }).join('')}`;
+    anchor.insertAdjacentElement('afterend',nav);
+  };
+
   const mount=()=>{
     const top=document.querySelector('.top');
     if(!top)return false;
     installBrand(top);
-    if(document.getElementById('sharecapsuleFm'))return true;
+
+    const existing=document.getElementById('sharecapsuleFm');
+    if(existing){installEndpointNav(existing);return true}
 
     const style=document.createElement('style');
-    style.textContent='.brand{display:inline-flex!important;align-items:center;gap:10px}.brandLogo{width:36px;height:36px;display:block;flex:0 0 36px;border-radius:12px;box-shadow:0 6px 16px rgba(20,47,68,.18)}.fm{margin:0 0 20px;background:linear-gradient(135deg,#132f45,#244f68 58%,#8a5b20);color:#fff;border-radius:24px;padding:16px;box-shadow:0 16px 46px rgba(19,47,69,.2)}.fmTop{display:flex;align-items:center;gap:13px}.fmPlay{width:50px;height:50px;flex:0 0 50px;border:1px solid rgba(255,255,255,.55);border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:20px;font-weight:900}.fmInfo{min-width:0;flex:1}.fmName{font-size:11px;font-weight:950;letter-spacing:.14em;text-transform:uppercase;color:#cae7f6}.fmTitle{margin-top:4px;font-size:16px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.fmState{margin-top:3px;font-size:11px;color:rgba(255,255,255,.72)}.fmNext{border:1px solid rgba(255,255,255,.38);border-radius:999px;background:transparent;color:#fff;padding:9px 11px;font-size:11px;font-weight:900}.fmTrack{margin-top:13px;height:6px;background:rgba(255,255,255,.2);border-radius:99px;overflow:hidden;cursor:pointer}.fmFill{height:100%;width:0;background:#fff;border-radius:99px}.fmTimes{display:flex;justify-content:space-between;margin-top:6px;font-size:10px;color:rgba(255,255,255,.7)}.fmYouTube{position:absolute;width:1px;height:1px;overflow:hidden;opacity:.01;pointer-events:none}';
+    style.textContent='.brand{display:inline-flex!important;align-items:center;gap:10px}.brandLogo{width:36px;height:36px;display:block;flex:0 0 36px;border-radius:12px;box-shadow:0 6px 16px rgba(20,47,68,.18)}.fm{margin:0 0 20px;background:linear-gradient(135deg,#132f45,#244f68 58%,#8a5b20);color:#fff;border-radius:24px;padding:16px;box-shadow:0 16px 46px rgba(19,47,69,.2)}.fmTop{display:flex;align-items:center;gap:13px}.fmPlay{width:50px;height:50px;flex:0 0 50px;border:1px solid rgba(255,255,255,.55);border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:20px;font-weight:900}.fmInfo{min-width:0;flex:1}.fmName{font-size:11px;font-weight:950;letter-spacing:.14em;text-transform:uppercase;color:#cae7f6}.fmTitle{margin-top:4px;font-size:16px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.fmState{margin-top:3px;font-size:11px;color:rgba(255,255,255,.72)}.fmNext{border:1px solid rgba(255,255,255,.38);border-radius:999px;background:transparent;color:#fff;padding:9px 11px;font-size:11px;font-weight:900}.fmTrack{margin-top:13px;height:6px;background:rgba(255,255,255,.2);border-radius:99px;overflow:hidden;cursor:pointer}.fmFill{height:100%;width:0;background:#fff;border-radius:99px}.fmTimes{display:flex;justify-content:space-between;margin-top:6px;font-size:10px;color:rgba(255,255,255,.7)}.fmYouTube{position:absolute;width:1px;height:1px;overflow:hidden;opacity:.01;pointer-events:none}.endpointNav{margin:-8px 0 22px;display:flex;align-items:center;gap:8px;overflow-x:auto;padding:2px 2px 5px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.endpointNav::-webkit-scrollbar{display:none}.endpointLabel{flex:0 0 auto;margin-right:2px;color:#77716a;font-size:10px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.endpointLink{flex:0 0 auto;white-space:nowrap;text-decoration:none;color:#403c37;background:rgba(255,255,255,.78);border:1px solid #e2dbd1;border-radius:999px;padding:9px 13px;font-size:12px;font-weight:850;box-shadow:0 5px 18px rgba(50,40,28,.05)}.endpointLink:hover{border-color:#9a9186}.endpointLink.active{background:#171717;color:#fff;border-color:#171717}';
     document.head.appendChild(style);
 
     const root=document.createElement('section');
@@ -31,6 +56,7 @@
     root.setAttribute('aria-label','ShareCapsule FM');
     root.innerHTML='<div class="fmTop"><button class="fmPlay" id="fmPlay" type="button" aria-label="Play ShareCapsule FM">▶</button><div class="fmInfo"><div class="fmName">ShareCapsule FM</div><div class="fmTitle" id="fmTitle">Building a mixed queue…</div><div class="fmState" id="fmState">Loading audio articles, songs and local news</div></div><button class="fmNext" id="fmNext" type="button">Next</button></div><div class="fmTrack" id="fmTrack"><div class="fmFill" id="fmFill"></div></div><div class="fmTimes"><span id="fmCurrent">0:00</span><span id="fmDuration">0:00</span></div><audio id="fmAudio" preload="metadata"></audio><div class="fmYouTube" id="fmYouTube"></div>';
     top.insertAdjacentElement('afterend',root);
+    installEndpointNav(root);
 
     const $=id=>document.getElementById(id);
     const audio=$('fmAudio'),play=$('fmPlay'),next=$('fmNext'),title=$('fmTitle'),status=$('fmState'),fill=$('fmFill'),track=$('fmTrack'),current=$('fmCurrent'),duration=$('fmDuration');
