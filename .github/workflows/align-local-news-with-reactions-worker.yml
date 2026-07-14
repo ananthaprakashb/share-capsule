@@ -1,0 +1,62 @@
+name: Align local news with reactions Worker
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/align-local-news-with-reactions-worker.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Patch Worker and FM routing
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          worker = Path('workers/reactions/src/index.js')
+          text = worker.read_text()
+          import_line = 'import { getLocalNews } from "./local-news.js";\n\n'
+          if not text.startswith('import { getLocalNews }'):
+              text = import_line + text
+
+          anchor = '    const pathname = url.pathname;\n'
+          route = '''    const pathname = url.pathname;\n    if (request.method === "GET" && (pathname === "/api/local-news" || pathname === "/api/local-news/")) {\n      const result = await getLocalNews(request);\n      return json(request, result.body, result.status);\n    }\n'''
+          if '/api/local-news' not in text:
+              if anchor not in text:
+                  raise SystemExit('Worker pathname anchor not found')
+              text = text.replace(anchor, route, 1)
+          worker.write_text(text)
+
+          fm = Path('sharecapsule-fm.js')
+          fm_text = fm.read_text()
+          fm_text = fm_text.replace("fetch('/api/local-news',{cache:'no-store'})", "fetch('https://sharecapsule-reactions.subhafash-86.workers.dev/api/local-news',{cache:'no-store'})")
+          fm.write_text(fm_text)
+
+          for path in [
+              Path('wrangler.jsonc'),
+              Path('worker/index.js'),
+              Path('functions/api/local-news.js'),
+              Path('.assetsignore'),
+          ]:
+              if path.exists():
+                  path.unlink()
+          PY
+      - name: Commit corrected Worker architecture
+        run: |
+          rm .github/workflows/align-local-news-with-reactions-worker.yml
+          git config user.name share-capsule-bot
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -A
+          git commit -m "Route local news through existing reactions Worker"
+          git push
