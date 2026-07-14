@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="Find nearby parking locations and published price details using your current location.">
+  <title>Nearby Parking — Share Capsule</title>
+  <style>
+    :root{--bg:#f4f1eb;--ink:#171717;--muted:#6f6a63;--green:#168b55;--line:#e7e0d6;--warn:#9a5b00;--shadow:0 18px 60px rgba(50,40,28,.10)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 10% 0,#fff 0,transparent 32%),var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}button,input,select,a{font:inherit}.shell{width:min(100%,780px);margin:auto;padding:max(16px,env(safe-area-inset-top)) 16px calc(48px + env(safe-area-inset-bottom))}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:4px 2px 18px}.brand{font-weight:900;font-size:20px;letter-spacing:-.045em;color:var(--ink);text-decoration:none}.home{border:1px solid var(--line);border-radius:999px;background:#fff;padding:10px 14px;color:var(--ink);text-decoration:none;font-weight:800}.hero{padding:22px 4px 18px}.hero h1{margin:0;font-size:clamp(38px,10vw,66px);line-height:.95;letter-spacing:-.065em}.hero p{margin:14px 0 0;color:var(--muted);font-size:16px;line-height:1.55}.panel{background:rgba(255,255,255,.92);border:1px solid rgba(255,255,255,.9);border-radius:28px;padding:18px;box-shadow:var(--shadow)}.controls{display:grid;grid-template-columns:1fr;gap:12px}.field label{display:block;font-size:12px;font-weight:850;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 7px}.field select{width:100%;height:50px;border:1px solid var(--line);border-radius:16px;background:#fff;padding:0 14px;color:var(--ink)}.locate{height:56px;border:0;border-radius:17px;background:var(--green);color:#fff;font-weight:900;font-size:16px;box-shadow:0 12px 28px rgba(22,139,85,.24)}.locate:disabled{opacity:.58;cursor:wait}.status{margin:14px 2px 0;color:var(--muted);font-size:13px;line-height:1.45}.status.error{color:#a02d2d}.status.warn{color:var(--warn)}.summary{display:flex;justify-content:space-between;align-items:end;gap:14px;margin:25px 4px 12px}.summary h2{margin:0;font-size:25px;letter-spacing:-.045em}.summary span{color:var(--muted);font-size:13px;font-weight:750}.grid{display:grid;grid-template-columns:1fr;gap:13px}.card{background:rgba(255,255,255,.92);border:1px solid rgba(255,255,255,.95);border-radius:23px;padding:17px;box-shadow:0 12px 38px rgba(50,40,28,.07)}.cardTop{display:flex;justify-content:space-between;gap:13px}.card h3{margin:0;font-size:20px;letter-spacing:-.035em}.distance{white-space:nowrap;background:#efebe4;border-radius:999px;padding:7px 10px;font-size:12px;font-weight:850;height:max-content}.meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}.tag{background:#f4f1eb;border:1px solid var(--line);border-radius:999px;padding:6px 9px;font-size:12px;color:var(--muted);font-weight:760}.price{margin:14px 0 0;font-size:17px;font-weight:900}.detail{margin:6px 0 0;color:var(--muted);font-size:13px;line-height:1.45}.actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:15px}.action{min-height:45px;display:grid;place-items:center;text-decoration:none;border-radius:14px;font-weight:850;font-size:13px}.directions{background:#171717;color:#fff}.rates{background:#ece8e1;color:#171717}.empty{padding:28px;text-align:center;background:#fff;border-radius:24px;color:var(--muted)}.notice{margin-top:18px;padding:15px 17px;border:1px solid var(--line);border-radius:18px;color:var(--muted);font-size:12px;line-height:1.5;background:rgba(255,255,255,.65)}@media(min-width:680px){.controls{grid-template-columns:180px 1fr;align-items:end}.grid{grid-template-columns:1fr 1fr}.locate{height:50px}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="top"><a class="brand" href="/">Share Capsule</a><a class="home" href="/">Home</a></div>
+    <section class="hero">
+      <h1>Nearby<br>parking</h1>
+      <p>Approve location access to find public parking lots and garages near you, including published fee details when available.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="parking-search-title">
+      <div class="controls">
+        <div class="field">
+          <label for="radius">Search radius</label>
+          <select id="radius">
+            <option value="800">0.5 mile</option>
+            <option value="1600" selected>1 mile</option>
+            <option value="3200">2 miles</option>
+            <option value="8000">5 miles</option>
+          </select>
+        </div>
+        <button class="locate" id="locate">Use my location & find parking</button>
+      </div>
+      <p class="status" id="status">Your coordinates are used only for this search and are not stored by Share Capsule.</p>
+    </section>
+
+    <div class="summary" id="summary" hidden><h2>Parking near you</h2><span id="count"></span></div>
+    <section class="grid" id="results" aria-live="polite"></section>
+
+    <aside class="notice">
+      Parking locations come from OpenStreetMap community data. “Available” means a nearby parking facility is listed; it does not mean a live space is vacant. Prices, hours and access rules can change. Confirm signs and the booking provider before parking.
+    </aside>
+  </main>
+
+  <script>
+    const locateButton=document.getElementById('locate');
+    const radiusSelect=document.getElementById('radius');
+    const statusEl=document.getElementById('status');
+    const resultsEl=document.getElementById('results');
+    const summaryEl=document.getElementById('summary');
+    const countEl=document.getElementById('count');
+
+    const esc=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+    const miles=meters=>meters/1609.344;
+    const distance=(lat1,lon1,lat2,lon2)=>{const r=6371000,toRad=n=>n*Math.PI/180;const dLat=toRad(lat2-lat1),dLon=toRad(lon2-lon1);const a=Math.sin(dLat/2)**2+Math.cos(toRad(lat1))*Math.cos(toRad(lat2))*Math.sin(dLon/2)**2;return 2*r*Math.asin(Math.sqrt(a))};
+    const centerOf=element=>element.type==='node'?{lat:element.lat,lon:element.lon}:element.center;
+    const titleFor=(tags,index)=>tags.name||tags.operator||`${tags.parking==='garage'?'Parking garage':'Parking lot'} ${index+1}`;
+    const formatAccess=access=>({yes:'Public',public:'Public',customers:'Customers',private:'Private',permit:'Permit only',residents:'Residents'}[access]||access||'Access not listed');
+    const formatParking=type=>({garage:'Garage',surface:'Surface lot',underground:'Underground',multi_storey:'Multi-storey',street_side:'Street-side',lane:'Street parking'}[type]||'Parking');
+    function priceFor(tags){
+      const charge=tags.charge||tags['charge:conditional']||tags['parking:fee'];
+      if(charge)return{headline:charge,detail:'Published parking charge'};
+      if(tags.fee==='no')return{headline:'Free',detail:'Marked as no-fee in map data'};
+      if(tags.fee==='yes')return{headline:'Paid parking',detail:'Exact rate is not published in map data'};
+      return{headline:'Price not published',detail:'Check signs or a live booking provider'};
+    }
+    function bookingUrl(lat,lon,name){const query=encodeURIComponent(`${name} near ${lat},${lon}`);return `https://www.google.com/search?q=${query}+parking+price`}
+    function directionsUrl(lat,lon){return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${lat},${lon}`)}`}
+    function card(item,index,origin){
+      const tags=item.tags||{},point=centerOf(item);if(!point)return'';
+      const meters=distance(origin.lat,origin.lon,point.lat,point.lon),price=priceFor(tags),name=titleFor(tags,index);
+      const capacity=tags.capacity?`${tags.capacity} spaces`:null;
+      const opening=tags.opening_hours||null;
+      return `<article class="card"><div class="cardTop"><div><h3>${esc(name)}</h3><div class="meta"><span class="tag">${esc(formatParking(tags.parking))}</span><span class="tag">${esc(formatAccess(tags.access))}</span>${capacity?`<span class="tag">${esc(capacity)}</span>`:''}</div></div><span class="distance">${miles(meters)<0.1?`${Math.round(meters)} m`:`${miles(meters).toFixed(1)} mi`}</span></div><p class="price">${esc(price.headline)}</p><p class="detail">${esc(price.detail)}${opening?` · Hours: ${esc(opening)}`:''}</p><div class="actions"><a class="action directions" target="_blank" rel="noopener" href="${directionsUrl(point.lat,point.lon)}">Directions</a><a class="action rates" target="_blank" rel="noopener" href="${bookingUrl(point.lat,point.lon,name)}">Check live rates</a></div></article>`;
+    }
+    async function fetchParking(lat,lon,radius){
+      const query=`[out:json][timeout:25];(node[amenity=parking](around:${radius},${lat},${lon});way[amenity=parking](around:${radius},${lat},${lon});relation[amenity=parking](around:${radius},${lat},${lon}););out center tags;`;
+      const response=await fetch('https://overpass-api.de/api/interpreter',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body:`data=${encodeURIComponent(query)}`});
+      if(!response.ok)throw new Error(`Parking data service returned ${response.status}`);
+      const data=await response.json();
+      return (data.elements||[]).filter(item=>centerOf(item)).sort((a,b)=>{const ap=centerOf(a),bp=centerOf(b);return distance(lat,lon,ap.lat,ap.lon)-distance(lat,lon,bp.lat,bp.lon)}).slice(0,30);
+    }
+    function getPosition(){return new Promise((resolve,reject)=>navigator.geolocation.getCurrentPosition(resolve,reject,{enableHighAccuracy:true,timeout:12000,maximumAge:60000}))}
+    async function search(){
+      if(!navigator.geolocation){statusEl.className='status error';statusEl.textContent='This browser does not support location access.';return}
+      locateButton.disabled=true;locateButton.textContent='Requesting location…';statusEl.className='status';statusEl.textContent='Approve the browser location prompt to continue.';resultsEl.innerHTML='';summaryEl.hidden=true;
+      try{
+        const position=await getPosition(),lat=position.coords.latitude,lon=position.coords.longitude,radius=Number(radiusSelect.value);
+        locateButton.textContent='Finding parking…';statusEl.textContent=`Searching within ${radiusSelect.options[radiusSelect.selectedIndex].text}…`;
+        const items=await fetchParking(lat,lon,radius);
+        summaryEl.hidden=false;countEl.textContent=`${items.length} location${items.length===1?'':'s'}`;
+        resultsEl.innerHTML=items.length?items.map((item,index)=>card(item,index,{lat,lon})).join(''):'<div class="empty">No mapped parking facilities were found in this radius. Try a wider search.</div>';
+        statusEl.className='status warn';statusEl.textContent='Results are sorted by distance. Pricing is shown only when the map record publishes it.';
+      }catch(error){
+        const denied=error&&error.code===1;
+        statusEl.className='status error';statusEl.textContent=denied?'Location access was denied. Enable location permission for this site and try again.':`Could not load nearby parking. ${error.message||'Please try again.'}`;
+      }finally{locateButton.disabled=false;locateButton.textContent='Use my location & find parking'}
+    }
+    locateButton.addEventListener('click',search);
+  </script>
+</body>
+</html>
