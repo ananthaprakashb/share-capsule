@@ -107,23 +107,20 @@ An invalid-job button hides the role locally and opens a prefilled GitHub issue.
 
 ## Fact-check endpoint
 
-`/factcheck/` accepts a claim, headline, forwarded message, or image description and returns one of four verdicts at the top: `[TRUE]`, `[FALSE]`, `[MISLEADING]`, or `[UNVERIFIED]`.
+`https://sharecapsule.app/factcheck/` embeds Google Fact Check Explorer so visitors can search published fact checks from independent organizations without Share Capsule running a paid AI or search API.
 
-The fact-check flow:
+The page:
 
-- calls `POST /api/factcheck` with the user-provided claim or image description
-- requires a live web search before a verdict is returned
-- prioritizes Reuters Fact Check, AP Fact Check, Snopes, PolitiFact, FactCheck.org, AFP Fact Check and Full Fact when relevant
-- looks for the original source and date to detect outdated or out-of-context material
-- returns a short neutral explanation and clickable evidence links
-- keeps the `OPENAI_API_KEY` on the server and never exposes it to browser JavaScript
+- loads Google Fact Check Explorer inside the Share Capsule fact-check section
+- provides a direct "Open Fact Check Explorer" link when the embedded view is blocked or does not render correctly
+- does not require an OpenAI API key, Google Fact Check API key, or paid backend request
+- clearly states that ratings and evidence come from the original fact-check publishers
 
-Files:
+File:
 
-- `factcheck/index.html` — mobile-first fact-check interface
-- `functions/api/factcheck.js` — server-side `POST /api/factcheck` function using the OpenAI Responses API with the web-search tool
+- `factcheck/index.html` — mobile-first embedded Fact Check Explorer interface with an external fallback link
 
-The server function is written as a Cloudflare Pages Function. Set the server-side secret `OPENAI_API_KEY`; optionally set `OPENAI_MODEL` to override the default `gpt-5.5` model. The current GitHub Pages host can serve the static `/factcheck/` page but cannot execute `/api/factcheck`, so production must run this repository on Cloudflare Pages or route `/api/factcheck` to an equivalent server-side deployment before the checker will work end to end.
+Because embedding is controlled by the external provider, Google may block or change iframe behavior. The direct-open fallback must remain available.
 
 ## Current architecture
 
@@ -131,6 +128,6 @@ Most of the site intentionally stays static and inexpensive:
 
 `GitHub Pages + JSON data + browser JavaScript`
 
-The fact-check feature is the exception because web-search API credentials must remain server-side. Its frontend remains static, while `functions/api/factcheck.js` runs on a functions-capable host.
+Separate Cloudflare Workers are used only for features that require server-side state or processing, such as shared reactions and job-verdict tracking.
 
 A future build step can generate permanent static URLs such as `/release/my-new-audio/` for unique social-preview metadata on WhatsApp and other platforms. A small serverless database can later add shared job-validation vote totals without changing the public jobs URL.

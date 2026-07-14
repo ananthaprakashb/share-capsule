@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#111111">
-  <meta name="description" content="Check a claim or image description against current web evidence and trusted fact-checking sources.">
+  <meta name="description" content="Search published fact checks with Google Fact Check Explorer from Share Capsule.">
   <title>Fact Check — Share Capsule</title>
   <style>
-    :root{--bg:#f4f1eb;--ink:#171717;--muted:#6f6a63;--line:#e7e0d6;--card:#fff;--shadow:0 18px 60px rgba(50,40,28,.10);--true:#16784a;--false:#b33131;--misleading:#9a5b00;--unverified:#59616d}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 10% 0,#fff 0,transparent 32%),var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}button,textarea,a{font:inherit}.shell{width:min(100%,820px);margin:auto;padding:max(16px,env(safe-area-inset-top)) 16px calc(52px + env(safe-area-inset-bottom))}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:4px 2px 18px}.brand{font-weight:900;font-size:20px;letter-spacing:-.045em;color:var(--ink);text-decoration:none}.home{border:1px solid var(--line);border-radius:999px;background:#fff;padding:10px 14px;color:var(--ink);text-decoration:none;font-weight:800}.hero{padding:22px 4px 18px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.13em;font-weight:900;color:var(--muted);margin-bottom:12px}.hero h1{margin:0;font-size:clamp(42px,11vw,72px);line-height:.92;letter-spacing:-.07em}.hero p{margin:16px 0 0;color:var(--muted);font-size:16px;line-height:1.58;max-width:680px}.panel{background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.95);border-radius:28px;padding:18px;box-shadow:var(--shadow)}label{display:block;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 8px}.claim{width:100%;min-height:170px;resize:vertical;border:1px solid var(--line);border-radius:18px;background:#fff;padding:15px 16px;color:var(--ink);font-size:16px;line-height:1.5;outline:none}.claim:focus{border-color:#9a948b;box-shadow:0 0 0 4px rgba(23,23,23,.06)}.actions{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:12px}.hint{color:var(--muted);font-size:12px;line-height:1.45;max-width:450px}.check{border:0;border-radius:16px;background:#171717;color:#fff;font-weight:900;padding:14px 20px;min-width:150px;cursor:pointer;box-shadow:0 12px 30px rgba(23,23,23,.18)}.check:disabled{opacity:.55;cursor:wait}.status{margin:14px 2px 0;color:var(--muted);font-size:13px;line-height:1.45}.status.error{color:var(--false)}.result{margin-top:20px;background:rgba(255,255,255,.95);border:1px solid rgba(255,255,255,.98);border-radius:28px;padding:20px;box-shadow:var(--shadow)}.verdict{display:inline-flex;align-items:center;border-radius:999px;padding:9px 13px;font-size:13px;font-weight:950;letter-spacing:.05em}.verdict.TRUE{background:#e8f5ee;color:var(--true)}.verdict.FALSE{background:#faeaea;color:var(--false)}.verdict.MISLEADING{background:#fff2dc;color:var(--misleading)}.verdict.UNVERIFIED{background:#eceff3;color:var(--unverified)}.explanation{font-size:18px;line-height:1.6;margin:17px 0 0;white-space:pre-wrap}.meta{margin-top:13px;color:var(--muted);font-size:12px}.sourcesWrap{margin-top:25px}.sourcesWrap h2{font-size:18px;letter-spacing:-.03em;margin:0 0 10px}.sources{display:grid;grid-template-columns:1fr;gap:10px}.source{display:block;text-decoration:none;color:var(--ink);background:#f7f4ef;border:1px solid var(--line);border-radius:17px;padding:13px 14px}.source strong{display:block;font-size:14px;line-height:1.35}.source span{display:block;margin-top:5px;color:var(--muted);font-size:12px;overflow-wrap:anywhere}.badge{display:inline-block;margin-left:6px;border-radius:999px;padding:2px 7px;background:#e8f5ee;color:var(--true);font-size:10px;font-weight:900;vertical-align:1px}.notice{margin-top:18px;padding:15px 17px;border:1px solid var(--line);border-radius:18px;color:var(--muted);font-size:12px;line-height:1.55;background:rgba(255,255,255,.65)}@media(min-width:680px){.panel,.result{padding:22px}.sources{grid-template-columns:1fr 1fr}}
+    :root{--bg:#f4f1eb;--ink:#171717;--muted:#6f6a63;--line:#e7e0d6;--shadow:0 18px 60px rgba(50,40,28,.10)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 10% 0,#fff 0,transparent 32%),var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}a{font:inherit}.shell{width:min(100%,1100px);margin:auto;padding:max(16px,env(safe-area-inset-top)) 16px calc(52px + env(safe-area-inset-bottom))}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:4px 2px 18px}.brand{font-weight:900;font-size:20px;letter-spacing:-.045em;color:var(--ink);text-decoration:none}.home{border:1px solid var(--line);border-radius:999px;background:#fff;padding:10px 14px;color:var(--ink);text-decoration:none;font-weight:800}.hero{padding:22px 4px 18px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.13em;font-weight:900;color:var(--muted);margin-bottom:12px}.hero h1{margin:0;font-size:clamp(42px,11vw,72px);line-height:.92;letter-spacing:-.07em}.hero p{margin:16px 0 0;color:var(--muted);font-size:16px;line-height:1.58;max-width:760px}.panel{background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.95);border-radius:28px;padding:14px;box-shadow:var(--shadow)}.frameWrap{position:relative;min-height:720px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff}.explorer{display:block;width:100%;height:78vh;min-height:720px;border:0;background:#fff}.fallback{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:14px;padding:14px 16px;border:1px solid var(--line);border-radius:18px;background:#f7f4ef}.fallback p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}.open{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:11px 15px;border-radius:14px;background:#171717;color:#fff;text-decoration:none;font-weight:900;font-size:13px}.notice{margin-top:18px;padding:15px 17px;border:1px solid var(--line);border-radius:18px;color:var(--muted);font-size:12px;line-height:1.55;background:rgba(255,255,255,.65)}@media(max-width:640px){.panel{padding:8px;border-radius:22px}.frameWrap,.explorer{min-height:680px}.explorer{height:76vh}.fallback{margin:10px 2px 2px}.open{width:100%}}
   </style>
 </head>
 <body>
@@ -18,121 +18,30 @@
     <section class="hero">
       <div class="eyebrow">Evidence before sharing</div>
       <h1>Fact<br>check</h1>
-      <p>Paste a claim, headline, forwarded message, or a description of an image. The checker searches current web evidence, prioritizes trusted fact-checking organizations, and looks for the original source or date before giving a verdict.</p>
+      <p>Search published fact checks from independent organizations using Google Fact Check Explorer. Search results and ratings are provided by the original fact-check publishers.</p>
     </section>
 
-    <section class="panel" aria-labelledby="factcheck-title">
-      <label id="factcheck-title" for="claim">Claim or image description</label>
-      <textarea class="claim" id="claim" maxlength="5000" placeholder="Example: This image shows a major event that happened this week..." spellcheck="true"></textarea>
-      <div class="actions">
-        <div class="hint">Be specific. Include names, dates, locations, and the wording shown in an image when available.</div>
-        <button class="check" id="check">Check the claim</button>
+    <section class="panel" aria-label="Google Fact Check Explorer">
+      <div class="frameWrap">
+        <iframe
+          class="explorer"
+          src="https://toolbox.google.com/factcheck/explorer"
+          title="Google Fact Check Explorer"
+          loading="eager"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="clipboard-write"
+        ></iframe>
       </div>
-      <p class="status" id="status" aria-live="polite">The result is based on web evidence available at the time of the check.</p>
-    </section>
 
-    <section class="result" id="result" hidden aria-live="polite">
-      <div class="verdict UNVERIFIED" id="verdict">[UNVERIFIED]</div>
-      <p class="explanation" id="explanation"></p>
-      <div class="meta" id="checkedAt"></div>
-      <div class="sourcesWrap" id="sourcesWrap" hidden>
-        <h2>Sources</h2>
-        <div class="sources" id="sources"></div>
+      <div class="fallback">
+        <p>If Google blocks the embedded view or it does not load correctly in your browser, open Fact Check Explorer directly.</p>
+        <a class="open" href="https://toolbox.google.com/factcheck/explorer" target="_blank" rel="noopener noreferrer">Open Fact Check Explorer</a>
       </div>
     </section>
 
     <aside class="notice">
-      This tool is designed to help cross-check public claims, not to replace professional investigation. A verdict can change when new evidence appears, and “unverified” means the available evidence was not strong enough to confirm or refute the claim.
+      Share Capsule does not create or modify the ratings shown in the embedded service. Always open the original fact-check article and review its evidence, publication date and context before sharing a conclusion.
     </aside>
   </main>
-
-  <script>
-    const FACTCHECK_API='https://sharecapsule-reactions.subhafash-86.workers.dev/api/factcheck';
-    const claimEl=document.getElementById('claim');
-    const checkButton=document.getElementById('check');
-    const statusEl=document.getElementById('status');
-    const resultEl=document.getElementById('result');
-    const verdictEl=document.getElementById('verdict');
-    const explanationEl=document.getElementById('explanation');
-    const checkedAtEl=document.getElementById('checkedAt');
-    const sourcesWrapEl=document.getElementById('sourcesWrap');
-    const sourcesEl=document.getElementById('sources');
-
-    function sourceCard(source){
-      const link=document.createElement('a');
-      link.className='source';
-      link.href=source.url;
-      link.target='_blank';
-      link.rel='noopener noreferrer';
-
-      const title=document.createElement('strong');
-      title.textContent=source.title||source.domain||'Source';
-      if(source.trustedFactChecker){
-        const badge=document.createElement('span');
-        badge.className='badge';
-        badge.textContent='Fact-checker';
-        title.appendChild(badge);
-      }
-
-      const domain=document.createElement('span');
-      domain.textContent=source.domain||source.url;
-      link.append(title,domain);
-      return link;
-    }
-
-    function render(data){
-      const verdict=['TRUE','FALSE','MISLEADING','UNVERIFIED'].includes(data.verdict)?data.verdict:'UNVERIFIED';
-      verdictEl.className=`verdict ${verdict}`;
-      verdictEl.textContent=`[${verdict}]`;
-      explanationEl.textContent=data.explanation||'The available evidence was not sufficient to produce a conclusion.';
-      checkedAtEl.textContent=data.checkedAt?`Checked ${new Date(data.checkedAt).toLocaleString()}`:'';
-
-      const sources=Array.isArray(data.sources)?data.sources.filter(source=>source&&source.url):[];
-      sourcesEl.replaceChildren(...sources.map(sourceCard));
-      sourcesWrapEl.hidden=!sources.length;
-      resultEl.hidden=false;
-      resultEl.scrollIntoView({behavior:'smooth',block:'start'});
-    }
-
-    async function checkClaim(){
-      const claim=claimEl.value.trim();
-      if(!claim){
-        statusEl.className='status error';
-        statusEl.textContent='Enter a claim or image description first.';
-        claimEl.focus();
-        return;
-      }
-
-      checkButton.disabled=true;
-      checkButton.textContent='Checking…';
-      statusEl.className='status';
-      statusEl.textContent='Searching current web evidence and cross-checking sources…';
-      resultEl.hidden=true;
-
-      try{
-        const response=await fetch(FACTCHECK_API,{
-          method:'POST',
-          headers:{'content-type':'application/json'},
-          body:JSON.stringify({claim})
-        });
-        const data=await response.json().catch(()=>({}));
-        if(!response.ok)throw new Error(data.error||`Fact-check service returned ${response.status}`);
-        render(data);
-        statusEl.className='status';
-        statusEl.textContent='Fact-check complete. Open the cited sources to review the evidence directly.';
-      }catch(error){
-        statusEl.className='status error';
-        statusEl.textContent=error.message||'The fact-check could not be completed. Please try again.';
-      }finally{
-        checkButton.disabled=false;
-        checkButton.textContent='Check the claim';
-      }
-    }
-
-    checkButton.addEventListener('click',checkClaim);
-    claimEl.addEventListener('keydown',event=>{
-      if((event.ctrlKey||event.metaKey)&&event.key==='Enter')checkClaim();
-    });
-  </script>
 </body>
 </html>
