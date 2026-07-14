@@ -16,7 +16,15 @@ const publicUrl = key => `${PUBLIC_BASE_URL}/${key.split('/').map(encodeURICompo
 const hasTamil = value => /[\u0B80-\u0BFF]/.test(value);
 const normalizeTitle = key => withoutExtension(key.split('/').pop()).replace(/[_-]+/g, ' ').replace(/\s+/g, ' ').trim();
 const asciiSlug = value => value.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-const stableId = (title, key) => asciiSlug(title) || `audio-${createHash('sha256').update(key).digest('hex').slice(0, 12)}`;
+const stableId = (title, key) => {
+  const slug = asciiSlug(title);
+  // Avoid IDs such as "37" when a mostly non-Latin title contains only a number.
+  // Reaction APIs require a safe slug with at least three characters, and a
+  // hash-backed ID remains stable even when the visible title is Tamil-only.
+  if (slug.length >= 3 && /[a-z]/.test(slug)) return slug;
+  const prefix = hasTamil(title) ? 'tamil-audio' : 'audio';
+  return `${prefix}-${createHash('sha256').update(key).digest('hex').slice(0, 12)}`;
+};
 const mimeType = key => extension(key) === '.mp3' ? 'audio/mpeg' : extension(key) === '.ogg' ? 'audio/ogg' : extension(key) === '.wav' ? 'audio/wav' : extension(key) === '.flac' ? 'audio/flac' : extension(key) === '.mp4' ? 'video/mp4' : 'audio/mp4';
 const coverLines = title => {
   const words = title.split(/\s+/).filter(Boolean);
