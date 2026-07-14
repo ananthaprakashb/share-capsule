@@ -1,0 +1,13 @@
+{
+  "name": "sharecapsule-reactions",
+  "main": "src/index.js",
+  "compatibility_date": "2026-07-14",
+  "keep_vars": true,
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "sharecapsule",
+      "database_id": "763af72d-bbee-4379-9070-50516d177f13"
+    }
+  ]
+}
