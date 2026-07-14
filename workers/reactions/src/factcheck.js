@@ -90,6 +90,83 @@ function extractResult(openAIResponse) {
   return { verdict, explanation, sources, searched };
 }
 
+async function readProviderError(response) {
+  const requestId = response.headers.get('x-request-id') || null;
+  let payload = null;
+
+  try {
+    payload = await response.json();
+  } catch {
+    // Some upstream failures are not JSON. Keep the user-facing message generic.
+  }
+
+  const providerError = payload?.error || {};
+  return {
+    status: response.status,
+    code: String(providerError.code || '').trim() || null,
+    type: String(providerError.type || '').trim() || null,
+    param: String(providerError.param || '').trim() || null,
+    message: String(providerError.message || '').trim() || null,
+    requestId
+  };
+}
+
+function providerErrorResponse(request, json, error, model) {
+  const details = {
+    providerStatus: error.status,
+    providerCode: error.code,
+    requestId: error.requestId
+  };
+
+  if (error.status === 401 || error.code === 'invalid_api_key') {
+    return json(request, {
+      error: 'OpenAI rejected the API key. Replace OPENAI_API_KEY in the sharecapsule-reactions Worker secrets, then redeploy the Worker.',
+      ...details
+    }, 502);
+  }
+
+  if (error.status === 403) {
+    return json(request, {
+      error: 'The OpenAI API project does not have permission for this request. Check the API key project permissions and model access.',
+      ...details
+    }, 502);
+  }
+
+  if (error.status === 429 && (error.code === 'insufficient_quota' || /quota|billing|credit/i.test(error.message || ''))) {
+    return json(request, {
+      error: 'The OpenAI API project has no available quota or billing capacity. Add API billing/credits or increase the project usage budget, then try again.',
+      ...details
+    }, 503);
+  }
+
+  if (error.status === 429) {
+    return json(request, {
+      error: 'The OpenAI API rate limit was reached. Please try again shortly.',
+      ...details
+    }, 429);
+  }
+
+  if (error.status === 404 || error.code === 'model_not_found') {
+    return json(request, {
+      error: `The configured OpenAI model "${model}" is not available to this API project. Remove the OPENAI_MODEL override to use gpt-5.5, or set a model that supports Responses API web search.`,
+      ...details
+    }, 502);
+  }
+
+  if (error.status === 400) {
+    const safeMessage = (error.message || 'OpenAI rejected the request.').slice(0, 350);
+    return json(request, {
+      error: `OpenAI rejected the fact-check request: ${safeMessage}`,
+      ...details
+    }, 502);
+  }
+
+  return json(request, {
+    error: 'The fact-check provider is temporarily unavailable. Please try again.',
+    ...details
+  }, 502);
+}
+
 export async function handleFactCheck(request, env, json) {
   if (!env.OPENAI_API_KEY) {
     return json(request, { error: 'Fact-check service is not configured. Add OPENAI_API_KEY to the sharecapsule-reactions Worker secrets.' }, 503);
@@ -106,6 +183,7 @@ export async function handleFactCheck(request, env, json) {
   if (!claim) return json(request, { error: 'Provide a claim or image description to fact-check.' }, 400);
   if (claim.length > 5000) return json(request, { error: 'The claim is too long. Keep it under 5,000 characters.' }, 413);
 
+  const model = String(env.OPENAI_MODEL || 'gpt-5.5').trim();
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 45000);
 
@@ -117,7 +195,7 @@ export async function handleFactCheck(request, env, json) {
         'content-type': 'application/json'
       },
       body: JSON.stringify({
-        model: env.OPENAI_MODEL || 'gpt-5.5',
+        model,
         instructions: SYSTEM_PROMPT,
         tools: [{ type: 'web_search', search_context_size: 'medium' }],
         tool_choice: 'auto',
@@ -129,9 +207,9 @@ export async function handleFactCheck(request, env, json) {
     });
 
     if (!openAIResponse.ok) {
-      const providerError = await openAIResponse.text();
-      console.error('OpenAI fact-check request failed', openAIResponse.status, providerError);
-      return json(request, { error: 'The fact-check provider is temporarily unavailable. Please try again.' }, 502);
+      const providerError = await readProviderError(openAIResponse);
+      console.error('OpenAI fact-check request failed', providerError);
+      return providerErrorResponse(request, json, providerError, model);
     }
 
     const providerData = await openAIResponse.json();
