@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-07-13",
+  "scope": "Broad U.S. technical and specialty-occupation role families relevant to skilled immigrants. Categories describe occupations, not nationality, and do not imply visa eligibility or sponsorship.",
+  "evidence": [
+    {
+      "label": "U.S. Bureau of Labor Statistics — Standard Occupational Classification",
+      "url": "https://www.bls.gov/soc/",
+      "note": "Used to align technical role families with nationally recognized occupation groups."
+    },
+    {
+      "label": "U.S. Department of Labor — OFLC disclosure data",
+      "url": "https://www.dol.gov/agencies/eta/foreign-labor/performance",
+      "note": "Used only as historical evidence that specialty-occupation filings span multiple technical fields; it is not proof that a current job sponsors visas."
+    }
+  ],
+  "categories": [
+    {"code":"software","label":"Software engineering"},
+    {"code":"frontend","label":"Frontend and web engineering"},
+    {"code":"mobile","label":"Mobile engineering"},
+    {"code":"java","label":"Java and JVM engineering"},
+    {"code":"ai-ml","label":"AI and machine learning"},
+    {"code":"data-engineering","label":"Data engineering"},
+    {"code":"data-science","label":"Data science and analytics"},
+    {"code":"cloud-sre","label":"Cloud, DevOps and SRE"},
+    {"code":"cybersecurity","label":"Cybersecurity"},
+    {"code":"network-systems","label":"Network and systems engineering"},
+    {"code":"database","label":"Database engineering"},
+    {"code":"qa-automation","label":"Quality and test automation"},
+    {"code":"product-program","label":"Technical product and program management"},
+    {"code":"solutions","label":"Solutions, sales and customer engineering"},
+    {"code":"hardware","label":"Hardware, semiconductor and embedded systems"},
+    {"code":"electrical","label":"Electrical and electronics engineering"},
+    {"code":"mechanical","label":"Mechanical, manufacturing and robotics"},
+    {"code":"civil","label":"Civil, structural and construction engineering"},
+    {"code":"biotech","label":"Biotechnology and life sciences"},
+    {"code":"health-tech","label":"Healthcare technology and clinical informatics"},
+    {"code":"quant-fintech","label":"Quantitative finance and fintech"},
+    {"code":"ux-design","label":"UX, product and technical design"},
+    {"code":"technical-writing","label":"Technical writing and developer education"}
+  ]
+}
