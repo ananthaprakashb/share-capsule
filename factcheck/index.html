@@ -47,6 +47,7 @@
   </main>
 
   <script>
+    const FACTCHECK_API='https://sharecapsule-reactions.subhafash-86.workers.dev/api/factcheck';
     const claimEl=document.getElementById('claim');
     const checkButton=document.getElementById('check');
     const statusEl=document.getElementById('status');
@@ -109,7 +110,7 @@
       resultEl.hidden=true;
 
       try{
-        const response=await fetch('/api/factcheck',{
+        const response=await fetch(FACTCHECK_API,{
           method:'POST',
           headers:{'content-type':'application/json'},
           body:JSON.stringify({claim})
