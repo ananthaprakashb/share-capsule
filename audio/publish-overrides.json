@@ -11,6 +11,18 @@
       "coverLines": ["ட்ரேடிங்கின்", "ஹோலி க்ரெயில்"],
       "coverBackground": "linear-gradient(145deg,#172554,#1d4ed8 55%,#f59e0b)",
       "forcePublish": true
+    },
+    "சரியான_முடிவெடுக்க_37_சதவீத_கணித_விதி.m4a": {
+      "id": "tamil-37-percent-decision-rule",
+      "title": "சரியான முடிவெடுக்க 37 சதவீத கணித விதி",
+      "creator": "Share Capsule",
+      "description": "சரியான முடிவெடுப்பதில் 37 சதவீத கணித விதி எவ்வாறு உதவுகிறது என்பதை விளக்கும் தமிழ் ஆடியோ கட்டுரை.",
+      "category": "Tamil Decision Making",
+      "language": "Tamil",
+      "coverEyebrow": "தமிழ் சிந்தனை ஆடியோ",
+      "coverLines": ["சரியான முடிவெடுக்க", "37 சதவீத கணித விதி"],
+      "coverBackground": "linear-gradient(145deg,#312e81,#0f766e 55%,#d97706)",
+      "forcePublish": true
     }
   }
 }
