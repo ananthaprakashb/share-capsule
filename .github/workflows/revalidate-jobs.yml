@@ -3,7 +3,7 @@ name: Refresh and validate jobs
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 10,11 * * *"
+    - cron: "0 9,10 * * *"
   push:
     paths:
       - "jobs/**"
@@ -25,7 +25,7 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: "24"
-      - name: Run only at 3 AM America/Los_Angeles
+      - name: Run only at 2 AM America/Los_Angeles
         id: local-time
         shell: bash
         run: |
@@ -34,7 +34,7 @@ jobs:
             exit 0
           fi
           HOUR=$(TZ=America/Los_Angeles date +%H)
-          if [ "$HOUR" = "03" ]; then echo "run=true" >> "$GITHUB_OUTPUT"; else echo "run=false" >> "$GITHUB_OUTPUT"; fi
+          if [ "$HOUR" = "02" ]; then echo "run=true" >> "$GITHUB_OUTPUT"; else echo "run=false" >> "$GITHUB_OUTPUT"; fi
       - name: Validate official feeds, role filters, links and duplicates
         if: steps.local-time.outputs.run == 'true'
         run: node jobs/validate-sources.mjs
