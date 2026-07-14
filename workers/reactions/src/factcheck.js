@@ -29,17 +29,6 @@ Return exactly this format:
 First line: one of [TRUE], [FALSE], [MISLEADING], or [UNVERIFIED].
 Then: a brief explanation of only 2-3 sentences. Mention the original date or context when it materially affects the verdict. Do not add a heading, source list, or raw URLs; citations will be rendered separately from the web-search evidence.`;
 
-function json(data, status = 200, extraHeaders = {}) {
-  return new Response(JSON.stringify(data), {
-    status,
-    headers: {
-      'content-type': 'application/json; charset=utf-8',
-      'cache-control': 'no-store',
-      ...extraHeaders
-    }
-  });
-}
-
 function normalizeHostname(url) {
   try {
     return new URL(url).hostname.toLowerCase().replace(/^www\./, '');
@@ -101,31 +90,21 @@ function extractResult(openAIResponse) {
   return { verdict, explanation, sources, searched };
 }
 
-export async function onRequestOptions() {
-  return new Response(null, {
-    status: 204,
-    headers: {
-      allow: 'POST, OPTIONS',
-      'cache-control': 'no-store'
-    }
-  });
-}
-
-export async function onRequestPost({ request, env }) {
+export async function handleFactCheck(request, env, json) {
   if (!env.OPENAI_API_KEY) {
-    return json({ error: 'Fact-check service is not configured. Set the OPENAI_API_KEY secret on the server.' }, 503);
+    return json(request, { error: 'Fact-check service is not configured. Add OPENAI_API_KEY to the sharecapsule-reactions Worker secrets.' }, 503);
   }
 
   let payload;
   try {
     payload = await request.json();
   } catch {
-    return json({ error: 'Request body must be valid JSON.' }, 400);
+    return json(request, { error: 'Request body must be valid JSON.' }, 400);
   }
 
   const claim = String(payload?.claim || '').trim();
-  if (!claim) return json({ error: 'Provide a claim or image description to fact-check.' }, 400);
-  if (claim.length > 5000) return json({ error: 'The claim is too long. Keep it under 5,000 characters.' }, 413);
+  if (!claim) return json(request, { error: 'Provide a claim or image description to fact-check.' }, 400);
+  if (claim.length > 5000) return json(request, { error: 'The claim is too long. Keep it under 5,000 characters.' }, 413);
 
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 45000);
@@ -152,7 +131,7 @@ export async function onRequestPost({ request, env }) {
     if (!openAIResponse.ok) {
       const providerError = await openAIResponse.text();
       console.error('OpenAI fact-check request failed', openAIResponse.status, providerError);
-      return json({ error: 'The fact-check provider is temporarily unavailable. Please try again.' }, 502);
+      return json(request, { error: 'The fact-check provider is temporarily unavailable. Please try again.' }, 502);
     }
 
     const providerData = await openAIResponse.json();
@@ -160,19 +139,19 @@ export async function onRequestPost({ request, env }) {
 
     if (!result.searched) {
       console.error('Fact-check response completed without a web search call');
-      return json({ error: 'The fact-check could not complete a required web search. Please try again.' }, 502);
+      return json(request, { error: 'The fact-check could not complete a required web search. Please try again.' }, 502);
     }
 
-    return json({
+    return json(request, {
       verdict: result.verdict,
       explanation: result.explanation,
       sources: result.sources,
       checkedAt: new Date().toISOString()
     });
   } catch (error) {
-    if (error?.name === 'AbortError') return json({ error: 'The fact-check timed out. Please try again.' }, 504);
+    if (error?.name === 'AbortError') return json(request, { error: 'The fact-check timed out. Please try again.' }, 504);
     console.error('Unexpected fact-check error', error);
-    return json({ error: 'The fact-check could not be completed. Please try again.' }, 500);
+    return json(request, { error: 'The fact-check could not be completed. Please try again.' }, 500);
   } finally {
     clearTimeout(timeout);
   }
