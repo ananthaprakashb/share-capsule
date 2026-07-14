@@ -12,12 +12,33 @@ export const US_STATES = [
   ['DC','District of Columbia']
 ];
 
-const excludedTitlePattern = /(building engineer|facilities|electrical engineer|mechanical engineer|civil engineer|manufacturing engineer|field service engineer|data center capacity|commissioning engineer|network engineer|security engineer|sales engineer|solutions engineer|support engineer)/i;
-const dataEngineeringPattern = /(data\s+(?:platform\s+|warehouse\s+|infrastructure\s+|pipeline\s+)?engineer|data\s+architect|etl\s+(?:engineer|developer)|database\s+engineer)/i;
-const analyticsPattern = /(analytics?\s+(?:engineer|manager)|data\s+(?:analyst|scientist)|product\s+(?:analyst|scientist)|business\s+intelligence|bi\s+engineer|decision\s+scientist|quantitative\s+analyst|insights?\s+analyst)/i;
-const frontendPattern = /(front[\s-]?end\s+(?:software\s+)?(?:engineer|developer)|(?:software\s+)?engineer[,\s-]+front[\s-]?end|ui\s+engineer|react\s+(?:engineer|developer)|web\s+application\s+engineer)/i;
-const javaTitlePattern = /(?:^|\b)(?:senior\s+|staff\s+|principal\s+|lead\s+)?java\s+(?:software\s+)?(?:engineer|developer)\b/i;
-const softwarePattern = /(software\s+(?:development\s+)?engineer|software\s+developer|full[\s-]?stack\s+(?:engineer|developer)|back[\s-]?end\s+(?:engineer|developer)|application\s+(?:engineer|developer)|platform\s+(?:software\s+)?engineer)/i;
+const rolePatterns = [
+  ['ai-ml','AI and machine learning',/(machine learning|ml engineer|artificial intelligence|ai engineer|applied scientist|research scientist|computer vision|natural language processing|nlp engineer|generative ai|deep learning)/i],
+  ['cloud-sre','Cloud, DevOps and SRE',/(site reliability|\bsre\b|devops|cloud engineer|cloud architect|platform reliability|infrastructure engineer|production engineer|release engineer|build engineer)/i],
+  ['cybersecurity','Cybersecurity',/(cybersecurity|cyber security|security engineer|application security|product security|cloud security|information security|security operations|soc analyst|threat|incident response|penetration test|identity and access|iam engineer)/i],
+  ['network-systems','Network and systems engineering',/(network engineer|network architect|systems engineer|system engineer|systems administrator|system administrator|linux engineer|windows engineer|infrastructure systems|telecommunications engineer)/i],
+  ['hardware','Hardware, semiconductor and embedded systems',/(hardware engineer|semiconductor|silicon engineer|asic|fpga|firmware|embedded (?:software )?engineer|chip design|physical design engineer|verification engineer|validation engineer|computer architecture)/i],
+  ['electrical','Electrical and electronics engineering',/(electrical engineer|electronics engineer|power systems engineer|controls engineer|rf engineer|signal integrity|mixed signal|analog design)/i],
+  ['mechanical','Mechanical, manufacturing and robotics',/(mechanical engineer|manufacturing engineer|industrial engineer|robotics engineer|mechatronics|automation engineer|process engineer|thermal engineer|aerospace engineer)/i],
+  ['civil','Civil, structural and construction engineering',/(civil engineer|structural engineer|geotechnical engineer|transportation engineer|construction engineer|water resources engineer|environmental engineer)/i],
+  ['biotech','Biotechnology and life sciences',/(bioinformatics|computational biology|biostatistician|biomedical engineer|biotechnology|clinical data scientist|genomics|proteomics|life science informatics|scientist.*(?:biology|chemistry|pharma))/i],
+  ['health-tech','Healthcare technology and clinical informatics',/(clinical informatics|health informatics|healthcare data|medical software|clinical systems|epic analyst|cerner analyst|health technology|digital health)/i],
+  ['quant-fintech','Quantitative finance and fintech',/(quantitative (?:analyst|researcher|developer|engineer)|quant developer|algorithmic trading|financial engineer|risk model|pricing model|fintech engineer|payments engineer)/i],
+  ['data-engineering','Data engineering',/(data\s+(?:platform\s+|warehouse\s+|infrastructure\s+|pipeline\s+)?engineer|data architect|etl\s+(?:engineer|developer)|analytics engineer)/i],
+  ['database','Database engineering',/(database engineer|database administrator|\bdba\b|data warehouse architect|snowflake engineer|oracle database|postgres(?:ql)? engineer)/i],
+  ['data-science','Data science and analytics',/(data scientist|decision scientist|product scientist|business intelligence|bi engineer|data analyst|product analyst|quantitative analyst|insights? analyst|analytics? (?:engineer|manager|consultant))/i],
+  ['frontend','Frontend and web engineering',/(front[\s-]?end\s+(?:software\s+)?(?:engineer|developer)|(?:software\s+)?engineer[,\s-]+front[\s-]?end|ui engineer|react (?:engineer|developer)|web application engineer|web developer)/i],
+  ['mobile','Mobile engineering',/(mobile (?:software )?(?:engineer|developer)|ios (?:engineer|developer)|android (?:engineer|developer)|react native (?:engineer|developer))/i],
+  ['java','Java and JVM engineering',/(?:^|\b)(?:senior\s+|staff\s+|principal\s+|lead\s+)?java\s+(?:software\s+)?(?:engineer|developer)\b|jvm engineer|kotlin backend|scala engineer/i],
+  ['qa-automation','Quality and test automation',/(quality (?:assurance|engineer)|qa engineer|test automation|software development engineer in test|\bsdet\b|performance test engineer|automation test engineer)/i],
+  ['product-program','Technical product and program management',/(technical product manager|product manager.*(?:platform|developer|data|ai|cloud|security|infrastructure)|technical program manager|engineering program manager|tpm\b)/i],
+  ['solutions','Solutions, sales and customer engineering',/(solutions? engineer|solutions? architect|sales engineer|customer engineer|partner engineer|support engineer|technical account manager|implementation engineer|forward deployed engineer)/i],
+  ['ux-design','UX, product and technical design',/(product designer|ux designer|user experience designer|interaction designer|design systems|ux researcher|technical designer)/i],
+  ['technical-writing','Technical writing and developer education',/(technical writer|developer advocate|developer relations|devrel|technical curriculum|developer educator|documentation engineer)/i],
+  ['software','Software engineering',/(software\s+(?:development\s+)?engineer|software developer|full[\s-]?stack\s+(?:engineer|developer)|back[\s-]?end\s+(?:engineer|developer)|application\s+(?:engineer|developer)|platform\s+(?:software\s+)?engineer|distributed systems engineer)/i]
+];
+
+const nonTechnicalPattern = /(facilities maintenance|building maintenance|stationary engineer|locomotive engineer|audio engineer|broadcast engineer|chief engineer.*hotel)/i;
 const countryPattern = /\b(?:United States(?: of America)?|USA|U\.?S\.?A?\.?)\b/i;
 const remotePattern = /\bremote\b/i;
 const remoteUsPattern = /(?:remote.{0,45}(?:United States|USA|U\.?S\.?A?\.?)|(?:United States|USA|U\.?S\.?A?\.?).{0,45}remote)/i;
@@ -34,26 +55,16 @@ export function cleanText(value) {
 }
 
 function javaSignalCount(content) {
-  const signals = [
-    /\bjava(?:\s+(?:8|11|17|21))?\b/i,
-    /\bspring(?:\s+boot)?\b/i,
-    /\bjvm\b/i,
-    /\bhibernate\b/i,
-    /\b(?:maven|gradle)\b/i
-  ];
-  return signals.reduce((count, pattern) => count + Number(pattern.test(content)), 0);
+  return [/\bjava(?:\s+(?:8|11|17|21))?\b/i,/\bspring(?:\s+boot)?\b/i,/\bjvm\b/i,/\bhibernate\b/i,/\b(?:maven|gradle)\b/i]
+    .reduce((count, pattern) => count + Number(pattern.test(content)), 0);
 }
 
 export function classifyRole(job) {
   const title = cleanText(job?.title);
   const content = cleanText(job?.content);
-  if (!title || excludedTitlePattern.test(title)) return null;
-  if (dataEngineeringPattern.test(title)) return { code: 'data-engineering', label: 'Data engineering' };
-  if (analyticsPattern.test(title)) return { code: 'analytics', label: 'Analytics' };
-  if (frontendPattern.test(title)) return { code: 'frontend', label: 'Frontend engineering' };
-  if (javaTitlePattern.test(title)) return { code: 'java', label: 'Java engineering' };
-  if (softwarePattern.test(title) && javaSignalCount(content) >= 2) return { code: 'java', label: 'Java engineering' };
-  if (softwarePattern.test(title)) return { code: 'software', label: 'Software engineering' };
+  if (!title || nonTechnicalPattern.test(title)) return null;
+  for (const [code,label,pattern] of rolePatterns) if (pattern.test(title)) return { code, label };
+  if (/(software|application|platform|backend|full[\s-]?stack)\s+(?:engineer|developer)/i.test(title) && javaSignalCount(content) >= 2) return { code:'java', label:'Java and JVM engineering' };
   return null;
 }
 
