@@ -4,8 +4,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 9,10 * * *"
-  push:
-    branches: [main]
+  pull_request:
     paths:
       - "law/**"
       - "scripts/validate-law.mjs"
@@ -25,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          ref: main
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || 'main' }}
       - uses: actions/setup-node@v5
         with:
           node-version: "24"
@@ -43,7 +42,7 @@ jobs:
         if: steps.local-time.outputs.run == 'true'
         run: node scripts/validate-law.mjs
       - name: Commit revalidation metadata
-        if: steps.local-time.outputs.run == 'true'
+        if: steps.local-time.outputs.run == 'true' && github.event_name != 'pull_request'
         shell: bash
         run: |
           if git diff --quiet -- law/data.json law/validation-report.json; then
