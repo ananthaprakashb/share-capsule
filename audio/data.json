@@ -10,6 +10,25 @@
   },
   "audio": [
     {
+      "id": "market-psychology-audio",
+      "title": "Market Psychology Audio",
+      "creator": "Share Capsule",
+      "description": "An audio article from Share Capsule: Market Psychology Audio.",
+      "category": "Audio Article",
+      "language": "English",
+      "publishedAt": "2026-07-13",
+      "objectKey": "Market Psychology Audio.m4a",
+      "mediaUrl": "https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev/Market%20Psychology%20Audio.m4a",
+      "mimeType": "audio/mp4",
+      "autoplay": true,
+      "coverBackground": "linear-gradient(145deg,#172554,#0f766e 55%,#7c3aed)",
+      "coverLines": [
+        "Market Psychology",
+        "Audio"
+      ],
+      "references": []
+    },
+    {
       "id": "trading-holy-grail-tamil",
       "title": "ட்ரேடிங்கின் ஹோலி க்ரெயில்",
       "creator": "Share Capsule",

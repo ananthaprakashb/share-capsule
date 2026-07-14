@@ -5,6 +5,51 @@
   },
   "releases": [
     {
+      "slug": "market-psychology-audio",
+      "title": "Market Psychology Audio",
+      "artist": "Share Capsule",
+      "type": "Audio article",
+      "category": "Audio Article",
+      "language": "English",
+      "publishedAt": "2026-07-13",
+      "description": "An audio article from Share Capsule: Market Psychology Audio.",
+      "featured": true,
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#172554,#0f766e 55%,#7c3aed)",
+      "coverEyebrow": "Audio article",
+      "coverLines": [
+        "Market Psychology",
+        "Audio"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "audioPageUrl": "/audio/?id=market-psychology-audio",
+      "platforms": [
+        {
+          "label": "Listen",
+          "icon": "▶",
+          "url": "/audio/?id=market-psychology-audio"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Friend",
+          "icon": "🎧",
+          "text": "Listen to this Share Capsule audio article: Market Psychology Audio"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this audio article with you: Market Psychology Audio"
+        },
+        "topic": {
+          "label": "Audio learner",
+          "icon": "🧠",
+          "text": "An audio article from Share Capsule: Market Psychology Audio."
+        }
+      }
+    },
+    {
       "slug": "trading-holy-grail-tamil",
       "title": "ட்ரேடிங்கின் ஹோலி க்ரெயில்",
       "artist": "Share Capsule",
