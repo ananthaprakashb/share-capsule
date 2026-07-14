@@ -3,7 +3,7 @@ name: Publish new R2 audio
 on:
   workflow_dispatch:
   schedule:
-    - cron: "23 * * * *"
+    - cron: "*/15 * * * *"
   push:
     branches: [main]
     paths:
