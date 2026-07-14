@@ -1,19 +1,22 @@
 {
-  "slug": "suvasa-kaathu",
-  "title": "சுவாசக் காத்து (Suvasa Kaathu)",
+  "slug": "kanitharu-sirumaram",
+  "title": "கனிதரு சிறுமரம்",
   "artist": "தமிழாலே",
   "category": "Tamil Music",
   "language": "Tamil",
   "music": true,
-  "spotifyUrl": "https://open.spotify.com/album/5m23u5kdndz2ovRV4zIHPr",
-  "appleUrl": "https://music.apple.com/us/album/%E0%AE%9A-%E0%AE%B5-%E0%AE%9A%E0%AE%95-%E0%AE%95-%E0%AE%A4-%E0%AE%A4-suvasa-kaathu-single/1846962693",
-  "youtubeExtra": [
-    "https://www.youtube.com/playlist?list=OLAK5uy_kaAwXph_HSsoQTds7GIP5GBhy2Nlr9Bxs"
+  "spotifyUrl": "https://open.spotify.com/track/45MrTRKwqBKTJm2IAWF2yz?si=cb330717c60747ef",
+  "appleUrl": "https://music.apple.com/fr/album/%E0%AE%95%E0%AE%A9-%E0%AE%A4%E0%AE%B0-%E0%AE%9A-%E0%AE%B1-%E0%AE%AE%E0%AE%B0%E0%AE%AE-ep/1809722387",
+  "videoIds": [
+    "zjJmSyHkO9c"
   ],
-  "description": "A Tamil music single by தமிழாலே, available on Spotify, Apple Music and YouTube.",
+  "youtubeExtra": [
+    "https://www.youtube.com/playlist?list=OLAK5uy_kpF5G8qtX6v6sX0pHmObY-iQYlg1h5hvg"
+  ],
+  "description": "A Tamil music release by தமிழாலே, available on Spotify, Apple Music and YouTube.",
   "coverLines": [
-    "சுவாசக் காத்து",
-    "Suvasa Kaathu"
+    "கனிதரு",
+    "சிறுமரம்"
   ],
   "featured": true
 }
