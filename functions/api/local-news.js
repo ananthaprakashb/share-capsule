@@ -28,7 +28,10 @@ const parseItems = xml => {
   return blocks.map(block => {
     const rawTitle = tag(block, 'title');
     const source = tag(block, 'source') || rawTitle.split(' - ').pop();
-    const title = rawTitle.replace(new RegExp(`\\s+-\\s+${String(source).replace(/[.*+?^${}()|[\\]\\]/g, '\\$&')}$`, 'i'), '').trim();
+    const suffix = source ? ` - ${source}` : '';
+    const title = suffix && rawTitle.endsWith(suffix)
+      ? rawTitle.slice(0, -suffix.length).trim()
+      : rawTitle.trim();
     return {
       title,
       source,
@@ -58,7 +61,9 @@ export async function onRequestGet(context) {
 
   const locationLabel = [city, region].filter(Boolean).join(', ');
   const query = `"${locationLabel}" local news when:1d`;
-  const locale = country === 'US' ? { hl: 'en-US', gl: 'US', ceid: 'US:en' } : { hl: 'en', gl: country, ceid: `${country}:en` };
+  const locale = country === 'US'
+    ? { hl: 'en-US', gl: 'US', ceid: 'US:en' }
+    : { hl: 'en', gl: country, ceid: `${country}:en` };
   const rss = new URL('https://news.google.com/rss/search');
   rss.searchParams.set('q', query);
   rss.searchParams.set('hl', locale.hl);
@@ -68,7 +73,7 @@ export async function onRequestGet(context) {
   try {
     const response = await fetch(rss, {
       headers: {
-        'accept': 'application/rss+xml, application/xml;q=0.9, text/xml;q=0.8',
+        accept: 'application/rss+xml, application/xml;q=0.9, text/xml;q=0.8',
         'user-agent': 'ShareCapsuleLocalNews/1.0'
       },
       cf: { cacheTtl: 900, cacheEverything: true }
