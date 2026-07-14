@@ -1,4 +1,5 @@
 import { getLocalNews } from "./local-news.js";
+import { handleFactCheck } from "./factcheck.js";
 
 const ALLOWED_ORIGINS = new Set([
   "https://sharecapsule.app",
@@ -206,7 +207,6 @@ async function handleLike(request, env, audioId) {
   return json(request, await getReactionState(env, audioId, visitorId));
 }
 
-
 function validJobKey(value){return typeof value==='string'&&value.length>=3&&value.length<=180&&/^[a-z0-9_-]+:[a-zA-Z0-9_-]+$/.test(value)}
 function jobStatus(confirmCount,invalidCount){if(invalidCount>=3&&invalidCount>confirmCount)return'hidden';if(invalidCount>0)return'needs_review';return'active'}
 async function jobVerdictState(env,jobKey,visitorId){const row=await env.DB.prepare('SELECT confirm_count, invalid_count, status, last_reported_at FROM job_verdicts WHERE job_key=?').bind(jobKey).first();let mine=null;if(visitorId&&validVisitorId(visitorId))mine=await env.DB.prepare('SELECT verdict, reason, updated_at FROM job_verdict_events WHERE job_key=? AND visitor_id=?').bind(jobKey,visitorId).first();return{jobKey,confirmCount:Number(row?.confirm_count||0),invalidCount:Number(row?.invalid_count||0),status:row?.status||'active',lastReportedAt:row?.last_reported_at||null,yourVerdict:mine?.verdict||null,yourReason:mine?.reason||''}}
@@ -237,6 +237,9 @@ export default {
     if (request.method === "GET" && (pathname === "/api/local-news" || pathname === "/api/local-news/")) {
       const result = await getLocalNews(request);
       return json(request, result.body, result.status);
+    }
+    if (request.method === 'POST' && (pathname === '/api/factcheck' || pathname === '/api/factcheck/')) {
+      return await handleFactCheck(request, env, json);
     }
     if (request.method === 'POST' && pathname === '/api/jobs/verdicts/batch') {
       return await handleJobVerdictBatch(request, env);
