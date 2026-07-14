@@ -1,8 +1,0 @@
-# Worker and deployment source should not be published as static files.
-worker/
-functions/
-.github/
-wrangler.jsonc
-.assetsignore
-README.md
-CNAME

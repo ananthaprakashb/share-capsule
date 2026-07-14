@@ -61,7 +61,7 @@
 
     const loadLocalNews=async()=>{
       try{
-        const response=await fetch('/api/local-news',{cache:'no-store'});
+        const response=await fetch('https://sharecapsule-reactions.subhafash-86.workers.dev/api/local-news',{cache:'no-store'});
         if(!response.ok)return;
         const data=await response.json();
         newsLocation=data.location||'';

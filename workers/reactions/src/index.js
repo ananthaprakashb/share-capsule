@@ -1,3 +1,5 @@
+import { getLocalNews } from "./local-news.js";
+
 const ALLOWED_ORIGINS = new Set([
   "https://sharecapsule.app",
   "https://www.sharecapsule.app",
@@ -232,6 +234,10 @@ export default {
     }
 
     const pathname = url.pathname;
+    if (request.method === "GET" && (pathname === "/api/local-news" || pathname === "/api/local-news/")) {
+      const result = await getLocalNews(request);
+      return json(request, result.body, result.status);
+    }
     if (request.method === 'POST' && pathname === '/api/jobs/verdicts/batch') {
       return await handleJobVerdictBatch(request, env);
     }
