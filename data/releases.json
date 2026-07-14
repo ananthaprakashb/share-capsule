@@ -5,6 +5,51 @@
   },
   "releases": [
     {
+      "slug": "tamil-audio-e7fed38c8789",
+      "title": "ஊட்டச்சத்து மாத்திரைகளா அல்லது முழுமையான இயற்கை உணவா",
+      "artist": "Share Capsule",
+      "type": "Audio article",
+      "category": "Tamil Audio",
+      "language": "Tamil",
+      "publishedAt": "2026-07-14",
+      "description": "தமிழில் வழங்கப்படும் audio article from Share Capsule: ஊட்டச்சத்து மாத்திரைகளா அல்லது முழுமையான இயற்கை உணவா.",
+      "featured": true,
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#172554,#0f766e 55%,#7c3aed)",
+      "coverEyebrow": "தமிழ் ஆடியோ கட்டுரை",
+      "coverLines": [
+        "ஊட்டச்சத்து மாத்திரைகளா அல்லது",
+        "முழுமையான இயற்கை உணவா"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "audioPageUrl": "/audio/?id=tamil-audio-e7fed38c8789",
+      "platforms": [
+        {
+          "label": "Listen",
+          "icon": "▶",
+          "url": "/audio/?id=tamil-audio-e7fed38c8789"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Friend",
+          "icon": "🎧",
+          "text": "இந்த தமிழ் ஆடியோ கட்டுரையை கேளுங்கள்: ஊட்டச்சத்து மாத்திரைகளா அல்லது முழுமையான இயற்கை உணவா"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "குடும்பத்துடன் பகிர வேண்டிய தமிழ் ஆடியோ: ஊட்டச்சத்து மாத்திரைகளா அல்லது முழுமையான இயற்கை உணவா"
+        },
+        "topic": {
+          "label": "தமிழ் கேட்பவர்",
+          "icon": "🧠",
+          "text": "தமிழில் வழங்கப்படும் audio article from Share Capsule: ஊட்டச்சத்து மாத்திரைகளா அல்லது முழுமையான இயற்கை உணவா."
+        }
+      }
+    },
+    {
       "slug": "tamil-37-percent-decision-rule",
       "title": "சரியான முடிவெடுக்க 37 சதவீத கணித விதி",
       "artist": "Share Capsule",
