@@ -4,18 +4,23 @@ import { createHash } from 'node:crypto';
 const AUDIO_PATH = new URL('./data.json', import.meta.url);
 const OVERRIDES_PATH = new URL('./publish-overrides.json', import.meta.url);
 const RELEASES_PATH = new URL('../data/releases.json', import.meta.url);
-const SUPPORTED_AUDIO_EXTENSIONS = new Set(['.m4a', '.mp3', '.aac', '.wav', '.ogg', '.flac']);
+const DIRECT_AUDIO_EXTENSIONS = new Set(['.m4a', '.mp3', '.aac', '.wav', '.ogg', '.oga', '.opus', '.flac', '.m4b', '.aif', '.aiff']);
+const AMBIGUOUS_MEDIA_EXTENSIONS = new Set(['.mp4', '.webm', '.mpeg', '.mpg']);
 const PUBLIC_BASE_URL = (process.env.R2_PUBLIC_BASE_URL || 'https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev').replace(/\/$/, '');
 const BUCKET = process.env.R2_BUCKET || 'techvideos';
 const SEED_ONLY = process.env.SEED_ONLY === 'true';
 
 const readJson = async path => JSON.parse(await readFile(path, 'utf8'));
-const extension = key => key.slice(key.lastIndexOf('.')).toLowerCase();
+const extension = key => {
+  const dot = key.lastIndexOf('.');
+  return dot === -1 ? '' : key.slice(dot).toLowerCase();
+};
 const withoutExtension = key => key.replace(/\.[^.]+$/, '');
 const publicUrl = key => `${PUBLIC_BASE_URL}/${key.split('/').map(encodeURIComponent).join('/')}`;
 const hasTamil = value => /[\u0B80-\u0BFF]/.test(value);
 const normalizeTitle = key => withoutExtension(key.split('/').pop()).replace(/[_-]+/g, ' ').replace(/\s+/g, ' ').trim();
 const asciiSlug = value => value.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const shortHash = value => createHash('sha256').update(value).digest('hex').slice(0, 12);
 const stableId = (title, key) => {
   const slug = asciiSlug(title);
   // Avoid IDs such as "37" when a mostly non-Latin title contains only a number.
@@ -23,15 +28,26 @@ const stableId = (title, key) => {
   // hash-backed ID remains stable even when the visible title is Tamil-only.
   if (slug.length >= 3 && /[a-z]/.test(slug)) return slug;
   const prefix = hasTamil(title) ? 'tamil-audio' : 'audio';
-  return `${prefix}-${createHash('sha256').update(key).digest('hex').slice(0, 12)}`;
+  return `${prefix}-${shortHash(key)}`;
 };
-const mimeType = key => extension(key) === '.mp3' ? 'audio/mpeg' : extension(key) === '.ogg' ? 'audio/ogg' : extension(key) === '.wav' ? 'audio/wav' : extension(key) === '.flac' ? 'audio/flac' : extension(key) === '.mp4' ? 'video/mp4' : 'audio/mp4';
+const mimeType = key => {
+  const ext = extension(key);
+  if (ext === '.mp3' || ext === '.mpga' || ext === '.mpeg' || ext === '.mpg') return 'audio/mpeg';
+  if (ext === '.ogg' || ext === '.oga' || ext === '.opus') return 'audio/ogg';
+  if (ext === '.wav') return 'audio/wav';
+  if (ext === '.flac') return 'audio/flac';
+  if (ext === '.aif' || ext === '.aiff') return 'audio/aiff';
+  if (ext === '.webm') return 'audio/webm';
+  return 'audio/mp4';
+};
 const coverLines = title => {
   const words = title.split(/\s+/).filter(Boolean);
   if (words.length < 3) return words;
   const midpoint = Math.ceil(words.length / 2);
   return [words.slice(0, midpoint).join(' '), words.slice(midpoint).join(' ')];
 };
+const timestamp = value => value ? new Date(value).getTime() || 0 : 0;
+const newestFirst = (a, b) => timestamp(b.lastModified) - timestamp(a.lastModified) || a.key.localeCompare(b.key);
 
 function buildAudio(key, override = {}, lastModified = null) {
   const title = override.title || normalizeTitle(key);
@@ -84,7 +100,7 @@ function buildRelease(item, override = {}) {
 }
 
 async function listR2Objects() {
-  if (SEED_ONLY) return [];
+  if (SEED_ONLY) return { objects: [], ignored: [], scanned: 0 };
   const required = ['CLOUDFLARE_ACCOUNT_ID', 'R2_ACCESS_KEY_ID', 'R2_SECRET_ACCESS_KEY'];
   const missing = required.filter(name => !process.env[name]);
   if (missing.length) throw new Error(`Missing GitHub secrets: ${missing.join(', ')}`);
@@ -94,24 +110,40 @@ async function listR2Objects() {
     endpoint: `https://${process.env.CLOUDFLARE_ACCOUNT_ID}.r2.cloudflarestorage.com`,
     credentials: { accessKeyId: process.env.R2_ACCESS_KEY_ID, secretAccessKey: process.env.R2_SECRET_ACCESS_KEY }
   });
+
   const objects = [];
+  const ignored = [];
+  let scanned = 0;
   let ContinuationToken;
+
   do {
     const page = await client.send(new ListObjectsV2Command({ Bucket: BUCKET, ContinuationToken, Prefix: process.env.R2_AUDIO_PREFIX || undefined }));
     for (const object of page.Contents || []) {
       if (!object.Key || object.Size === 0) continue;
+      scanned += 1;
       const ext = extension(object.Key);
-      if (!SUPPORTED_AUDIO_EXTENSIONS.has(ext) && ext !== '.mp4') continue;
-      let contentType = '';
-      if (ext === '.mp4') {
-        const head = await client.send(new HeadObjectCommand({ Bucket: BUCKET, Key: object.Key }));
-        contentType = String(head.ContentType || '').toLowerCase();
+      const lastModified = object.LastModified || null;
+
+      if (DIRECT_AUDIO_EXTENSIONS.has(ext)) {
+        objects.push({ key: object.Key, lastModified, contentType: '' });
+        continue;
       }
-      objects.push({ key: object.Key, lastModified: object.LastModified || null, contentType });
+
+      if (AMBIGUOUS_MEDIA_EXTENSIONS.has(ext)) {
+        const head = await client.send(new HeadObjectCommand({ Bucket: BUCKET, Key: object.Key }));
+        const contentType = String(head.ContentType || '').toLowerCase();
+        objects.push({ key: object.Key, lastModified, contentType });
+        continue;
+      }
+
+      ignored.push({ key: object.Key, lastModified, reason: `unsupported extension ${ext || '(none)'}` });
     }
     ContinuationToken = page.IsTruncated ? page.NextContinuationToken : undefined;
   } while (ContinuationToken);
-  return objects;
+
+  objects.sort(newestFirst);
+  ignored.sort(newestFirst);
+  return { objects, ignored, scanned };
 }
 
 const [audioData, releasesData, overridesData] = await Promise.all([readJson(AUDIO_PATH), readJson(RELEASES_PATH), readJson(OVERRIDES_PATH)]);
@@ -119,26 +151,43 @@ const overrides = overridesData.objects || {};
 const existingKeys = new Set((audioData.audio || []).map(item => item.objectKey));
 const existingIds = new Set((audioData.audio || []).map(item => item.id));
 const existingReleaseSlugs = new Set((releasesData.releases || []).map(item => item.slug));
-const discovered = await listR2Objects();
+const scan = await listR2Objects();
+const discovered = scan.objects;
 const candidates = new Map(discovered.map(object => [object.key, object]));
 for (const [key, override] of Object.entries(overrides)) {
   if (override.forcePublish) candidates.set(key, candidates.get(key) || { key, lastModified: null, contentType: '' });
 }
 
 const added = [];
+const skipped = [];
 for (const object of candidates.values()) {
-  if (existingKeys.has(object.key)) continue;
+  if (existingKeys.has(object.key)) {
+    skipped.push({ objectKey: object.key, lastModified: object.lastModified, reason: 'object key already published' });
+    continue;
+  }
+
   const override = overrides[object.key] || {};
   const ext = extension(object.key);
-  if (ext === '.mp4' && !override.forcePublish && !object.contentType.startsWith('audio/')) continue;
-  const item = buildAudio(object.key, override, object.lastModified);
-  if (existingIds.has(item.id) || existingReleaseSlugs.has(item.id)) continue;
+  if (AMBIGUOUS_MEDIA_EXTENSIONS.has(ext) && !override.forcePublish && !object.contentType.startsWith('audio/')) {
+    skipped.push({ objectKey: object.key, lastModified: object.lastModified, contentType: object.contentType || '(missing)', reason: 'ambiguous media extension is not marked as audio; add forcePublish override if this is an audio file' });
+    continue;
+  }
+
+  let item = buildAudio(object.key, override, object.lastModified);
+  if (existingIds.has(item.id) || existingReleaseSlugs.has(item.id)) {
+    if (override.id) {
+      skipped.push({ objectKey: object.key, lastModified: object.lastModified, id: item.id, reason: 'explicit override id collides with an existing audio id or release slug' });
+      continue;
+    }
+    item = buildAudio(object.key, { ...override, id: `${item.id}-${shortHash(object.key).slice(0, 8)}` }, object.lastModified);
+  }
+
   audioData.audio.unshift(item);
   releasesData.releases.unshift(buildRelease(item, override));
   existingKeys.add(object.key);
   existingIds.add(item.id);
   existingReleaseSlugs.add(item.id);
-  added.push({ id: item.id, title: item.title, objectKey: item.objectKey });
+  added.push({ id: item.id, title: item.title, objectKey: item.objectKey, lastModified: object.lastModified });
 }
 
 if (added.length) {
@@ -147,4 +196,14 @@ if (added.length) {
     writeFile(RELEASES_PATH, JSON.stringify(releasesData, null, 2) + '\n')
   ]);
 }
-console.log(JSON.stringify({ bucket: BUCKET, seedOnly: SEED_ONLY, discovered: discovered.length, added }, null, 2));
+
+console.log(JSON.stringify({
+  bucket: BUCKET,
+  seedOnly: SEED_ONLY,
+  scanned: scan.scanned,
+  discovered: discovered.length,
+  newestDiscovered: discovered.slice(0, 10),
+  newestIgnored: scan.ignored.slice(0, 10),
+  added,
+  skipped: skipped.slice(0, 50)
+}, null, 2));
