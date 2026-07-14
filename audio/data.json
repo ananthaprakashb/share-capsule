@@ -10,6 +10,25 @@
   },
   "audio": [
     {
+      "id": "tamil-37-percent-decision-rule",
+      "title": "சரியான முடிவெடுக்க 37 சதவீத கணித விதி",
+      "creator": "Share Capsule",
+      "description": "சரியான முடிவெடுப்பதில் 37 சதவீத கணித விதி எவ்வாறு உதவுகிறது என்பதை விளக்கும் தமிழ் ஆடியோ கட்டுரை.",
+      "category": "Tamil Decision Making",
+      "language": "Tamil",
+      "publishedAt": "2026-07-14",
+      "objectKey": "சரியான_முடிவெடுக்க_37_சதவீத_கணித_விதி.m4a",
+      "mediaUrl": "https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev/%E0%AE%9A%E0%AE%B0%E0%AE%BF%E0%AE%AF%E0%AE%BE%E0%AE%A9_%E0%AE%AE%E0%AF%81%E0%AE%9F%E0%AE%BF%E0%AE%B5%E0%AF%86%E0%AE%9F%E0%AF%81%E0%AE%95%E0%AF%8D%E0%AE%95_37_%E0%AE%9A%E0%AE%A4%E0%AE%B5%E0%AF%80%E0%AE%A4_%E0%AE%95%E0%AE%A3%E0%AE%BF%E0%AE%A4_%E0%AE%B5%E0%AE%BF%E0%AE%A4%E0%AE%BF.m4a",
+      "mimeType": "audio/mp4",
+      "autoplay": true,
+      "coverBackground": "linear-gradient(145deg,#312e81,#0f766e 55%,#d97706)",
+      "coverLines": [
+        "சரியான முடிவெடுக்க",
+        "37 சதவீத கணித விதி"
+      ],
+      "references": []
+    },
+    {
       "id": "market-psychology-audio",
       "title": "Market Psychology Audio",
       "creator": "Share Capsule",

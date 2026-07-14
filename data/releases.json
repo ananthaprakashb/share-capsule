@@ -5,6 +5,51 @@
   },
   "releases": [
     {
+      "slug": "tamil-37-percent-decision-rule",
+      "title": "சரியான முடிவெடுக்க 37 சதவீத கணித விதி",
+      "artist": "Share Capsule",
+      "type": "Audio article",
+      "category": "Tamil Decision Making",
+      "language": "Tamil",
+      "publishedAt": "2026-07-14",
+      "description": "சரியான முடிவெடுப்பதில் 37 சதவீத கணித விதி எவ்வாறு உதவுகிறது என்பதை விளக்கும் தமிழ் ஆடியோ கட்டுரை.",
+      "featured": true,
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#312e81,#0f766e 55%,#d97706)",
+      "coverEyebrow": "தமிழ் சிந்தனை ஆடியோ",
+      "coverLines": [
+        "சரியான முடிவெடுக்க",
+        "37 சதவீத கணித விதி"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "audioPageUrl": "/audio/?id=tamil-37-percent-decision-rule",
+      "platforms": [
+        {
+          "label": "Listen",
+          "icon": "▶",
+          "url": "/audio/?id=tamil-37-percent-decision-rule"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Friend",
+          "icon": "🎧",
+          "text": "இந்த தமிழ் ஆடியோ கட்டுரையை கேளுங்கள்: சரியான முடிவெடுக்க 37 சதவீத கணித விதி"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "குடும்பத்துடன் பகிர வேண்டிய தமிழ் ஆடியோ: சரியான முடிவெடுக்க 37 சதவீத கணித விதி"
+        },
+        "topic": {
+          "label": "தமிழ் கேட்பவர்",
+          "icon": "🧠",
+          "text": "சரியான முடிவெடுப்பதில் 37 சதவீத கணித விதி எவ்வாறு உதவுகிறது என்பதை விளக்கும் தமிழ் ஆடியோ கட்டுரை."
+        }
+      }
+    },
+    {
       "slug": "market-psychology-audio",
       "title": "Market Psychology Audio",
       "artist": "Share Capsule",
