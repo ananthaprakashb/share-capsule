@@ -61,6 +61,21 @@ Add one more object inside the `releases` array in `data/releases.json`.
 
 For many releases, avoid storing large full-length audio files directly in the GitHub repository. Use a public HTTPS media URL from object storage or a CDN and place it in `previewUrl`. Cover art can also use an external HTTPS URL in `coverImage`.
 
+## Nearby parking endpoint
+
+`https://sharecapsule.app/parking/` asks the visitor to approve browser location access and then finds mapped parking lots and garages near the current coordinates.
+
+The endpoint:
+
+- keeps location processing in the browser and does not store coordinates
+- supports 0.5, 1, 2 and 5 mile search radii
+- uses OpenStreetMap data through the Overpass API
+- sorts parking facilities by distance
+- displays parking type, access rules, mapped capacity, hours and published fee/charge tags when available
+- links to directions and a live web search for current rates
+
+A listed parking facility is not a claim of live vacancy. Price, availability, access and hours must be confirmed with signs or the parking provider.
+
 ## Verified jobs endpoint
 
 `https://sharecapsule.app/jobs/` lists verified U.S. openings in these categories:
