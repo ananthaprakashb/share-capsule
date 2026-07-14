@@ -1,0 +1,80 @@
+name: Move ShareCapsule FM to homepage
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/move-sharecapsule-fm-home.yml
+
+permissions:
+  contents: write
+
+jobs:
+  move-player:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Move FM from law page to homepage
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          law_path = Path('law/index.html')
+          law = law_path.read_text()
+          law = law.replace('gap:12px;margin-bottom:16px}.brand', 'gap:12px;margin-bottom:24px}.brand')
+          law = re.sub(r'\n\s*\.fm\{.*?\.fmTimes\{[^\n]*\}\n', '\n', law, count=1)
+          law = re.sub(r'\n\s*<section class="fm" id="fm"[\s\S]*?</section>\n', '\n', law, count=1)
+          law = re.sub(r'\n\s*const fmAudio=document\.getElementById\(\'fmAudio\'\)[\s\S]*?fmTrack\.onclick=e=>\{[^\n]*\};\n', '\n', law, count=1)
+          law = law.replace('load();loadFm();', 'load();')
+          law_path.write_text(law)
+
+          home_path = Path('index.html')
+          home = home_path.read_text()
+          fm_css = '.fm{margin:0 0 20px;background:linear-gradient(135deg,#132f45,#244f68 58%,#8a5b20);color:#fff;border-radius:24px;padding:16px;box-shadow:0 16px 46px rgba(19,47,69,.2)}.fmTop{display:flex;align-items:center;gap:13px}.fmPlay{width:50px;height:50px;flex:0 0 50px;border:1px solid rgba(255,255,255,.55);border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:20px;font-weight:900;cursor:pointer}.fmInfo{min-width:0;flex:1}.fmName{font-size:11px;font-weight:950;letter-spacing:.14em;text-transform:uppercase;color:#cae7f6}.fmTitle{margin-top:4px;font-size:16px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.fmState{margin-top:3px;font-size:11px;color:rgba(255,255,255,.72)}.fmNext{border:1px solid rgba(255,255,255,.38);border-radius:999px;background:transparent;color:#fff;padding:9px 11px;font-size:11px;font-weight:900;cursor:pointer}.fmTrack{margin-top:13px;height:6px;background:rgba(255,255,255,.2);border-radius:99px;overflow:hidden;cursor:pointer}.fmFill{height:100%;width:0;background:#fff;border-radius:99px}.fmTimes{display:flex;justify-content:space-between;margin-top:6px;font-size:10px;color:rgba(255,255,255,.7)}'
+          if '.fm{' not in home:
+              home = home.replace('.hero{padding:28px 4px 22px}', fm_css + '.hero{padding:28px 4px 22px}', 1)
+
+          fm_html = '''    <section class="fm" id="fm" aria-label="ShareCapsule FM audio player">
+              <div class="fmTop"><button class="fmPlay" id="fmPlay" type="button" aria-label="Play ShareCapsule FM">▶</button><div class="fmInfo"><div class="fmName">ShareCapsule FM</div><div class="fmTitle" id="fmTitle">Finding a random audio article…</div><div class="fmState" id="fmState">Loading</div></div><button class="fmNext" id="fmNext" type="button">Next</button></div>
+              <div class="fmTrack" id="fmTrack" aria-label="Audio progress"><div class="fmFill" id="fmFill"></div></div><div class="fmTimes"><span id="fmCurrent">0:00</span><span id="fmDuration">0:00</span></div><audio id="fmAudio" preload="metadata"></audio>
+            </section>
+'''
+          if 'id="fmAudio"' not in home:
+              home = home.replace('    <div id="app" aria-live="polite"></div>', fm_html + '    <div id="app" aria-live="polite"></div>', 1)
+
+          fm_js = r'''
+              const fmAudio=document.getElementById('fmAudio'),fmPlay=document.getElementById('fmPlay'),fmNext=document.getElementById('fmNext'),fmTitle=document.getElementById('fmTitle'),fmState=document.getElementById('fmState'),fmFill=document.getElementById('fmFill'),fmTrack=document.getElementById('fmTrack'),fmCurrent=document.getElementById('fmCurrent'),fmDuration=document.getElementById('fmDuration');
+              let fmItems=[],fmIndex=-1;
+              const fmTime=v=>{v=Math.max(0,Number(v)||0);return`${Math.floor(v/60)}:${String(Math.floor(v%60)).padStart(2,'0')}`};
+              const randomFmIndex=()=>{if(fmItems.length<2)return 0;let i;do{i=Math.floor(Math.random()*fmItems.length)}while(i===fmIndex);return i};
+              function setFmItem(index,autoplay=true){if(!fmItems.length)return;fmIndex=index;const item=fmItems[index];fmAudio.src=item.mediaUrl;fmTitle.textContent=item.title;fmState.textContent=`${item.language||'Audio'} · ${item.category||'Article'}`;fmFill.style.width='0%';fmCurrent.textContent='0:00';fmDuration.textContent='0:00';fmPlay.textContent='▶';fmPlay.setAttribute('aria-label',`Play ${item.title}`);if(autoplay)attemptFmAutoplay()}
+              async function attemptFmAutoplay(){try{await fmAudio.play();fmState.textContent='Playing automatically'}catch{fmState.textContent='Autoplay blocked — tap play to listen';fmPlay.textContent='▶'}}
+              async function loadFm(){try{const r=await fetch(`/audio/data.json?v=${Date.now()}`,{cache:'no-store'});if(!r.ok)throw new Error(`HTTP ${r.status}`);const data=await r.json();fmItems=(data.audio||[]).filter(x=>x.mediaUrl&&String(x.mimeType||'').startsWith('audio/'));if(!fmItems.length)throw new Error('No audio articles available');setFmItem(randomFmIndex(),true)}catch(e){fmTitle.textContent='Audio unavailable';fmState.textContent=e.message;fmPlay.disabled=true;fmNext.disabled=true}}
+              fmPlay.onclick=()=>fmAudio.paused?fmAudio.play().catch(()=>{fmState.textContent='Tap again or check audio permissions'}):fmAudio.pause();
+              fmNext.onclick=()=>setFmItem(randomFmIndex(),true);
+              fmAudio.onplay=()=>{fmPlay.textContent='❚❚';fmPlay.setAttribute('aria-label','Pause ShareCapsule FM');fmState.textContent='Playing'};
+              fmAudio.onpause=()=>{fmPlay.textContent='▶';fmPlay.setAttribute('aria-label','Play ShareCapsule FM');if(fmAudio.currentTime>0&&!fmAudio.ended)fmState.textContent='Paused'};
+              fmAudio.onloadedmetadata=()=>fmDuration.textContent=fmTime(fmAudio.duration);
+              fmAudio.ontimeupdate=()=>{fmCurrent.textContent=fmTime(fmAudio.currentTime);fmFill.style.width=`${fmAudio.duration?fmAudio.currentTime/fmAudio.duration*100:0}%`};
+              fmAudio.onended=()=>setFmItem(randomFmIndex(),true);
+              fmTrack.onclick=e=>{if(!fmAudio.duration)return;const r=fmTrack.getBoundingClientRect();fmAudio.currentTime=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width))*fmAudio.duration};
+          '''
+          if 'const fmAudio=' not in home:
+              home = home.replace("    document.getElementById('homeButton').onclick=goHome;", fm_js + "\n    document.getElementById('homeButton').onclick=goHome;", 1)
+              home = home.replace("window.addEventListener('popstate',route);load();", "window.addEventListener('popstate',route);load();loadFm();", 1)
+          home_path.write_text(home)
+          PY
+      - name: Commit homepage player move
+        run: |
+          rm .github/workflows/move-sharecapsule-fm-home.yml
+          git config user.name share-capsule-bot
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add index.html law/index.html .github/workflows/move-sharecapsule-fm-home.yml
+          git commit -m "Move ShareCapsule FM to homepage"
+          git push
