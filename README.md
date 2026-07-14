@@ -105,10 +105,32 @@ The jobs feature intentionally distinguishes three different facts:
 
 An invalid-job button hides the role locally and opens a prefilled GitHub issue. After a maintainer confirms the report, add the job key or official URL to `jobs/blocked.json` to hide it for everyone.
 
+## Fact-check endpoint
+
+`/factcheck/` accepts a claim, headline, forwarded message, or image description and returns one of four verdicts at the top: `[TRUE]`, `[FALSE]`, `[MISLEADING]`, or `[UNVERIFIED]`.
+
+The fact-check flow:
+
+- calls `POST /api/factcheck` with the user-provided claim or image description
+- requires a live web search before a verdict is returned
+- prioritizes Reuters Fact Check, AP Fact Check, Snopes, PolitiFact, FactCheck.org, AFP Fact Check and Full Fact when relevant
+- looks for the original source and date to detect outdated or out-of-context material
+- returns a short neutral explanation and clickable evidence links
+- keeps the `OPENAI_API_KEY` on the server and never exposes it to browser JavaScript
+
+Files:
+
+- `factcheck/index.html` — mobile-first fact-check interface
+- `functions/api/factcheck.js` — server-side `POST /api/factcheck` function using the OpenAI Responses API with the web-search tool
+
+The server function is written as a Cloudflare Pages Function. Set the server-side secret `OPENAI_API_KEY`; optionally set `OPENAI_MODEL` to override the default `gpt-5.5` model. The current GitHub Pages host can serve the static `/factcheck/` page but cannot execute `/api/factcheck`, so production must run this repository on Cloudflare Pages or route `/api/factcheck` to an equivalent server-side deployment before the checker will work end to end.
+
 ## Current architecture
 
-This version intentionally stays serverless and inexpensive:
+Most of the site intentionally stays static and inexpensive:
 
 `GitHub Pages + JSON data + browser JavaScript`
+
+The fact-check feature is the exception because web-search API credentials must remain server-side. Its frontend remains static, while `functions/api/factcheck.js` runs on a functions-capable host.
 
 A future build step can generate permanent static URLs such as `/release/my-new-audio/` for unique social-preview metadata on WhatsApp and other platforms. A small serverless database can later add shared job-validation vote totals without changing the public jobs URL.
