@@ -1,0 +1,88 @@
+name: Import manual release request
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'automation/manual-release-request.json'
+      - '.github/workflows/import-manual-release.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: import-manual-release
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - name: Add or update requested release in canonical channel catalog
+        shell: python
+        run: |
+          import json
+          import re
+          from pathlib import Path
+
+          request_path = Path('automation/manual-release-request.json')
+          catalog_path = Path('data/channel-catalog.json')
+
+          request = json.loads(request_path.read_text(encoding='utf-8'))
+          catalog = json.loads(catalog_path.read_text(encoding='utf-8'))
+
+          required = ['slug', 'title']
+          missing = [key for key in required if not request.get(key)]
+          if missing:
+              raise SystemExit('Missing required release fields: ' + ', '.join(missing))
+
+          slug = request['slug']
+          if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', slug):
+              raise SystemExit(f'Invalid release slug: {slug}')
+
+          item = {
+              'slug': slug,
+              'title': request['title'],
+              'artist': request.get('artist') or 'தமிழாலே',
+              'videoIds': request.get('videoIds') or [],
+              'youtubeExtra': request.get('youtubeExtra') or [],
+              'category': request.get('category') or 'Tamil Music',
+              'language': request.get('language') or 'Tamil',
+              'music': request.get('music', True),
+              'description': request.get('description') or f"A Tamil music release by {request.get('artist') or 'தமிழாலே'}.",
+              'coverLines': request.get('coverLines') or [request['title']],
+          }
+
+          for optional in ['spotifyUrl', 'appleUrl', 'amazonUrl', 'artwork', 'publishedAt', 'featured', 'storeTitle']:
+              if request.get(optional) is not None:
+                  item[optional] = request[optional]
+
+          items = catalog.setdefault('items', [])
+          existing_index = next((i for i, existing in enumerate(items) if existing.get('slug') == slug), None)
+          if existing_index is None:
+              items.insert(0, item)
+              action = 'added'
+          else:
+              items[existing_index] = {**items[existing_index], **item}
+              action = 'updated'
+
+          catalog_path.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          print(f'{action}: {slug}')
+
+      - name: Commit canonical catalog change
+        run: |
+          if git diff --quiet -- data/channel-catalog.json; then
+            echo "Catalog already contains this release."
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/channel-catalog.json
+          git commit -m 'Add requested music release to channel catalog'
+          git push origin HEAD:main
