@@ -4,9 +4,57 @@
     "tagline": "ஒவ்வொரு நாளும் மூலத்துடன் சரிபார்க்கப்பட்ட ஒரு ஹைக்கூ அல்லது மூன்று வரிக் கவிதை",
     "startDate": "2026-07-12",
     "scopeNote": "இந்தத் தொடர் தமிழில் வாசிக்கக்கூடிய ஹைக்கூ மற்றும் மூன்று வரிக் குறுங்கவிதைகளை வழங்குகிறது. அசல் தமிழ்ப் படைப்புகளின் வரிகளும் ஆசிரியர் அடையாளமும் முதன்மை வெளியீட்டு மூலத்தில் உறுதிப்படுத்தப்பட்ட பின்னரே சேர்க்கப்படும். உலகச் செவ்வியல் ஹைக்கூக்கள் தமிழாக்கமாக வழங்கப்படும்; அவை அசல் தமிழ்ப் படைப்புகள் எனக் கூறப்படாது.",
-    "validationPolicy": "ஒவ்வொரு பதிவும் அசல் மொழி உரை, கவிஞர் பெயர், கவிதை மூல இணைப்பு, வாழ்க்கை வரலாறு அல்லது ஆசிரியரின் சொந்தப் பதிப்பு இணைப்பு, மொழிபெயர்ப்பு அல்லது வடிவக் குறிப்பு மற்றும் சரிபார்ப்பு தேதியை கொண்டிருக்க வேண்டும். உறுதிப்படுத்த முடியாத ஆசிரியர் பெயர் அல்லது இணையத்தில் பரவும் பெயரற்ற வரிகள் வெளியிடப்படாது."
+    "validationPolicy": "ஒவ்வொரு பதிவும் அசல் மொழி உரை, கவிஞர் பெயர், கவிதை மூல இணைப்பு, வாழ்க்கை வரலாறு அல்லது ஆசிரியரின் சொந்தப் பதிப்பு இணைப்பு, மொழிபெயர்ப்பு அல்லது வடிவக் குறிப்பு மற்றும் சரிபார்ப்பு தேதியை கொண்டிருக்க வேண்டும். உறுதிப்படுத்த முடியாத ஆசிரியர் பெயர் அல்லது இணையத்தில் பரவும் பெயரற்ற வரிகள் வெளியிடப்படாது.",
+    "dailyNewsSelections": [
+      {
+        "date": "2026-07-13",
+        "id": "anantha-vilaigira-vithai",
+        "headline": "UAE condemns Iran's 'brazen' attack on tankers as US launches fresh strikes",
+        "newsUrl": "https://www.bbc.co.uk/news/articles/c8d2vn38dy1o?at_medium=RSS&at_campaign=rss",
+        "newsSource": "BBC News",
+        "explanation": "Selected from authenticated haiku content because its themes best matched the previous 24 hours of news.",
+        "verifiedOn": "2026-07-13"
+      }
+    ]
   },
   "haiku": [
+    {
+      "id": "basho-shizukesa-ya",
+      "title": "அமைதிக்குள் சிள்வண்டின் குரல்",
+      "titleNote": "காட்சித் தலைப்பு தமிழ் மொழிபெயர்ப்புக்காக வழங்கப்பட்டது.",
+      "mood": "கோடை · அமைதி · இயற்கை",
+      "formLabel": "ஜப்பானிய செவ்வியல் ஹைக்கூ — தமிழ் நேரடி மொழிபெயர்ப்பு",
+      "originalLanguage": "Japanese",
+      "originalScript": [
+        "閑さや",
+        "岩にしみ入る",
+        "蝉の声"
+      ],
+      "romanization": [
+        "shizukesa ya",
+        "iwa ni shimiiru",
+        "semi no koe"
+      ],
+      "tamilRendering": [
+        "ஆழ்ந்த அமைதி—",
+        "பாறைக்குள் ஊடுருவுகிறது",
+        "சிள்வண்டின் குரல்"
+      ],
+      "translationCredit": "தமிழ் நேரடி மொழிபெயர்ப்பு: Share Capsule; அசல்: மட்சுவோ பாஷோ",
+      "author": "Matsuo Bashō",
+      "authorTamil": "மட்சுவோ பாஷோ",
+      "authorBio": "எடோ கால ஜப்பானியக் கவிஞர்; ஹைக்கூ மரபின் மிகப் புகழ்பெற்ற ஆளுமைகளில் ஒருவர்.",
+      "authorBioUrl": "https://www.britannica.com/biography/Basho-Japanese-poet",
+      "poemSourceTitle": "閑さや岩にしみ入る蝉の声 — Japanese Wikisource",
+      "poemSourceUrl": "https://ja.wikisource.org/wiki/%E9%96%91%E3%81%95%E3%82%84%E5%B2%A9%E3%81%AB%E3%81%97%E3%81%BF%E5%85%A5%E3%82%8B%E8%9D%89%E3%81%AE%E5%A3%B0",
+      "sourceEvidence": "ஜப்பானிய மூன்று வரிகளும் மேற்கோள் காட்டப்பட்ட விக்கிமூல உரையில் சரிபார்க்கப்படுகின்றன; தமிழ் வடிவம் நேரடி பொருள் மொழிபெயர்ப்பு எனத் தெளிவாகக் குறிக்கப்பட்டுள்ளது.",
+      "interpretation": "கோடையின் செறிந்த ஒலி கூட ஆழ்ந்த அமைதியை உடைப்பதில்லை; அந்த அமைதியின் ஆழத்தை உணரச் செய்கிறது.",
+      "originalTamil": false,
+      "publicDomain": true,
+      "rightsNote": "பாஷோவின் அசல் படைப்பு பொதுக் களஞ்சியத்தில் உள்ளது. தமிழ் மொழிபெயர்ப்பு புதிய நேரடி வடிவம்.",
+      "publishedOn": "1689-01-01",
+      "verifiedOn": "2026-07-13"
+    },
     {
       "id": "anantha-vilaigira-vithai",
       "title": "விளைகிற விதை",
@@ -178,9 +226,21 @@
       "mood": "அமைதி · விழிப்பு",
       "formLabel": "உலகச் செவ்வியல் தமிழாக்க ஹைக்கூ",
       "originalLanguage": "Japanese",
-      "originalScript": ["古池や", "蛙飛びこむ", "水の音"],
-      "romanization": ["furu ike ya", "kawazu tobikomu", "mizu no oto"],
-      "tamilRendering": ["பழைய குளம்—", "தவளை குதிக்கிறது;", "தண்ணீரின் ஒலி."],
+      "originalScript": [
+        "古池や",
+        "蛙飛びこむ",
+        "水の音"
+      ],
+      "romanization": [
+        "furu ike ya",
+        "kawazu tobikomu",
+        "mizu no oto"
+      ],
+      "tamilRendering": [
+        "பழைய குளம்—",
+        "தவளை குதிக்கிறது;",
+        "தண்ணீரின் ஒலி."
+      ],
       "translationCredit": "தமிழாக்கம்: Share Capsule",
       "author": "Matsuo Bashō",
       "authorTamil": "மத்சுவோ பாஷோ",
@@ -200,9 +260,17 @@
       "mood": "வசந்தம் · மென்மை",
       "formLabel": "உலகச் செவ்வியல் தமிழாக்க ஹைக்கூ",
       "originalLanguage": "Japanese",
-      "originalScript": ["隅々に残る寒さや梅の花"],
-      "romanization": ["sumizumi ni nokoru samusa ya ume no hana"],
-      "tamilRendering": ["மூலை முடுக்கெல்லாம்", "குளிர் இன்னும் தங்குகிறது—", "பிளம் மலர்கள்."],
+      "originalScript": [
+        "隅々に残る寒さや梅の花"
+      ],
+      "romanization": [
+        "sumizumi ni nokoru samusa ya ume no hana"
+      ],
+      "tamilRendering": [
+        "மூலை முடுக்கெல்லாம்",
+        "குளிர் இன்னும் தங்குகிறது—",
+        "பிளம் மலர்கள்."
+      ],
       "translationCredit": "தமிழாக்கம்: Share Capsule",
       "author": "Yosa Buson",
       "authorTamil": "யோசா புசோன்",
@@ -222,9 +290,17 @@
       "mood": "ஊக்கம் · பொறுமை",
       "formLabel": "உலகச் செவ்வியல் தமிழாக்க ஹைக்கூ",
       "originalLanguage": "Japanese",
-      "originalScript": ["蝸牛そろそろ登れ富士の山"],
-      "romanization": ["katatsumuri sorosoro nobore Fuji no yama"],
-      "tamilRendering": ["நத்தையே—", "மெதுவாக, மெதுவாக ஏறு", "புஜி மலையை."],
+      "originalScript": [
+        "蝸牛そろそろ登れ富士の山"
+      ],
+      "romanization": [
+        "katatsumuri sorosoro nobore Fuji no yama"
+      ],
+      "tamilRendering": [
+        "நத்தையே—",
+        "மெதுவாக, மெதுவாக ஏறு",
+        "புஜி மலையை."
+      ],
       "translationCredit": "தமிழாக்கம்: Share Capsule",
       "author": "Kobayashi Issa",
       "authorTamil": "கொபயாஷி இஸ்ஸா",
