@@ -14,13 +14,13 @@ async function fetchWithRetry(url,options={},attempts=3){
   let lastError;
   for(let attempt=1;attempt<=attempts;attempt++){
     try{
-      const response=await fetch(url,options);
+      const response=await fetch(url,{...options,signal:AbortSignal.timeout(15000)});
       if(response.ok)return response;
       const retryable=response.status===429||response.status>=500;
       lastError=new Error(`HTTP ${response.status} from ${new URL(url).hostname}`);
       if(!retryable)throw lastError;
       const retryAfter=Number(response.headers.get('retry-after'));
-      const delay=Number.isFinite(retryAfter)&&retryAfter>0?retryAfter*1000:1000*(2**(attempt-1));
+      const delay=Number.isFinite(retryAfter)&&retryAfter>0?Math.min(retryAfter*1000,10000):1000*(2**(attempt-1));
       console.warn(`${lastError.message}; retrying in ${delay}ms`);
       await sleep(delay);
     }catch(error){
@@ -46,7 +46,7 @@ function parseRss(xml,source){
 
 async function gdeltHeadlines(){
   const url='https://api.gdeltproject.org/api/v2/doc/doc?query=(sourcecountry:US OR sourcecountry:IN)&mode=artlist&maxrecords=75&format=json&timespan=24h';
-  const response=await fetchWithRetry(url,{headers:{'user-agent':'share-capsule-daily-content/1.1','accept':'application/json'}},3);
+  const response=await fetchWithRetry(url,{headers:{'user-agent':'share-capsule-daily-content/1.2','accept':'application/json'}},3);
   const json=await response.json();
   return (json.articles||[]).map(x=>({title:x.title||'',url:x.url||'',source:x.domain||'GDELT'})).filter(x=>x.title&&x.url);
 }
@@ -60,7 +60,7 @@ async function rssHeadlines(){
   const results=[];
   for(const [url,source] of feeds){
     try{
-      const response=await fetchWithRetry(url,{headers:{'user-agent':'share-capsule-daily-content/1.1','accept':'application/rss+xml, application/xml, text/xml'}},2);
+      const response=await fetchWithRetry(url,{headers:{'user-agent':'share-capsule-daily-content/1.2','accept':'application/rss+xml, application/xml, text/xml'}},2);
       results.push(...parseRss(await response.text(),source));
     }catch(error){console.warn(`News fallback failed for ${source}: ${error.message}`)}
   }
@@ -79,9 +79,10 @@ async function headlines(){
 }
 
 async function verified(candidate){
-  const response=await fetchWithRetry(candidate.sourceUrl,{headers:{'user-agent':'share-capsule-source-validator/1.1','accept':'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'}},3);
+  const response=await fetchWithRetry(candidate.sourceUrl,{headers:{'user-agent':'share-capsule-source-validator/1.2','accept':'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'}},2);
   const text=norm(await response.text());
-  return text.includes(norm(candidate.verifyNeedle));
+  const needles=Array.isArray(candidate.verifyNeedle)?candidate.verifyNeedle:[candidate.verifyNeedle];
+  return needles.filter(Boolean).some(needle=>text.includes(norm(needle)));
 }
 
 function score(candidate,news){const text=norm(news.map(x=>x.title).join(' '));return candidate.themes.reduce((n,t)=>n+(text.includes(norm(t))?1:0),0)}
@@ -104,17 +105,39 @@ if(!news.length){
   process.exit(0);
 }
 
+let published=0;
+const skipped=[];
 for(const type of Object.keys(paths)){
-  const data=JSON.parse(await readFile(paths[type],'utf8')); const key=arrays[type]; data[key]||=[]; data.site||={};
-  for(const entry of library[type]||[]){const item=replaceDate(entry.item);if(!data[key].some(x=>x.id===item.id))data[key].unshift(item)}
-  const recent=(data.site.dailyNewsSelections||[]).slice(0,7).map(x=>x.id);
-  let candidates=[...(library[type]||[]),...data[key].map(x=>inferCandidate(x))].filter((x,i,a)=>x.item?.id&&a.findIndex(y=>y.item?.id===x.item.id)===i&&!recent.includes(x.item.id));
-  if(!candidates.length)candidates=[...(library[type]||[]),...data[key].map(x=>inferCandidate(x))].filter((x,i,a)=>x.item?.id&&a.findIndex(y=>y.item?.id===x.item.id)===i);
-  candidates.sort((a,b)=>score(b,news)-score(a,news));
-  let chosen=null; for(const candidate of candidates){try{if(candidate.sourceUrl&&await verified(candidate)){chosen=candidate;break}}catch(error){console.warn(`Source validation failed for ${candidate.item?.id}: ${error.message}`)}}
-  if(!chosen)throw new Error(`No authenticated ${type} candidate passed source validation`);
-  exposeSelection(type,data,key,chosen.item.id);
-  const top=news[0]; const selection={date:today,id:chosen.item.id,headline:top.title,newsUrl:top.url,newsSource:top.source,explanation:`Selected from authenticated ${type} content because its themes best matched the previous 24 hours of news.`,verifiedOn:today};
-  data.site.dailyNewsSelections=[selection,...(data.site.dailyNewsSelections||[]).filter(x=>x.date!==today)].slice(0,120);
-  await writeFile(paths[type],JSON.stringify(data,null,2)+'\n');
+  try{
+    const data=JSON.parse(await readFile(paths[type],'utf8')); const key=arrays[type]; data[key]||=[]; data.site||={};
+    for(const entry of library[type]||[]){const item=replaceDate(entry.item);if(!data[key].some(x=>x.id===item.id))data[key].unshift(item)}
+    const recent=(data.site.dailyNewsSelections||[]).slice(0,7).map(x=>x.id);
+    let candidates=[...(library[type]||[]),...data[key].map(x=>inferCandidate(x))].filter((x,i,a)=>x.item?.id&&x.sourceUrl&&a.findIndex(y=>y.item?.id===x.item.id)===i&&!recent.includes(x.item.id));
+    if(!candidates.length)candidates=[...(library[type]||[]),...data[key].map(x=>inferCandidate(x))].filter((x,i,a)=>x.item?.id&&x.sourceUrl&&a.findIndex(y=>y.item?.id===x.item.id)===i);
+    candidates.sort((a,b)=>score(b,news)-score(a,news));
+    let chosen=null;
+    for(const candidate of candidates.slice(0,10)){
+      try{if(await verified(candidate)){chosen=candidate;break}}
+      catch(error){console.warn(`Source validation failed for ${type}/${candidate.item?.id}: ${error.message}`)}
+    }
+    if(!chosen){
+      skipped.push(`${type}: no candidate source could be authenticated today`);
+      console.warn(`Keeping the existing ${type} selection unchanged.`);
+      continue;
+    }
+    exposeSelection(type,data,key,chosen.item.id);
+    const top=news[0];
+    const selection={date:today,id:chosen.item.id,headline:top.title,newsUrl:top.url,newsSource:top.source,explanation:`Selected from authenticated ${type} content because its themes best matched the previous 24 hours of news.`,verifiedOn:today};
+    data.site.dailyNewsSelections=[selection,...(data.site.dailyNewsSelections||[]).filter(x=>x.date!==today)].slice(0,120);
+    await writeFile(paths[type],JSON.stringify(data,null,2)+'\n');
+    published++;
+    console.log(`Published ${type}: ${chosen.item.id}`);
+  }catch(error){
+    skipped.push(`${type}: ${error.message}`);
+    console.warn(`Keeping the existing ${type} selection unchanged: ${error.message}`);
+  }
 }
+
+console.log(`Daily publisher completed: ${published} endpoint(s) updated, ${skipped.length} skipped.`);
+for(const warning of skipped)console.warn(warning);
+process.exit(0);
