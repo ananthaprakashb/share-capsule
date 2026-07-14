@@ -774,17 +774,22 @@
       "category": "Tamil Music",
       "language": "Tamil",
       "music": true,
-      "appleUrl": "https://music.apple.com/us/album/%E0%AE%95%E0%AE%A9-%E0%AE%A4%E0%AE%B0-%E0%AE%9A-%E0%AE%B1-%E0%AE%AE%E0%AE%B0%E0%AE%AE/1809722387?i=1809722388&uo=4",
+      "appleUrl": "https://music.apple.com/fr/album/%E0%AE%95%E0%AE%A9-%E0%AE%A4%E0%AE%B0-%E0%AE%9A-%E0%AE%B1-%E0%AE%AE%E0%AE%B0%E0%AE%AE-ep/1809722387",
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/09/fb/c1/09fbc147-5d7b-0ecb-2020-89709acfcdaa/artwork.jpg/1200x1200bb.jpg",
       "publishedAt": "2025-04-20",
       "storeTitle": "கனிதரு சிறுமரம்",
-      "spotifyUrl": "https://open.spotify.com/track/45MrTRKwqBKTJm2IAWF2yz",
+      "spotifyUrl": "https://open.spotify.com/track/45MrTRKwqBKTJm2IAWF2yz?si=cb330717c60747ef",
       "amazonUrl": "https://music.amazon.com/albums/B0F5PTVCYQ",
-      "description": "A Tamil music release by தமிழாலே.",
+      "description": "A Tamil music release by தமிழாலே, available on Spotify, Apple Music and YouTube.",
       "coverLines": [
         "கனிதரு",
         "சிறுமரம்"
-      ]
+      ],
+      "artist": "தமிழாலே",
+      "youtubeExtra": [
+        "https://www.youtube.com/playlist?list=OLAK5uy_kpF5G8qtX6v6sX0pHmObY-iQYlg1h5hvg"
+      ],
+      "featured": true
     }
   ]
 }
