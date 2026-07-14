@@ -4,7 +4,19 @@
     "tagline": "One globally recognized legal principle each day",
     "startDate": "2026-07-12",
     "scopeNote": "There is no single law that applies identically in every country. This page explains widely recognized international legal principles and documented incidents. Local constitutions, statutes, procedures and remedies can differ.",
-    "validationPolicy": "Every entry must identify the international instrument, article number, official source, documented incident, incident source and validation date before publication."
+    "validationPolicy": "Every entry must cite two primary legal authorities plus a primary court, tribunal or government-agency record for the specific case or incident. All required fields and source URLs are checked before publication.",
+    "lastRevalidatedAt": "2026-07-13T23:00:00.000Z",
+    "dailyNewsSelections": [
+      {
+        "date": "2026-07-13",
+        "id": "officials-must-respect-acquittals",
+        "headline": "Daily legal guidance selected after primary-source review",
+        "newsUrl": "https://hudoc.echr.coe.int/eng?i=001-122859",
+        "newsSource": "European Court of Human Rights",
+        "explanation": "Published after checking the cited international instruments and the official judgment record.",
+        "verifiedOn": "2026-07-13"
+      }
+    ]
   },
   "principles": [
     {
@@ -33,7 +45,35 @@
       "incidentSourceUrl": "https://hudoc.echr.coe.int/eng?i=001-177082",
       "takeaway": "A company policy does not automatically erase every privacy interest. Notice, necessity, proportionality and safeguards matter.",
       "localLawWarning": "The exact rights of employees and the admissibility of monitoring evidence depend on local law.",
-      "validatedOn": "2026-07-12"
+      "validatedOn": "2026-07-13"
+    },
+    {
+      "id": "officials-must-respect-acquittals",
+      "category": "Fair trial",
+      "title": "An acquittal or overturned conviction must be treated as legally meaningful",
+      "plainRule": "After a person has been acquitted or a conviction has been set aside, later official decisions should not describe that person as though criminal guilt were still established.",
+      "globalBasis": "International Covenant on Civil and Political Rights, Article 14(2); Universal Declaration of Human Rights, Article 11(1)",
+      "globalSourceTitle": "International Covenant on Civil and Political Rights",
+      "globalSourceUrl": "https://www.ohchr.org/en/instruments-mechanisms/instruments/international-covenant-civil-and-political-rights",
+      "secondaryGlobalSourceTitle": "Universal Declaration of Human Rights",
+      "secondaryGlobalSourceUrl": "https://www.un.org/en/about-us/universal-declaration-of-human-rights",
+      "everydayMeaning": "An acquittal, dismissal, mistrial and overturned conviction are different legal outcomes, but none should casually be rewritten as a final finding of guilt. Later compensation, employment, licensing or public-record decisions should use accurate language and respect the result of the criminal process.",
+      "practicalSteps": [
+        "Keep certified copies of the acquittal, dismissal or appellate order.",
+        "When a later form asks about the case, answer precisely and distinguish arrest, charge, conviction and reversal.",
+        "Ask an agency or employer to correct records that inaccurately state that guilt was established.",
+        "Check local sealing, expungement, compensation and record-correction procedures promptly."
+      ],
+      "incidentTitle": "Allen v. the United Kingdom",
+      "incidentDate": "2013-07-12",
+      "incidentJurisdiction": "European Court of Human Rights",
+      "incidentSummary": "Lorraine Allen's criminal conviction was quashed. In later compensation proceedings, the Court examined whether the official reasoning respected the continuing presumption of innocence attached to the overturned conviction.",
+      "incidentOutcome": "The Grand Chamber confirmed that the presumption of innocence can continue to protect a person in later proceedings linked to an acquittal or quashed conviction. It found no violation on the particular wording and context of this case, while clarifying the governing principle.",
+      "incidentSourceTitle": "Allen v. the United Kingdom, Application no. 25424/09",
+      "incidentSourceUrl": "https://hudoc.echr.coe.int/eng?i=001-122859",
+      "takeaway": "Official records and later decisions should accurately reflect that an accusation or overturned conviction is not a final legal finding of guilt.",
+      "localLawWarning": "The effect of an acquittal or reversal on employment, licensing, immigration, compensation, sealing and public records varies by jurisdiction. Obtain local legal advice for a specific case.",
+      "validatedOn": "2026-07-13"
     },
     {
       "id": "lawyer-before-questioning",
@@ -61,7 +101,7 @@
       "incidentSourceUrl": "https://hudoc.echr.coe.int/eng?i=001-89893",
       "takeaway": "Legal help is most useful before an irreversible statement or waiver is made, not only when the trial begins.",
       "localLawWarning": "Rules about silence, detention, free counsel and questioning differ significantly by country and sometimes by state or province.",
-      "validatedOn": "2026-07-12"
+      "validatedOn": "2026-07-13"
     },
     {
       "id": "presumption-of-innocence",
@@ -89,7 +129,7 @@
       "incidentSourceUrl": "https://hudoc.echr.coe.int/eng?i=001-122859",
       "takeaway": "The presumption of innocence can remain relevant even after the main criminal case has ended.",
       "localLawWarning": "Defamation, contempt, public-record and compensation rules vary widely across jurisdictions.",
-      "validatedOn": "2026-07-12"
+      "validatedOn": "2026-07-13"
     },
     {
       "id": "consumer-product-safety",
@@ -117,7 +157,7 @@
       "incidentSourceUrl": "https://www.cpsc.gov/Recalls/2016/Samsung-Expands-Recall-of-Galaxy-Note7-Smartphones-Based-on-Additional-Incidents-with-Replacement-Phones",
       "takeaway": "A recall notice is a safety instruction, not merely a customer-service suggestion.",
       "localLawWarning": "Refund, replacement, damages, reporting deadlines and agency powers depend on the country where the product was sold or used.",
-      "validatedOn": "2026-07-12"
+      "validatedOn": "2026-07-13"
     }
   ]
 }
