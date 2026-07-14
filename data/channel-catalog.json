@@ -4,6 +4,26 @@
   },
   "items": [
     {
+      "slug": "suvasa-kaathu",
+      "title": "சுவாசக் காத்து (Suvasa Kaathu)",
+      "artist": "தமிழாலே",
+      "videoIds": [],
+      "youtubeExtra": [
+        "https://www.youtube.com/playlist?list=OLAK5uy_kaAwXph_HSsoQTds7GIP5GBhy2Nlr9Bxs"
+      ],
+      "category": "Tamil Music",
+      "language": "Tamil",
+      "music": true,
+      "description": "A Tamil music single by தமிழாலே, available on Spotify, Apple Music and YouTube.",
+      "coverLines": [
+        "சுவாசக் காத்து",
+        "Suvasa Kaathu"
+      ],
+      "spotifyUrl": "https://open.spotify.com/album/5m23u5kdndz2ovRV4zIHPr",
+      "appleUrl": "https://music.apple.com/us/album/%E0%AE%9A-%E0%AE%B5-%E0%AE%9A%E0%AE%95-%E0%AE%95-%E0%AE%A4-%E0%AE%A4-suvasa-kaathu-single/1846962693",
+      "featured": true
+    },
+    {
       "slug": "youtube-a3qyfysjvuu",
       "title": "Bone structure and growth",
       "artist": "EveryBasics",
