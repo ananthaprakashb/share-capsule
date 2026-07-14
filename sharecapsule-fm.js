@@ -1,10 +1,31 @@
 (()=>{
+  const installBrand=top=>{
+    if(!document.querySelector('link[rel="icon"][data-sharecapsule]')){
+      const icon=document.createElement('link');
+      icon.rel='icon';icon.type='image/svg+xml';icon.href='/favicon.svg?v=1';icon.dataset.sharecapsule='true';
+      document.head.appendChild(icon);
+    }
+    if(!document.querySelector('link[rel="apple-touch-icon"][data-sharecapsule]')){
+      const touch=document.createElement('link');
+      touch.rel='apple-touch-icon';touch.href='/assets/sharecapsule-logo.svg?v=1';touch.dataset.sharecapsule='true';
+      document.head.appendChild(touch);
+    }
+    const brand=top?.querySelector('.brand');
+    if(brand&&!brand.querySelector('.brandLogo')){
+      brand.insertAdjacentHTML('afterbegin','<img class="brandLogo" src="/assets/sharecapsule-logo.svg?v=1" alt="" width="36" height="36" aria-hidden="true">');
+      brand.setAttribute('aria-label','Share Capsule home');
+      brand.title='Share Capsule';
+    }
+  };
+
   const mount=()=>{
     const top=document.querySelector('.top');
-    if(!top||document.getElementById('sharecapsuleFm'))return false;
+    if(!top)return false;
+    installBrand(top);
+    if(document.getElementById('sharecapsuleFm'))return true;
 
     const style=document.createElement('style');
-    style.textContent='.fm{margin:0 0 20px;background:linear-gradient(135deg,#132f45,#244f68 58%,#8a5b20);color:#fff;border-radius:24px;padding:16px;box-shadow:0 16px 46px rgba(19,47,69,.2)}.fmTop{display:flex;align-items:center;gap:13px}.fmPlay{width:50px;height:50px;flex:0 0 50px;border:1px solid rgba(255,255,255,.55);border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:20px;font-weight:900}.fmInfo{min-width:0;flex:1}.fmName{font-size:11px;font-weight:950;letter-spacing:.14em;text-transform:uppercase;color:#cae7f6}.fmTitle{margin-top:4px;font-size:16px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.fmState{margin-top:3px;font-size:11px;color:rgba(255,255,255,.72)}.fmNext{border:1px solid rgba(255,255,255,.38);border-radius:999px;background:transparent;color:#fff;padding:9px 11px;font-size:11px;font-weight:900}.fmTrack{margin-top:13px;height:6px;background:rgba(255,255,255,.2);border-radius:99px;overflow:hidden;cursor:pointer}.fmFill{height:100%;width:0;background:#fff;border-radius:99px}.fmTimes{display:flex;justify-content:space-between;margin-top:6px;font-size:10px;color:rgba(255,255,255,.7)}.fmYouTube{position:absolute;width:1px;height:1px;overflow:hidden;opacity:.01;pointer-events:none}';
+    style.textContent='.brand{display:inline-flex!important;align-items:center;gap:10px}.brandLogo{width:36px;height:36px;display:block;flex:0 0 36px;border-radius:12px;box-shadow:0 6px 16px rgba(20,47,68,.18)}.fm{margin:0 0 20px;background:linear-gradient(135deg,#132f45,#244f68 58%,#8a5b20);color:#fff;border-radius:24px;padding:16px;box-shadow:0 16px 46px rgba(19,47,69,.2)}.fmTop{display:flex;align-items:center;gap:13px}.fmPlay{width:50px;height:50px;flex:0 0 50px;border:1px solid rgba(255,255,255,.55);border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:20px;font-weight:900}.fmInfo{min-width:0;flex:1}.fmName{font-size:11px;font-weight:950;letter-spacing:.14em;text-transform:uppercase;color:#cae7f6}.fmTitle{margin-top:4px;font-size:16px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.fmState{margin-top:3px;font-size:11px;color:rgba(255,255,255,.72)}.fmNext{border:1px solid rgba(255,255,255,.38);border-radius:999px;background:transparent;color:#fff;padding:9px 11px;font-size:11px;font-weight:900}.fmTrack{margin-top:13px;height:6px;background:rgba(255,255,255,.2);border-radius:99px;overflow:hidden;cursor:pointer}.fmFill{height:100%;width:0;background:#fff;border-radius:99px}.fmTimes{display:flex;justify-content:space-between;margin-top:6px;font-size:10px;color:rgba(255,255,255,.7)}.fmYouTube{position:absolute;width:1px;height:1px;overflow:hidden;opacity:.01;pointer-events:none}';
     document.head.appendChild(style);
 
     const root=document.createElement('section');
