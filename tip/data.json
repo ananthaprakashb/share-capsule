@@ -6,6 +6,15 @@
     "method": "Tips rotate deterministically by local calendar date. Every tip must include an authoritative source and documented real-world evidence before publication.",
     "dailyNewsSelections": [
       {
+        "date": "2026-07-15",
+        "id": "heat-check-cool-hydrate",
+        "headline": "Extreme heat warnings, record-hot nights, wildfire danger and smoke affect large parts of the United States",
+        "newsUrl": "https://apnews.com/article/fb7664f71743f71beca4ce7447562ca2",
+        "newsSource": "Associated Press current heat reporting",
+        "explanation": "Selected because unusually hot nights reduce the body's opportunity to recover, while heat, wildfire and smoke increase risks for older adults, children, outdoor workers and people without reliable cooling.",
+        "verifiedOn": "2026-07-15"
+      },
+      {
         "date": "2026-07-14",
         "id": "pause-verify-before-sharing",
         "headline": "Global crises, AI-enhanced manipulation and fast-moving social posts increase the need to verify urgent information before forwarding it",
@@ -90,7 +99,7 @@
       "evidenceSummary": "Current reporting describes unusually hot days and nights across much of the United States, increasing health risks because the body has less opportunity to cool and recover overnight.",
       "evidenceUrl": "https://apnews.com/article/fb7664f71743f71beca4ce7447562ca2",
       "evidenceType": "Current documented heat emergency",
-      "lastValidated": "2026-07-13"
+      "lastValidated": "2026-07-15"
     },
     {
       "id": "generator-twenty-feet",
