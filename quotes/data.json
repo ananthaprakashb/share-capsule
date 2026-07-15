@@ -5,6 +5,26 @@
   },
   "quotes": [
     {
+      "date": "2026-07-15",
+      "quote": "United there is little we cannot do in a host of cooperative ventures.",
+      "author": "John F. Kennedy",
+      "authorBio": "Thirty-fifth president of the United States, known for speeches on diplomacy, civic responsibility, freedom, and international cooperation.",
+      "authorEncyclopediaUrl": "https://www.jfklibrary.org/learn/about-jfk/life-of-john-f-kennedy",
+      "sourceTitle": "Inaugural Address, January 20, 1961",
+      "sourceUrl": "https://www.jfklibrary.org/archives/other-resources/john-f-kennedy-speeches/inaugural-address-19610120",
+      "sourceType": "Official presidential library transcript",
+      "verificationNote": "Verified word-for-word in the John F. Kennedy Presidential Library transcript of the January 20, 1961 inaugural address.",
+      "verifiedOn": "2026-07-15",
+      "verificationMode": "pre-verified-library",
+      "libraryId": "jfk-united-cooperation",
+      "newsFit": {
+        "headline": "Softer U.S. inflation lifted global markets while escalating Middle East tensions kept international cooperation in focus",
+        "newsUrl": "https://www.reuters.com/world/china/global-markets-global-markets-2026-07-15/",
+        "source": "Reuters current-news context",
+        "explanation": "Selected because today’s news combined encouraging economic signals with continuing geopolitical risk. The quote emphasizes that durable progress in markets, security, science and public life depends on cooperation rather than isolated action. July 15 also marks the 1975 launch of the Apollo-Soyuz mission, a lasting example of Cold War rivals working together."
+      }
+    },
+    {
       "date": "2026-07-14",
       "quote": "Every gun that is made, every warship launched, every rocket fired signifies, in the final sense, a theft from those who hunger and are not fed, those who are cold and are not clothed.",
       "author": "Dwight D. Eisenhower",
