@@ -6,13 +6,18 @@
   "start_url": "/?source=pwa",
   "scope": "/",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
   "background_color": "#f6f1e8",
   "theme_color": "#132f45",
   "orientation": "any",
   "categories": ["news", "education", "music", "lifestyle"],
   "icons": [
-    {"src":"/assets/sharecapsule-logo.svg?v=3","sizes":"192x192","type":"image/svg+xml","purpose":"any maskable"},
-    {"src":"/assets/sharecapsule-logo.svg?v=3","sizes":"512x512","type":"image/svg+xml","purpose":"any maskable"}
+    {
+      "src": "/assets/sharecapsule-logo.svg?v=3",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
   ],
   "shortcuts": [
     {"name":"Releases","url":"/"},
