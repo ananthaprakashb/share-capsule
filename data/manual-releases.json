@@ -1,6 +1,59 @@
 {
   "releases": [
     {
+      "slug": "mahendravarman-rock-cut-architecture-tamil",
+      "title": "பாறையில் சரித்திரம் செதுக்கிய மகேந்திரவர்மனின் கட்டிடக்கலை",
+      "artist": "Share Capsule",
+      "type": "Audio article",
+      "category": "Tamil History & Architecture",
+      "language": "Tamil",
+      "publishedAt": "2026-07-14",
+      "description": "மகேந்திரவர்மன் காலப் பாறைக்குடைவரைக் கோயில்கள், கட்டிடக்கலை முயற்சிகள் மற்றும் தமிழக வரலாற்றில் அவற்றின் இடத்தை அறிமுகப்படுத்தும் தமிழ் ஆடியோ கட்டுரை.",
+      "featured": true,
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#3f2a1d,#8b5e34 55%,#c48a4a)",
+      "coverEyebrow": "தமிழ் வரலாறு மற்றும் கட்டிடக்கலை",
+      "coverLines": [
+        "பாறையில் சரித்திரம் செதுக்கிய",
+        "மகேந்திரவர்மனின் கட்டிடக்கலை"
+      ],
+      "previewUrl": "https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev/%E0%AE%AA%E0%AE%BE%E0%AE%B1%E0%AF%88%E0%AE%AF%E0%AE%BF%E0%AE%B2%E0%AF%8D_%E0%AE%9A%E0%AE%B0%E0%AE%BF%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AE%BF%E0%AE%B0%E0%AE%AE%E0%AF%8D_%E0%AE%9A%E0%AF%86%E0%AE%A4%E0%AF%81%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AE%BF%E0%AE%AF_%E0%AE%AE%E0%AE%95%E0%AF%87%E0%AE%A8%E0%AF%8D%E0%AE%A4%E0%AE%BF%E0%AE%B0%E0%AE%B5%E0%AE%B0%E0%AF%8D%E0%AE%AE%E0%AE%A9%E0%AE%BF%E0%AE%A9%E0%AF%8D_%E0%AE%95%E0%AE%9F%E0%AF%8D%E0%AE%9F%E0%AE%BF%E0%AE%9F%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AE%B2%E0%AF%88.m4a",
+      "demoTone": false,
+      "audioPageUrl": "/audio/?id=mahendravarman-rock-cut-architecture-tamil",
+      "platforms": [
+        {
+          "label": "கேளுங்கள்",
+          "icon": "▶",
+          "url": "/audio/?id=mahendravarman-rock-cut-architecture-tamil"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "நண்பர்",
+          "icon": "🎧",
+          "text": "மகேந்திரவர்மனின் பாறைக்குடைவரைக் கட்டிடக்கலை பற்றிய இந்த தமிழ் ஆடியோவை கேளுங்கள்."
+        },
+        "family": {
+          "label": "குடும்பம்",
+          "icon": "🏛️",
+          "text": "தமிழக வரலாறும் கட்டிடக்கலையும் அறிய குடும்பத்துடன் பகிர வேண்டிய தமிழ் ஆடியோ."
+        },
+        "topic": {
+          "label": "வரலாற்று ஆர்வலர்",
+          "icon": "🪨",
+          "text": "மகேந்திரவர்மன் காலப் பாறைக்குடைவரைக் கோயில்கள் மற்றும் கட்டிடக்கலை முயற்சிகளை அறிமுகப்படுத்தும் தமிழ் ஆடியோ."
+        }
+      },
+      "tags": [
+        "Tamil",
+        "Mahendravarman",
+        "Pallava history",
+        "rock-cut temples",
+        "Tamil architecture",
+        "history"
+      ]
+    },
+    {
       "slug": "tamil-teeth-heart-alzheimer-health",
       "title": "மாரடைப்பையும் அல்சைமரையும் தடுக்கும் உங்கள் பற்கள்",
       "artist": "Share Capsule",
@@ -43,7 +96,14 @@
           "text": "வாய் ஆரோக்கியம், இதய நலம் மற்றும் மூளை நலம் இடையிலான தொடர்புகளை அறிமுகப்படுத்தும் தமிழ் ஆடியோ."
         }
       },
-      "tags": ["Tamil", "oral health", "dental health", "heart health", "brain health", "Alzheimer’s"]
+      "tags": [
+        "Tamil",
+        "oral health",
+        "dental health",
+        "heart health",
+        "brain health",
+        "Alzheimer’s"
+      ]
     },
     {
       "slug": "tiktok-anantha-7653291822894091534",
@@ -98,7 +158,11 @@
           "text": "A short-form TikTok video from @anantha5615, available through Share Capsule."
         }
       },
-      "tags": ["TikTok", "short video", "Anantha"]
+      "tags": [
+        "TikTok",
+        "short video",
+        "Anantha"
+      ]
     },
     {
       "slug": "meal-prep-light-the-3-tier-protein-arsenal",
