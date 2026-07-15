@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#173b36">
+  <meta name="description" content="Official U.S. truck-driver career searches from major carriers, retailers, food distributors and parcel companies.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Truck Driver Jobs Across the U.S. — Share Capsule">
+  <meta property="og:description" content="Search current CDL, local delivery, dedicated, regional, long-haul and freight-driver openings on official employer sites.">
+  <meta property="og:url" content="https://sharecapsule.app/jobs/truck/">
+  <title>Truck Driver Jobs Across the U.S. — Share Capsule</title>
+  <style>
+    :root{--bg:#edf4f0;--paper:#fffefa;--ink:#17231f;--muted:#64716b;--line:#d9e6df;--accent:#146b58;--accent2:#ddf1e9;--gold:#9b671d;--shadow:0 18px 58px rgba(29,67,56,.10)}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 12% 0,#fff 0,transparent 35%),linear-gradient(155deg,#eef6f1,#e5eee9);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}.shell{width:min(100%,1040px);margin:auto;padding:max(18px,env(safe-area-inset-top)) 16px calc(70px + env(safe-area-inset-bottom))}.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand,.home{color:inherit;text-decoration:none}.brand{font-weight:950;font-size:20px;letter-spacing:-.045em}.home{font-size:13px;font-weight:850;padding:10px 13px;border:1px solid var(--line);border-radius:999px;background:#fff}.hero{padding:38px 2px 22px}.kicker{margin:0 0 8px;color:var(--accent);font-size:12px;font-weight:950;letter-spacing:.14em;text-transform:uppercase}.hero h1{margin:0;max-width:880px;font-size:clamp(42px,8vw,72px);line-height:.95;letter-spacing:-.06em}.hero p{max-width:860px;margin:16px 0 0;color:var(--muted);line-height:1.65}.controls{display:grid;grid-template-columns:1fr;gap:10px;margin:4px 0 20px}@media(min-width:760px){.controls{grid-template-columns:1fr 230px}}.control{height:50px;border:1px solid var(--line);border-radius:16px;background:#fff;padding:0 14px;color:var(--ink);outline:none}.status{margin-bottom:15px;padding:14px 16px;border:1px solid var(--line);background:rgba(255,255,255,.8);border-radius:18px;color:var(--muted);font-size:13px;line-height:1.55}.grid{display:grid;grid-template-columns:1fr;gap:15px}@media(min-width:760px){.grid{grid-template-columns:1fr 1fr}}.card{background:rgba(255,254,250,.98);border:1px solid rgba(255,255,255,.96);border-radius:25px;padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column}.type{display:inline-flex;align-self:flex-start;background:var(--accent2);color:var(--accent);border-radius:999px;padding:7px 9px;font-size:10px;font-weight:950;letter-spacing:.06em;text-transform:uppercase}.card h2{margin:14px 0 0;font-size:30px;letter-spacing:-.045em}.card p{margin:10px 0 0;color:var(--muted);font-size:13px;line-height:1.6}.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.tags span{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 9px;font-size:10px;font-weight:850;color:#4f5d57}.apply{display:grid;place-items:center;min-height:50px;margin-top:auto;padding-top:18px;border-radius:15px;background:var(--ink);color:#fff;text-decoration:none;font-weight:900}.notice{margin-top:22px;padding:18px;border-radius:21px;background:#fff7e8;border:1px solid #efdfbd;color:#6d563b;font-size:13px;line-height:1.65}.empty{padding:32px;text-align:center;background:#fff;border-radius:24px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="top"><a class="brand" href="/jobs/truck/">Share Capsule Truck Jobs</a><a class="home" href="/jobs/">Engineering jobs</a></header>
+    <section class="hero">
+      <p class="kicker">Official employer career searches</p>
+      <h1>Truck driver jobs across the United States.</h1>
+      <p>Search current CDL-A, local delivery, dedicated, regional, long-haul, food-service, parcel and freight-driver openings directly on official employer sites. Openings, pay, home time, endorsements and license requirements vary by location.</p>
+    </section>
+    <section class="controls" aria-label="Truck job filters">
+      <input class="control" id="search" type="search" placeholder="Search company or job type" aria-label="Search truck jobs">
+      <select class="control" id="type" aria-label="Filter by driving type">
+        <option value="all">All driving types</option>
+        <option value="long-haul">Long-haul / regional</option>
+        <option value="dedicated">Dedicated fleets</option>
+        <option value="local">Local delivery</option>
+        <option value="parcel">Parcel / freight</option>
+      </select>
+    </section>
+    <div class="status" id="status"></div>
+    <section class="grid" id="grid" aria-live="polite"></section>
+    <section class="notice"><strong>Before applying:</strong> Confirm the exact CDL class, endorsements, minimum age, driving record, medical certificate, experience, route, home-time schedule and compensation on the employer’s official posting. This page links to employer career searches and does not guarantee that a particular opening remains available.</section>
+  </main>
+  <script>
+    const jobs=[
+      {company:'Schneider',type:'long-haul',label:'Long-haul / regional',description:'Company-driver, regional, dedicated, tanker, intermodal and team-driving opportunities across many U.S. markets.',tags:['CDL-A','Regional','Dedicated','Tanker','Intermodal'],url:'https://schneiderjobs.com/search-driving-jobs'},
+      {company:'J.B. Hunt',type:'dedicated',label:'Dedicated fleets',description:'Dedicated contract services, intermodal, regional, local and over-the-road driver opportunities.',tags:['CDL-A','Dedicated','Intermodal','Local','Regional'],url:'https://careers.jbhunt.com/jobs/driver/'},
+      {company:'Walmart Private Fleet',type:'dedicated',label:'Dedicated fleets',description:'Private-fleet truck-driving opportunities serving Walmart distribution and store networks.',tags:['CDL-A','Private fleet','Regional','Distribution'],url:'https://drive4walmart.com/'},
+      {company:'Sysco',type:'local',label:'Local delivery',description:'Food-service delivery-driver and CDL roles with routes based from distribution facilities around the country.',tags:['CDL-A','CDL-B','Local delivery','Food service'],url:'https://careers.sysco.com/en/cdl-driver'},
+      {company:'UPS',type:'parcel',label:'Parcel / freight',description:'Tractor-trailer, feeder, package-delivery and other commercial-driving openings.',tags:['Tractor trailer','Feeder','Parcel','Local'],url:'https://www.jobs-ups.com/category/tractor-trailer-drivers-jobs/1187/43857/1'},
+      {company:'FedEx',type:'parcel',label:'Parcel / freight',description:'Courier, delivery, tractor-trailer, freight and commercial-driver openings across FedEx operating companies.',tags:['Delivery','Freight','Tractor trailer','Courier'],url:'https://careers.fedex.com/driver/jobs'},
+      {company:'PepsiCo',type:'local',label:'Local delivery',description:'Delivery-driver, transport-driver and route-driver positions supporting beverage and snack distribution.',tags:['CDL-A','Local delivery','Route driver','Transport'],url:'https://www.pepsicojobs.com/main/jobs?keywords=driver&location=United%20States'},
+      {company:'Coca-Cola Consolidated',type:'local',label:'Local delivery',description:'Bulk, delivery, transport and merchandising-support driver roles in its operating territory.',tags:['CDL-A','CDL-B','Local delivery','Transport'],url:'https://careers.cokeconsolidated.com/search/?q=driver'},
+      {company:'Ryder',type:'dedicated',label:'Dedicated fleets',description:'Dedicated, local, regional and shuttle-driver positions supporting customer fleets nationwide.',tags:['CDL-A','Dedicated','Shuttle','Local','Regional'],url:'https://ryder-drivers.jobs/'},
+      {company:'Penske Logistics',type:'dedicated',label:'Dedicated fleets',description:'Local, regional, route and dedicated truck-driver jobs for logistics customers throughout the U.S.',tags:['CDL-A','Dedicated','Local','Regional','Route'],url:'https://penske.jobs/drivers/'},
+      {company:'Old Dominion Freight Line',type:'parcel',label:'Parcel / freight',description:'Line-haul and pickup-and-delivery driver roles in less-than-truckload freight operations.',tags:['CDL-A','Line haul','LTL','Pickup & delivery'],url:'https://jobs.odfl.com/us/en/drivers'},
+      {company:'XPO',type:'parcel',label:'Parcel / freight',description:'Line-haul and pickup-and-delivery CDL driver opportunities in nationwide LTL freight operations.',tags:['CDL-A','Line haul','LTL','Pickup & delivery'],url:'https://jobs.xpo.com/go/Driver-Jobs/4198400/'}
+    ];
+    const grid=document.getElementById('grid'),status=document.getElementById('status');
+    const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    function render(){const q=document.getElementById('search').value.trim().toLowerCase(),type=document.getElementById('type').value;const items=jobs.filter(x=>(type==='all'||x.type===type)&&(!q||[x.company,x.label,x.description,...x.tags].join(' ').toLowerCase().includes(q)));status.innerHTML=`Showing <strong>${items.length}</strong> official nationwide employer career searches. Use each employer’s location filter to find openings near you.`;grid.innerHTML=items.length?items.map(x=>`<article class="card"><span class="type">${esc(x.label)}</span><h2>${esc(x.company)}</h2><p>${esc(x.description)}</p><div class="tags">${x.tags.map(t=>`<span>${esc(t)}</span>`).join('')}</div><a class="apply" href="${esc(x.url)}" target="_blank" rel="noopener">Search official openings ↗</a></article>`).join(''):'<div class="empty">No employers match this filter.</div>'}
+    document.getElementById('search').addEventListener('input',render);document.getElementById('type').addEventListener('change',render);render();
+  </script>
+  <script src="/site-shell.js" defer></script>
+</body>
+</html>
