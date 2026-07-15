@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+const path='workers/reactions/src/index.js';
+let source=fs.readFileSync(path,'utf8');
+const importLine='import { handlePushPublicKey, handlePushSubscribe, handlePushUnsubscribe } from "./push-subscriptions.js";';
+if(!source.includes(importLine))source=source.replace('import { handleFactCheck } from "./factcheck.js";',`import { handleFactCheck } from "./factcheck.js";\n${importLine}`);
+const anchor='    if (request.method === \'POST\' && (pathname === \'/api/factcheck\' || pathname === \'/api/factcheck/\')) {';
+const routes=`    if (request.method === 'GET' && (pathname === '/api/push/public-key' || pathname === '/api/push/public-key/')) return handlePushPublicKey(request, env, json);\n    if (request.method === 'POST' && (pathname === '/api/push/subscribe' || pathname === '/api/push/subscribe/')) return handlePushSubscribe(request, env, json);\n    if (request.method === 'POST' && (pathname === '/api/push/unsubscribe' || pathname === '/api/push/unsubscribe/')) return handlePushUnsubscribe(request, env, json);\n`;
+if(!source.includes("/api/push/public-key"))source=source.replace(anchor,routes+anchor);
+fs.writeFileSync(path,source);
+if(!source.includes(importLine)||!source.includes('/api/push/subscribe'))throw new Error('Push routes were not applied');
+console.log('Push subscription routes applied');
