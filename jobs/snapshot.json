@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-07-15T05:47:33.667Z",
+  "generatedAt": "2026-07-15T18:09:30.302Z",
   "scope": "United States: all 50 states, Washington D.C., and explicitly U.S.-based remote roles",
   "sourceCount": 8,
   "workingSourceCount": 8,
   "totalJobs": 617,
   "roleCounts": {
-    "solutions": 134,
+    "solutions": 135,
     "software": 232,
+    "cybersecurity": 39,
+    "product-program": 65,
+    "data-science": 31,
     "ai-ml": 64,
     "data-engineering": 7,
-    "data-science": 31,
-    "cybersecurity": 39,
     "network-systems": 4,
-    "product-program": 66,
     "hardware": 1,
     "cloud-sre": 11,
     "ux-design": 16,
@@ -25,30 +25,30 @@
     "unknown": 617
   },
   "regionCounts": {
-    "US": 45,
-    "CA": 290,
-    "MO": 8,
-    "NY": 229,
-    "WA": 175,
-    "DC": 50,
-    "MA": 14,
+    "IL": 17,
+    "MI": 1,
+    "MN": 1,
+    "WA": 177,
+    "CA": 289,
+    "CO": 5,
+    "MA": 15,
+    "NY": 228,
+    "OR": 6,
+    "TX": 14,
     "REMOTE": 105,
-    "TX": 13,
+    "US": 47,
+    "MO": 8,
+    "DC": 50,
     "GA": 11,
-    "IL": 16,
     "NJ": 3,
     "MD": 9,
     "VA": 17,
-    "PA": 7,
     "NC": 7,
-    "CO": 4,
+    "PA": 7,
     "DE": 1,
     "WV": 1,
     "AZ": 1,
     "UT": 1,
-    "OR": 5,
-    "MI": 1,
-    "MN": 1,
     "OH": 1
   },
   "sources": [
@@ -56,23 +56,23 @@
       "id": "databricks",
       "company": "Databricks",
       "status": "passed",
-      "total": 785,
-      "accepted": 251,
+      "total": 781,
+      "accepted": 250,
       "error": null
     },
     {
       "id": "anthropic",
       "company": "Anthropic",
       "status": "passed",
-      "total": 414,
-      "accepted": 112,
+      "total": 417,
+      "accepted": 113,
       "error": null
     },
     {
       "id": "scaleai",
       "company": "Scale AI",
       "status": "passed",
-      "total": 186,
+      "total": 185,
       "accepted": 64,
       "error": null
     },
@@ -80,7 +80,7 @@
       "id": "figma",
       "company": "Figma",
       "status": "passed",
-      "total": 166,
+      "total": 168,
       "accepted": 41,
       "error": null
     },
@@ -88,7 +88,7 @@
       "id": "airtable",
       "company": "Airtable",
       "status": "passed",
-      "total": 39,
+      "total": 38,
       "accepted": 12,
       "error": null
     },
@@ -104,20 +104,276 @@
       "id": "pinterest",
       "company": "Pinterest",
       "status": "passed",
-      "total": 192,
-      "accepted": 96,
+      "total": 191,
+      "accepted": 95,
       "error": null
     },
     {
       "id": "elastic",
       "company": "Elastic",
       "status": "passed",
-      "total": 168,
-      "accepted": 10,
+      "total": 176,
+      "accepted": 11,
       "error": null
     }
   ],
   "jobs": [
+    {
+      "key": "databricks:8397493002",
+      "id": "8397493002",
+      "title": "Sr. Solutions Architect - Public Sector (SLED)",
+      "company": "Databricks",
+      "location": "Illinois; Michigan; Minnesota",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8397493002",
+      "updatedAt": "2026-07-15T13:30:11-04:00",
+      "role": {
+        "code": "solutions",
+        "label": "Solutions, sales and customer engineering"
+      },
+      "regions": [
+        "IL",
+        "MI",
+        "MN"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "anthropic:5114768008",
+      "id": "5114768008",
+      "title": "Staff+ Software Engineer, Data Infrastructure",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5114768008",
+      "updatedAt": "2026-07-15T13:20:49-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "robinhood:7918258",
+      "id": "7918258",
+      "title": "Security Engineer, Application Security",
+      "company": "Robinhood",
+      "location": "Bellevue, WA; Menlo Park, CA",
+      "url": "https://boards.greenhouse.io/robinhood/jobs/7918258?t=gh_src=&gh_jid=7918258",
+      "updatedAt": "2026-07-15T13:19:10-04:00",
+      "role": {
+        "code": "cybersecurity",
+        "label": "Cybersecurity"
+      },
+      "regions": [
+        "CA",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "robinhood"
+    },
+    {
+      "key": "databricks:8549248002",
+      "id": "8549248002",
+      "title": "Delivery Solutions Architect - Startups & Emerging Enterprise",
+      "company": "Databricks",
+      "location": "Remote - California; Remote - Colorado; Remote - Illinois; Remote - Massachusetts; Remote - New York; Remote - Oregon; Remote - Texas; Remote - Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8549248002",
+      "updatedAt": "2026-07-15T11:53:36-04:00",
+      "role": {
+        "code": "solutions",
+        "label": "Solutions, sales and customer engineering"
+      },
+      "regions": [
+        "CA",
+        "CO",
+        "IL",
+        "MA",
+        "NY",
+        "OR",
+        "TX",
+        "WA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8326570002",
+      "id": "8326570002",
+      "title": "Sr. Product Manager, Databricks Repos",
+      "company": "Databricks",
+      "location": "Seattle, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8326570002",
+      "updatedAt": "2026-07-15T11:32:17-04:00",
+      "role": {
+        "code": "product-program",
+        "label": "Technical product and program management"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8326513002",
+      "id": "8326513002",
+      "title": "Sr. Product Manager, Databricks Repos",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8326513002",
+      "updatedAt": "2026-07-15T11:32:17-04:00",
+      "role": {
+        "code": "product-program",
+        "label": "Technical product and program management"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "pinterest:7890197",
+      "id": "7890197",
+      "title": "Lead Product Analyst, Pinner Engagement",
+      "company": "Pinterest",
+      "location": "New York, NY, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7890197",
+      "updatedAt": "2026-07-15T11:31:44-04:00",
+      "role": {
+        "code": "data-science",
+        "label": "Data science and analytics"
+      },
+      "regions": [
+        "NY",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "anthropic:5159146008",
+      "id": "5159146008",
+      "title": "Staff+ Software Engineer, Privacy",
+      "company": "Anthropic",
+      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5159146008",
+      "updatedAt": "2026-07-15T10:50:00-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
+    {
+      "key": "elastic:8067100",
+      "id": "8067100",
+      "title": "Principal Software Engineer - Search Infra - Elasticsearch -",
+      "company": "Elastic",
+      "location": "United States",
+      "url": "https://jobs.elastic.co/jobs?gh_jid=8067100&gh_jid=8067100",
+      "updatedAt": "2026-07-15T10:28:01-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "US"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "elastic"
+    },
+    {
+      "key": "databricks:8546367002",
+      "id": "8546367002",
+      "title": "AI Engineer - FDE (Forward Deployed Engineer)",
+      "company": "Databricks",
+      "location": "United States",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8546367002",
+      "updatedAt": "2026-07-15T07:34:33-04:00",
+      "role": {
+        "code": "ai-ml",
+        "label": "AI and machine learning"
+      },
+      "regions": [
+        "US"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "pinterest:8036273",
+      "id": "8036273",
+      "title": "Staff Data Scientist, Finance & Business Ops",
+      "company": "Pinterest",
+      "location": "San Francisco, CA, US; Remote, US",
+      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=8036273",
+      "updatedAt": "2026-07-15T06:02:31-04:00",
+      "role": {
+        "code": "data-science",
+        "label": "Data science and analytics"
+      },
+      "regions": [
+        "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "pinterest"
+    },
+    {
+      "key": "anthropic:5161402008",
+      "id": "5161402008",
+      "title": "Data Scientist, Marketing",
+      "company": "Anthropic",
+      "location": "New York City, NY | Seattle, WA; San Francisco, CA",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5161402008",
+      "updatedAt": "2026-07-15T01:52:26-04:00",
+      "role": {
+        "code": "data-science",
+        "label": "Data science and analytics"
+      },
+      "regions": [
+        "CA",
+        "NY",
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "anthropic"
+    },
     {
       "key": "databricks:8549046002",
       "id": "8549046002",
@@ -302,28 +558,6 @@
       },
       "regions": [
         "NY"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "anthropic"
-    },
-    {
-      "key": "anthropic:5161402008",
-      "id": "5161402008",
-      "title": "Data Scientist, Marketing",
-      "company": "Anthropic",
-      "location": "New York City, NY | Seattle, WA; San Francisco, CA",
-      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5161402008",
-      "updatedAt": "2026-07-14T18:35:00-04:00",
-      "role": {
-        "code": "data-science",
-        "label": "Data science and analytics"
-      },
-      "regions": [
-        "CA",
-        "NY",
-        "WA"
       ],
       "visa": {
         "code": "unknown"
@@ -1891,27 +2125,6 @@
       "sourceId": "anthropic"
     },
     {
-      "key": "anthropic:5159146008",
-      "id": "5159146008",
-      "title": "Staff+ Software Engineer, Privacy",
-      "company": "Anthropic",
-      "location": "San Francisco, CA | New York City, NY | Seattle, WA",
-      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5159146008",
-      "updatedAt": "2026-07-14T18:35:00-04:00",
-      "role": {
-        "code": "software",
-        "label": "Software engineering"
-      },
-      "regions": [
-        "NY",
-        "WA"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "anthropic"
-    },
-    {
       "key": "anthropic:5205704008",
       "id": "5205704008",
       "title": "Staff+ Software Engineer, Public Sector",
@@ -3136,27 +3349,6 @@
       "sourceId": "figma"
     },
     {
-      "key": "robinhood:7918258",
-      "id": "7918258",
-      "title": "Senior Security Engineer, Application Security",
-      "company": "Robinhood",
-      "location": "Bellevue, WA; Menlo Park, CA",
-      "url": "https://boards.greenhouse.io/robinhood/jobs/7918258?t=gh_src=&gh_jid=7918258",
-      "updatedAt": "2026-07-10T16:02:37-04:00",
-      "role": {
-        "code": "cybersecurity",
-        "label": "Cybersecurity"
-      },
-      "regions": [
-        "CA",
-        "WA"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "robinhood"
-    },
-    {
       "key": "pinterest:7957799",
       "id": "7957799",
       "title": "Staff Technical Program Manager, Search Relevance",
@@ -3198,27 +3390,6 @@
         "code": "unknown"
       },
       "sourceId": "airtable"
-    },
-    {
-      "key": "pinterest:8036273",
-      "id": "8036273",
-      "title": "Staff Data Scientist, Finance & Business Ops",
-      "company": "Pinterest",
-      "location": "San Francisco, CA, US; Remote, US",
-      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=8036273",
-      "updatedAt": "2026-07-10T11:59:18-04:00",
-      "role": {
-        "code": "data-science",
-        "label": "Data science and analytics"
-      },
-      "regions": [
-        "CA",
-        "REMOTE"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "pinterest"
     },
     {
       "key": "pinterest:7773951",
@@ -3529,12 +3700,12 @@
       "sourceId": "robinhood"
     },
     {
-      "key": "robinhood:7975544",
-      "id": "7975544",
+      "key": "robinhood:7975563",
+      "id": "7975563",
       "title": "Senior Software Engineer",
       "company": "Robinhood",
       "location": "Menlo Park, CA",
-      "url": "https://boards.greenhouse.io/robinhood/jobs/7975544?t=gh_src=&gh_jid=7975544",
+      "url": "https://boards.greenhouse.io/robinhood/jobs/7975563?t=gh_src=&gh_jid=7975563",
       "updatedAt": "2026-07-09T19:02:18-04:00",
       "role": {
         "code": "software",
@@ -3649,12 +3820,12 @@
       "sourceId": "robinhood"
     },
     {
-      "key": "robinhood:7975526",
-      "id": "7975526",
+      "key": "robinhood:7975530",
+      "id": "7975530",
       "title": "Software Engineer",
       "company": "Robinhood",
       "location": "Menlo Park, CA",
-      "url": "https://boards.greenhouse.io/robinhood/jobs/7975526?t=gh_src=&gh_jid=7975526",
+      "url": "https://boards.greenhouse.io/robinhood/jobs/7975530?t=gh_src=&gh_jid=7975530",
       "updatedAt": "2026-07-09T19:02:18-04:00",
       "role": {
         "code": "software",
@@ -5404,79 +5575,19 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:8592928002",
-      "id": "8592928002",
+      "key": "databricks:8592951002",
+      "id": "8592951002",
       "title": "Sr. Forward Deployed Engineer - Financial Services",
       "company": "Databricks",
-      "location": "Dallas, Texas",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8592928002",
+      "location": "Charlotte, North Carolina",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8592951002",
       "updatedAt": "2026-07-08T17:44:10-04:00",
       "role": {
         "code": "solutions",
         "label": "Solutions, sales and customer engineering"
       },
       "regions": [
-        "TX"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
-      "key": "databricks:8592937002",
-      "id": "8592937002",
-      "title": "Sr. Forward Deployed Engineer - Financial Services",
-      "company": "Databricks",
-      "location": "Boston, Massachusetts",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8592937002",
-      "updatedAt": "2026-07-08T17:44:10-04:00",
-      "role": {
-        "code": "solutions",
-        "label": "Solutions, sales and customer engineering"
-      },
-      "regions": [
-        "MA"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
-      "key": "databricks:8592938002",
-      "id": "8592938002",
-      "title": "Sr. Forward Deployed Engineer - Financial Services",
-      "company": "Databricks",
-      "location": "Chicago, Illinois",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8592938002",
-      "updatedAt": "2026-07-08T17:44:10-04:00",
-      "role": {
-        "code": "solutions",
-        "label": "Solutions, sales and customer engineering"
-      },
-      "regions": [
-        "IL"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
-      "key": "databricks:8592939002",
-      "id": "8592939002",
-      "title": "Sr. Forward Deployed Engineer - Financial Services",
-      "company": "Databricks",
-      "location": "Philadelphia, Pennsylvania",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8592939002",
-      "updatedAt": "2026-07-08T17:44:10-04:00",
-      "role": {
-        "code": "solutions",
-        "label": "Solutions, sales and customer engineering"
-      },
-      "regions": [
-        "PA"
+        "NC"
       ],
       "visa": {
         "code": "unknown"
@@ -5504,19 +5615,79 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:8592951002",
-      "id": "8592951002",
+      "key": "databricks:8592939002",
+      "id": "8592939002",
       "title": "Sr. Forward Deployed Engineer - Financial Services",
       "company": "Databricks",
-      "location": "Charlotte, North Carolina",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8592951002",
+      "location": "Philadelphia, Pennsylvania",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8592939002",
       "updatedAt": "2026-07-08T17:44:10-04:00",
       "role": {
         "code": "solutions",
         "label": "Solutions, sales and customer engineering"
       },
       "regions": [
-        "NC"
+        "PA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8592938002",
+      "id": "8592938002",
+      "title": "Sr. Forward Deployed Engineer - Financial Services",
+      "company": "Databricks",
+      "location": "Chicago, Illinois",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8592938002",
+      "updatedAt": "2026-07-08T17:44:10-04:00",
+      "role": {
+        "code": "solutions",
+        "label": "Solutions, sales and customer engineering"
+      },
+      "regions": [
+        "IL"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8592937002",
+      "id": "8592937002",
+      "title": "Sr. Forward Deployed Engineer - Financial Services",
+      "company": "Databricks",
+      "location": "Boston, Massachusetts",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8592937002",
+      "updatedAt": "2026-07-08T17:44:10-04:00",
+      "role": {
+        "code": "solutions",
+        "label": "Solutions, sales and customer engineering"
+      },
+      "regions": [
+        "MA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8592928002",
+      "id": "8592928002",
+      "title": "Sr. Forward Deployed Engineer - Financial Services",
+      "company": "Databricks",
+      "location": "Dallas, Texas",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8592928002",
+      "updatedAt": "2026-07-08T17:44:10-04:00",
+      "role": {
+        "code": "solutions",
+        "label": "Solutions, sales and customer engineering"
+      },
+      "regions": [
+        "TX"
       ],
       "visa": {
         "code": "unknown"
@@ -5564,19 +5735,19 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:8461321002",
-      "id": "8461321002",
+      "key": "databricks:8494130002",
+      "id": "8494130002",
       "title": "Sr. Forward Deployed Engineer (FDE) - Public Sector",
       "company": "Databricks",
-      "location": "Chicago, Illinois",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8461321002",
+      "location": "New York City, New York",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8494130002",
       "updatedAt": "2026-07-08T17:43:48-04:00",
       "role": {
         "code": "solutions",
         "label": "Solutions, sales and customer engineering"
       },
       "regions": [
-        "IL"
+        "NY"
       ],
       "visa": {
         "code": "unknown"
@@ -5597,6 +5768,26 @@
       },
       "regions": [
         "MA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8461321002",
+      "id": "8461321002",
+      "title": "Sr. Forward Deployed Engineer (FDE) - Public Sector",
+      "company": "Databricks",
+      "location": "Chicago, Illinois",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8461321002",
+      "updatedAt": "2026-07-08T17:43:48-04:00",
+      "role": {
+        "code": "solutions",
+        "label": "Solutions, sales and customer engineering"
+      },
+      "regions": [
+        "IL"
       ],
       "visa": {
         "code": "unknown"
@@ -5644,26 +5835,6 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:8494130002",
-      "id": "8494130002",
-      "title": "Sr. Forward Deployed Engineer (FDE) - Public Sector",
-      "company": "Databricks",
-      "location": "New York City, New York",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8494130002",
-      "updatedAt": "2026-07-08T17:43:48-04:00",
-      "role": {
-        "code": "solutions",
-        "label": "Solutions, sales and customer engineering"
-      },
-      "regions": [
-        "NY"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
       "key": "databricks:8494137002",
       "id": "8494137002",
       "title": "Sr. Forward Deployed Engineer(FDE) - Public Sector",
@@ -5671,6 +5842,66 @@
       "location": "Austin, Texas",
       "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8494137002",
       "updatedAt": "2026-07-08T17:43:48-04:00",
+      "role": {
+        "code": "solutions",
+        "label": "Solutions, sales and customer engineering"
+      },
+      "regions": [
+        "TX"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8494142002",
+      "id": "8494142002",
+      "title": "Sr. Forward Deployed Engineer (FDE) - Healthcare & Life Sciences",
+      "company": "Databricks",
+      "location": "Boston, Massachusetts",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8494142002",
+      "updatedAt": "2026-07-08T17:43:35-04:00",
+      "role": {
+        "code": "solutions",
+        "label": "Solutions, sales and customer engineering"
+      },
+      "regions": [
+        "MA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8494143002",
+      "id": "8494143002",
+      "title": "Sr. Forward Deployed Engineer (FDE) - Healthcare & Life Sciences",
+      "company": "Databricks",
+      "location": "Chicago, Illinois",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8494143002",
+      "updatedAt": "2026-07-08T17:43:35-04:00",
+      "role": {
+        "code": "solutions",
+        "label": "Solutions, sales and customer engineering"
+      },
+      "regions": [
+        "IL"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8494144002",
+      "id": "8494144002",
+      "title": "Sr. Forward Deployed Engineer (FDE) - Healthcare & Life Sciences",
+      "company": "Databricks",
+      "location": "Dallas, Texas",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8494144002",
+      "updatedAt": "2026-07-08T17:43:35-04:00",
       "role": {
         "code": "solutions",
         "label": "Solutions, sales and customer engineering"
@@ -5724,26 +5955,6 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:8494142002",
-      "id": "8494142002",
-      "title": "Sr. Forward Deployed Engineer (FDE) - Healthcare & Life Sciences",
-      "company": "Databricks",
-      "location": "Boston, Massachusetts",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8494142002",
-      "updatedAt": "2026-07-08T17:43:35-04:00",
-      "role": {
-        "code": "solutions",
-        "label": "Solutions, sales and customer engineering"
-      },
-      "regions": [
-        "MA"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
       "key": "databricks:8494148002",
       "id": "8494148002",
       "title": "Sr. Forward Deployed Engineer (FDE) - Healthcare & Life Sciences",
@@ -5764,46 +5975,6 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:8494143002",
-      "id": "8494143002",
-      "title": "Sr. Forward Deployed Engineer (FDE) - Healthcare & Life Sciences",
-      "company": "Databricks",
-      "location": "Chicago, Illinois",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8494143002",
-      "updatedAt": "2026-07-08T17:43:35-04:00",
-      "role": {
-        "code": "solutions",
-        "label": "Solutions, sales and customer engineering"
-      },
-      "regions": [
-        "IL"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
-      "key": "databricks:8494144002",
-      "id": "8494144002",
-      "title": "Sr. Forward Deployed Engineer (FDE) - Healthcare & Life Sciences",
-      "company": "Databricks",
-      "location": "Dallas, Texas",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8494144002",
-      "updatedAt": "2026-07-08T17:43:35-04:00",
-      "role": {
-        "code": "solutions",
-        "label": "Solutions, sales and customer engineering"
-      },
-      "regions": [
-        "TX"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
       "key": "databricks:8371312002",
       "id": "8371312002",
       "title": "Sr. Forward Deployed Engineer (FDE)- Healthcare & Life Sciences",
@@ -5817,6 +5988,27 @@
       },
       "regions": [
         "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8356289002",
+      "id": "8356289002",
+      "title": "Sr. Forward Deployed Engineer (FDE) - Public Sector",
+      "company": "Databricks",
+      "location": "Washington, D.C.",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8356289002",
+      "updatedAt": "2026-07-08T17:43:31-04:00",
+      "role": {
+        "code": "solutions",
+        "label": "Solutions, sales and customer engineering"
+      },
+      "regions": [
+        "WA",
+        "DC"
       ],
       "visa": {
         "code": "unknown"
@@ -5864,27 +6056,6 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:8356289002",
-      "id": "8356289002",
-      "title": "Sr. Forward Deployed Engineer (FDE) - Public Sector",
-      "company": "Databricks",
-      "location": "Washington, D.C.",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8356289002",
-      "updatedAt": "2026-07-08T17:43:31-04:00",
-      "role": {
-        "code": "solutions",
-        "label": "Solutions, sales and customer engineering"
-      },
-      "regions": [
-        "WA",
-        "DC"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
       "key": "databricks:8494155002",
       "id": "8494155002",
       "title": "Sr. Forward Deployed Engineer (FDE) - Manufacturing",
@@ -5898,26 +6069,6 @@
       },
       "regions": [
         "PA"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
-      "key": "databricks:8494156002",
-      "id": "8494156002",
-      "title": "Sr. Forward Deployed Engineer (FDE) - Manufacturing",
-      "company": "Databricks",
-      "location": "Seattle, Washington",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8494156002",
-      "updatedAt": "2026-07-08T17:43:28-04:00",
-      "role": {
-        "code": "solutions",
-        "label": "Solutions, sales and customer engineering"
-      },
-      "regions": [
-        "WA"
       ],
       "visa": {
         "code": "unknown"
@@ -5945,6 +6096,26 @@
       "sourceId": "databricks"
     },
     {
+      "key": "databricks:8494156002",
+      "id": "8494156002",
+      "title": "Sr. Forward Deployed Engineer (FDE) - Manufacturing",
+      "company": "Databricks",
+      "location": "Seattle, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8494156002",
+      "updatedAt": "2026-07-08T17:43:28-04:00",
+      "role": {
+        "code": "solutions",
+        "label": "Solutions, sales and customer engineering"
+      },
+      "regions": [
+        "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
       "key": "databricks:8494154002",
       "id": "8494154002",
       "title": "Sr. Forward Deployed Engineer (FDE)- Manufacturing",
@@ -5965,19 +6136,40 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:8494153002",
-      "id": "8494153002",
+      "key": "databricks:8461226002",
+      "id": "8461226002",
       "title": "Sr. Forward Deployed Engineer - Communications, Media, Entertainment & Games",
       "company": "Databricks",
-      "location": "Philadelphia, Pennsylvania",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8494153002",
+      "location": "New York City, New York",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8461226002",
       "updatedAt": "2026-07-08T17:43:23-04:00",
       "role": {
         "code": "solutions",
         "label": "Solutions, sales and customer engineering"
       },
       "regions": [
-        "PA"
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8461241002",
+      "id": "8461241002",
+      "title": "Sr. Forward Deployed Engineer - Communications, Media, Entertainment & Games",
+      "company": "Databricks",
+      "location": "Washington, D.C.",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8461241002",
+      "updatedAt": "2026-07-08T17:43:23-04:00",
+      "role": {
+        "code": "solutions",
+        "label": "Solutions, sales and customer engineering"
+      },
+      "regions": [
+        "WA",
+        "DC"
       ],
       "visa": {
         "code": "unknown"
@@ -6025,6 +6217,26 @@
       "sourceId": "databricks"
     },
     {
+      "key": "databricks:8461243002",
+      "id": "8461243002",
+      "title": "Sr. Forward Deployed Engineer - Communications, Media, Entertainment & Games",
+      "company": "Databricks",
+      "location": "Denver, Colorado",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8461243002",
+      "updatedAt": "2026-07-08T17:43:23-04:00",
+      "role": {
+        "code": "solutions",
+        "label": "Solutions, sales and customer engineering"
+      },
+      "regions": [
+        "CO"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
       "key": "databricks:8341311002",
       "id": "8341311002",
       "title": "Sr. Forward Deployed Engineer - Communications, Media, Entertainment & Games",
@@ -6038,6 +6250,26 @@
       },
       "regions": [
         "US"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8461251002",
+      "id": "8461251002",
+      "title": "Sr. Forward Deployed Engineer - Communications, Media, Entertainment & Games",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8461251002",
+      "updatedAt": "2026-07-08T17:43:23-04:00",
+      "role": {
+        "code": "solutions",
+        "label": "Solutions, sales and customer engineering"
+      },
+      "regions": [
+        "CA"
       ],
       "visa": {
         "code": "unknown"
@@ -6085,6 +6317,46 @@
       "sourceId": "databricks"
     },
     {
+      "key": "databricks:8461258002",
+      "id": "8461258002",
+      "title": "Sr. Forward Deployed Engineer - Communications, Media, Entertainment & Games",
+      "company": "Databricks",
+      "location": "Raleigh, North Carolina",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8461258002",
+      "updatedAt": "2026-07-08T17:43:23-04:00",
+      "role": {
+        "code": "solutions",
+        "label": "Solutions, sales and customer engineering"
+      },
+      "regions": [
+        "NC"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8494153002",
+      "id": "8494153002",
+      "title": "Sr. Forward Deployed Engineer - Communications, Media, Entertainment & Games",
+      "company": "Databricks",
+      "location": "Philadelphia, Pennsylvania",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8494153002",
+      "updatedAt": "2026-07-08T17:43:23-04:00",
+      "role": {
+        "code": "solutions",
+        "label": "Solutions, sales and customer engineering"
+      },
+      "regions": [
+        "PA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
       "key": "databricks:8461220002",
       "id": "8461220002",
       "title": "Sr. Forward Deployed Engineer - Communications, Media, Entertainment & Games",
@@ -6105,26 +6377,6 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:8461226002",
-      "id": "8461226002",
-      "title": "Sr. Forward Deployed Engineer - Communications, Media, Entertainment & Games",
-      "company": "Databricks",
-      "location": "New York City, New York",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8461226002",
-      "updatedAt": "2026-07-08T17:43:23-04:00",
-      "role": {
-        "code": "solutions",
-        "label": "Solutions, sales and customer engineering"
-      },
-      "regions": [
-        "NY"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
       "key": "databricks:8461239002",
       "id": "8461239002",
       "title": "Sr. Forward Deployed Engineer - Communications, Media, Entertainment & Games",
@@ -6138,87 +6390,6 @@
       },
       "regions": [
         "GA"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
-      "key": "databricks:8461241002",
-      "id": "8461241002",
-      "title": "Sr. Forward Deployed Engineer - Communications, Media, Entertainment & Games",
-      "company": "Databricks",
-      "location": "Washington, D.C.",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8461241002",
-      "updatedAt": "2026-07-08T17:43:23-04:00",
-      "role": {
-        "code": "solutions",
-        "label": "Solutions, sales and customer engineering"
-      },
-      "regions": [
-        "WA",
-        "DC"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
-      "key": "databricks:8461243002",
-      "id": "8461243002",
-      "title": "Sr. Forward Deployed Engineer - Communications, Media, Entertainment & Games",
-      "company": "Databricks",
-      "location": "Denver, Colorado",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8461243002",
-      "updatedAt": "2026-07-08T17:43:23-04:00",
-      "role": {
-        "code": "solutions",
-        "label": "Solutions, sales and customer engineering"
-      },
-      "regions": [
-        "CO"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
-      "key": "databricks:8461251002",
-      "id": "8461251002",
-      "title": "Sr. Forward Deployed Engineer - Communications, Media, Entertainment & Games",
-      "company": "Databricks",
-      "location": "Mountain View, California",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8461251002",
-      "updatedAt": "2026-07-08T17:43:23-04:00",
-      "role": {
-        "code": "solutions",
-        "label": "Solutions, sales and customer engineering"
-      },
-      "regions": [
-        "CA"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
-      "key": "databricks:8461258002",
-      "id": "8461258002",
-      "title": "Sr. Forward Deployed Engineer - Communications, Media, Entertainment & Games",
-      "company": "Databricks",
-      "location": "Raleigh, North Carolina",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8461258002",
-      "updatedAt": "2026-07-08T17:43:23-04:00",
-      "role": {
-        "code": "solutions",
-        "label": "Solutions, sales and customer engineering"
-      },
-      "regions": [
-        "NC"
       ],
       "visa": {
         "code": "unknown"
@@ -6901,26 +7072,6 @@
       "sourceId": "pinterest"
     },
     {
-      "key": "databricks:8557780002",
-      "id": "8557780002",
-      "title": "Principal Research Scientist/TLM - AI Scaling",
-      "company": "Databricks",
-      "location": "Mountain View, California; San Francisco, California",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8557780002",
-      "updatedAt": "2026-07-02T12:40:54-04:00",
-      "role": {
-        "code": "ai-ml",
-        "label": "AI and machine learning"
-      },
-      "regions": [
-        "CA"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
       "key": "databricks:8583037002",
       "id": "8583037002",
       "title": "Sr. Field Technical Program Manager, Forward Deployed Engineering",
@@ -6962,26 +7113,6 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:7680573002",
-      "id": "7680573002",
-      "title": "Sr. Product Manager, Databricks Free Edition",
-      "company": "Databricks",
-      "location": "San Francisco, California",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7680573002",
-      "updatedAt": "2026-07-02T03:44:29-04:00",
-      "role": {
-        "code": "product-program",
-        "label": "Technical product and program management"
-      },
-      "regions": [
-        "CA"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
       "key": "databricks:8235785002",
       "id": "8235785002",
       "title": "Sr. Product Manager, Databricks Free Edition",
@@ -6995,6 +7126,26 @@
       },
       "regions": [
         "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:7680573002",
+      "id": "7680573002",
+      "title": "Sr. Product Manager, Databricks Free Edition",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7680573002",
+      "updatedAt": "2026-07-02T03:44:29-04:00",
+      "role": {
+        "code": "product-program",
+        "label": "Technical product and program management"
+      },
+      "regions": [
+        "CA"
       ],
       "visa": {
         "code": "unknown"
@@ -7508,46 +7659,6 @@
       },
       "regions": [
         "US"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
-      "key": "databricks:8509230002",
-      "id": "8509230002",
-      "title": "Senior Software Engineer - AI Platform (NYC)",
-      "company": "Databricks",
-      "location": "New York City, New York",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8509230002",
-      "updatedAt": "2026-07-01T18:31:36-04:00",
-      "role": {
-        "code": "software",
-        "label": "Software engineering"
-      },
-      "regions": [
-        "NY"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
-      "key": "databricks:8509096002",
-      "id": "8509096002",
-      "title": "Senior Software Engineer, Fullstack - AI Product (NYC)",
-      "company": "Databricks",
-      "location": "New York City, New York",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8509096002",
-      "updatedAt": "2026-07-01T18:31:36-04:00",
-      "role": {
-        "code": "software",
-        "label": "Software engineering"
-      },
-      "regions": [
-        "NY"
       ],
       "visa": {
         "code": "unknown"
@@ -8182,28 +8293,6 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:8397493002",
-      "id": "8397493002",
-      "title": "Sr. Solutions Architect - Public Sector (SLED)",
-      "company": "Databricks",
-      "location": "Illinois; Michigan; Minnesota",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8397493002",
-      "updatedAt": "2026-07-01T18:31:30-04:00",
-      "role": {
-        "code": "solutions",
-        "label": "Solutions, sales and customer engineering"
-      },
-      "regions": [
-        "IL",
-        "MI",
-        "MN"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
       "key": "databricks:8384595002",
       "id": "8384595002",
       "title": "Staff Software Engineer - Frontend (NYC)",
@@ -8334,46 +8423,6 @@
       "role": {
         "code": "ai-ml",
         "label": "AI and machine learning"
-      },
-      "regions": [
-        "CA"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
-      "key": "databricks:8326570002",
-      "id": "8326570002",
-      "title": "Sr. Product Manager, Databricks Repos",
-      "company": "Databricks",
-      "location": "Seattle, Washington",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8326570002",
-      "updatedAt": "2026-07-01T18:31:27-04:00",
-      "role": {
-        "code": "product-program",
-        "label": "Technical product and program management"
-      },
-      "regions": [
-        "WA"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
-      "key": "databricks:8326513002",
-      "id": "8326513002",
-      "title": "Sr. Product Manager, Databricks Repos",
-      "company": "Databricks",
-      "location": "San Francisco, California",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8326513002",
-      "updatedAt": "2026-07-01T18:31:27-04:00",
-      "role": {
-        "code": "product-program",
-        "label": "Technical product and program management"
       },
       "regions": [
         "CA"
@@ -8584,26 +8633,6 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:8482037002",
-      "id": "8482037002",
-      "title": "Systems PhD - Software Engineer",
-      "company": "Databricks",
-      "location": "Mountain View, California; San Francisco, California",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8482037002",
-      "updatedAt": "2026-07-01T18:31:26-04:00",
-      "role": {
-        "code": "software",
-        "label": "Software engineering"
-      },
-      "regions": [
-        "CA"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
       "key": "databricks:8482086002",
       "id": "8482086002",
       "title": "Systems PhD - Software Engineer",
@@ -8617,6 +8646,26 @@
       },
       "regions": [
         "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8482037002",
+      "id": "8482037002",
+      "title": "Systems PhD - Software Engineer",
+      "company": "Databricks",
+      "location": "Mountain View, California; San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8482037002",
+      "updatedAt": "2026-07-01T18:31:26-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
       ],
       "visa": {
         "code": "unknown"
@@ -8644,26 +8693,6 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:8211452002",
-      "id": "8211452002",
-      "title": "Sr Software Engineer-Networking",
-      "company": "Databricks",
-      "location": "Mountain View, California",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8211452002",
-      "updatedAt": "2026-07-01T18:31:25-04:00",
-      "role": {
-        "code": "software",
-        "label": "Software engineering"
-      },
-      "regions": [
-        "CA"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
       "key": "databricks:8211450002",
       "id": "8211450002",
       "title": "Sr Software Engineer-Networking",
@@ -8677,6 +8706,26 @@
       },
       "regions": [
         "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8211452002",
+      "id": "8211452002",
+      "title": "Sr Software Engineer-Networking",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8211452002",
+      "updatedAt": "2026-07-01T18:31:25-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
       ],
       "visa": {
         "code": "unknown"
@@ -8764,26 +8813,6 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:8136204002",
-      "id": "8136204002",
-      "title": "Sr. Product Manager, Databricks AI",
-      "company": "Databricks",
-      "location": "Seattle, Washington",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8136204002",
-      "updatedAt": "2026-07-01T18:31:24-04:00",
-      "role": {
-        "code": "product-program",
-        "label": "Technical product and program management"
-      },
-      "regions": [
-        "WA"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
       "key": "databricks:8136071002",
       "id": "8136071002",
       "title": "Sr. Product Manager, Databricks AI",
@@ -8797,6 +8826,26 @@
       },
       "regions": [
         "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8136204002",
+      "id": "8136204002",
+      "title": "Sr. Product Manager, Databricks AI",
+      "company": "Databricks",
+      "location": "Seattle, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8136204002",
+      "updatedAt": "2026-07-01T18:31:24-04:00",
+      "role": {
+        "code": "product-program",
+        "label": "Technical product and program management"
+      },
+      "regions": [
+        "WA"
       ],
       "visa": {
         "code": "unknown"
@@ -9088,27 +9137,6 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:8532682002",
-      "id": "8532682002",
-      "title": "Staff Software Engineer - AI Research Infrastructure",
-      "company": "Databricks",
-      "location": "New York City, New York; San Francisco, California",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8532682002",
-      "updatedAt": "2026-07-01T18:31:15-04:00",
-      "role": {
-        "code": "software",
-        "label": "Software engineering"
-      },
-      "regions": [
-        "CA",
-        "NY"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
       "key": "databricks:7274459002",
       "id": "7274459002",
       "title": "Senior Software Engineer - Security",
@@ -9141,6 +9169,27 @@
         "label": "Software engineering"
       },
       "regions": [
+        "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8552484002",
+      "id": "8552484002",
+      "title": "Staff Software Engineer - AI Research Infrastructure",
+      "company": "Databricks",
+      "location": "New York City, New York; San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8552484002",
+      "updatedAt": "2026-07-01T18:31:14-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA",
         "NY"
       ],
       "visa": {
@@ -9229,26 +9278,6 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:7274902002",
-      "id": "7274902002",
-      "title": "Senior Staff Software Engineer - Security Infrastructure",
-      "company": "Databricks",
-      "location": "Bellevue, Washington",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7274902002",
-      "updatedAt": "2026-07-01T18:31:13-04:00",
-      "role": {
-        "code": "software",
-        "label": "Software engineering"
-      },
-      "regions": [
-        "WA"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
       "key": "databricks:7274908002",
       "id": "7274908002",
       "title": "Senior Staff Software Engineer - Security Infrastructure",
@@ -9262,6 +9291,26 @@
       },
       "regions": [
         "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:7274902002",
+      "id": "7274902002",
+      "title": "Senior Staff Software Engineer - Security Infrastructure",
+      "company": "Databricks",
+      "location": "Bellevue, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7274902002",
+      "updatedAt": "2026-07-01T18:31:13-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "WA"
       ],
       "visa": {
         "code": "unknown"
@@ -9409,26 +9458,6 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:7994770002",
-      "id": "7994770002",
-      "title": "Staff Software Engineer - Security Infrastructure",
-      "company": "Databricks",
-      "location": "Mountain View, California",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7994770002",
-      "updatedAt": "2026-07-01T18:31:13-04:00",
-      "role": {
-        "code": "software",
-        "label": "Software engineering"
-      },
-      "regions": [
-        "CA"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
       "key": "databricks:7994759002",
       "id": "7994759002",
       "title": "Staff Software Engineer - Security Infrastructure",
@@ -9442,6 +9471,26 @@
       },
       "regions": [
         "WA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:7994770002",
+      "id": "7994770002",
+      "title": "Staff Software Engineer - Security Infrastructure",
+      "company": "Databricks",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7994770002",
+      "updatedAt": "2026-07-01T18:31:13-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
       ],
       "visa": {
         "code": "unknown"
@@ -9549,12 +9598,12 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:6779232002",
-      "id": "6779232002",
+      "key": "databricks:6779233002",
+      "id": "6779233002",
       "title": "Staff Software Engineer - Backend",
       "company": "Databricks",
-      "location": "Seattle, Washington",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6779232002",
+      "location": "Bellevue, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6779233002",
       "updatedAt": "2026-07-01T18:31:11-04:00",
       "role": {
         "code": "software",
@@ -9569,12 +9618,12 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:6779233002",
-      "id": "6779233002",
+      "key": "databricks:6779232002",
+      "id": "6779232002",
       "title": "Staff Software Engineer - Backend",
       "company": "Databricks",
-      "location": "Bellevue, Washington",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6779233002",
+      "location": "Seattle, Washington",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6779232002",
       "updatedAt": "2026-07-01T18:31:11-04:00",
       "role": {
         "code": "software",
@@ -9709,12 +9758,12 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:5445641002",
-      "id": "5445641002",
+      "key": "databricks:7898766002",
+      "id": "7898766002",
       "title": "Senior Software Engineer - Fullstack",
       "company": "Databricks",
       "location": "Mountain View, California; San Francisco, California",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=5445641002",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7898766002",
       "updatedAt": "2026-07-01T18:31:09-04:00",
       "role": {
         "code": "software",
@@ -10070,26 +10119,6 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:6544383002",
-      "id": "6544383002",
-      "title": "Senior Software Engineer - Database Engine Internals",
-      "company": "Databricks",
-      "location": "Mountain View, California",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6544383002",
-      "updatedAt": "2026-07-01T18:31:08-04:00",
-      "role": {
-        "code": "software",
-        "label": "Software engineering"
-      },
-      "regions": [
-        "CA"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
       "key": "databricks:5048461002",
       "id": "5048461002",
       "title": "Senior Software Engineer - Database Engine Internals",
@@ -10110,12 +10139,12 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:4513122002",
-      "id": "4513122002",
-      "title": "Senior Software Engineer - Distributed Data Systems",
+      "key": "databricks:6544383002",
+      "id": "6544383002",
+      "title": "Senior Software Engineer - Database Engine Internals",
       "company": "Databricks",
-      "location": "San Francisco, California",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=4513122002",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6544383002",
       "updatedAt": "2026-07-01T18:31:08-04:00",
       "role": {
         "code": "software",
@@ -10136,6 +10165,26 @@
       "company": "Databricks",
       "location": "Mountain View, California",
       "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6544325002",
+      "updatedAt": "2026-07-01T18:31:08-04:00",
+      "role": {
+        "code": "software",
+        "label": "Software engineering"
+      },
+      "regions": [
+        "CA"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:4513122002",
+      "id": "4513122002",
+      "title": "Senior Software Engineer - Distributed Data Systems",
+      "company": "Databricks",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=4513122002",
       "updatedAt": "2026-07-01T18:31:08-04:00",
       "role": {
         "code": "software",
@@ -10190,27 +10239,6 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:8085877002",
-      "id": "8085877002",
-      "title": "Solutions Architect - Healthcare/Life Sciences Team (HLS)",
-      "company": "Databricks",
-      "location": "Remote - Illinois",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8085877002",
-      "updatedAt": "2026-07-01T18:31:08-04:00",
-      "role": {
-        "code": "solutions",
-        "label": "Solutions, sales and customer engineering"
-      },
-      "regions": [
-        "IL",
-        "REMOTE"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "databricks"
-    },
-    {
       "key": "databricks:8231231002",
       "id": "8231231002",
       "title": "Solutions Architect - Healthcare/Life Sciences Team (HLS)",
@@ -10224,6 +10252,27 @@
       },
       "regions": [
         "CA",
+        "REMOTE"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "databricks"
+    },
+    {
+      "key": "databricks:8085877002",
+      "id": "8085877002",
+      "title": "Solutions Architect - Healthcare/Life Sciences Team (HLS)",
+      "company": "Databricks",
+      "location": "Remote - Illinois",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8085877002",
+      "updatedAt": "2026-07-01T18:31:08-04:00",
+      "role": {
+        "code": "solutions",
+        "label": "Solutions, sales and customer engineering"
+      },
+      "regions": [
+        "IL",
         "REMOTE"
       ],
       "visa": {
@@ -10352,12 +10401,12 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:6544443002",
-      "id": "6544443002",
+      "key": "databricks:5408888002",
+      "id": "5408888002",
       "title": "Staff Software Engineer - Backend",
       "company": "Databricks",
-      "location": "Mountain View, California",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6544443002",
+      "location": "San Francisco, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=5408888002",
       "updatedAt": "2026-07-01T18:31:08-04:00",
       "role": {
         "code": "software",
@@ -10372,12 +10421,12 @@
       "sourceId": "databricks"
     },
     {
-      "key": "databricks:5408888002",
-      "id": "5408888002",
+      "key": "databricks:6544443002",
+      "id": "6544443002",
       "title": "Staff Software Engineer - Backend",
       "company": "Databricks",
-      "location": "San Francisco, California",
-      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=5408888002",
+      "location": "Mountain View, California",
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=6544443002",
       "updatedAt": "2026-07-01T18:31:08-04:00",
       "role": {
         "code": "software",
@@ -10588,27 +10637,6 @@
       "role": {
         "code": "cloud-sre",
         "label": "Cloud, DevOps and SRE"
-      },
-      "regions": [
-        "CA",
-        "REMOTE"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "pinterest"
-    },
-    {
-      "key": "pinterest:7794123",
-      "id": "7794123",
-      "title": "Staff Technical Program Manager, Ads Measurement",
-      "company": "Pinterest",
-      "location": "San Francisco, CA, US; Remote, US",
-      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7794123",
-      "updatedAt": "2026-07-01T12:09:10-04:00",
-      "role": {
-        "code": "product-program",
-        "label": "Technical product and program management"
       },
       "regions": [
         "CA",
@@ -11692,26 +11720,6 @@
       "sourceId": "elastic"
     },
     {
-      "key": "elastic:7747631",
-      "id": "7747631",
-      "title": "Senior Solutions Architect - SLED",
-      "company": "Elastic",
-      "location": "Massachusetts, United States",
-      "url": "https://jobs.elastic.co/jobs?gh_jid=7747631&gh_jid=7747631",
-      "updatedAt": "2026-06-11T11:28:47-04:00",
-      "role": {
-        "code": "solutions",
-        "label": "Solutions, sales and customer engineering"
-      },
-      "regions": [
-        "MA"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "elastic"
-    },
-    {
       "key": "elastic:7747112",
       "id": "7747112",
       "title": "Senior Solutions Architect - SLED",
@@ -11725,6 +11733,26 @@
       },
       "regions": [
         "NY"
+      ],
+      "visa": {
+        "code": "unknown"
+      },
+      "sourceId": "elastic"
+    },
+    {
+      "key": "elastic:7747631",
+      "id": "7747631",
+      "title": "Senior Solutions Architect - SLED",
+      "company": "Elastic",
+      "location": "Massachusetts, United States",
+      "url": "https://jobs.elastic.co/jobs?gh_jid=7747631&gh_jid=7747631",
+      "updatedAt": "2026-06-11T11:28:47-04:00",
+      "role": {
+        "code": "solutions",
+        "label": "Solutions, sales and customer engineering"
+      },
+      "regions": [
+        "MA"
       ],
       "visa": {
         "code": "unknown"
@@ -12200,27 +12228,6 @@
       "regions": [
         "CA",
         "WA"
-      ],
-      "visa": {
-        "code": "unknown"
-      },
-      "sourceId": "pinterest"
-    },
-    {
-      "key": "pinterest:7890197",
-      "id": "7890197",
-      "title": "Lead Product Analyst, Pinner Engagement",
-      "company": "Pinterest",
-      "location": "New York, NY, US; Remote, US",
-      "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7890197",
-      "updatedAt": "2026-06-04T15:57:21-04:00",
-      "role": {
-        "code": "data-science",
-        "label": "Data science and analytics"
-      },
-      "regions": [
-        "NY",
-        "REMOTE"
       ],
       "visa": {
         "code": "unknown"
