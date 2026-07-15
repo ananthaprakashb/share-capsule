@@ -1,6 +1,59 @@
 {
   "releases": [
     {
+      "slug": "ayirai-malai-aivar-malai-history-tamil",
+      "title": "அயிரை மலை ஐவர் மலையான வரலாறு",
+      "artist": "Share Capsule",
+      "type": "Audio article",
+      "category": "Tamil History",
+      "language": "Tamil",
+      "publishedAt": "2026-07-15",
+      "description": "அயிரை மலை, அதன் ஐவர் மலை மரபு, வரலாற்றுச் சுவடுகள் மற்றும் பண்பாட்டு முக்கியத்துவத்தை அறிமுகப்படுத்தும் தமிழ் ஆடியோ கட்டுரை.",
+      "featured": true,
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#3f2a1d,#7c4a2d 55%,#b7791f)",
+      "coverEyebrow": "தமிழ் வரலாறு",
+      "coverLines": [
+        "அயிரை மலை",
+        "ஐவர் மலையான வரலாறு"
+      ],
+      "previewUrl": "https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev/%E0%AE%85%E0%AE%AF%E0%AE%BF%E0%AE%B0%E0%AF%88_%E0%AE%AE%E0%AE%B2%E0%AF%88_%E0%AE%90%E0%AE%B5%E0%AE%B0%E0%AF%8D_%E0%AE%AE%E0%AE%B2%E0%AF%88%E0%AE%AF%E0%AE%BE%E0%AE%A9_%E0%AE%B5%E0%AE%B0%E0%AE%B2%E0%AE%BE%E0%AE%B1%E0%AF%81.m4a",
+      "demoTone": false,
+      "audioPageUrl": "/audio/?id=ayirai-malai-aivar-malai-history-tamil",
+      "platforms": [
+        {
+          "label": "கேளுங்கள்",
+          "icon": "▶",
+          "url": "/audio/?id=ayirai-malai-aivar-malai-history-tamil"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "நண்பர்",
+          "icon": "🎧",
+          "text": "அயிரை மலை மற்றும் ஐவர் மலை வரலாற்றைப் பற்றிய இந்த தமிழ் ஆடியோவை கேளுங்கள்."
+        },
+        "family": {
+          "label": "குடும்பம்",
+          "icon": "⛰️",
+          "text": "தமிழர் வரலாற்றை அறிய குடும்பத்துடன் பகிர வேண்டிய அயிரை மலை ஆடியோ."
+        },
+        "topic": {
+          "label": "வரலாற்று ஆர்வலர்",
+          "icon": "🏛️",
+          "text": "அயிரை மலை, ஐவர் மலை மரபு மற்றும் அதன் வரலாற்று முக்கியத்துவத்தை அறிமுகப்படுத்தும் தமிழ் ஆடியோ."
+        }
+      },
+      "tags": [
+        "Tamil",
+        "Ayirai Malai",
+        "Aivar Malai",
+        "Tamil history",
+        "heritage",
+        "culture"
+      ]
+    },
+    {
       "slug": "mahendravarman-rock-cut-architecture-tamil",
       "title": "பாறையில் சரித்திரம் செதுக்கிய மகேந்திரவர்மனின் கட்டிடக்கலை",
       "artist": "Share Capsule",
