@@ -1,0 +1,23 @@
+{
+  "id": "/",
+  "name": "Share Capsule",
+  "short_name": "ShareCapsule",
+  "description": "Audio, useful tips, verified quotes, law guidance and new releases worth sharing.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6f1e8",
+  "theme_color": "#132f45",
+  "orientation": "any",
+  "categories": ["news", "education", "music", "lifestyle"],
+  "icons": [
+    {"src":"/assets/sharecapsule-logo.svg?v=3","sizes":"192x192","type":"image/svg+xml","purpose":"any maskable"},
+    {"src":"/assets/sharecapsule-logo.svg?v=3","sizes":"512x512","type":"image/svg+xml","purpose":"any maskable"}
+  ],
+  "shortcuts": [
+    {"name":"Releases","url":"/"},
+    {"name":"Audio","url":"/audio/"},
+    {"name":"Tips","url":"/tip/"},
+    {"name":"Law","url":"/law/"}
+  ]
+}
