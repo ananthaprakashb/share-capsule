@@ -1,0 +1,34 @@
+{
+  "date": "2026-07-15",
+  "principle": {
+    "id": "california-landlord-security-deposit-photos",
+    "category": "California landlord law",
+    "title": "Photograph the rental before and after — security-deposit deductions now depend on it",
+    "plainRule": "For California residential rentals, landlords must document unit condition with photographs at required stages and provide supporting photographs with qualifying security-deposit deductions. The remaining deposit and itemized accounting are generally due within 21 calendar days after the tenant vacates.",
+    "globalBasis": "California Civil Code section 1950.5, as amended by AB 2801",
+    "globalSourceTitle": "California Legislature — AB 2801 chaptered bill text",
+    "globalSourceUrl": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB2801",
+    "secondaryGlobalSourceTitle": "California Courts — Guide to security deposits",
+    "secondaryGlobalSourceUrl": "https://selfhelp.courts.ca.gov/guide-security-deposits-california",
+    "everydayMeaning": "A landlord should not rely only on a written checklist or memory. For tenancies beginning on or after July 1, 2025, take clear move-in photographs immediately before or at the start of the tenancy. After possession is returned, photograph the unit before any cleaning or repair for which a deduction may be claimed, and photograph it again after the work is completed. Keep invoices, receipts, labor details and timestamps together with the photos.",
+    "practicalSteps": [
+      "Create a dated room-by-room photo set at move-in, including floors, walls, appliances, bathrooms and any existing damage.",
+      "When the tenant moves out, photograph the unit before cleaning or repairs and preserve the original files and timestamps.",
+      "Photograph the completed repair or cleaning, and match each claimed deduction to the relevant before-and-after images.",
+      "Send the itemized statement, required supporting documents, photographs and any remaining deposit within the applicable 21-day period."
+    ],
+    "incidentTitle": "California enacted AB 2801 to strengthen security-deposit documentation",
+    "incidentDate": "2024-09-19",
+    "incidentJurisdiction": "State of California",
+    "incidentSummary": "California amended Civil Code section 1950.5 after concerns that security deposits were being used for upgrades or charges not adequately tied to tenant-caused damage. The law added mandatory photographic documentation and clarified that deductions must restore the unit to its starting condition, excluding ordinary wear and tear.",
+    "incidentOutcome": "Move-out photo requirements began April 1, 2025, and move-in photo requirements apply to tenancies beginning on or after July 1, 2025. Bad-faith failure to comply can prevent a landlord from claiming the deposit and may expose the landlord to additional damages.",
+    "incidentSourceTitle": "AB 2801 — Tenancy: security deposits",
+    "incidentSourceUrl": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB2801",
+    "takeaway": "Treat security-deposit deductions like an evidence file: dated move-in photos, move-out photos, post-work photos, receipts and a timely itemized statement should all tell the same story.",
+    "localLawWarning": "This entry summarizes California state law only. Local rent-control rules, lease terms, subsidized-housing requirements and the facts of a particular tenancy may add obligations. Landlords should use current California forms and obtain legal advice before withholding a disputed deposit.",
+    "validatedOn": "2026-07-15"
+  },
+  "site": {
+    "scopeNote": "Today’s entry is California-specific because security-deposit procedures differ by state and country. It is general legal education, not advice for a particular tenancy."
+  }
+}
