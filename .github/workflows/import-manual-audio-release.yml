@@ -1,0 +1,145 @@
+name: Import manual audio release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'automation/manual-audio-release-request.json'
+      - '.github/workflows/import-manual-audio-release.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: import-manual-audio-release
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - name: Add or update approved R2 audio release
+        shell: python
+        run: |
+          import json
+          import re
+          from pathlib import Path
+          from urllib.parse import quote
+
+          request_path = Path('automation/manual-audio-release-request.json')
+          audio_path = Path('audio/data.json')
+          releases_path = Path('data/manual-releases.json')
+
+          request = json.loads(request_path.read_text(encoding='utf-8'))
+          audio = json.loads(audio_path.read_text(encoding='utf-8'))
+          releases = json.loads(releases_path.read_text(encoding='utf-8'))
+
+          for field in ['slug', 'title', 'objectKey']:
+              if not request.get(field):
+                  raise SystemExit(f'Missing required field: {field}')
+
+          slug = request['slug']
+          if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', slug):
+              raise SystemExit(f'Invalid slug: {slug}')
+
+          object_key = request['objectKey']
+          ext = Path(object_key).suffix.lower()
+          mime_types = {
+              '.m4a': 'audio/mp4', '.mp4': 'audio/mp4', '.mp3': 'audio/mpeg',
+              '.wav': 'audio/wav', '.ogg': 'audio/ogg', '.oga': 'audio/ogg',
+              '.opus': 'audio/ogg', '.aac': 'audio/aac', '.flac': 'audio/flac'
+          }
+          if ext not in mime_types:
+              raise SystemExit(f'Unsupported audio extension: {ext}')
+
+          base_url = audio.get('site', {}).get('publicBaseUrl')
+          if not base_url:
+              raise SystemExit('audio/data.json is missing site.publicBaseUrl')
+          media_url = base_url.rstrip('/') + '/' + quote(object_key, safe='')
+
+          title = request['title']
+          creator = request.get('creator') or 'Share Capsule'
+          category = request.get('category') or 'Audio Article'
+          language = request.get('language') or 'Tamil'
+          published_at = request.get('publishedAt') or '2026-07-14'
+          description = request.get('description') or f'An audio article from Share Capsule: {title}.'
+          cover_background = request.get('coverBackground') or 'linear-gradient(145deg,#172554,#0f766e 55%,#7c3aed)'
+          cover_lines = request.get('coverLines') or [title]
+
+          audio_item = {
+              'id': slug,
+              'title': title,
+              'creator': creator,
+              'description': description,
+              'category': category,
+              'language': language,
+              'publishedAt': published_at,
+              'objectKey': object_key,
+              'mediaUrl': media_url,
+              'mimeType': mime_types[ext],
+              'autoplay': True,
+              'coverBackground': cover_background,
+              'coverLines': cover_lines,
+              'references': request.get('references') or []
+          }
+
+          audio_items = [item for item in audio.setdefault('audio', [])
+                         if item.get('id') != slug and item.get('objectKey') != object_key]
+          audio_items.insert(0, audio_item)
+          audio['audio'] = audio_items
+
+          release_item = {
+              'slug': slug,
+              'title': title,
+              'artist': creator,
+              'type': request.get('type') or 'Audio article',
+              'category': category,
+              'language': language,
+              'publishedAt': published_at,
+              'description': description,
+              'featured': request.get('featured', True),
+              'coverImage': request.get('coverImage') or '',
+              'coverBackground': cover_background,
+              'coverEyebrow': request.get('coverEyebrow') or category,
+              'coverLines': cover_lines,
+              'previewUrl': media_url,
+              'demoTone': False,
+              'audioPageUrl': f'/audio/?id={slug}',
+              'platforms': request.get('platforms') or [
+                  {'label': 'கேளுங்கள்' if language == 'Tamil' else 'Listen', 'icon': '▶', 'url': f'/audio/?id={slug}'}
+              ],
+              'shareMessages': request.get('shareMessages') or {},
+              'tags': request.get('tags') or []
+          }
+
+          release_items = [item for item in releases.setdefault('releases', []) if item.get('slug') != slug]
+          release_items.insert(0, release_item)
+          releases['releases'] = release_items
+
+          audio_path.write_text(json.dumps(audio, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          releases_path.write_text(json.dumps(releases, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          print(f'Imported approved audio release: {slug}')
+          print(f'R2 URL: {media_url}')
+
+      - name: Validate JSON files
+        run: |
+          python -m json.tool audio/data.json >/dev/null
+          python -m json.tool data/manual-releases.json >/dev/null
+
+      - name: Commit release catalogs
+        run: |
+          if git diff --quiet -- audio/data.json data/manual-releases.json; then
+            echo 'Release is already present.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add audio/data.json data/manual-releases.json
+          git commit -m 'Release approved R2 audio'
+          git push origin HEAD:main
