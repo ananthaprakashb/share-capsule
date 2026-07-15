@@ -1,5 +1,6 @@
 import { getLocalNews } from "./local-news.js";
 import { handleFactCheck } from "./factcheck.js";
+import { handlePushPublicKey, handlePushSubscribe, handlePushUnsubscribe } from "./push-subscriptions.js";
 
 const ALLOWED_ORIGINS = new Set([
   "https://sharecapsule.app",
@@ -238,6 +239,9 @@ export default {
       const result = await getLocalNews(request);
       return json(request, result.body, result.status);
     }
+    if (request.method === 'GET' && (pathname === '/api/push/public-key' || pathname === '/api/push/public-key/')) return handlePushPublicKey(request, env, json);
+    if (request.method === 'POST' && (pathname === '/api/push/subscribe' || pathname === '/api/push/subscribe/')) return handlePushSubscribe(request, env, json);
+    if (request.method === 'POST' && (pathname === '/api/push/unsubscribe' || pathname === '/api/push/unsubscribe/')) return handlePushUnsubscribe(request, env, json);
     if (request.method === 'POST' && (pathname === '/api/factcheck' || pathname === '/api/factcheck/')) {
       return await handleFactCheck(request, env, json);
     }
