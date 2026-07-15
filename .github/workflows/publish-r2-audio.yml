@@ -1,15 +1,7 @@
-name: Publish new R2 audio
+name: Publish R2 audio manually
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "*/15 * * * *"
-  push:
-    branches: [main]
-    paths:
-      - "audio/publish-overrides.json"
-      - "audio/publish-r2.mjs"
-      - ".github/workflows/publish-r2-audio.yml"
 
 permissions:
   contents: write
@@ -19,35 +11,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  seed-overrides:
-    if: github.event_name == 'push'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v5
-        with:
-          ref: main
-      - uses: actions/setup-node@v5
-        with:
-          node-version: "24"
-      - name: Publish explicitly configured objects
-        env:
-          SEED_ONLY: "true"
-          R2_BUCKET: techvideos
-          R2_PUBLIC_BASE_URL: https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev
-        run: node audio/publish-r2.mjs
-      - name: Validate and commit seeded releases
-        run: |
-          node --check audio/publish-r2.mjs
-          if git diff --quiet -- audio/data.json data/releases.json; then exit 0; fi
-          git config user.name share-capsule-bot
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add audio/data.json data/releases.json
-          git commit -m "Publish configured R2 audio"
-          git push
-
   discover-r2:
-    needs: seed-overrides
-    if: always() && (github.event_name != 'push' || needs.seed-overrides.result == 'success')
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -59,7 +23,7 @@ jobs:
           node-version: "24"
       - name: Install R2 client
         run: npm install --no-save --no-package-lock @aws-sdk/client-s3
-      - name: Discover and publish new audio objects
+      - name: Discover and publish R2 audio objects manually
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -71,7 +35,7 @@ jobs:
         run: |
           node --check audio/publish-r2.mjs
           node -e "const a=require('./audio/data.json'),r=require('./data/releases.json');const ids=a.audio.map(x=>x.id),slugs=r.releases.map(x=>x.slug);if(new Set(ids).size!==ids.length||new Set(slugs).size!==slugs.length)throw new Error('Duplicate audio id or release slug');for(const x of a.audio){if(!x.mediaUrl.startsWith('https://'))throw new Error('Invalid media URL: '+x.id)}"
-      - name: Commit newly discovered releases
+      - name: Commit manually discovered releases
         run: |
           if git diff --quiet -- audio/data.json data/releases.json; then
             echo "No new R2 audio objects found. Review the discovery JSON above for skipped or unsupported objects."
@@ -80,5 +44,5 @@ jobs:
           git config user.name share-capsule-bot
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add audio/data.json data/releases.json
-          git commit -m "Publish newly discovered R2 audio"
+          git commit -m "Publish manually reviewed R2 audio"
           git push
