@@ -1,0 +1,49 @@
+name: Apply shared FM and breadcrumbs
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "site-shell.js"
+      - "scripts/apply-site-shell.mjs"
+      - ".github/workflows/apply-site-shell.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apply-site-shell
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "24"
+      - name: Add the shared shell to every HTML page
+        run: node scripts/apply-site-shell.mjs
+      - name: Validate and commit page coverage
+        run: |
+          node --check site-shell.js
+          node --check scripts/apply-site-shell.mjs
+          missing=$(find . -type f -name '*.html' -not -path './.git/*' -not -path './node_modules/*' -print0 | xargs -0 grep -L '/site-shell.js' || true)
+          if [ -n "$missing" ]; then
+            echo "Missing site shell in:"
+            echo "$missing"
+            exit 1
+          fi
+          if git diff --quiet -- '*.html'; then
+            echo "All HTML pages already include the shared shell."
+            exit 0
+          fi
+          git config user.name share-capsule-bot
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add '*.html' ':!node_modules'
+          git commit -m "Keep FM and breadcrumbs on every page"
+          git push
