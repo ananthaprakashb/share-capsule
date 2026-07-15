@@ -1,0 +1,49 @@
+{
+  "releases": [
+    {
+      "slug": "meal-prep-light-the-3-tier-protein-arsenal",
+      "title": "Meal Prep Light: The 3-Tier Protein Arsenal",
+      "artist": "Share Capsule",
+      "type": "Audio article",
+      "category": "Nutrition",
+      "language": "English",
+      "publishedAt": "2026-07-14",
+      "description": "An audio article from Share Capsule: Meal Prep Light — The 3-Tier Protein Arsenal.",
+      "featured": true,
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#14532d,#0f766e 55%,#d97706)",
+      "coverEyebrow": "Nutrition audio",
+      "coverLines": [
+        "Meal Prep Light",
+        "The 3-Tier Protein Arsenal"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "audioPageUrl": "/audio/?id=meal-prep-light-the-3-tier-protein-arsenal",
+      "platforms": [
+        {
+          "label": "Listen",
+          "icon": "▶",
+          "url": "/audio/?id=meal-prep-light-the-3-tier-protein-arsenal"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Friend",
+          "icon": "🎧",
+          "text": "Listen to this Share Capsule audio article: Meal Prep Light — The 3-Tier Protein Arsenal"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this nutrition audio with you: Meal Prep Light — The 3-Tier Protein Arsenal"
+        },
+        "topic": {
+          "label": "Nutrition learner",
+          "icon": "🥗",
+          "text": "An audio article from Share Capsule: Meal Prep Light — The 3-Tier Protein Arsenal."
+        }
+      }
+    }
+  ]
+}
