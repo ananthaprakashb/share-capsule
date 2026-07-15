@@ -10,6 +10,25 @@
   },
   "audio": [
     {
+      "id": "meal-prep-light-the-3-tier-protein-arsenal",
+      "title": "Meal Prep Light: The 3-Tier Protein Arsenal",
+      "creator": "Share Capsule",
+      "description": "An audio article from Share Capsule: Meal Prep Light — The 3-Tier Protein Arsenal.",
+      "category": "Nutrition",
+      "language": "English",
+      "publishedAt": "2026-07-14",
+      "objectKey": "Meal_Prep_Light__The_3-Tier_Protein_Arsenal.mp4",
+      "mediaUrl": "https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev/Meal_Prep_Light__The_3-Tier_Protein_Arsenal.mp4",
+      "mimeType": "audio/mp4",
+      "autoplay": true,
+      "coverBackground": "linear-gradient(145deg,#14532d,#0f766e 55%,#d97706)",
+      "coverLines": [
+        "Meal Prep Light",
+        "The 3-Tier Protein Arsenal"
+      ],
+      "references": []
+    },
+    {
       "id": "tamil-audio-e7fed38c8789",
       "title": "ஊட்டச்சத்து மாத்திரைகளா அல்லது முழுமையான இயற்கை உணவா",
       "creator": "Share Capsule",
