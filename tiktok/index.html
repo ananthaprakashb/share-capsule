@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="Watch a TikTok video through Share Capsule.">
+  <title>TikTok Video — Share Capsule</title>
+  <style>
+    :root{--bg:#f4f1eb;--ink:#171717;--muted:#6f6a63;--line:#e7e0d6;--card:#fff;--shadow:0 18px 60px rgba(50,40,28,.10)}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 10% 0,#fff 0,transparent 32%),var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}.shell{width:min(100%,720px);margin:auto;padding:max(16px,env(safe-area-inset-top)) 16px calc(48px + env(safe-area-inset-bottom))}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:4px 2px 18px}.brand{font-weight:900;font-size:20px;letter-spacing:-.045em;color:var(--ink);text-decoration:none}.home{border:1px solid var(--line);border-radius:999px;background:#fff;padding:10px 14px;color:var(--ink);text-decoration:none;font-weight:800}.hero{padding:18px 4px}.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:11px;font-weight:900;color:var(--muted)}h1{margin:10px 0 0;font-size:clamp(34px,9vw,56px);line-height:.96;letter-spacing:-.06em}.card{margin-top:18px;background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.95);border-radius:28px;padding:16px;box-shadow:var(--shadow)}.frameWrap{width:min(100%,420px);margin:auto}.tiktokFrame{display:block;width:100%;aspect-ratio:9/16;border:0;border-radius:20px;background:#000}.note{margin:14px 4px 0;color:var(--muted);font-size:13px;line-height:1.55;text-align:center}.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;border-radius:15px;padding:0 17px;text-decoration:none;font-weight:850}.primary{background:#171717;color:#fff}.secondary{background:#efebe4;color:#171717;border:1px solid var(--line)}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="top"><a class="brand" href="/">Share Capsule</a><a class="home" href="/">All releases</a></div>
+    <section class="hero">
+      <div class="eyebrow">TikTok video</div>
+      <h1>Watch without leaving Share Capsule</h1>
+    </section>
+    <section class="card">
+      <div class="frameWrap">
+        <iframe id="player" class="tiktokFrame" title="TikTok video" allow="fullscreen; autoplay; encrypted-media" allowfullscreen loading="eager"></iframe>
+      </div>
+      <p class="note" id="note">Loading the official TikTok player…</p>
+      <div class="actions">
+        <a id="openTikTok" class="button primary" target="_blank" rel="noopener noreferrer">Open in TikTok</a>
+        <a class="button secondary" href="/">Back to releases</a>
+      </div>
+    </section>
+  </main>
+  <script>
+    const allowedIds=new Set(['7653291822894091534']);
+    const requested=new URLSearchParams(location.search).get('id')||'7653291822894091534';
+    const id=allowedIds.has(requested)?requested:'7653291822894091534';
+    const canonical=`https://www.tiktok.com/@anantha5615/video/${id}`;
+    document.getElementById('player').src=`https://www.tiktok.com/player/v1/${id}?controls=1&description=1&music_info=1&rel=0&autoplay=0`;
+    document.getElementById('openTikTok').href=canonical;
+    document.getElementById('note').textContent='If the embedded player is unavailable in your browser, open the original video in TikTok.';
+  </script>
+</body>
+</html>
