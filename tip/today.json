@@ -1,0 +1,17 @@
+{
+  "date": "2026-07-15",
+  "selections": [
+    {
+      "id": "heat-check-cool-hydrate",
+      "headline": "Extreme heat warnings, record-hot nights, wildfire danger and smoke affect large parts of the United States",
+      "newsUrl": "https://apnews.com/article/fb7664f71743f71beca4ce7447562ca2",
+      "newsSource": "Associated Press current heat reporting"
+    },
+    {
+      "id": "pause-verify-before-sharing",
+      "headline": "Fast-moving conflict, market and emergency updates make source verification especially important",
+      "newsUrl": "https://www.reuters.com/world/",
+      "newsSource": "Reuters world-news context"
+    }
+  ]
+}
