@@ -1,6 +1,51 @@
 {
   "releases": [
     {
+      "slug": "tamil-teeth-heart-alzheimer-health",
+      "title": "மாரடைப்பையும் அல்சைமரையும் தடுக்கும் உங்கள் பற்கள்",
+      "artist": "Share Capsule",
+      "type": "Audio article",
+      "category": "Tamil Oral Health",
+      "language": "Tamil",
+      "publishedAt": "2026-07-14",
+      "description": "வாய் மற்றும் ஈறு ஆரோக்கியம், இதய நலம் மற்றும் மூளை நலம் இடையிலான தொடர்புகளை அறிமுகப்படுத்தும் தமிழ் ஆடியோ கட்டுரை. இது மருத்துவ ஆலோசனைக்கு மாற்றாகாது.",
+      "featured": true,
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#0f4c5c,#0f766e 55%,#7c3aed)",
+      "coverEyebrow": "தமிழ் பல் ஆரோக்கிய ஆடியோ",
+      "coverLines": [
+        "மாரடைப்பையும் அல்சைமரையும்",
+        "தடுக்கும் உங்கள் பற்கள்"
+      ],
+      "previewUrl": "https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev/%E0%AE%AE%E0%AE%BE%E0%AE%B0%E0%AE%9F%E0%AF%88%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AF%88%E0%AE%AF%E0%AF%81%E0%AE%AE%E0%AF%8D_%E0%AE%85%E0%AE%B2%E0%AF%8D%E0%AE%9A%E0%AF%88%E0%AE%AE%E0%AE%B0%E0%AF%88%E0%AE%AF%E0%AF%81%E0%AE%AE%E0%AF%8D_%E0%AE%A4%E0%AE%9F%E0%AF%81%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AF%81%E0%AE%AE%E0%AF%8D_%E0%AE%89%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AE%B3%E0%AF%8D_%E0%AE%AA%E0%AE%B1%E0%AF%8D%E0%AE%95%E0%AE%B3%E0%AF%8D.m4a",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "கேளுங்கள்",
+          "icon": "▶",
+          "url": "https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev/%E0%AE%AE%E0%AE%BE%E0%AE%B0%E0%AE%9F%E0%AF%88%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AF%88%E0%AE%AF%E0%AF%81%E0%AE%AE%E0%AF%8D_%E0%AE%85%E0%AE%B2%E0%AF%8D%E0%AE%9A%E0%AF%88%E0%AE%AE%E0%AE%B0%E0%AF%88%E0%AE%AF%E0%AF%81%E0%AE%AE%E0%AF%8D_%E0%AE%A4%E0%AE%9F%E0%AF%81%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AF%81%E0%AE%AE%E0%AF%8D_%E0%AE%89%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AE%B3%E0%AF%8D_%E0%AE%AA%E0%AE%B1%E0%AF%8D%E0%AE%95%E0%AE%B3%E0%AF%8D.m4a"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "நண்பர்",
+          "icon": "🎧",
+          "text": "இந்த தமிழ் பல் ஆரோக்கிய ஆடியோவை கேளுங்கள்: மாரடைப்பையும் அல்சைமரையும் தடுக்கும் உங்கள் பற்கள்"
+        },
+        "family": {
+          "label": "குடும்பம்",
+          "icon": "👨‍👩‍👧",
+          "text": "குடும்பத்துடன் பகிர வேண்டிய தமிழ் ஆரோக்கிய ஆடியோ: மாரடைப்பையும் அல்சைமரையும் தடுக்கும் உங்கள் பற்கள்"
+        },
+        "topic": {
+          "label": "ஆரோக்கிய ஆர்வலர்",
+          "icon": "🦷",
+          "text": "வாய் ஆரோக்கியம், இதய நலம் மற்றும் மூளை நலம் இடையிலான தொடர்புகளை அறிமுகப்படுத்தும் தமிழ் ஆடியோ."
+        }
+      },
+      "tags": ["Tamil", "oral health", "dental health", "heart health", "brain health", "Alzheimer’s"]
+    },
+    {
       "slug": "tiktok-anantha-7653291822894091534",
       "title": "TikTok Video by Anantha",
       "artist": "Anantha",
