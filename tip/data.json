@@ -6,6 +6,15 @@
     "method": "Tips rotate deterministically by local calendar date. Every tip must include an authoritative source and documented real-world evidence before publication.",
     "dailyNewsSelections": [
       {
+        "date": "2026-07-14",
+        "id": "pause-verify-before-sharing",
+        "headline": "Global crises, AI-enhanced manipulation and fast-moving social posts increase the need to verify urgent information before forwarding it",
+        "newsUrl": "https://www.theguardian.com/politics/2026/jul/14/britons-urged-small-steps-prepare-potential-national-crises",
+        "newsSource": "Current global-risk reporting",
+        "explanation": "Selected because one careful pause can reduce harm during conflicts, disasters, health scares, scams and other fast-moving events in every country.",
+        "verifiedOn": "2026-07-14"
+      },
+      {
         "date": "2026-07-13",
         "id": "heat-check-cool-hydrate",
         "headline": "UAE condemns Iran's 'brazen' attack on tankers as US launches fresh strikes",
@@ -17,6 +26,28 @@
     ]
   },
   "tips": [
+    {
+      "id": "pause-verify-before-sharing",
+      "category": "Information safety",
+      "title": "Pause before forwarding urgent information",
+      "action": "Before sharing a frightening, exciting or urgent message, stop briefly and verify its source, date and context with at least one independent reliable source.",
+      "steps": [
+        "Stop when a message creates a strong emotional reaction or demands immediate sharing.",
+        "Open the original source instead of trusting a screenshot, cropped clip or forwarded caption.",
+        "Check the publication date, location and whether an old event is being presented as new.",
+        "Confirm the central claim through another established news outlet, official agency or fact-checking organization before forwarding it."
+      ],
+      "whyItWorks": "A short pause interrupts impulsive sharing and creates time to detect altered images, recycled stories, fake urgency and missing context before they spread to family or community groups.",
+      "sourceOrganization": "UNESCO media and information literacy research",
+      "sourceTitle": "UNESCO warning on the need for fact-checking skills among online content creators",
+      "sourceUrl": "https://www.theguardian.com/media/2024/nov/26/online-influencers-need-urgent-fact-checking-training-warns-unesco",
+      "validationNote": "UNESCO research across creators in 45 countries found widespread gaps in verification practices and emphasized checking accuracy and using credible sources before publishing or sharing information.",
+      "evidenceTitle": "Community fact-checking reduced the spread of misleading social posts",
+      "evidenceSummary": "A large-scale study of more than 237,000 fact-checked social-media cascades found that visible community fact checks substantially reduced continued sharing, supporting the value of verification before amplification.",
+      "evidenceUrl": "https://arxiv.org/abs/2409.08781",
+      "evidenceType": "Large-scale empirical study",
+      "lastValidated": "2026-07-14"
+    },
     {
       "id": "power-outage-cold",
       "category": "Food safety",
