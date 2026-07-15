@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#173b36">
+  <meta name="description" content="Official warehouse, fulfillment, distribution, package-handling and logistics career searches across the United States.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Warehouse Jobs Across the U.S. — Share Capsule">
+  <meta property="og:description" content="Search current fulfillment, distribution, package handling, inventory, forklift and warehouse openings on official employer sites.">
+  <meta property="og:url" content="https://sharecapsule.app/jobs/warehouse/">
+  <title>Warehouse Jobs Across the U.S. — Share Capsule</title>
+  <style>
+    :root{--bg:#edf4f0;--paper:#fffefa;--ink:#17231f;--muted:#64716b;--line:#d9e6df;--accent:#146b58;--accent2:#ddf1e9;--gold:#9b671d;--shadow:0 18px 58px rgba(29,67,56,.10)}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 12% 0,#fff 0,transparent 35%),linear-gradient(155deg,#eef6f1,#e5eee9);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}.shell{width:min(100%,1040px);margin:auto;padding:max(18px,env(safe-area-inset-top)) 16px calc(76px + env(safe-area-inset-bottom))}.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand,.home{color:inherit;text-decoration:none}.brand{font-weight:950;font-size:20px;letter-spacing:-.045em}.home{font-size:13px;font-weight:850;padding:10px 13px;border:1px solid var(--line);border-radius:999px;background:#fff}.hero{padding:38px 2px 22px}.kicker{margin:0 0 8px;color:var(--accent);font-size:12px;font-weight:950;letter-spacing:.14em;text-transform:uppercase}.hero h1{margin:0;max-width:900px;font-size:clamp(42px,8vw,72px);line-height:.95;letter-spacing:-.06em}.hero p{max-width:880px;margin:16px 0 0;color:var(--muted);line-height:1.65}.quick{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}.quick span{padding:8px 10px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.8);font-size:11px;font-weight:850;color:#44524c}.controls{display:grid;grid-template-columns:1fr;gap:10px;margin:4px 0 20px}@media(min-width:760px){.controls{grid-template-columns:1fr 240px}}.control{height:50px;border:1px solid var(--line);border-radius:16px;background:#fff;padding:0 14px;color:var(--ink);outline:none}.status{margin-bottom:15px;padding:14px 16px;border:1px solid var(--line);background:rgba(255,255,255,.8);border-radius:18px;color:var(--muted);font-size:13px;line-height:1.55}.grid{display:grid;grid-template-columns:1fr;gap:15px}@media(min-width:760px){.grid{grid-template-columns:1fr 1fr}}.card{background:rgba(255,254,250,.98);border:1px solid rgba(255,255,255,.96);border-radius:25px;padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column}.type{display:inline-flex;align-self:flex-start;background:var(--accent2);color:var(--accent);border-radius:999px;padding:7px 9px;font-size:10px;font-weight:950;letter-spacing:.06em;text-transform:uppercase}.card h2{margin:14px 0 0;font-size:30px;letter-spacing:-.045em}.card p{margin:10px 0 0;color:var(--muted);font-size:13px;line-height:1.6}.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.tags span{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 9px;font-size:10px;font-weight:850;color:#4f5d57}.apply{display:grid;place-items:center;min-height:50px;margin-top:auto;padding-top:18px;border-radius:15px;background:var(--ink);color:#fff;text-decoration:none;font-weight:900}.notice{margin-top:22px;padding:18px;border-radius:21px;background:#fff7e8;border:1px solid #efdfbd;color:#6d563b;font-size:13px;line-height:1.65}.empty{padding:32px;text-align:center;background:#fff;border-radius:24px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="top"><a class="brand" href="/jobs/warehouse/">Share Capsule Warehouse Jobs</a><a class="home" href="/jobs/">Engineering jobs</a></header>
+    <section class="hero">
+      <p class="kicker">Official employer career searches</p>
+      <h1>Warehouse and fulfillment jobs across the United States.</h1>
+      <p>Search current fulfillment-center, distribution-center, package-handler, inventory, forklift, shipping, receiving, order-picking and logistics openings directly on official employer sites. Availability, shifts, physical requirements, pay and benefits vary by facility.</p>
+      <div class="quick"><span>No copied listings</span><span>Official employer sites</span><span>Search by ZIP or state</span><span>Hourly and operations roles</span><span>Mobile friendly</span></div>
+    </section>
+    <section class="controls" aria-label="Warehouse job filters">
+      <input class="control" id="search" type="search" placeholder="Search company, role or skill" aria-label="Search warehouse jobs">
+      <select class="control" id="type" aria-label="Filter by warehouse type">
+        <option value="all">All warehouse types</option>
+        <option value="fulfillment">Fulfillment / e-commerce</option>
+        <option value="parcel">Package handling / parcel</option>
+        <option value="retail">Retail distribution</option>
+        <option value="food">Food / beverage distribution</option>
+        <option value="logistics">Logistics / freight</option>
+      </select>
+    </section>
+    <div class="status" id="status"></div>
+    <section class="grid" id="grid" aria-live="polite"></section>
+    <section class="notice"><strong>Before applying:</strong> Confirm the shift, schedule, location, lifting requirements, background-check or drug-screen requirements, forklift certification, starting pay, overtime rules and benefits on the official posting. Never pay a recruiter or send sensitive information outside the employer’s official application system.</section>
+  </main>
+  <script>
+    const jobs=[
+      {company:'Amazon',type:'fulfillment',label:'Fulfillment / e-commerce',description:'Fulfillment-center, sortation-center, delivery-station, grocery-warehouse, XL-warehouse and Amazon Air associate roles. Amazon says many hourly warehouse roles do not require a resume or interview.',tags:['Fulfillment','Sortation','Delivery station','Grocery','Amazon Air'],url:'https://hiring.amazon.com/job-opportunities/warehouse-jobs'},
+      {company:'Walmart',type:'retail',label:'Retail distribution',description:'Freight handler, distribution-center, fulfillment-center, maintenance and supply-chain operations roles serving Walmart and Sam’s Club locations.',tags:['Freight handler','Distribution','Fulfillment','Supply chain'],url:'https://careers.walmart.com/us/en/home/careers-areas/supply-chain-and-transportation'},
+      {company:'Target',type:'retail',label:'Retail distribution',description:'Hourly warehouse-operations and supply-chain roles involving receiving, packing, loading, inventory and distribution-center operations.',tags:['Warehouse operations','Packing','Receiving','Distribution'],url:'https://jobs.target.com/supply-chain-hourly'},
+      {company:'UPS',type:'parcel',label:'Package handling / parcel',description:'Warehouse worker, package handler, preload, sorting and hub-operation openings across UPS facilities.',tags:['Package handler','Sorting','Preload','Hub operations'],url:'https://www.jobs-ups.com/warehouse-worker-jobs'},
+      {company:'FedEx',type:'parcel',label:'Package handling / parcel',description:'Package-handler, material-handler, freight-dock, warehouse and logistics openings across FedEx operating companies.',tags:['Package handler','Material handler','Freight dock','Warehouse'],url:'https://careers.fedex.com/warehouse/jobs'},
+      {company:'The Home Depot',type:'retail',label:'Retail distribution',description:'Warehouse associate, distribution-center, inventory, shipping, receiving and general warehouse-operations roles.',tags:['Warehouse associate','Inventory','Shipping','Receiving'],url:'https://careers.homedepot.com/job-search-results/?keyword=warehouse'},
+      {company:"Lowe's",type:'retail',label:'Retail distribution',description:'Warehouse, distribution-center, fulfillment, receiving, stocking and supply-chain operations positions.',tags:['Distribution','Fulfillment','Receiving','Stocking'],url:'https://talent.lowes.com/us/en/search-results?keywords=warehouse'},
+      {company:'Costco',type:'retail',label:'Retail distribution',description:'Depot, distribution, receiving, stocking and warehouse-support opportunities through Costco’s official careers site.',tags:['Depot','Distribution','Receiving','Stocking'],url:'https://careers.costco.com/'},
+      {company:'DHL Supply Chain',type:'logistics',label:'Logistics / freight',description:'Warehouse associate, forklift operator, inventory-control, shipping, receiving and contract-logistics roles.',tags:['Forklift','Inventory control','Shipping','Receiving'],url:'https://careers.dhl.com/global/en/search-results?keywords=warehouse&location=United%20States'},
+      {company:'Sysco',type:'food',label:'Food / beverage distribution',description:'Warehouse order selector, loader, receiver, inventory and distribution-center roles supporting food-service delivery.',tags:['Order selector','Loader','Receiver','Cold storage'],url:'https://careers.sysco.com/en/search-jobs?keywords=warehouse'},
+      {company:'PepsiCo',type:'food',label:'Food / beverage distribution',description:'Warehouse person, material-handler, picker, loader and distribution roles supporting beverage and snack operations.',tags:['Material handler','Picker','Loader','Distribution'],url:'https://www.pepsicojobs.com/main/jobs?keywords=warehouse&location=United%20States'},
+      {company:'McKesson',type:'logistics',label:'Logistics / freight',description:'Distribution-center, warehouse-worker, material-handler, inventory and pharmaceutical-supply-chain roles.',tags:['Distribution center','Material handler','Inventory','Healthcare logistics'],url:'https://careers.mckesson.com/en/search-jobs/warehouse/733/1'},
+      {company:'Ryder',type:'logistics',label:'Logistics / freight',description:'Warehouse associate, forklift, material-handler, shipping, receiving and dedicated logistics-facility positions.',tags:['Forklift','Material handler','Shipping','Receiving'],url:'https://ryder.com/careers/warehouse-jobs'},
+      {company:'Penske Logistics',type:'logistics',label:'Logistics / freight',description:'Warehouse, inventory, shipping, receiving, forklift and distribution-center jobs supporting logistics customers.',tags:['Warehouse','Inventory','Forklift','Distribution'],url:'https://penske.jobs/warehouse/'},
+      {company:'Coca-Cola Consolidated',type:'food',label:'Food / beverage distribution',description:'Warehouse, order-builder, forklift, loading and distribution roles supporting beverage operations.',tags:['Order builder','Forklift','Loading','Distribution'],url:'https://careers.cokeconsolidated.com/search/?q=warehouse'}
+    ];
+    const grid=document.getElementById('grid'),status=document.getElementById('status');
+    const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    function render(){const q=document.getElementById('search').value.trim().toLowerCase(),type=document.getElementById('type').value;const items=jobs.filter(x=>(type==='all'||x.type===type)&&(!q||[x.company,x.label,x.description,...x.tags].join(' ').toLowerCase().includes(q)));status.innerHTML=`Showing <strong>${items.length}</strong> official employer career searches. Open an employer site and enter your ZIP code, city or state to see currently available shifts.`;grid.innerHTML=items.length?items.map(x=>`<article class="card"><span class="type">${esc(x.label)}</span><h2>${esc(x.company)}</h2><p>${esc(x.description)}</p><div class="tags">${x.tags.map(t=>`<span>${esc(t)}</span>`).join('')}</div><a class="apply" href="${esc(x.url)}" target="_blank" rel="noopener">Search official openings ↗</a></article>`).join(''):'<div class="empty">No employers match this filter.</div>'}
+    document.getElementById('search').addEventListener('input',render);document.getElementById('type').addEventListener('change',render);render();
+  </script>
+  <script src="/site-shell.js" defer></script>
+</body>
+</html>
