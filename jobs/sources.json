@@ -1,7 +1,7 @@
 {
-  "schemaVersion": 4,
+  "schemaVersion": 5,
   "reviewedAt": "2026-07-15",
-  "method": "Only allowlisted official applicant-tracking-system feeds are queried. Results are limited to broad U.S. technical and specialty-occupation role families aligned with the federal Standard Occupational Classification framework, including software, AI/ML, data, cloud/SRE, cybersecurity, network and systems, database, QA automation, technical product/program management, solutions engineering, hardware and embedded systems, electrical, mechanical, civil, biotechnology, healthcare technology, quantitative finance, UX/product design and technical writing. A posting must identify a location in one of the 50 U.S. states, Washington, D.C., or explicitly U.S.-based remote work. Categories describe occupations rather than nationality. Sponsorship is classified first from the current posting. When the posting is silent, independently reviewed USCIS H-1B employer history may be shown as a separate historical signal; it is never treated as confirmation that the current role will be sponsored. Closed positions are removed whenever they disappear from the employer's current official feed; newly published matching positions are added during the same refresh.",
+  "method": "Allowlisted official applicant-tracking-system feeds are queried for individual jobs. Employers without a stable public jobs API are included as official career-search sources so users can reach their current U.S. openings without relying on third-party aggregators. Results from live feeds are limited to broad U.S. technical and specialty-occupation role families aligned with the federal Standard Occupational Classification framework. Sponsorship is classified first from the current posting. When the posting is silent, independently reviewed USCIS H-1B employer history may be shown as a separate historical signal; it is never treated as confirmation that the current role will be sponsored.",
   "occupationTaxonomy": {
     "label": "U.S. Bureau of Labor Statistics — Standard Occupational Classification",
     "url": "https://www.bls.gov/soc/",
@@ -13,88 +13,19 @@
     "note": "USCIS employer-level petition history is informational. A prior H-1B filing or approval does not guarantee sponsorship for a current opening, candidate or work location."
   },
   "sources": [
-    {
-      "id": "databricks",
-      "company": "Databricks",
-      "type": "greenhouse",
-      "apiUrl": "https://boards-api.greenhouse.io/v1/boards/databricks/jobs?content=true",
-      "officialBoardUrl": "https://job-boards.greenhouse.io/databricks",
-      "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","databricks.com"],
-      "visaHistory": "historical-federal-records",
-      "visaHistorySource": "uscis-h1b-employer-data-hub",
-      "visaHistoryReviewedAt": "2026-07-15"
-    },
-    {
-      "id": "anthropic",
-      "company": "Anthropic",
-      "type": "greenhouse",
-      "apiUrl": "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs?content=true",
-      "officialBoardUrl": "https://job-boards.greenhouse.io/anthropic",
-      "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","anthropic.com"],
-      "visaHistory": "historical-federal-records",
-      "visaHistorySource": "uscis-h1b-employer-data-hub",
-      "visaHistoryReviewedAt": "2026-07-15"
-    },
-    {
-      "id": "scaleai",
-      "company": "Scale AI",
-      "type": "greenhouse",
-      "apiUrl": "https://boards-api.greenhouse.io/v1/boards/scaleai/jobs?content=true",
-      "officialBoardUrl": "https://job-boards.greenhouse.io/scaleai",
-      "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","scale.com"],
-      "visaHistory": "not-independently-verified",
-      "visaHistoryReviewedAt": "2026-07-15"
-    },
-    {
-      "id": "figma",
-      "company": "Figma",
-      "type": "greenhouse",
-      "apiUrl": "https://boards-api.greenhouse.io/v1/boards/figma/jobs?content=true",
-      "officialBoardUrl": "https://job-boards.greenhouse.io/figma",
-      "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","figma.com"],
-      "visaHistory": "not-independently-verified",
-      "visaHistoryReviewedAt": "2026-07-15"
-    },
-    {
-      "id": "airtable",
-      "company": "Airtable",
-      "type": "greenhouse",
-      "apiUrl": "https://boards-api.greenhouse.io/v1/boards/airtable/jobs?content=true",
-      "officialBoardUrl": "https://job-boards.greenhouse.io/airtable",
-      "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","airtable.com"],
-      "visaHistory": "not-independently-verified",
-      "visaHistoryReviewedAt": "2026-07-15"
-    },
-    {
-      "id": "robinhood",
-      "company": "Robinhood",
-      "type": "greenhouse",
-      "apiUrl": "https://boards-api.greenhouse.io/v1/boards/robinhood/jobs?content=true",
-      "officialBoardUrl": "https://job-boards.greenhouse.io/robinhood",
-      "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","robinhood.com"],
-      "visaHistory": "not-independently-verified",
-      "visaHistoryReviewedAt": "2026-07-15"
-    },
-    {
-      "id": "pinterest",
-      "company": "Pinterest",
-      "type": "greenhouse",
-      "apiUrl": "https://boards-api.greenhouse.io/v1/boards/pinterest/jobs?content=true",
-      "officialBoardUrl": "https://job-boards.greenhouse.io/pinterest",
-      "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","pinterest.com","pinterestcareers.com"],
-      "visaHistory": "not-independently-verified",
-      "visaHistoryReviewedAt": "2026-07-15"
-    },
-    {
-      "id": "elastic",
-      "company": "Elastic",
-      "type": "greenhouse",
-      "apiUrl": "https://boards-api.greenhouse.io/v1/boards/elastic/jobs?content=true",
-      "officialBoardUrl": "https://job-boards.greenhouse.io/elastic",
-      "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","elastic.co"],
-      "visaHistory": "not-independently-verified",
-      "visaHistoryReviewedAt": "2026-07-15"
-    }
+    {"id":"databricks","company":"Databricks","type":"greenhouse","apiUrl":"https://boards-api.greenhouse.io/v1/boards/databricks/jobs?content=true","officialBoardUrl":"https://job-boards.greenhouse.io/databricks","allowedApplyHosts":["job-boards.greenhouse.io","boards.greenhouse.io","databricks.com"],"visaHistory":"historical-federal-records","visaHistorySource":"uscis-h1b-employer-data-hub","visaHistoryReviewedAt":"2026-07-15"},
+    {"id":"anthropic","company":"Anthropic","type":"greenhouse","apiUrl":"https://boards-api.greenhouse.io/v1/boards/anthropic/jobs?content=true","officialBoardUrl":"https://job-boards.greenhouse.io/anthropic","allowedApplyHosts":["job-boards.greenhouse.io","boards.greenhouse.io","anthropic.com"],"visaHistory":"historical-federal-records","visaHistorySource":"uscis-h1b-employer-data-hub","visaHistoryReviewedAt":"2026-07-15"},
+    {"id":"scaleai","company":"Scale AI","type":"greenhouse","apiUrl":"https://boards-api.greenhouse.io/v1/boards/scaleai/jobs?content=true","officialBoardUrl":"https://job-boards.greenhouse.io/scaleai","allowedApplyHosts":["job-boards.greenhouse.io","boards.greenhouse.io","scale.com"],"visaHistory":"not-independently-verified","visaHistoryReviewedAt":"2026-07-15"},
+    {"id":"figma","company":"Figma","type":"greenhouse","apiUrl":"https://boards-api.greenhouse.io/v1/boards/figma/jobs?content=true","officialBoardUrl":"https://job-boards.greenhouse.io/figma","allowedApplyHosts":["job-boards.greenhouse.io","boards.greenhouse.io","figma.com"],"visaHistory":"not-independently-verified","visaHistoryReviewedAt":"2026-07-15"},
+    {"id":"airtable","company":"Airtable","type":"greenhouse","apiUrl":"https://boards-api.greenhouse.io/v1/boards/airtable/jobs?content=true","officialBoardUrl":"https://job-boards.greenhouse.io/airtable","allowedApplyHosts":["job-boards.greenhouse.io","boards.greenhouse.io","airtable.com"],"visaHistory":"not-independently-verified","visaHistoryReviewedAt":"2026-07-15"},
+    {"id":"robinhood","company":"Robinhood","type":"greenhouse","apiUrl":"https://boards-api.greenhouse.io/v1/boards/robinhood/jobs?content=true","officialBoardUrl":"https://job-boards.greenhouse.io/robinhood","allowedApplyHosts":["job-boards.greenhouse.io","boards.greenhouse.io","robinhood.com"],"visaHistory":"not-independently-verified","visaHistoryReviewedAt":"2026-07-15"},
+    {"id":"pinterest","company":"Pinterest","type":"greenhouse","apiUrl":"https://boards-api.greenhouse.io/v1/boards/pinterest/jobs?content=true","officialBoardUrl":"https://job-boards.greenhouse.io/pinterest","allowedApplyHosts":["job-boards.greenhouse.io","boards.greenhouse.io","pinterest.com","pinterestcareers.com"],"visaHistory":"not-independently-verified","visaHistoryReviewedAt":"2026-07-15"},
+    {"id":"elastic","company":"Elastic","type":"greenhouse","apiUrl":"https://boards-api.greenhouse.io/v1/boards/elastic/jobs?content=true","officialBoardUrl":"https://job-boards.greenhouse.io/elastic","allowedApplyHosts":["job-boards.greenhouse.io","boards.greenhouse.io","elastic.co"],"visaHistory":"not-independently-verified","visaHistoryReviewedAt":"2026-07-15"},
+    {"id":"amazon","company":"Amazon","type":"official-search","officialBoardUrl":"https://www.amazon.jobs/en/search","allowedApplyHosts":["amazon.jobs"],"visaHistory":"historical-federal-records","visaHistorySource":"uscis-h1b-employer-data-hub","visaHistoryReviewedAt":"2026-07-15"},
+    {"id":"ey","company":"EY","type":"official-search","officialBoardUrl":"https://careers.ey.com/ey/search/","allowedApplyHosts":["careers.ey.com"],"visaHistory":"historical-federal-records","visaHistorySource":"uscis-h1b-employer-data-hub","visaHistoryReviewedAt":"2026-07-15"},
+    {"id":"apple","company":"Apple","type":"official-search","officialBoardUrl":"https://jobs.apple.com/en-us/search?location=united-states-USA","allowedApplyHosts":["jobs.apple.com"],"visaHistory":"historical-federal-records","visaHistorySource":"uscis-h1b-employer-data-hub","visaHistoryReviewedAt":"2026-07-15"},
+    {"id":"cognizant","company":"Cognizant","type":"official-search","officialBoardUrl":"https://careers.cognizant.com/us-en/jobs/","allowedApplyHosts":["careers.cognizant.com"],"visaHistory":"historical-federal-records","visaHistorySource":"uscis-h1b-employer-data-hub","visaHistoryReviewedAt":"2026-07-15"},
+    {"id":"meta","company":"Meta","type":"official-search","officialBoardUrl":"https://www.metacareers.com/jobs","allowedApplyHosts":["metacareers.com"],"visaHistory":"historical-federal-records","visaHistorySource":"uscis-h1b-employer-data-hub","visaHistoryReviewedAt":"2026-07-15"}
   ],
   "jobTrackingApiBaseUrl": "https://sharecapsule-reactions.subhafash-86.workers.dev",
   "jobTrackingNote": "Shared D1-backed confirmation and invalid-report tracking. Three net invalid reports place a job in the follow-up queue and hide it by default."
