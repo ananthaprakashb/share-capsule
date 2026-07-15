@@ -5,6 +5,25 @@
   },
   "quotes": [
     {
+      "date": "2026-07-14",
+      "quote": "Every gun that is made, every warship launched, every rocket fired signifies, in the final sense, a theft from those who hunger and are not fed, those who are cold and are not clothed.",
+      "author": "Dwight D. Eisenhower",
+      "authorBio": "Thirty-fourth president of the United States and Supreme Allied Commander in Europe during World War II, remembered for warnings about the human and economic costs of war.",
+      "authorEncyclopediaUrl": "https://www.eisenhowerlibrary.gov/eisenhowers",
+      "sourceTitle": "Address ‘The Chance for Peace,’ April 16, 1953",
+      "sourceUrl": "https://www.presidency.ucsb.edu/documents/address-the-chance-for-peace-delivered-before-the-american-society-newspaper-editors",
+      "sourceType": "Archived presidential address transcript",
+      "verificationNote": "Verified word-for-word in the American Presidency Project transcript of Eisenhower’s April 16, 1953 ‘Chance for Peace’ address.",
+      "verifiedOn": "2026-07-14",
+      "libraryId": "eisenhower-cost-of-arms",
+      "newsFit": {
+        "headline": "Renewed U.S.–Iran fighting threatens civilians, essential supplies, shipping and global energy markets",
+        "newsUrl": "https://www.reuters.com/world/middle-east/return-us-iran-hostilities-is-huge-setback-civilians-un-rights-chief-says-2026-07-14/",
+        "source": "Reuters current-news context",
+        "explanation": "Selected because today’s escalating conflict is affecting civilians, food and medicine flows, maritime trade and energy prices. The quote invites discussion about security, human needs and the wider costs of war without endorsing either side."
+      }
+    },
+    {
       "date": "2026-07-13",
       "quote": "Let us never negotiate out of fear. But let us never fear to negotiate.",
       "author": "John F. Kennedy",
@@ -44,7 +63,7 @@
       "sourceTitle": "Circles, in Essays: First Series",
       "sourceUrl": "https://www.gutenberg.org/files/2944/2944-h/2944-h.htm",
       "sourceType": "Primary text, Project Gutenberg",
-      "verificationNote": "Verified in Emerson’s essay “Circles” in the Project Gutenberg text of Essays: First Series.",
+      "verificationNote": "Verified in Emerson’s essay ‘Circles’ in the Project Gutenberg text of Essays: First Series.",
       "verifiedOn": "2026-07-12"
     },
     {
@@ -92,7 +111,7 @@
       "sourceTitle": "Self-Reliance, in Essays: First Series",
       "sourceUrl": "https://www.gutenberg.org/files/2944/2944-h/2944-h.htm",
       "sourceType": "Primary text, Project Gutenberg",
-      "verificationNote": "Verified word-for-word in Emerson’s essay “Self-Reliance.”",
+      "verificationNote": "Verified word-for-word in Emerson’s essay ‘Self-Reliance.’",
       "verifiedOn": "2026-07-12"
     },
     {
