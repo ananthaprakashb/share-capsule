@@ -1,15 +1,20 @@
-# R2 audio auto publishing
+# R2 audio publishing
 
-The workflow `.github/workflows/publish-r2-audio.yml` checks the `techvideos` Cloudflare R2 bucket every 15 minutes and publishes newly discovered audio objects to both:
+Automatic R2 catalog updates are currently **paused**.
 
-- `audio/data.json`
-- `data/releases.json`
+The workflow `.github/workflows/publish-r2-audio.yml` no longer runs on a schedule and no longer runs automatically on pushes. It can only be started manually with `workflow_dispatch` while the R2 publishing process is reviewed.
 
-Publisher or workflow changes also trigger a full R2 discovery scan after explicit metadata overrides are processed.
+For now, new R2 audio releases should be reviewed and added one by one:
+
+- add the playable object to `audio/data.json`
+- add the curated homepage release to `data/manual-releases.json`
+- verify the exact R2 object key and public URL before publishing
+
+The generated historical catalog remains in `data/releases.json`. The homepage loads `data/manual-releases.json` first and then merges the generated catalog behind it, deduplicating by release slug.
 
 ## Required GitHub Actions secrets
 
-Add these repository secrets:
+The manual R2 discovery workflow still requires these repository secrets when it is explicitly run:
 
 - `CLOUDFLARE_ACCOUNT_ID`
 - `R2_ACCESS_KEY_ID`
@@ -19,29 +24,30 @@ Create the R2 access keys with read-only access to the `techvideos` bucket.
 
 ## Supported files
 
-The publisher automatically accepts `.m4a`, `.mp3`, `.aac`, `.wav`, `.ogg`, `.oga`, `.opus`, `.flac`, `.m4b`, `.aif`, and `.aiff` files.
+The publisher recognizes `.m4a`, `.mp3`, `.aac`, `.wav`, `.ogg`, `.oga`, `.opus`, `.flac`, `.m4b`, `.aif`, and `.aiff` files.
 
-Ambiguous media containers such as `.mp4`, `.webm`, `.mpeg`, and `.mpg` are published only when R2 reports an `audio/*` content type or when the object has `forcePublish: true` in `audio/publish-overrides.json`. This prevents ordinary videos from being added as audio articles.
+Ambiguous media containers such as `.mp4`, `.webm`, `.mpeg`, and `.mpg` are published by the discovery script only when R2 reports an `audio/*` content type or when the object has `forcePublish: true` in `audio/publish-overrides.json`.
 
-## Metadata overrides
+## Manual review policy
 
-Use `audio/publish-overrides.json` when a filename is not enough to produce the desired title, category, description, language, cover, or stable ID. Explicit overrides are published immediately after they reach `main`, even before R2 API secrets are configured.
+Do not rely on R2 discovery to publish a new release automatically. Review each candidate object individually for:
 
-For an audio file stored in an ambiguous container such as `.mp4`, add an exact object-key override with `"forcePublish": true` when R2 does not expose an audio content type.
+- exact object key
+- whether the object is actually audio
+- title and language
+- category and description
+- stable release ID
+- public playback URL
 
-## Duplicate protection
-
-The publisher skips objects already present by exact `objectKey`. Generated ID collisions are automatically resolved with a stable hash suffix; an explicitly configured duplicate ID is reported and skipped.
-
-New D1 reaction rows are created automatically on the first Like or Clap because audio IDs use the generic reaction API.
+Only after review should it be added to the manual catalog.
 
 ## Discovery diagnostics
 
-Each discovery run prints JSON containing:
+When the manual discovery workflow is explicitly run, it prints JSON containing:
 
 - `newestDiscovered` — the newest supported or ambiguous R2 objects, ordered by `LastModified`
 - `newestIgnored` — recent objects with unsupported extensions
 - `added` — objects published by the run
-- `skipped` — objects not published and the exact reason, including existing object keys, ambiguous non-audio content types, or explicit ID collisions
+- `skipped` — objects not published and the exact reason
 
-When a new file is not published, inspect the `Discover and publish new audio objects` step first; the newest R2 object and its skip reason should be visible there.
+The discovery workflow is retained only as a troubleshooting tool while the publishing process is revisited.
