@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-12",
+  "updatedAt": "2026-07-14",
   "jobKeys": [],
   "urls": [],
-  "reason": "Jobs reported invalid and confirmed by a maintainer can be added here to hide them globally."
+  "reason": "No open maintainer invalid-job reports were found during the July 14, 2026 review. Jobs absent from an employer's current official feed are removed by the verified snapshot refresh; confirmed invalid exceptions can still be added here."
 }
