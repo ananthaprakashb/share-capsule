@@ -5,8 +5,17 @@
     "startDate": "2026-07-12",
     "scopeNote": "There is no single law that applies identically in every country. This page explains widely recognized international legal principles and documented incidents. Local constitutions, statutes, procedures and remedies can differ.",
     "validationPolicy": "Every entry must cite two primary legal authorities plus a primary court, tribunal or government-agency record for the specific case or incident. All required fields and source URLs are checked before publication.",
-    "lastRevalidatedAt": "2026-07-13T23:00:00.000Z",
+    "lastRevalidatedAt": "2026-07-14T21:30:00.000Z",
     "dailyNewsSelections": [
+      {
+        "date": "2026-07-14",
+        "id": "verify-before-urgent-payment",
+        "headline": "AI-assisted impersonation and investment scams are targeting victims across countries",
+        "newsUrl": "https://apnews.com/article/12f549d5203abd38857c4e2f2fb1c986",
+        "newsSource": "Associated Press",
+        "explanation": "Selected because fast-moving cross-border scams increasingly use AI, trusted identities, emotional pressure and irreversible payment methods. The legal principle is globally relevant while remedies remain local.",
+        "verifiedOn": "2026-07-14"
+      },
       {
         "date": "2026-07-13",
         "id": "officials-must-respect-acquittals",
@@ -19,6 +28,34 @@
     ]
   },
   "principles": [
+    {
+      "id": "verify-before-urgent-payment",
+      "category": "Consumer protection",
+      "title": "Urgency does not remove your right to clear information before you pay",
+      "plainRule": "Consumers should be protected from deceptive, coercive and unfair commercial practices, should receive truthful information needed to make informed choices, and should have access to complaint and redress mechanisms.",
+      "globalBasis": "United Nations Guidelines for Consumer Protection; UN General Assembly resolution 70/186",
+      "globalSourceTitle": "United Nations Guidelines for Consumer Protection",
+      "globalSourceUrl": "https://unctad.org/topic/competition-and-consumer-protection/un-guidelines-for-consumer-protection",
+      "secondaryGlobalSourceTitle": "UN General Assembly resolution 70/186",
+      "secondaryGlobalSourceUrl": "https://undocs.org/A/RES/70/186",
+      "everydayMeaning": "A person claiming to be a bank, police officer, employer, relative, celebrity, government agency or investment adviser does not become trustworthy by demanding immediate payment. Legitimate organizations should be independently verifiable and should provide clear information about identity, purpose, price, terms and available remedies.",
+      "practicalSteps": [
+        "Pause any payment request that uses threats, secrecy, guaranteed returns or extreme urgency.",
+        "Contact the organization through a phone number, app or website you found independently — not through the message or caller.",
+        "Do not use gift cards, cryptocurrency, wire transfers or remote-access software merely because the requester insists.",
+        "Save messages, receipts, account details and screenshots, and contact your bank or payment provider immediately if money or credentials were sent."
+      ],
+      "incidentTitle": "INTERPOL Operation First Light 2024",
+      "incidentDate": "2024-06-27",
+      "incidentJurisdiction": "International law-enforcement cooperation across 61 countries",
+      "incidentSummary": "INTERPOL coordinated a global operation against phishing, investment fraud, romance scams, online shopping fraud and impersonation schemes. Participating authorities froze thousands of bank accounts and traced cross-border payments linked to victims in many countries.",
+      "incidentOutcome": "Authorities arrested approximately 3,950 suspects and seized about USD 257 million in criminal assets. INTERPOL also used its rapid-payment intervention mechanism to help trace and intercept fraud proceeds, illustrating why immediate reporting can matter.",
+      "incidentSourceTitle": "USD 257 million seized in global police crackdown against online scams",
+      "incidentSourceUrl": "https://www.interpol.int/en/News-and-Events/News/2024/USD-257-million-seized-in-global-police-crackdown-against-online-scams",
+      "takeaway": "Pressure is a warning sign, not proof of authority. Verify independently before paying, and act quickly after a suspected fraud because banks and investigators may have only a limited opportunity to stop or trace funds.",
+      "localLawWarning": "Definitions of fraud, cancellation rights, bank liability, reimbursement, reporting deadlines and available remedies vary by country. Contact local law enforcement, a consumer-protection authority and the relevant financial institution for a specific incident.",
+      "validatedOn": "2026-07-14"
+    },
     {
       "id": "privacy-of-correspondence",
       "category": "Privacy",
