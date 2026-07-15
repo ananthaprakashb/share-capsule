@@ -1,6 +1,61 @@
 {
   "releases": [
     {
+      "slug": "tiktok-anantha-7653291822894091534",
+      "title": "TikTok Video by Anantha",
+      "artist": "Anantha",
+      "type": "TikTok video",
+      "category": "Short Video",
+      "language": "English",
+      "publishedAt": "2026-07-14",
+      "description": "A short-form TikTok video from @anantha5615, available to watch through Share Capsule.",
+      "featured": true,
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#111827,#111111 52%,#ec4899)",
+      "coverEyebrow": "TikTok video",
+      "coverLines": [
+        "TikTok Video",
+        "by Anantha"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "primaryPlayer": {
+        "provider": "TikTok",
+        "url": "https://www.tiktok.com/@anantha5615/video/7653291822894091534",
+        "videoId": "7653291822894091534"
+      },
+      "platforms": [
+        {
+          "label": "Watch in Share Capsule",
+          "icon": "▶",
+          "url": "/tiktok/?id=7653291822894091534"
+        },
+        {
+          "label": "Open TikTok",
+          "icon": "♪",
+          "url": "https://www.tiktok.com/@anantha5615/video/7653291822894091534"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Friend",
+          "icon": "📱",
+          "text": "Watch this TikTok video from Anantha"
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this TikTok video from Anantha"
+        },
+        "topic": {
+          "label": "Short-video viewer",
+          "icon": "🎬",
+          "text": "A short-form TikTok video from @anantha5615, available through Share Capsule."
+        }
+      },
+      "tags": ["TikTok", "short video", "Anantha"]
+    },
+    {
       "slug": "meal-prep-light-the-3-tier-protein-arsenal",
       "title": "Meal Prep Light: The 3-Tier Protein Arsenal",
       "artist": "Share Capsule",
