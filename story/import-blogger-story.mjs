@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 
 const DATA_PATH = new URL('./data.json', import.meta.url);
 const FORCE = process.argv.includes('--force');
+const TARGET_SOURCE_URL = 'https://thinkfiveminutes.blogspot.com/2026/03/2.html';
 
 const decodeEntities = value => String(value ?? '')
   .replace(/&nbsp;/gi, ' ')
@@ -76,8 +77,8 @@ async function main() {
   if (!entries.length) throw new Error('The Blogger feed returned no posts.');
 
   const publishedUrls = new Set((data.stories || []).map(story => story.sourceUrl));
-  const seedUrl = data.site.seedSourceUrl;
-  let selected = entries.find(entry => canonicalLink(entry) === seedUrl && !publishedUrls.has(seedUrl));
+  const requestedUrl = TARGET_SOURCE_URL || data.site.seedSourceUrl;
+  let selected = entries.find(entry => canonicalLink(entry) === requestedUrl && !publishedUrls.has(requestedUrl));
 
   if (!selected) {
     selected = [...entries]
