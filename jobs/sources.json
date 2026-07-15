@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "reviewedAt": "2026-07-13",
-  "method": "Only allowlisted official applicant-tracking-system feeds are queried. Results are limited to broad U.S. technical and specialty-occupation role families aligned with the federal Standard Occupational Classification framework, including software, AI/ML, data, cloud/SRE, cybersecurity, network and systems, database, QA automation, technical product/program management, solutions engineering, hardware and embedded systems, electrical, mechanical, civil, biotechnology, healthcare technology, quantitative finance, UX/product design and technical writing. A posting must identify a location in one of the 50 U.S. states, Washington, D.C., or explicitly U.S.-based remote work. Categories describe occupations rather than nationality. Sponsorship is classified only from the current posting; company filing history is informational and never a guarantee.",
+  "reviewedAt": "2026-07-14",
+  "method": "Only allowlisted official applicant-tracking-system feeds are queried. Results are limited to broad U.S. technical and specialty-occupation role families aligned with the federal Standard Occupational Classification framework, including software, AI/ML, data, cloud/SRE, cybersecurity, network and systems, database, QA automation, technical product/program management, solutions engineering, hardware and embedded systems, electrical, mechanical, civil, biotechnology, healthcare technology, quantitative finance, UX/product design and technical writing. A posting must identify a location in one of the 50 U.S. states, Washington, D.C., or explicitly U.S.-based remote work. Categories describe occupations rather than nationality. Sponsorship is classified only from the current posting; company filing history is informational and never a guarantee. Closed positions are removed whenever they disappear from the employer's current official feed; newly published matching positions are added during the same refresh.",
   "occupationTaxonomy": {
     "label": "U.S. Bureau of Labor Statistics — Standard Occupational Classification",
     "url": "https://www.bls.gov/soc/",
@@ -21,7 +21,7 @@
       "officialBoardUrl": "https://job-boards.greenhouse.io/databricks",
       "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","databricks.com"],
       "visaHistory": "not-independently-verified",
-      "visaHistoryReviewedAt": "2026-07-13"
+      "visaHistoryReviewedAt": "2026-07-14"
     },
     {
       "id": "anthropic",
@@ -31,7 +31,7 @@
       "officialBoardUrl": "https://job-boards.greenhouse.io/anthropic",
       "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","anthropic.com"],
       "visaHistory": "not-independently-verified",
-      "visaHistoryReviewedAt": "2026-07-13"
+      "visaHistoryReviewedAt": "2026-07-14"
     },
     {
       "id": "scaleai",
@@ -41,7 +41,7 @@
       "officialBoardUrl": "https://job-boards.greenhouse.io/scaleai",
       "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","scale.com"],
       "visaHistory": "not-independently-verified",
-      "visaHistoryReviewedAt": "2026-07-13"
+      "visaHistoryReviewedAt": "2026-07-14"
     },
     {
       "id": "figma",
@@ -51,7 +51,7 @@
       "officialBoardUrl": "https://job-boards.greenhouse.io/figma",
       "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","figma.com"],
       "visaHistory": "not-independently-verified",
-      "visaHistoryReviewedAt": "2026-07-13"
+      "visaHistoryReviewedAt": "2026-07-14"
     },
     {
       "id": "airtable",
@@ -61,7 +61,7 @@
       "officialBoardUrl": "https://job-boards.greenhouse.io/airtable",
       "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","airtable.com"],
       "visaHistory": "not-independently-verified",
-      "visaHistoryReviewedAt": "2026-07-13"
+      "visaHistoryReviewedAt": "2026-07-14"
     },
     {
       "id": "robinhood",
@@ -71,7 +71,7 @@
       "officialBoardUrl": "https://job-boards.greenhouse.io/robinhood",
       "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","robinhood.com"],
       "visaHistory": "not-independently-verified",
-      "visaHistoryReviewedAt": "2026-07-13"
+      "visaHistoryReviewedAt": "2026-07-14"
     },
     {
       "id": "pinterest",
@@ -81,7 +81,7 @@
       "officialBoardUrl": "https://job-boards.greenhouse.io/pinterest",
       "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","pinterest.com","pinterestcareers.com"],
       "visaHistory": "not-independently-verified",
-      "visaHistoryReviewedAt": "2026-07-13"
+      "visaHistoryReviewedAt": "2026-07-14"
     },
     {
       "id": "elastic",
@@ -91,7 +91,7 @@
       "officialBoardUrl": "https://job-boards.greenhouse.io/elastic",
       "allowedApplyHosts": ["job-boards.greenhouse.io","boards.greenhouse.io","elastic.co"],
       "visaHistory": "not-independently-verified",
-      "visaHistoryReviewedAt": "2026-07-13"
+      "visaHistoryReviewedAt": "2026-07-14"
     }
   ],
   "jobTrackingApiBaseUrl": "https://sharecapsule-reactions.subhafash-86.workers.dev",
