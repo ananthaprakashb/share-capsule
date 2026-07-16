@@ -69,4 +69,5 @@ $('prev').onclick=()=>{index=(index-1+poems.length)%poems.length;render()};$('ne
 const requested=new URLSearchParams(location.search).get('poem');if(requested){const found=poems.findIndex(p=>p.number===requested);if(found>=0)index=found}render();
 </script>
 <script src="/site-shell.js" defer></script>
+  <script src="/marimuthu-profile.js" defer></script>
 </body></html>
