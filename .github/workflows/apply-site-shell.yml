@@ -8,6 +8,8 @@ on:
       - "site-shell.js"
       - "marimuthu-profile.js"
       - "marimuthu-recent.js"
+      - "marimuthu-batches.js"
+      - "marimuthu/data/**"
       - "scripts/apply-site-shell.mjs"
       - ".github/workflows/apply-site-shell.yml"
 
@@ -35,29 +37,18 @@ jobs:
           node --check site-shell.js
           node --check marimuthu-profile.js
           node --check marimuthu-recent.js
+          node --check marimuthu-batches.js
           node --check scripts/apply-site-shell.mjs
+          node -e "const fs=require('fs');for(const f of fs.readdirSync('marimuthu/data').filter(x=>x.endsWith('.json')))JSON.parse(fs.readFileSync('marimuthu/data/'+f,'utf8'))"
           missing=$(find . -type f -name '*.html' -not -path './.git/*' -not -path './node_modules/*' -print0 | xargs -0 grep -L '/site-shell.js' || true)
-          if [ -n "$missing" ]; then
-            echo "Missing site shell in:"
-            echo "$missing"
-            exit 1
-          fi
+          if [ -n "$missing" ]; then echo "Missing site shell in:"; echo "$missing"; exit 1; fi
           marimuthu_missing=$(find marimuthu -type f -name '*.html' -print0 | xargs -0 grep -L '/marimuthu-profile.js' || true)
-          if [ -n "$marimuthu_missing" ]; then
-            echo "Missing Marimuthu author image renderer in:"
-            echo "$marimuthu_missing"
-            exit 1
-          fi
+          if [ -n "$marimuthu_missing" ]; then echo "Missing Marimuthu author image renderer in:"; echo "$marimuthu_missing"; exit 1; fi
           marimuthu_recent_missing=$(find marimuthu -type f -name '*.html' -print0 | xargs -0 grep -L '/marimuthu-recent.js' || true)
-          if [ -n "$marimuthu_recent_missing" ]; then
-            echo "Missing recent Marimuthu poem collection in:"
-            echo "$marimuthu_recent_missing"
-            exit 1
-          fi
-          if git diff --quiet -- '*.html'; then
-            echo "All HTML pages already include the shared shell."
-            exit 0
-          fi
+          if [ -n "$marimuthu_recent_missing" ]; then echo "Missing recent Marimuthu poem collection in:"; echo "$marimuthu_recent_missing"; exit 1; fi
+          marimuthu_batches_missing=$(find marimuthu -type f -name '*.html' -print0 | xargs -0 grep -L '/marimuthu-batches.js' || true)
+          if [ -n "$marimuthu_batches_missing" ]; then echo "Missing Marimuthu batch loader in:"; echo "$marimuthu_batches_missing"; exit 1; fi
+          if git diff --quiet -- '*.html'; then echo "All HTML pages already include the shared shell."; exit 0; fi
           git config user.name share-capsule-bot
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add '*.html' ':!node_modules'
