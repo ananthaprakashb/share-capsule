@@ -1,58 +1,66 @@
-<!doctype html>
-<html lang="ta">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#173d2a">
-<meta name="description" content="சுப மாரிமுத்து அய்யா பகிர்வில் இருந்து — இனியவை நாற்பது பாடல்கள் மற்றும் எளிய பொருள்.">
-<meta property="og:title" content="சுப மாரிமுத்து அய்யா பகிர்வு">
-<meta property="og:url" content="https://sharecapsule.app/marimuthu/">
-<meta property="og:image" content="https://sharecapsule.app/assets/marimuthu-ayya.svg">
-<title>சுப மாரிமுத்து அய்யா பகிர்வு</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700;800&family=Noto+Serif+Tamil:wght@500;600;700&display=swap');
-:root{--ink:#1d241e;--green:#173d2a;--green2:#2d6041;--cream:#fffaf0;--gold:#c69a4b;--line:#e8dcc3;--muted:#746d61;--shadow:0 22px 70px rgba(31,55,38,.14)}
-*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#f7f3e7,#e5eee2);color:var(--ink);font-family:"Noto Sans Tamil",system-ui,sans-serif}.shell{width:min(100%,980px);margin:auto;padding:26px 14px 96px}.hero{padding:8px 0 20px;text-align:center}.eyebrow{color:var(--green2);font-size:12px;font-weight:800;letter-spacing:.08em}.hero h1{margin:8px 0 8px;font-family:"Noto Serif Tamil",serif;color:var(--green);font-size:clamp(32px,7vw,56px);line-height:1.22}.hero p{margin:0 auto;max-width:700px;color:var(--muted);line-height:1.7;font-size:14px}.controls{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:0 0 18px}.controls button{border:1px solid var(--line);border-radius:999px;padding:11px 16px;background:#fff;color:var(--green);font-family:inherit;font-weight:800;box-shadow:0 8px 22px rgba(45,66,48,.08)}.post{overflow:hidden;background:var(--cream);border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow)}.profileBar{display:grid;grid-template-columns:104px 1fr;gap:16px;align-items:center;padding:18px;background:linear-gradient(135deg,#173d2a,#2f6544);color:#fff}.portraitWrap{width:104px;height:124px;border-radius:24px;padding:4px;background:linear-gradient(145deg,#f3d99e,#b88b38);box-shadow:0 10px 30px rgba(0,0,0,.22)}.portrait{display:block;width:100%;height:100%;object-fit:cover;border-radius:20px;background:#eee}.profileBar h2{margin:0;font-family:"Noto Serif Tamil",serif;font-size:24px;line-height:1.35}.profileBar p{margin:6px 0 0;color:rgba(255,255,255,.82);font-size:13px;line-height:1.75}.content{padding:clamp(20px,5vw,38px)}.meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}.pill{display:inline-flex;padding:8px 11px;border-radius:999px;background:#eef4ee;color:var(--green);font-size:12px;font-weight:800}.poem{position:relative;margin:0;padding:4px 0 20px;font-family:"Noto Serif Tamil",serif;font-size:clamp(22px,4.5vw,34px);line-height:1.85;white-space:pre-line;color:#211b15}.poem:before{content:"“";position:absolute;left:-6px;top:-22px;color:#d5bf8f;font-size:72px;line-height:1}.meaning{padding:22px;border-radius:22px;background:#f4eee0;border:1px solid #e3d5b9}.meaning h3,.thought h3{margin:0 0 9px;font-family:"Noto Serif Tamil",serif;color:var(--green);font-size:20px}.meaning p,.thought p{margin:0;line-height:1.9;font-size:16px}.thought{margin-top:16px;padding:20px;border-radius:22px;background:linear-gradient(135deg,#173d2a,#2d6041);color:#fff}.thought h3{color:#f8e9bd}.navigation{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.navigation button{border:0;border-radius:16px;padding:14px;background:#efe4cc;color:#49371f;font-family:inherit;font-weight:800}.share{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}.share a,.share button{display:grid;place-items:center;min-height:48px;border:1px solid #e5dccb;border-radius:15px;background:#fff;color:#26211b;text-decoration:none;font-family:inherit;font-weight:800}.counter{text-align:center;color:var(--muted);font-size:12px;margin-top:14px}@media(min-width:680px){.profileBar{grid-template-columns:130px 1fr;padding:24px 30px}.portraitWrap{width:130px;height:154px}.profileBar h2{font-size:30px}.share{grid-template-columns:repeat(5,1fr)}}@media(max-width:480px){.profileBar{grid-template-columns:88px 1fr}.portraitWrap{width:88px;height:106px}.profileBar h2{font-size:20px}.content{padding:20px}.poem{font-size:22px;line-height:1.75}.meaning p,.thought p{font-size:15px}.share{grid-template-columns:1fr 1fr}}
-</style>
-</head>
-<body>
-<main class="shell">
-<section class="hero"><div class="eyebrow">தமிழ் நீதி இலக்கியம்</div><h1>பாடலும் பொருளும்</h1><p>இனியவை நாற்பதிலிருந்து தேர்ந்தெடுக்கப்பட்ட பாடல்கள் — சுப மாரிமுத்து அய்யா பகிர்வில் இருந்து.</p></section>
-<div class="controls"><button id="today">இன்றைய பாடல்</button><button id="random">வேறு பாடல்</button></div>
-<article class="post">
-<section class="profileBar"><div class="portraitWrap"><img class="portrait" src="/assets/marimuthu-ayya.svg?v=1" alt="சுப மாரிமுத்து அய்யா" onerror="this.closest('.portraitWrap').remove()"></div><div><h2>சுப மாரிமுத்து</h2><p>அய்யா பகிர்வில் இருந்து<br>தமிழ் வாழ்வியல் சிந்தனைகள்</p></div></section>
-<section class="content" data-read-aloud>
-<div class="meta"><span class="pill" id="book"></span><span class="pill" id="number"></span><span class="pill" id="author"></span></div>
-<div class="poem" id="poem"></div>
-<section class="meaning"><h3>விளக்கம் / பொருள்</h3><p id="meaning"></p></section>
-<section class="thought"><h3>இன்றைய சிந்தனை</h3><p id="thought"></p></section>
-<div class="navigation"><button id="prev">← முந்தையது</button><button id="next">அடுத்தது →</button></div>
-<div class="share"><a id="wa" target="_blank" rel="noopener">WhatsApp</a><a id="fb" target="_blank" rel="noopener">Facebook</a><a id="x" target="_blank" rel="noopener">X</a><button id="native">பகிருங்கள்</button><button id="copy">இணைப்பை நகலெடு</button></div>
-<div class="counter" id="counter"></div>
-</section>
-</article>
-</main>
-<script>
-const poems=[
-{book:'இனியவை நாற்பது',author:'பூதஞ்சேந்தனார்',number:'3',text:`ஏவது மாறா இளங்கிளைமை
+<!doctype html><html lang="ta"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#173d2a"><meta name="description" content="சுப மாரிமுத்து அய்யா பகிர்வில் இருந்து — இனியவை நாற்பது பாடல்கள் மற்றும் பொருள்."><meta property="og:title" content="சுப மாரிமுத்து அய்யா பகிர்வு"><meta property="og:url" content="https://sharecapsule.app/marimuthu/"><title>சுப மாரிமுத்து அய்யா பகிர்வு</title><style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700;800&family=Noto+Serif+Tamil:wght@500;600;700&display=swap');:root{--ink:#1d241e;--green:#173d2a;--green2:#2d6041;--cream:#fffaf0;--line:#e8dcc3;--muted:#746d61}*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#f7f3e7,#e5eee2);color:var(--ink);font-family:"Noto Sans Tamil",system-ui,sans-serif}.shell{width:min(100%,980px);margin:auto;padding:26px 14px 96px}.hero{text-align:center;padding:8px 0 20px}.eyebrow{color:var(--green2);font-size:12px;font-weight:800}.hero h1{margin:8px 0;font-family:"Noto Serif Tamil",serif;color:var(--green);font-size:clamp(32px,7vw,56px)}.hero p{margin:auto;max-width:700px;color:var(--muted);line-height:1.7}.controls{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-bottom:18px}.controls button,.navigation button{border:0;border-radius:999px;padding:11px 16px;background:#fff;color:var(--green);font:800 14px inherit;box-shadow:0 8px 22px rgba(45,66,48,.08)}.post{overflow:hidden;background:var(--cream);border:1px solid var(--line);border-radius:30px;box-shadow:0 22px 70px rgba(31,55,38,.14)}.profileBar{display:block;padding:24px 30px;background:linear-gradient(135deg,#173d2a,#2f6544);color:#fff;text-align:center}.profileBar h2{margin:0;font-family:"Noto Serif Tamil",serif;font-size:clamp(24px,5vw,34px)}.profileBar p{margin:7px 0 0;line-height:1.8;color:rgba(255,255,255,.85)}.content{padding:clamp(20px,5vw,38px)}.meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}.pill{padding:8px 11px;border-radius:999px;background:#eef4ee;color:var(--green);font-size:12px;font-weight:800}.poem{margin:0;padding:4px 0 20px;font-family:"Noto Serif Tamil",serif;font-size:clamp(22px,4.5vw,34px);line-height:1.85;white-space:pre-line}.meaning{padding:22px;border-radius:22px;background:#f4eee0;border:1px solid #e3d5b9}.meaning h3,.thought h3{margin:0 0 9px;font-family:"Noto Serif Tamil",serif;color:var(--green)}.meaning p,.thought p{margin:0;line-height:1.9}.thought{margin-top:16px;padding:20px;border-radius:22px;background:linear-gradient(135deg,#173d2a,#2d6041);color:#fff}.thought h3{color:#f8e9bd}.navigation{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.navigation button{border-radius:16px;background:#efe4cc;color:#49371f}.share{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}.share a,.share button{display:grid;place-items:center;min-height:48px;border:1px solid #e5dccb;border-radius:15px;background:#fff;color:#26211b;text-decoration:none;font:800 14px inherit}.counter{text-align:center;color:var(--muted);font-size:12px;margin-top:14px}@media(min-width:680px){.share{grid-template-columns:repeat(5,1fr)}}</style></head><body><main class="shell"><section class="hero"><div class="eyebrow">தமிழ் நீதி இலக்கியம்</div><h1>பாடலும் பொருளும்</h1><p>இனியவை நாற்பதிலிருந்து தேர்ந்தெடுக்கப்பட்ட பாடல்கள் — சுப மாரிமுத்து அய்யா பகிர்வில் இருந்து.</p></section><div class="controls"><button id="today">இன்றைய பாடல்</button><button id="random">வேறு பாடல்</button></div><article class="post"><section class="profileBar"><h2>சுப மாரிமுத்து</h2><p>அய்யா பகிர்வில் இருந்து<br>தமிழ் வாழ்வியல் சிந்தனைகள்</p></section><section class="content" data-read-aloud><div class="meta"><span class="pill" id="book"></span><span class="pill" id="number"></span><span class="pill" id="author"></span></div><div class="poem" id="poem"></div><section class="meaning"><h3>விளக்கம் / பொருள்</h3><p id="meaning"></p></section><section class="thought"><h3>இன்றைய சிந்தனை</h3><p id="thought"></p></section><div class="navigation"><button id="prev">← முந்தையது</button><button id="next">அடுத்தது →</button></div><div class="share"><a id="wa" target="_blank" rel="noopener">WhatsApp</a><a id="fb" target="_blank" rel="noopener">Facebook</a><a id="x" target="_blank" rel="noopener">X</a><button id="native">பகிருங்கள்</button><button id="copy">இணைப்பை நகலெடு</button></div><div class="counter" id="counter"></div></section></article></main><script>const B='இனியவை நாற்பது',A='பூதஞ்சேந்தனார்';const poems=[{number:'3',text:`ஏவது மாறா இளங்கிளைமை
 முன்இனிதே நாளும்
 நவைபோகான் கற்றல்
 மிகஇனிதே ஏருடையான்
 வேளாண்மை தானினிது
 ஆங்கினிதே தேரிற்கோள் நட்புத்
-திசைக்கு.`,meaning:'சொன்ன வேலையை மாற்றமில்லாமல் செய்வோரைக் கொண்டிருப்பது இனிது. குற்றங்களில் ஈடுபடாமல் கற்பது மிக இனிது. ஏரும் உழவுமாடும் உடையவன் விவசாயம் செய்வது இனிது. அதுபோல செல்லும் திசையில் நன்மை தரும் நட்பைத் தேர்ந்தெடுப்பதும் இனிது.',thought:'நல்ல துணை, கற்றல், உழைப்பு, நல்ல நட்பு — வாழ்க்கையை இனிமையாக்கும் நான்கு அடித்தளங்கள்.'},
-{book:'இனியவை நாற்பது',author:'பூதஞ்சேந்தனார்',number:'4',text:`யானையுடைய படைகாண்டல்
+திசைக்கு.`,meaning:'சொன்ன வேலையை மாற்றமில்லாமல் செய்வோரைக் கொண்டிருப்பது இனிது. குற்றங்களில் ஈடுபடாமல் கற்பது மிக இனிது. ஏரும் உழவுமாடும் உடையவன் விவசாயம் செய்வது இனிது. நன்மை தரும் நட்பைத் தேர்ந்தெடுப்பதும் இனிது.',thought:'நல்ல துணை, கற்றல், உழைப்பு, நல்ல நட்பு — வாழ்க்கையின் நான்கு அடித்தளங்கள்.'},{number:'4',text:`யானையுடைய படைகாண்டல்
 முன்இனிதே ஊனைத்தின்
 றூனைப் பெருக்காமை முன்இனிதே
 கான்யாற்றடை கரையூர்இனி
 தாங்கினிதே மானமுடையார்
-மதிப்பு.`,meaning:'அரசன் வலிமையான யானைப் படையை உடையிருப்பது இனிது. பிற உயிரின் தசையை உண்டு உடலை வளர்க்காமல் இருப்பது இனிது. ஆற்றங்கரையில் அமைந்த ஊர் இனிது. அதுபோல மானமுடையவர்களின் மதிப்பைப் பெறுவதும் இனிது.',thought:'வலிமையுடன் கருணையும், வாழ்வுடன் மரியாதையும் சேர்ந்தால்தான் மனித வாழ்வு உயர்கிறது.'}
-];
-let index=0;const $=id=>document.getElementById(id);
-function selectedUrl(p){return `${location.origin}/marimuthu/?poem=${p.number}`}
-function render(){const p=poems[index],url=selectedUrl(p);$('book').textContent=p.book;$('number').textContent=`பாடல் ${p.number}`;$('author').textContent=`ஆசிரியர்: ${p.author}`;$('poem').textContent=p.text;$('meaning').textContent=p.meaning;$('thought').textContent=p.thought;$('counter').textContent=`${index+1} / ${poems.length}`;const shareText=`${p.book} — பாடல் ${p.number}\n\n${p.text}\n\n${p.meaning}\n\nசுப மாரிமுத்து அய்யா பகிர்வில் இருந்து`;$('wa').href=`https://wa.me/?text=${encodeURIComponent(shareText+'\n'+url)}`;$('fb').href=`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;$('x').href=`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(url)}`;$('native').onclick=async()=>{if(navigator.share)await navigator.share({title:`${p.book} — பாடல் ${p.number}`,text:shareText,url});else await navigator.clipboard.writeText(shareText+'\n'+url)};$('copy').onclick=async()=>{await navigator.clipboard.writeText(url);$('copy').textContent='நகலெடுக்கப்பட்டது';setTimeout(()=>$('copy').textContent='இணைப்பை நகலெடு',1400)};history.replaceState(null,'',`?poem=${p.number}`)}
-$('prev').onclick=()=>{index=(index-1+poems.length)%poems.length;render()};$('next').onclick=()=>{index=(index+1)%poems.length;render()};$('random').onclick=()=>{index=Math.floor(Math.random()*poems.length);render()};$('today').onclick=()=>{index=(new Date().getDate()-1)%poems.length;render()};const requested=new URLSearchParams(location.search).get('poem');const found=poems.findIndex(p=>p.number===requested);index=found>=0?found:(new Date().getDate()-1)%poems.length;render();
-</script>
-<script src="/site-shell.js" defer></script>
-</body>
-</html>
+மதிப்பு.`,meaning:'அரசன் யானைப் படையை உடையிருப்பது இனிது. உயிர்களை உணவாக்கி உடலை வளர்க்காமை இனிது. ஆற்றங்கரையில் அமைந்த ஊர் இனிது. மானமுடையோரின் மதிப்பைப் பெறுவதும் இனிது.',thought:'வலிமையோடு கருணையும், வாழ்வோடு மரியாதையும் சேர வேண்டும்.'},{number:'5',text:`கொல்லாமை முன்இனிது
+கோல்கோடி மாராயஞ்
+செய்யாமை முன்இனிது
+செங்கோலன் ஆகுதல் எய்தும்
+திறத்தால் இனிதென்ப
+யார்மட்டும் பொல்லாங்கு
+உரையாமை நன்கு.`,meaning:'கொல்லாமை இனிது. அரசன் நடுநிலை தவறாமல் ஆட்சி செய்வது இனிது. செங்கோலனாக இருப்பதும் இனிது. யாரிடமும் குற்றம் கூறாமல் இருப்பது மிக இனிது.',thought:'நீதி, உயிர்க்கருணை, பிறரை இகழாமை — நல்ல ஆட்சிக்கும் நல்ல வாழ்வுக்கும் அடிப்படை.'},{number:'6',text:`ஆற்றுந் துணையால்
+அறஞ்செய்கை முன்இனிதே
+பாற்பட்டார் கூறும் பயமொழி
+மாண்பினிதே வாய்ப்புடையராகி
+வலவைகள் அல்லாரைக்
+காப்படையக் கோடல் இனிது.`,meaning:'இயன்ற அளவு அறம் செய்வது இனிது. சான்றோரின் பயனுள்ள சொல் இனிது. கல்வி, செல்வம், அதிகாரம் இருந்தும் அகந்தை இல்லாதவரைத் துணையாகக் கொள்வது இனிது.',thought:'அறம் செய்யவும், நல்ல சொல் கேட்கவும், அகந்தையற்றவரைத் துணையாகக் கொள்ளவும் வேண்டும்.'},{number:'7',text:`அந்தணர் ஓத்துடைமை ஆற்ற
+மிகஇனிதே பந்தம் உடையான்
+படையாண்மை முன்இனிதே
+தந்தையே ஆயினும்
+தானடங்கான் ஆகுமேல்
+கொண்டடையான் ஆகல் இனிது.`,meaning:'வேதம் ஓதுதல் இனிது. இல்லறத்தார்க்குப் பற்றுப்பாசம் இனிது. படையுடையவர்க்கு வீரமினிது. தந்தையே ஆனாலும் தவறான சொல்லைப் பின்பற்றாமை இனிது.',thought:'அன்போடும் வீரத்தோடும் வாழ்ந்தாலும் தவறை ஏற்காத மனச்சாட்சி அவசியம்.'},{number:'8',text:`ஊருங் கலிமா உரனுடைமை
+முன்இனிதே தார்புனை மன்னர்
+தமக்குற்ற வெஞ்சமத்துக்
+கார்வரை யானைக்
+கதங்காண்டல் முன்இனிதே
+ஆர்வமுடையவர் ஆற்றவும்
+நல்லவை பேதுறார் கேட்டல் இனிது.`,meaning:'வீரனுக்கு வலிமையான குதிரை இனிது. போர்க்களத்தில் வீரமாய் நிற்கும் யானையைப் பார்ப்பது இனிது. அன்புடையோரின் நல்ல சொற்களை கேட்பது இனிது.',thought:'வலிமையை விட அன்புடையோரின் நல்ல சொல் நீண்ட காலம் வழிகாட்டும்.'},{number:'9',text:`தங்கண் அமர்புடையார்
+தாம்வாழ்தல் முன்இனிதே
+அங்கண் விசும்பின் அகல்நிலாக்
+காண்பினிதே பங்கமில்
+செய்கையராகிப்
+பரிந்துயார்க்கும் அன்புடைய
+ராதல் இனிது.`,meaning:'நம்மைச் சார்ந்த நண்பர்கள் செல்வத்துடன் வாழ்வது இனிது. அகன்ற வானில் நிலாவைக் காண்பது இனிது. குற்றமற்ற செயலும் அன்புள்ள மனமும் இனிது.',thought:'நண்பரின் நலனில் மகிழ்வதும் குற்றமற்ற அன்புடன் வாழ்வதும் உயர்ந்த பண்பு.'},{number:'10',text:`கடமுண்டு வாழாமை காண்டல்
+இனிதே நிறைமாண்பில்
+பெண்டிரை நீக்கல் இனிதே
+மனமாண்பிலாதவரை அஞ்சி
+அகறல் எனைமாண்பும்
+தானினிது நன்கு.`,meaning:'கடன் வாங்கி வாழாமல் இருப்பது இனிது. ஒழுக்கமற்ற உறவை விலக்குவது இனிது. மனப்பெருமை இல்லாதவரிடமிருந்து விலகுவது எல்லாவற்றிலும் இனிது.',thought:'பொருளாதார ஒழுக்கமும், உறவுகளில் தெளிவும், தவறான சூழலிலிருந்து விலகும் துணிவும் தேவை.'},{number:'11',text:`அதர்சென்று வாழாமை ஆற்ற
+இனிதே குதர்சென்று கொள்ளாத
+கூர்மை இனிதே உயிர்சென்று
+தான்படினும் உண்ணார்கைத்
+துண்ணாப் பெருமைபோல்
+பீடுடையது இல்.`,meaning:'தவறான வழியில் சென்று வாழாதிருப்பது இனிது. தவறான முறையில் பொருள் தேடாமை இனிது. உயிர் போனாலும் உண்ணத் தகாதவரிடம் உணவு பெறாமல் இருப்பது உயர்ந்த பெருமை.',thought:'வாழ்வாதாரத்தை விட நேர்மை பெரியது; தேவையிலும் தகுதியை காக்க வேண்டும்.'},{number:'13',text:`மானம் அழிந்தபின் வாழாமை
+முன்இனிதே தானம் அழியாமைத்
+தானடங்கி வாழ்வினிதே
+ஊனமொன்றின்றி உயர்ந்த
+பொருளுடைமை மானிடவர்க்கு
+எல்லாம் இனிது.`,meaning:'தன் பெருமை முற்றிலும் அழிந்த பின் வாழாமை என்று நூல் கூறுகிறது. தானம் செய்யும் அளவில் செல்வத்தைப் பாதுகாத்து அடக்கமாக வாழ்வதும், குற்றமற்ற பொருளைச் சேர்த்திருப்பதும் இனிது.',thought:'சுயமரியாதை, அடக்கம், நேர்மையான செல்வம் — மூன்றும் சமநிலையுடன் இருக்க வேண்டும்.'},{number:'14',text:`குழவி தளர்நடை காண்டல்
+இனிதே அவர்மழலை கேட்டல்
+அமிழ்தின் இனிதே
+வினையுடையான் வந்தடைந்து
+வெய்துறும் போது
+மனமஞ்சான் ஆகல் இனிது.`,meaning:'குழந்தையின் தளர்நடையை காண்பது இனிது. அதன் மழலைச் சொற்களை கேட்பது அமுதினும் இனிது. தவறான செயலின் விளைவு வந்தாலும் மனம் அஞ்சாமல் எதிர்கொள்வது இனிது.',thought:'மழலையின் மகிழ்ச்சியும், தவறின் விளைவுகளை எதிர்கொள்ளும் துணிவும் வாழ்வின் இரு பாடங்கள்.'},{number:'15',text:`பிறன்மனை பின்னோக்காப்
+பீடினிது ஆற்ற வறனுழக்கும்
+பைங்கூழ்க்கு வான்சோர்
+வினிதே மறமன்னர்
+தங்கடையுள் மாமலைபோல்
+யானை மதமுழக்கங் கேட்டல்
+இனிது.`,meaning:'பிறர் மனைவியை விரும்பாமல் இருப்பது பெருமை. நீரின்றி வாடும் பயிர்களுக்கு மழை பொழிவது இனிது. வீரமிக்க அரசரின் முற்றத்தில் யானையின் முழக்கத்தை கேட்பதும் இனிது.',thought:'ஒழுக்கம் மனிதனை உயர்த்தும்; மழை நிலத்தை உயிர்ப்பிக்கும்.'}].map(p=>({...p,book:B,author:A}));let index=0,$=id=>document.getElementById(id);function url(p){return `${location.origin}/marimuthu/?poem=${p.number}`}function render(){let p=poems[index],u=url(p);$('book').textContent=p.book;$('number').textContent=`பாடல் ${p.number}`;$('author').textContent=`ஆசிரியர்: ${p.author}`;$('poem').textContent=p.text;$('meaning').textContent=p.meaning;$('thought').textContent=p.thought;$('counter').textContent=`${index+1} / ${poems.length}`;let t=`${p.book} — பாடல் ${p.number}\n\n${p.text}\n\n${p.meaning}\n\nசுப மாரிமுத்து அய்யா பகிர்வில் இருந்து`;$('wa').href=`https://wa.me/?text=${encodeURIComponent(t+'\n'+u)}`;$('fb').href=`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(u)}`;$('x').href=`https://twitter.com/intent/tweet?text=${encodeURIComponent(t)}&url=${encodeURIComponent(u)}`;$('native').onclick=async()=>navigator.share?navigator.share({title:`${p.book} — பாடல் ${p.number}`,text:t,url:u}):navigator.clipboard.writeText(t+'\n'+u);$('copy').onclick=async()=>{await navigator.clipboard.writeText(u);$('copy').textContent='நகலெடுக்கப்பட்டது';setTimeout(()=>$('copy').textContent='இணைப்பை நகலெடு',1400)};history.replaceState(null,'',`?poem=${p.number}`)}$('prev').onclick=()=>{index=(index-1+poems.length)%poems.length;render()};$('next').onclick=()=>{index=(index+1)%poems.length;render()};$('random').onclick=()=>{index=Math.floor(Math.random()*poems.length);render()};$('today').onclick=()=>{index=(new Date().getDate()-1)%poems.length;render()};let q=new URLSearchParams(location.search).get('poem'),f=poems.findIndex(p=>p.number===q);index=f>=0?f:(new Date().getDate()-1)%poems.length;render();</script><script src="/site-shell.js" defer></script></body></html>
