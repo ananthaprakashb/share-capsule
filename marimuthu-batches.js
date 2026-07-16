@@ -1,11 +1,13 @@
 (()=>{
   const BATCHES=['/marimuthu/data/iniyavai-narpathu.json'];
   const normalize=value=>String(value||'').normalize('NFC').replace(/\s+/g,' ').trim().replace(/[.।]+$/u,'');
+  const STOCK_PHRASE='என்ற கருத்தை இன்றைய வாழ்விலும் நினைவில் கொண்டு செயல்படுவோம்.';
+  const cleanThought=value=>String(value||'').trim().replace(new RegExp(`\\s*${STOCK_PHRASE.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}$`),'').trim();
   const thoughtFor=poem=>{
-    const existing=String(poem?.thought||'').trim();
+    const existing=cleanThought(poem?.thought);
     if(existing)return existing;
     const first=String(poem?.meaning||'').split(/(?<=[.!?।])\s+/)[0].replace(/[.!?।]+$/,'').trim();
-    return first?`${first} என்ற கருத்தை இன்றைய வாழ்விலும் நினைவில் கொண்டு செயல்படுவோம்.`:'பாடலின் கருத்தை நம் நாளாந்த வாழ்வில் சிந்தித்து செயல்படுவோம்.';
+    return first||'பாடலின் கருத்தை நம் நாளாந்த வாழ்வில் சிந்திப்போம்.';
   };
   const merge=list=>{
     const positions=new Map(poems.map((poem,i)=>[`${normalize(poem.book)}|${normalize(poem.text)}`,i]));
