@@ -7,6 +7,7 @@ on:
     paths:
       - "site-shell.js"
       - "marimuthu-profile.js"
+      - "marimuthu-recent.js"
       - "scripts/apply-site-shell.mjs"
       - ".github/workflows/apply-site-shell.yml"
 
@@ -33,6 +34,7 @@ jobs:
         run: |
           node --check site-shell.js
           node --check marimuthu-profile.js
+          node --check marimuthu-recent.js
           node --check scripts/apply-site-shell.mjs
           missing=$(find . -type f -name '*.html' -not -path './.git/*' -not -path './node_modules/*' -print0 | xargs -0 grep -L '/site-shell.js' || true)
           if [ -n "$missing" ]; then
@@ -44,6 +46,12 @@ jobs:
           if [ -n "$marimuthu_missing" ]; then
             echo "Missing Marimuthu author image renderer in:"
             echo "$marimuthu_missing"
+            exit 1
+          fi
+          marimuthu_recent_missing=$(find marimuthu -type f -name '*.html' -print0 | xargs -0 grep -L '/marimuthu-recent.js' || true)
+          if [ -n "$marimuthu_recent_missing" ]; then
+            echo "Missing recent Marimuthu poem collection in:"
+            echo "$marimuthu_recent_missing"
             exit 1
           fi
           if git diff --quiet -- '*.html'; then
