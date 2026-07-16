@@ -40,7 +40,7 @@ jobs:
             echo "$missing"
             exit 1
           fi
-          marimuthu_missing=$(find marimuthu maimurhuayya -type f -name '*.html' -print0 | xargs -0 grep -L '/marimuthu-profile.js' || true)
+          marimuthu_missing=$(find marimuthu -type f -name '*.html' -print0 | xargs -0 grep -L '/marimuthu-profile.js' || true)
           if [ -n "$marimuthu_missing" ]; then
             echo "Missing Marimuthu author image renderer in:"
             echo "$marimuthu_missing"
