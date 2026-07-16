@@ -5,6 +5,7 @@ const root=process.cwd();
 const marker='<script src="/site-shell.js" defer></script>';
 const marimuthuMarker='<script src="/marimuthu-profile.js" defer></script>';
 const marimuthuRecentMarker='<script src="/marimuthu-recent.js" defer></script>';
+const marimuthuBatchesMarker='<script src="/marimuthu-batches.js" defer></script>';
 const directFmPattern=/\s*<script\s+src=["']\/sharecapsule-fm\.js["']\s+defer><\/script>\s*/gi;
 const ignored=new Set(['.git','node_modules']);
 const isMarimuthuFile=file=>/^marimuthu(?:\/|$)/i.test(path.relative(root,file).split(path.sep).join('/'));
@@ -39,6 +40,10 @@ for(const file of files){
     if(!/<\/body>/i.test(html))throw new Error(`Missing </body> in ${path.relative(root,file)}`);
     html=html.replace(/<\/body>/i,`  ${marimuthuRecentMarker}\n</body>`);
   }
+  if(isMarimuthuFile(file)&&!html.includes('/marimuthu-batches.js')){
+    if(!/<\/body>/i.test(html))throw new Error(`Missing </body> in ${path.relative(root,file)}`);
+    html=html.replace(/<\/body>/i,`  ${marimuthuBatchesMarker}\n</body>`);
+  }
   if(html!==original){
     await writeFile(file,html);
     changed+=1;
@@ -49,13 +54,16 @@ for(const file of files){
 const uncovered=[];
 const marimuthuUncovered=[];
 const marimuthuRecentUncovered=[];
+const marimuthuBatchesUncovered=[];
 for(const file of files){
   const html=await readFile(file,'utf8');
   if(!html.includes('/site-shell.js'))uncovered.push(path.relative(root,file));
   if(isMarimuthuFile(file)&&!html.includes('/marimuthu-profile.js'))marimuthuUncovered.push(path.relative(root,file));
   if(isMarimuthuFile(file)&&!html.includes('/marimuthu-recent.js'))marimuthuRecentUncovered.push(path.relative(root,file));
+  if(isMarimuthuFile(file)&&!html.includes('/marimuthu-batches.js'))marimuthuBatchesUncovered.push(path.relative(root,file));
 }
 if(uncovered.length)throw new Error(`Site shell missing from: ${uncovered.join(', ')}`);
 if(marimuthuUncovered.length)throw new Error(`Marimuthu profile script missing from: ${marimuthuUncovered.join(', ')}`);
 if(marimuthuRecentUncovered.length)throw new Error(`Marimuthu recent poem script missing from: ${marimuthuRecentUncovered.join(', ')}`);
-console.log(JSON.stringify({htmlFiles:files.length,changed,allCovered:true,marimuthuCovered:true,marimuthuRecentCovered:true},null,2));
+if(marimuthuBatchesUncovered.length)throw new Error(`Marimuthu batch loader missing from: ${marimuthuBatchesUncovered.join(', ')}`);
+console.log(JSON.stringify({htmlFiles:files.length,changed,allCovered:true,marimuthuCovered:true,marimuthuRecentCovered:true,marimuthuBatchesCovered:true},null,2));
