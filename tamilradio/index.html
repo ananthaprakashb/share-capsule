@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#7b1e3b">
+  <meta name="description" content="Popular Tamil FM and online radio stations from India and the global Tamil diaspora, including Share Capsule FM.">
+  <meta property="og:title" content="Tamil Radio Online — Share Capsule">
+  <meta property="og:description" content="Discover popular Tamil radio stations from India, Sri Lanka, Singapore, Malaysia, Canada and around the world.">
+  <meta property="og:url" content="https://sharecapsule.app/tamilradio/">
+  <title>Tamil Radio Online — Share Capsule</title>
+  <style>
+    :root{--ink:#251820;--muted:#74636c;--line:#eadce3;--accent:#9b2850;--accent2:#f8e8ef;--paper:#fffafc;--shadow:0 18px 58px rgba(98,34,61,.11)}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 10% 0,#fff 0,transparent 34%),linear-gradient(155deg,#fff2f7,#f4e6ed);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}.shell{width:min(100%,1080px);margin:auto;padding:max(18px,env(safe-area-inset-top)) 16px calc(72px + env(safe-area-inset-bottom))}.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand,.home{color:inherit;text-decoration:none}.brand{font-size:20px;font-weight:950;letter-spacing:-.04em}.home{font-size:13px;font-weight:850;padding:10px 13px;border:1px solid var(--line);border-radius:999px;background:#fff}.hero{padding:40px 2px 24px}.kicker{color:var(--accent);font-size:12px;font-weight:950;letter-spacing:.14em;text-transform:uppercase}.hero h1{margin:8px 0 0;font-size:clamp(46px,9vw,78px);line-height:.94;letter-spacing:-.065em}.hero p{max-width:880px;color:var(--muted);line-height:1.65}.controls{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:18px}@media(min-width:760px){.controls{grid-template-columns:1fr 240px}}.control{height:50px;border:1px solid var(--line);border-radius:16px;background:#fff;padding:0 14px;color:var(--ink);font:inherit}.status{padding:14px 16px;background:#fff;border:1px solid var(--line);border-radius:18px;color:var(--muted);margin-bottom:15px}.grid{display:grid;grid-template-columns:1fr;gap:15px}@media(min-width:760px){.grid{grid-template-columns:1fr 1fr}}.station{background:var(--paper);border:1px solid rgba(255,255,255,.95);border-radius:25px;padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column}.region{display:inline-flex;align-self:flex-start;padding:7px 9px;border-radius:999px;background:var(--accent2);color:var(--accent);font-size:10px;font-weight:950;letter-spacing:.07em;text-transform:uppercase}.station h2{margin:14px 0 0;font-size:30px;line-height:1.04;letter-spacing:-.045em}.station p{margin:10px 0 0;color:var(--muted);font-size:13px;line-height:1.62}.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}.tags span{padding:7px 9px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:10px;font-weight:850}.listen{display:grid;place-items:center;min-height:50px;margin-top:auto;padding-top:18px;border-radius:15px;background:var(--ink);color:#fff;text-decoration:none;font-weight:900}.featured{box-shadow:inset 0 0 0 2px rgba(155,40,80,.25),var(--shadow)}.note{margin-top:22px;padding:18px;border-radius:21px;background:#fff7e8;border:1px solid #efdcbc;color:#6d563b;font-size:13px;line-height:1.65}.empty{padding:30px;background:#fff;border-radius:24px;color:var(--muted);text-align:center}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="top"><a class="brand" href="/tamilradio/">Tamil Radio</a><a class="home" href="/">All releases</a></header>
+  <section class="hero">
+    <div class="kicker">Tamil audio around the world</div>
+    <h1>Popular Tamil FM and online radio.</h1>
+    <p>Listen to Tamil music, talk, news, culture and community programming from India and the global Tamil diaspora. Each card opens the station’s own site or official network listening page.</p>
+  </section>
+  <section class="controls" aria-label="Tamil radio filters">
+    <input class="control" id="q" type="search" placeholder="Search station, country or music type" aria-label="Search Tamil radio stations">
+    <select class="control" id="region" aria-label="Filter by region">
+      <option value="all">All regions</option><option value="sharecapsule">Share Capsule</option><option value="india">India</option><option value="srilanka">Sri Lanka</option><option value="singapore">Singapore</option><option value="malaysia">Malaysia</option><option value="canada">Canada</option><option value="europe">Europe</option>
+    </select>
+  </section>
+  <div class="status" id="status"></div>
+  <section class="grid" id="grid" aria-live="polite"></section>
+  <section class="note"><strong>Availability note:</strong> Station websites, geographic access and live-player behavior can change. Some broadcasters require their mobile app, an account, or location permission. This directory links to official or broadcaster-controlled pages and does not rebroadcast third-party audio.</section>
+</main>
+<script>
+const stations=[
+ {name:'Share Capsule FM',region:'sharecapsule',label:'Share Capsule',description:'Share Capsule’s own audio experience with curated Tamil and multilingual content.',tags:['Tamil','Curated audio','Share Capsule'],url:'/audio/',featured:true},
+ {name:'Suryan FM',region:'india',label:'India',description:'Major Tamil commercial FM network from Sun TV Network, serving cities across Tamil Nadu and Puducherry.',tags:['Tamil hits','RJ shows','Entertainment'],url:'https://www.suryanfm.in/'},
+ {name:'Hello FM',region:'india',label:'India',description:'Tamil FM network broadcasting music, talk and local programming across several Tamil Nadu cities.',tags:['Tamil music','Talk','Local radio'],url:'https://www.hello.fm/'},
+ {name:'Radio Mirchi Tamil',region:'india',label:'India',description:'Tamil programming and popular film music from the Radio Mirchi network.',tags:['Film songs','Entertainment','RJ shows'],url:'https://mirchi.in/'},
+ {name:'AIR Tamil / Akashvani',region:'india',label:'India',description:'Public-service Tamil news, culture and regional radio programming from All India Radio.',tags:['News','Culture','Public radio'],url:'https://newsonair.gov.in/'},
+ {name:'Sooriyan FM',region:'srilanka',label:'Sri Lanka',description:'Long-running Sri Lankan Tamil station featuring music, news and interactive radio shows.',tags:['Tamil music','News','Live shows'],url:'https://www.sooriyanfm.lk/'},
+ {name:'Shakthi FM',region:'srilanka',label:'Sri Lanka',description:'Island-wide Tamil radio service with music, news, interviews and entertainment programs.',tags:['Music','News','Interviews'],url:'https://www.shakthifm.com/'},
+ {name:'Oli 968',region:'singapore',label:'Singapore',description:'Mediacorp’s Tamil-language radio station for Singapore, with music, information and community programs.',tags:['Community','Music','Talk'],url:'https://www.melisten.sg/radio/oli-968'},
+ {name:'Raaga',region:'malaysia',label:'Malaysia',description:'Popular Malaysian Tamil radio brand with film music, entertainment and celebrity programming.',tags:['Tamil hits','Entertainment','Malaysia'],url:'https://raaga.syok.my/'},
+ {name:'Minnal FM',region:'malaysia',label:'Malaysia',description:'RTM Tamil-language public radio service with music, information, news and cultural programming.',tags:['Public radio','Culture','News'],url:'https://rtmklik.rtm.gov.my/radio/nasional/minnalfm'},
+ {name:'CMR Tamil HD',region:'canada',label:'Canada',description:'Canadian Tamil radio service from Toronto with music, news, talk and diaspora programming.',tags:['Diaspora','Talk','Music'],url:'https://cmr24.net/'},
+ {name:'East FM 102.7',region:'canada',label:'Canada',description:'Toronto multicultural radio station with substantial Tamil music and community programming.',tags:['Community','Toronto','Tamil'],url:'https://eastfm.ca/'},
+ {name:'Vanakkam FM',region:'canada',label:'Canada',description:'Tamil community radio serving listeners in the Greater Toronto Area and online.',tags:['Community','Canada','Tamil'],url:'https://vanakkamfm.com/'},
+ {name:'Thaalam Tamil',region:'europe',label:'Europe',description:'Swiss Tamil radio network available online and through DAB+ in parts of Switzerland.',tags:['Switzerland','Music','Community'],url:'https://www.thaalam.ch/'},
+ {name:'ATBC',region:'europe',label:'Global / Australia',description:'Australian Tamil Broadcasting Corporation with Tamil news, culture, talk and music programs.',tags:['Australia','Culture','News'],url:'https://atbc.net.au/'}
+];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function render(){const q=document.getElementById('q').value.trim().toLowerCase(),region=document.getElementById('region').value;const items=stations.filter(x=>(region==='all'||x.region===region)&&(!q||[x.name,x.label,x.description,...x.tags].join(' ').toLowerCase().includes(q)));document.getElementById('status').innerHTML=`Showing <strong>${items.length}</strong> Tamil radio services from official broadcaster pages.`;document.getElementById('grid').innerHTML=items.length?items.map(x=>`<article class="station ${x.featured?'featured':''}"><span class="region">${esc(x.label)}</span><h2>${esc(x.name)}</h2><p>${esc(x.description)}</p><div class="tags">${x.tags.map(t=>`<span>${esc(t)}</span>`).join('')}</div><a class="listen" href="${esc(x.url)}" target="${x.url.startsWith('/')?'_self':'_blank'}" rel="noopener">Listen on official page ↗</a></article>`).join(''):'<div class="empty">No stations match this search.</div>'}
+document.getElementById('q').addEventListener('input',render);document.getElementById('region').addEventListener('change',render);render();
+</script>
+<script src="/site-shell.js" defer></script>
+</body>
+</html>
