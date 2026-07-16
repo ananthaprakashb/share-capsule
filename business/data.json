@@ -3,7 +3,7 @@
     "name": "Share Capsule Business",
     "tagline": "U.S. market audio and video worth passing on",
     "sourceBucket": "businessvideos",
-    "sourceBaseUrl": "https://8a7b80d3a3f2c8a87c408645f46cd910.r2.cloudflarestorage.com/businessvideos",
+    "sourceBaseUrl": "https://pub-8f76cb1857964eea95d20c2cb5600ab0.r2.dev",
     "disclaimer": "Market commentary for education and discussion only. It is not investment advice."
   },
   "media": [
@@ -16,13 +16,10 @@
       "description": "Market commentary on why AI stocks remained resilient during the 2026 Hormuz crisis.",
       "publishedAt": "2026-07-16",
       "objectKey": "AI_Stocks_Defy_the_2026_Hormuz_Crisis.m4a",
-      "mediaUrl": "https://8a7b80d3a3f2c8a87c408645f46cd910.r2.cloudflarestorage.com/businessvideos/AI_Stocks_Defy_the_2026_Hormuz_Crisis.m4a",
+      "mediaUrl": "https://pub-8f76cb1857964eea95d20c2cb5600ab0.r2.dev/AI_Stocks_Defy_the_2026_Hormuz_Crisis.m4a",
       "mimeType": "audio/mp4",
       "coverBackground": "linear-gradient(145deg,#0f172a,#1d4ed8 55%,#06b6d4)",
-      "coverLines": [
-        "AI Stocks Defy",
-        "the Hormuz Crisis"
-      ]
+      "coverLines": ["AI Stocks Defy", "the Hormuz Crisis"]
     },
     {
       "id": "ai-stocks-surge-while-hormuz-burns",
@@ -33,13 +30,10 @@
       "description": "A business audio examining the market split between AI-stock strength and Hormuz-related geopolitical risk.",
       "publishedAt": "2026-07-16",
       "objectKey": "AI_Stocks_Surge_While_Hormuz_Burns.m4a",
-      "mediaUrl": "https://8a7b80d3a3f2c8a87c408645f46cd910.r2.cloudflarestorage.com/businessvideos/AI_Stocks_Surge_While_Hormuz_Burns.m4a",
+      "mediaUrl": "https://pub-8f76cb1857964eea95d20c2cb5600ab0.r2.dev/AI_Stocks_Surge_While_Hormuz_Burns.m4a",
       "mimeType": "audio/mp4",
       "coverBackground": "linear-gradient(145deg,#111827,#7c2d12 52%,#f59e0b)",
-      "coverLines": [
-        "AI Stocks Surge",
-        "While Hormuz Burns"
-      ]
+      "coverLines": ["AI Stocks Surge", "While Hormuz Burns"]
     },
     {
       "id": "bear-turns-bull-7800-sp-target",
@@ -50,13 +44,10 @@
       "description": "A video breakdown of the shift from bearish positioning to a 7,800 S&P target.",
       "publishedAt": "2026-07-16",
       "objectKey": "The_Bear_Turns_Bull__Decoding_the_7,800_S_P_Target.mp4",
-      "mediaUrl": "https://8a7b80d3a3f2c8a87c408645f46cd910.r2.cloudflarestorage.com/businessvideos/The_Bear_Turns_Bull__Decoding_the_7%2C800_S_P_Target.mp4",
+      "mediaUrl": "https://pub-8f76cb1857964eea95d20c2cb5600ab0.r2.dev/The_Bear_Turns_Bull__Decoding_the_7%2C800_S_P_Target.mp4",
       "mimeType": "video/mp4",
       "coverBackground": "linear-gradient(145deg,#172554,#4c1d95 52%,#db2777)",
-      "coverLines": [
-        "The Bear Turns Bull",
-        "7,800 S&P Target"
-      ]
+      "coverLines": ["The Bear Turns Bull", "7,800 S&P Target"]
     },
     {
       "id": "wall-street-8000-hormuz-blockade",
@@ -67,13 +58,10 @@
       "description": "Market commentary on Wall Street reaching 8000 despite the economic risks surrounding a Hormuz blockade.",
       "publishedAt": "2026-07-16",
       "objectKey": "Wall_Street_hits_8000_despite_Hormuz_blockade.m4a",
-      "mediaUrl": "https://8a7b80d3a3f2c8a87c408645f46cd910.r2.cloudflarestorage.com/businessvideos/Wall_Street_hits_8000_despite_Hormuz_blockade.m4a",
+      "mediaUrl": "https://pub-8f76cb1857964eea95d20c2cb5600ab0.r2.dev/Wall_Street_hits_8000_despite_Hormuz_blockade.m4a",
       "mimeType": "audio/mp4",
       "coverBackground": "linear-gradient(145deg,#052e16,#166534 52%,#eab308)",
-      "coverLines": [
-        "Wall Street Hits 8000",
-        "Despite Hormuz Blockade"
-      ]
+      "coverLines": ["Wall Street Hits 8000", "Despite Hormuz Blockade"]
     }
   ]
 }
