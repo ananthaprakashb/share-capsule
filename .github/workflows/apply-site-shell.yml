@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - "site-shell.js"
+      - "marimuthu-profile.js"
       - "scripts/apply-site-shell.mjs"
       - ".github/workflows/apply-site-shell.yml"
 
@@ -31,11 +32,18 @@ jobs:
       - name: Validate and commit page coverage
         run: |
           node --check site-shell.js
+          node --check marimuthu-profile.js
           node --check scripts/apply-site-shell.mjs
           missing=$(find . -type f -name '*.html' -not -path './.git/*' -not -path './node_modules/*' -print0 | xargs -0 grep -L '/site-shell.js' || true)
           if [ -n "$missing" ]; then
             echo "Missing site shell in:"
             echo "$missing"
+            exit 1
+          fi
+          marimuthu_missing=$(find marimuthu maimurhuayya -type f -name '*.html' -print0 | xargs -0 grep -L '/marimuthu-profile.js' || true)
+          if [ -n "$marimuthu_missing" ]; then
+            echo "Missing Marimuthu author image renderer in:"
+            echo "$marimuthu_missing"
             exit 1
           fi
           if git diff --quiet -- '*.html'; then
