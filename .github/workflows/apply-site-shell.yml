@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - "site-shell.js"
+      - "home-marimuthu-today.js"
       - "marimuthu-profile.js"
       - "marimuthu-recent.js"
       - "marimuthu-batches.js"
@@ -35,6 +36,7 @@ jobs:
       - name: Validate and commit page coverage
         run: |
           node --check site-shell.js
+          node --check home-marimuthu-today.js
           node --check marimuthu-profile.js
           node --check marimuthu-recent.js
           node --check marimuthu-batches.js
@@ -42,6 +44,7 @@ jobs:
           node -e "const fs=require('fs');for(const f of fs.readdirSync('marimuthu/data').filter(x=>x.endsWith('.json')))JSON.parse(fs.readFileSync('marimuthu/data/'+f,'utf8'))"
           missing=$(find . -type f -name '*.html' -not -path './.git/*' -not -path './node_modules/*' -print0 | xargs -0 grep -L '/site-shell.js' || true)
           if [ -n "$missing" ]; then echo "Missing site shell in:"; echo "$missing"; exit 1; fi
+          if ! grep -q '/home-marimuthu-today.js' index.html; then echo "Homepage is missing today's Marimuthu article card"; exit 1; fi
           marimuthu_missing=$(find marimuthu -type f -name '*.html' -print0 | xargs -0 grep -L '/marimuthu-profile.js' || true)
           if [ -n "$marimuthu_missing" ]; then echo "Missing Marimuthu author image renderer in:"; echo "$marimuthu_missing"; exit 1; fi
           marimuthu_recent_missing=$(find marimuthu -type f -name '*.html' -print0 | xargs -0 grep -L '/marimuthu-recent.js' || true)
