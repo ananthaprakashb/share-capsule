@@ -6,7 +6,7 @@ const marker='<script src="/site-shell.js" defer></script>';
 const marimuthuMarker='<script src="/marimuthu-profile.js" defer></script>';
 const directFmPattern=/\s*<script\s+src=["']\/sharecapsule-fm\.js["']\s+defer><\/script>\s*/gi;
 const ignored=new Set(['.git','node_modules']);
-const isMarimuthuFile=file=>/^(?:marimuthu|maimurhuayya)(?:\/|$)/i.test(path.relative(root,file).split(path.sep).join('/'));
+const isMarimuthuFile=file=>/^marimuthu(?:\/|$)/i.test(path.relative(root,file).split(path.sep).join('/'));
 
 async function walk(dir){
   const entries=await readdir(dir,{withFileTypes:true});
