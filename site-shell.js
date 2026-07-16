@@ -21,7 +21,43 @@
   const installStyles=()=>{if(document.getElementById('sharecapsuleGlobalShellStyles'))return;const style=document.createElement('style');style.id='sharecapsuleGlobalShellStyles';style.textContent='.sharecapsuleGlobalTop{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:4px 0 18px}.sharecapsuleGlobalTop .brand{color:inherit;text-decoration:none;font-weight:900}.sharecapsuleHome{color:inherit;text-decoration:none;font-size:12px;font-weight:850;padding:9px 12px;border:1px solid rgba(120,110,100,.25);border-radius:999px;background:rgba(255,255,255,.72)}.sharecapsuleBreadcrumbs{display:flex;align-items:center;gap:7px;overflow-x:auto;margin:-10px 0 18px;padding:2px 1px 5px;color:#736d66;font-size:12px;font-weight:800;scrollbar-width:none}.sharecapsuleBreadcrumbs::-webkit-scrollbar{display:none}.sharecapsuleBreadcrumbs a{color:inherit;text-decoration:none;white-space:nowrap}.sharecapsuleBreadcrumbs a:hover{text-decoration:underline}.sharecapsuleBreadcrumbs .sep{opacity:.45}.sharecapsuleBreadcrumbs .current{color:#24211e;white-space:nowrap}.sharecapsuleReader{position:fixed;right:max(14px,env(safe-area-inset-right));bottom:max(14px,calc(env(safe-area-inset-bottom) + 10px));z-index:99990;display:flex;align-items:center;gap:7px;padding:7px;border-radius:999px;background:rgba(19,47,69,.96);color:#fff;box-shadow:0 12px 38px rgba(0,0,0,.24)}.sharecapsuleReader button{min-width:44px;min-height:44px;border:0;border-radius:999px;background:transparent;color:#fff;font:850 13px/1 system-ui;padding:0 12px}.sharecapsuleReader .primary{background:#fff;color:#132f45}.sharecapsuleReader .stop{display:none}.sharecapsuleReader.is-active .stop{display:block}.sharecapsuleReaderStatus{position:absolute;right:0;bottom:calc(100% + 8px);padding:8px 11px;border-radius:12px;background:#17212b;color:#fff;font-size:11px;opacity:0}.sharecapsuleReaderStatus.show{opacity:1}@media(max-width:560px){.sharecapsuleReader{left:50%;right:auto;transform:translateX(-50%)}body{padding-bottom:76px}}';document.head.appendChild(style)};
   const installBreadcrumbs=top=>{if(document.getElementById('sharecapsuleBreadcrumbs'))return;const parts=location.pathname.split('/').filter(Boolean),crumbs=[{label:'Home',href:'/'}];let href='';for(const part of parts){if(part.toLowerCase()==='index.html')continue;href+=`/${part}`;const key=part.replace(/\.html$/i,'').toLowerCase(),label=labels[key]||key.replace(/[-_]+/g,' ').replace(/\b\w/g,c=>c.toUpperCase());crumbs.push({label,href:key==='archive'?null:`${href.replace(/\.html$/i,'')}/`})}if(!parts.length)crumbs.push({label:'Releases',href:null});const nav=document.createElement('nav');nav.id='sharecapsuleBreadcrumbs';nav.className='sharecapsuleBreadcrumbs';nav.setAttribute('aria-label','Breadcrumb');nav.innerHTML=crumbs.map((item,index)=>`${index?'<span class="sep">›</span>':''}${index===crumbs.length-1||!item.href?`<span class="current">${item.label}</span>`:`<a href="${item.href}">${item.label}</a>`}`).join('');top.insertAdjacentElement('afterend',nav)};
   const readableText=()=>{const root=document.querySelector('[data-read-aloud], article, .card, .content, .story, #app')||document.querySelector('main');if(!root)return'';const copy=root.cloneNode(true);copy.querySelectorAll('script,style,noscript,button,input,select,textarea,nav,header,footer,audio,video,iframe,.share,.actions,.social,.bottom,.toast,.sharecapsuleReader,.sharecapsuleBreadcrumbs,[aria-hidden="true"]').forEach(node=>node.remove());return String(copy.innerText||copy.textContent||'').replace(/\s+/g,' ').trim()};
-  const installReader=()=>{if(suppressReader()||!('speechSynthesis'in window)||document.getElementById('sharecapsuleReader'))return;const reader=document.createElement('div');reader.id='sharecapsuleReader';reader.className='sharecapsuleReader';reader.innerHTML='<div class="sharecapsuleReaderStatus"></div><button class="primary" data-reader="play">▶ Read</button><button data-reader="pause">Ⅱ Pause</button><button class="stop" data-reader="stop">■ Stop</button>';document.body.appendChild(reader);const synth=window.speechSynthesis,play=reader.querySelector('[data-reader="play"]'),pause=reader.querySelector('[data-reader="pause"]'),stop=reader.querySelector('[data-reader="stop"]'),status=reader.querySelector('.sharecapsuleReaderStatus');const announce=text=>{status.textContent=text;status.classList.add('show');clearTimeout(announce.t);announce.t=setTimeout(()=>status.classList.remove('show'),2200)};const reset=()=>{reader.classList.remove('is-active');play.textContent='▶ Read';pause.textContent='Ⅱ Pause'};play.onclick=()=>{const text=readableText();if(text.length<40)return announce('No readable page content was found.');synth.cancel();const u=new SpeechSynthesisUtterance(text);u.lang=document.documentElement.lang||navigator.language||'en-US';u.rate=isMarimuthuRoute()?.72:.95;u.pitch=isMarimuthuRoute()?.95:1;u.onstart=()=>{reader.classList.add('is-active');play.textContent='↻ Restart';announce(isMarimuthuRoute()?'மெதுவாக வாசிக்கிறது':'Reading page aloud')};u.onend=reset;u.onerror=reset;synth.speak(u)};pause.onclick=()=>{if(!synth.speaking)return;synth.paused?(synth.resume(),pause.textContent='Ⅱ Pause'):(synth.pause(),pause.textContent='▶ Resume')};stop.onclick=()=>{synth.cancel();reset()};window.addEventListener('pagehide',()=>synth.cancel(),{once:true})};
+  const installReader=()=>{
+    if(suppressReader()||!('speechSynthesis'in window)||document.getElementById('sharecapsuleReader'))return;
+    const reader=document.createElement('div');
+    reader.id='sharecapsuleReader';reader.className='sharecapsuleReader';
+    reader.innerHTML='<div class="sharecapsuleReaderStatus"></div><button class="primary" data-reader="play">▶ Read</button><button data-reader="pause">Ⅱ Pause</button><button class="stop" data-reader="stop">■ Stop</button>';
+    document.body.appendChild(reader);
+    const synth=window.speechSynthesis,play=reader.querySelector('[data-reader="play"]'),pause=reader.querySelector('[data-reader="pause"]'),stop=reader.querySelector('[data-reader="stop"]'),status=reader.querySelector('.sharecapsuleReaderStatus');
+    let runId=0,gapTimer=null;
+    const announce=text=>{status.textContent=text;status.classList.add('show');clearTimeout(announce.t);announce.t=setTimeout(()=>status.classList.remove('show'),2200)};
+    const reset=()=>{reader.classList.remove('is-active');play.textContent='▶ Read';pause.textContent='Ⅱ Pause';clearTimeout(gapTimer)};
+    const utter=text=>{const u=new SpeechSynthesisUtterance(text);u.lang=document.documentElement.lang||navigator.language||'en-US';u.rate=isMarimuthuRoute()?.72:.95;u.pitch=isMarimuthuRoute()?.95:1;return u};
+    const speakMarimuthu=()=>{
+      const poem=String(document.getElementById('poem')?.textContent||'').trim();
+      const meaning=String(document.getElementById('meaning')?.textContent||'').trim();
+      if(!poem||!meaning)return announce('வாசிக்க வேண்டிய பாடல் கிடைக்கவில்லை');
+      const myRun=++runId;
+      const parts=[poem,meaning,'சுப மாரிமுத்து அய்யா பகிர்வில் இருந்து'];
+      const next=i=>{
+        if(myRun!==runId)return;
+        if(i>=parts.length){reset();return;}
+        const u=utter(parts[i]);
+        u.onstart=()=>{reader.classList.add('is-active');play.textContent='↻ மீண்டும்';announce(i===0?'பாடல் வாசிக்கிறது':i===1?'பொருள் வாசிக்கிறது':'பகிர்வு குறிப்பு வாசிக்கிறது')};
+        u.onerror=reset;
+        u.onend=()=>{if(myRun!==runId)return;if(i<parts.length-1)gapTimer=setTimeout(()=>next(i+1),1400);else reset()};
+        synth.speak(u);
+      };
+      synth.cancel();clearTimeout(gapTimer);next(0);
+    };
+    play.onclick=()=>{
+      if(isMarimuthuRoute()){speakMarimuthu();return;}
+      const text=readableText();if(text.length<40)return announce('No readable page content was found.');
+      ++runId;synth.cancel();const u=utter(text);u.onstart=()=>{reader.classList.add('is-active');play.textContent='↻ Restart';announce('Reading page aloud')};u.onend=reset;u.onerror=reset;synth.speak(u)
+    };
+    pause.onclick=()=>{if(!synth.speaking)return;synth.paused?(synth.resume(),pause.textContent='Ⅱ Pause'):(synth.pause(),pause.textContent='▶ Resume')};
+    stop.onclick=()=>{++runId;clearTimeout(gapTimer);synth.cancel();reset()};
+    window.addEventListener('pagehide',()=>{++runId;clearTimeout(gapTimer);synth.cancel()},{once:true});
+  };
   const loadScript=src=>{if(document.querySelector(`script[src="${src}"]`))return;const script=document.createElement('script');script.src=src;script.defer=true;document.body.appendChild(script)};
   ready(()=>{ensurePwaHead();installStyles();if(!suppressGlobalNavigation()){const top=ensureTop();installBreadcrumbs(top)}installReader();if(!suppressGlobalFm())loadScript(SCRIPT_SRC);loadScript(PWA_SRC)});
 })();
