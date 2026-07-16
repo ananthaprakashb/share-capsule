@@ -13,7 +13,7 @@
 <main class="shell">
 <header class="top"><a class="brand" href="/tamilradio/">Tamil Radio</a><a class="home" href="/">All releases</a></header>
 <section class="hero"><div class="kicker">Tamil audio around the world</div><h1>Listen to Tamil radio online.</h1><p>Tap Play Here on any station. The page resolves a browser-compatible stream and remembers working streams for faster playback later.</p></section>
-<section class="controls"><input class="control" id="q" type="search" placeholder="Search station, country or music type"><select class="control" id="region"><option value="all">All regions</option><option value="sharecapsule">Share Capsule</option><option value="india">India</option><option value="srilanka">Sri Lanka</option><option value="malaysia">Malaysia</option><option value="canada">Canada</option><option value="usa">United States</option><option value="europe">Europe</option></select></section>
+<section class="controls"><input class="control" id="q" type="search" placeholder="Search station, country or music type"><select class="control" id="region"><option value="all">All regions</option><option value="sharecapsule">Share Capsule</option><option value="india">India</option><option value="srilanka">Sri Lanka</option><option value="malaysia">Malaysia</option><option value="canada">Canada</option><option value="usa">United States</option></select></section>
 <div class="status" id="status"></div><section class="grid" id="grid"></section>
 <section class="note"><strong>Playback note:</strong> Share Capsule audio is loaded directly. Other stations are resolved through the public Radio Browser directory and checked against station name and country. Use the official link when a broadcaster changes or protects its stream.</section>
 </main>
@@ -21,23 +21,15 @@
 <script>
 const stations=[
 {name:'Share Capsule',aliases:['Share Capsule'],country:'',region:'sharecapsule',label:'Share Capsule',description:'Curated Tamil and multilingual audio from Share Capsule.',tags:['Tamil','Curated audio','Direct play'],url:'/audio/',mode:'sharecapsule',featured:true},
-{name:'Suryan FM',aliases:['Suryan FM','Suryan 93.5 FM'],country:'India',region:'india',label:'India',description:'Tamil commercial radio network from Sun TV Network.',tags:['Tamil hits','RJ shows'],url:'https://www.suryanfm.in/'},
-{name:'Hello FM',aliases:['Hello FM','Hello 106.4 FM'],country:'India',region:'india',label:'India',description:'Tamil music, talk and local programming.',tags:['Tamil music','Talk'],url:'https://www.hello.fm/'},
-{name:'Radio Mirchi Tamil',aliases:['Radio Mirchi Tamil','Mirchi Tamil'],country:'India',region:'india',label:'India',description:'Tamil film music and entertainment.',tags:['Film songs','Entertainment'],url:'https://mirchi.in/'},
 {name:'AIR Tamil / Akashvani',aliases:['AIR Tamil','Akashvani Tamil','AIR Chennai'],country:'India',region:'india',label:'India',description:'Tamil news, culture and public-service programming.',tags:['News','Culture'],url:'https://newsonair.gov.in/'},
-{name:'Lankasri FM',aliases:['Lankasri FM','Lanka Sri FM'],country:'Sri Lanka',region:'srilanka',label:'Sri Lanka',description:'Tamil music, news and diaspora programming.',tags:['Tamil music','News'],url:'https://lankasri.fm/'},
 {name:'Shakthi FM',aliases:['Shakthi FM','Shakthi 105.1'],country:'Sri Lanka',region:'srilanka',label:'Sri Lanka',description:'Tamil music, interviews and entertainment.',tags:['Music','Interviews'],url:'https://www.shakthifm.com/'},
 {name:'Vasantham FM',aliases:['Vasantham FM','Vasantham Radio'],country:'Sri Lanka',region:'srilanka',label:'Sri Lanka',description:'Sri Lankan Tamil music and entertainment radio.',tags:['Tamil music','Sri Lanka'],url:'https://vasanthamfm.lk/'},
 {name:'Raaga',aliases:['Raaga','Raaga FM','THR Raaga'],country:'Malaysia',region:'malaysia',label:'Malaysia',description:'Popular Malaysian Tamil music and entertainment.',tags:['Tamil hits','Malaysia'],url:'https://raaga.syok.my/'},
-{name:'Radio Gilli',aliases:['Radio Gilli','Gilli Radio'],country:'India',region:'india',label:'India / Global',description:'Online Tamil music radio featuring film songs and entertainment.',tags:['Tamil songs','Online radio'],url:'https://radiogilli.com/'},
-{name:'Canadian Tamil Broadcasting Corporation',aliases:['CTBC Tamil','Canadian Tamil Broadcasting Corporation','CTBC Radio'],country:'Canada',region:'canada',label:'Canada',description:'Canadian Tamil community news, talk and music.',tags:['Canada','Community'],url:'https://www.ctbc.com/'},
 {name:'East FM 102.7',aliases:['East FM 102.7','East FM'],country:'Canada',region:'canada',label:'Canada',description:'Toronto multicultural station with Tamil programming.',tags:['Toronto','Community'],url:'https://eastfm.ca/'},
-{name:'American Tamil Radio',aliases:['American Tamil Radio','ATR Tamil'],country:'United States',region:'usa',label:'United States',description:'Tamil community music, talk and cultural programming for U.S. listeners.',tags:['USA','Community'],url:'https://www.americantamilradio.com/'},
-{name:'IBC Tamil Radio',aliases:['IBC Tamil Radio','IBC Tamil','International Broadcasting Corporation Tamil'],country:'United Kingdom',region:'europe',label:'United Kingdom',description:'London-based Tamil radio with news, talk, culture and music.',tags:['UK','News','Music'],url:'https://ibctamil.com/'},
-{name:'A9 Radio',aliases:['A9 Radio','A9 Tamil Radio'],country:'France',region:'europe',label:'Europe',description:'European Tamil online radio with music and community programming.',tags:['Europe','Tamil music'],url:'https://a9radio.com/'}
+{name:'American Tamil Radio',aliases:['American Tamil Radio','ATR Tamil'],country:'United States',region:'usa',label:'United States',description:'Tamil community music, talk and cultural programming for U.S. listeners.',tags:['USA','Community'],url:'https://www.americantamilradio.com/'}
 ];
 const API_HOSTS=['https://de1.api.radio-browser.info','https://nl1.api.radio-browser.info','https://at1.api.radio-browser.info'];
-const CACHE_KEY='sharecapsule.tamilradio.streams.v2';
+const CACHE_KEY='sharecapsule.tamilradio.streams.v3';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const normalize=s=>String(s||'').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,' ').trim();
 const audio=document.getElementById('audio'),player=document.getElementById('player'),toggle=document.getElementById('toggle'),nowTitle=document.getElementById('nowTitle'),nowState=document.getElementById('nowState');let queue=[],index=0,currentStation=null;
