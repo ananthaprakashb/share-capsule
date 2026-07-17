@@ -4,6 +4,24 @@
   },
   "items": [
     {
+      "slug": "athiyayam-3-pizhaiyin-paadam",
+      "title": "அத்தியாயம் 3: பிழையின் பாடம்",
+      "artist": "Anantha Prakash",
+      "videoIds": [],
+      "youtubeExtra": [],
+      "category": "Tamil Story",
+      "language": "Tamil",
+      "music": false,
+      "description": "பிழையைத் தண்டனையாக அல்லாமல், கற்றலுக்கான சமிக்ஞையாக மாற்றும் இராசராச சோழன் காலப் பின்னணியிலான ஐந்து நிமிடத் தமிழ் கதை.",
+      "coverLines": [
+        "அத்தியாயம் 3",
+        "பிழையின் பாடம்"
+      ],
+      "publishedAt": "2026-07-17",
+      "featured": true,
+      "directUrl": "/story/?id=அத-த-ய-யம-3-ப-ழ-ய-ன-ப-டம-2026-03-08"
+    },
+    {
       "slug": "pudhusa-pirakkuthu-ooru",
       "title": "புதுசா பிறக்குது ஊரு",
       "artist": "தமிழாலே",
