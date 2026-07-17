@@ -139,3 +139,35 @@
   refresh();
   window.addEventListener('popstate',()=>setTimeout(()=>window.__indiaSchemesHomeData&&window.__studentSchemesHomeData&&render(window.__indiaSchemesHomeData,window.__studentSchemesHomeData),0));
 })();
+
+(()=>{
+  const ENDPOINT='/events/public/in/';
+  const DATA='/events/public/in/sources.json';
+  const escText=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+  const installStyles=()=>{
+    if(document.getElementById('homeIndiaOpportunitiesStyles'))return;
+    const style=document.createElement('style');
+    style.id='homeIndiaOpportunitiesStyles';
+    style.textContent='.homeIndiaOpportunities{margin:0 0 20px;padding:22px;border-radius:26px;background:linear-gradient(145deg,#153b5b,#176f8c);color:#fff;box-shadow:0 16px 44px rgba(20,65,95,.18)}.homeIndiaOpportunitiesTop{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.homeIndiaOpportunitiesEyebrow{margin:0 0 7px;font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;opacity:.76}.homeIndiaOpportunities h2{margin:0;font-size:27px;line-height:1.04;letter-spacing:-.045em}.homeIndiaOpportunitiesCount{flex:0 0 auto;padding:7px 10px;border:1px solid rgba(255,255,255,.24);border-radius:999px;font-size:11px;font-weight:850}.homeIndiaOpportunitiesIntro{margin:12px 0 0;color:rgba(255,255,255,.84);font-size:14px;line-height:1.55}.homeIndiaOpportunityTopics{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}.homeIndiaOpportunityTopics span{padding:7px 9px;border-radius:999px;background:rgba(255,255,255,.11);font-size:11px;font-weight:850}.homeIndiaOpportunitySources{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:8px}.homeIndiaOpportunitySources li{padding:10px 12px;border:1px solid rgba(255,255,255,.16);border-radius:14px;background:rgba(255,255,255,.08);font-size:12px;font-weight:780}.homeIndiaOpportunitiesAction{display:flex;justify-content:space-between;gap:14px;align-items:center;margin-top:18px;padding-top:15px;border-top:1px solid rgba(255,255,255,.18);color:#fff;text-decoration:none;font-size:13px;font-weight:900}.homeIndiaOpportunitiesNote{margin-top:9px;font-size:10px;color:rgba(255,255,255,.68)}@media(max-width:520px){.homeIndiaOpportunitiesTop{display:block}.homeIndiaOpportunitiesCount{display:inline-block;margin-top:12px}}';
+    document.head.appendChild(style);
+  };
+  const render=data=>{
+    if(location.pathname!=='/'||new URLSearchParams(location.search).has('release'))return;
+    const schemes=document.getElementById('homeIndiaSchemes');
+    const toolbar=document.querySelector('#app .toolbar');
+    if(!toolbar||document.getElementById('homeIndiaOpportunities'))return;
+    const sources=Array.isArray(data?.sources)?data.sources:[];
+    const names=sources.slice(0,4).map(source=>`<li>${escText(source.name)}</li>`).join('');
+    const section=document.createElement('section');
+    section.id='homeIndiaOpportunities';
+    section.className='homeIndiaOpportunities';
+    section.innerHTML=`<div class="homeIndiaOpportunitiesTop"><div><p class="homeIndiaOpportunitiesEyebrow">Verified India-wide public opportunities</p><h2>Education, training and employment</h2></div><span class="homeIndiaOpportunitiesCount">${sources.length} official sources</span></div><p class="homeIndiaOpportunitiesIntro">Explore current scholarships, courses, apprenticeships, internships, job fairs and employment services. Listings link directly to Government of India, statutory-body and public-institution portals.</p><div class="homeIndiaOpportunityTopics"><span>🎓 Education</span><span>🛠 Training</span><span>💼 Employment</span><span>📅 Current + next 2 months</span></div><ul class="homeIndiaOpportunitySources">${names}</ul><a class="homeIndiaOpportunitiesAction" href="${ENDPOINT}"><span>Search verified India opportunities</span><span>Open events →</span></a><div class="homeIndiaOpportunitiesNote">Official-source directory only. Confirm live eligibility, location and application deadlines on the linked portal.</div>`;
+    (schemes||toolbar).insertAdjacentElement(schemes?'afterend':'beforebegin',section);
+  };
+  const refresh=()=>fetch(`${DATA}?v=${Date.now()}`,{cache:'no-store'}).then(response=>response.ok?response.json():Promise.reject(new Error(`${DATA}: HTTP ${response.status}`))).then(data=>{window.__indiaOpportunitiesHomeData=data;render(data)}).catch(error=>console.error('Unable to show India opportunities on home',error));
+  installStyles();
+  const observer=new MutationObserver(()=>window.__indiaOpportunitiesHomeData&&render(window.__indiaOpportunitiesHomeData));
+  observer.observe(document.getElementById('app')||document.body,{childList:true,subtree:true});
+  refresh();
+  window.addEventListener('popstate',()=>setTimeout(()=>window.__indiaOpportunitiesHomeData&&render(window.__indiaOpportunitiesHomeData),0));
+})();
