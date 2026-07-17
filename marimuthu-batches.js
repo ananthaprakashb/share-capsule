@@ -1,5 +1,11 @@
 (()=>{
   const BATCHES=['/marimuthu/data/iniyavai-narpathu.json'];
+  const COMPRESSED_BATCHES=[[
+    '/marimuthu/data/inna-narpathu.part1',
+    '/marimuthu/data/inna-narpathu.part2',
+    '/marimuthu/data/inna-narpathu.part3',
+    '/marimuthu/data/inna-narpathu.part4'
+  ]];
   const normalize=value=>String(value||'').normalize('NFC').replace(/\s+/g,' ').trim().replace(/[.।]+$/u,'');
   const STOCK_PHRASE='என்ற கருத்தை இன்றைய வாழ்விலும் நினைவில் கொண்டு செயல்படுவோம்.';
   const cleanThought=value=>String(value||'').trim().replace(new RegExp(`\\s*${STOCK_PHRASE.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}$`),'').trim();
@@ -26,6 +32,18 @@
       }
     }
     poems.forEach(poem=>{poem.thought=thoughtFor(poem)});
+  };
+  const fetchText=async url=>{
+    const response=await fetch(url,{cache:'no-cache'});
+    if(!response.ok)throw new Error(`Unable to load ${url}`);
+    return response.text();
+  };
+  const loadCompressed=async parts=>{
+    const encoded=(await Promise.all(parts.map(fetchText))).join('').trim();
+    const binary=atob(encoded);
+    const bytes=Uint8Array.from(binary,char=>char.charCodeAt(0));
+    const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+    return JSON.parse(await new Response(stream).text());
   };
   const shortArticleUrl=position=>`${location.origin}/marimuthu/?p=${(position+1).toString(36)}`;
   const applyShortWhatsAppLink=()=>{
@@ -71,11 +89,13 @@
       applyShortWhatsAppLink();
     };
     try{
-      const groups=await Promise.all(BATCHES.map(async url=>{
+      const plain=BATCHES.map(async url=>{
         const response=await fetch(url,{cache:'no-cache'});
         if(!response.ok)throw new Error(`Unable to load ${url}`);
         return response.json();
-      }));
+      });
+      const compressed=COMPRESSED_BATCHES.map(loadCompressed);
+      const groups=await Promise.all([...plain,...compressed]);
       groups.forEach(merge);
     }catch(error){
       console.error('Marimuthu batch loading failed',error);
