@@ -28,10 +28,11 @@
   };
   const loadToday=async()=>{
     const stamp=Date.now();
-    const [pageResponse,recentResponse,batchesResponse]=await Promise.all([
+    const [pageResponse,recentResponse,batchesResponse,todayResponse]=await Promise.all([
       fetch(`/marimuthu/index.html?v=${stamp}`,{cache:'no-store'}),
       fetch(`/marimuthu-recent.js?v=${stamp}`,{cache:'no-store'}),
-      fetch(`/marimuthu-batches.js?v=${stamp}`,{cache:'no-store'})
+      fetch(`/marimuthu-batches.js?v=${stamp}`,{cache:'no-store'}),
+      fetch(`/marimuthu/today.json?v=${stamp}`,{cache:'no-store'})
     ]);
     if(!pageResponse.ok)throw new Error('Unable to load Marimuthu page');
     const pageText=await pageResponse.text();
@@ -55,7 +56,9 @@
     }
     const poems=mergePoems(groups);
     if(!poems.length)throw new Error('No Marimuthu poems found');
-    return poems[(new Date().getDate()-1)%poems.length];
+    const configured=todayResponse.ok?await todayResponse.json():null;
+    const selected=configured?.number?poems.find(poem=>poem.number===String(configured.number)&&(!configured.book||poem.book===configured.book)):null;
+    return selected||poems[(new Date().getDate()-1)%poems.length];
   };
   const asRelease=poem=>{
     const lines=String(poem.text||'').split(/\n+/).map(line=>line.trim()).filter(Boolean);
@@ -71,7 +74,7 @@
       category:poem.book||'தமிழ் நீதி இலக்கியம்',
       language:'Tamil',
       description:poem.meaning||'',
-      coverEyebrow:'இன்றைய மாரிமுத்து பதிவு',
+      coverEyebrow:'இன்றைய பாடல்',
       coverLines:lines.slice(0,2),
       coverBackground:'linear-gradient(145deg,#173d2a,#2f6544)',
       publishedAt:new Date().toISOString().slice(0,10),
@@ -99,7 +102,7 @@
   loadToday().then(poem=>{
     window.__marimuthuTodayRelease=asRelease(poem);
     if(!new URLSearchParams(location.search).has('release')&&typeof state!=='undefined'&&state.data&&installed)renderCatalog();
-  }).catch(error=>console.error('Unable to show today’s Marimuthu article',error));
+  }).catch(error=>console.error('Unable to show today’s Marimuthu poem',error));
 })();
 
 (()=>{
