@@ -1,0 +1,117 @@
+{
+  "title": "தமிழ்நாடு அரசு நலத்திட்டங்கள்",
+  "subtitle": "அதிகாரப்பூர்வ அரசு தளங்களில் தற்போது பட்டியலிடப்பட்டுள்ள பயனுள்ள திட்டங்கள்",
+  "jurisdiction": "Tamil Nadu, India",
+  "verifiedOn": "2026-07-16",
+  "notice": "இந்தப் பக்கம் அதிகாரப்பூர்வ தளங்களில் பட்டியலிடப்பட்ட திட்டங்களைச் சுருக்கமாக வழங்குகிறது. விண்ணப்பம் திறந்திருப்பது, நிதி ஒதுக்கீடு, மாவட்ட நடைமுறை மற்றும் தகுதி காலப்போக்கில் மாறலாம். விண்ணப்பிக்கும் முன் இணைக்கப்பட்ட அதிகாரப்பூர்வ தளத்திலும் சம்பந்தப்பட்ட அலுவலகத்திலும் உறுதிப்படுத்தவும்.",
+  "schemes": [
+    {
+      "id": "kalaignarin-kanavu-illam",
+      "name": "கலைஞரின் கனவு இல்லம்",
+      "category": "வீடு",
+      "summary": "கிராமப்புற ஏழை குடும்பங்களுக்கு நிரந்தர வீடு வழங்கும் தமிழ்நாடு அரசின் ஊரக வீட்டு திட்டம். அதிகாரப்பூர்வ ஊரக வளர்ச்சி தளத்தில் தற்போதைய மாநிலத் திட்டமாக பட்டியலிடப்பட்டுள்ளது.",
+      "whoMayBenefit": "கிராமப்புறங்களில் தகுதி பெறும் வீடற்ற அல்லது மிக மோசமான வீட்டில் வசிக்கும் குடும்பங்கள்.",
+      "howToStart": "ஊராட்சி அலுவலகம் அல்லது வட்டார வளர்ச்சி அலுவலகத்தில் உள்ளூர் தகுதி மற்றும் பயனாளி தேர்வு நிலையை விசாரிக்கவும்.",
+      "status": "Officially listed",
+      "sourceOrganization": "Rural Development and Panchayat Raj Department, Government of Tamil Nadu",
+      "sourceUrl": "https://tnrd.tn.gov.in/rdweb_newsite/project/reports/Public/StateSchemes.php",
+      "verifiedOn": "2026-07-16"
+    },
+    {
+      "id": "rural-house-repair-reconstruction",
+      "name": "பழைய ஊரக வீடுகள் பழுது பார்க்கும் / மறுகட்டுமான திட்டம்",
+      "category": "வீடு",
+      "summary": "2000-01 வரை பல அரசு திட்டங்களில் கட்டப்பட்டு பழுதுபார்க்க முடியாத நிலையில் உள்ள கிராமப்புற வீடுகளை மறுகட்டுவதற்கான 2025-26 வழிகாட்டுதல்கள் அரசாணையில் வெளியிடப்பட்டுள்ளன.",
+      "whoMayBenefit": "அரசுத் திட்டத்தின் கீழ் முன்பு கட்டப்பட்டு தற்போது பழுதுபார்க்க முடியாத நிலையில் உள்ள தகுதியான கிராமப்புற வீடுகளின் குடியிருப்போர்.",
+      "howToStart": "கிராம ஊராட்சி அல்லது வட்டார வளர்ச்சி அலுவலகத்தில் வீட்டு ஆய்வு மற்றும் பயனாளி பட்டியல் குறித்து கேட்கவும்.",
+      "status": "Government order available",
+      "sourceOrganization": "Rural Development and Panchayat Raj Department, Government of Tamil Nadu",
+      "sourceUrl": "https://tnrd.tn.gov.in/rdweb_newsite/project/reports/Public/ListOfGO.php?scheme_code=ODUw&scheme_type=Mw%3D%3D",
+      "verifiedOn": "2026-07-16"
+    },
+    {
+      "id": "mgnregs-tn",
+      "name": "மகாத்மா காந்தி தேசிய ஊரக வேலைவாய்ப்பு உறுதி திட்டம்",
+      "category": "வேலைவாய்ப்பு",
+      "summary": "ஊரக குடும்பங்களுக்கு கோரிக்கையின் அடிப்படையில் கூலி வேலை வாய்ப்பு வழங்கும் மத்திய-மாநில இணைத் திட்டம்; தமிழ்நாடு ஊரக வளர்ச்சி தளத்தில் நடைமுறையிலுள்ள மத்திய திட்டமாக பட்டியலிடப்பட்டுள்ளது.",
+      "whoMayBenefit": "ஊரக பகுதியில் வசிக்கும், கைவேலை செய்ய விரும்பும் வயது வந்த குடும்ப உறுப்பினர்கள்.",
+      "howToStart": "கிராம ஊராட்சியில் வேலை அட்டை மற்றும் வேலை கோரிக்கை நடைமுறையை விசாரிக்கவும்.",
+      "status": "Officially listed",
+      "sourceOrganization": "Rural Development and Panchayat Raj Department, Government of Tamil Nadu",
+      "sourceUrl": "https://tnrd.tn.gov.in/rdweb_newsite/project/reports/Public/all_schemes.php",
+      "verifiedOn": "2026-07-16"
+    },
+    {
+      "id": "pmay-g-tn",
+      "name": "பிரதான் மந்திரி ஆவாஸ் யோஜனா — கிராமின்",
+      "category": "வீடு",
+      "summary": "தகுதியான கிராமப்புற குடும்பங்களுக்கு பக்கா வீடு கட்ட உதவும் திட்டம்; தமிழ்நாடு ஊரக வளர்ச்சி தளத்தில் தற்போதைய மத்திய திட்டமாக பட்டியலிடப்பட்டுள்ளது.",
+      "whoMayBenefit": "அதிகாரப்பூர்வ சமூக-பொருளாதார தரவுகள் மற்றும் உள்ளூர் சரிபார்ப்பின் அடிப்படையில் தேர்ந்தெடுக்கப்படும் தகுதியான கிராமப்புற குடும்பங்கள்.",
+      "howToStart": "ஊராட்சி அல்லது வட்டார வளர்ச்சி அலுவலகத்தில் பயனாளி பட்டியல் மற்றும் தற்போதைய கட்டத்தை உறுதிப்படுத்தவும்.",
+      "status": "Officially listed",
+      "sourceOrganization": "Rural Development and Panchayat Raj Department, Government of Tamil Nadu",
+      "sourceUrl": "https://tnrd.tn.gov.in/rdweb_newsite/project/reports/Public/CentralSchemes.php",
+      "verifiedOn": "2026-07-16"
+    },
+    {
+      "id": "tn-social-security-pensions",
+      "name": "சமூக பாதுகாப்பு ஓய்வூதியத் திட்டங்கள்",
+      "category": "மாதாந்திர உதவி",
+      "summary": "முதியோர், விதவைகள் மற்றும் மாற்றுத்திறனாளிகளுக்கான பல சமூக பாதுகாப்பு ஓய்வூதியத் திட்டங்களின் தகுதிகள் தமிழ்நாடு வருவாய் நிர்வாக ஆணையரக தளத்தில் வெளியிடப்பட்டுள்ளன.",
+      "whoMayBenefit": "திட்டத்தைப் பொறுத்து ஆதரவற்ற முதியோர், வறுமைக் கோட்டுக்குக் கீழ் உள்ள விதவைகள், கடுமையான மாற்றுத்திறனாளிகள் மற்றும் பிற தகுதியானவர்கள்.",
+      "howToStart": "தாலுகா அலுவலகம், வருவாய் துறை அல்லது இ-சேவை மையத்தில் குறிப்பிட்ட ஓய்வூதியத்திற்கான தற்போதைய விண்ணப்ப நடைமுறையை உறுதிப்படுத்தவும்.",
+      "status": "Eligibility officially published",
+      "sourceOrganization": "Commissionerate of Revenue Administration and Disaster Management, Government of Tamil Nadu",
+      "sourceUrl": "https://www.cra.tn.gov.in/eleg_schemes.php",
+      "verifiedOn": "2026-07-16"
+    },
+    {
+      "id": "dap-unemployment-allowance",
+      "name": "மாற்றுத்திறனாளிகளுக்கான வேலைவாய்ப்பின்மை உதவித்தொகை",
+      "category": "மாற்றுத்திறனாளர் நலம்",
+      "summary": "கல்வித் தகுதியைப் பொறுத்து மாதாந்திர உதவித்தொகை வழங்கப்படும் திட்டம். வேலைவாய்ப்பு அலுவலகத்தின் உயிர்ப்பதிவில் ஒரு ஆண்டுக்கு மேலாக இருக்க வேண்டும் என அதிகாரப்பூர்வ தளம் குறிப்பிடுகிறது.",
+      "whoMayBenefit": "வேலைவாய்ப்பு அலுவலகத்தில் தொடர்ந்து பதிவு செய்யப்பட்ட தகுதியான மாற்றுத்திறனாளிகள்.",
+      "howToStart": "மாவட்ட வேலைவாய்ப்பு அலுவலகத்தில் விண்ணப்பப் படிவம், உயிர்ப்பதிவு நிலை மற்றும் தேவையான அடையாள அட்டைகளை உறுதிப்படுத்தவும்.",
+      "status": "Officially listed",
+      "sourceOrganization": "Commissionerate for Welfare of the Differently Abled, Government of Tamil Nadu",
+      "sourceUrl": "https://www.scd.tn.gov.in/social_sec_schemes.php",
+      "verifiedOn": "2026-07-16"
+    },
+    {
+      "id": "cmchis-differently-abled",
+      "name": "முதலமைச்சரின் விரிவான மருத்துவக் காப்பீட்டுத் திட்டம் — மாற்றுத்திறனாளர் குடும்பங்கள்",
+      "category": "மருத்துவம்",
+      "summary": "குடும்பத்தில் ஒருவர் மாற்றுத்திறனாளியாக இருந்தால், வருமான உச்சவரம்பின்றி குடும்பத்தினரை திட்டத்தில் சேர்க்கலாம் என்று மாற்றுத்திறனாளர் நல ஆணையரகத்தின் அதிகாரப்பூர்வ பக்கம் குறிப்பிடுகிறது.",
+      "whoMayBenefit": "தமிழ்நாட்டில் வசிக்கும், குடும்பத்தில் குறைந்தது ஒருவருக்கு அங்கீகரிக்கப்பட்ட மாற்றுத்திறனாளர் அடையாளம் உள்ள குடும்பங்கள்.",
+      "howToStart": "மாவட்ட ஆட்சியர் அலுவலக காப்பீட்டு பிரிவு அல்லது மாவட்ட மாற்றுத்திறனாளர் நல அலுவலரை அணுகி தற்போதைய ஆவணப் பட்டியலை உறுதிப்படுத்தவும்.",
+      "status": "Officially listed",
+      "sourceOrganization": "Commissionerate for Welfare of the Differently Abled, Government of Tamil Nadu",
+      "sourceUrl": "https://www.scd.tn.gov.in/tn_welfare.php",
+      "verifiedOn": "2026-07-16"
+    },
+    {
+      "id": "motorised-sewing-machine-dap",
+      "name": "மாற்றுத்திறனாளிகளுக்கான இலவச மோட்டார் தையல் இயந்திரம்",
+      "category": "சுயதொழில்",
+      "summary": "கேள்வித்திறன் குறைபாடு, இயக்க குறைபாடு, சில அறிவுத்திறன் குறைபாடுகள் உள்ளவர்கள் மற்றும் கடுமையான அறிவுத்திறன் குறைபாடு உள்ளவர்களின் தாய்மார்களுக்கு இலவச மோட்டார் தையல் இயந்திரம் வழங்கும் திட்டம் அதிகாரப்பூர்வமாக பட்டியலிடப்பட்டுள்ளது.",
+      "whoMayBenefit": "18 வயதுக்கு மேற்பட்ட தகுதியான மாற்றுத்திறனாளிகள் அல்லது திட்ட நிபந்தனைகளில் குறிப்பிடப்பட்ட பராமரிப்பாளர்; தையல் பயிற்சி சான்று தேவைப்படலாம்.",
+      "howToStart": "மாவட்ட மாற்றுத்திறனாளர் நல அலுவலரிடம் தற்போதைய ஒதுக்கீடு, விண்ணப்ப காலம் மற்றும் சான்றிதழ்களை உறுதிப்படுத்தவும்.",
+      "status": "Officially listed",
+      "sourceOrganization": "Commissionerate for Welfare of the Differently Abled, Government of Tamil Nadu",
+      "sourceUrl": "https://www.scd.tn.gov.in/self_emp_sub_schemes.php",
+      "verifiedOn": "2026-07-16"
+    },
+    {
+      "id": "tn-agriculture-scheme-finder",
+      "name": "விவசாய மானியங்கள் மற்றும் உள்ளீடுகள் தேடல்",
+      "category": "விவசாயம்",
+      "summary": "தமிழ்நாடு வேளாண்மை — உழவர் நலத்துறை Agrisnet தளம் திட்டம், துறை, உள்ளீடு மற்றும் கூறு அடிப்படையில் மானியம், தகுதி மற்றும் தேவையான ஆவணங்களைத் தேட உதவுகிறது.",
+      "whoMayBenefit": "தமிழ்நாட்டின் விவசாயிகள் மற்றும் வேளாண்மை சார்ந்த தகுதியான பயனாளிகள்.",
+      "howToStart": "அதிகாரப்பூர்வ Agrisnet திட்டத் தேடலில் தேவையான உள்ளீடு அல்லது திட்டத்தைத் தேர்ந்தெடுத்து, பின்னர் அருகிலுள்ள வேளாண்மை அலுவலகத்தில் நடைமுறையை உறுதிப்படுத்தவும்.",
+      "status": "Official scheme discovery portal",
+      "sourceOrganization": "Department of Agriculture — Farmers Welfare, Government of Tamil Nadu",
+      "sourceUrl": "https://www.tnagrisnet.tn.gov.in/home/schemes/",
+      "verifiedOn": "2026-07-16"
+    }
+  ]
+}
