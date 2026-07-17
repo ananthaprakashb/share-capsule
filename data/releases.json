@@ -3518,6 +3518,55 @@
       },
       "publishedAt": "2025-05-11",
       "featured": true
+    },
+    {
+      "slug": "athiyayam-3-pizhaiyin-paadam",
+      "title": "அத்தியாயம் 3: பிழையின் பாடம்",
+      "artist": "Anantha Prakash",
+      "type": "Story",
+      "category": "Tamil Story",
+      "language": "Tamil",
+      "description": "பிழையைத் தண்டனையாக அல்லாமல், கற்றலுக்கான சமிக்ஞையாக மாற்றும் இராசராச சோழன் காலப் பின்னணியிலான ஐந்து நிமிடத் தமிழ் கதை.",
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#5f3b2d,#9a6a45 55%,#d4a574)",
+      "coverEyebrow": "Tamil Story",
+      "coverLines": [
+        "அத்தியாயம் 3",
+        "பிழையின் பாடம்"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Read story",
+          "icon": "📖",
+          "url": "/story/?id=அத-த-ய-யம-3-ப-ழ-ய-ன-ப-டம-2026-03-08"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "📖",
+          "text": "Thought you might enjoy this five-minute Tamil story."
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this thoughtful Tamil story with the family."
+        },
+        "reader": {
+          "label": "Story reader",
+          "icon": "📚",
+          "text": "Here is a Tamil story worth reading and reflecting on."
+        },
+        "learner": {
+          "label": "Curious learner",
+          "icon": "💡",
+          "text": "This story connects history, learning and modern ideas."
+        }
+      },
+      "publishedAt": "2026-07-17",
+      "featured": true
     }
   ]
 }
