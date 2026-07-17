@@ -101,3 +101,34 @@
     if(!new URLSearchParams(location.search).has('release')&&typeof state!=='undefined'&&state.data&&installed)renderCatalog();
   }).catch(error=>console.error('Unable to show today’s Marimuthu article',error));
 })();
+
+(()=>{
+  const ENDPOINT='/schemes/govt/in/';
+  const DATA='/schemes/govt/in/data.json';
+  const escText=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+  const installStyles=()=>{
+    if(document.getElementById('homeIndiaSchemesStyles'))return;
+    const style=document.createElement('style');
+    style.id='homeIndiaSchemesStyles';
+    style.textContent='.homeIndiaSchemes{margin:0 0 20px;padding:22px;border-radius:26px;background:linear-gradient(145deg,#102f25,#176b4d);color:#fff;box-shadow:0 16px 44px rgba(20,70,50,.18)}.homeIndiaSchemesTop{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.homeIndiaSchemesEyebrow{margin:0 0 7px;font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;opacity:.76}.homeIndiaSchemes h2{margin:0;font-size:27px;line-height:1.04;letter-spacing:-.045em}.homeIndiaSchemesCount{flex:0 0 auto;padding:7px 10px;border:1px solid rgba(255,255,255,.24);border-radius:999px;font-size:11px;font-weight:850}.homeIndiaSchemesIntro{margin:12px 0 0;color:rgba(255,255,255,.82);font-size:14px;line-height:1.55}.homeIndiaSchemesList{display:flex;flex-wrap:wrap;gap:7px;margin:15px 0 0;padding:0;list-style:none}.homeIndiaSchemesList li{padding:7px 9px;border-radius:999px;background:rgba(255,255,255,.1);font-size:11px;font-weight:800}.homeIndiaSchemesAction{display:flex;justify-content:space-between;gap:14px;align-items:center;margin-top:18px;padding-top:15px;border-top:1px solid rgba(255,255,255,.18);color:#fff;text-decoration:none;font-size:13px;font-weight:900}.homeIndiaSchemesNote{margin-top:9px;font-size:10px;color:rgba(255,255,255,.65)}@media(max-width:520px){.homeIndiaSchemesTop{display:block}.homeIndiaSchemesCount{display:inline-block;margin-top:12px}}';
+    document.head.appendChild(style);
+  };
+  const render=data=>{
+    if(location.pathname!=='/'||new URLSearchParams(location.search).has('release'))return;
+    const toolbar=document.querySelector('#app .toolbar');
+    if(!toolbar||document.getElementById('homeIndiaSchemes'))return;
+    const schemes=Array.isArray(data?.schemes)?data.schemes:[];
+    const featured=schemes.slice(0,6).map(s=>`<li>${escText(s.name)}</li>`).join('');
+    const section=document.createElement('section');
+    section.id='homeIndiaSchemes';
+    section.className='homeIndiaSchemes';
+    section.innerHTML=`<div class="homeIndiaSchemesTop"><div><p class="homeIndiaSchemesEyebrow">Official Government of India sources</p><h2>India government schemes</h2></div><span class="homeIndiaSchemesCount">${schemes.length} verified routes</span></div><p class="homeIndiaSchemesIntro">Find practical details about farming support, urban housing, LPG connections, basic banking, low-cost insurance, pensions and small-business credit. Each scheme includes who may benefit, how to begin and a direct official source.</p><ul class="homeIndiaSchemesList">${featured}</ul><a class="homeIndiaSchemesAction" href="${ENDPOINT}"><span>Check eligibility and application details</span><span>Open schemes →</span></a><div class="homeIndiaSchemesNote">Revalidated ${escText(data?.verifiedOn||'recently')}. Confirm current intake and document requirements on the linked government portal before applying.</div>`;
+    toolbar.insertAdjacentElement('beforebegin',section);
+  };
+  const refresh=()=>fetch(`${DATA}?v=${Date.now()}`,{cache:'no-store'}).then(response=>response.ok?response.json():Promise.reject(new Error(`HTTP ${response.status}`))).then(data=>{window.__indiaSchemesHomeData=data;render(data)}).catch(error=>console.error('Unable to show India government schemes on home',error));
+  installStyles();
+  const observer=new MutationObserver(()=>{if(window.__indiaSchemesHomeData)render(window.__indiaSchemesHomeData)});
+  observer.observe(document.getElementById('app')||document.body,{childList:true,subtree:true});
+  refresh();
+  window.addEventListener('popstate',()=>setTimeout(()=>window.__indiaSchemesHomeData&&render(window.__indiaSchemesHomeData),0));
+})();
