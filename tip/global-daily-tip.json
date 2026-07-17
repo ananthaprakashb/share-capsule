@@ -1,0 +1,26 @@
+{
+  "tips": [
+    {
+      "id": "wash-hands-key-times",
+      "category": "Everyday health",
+      "title": "Wash with soap at the five key times",
+      "action": "Wash both hands thoroughly with plain soap and clean water before preparing food, before eating or feeding someone, after using the toilet or handling faeces, after coughing, sneezing or blowing your nose, and whenever hands are visibly dirty.",
+      "steps": [
+        "Wet both hands with clean running water and apply plain soap.",
+        "Rub palms, backs of hands, between fingers and under nails for about 20 seconds.",
+        "Rinse well and dry with a clean towel or air dry.",
+        "When hands are not visibly dirty and soap and water are unavailable, use hand rub containing at least 60% alcohol."
+      ],
+      "whyItWorks": "Soap, water and rubbing loosen dirt, chemicals and microbes so they can be rinsed away. Cleaning hands at the moments when contamination and transmission are most likely helps protect the person washing and the people around them.",
+      "sourceOrganization": "World Health Organization",
+      "sourceTitle": "WHO guidelines on hand hygiene in community settings",
+      "sourceUrl": "https://www.who.int/news/item/15-10-2025-new-guidelines-on-community-hand-hygiene-to-help-governments-reduce-the-spread-of-infectious-diseases",
+      "validationNote": "WHO's 2025 community guidance recommends plain soap and water and identifies five key times: before food preparation; before eating or feeding others; after toilet use or handling faeces; after coughing, sneezing or nose-blowing; and when hands are visibly dirty.",
+      "evidenceTitle": "CDC confirms the five-step, 20-second handwashing method",
+      "evidenceSummary": "CDC describes handwashing as one of the most effective ways to prevent germs from spreading and recommends wetting, lathering all hand surfaces, scrubbing for at least 20 seconds, rinsing and drying.",
+      "evidenceUrl": "https://www.cdc.gov/clean-hands/about/index.html",
+      "evidenceType": "Public-health guidance and evidence review",
+      "lastValidated": "2026-07-17"
+    }
+  ]
+}
