@@ -1,5 +1,8 @@
 (()=>{
-  const BATCHES=['/marimuthu/data/iniyavai-narpathu.json'];
+  const BATCHES=[
+    '/marimuthu/data/iniyavai-narpathu.json',
+    '/marimuthu/data/sirupanchamoolam-batch-01.json'
+  ];
   const COMPRESSED_BATCHES=[[
     '/marimuthu/data/inna-narpathu.part1',
     '/marimuthu/data/inna-narpathu.part2',
