@@ -8,6 +8,17 @@ const SEED_HEADLINE = process.env.SEED_HEADLINE || '';
 const SEED_NEWS_URL = process.env.SEED_NEWS_URL || '';
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
+const TRUSTED_DOMAINS = [
+  'reuters.com', 'apnews.com', 'bbc.com', 'bbc.co.uk', 'npr.org',
+  'theguardian.com', 'aljazeera.com', 'fifa.com', 'olympics.com',
+  'un.org', 'who.int', 'nasa.gov'
+];
+const STOPWORDS = new Set([
+  'about', 'after', 'again', 'against', 'amid', 'among', 'and', 'are', 'before',
+  'could', 'from', 'have', 'into', 'more', 'most', 'over', 'says', 'than', 'that',
+  'the', 'their', 'this', 'through', 'today', 'under', 'with', 'world', 'would'
+]);
+
 const normalize = value => String(value || '')
   .toLowerCase()
   .normalize('NFKD')
@@ -39,41 +50,79 @@ async function fetchWithRetry(url, options = {}, attempts = 3) {
   throw lastError;
 }
 
+function trustedHost(url) {
+  try {
+    const host = new URL(url).hostname.toLowerCase();
+    return TRUSTED_DOMAINS.some(domain => host === domain || host.endsWith(`.${domain}`));
+  } catch {
+    return false;
+  }
+}
+
+function headlineTerms(title) {
+  return [...new Set(normalize(title).split(' ')
+    .filter(term => term.length >= 4 && !STOPWORDS.has(term)))];
+}
+
+function selectWidelyCoveredEvent(articles) {
+  const usable = articles
+    .filter(article => article?.title && article?.url)
+    .filter(article => trustedHost(article.url));
+  const candidates = usable.length ? usable : articles.filter(article => article?.title && article?.url);
+  const limited = candidates.slice(0, 30);
+  const frequency = new Map();
+
+  for (const article of limited) {
+    for (const term of headlineTerms(article.title)) {
+      frequency.set(term, (frequency.get(term) || 0) + 1);
+    }
+  }
+
+  const scored = limited.map((article, index) => {
+    const repeatedCoverage = headlineTerms(article.title)
+      .reduce((sum, term) => sum + Math.max(0, (frequency.get(term) || 0) - 1), 0);
+    const officialSourceBoost = /fifa\.com|olympics\.com|un\.org|who\.int|nasa\.gov/i.test(article.url) ? 5 : 0;
+    const trustedSourceBoost = trustedHost(article.url) ? 3 : 0;
+    const positionBoost = Math.max(0, 5 - Math.floor(index / 5));
+    return { article, score: repeatedCoverage * 2 + officialSourceBoost + trustedSourceBoost + positionBoost };
+  }).sort((a, b) => b.score - a.score);
+
+  return {
+    selected: scored[0]?.article || limited[0] || null,
+    coverage: scored.slice(0, 8).map(item => item.article)
+  };
+}
+
 async function fetchNews(today) {
   if (SEED_THEME) {
     return {
       themeText: `${SEED_THEME} ${SEED_HEADLINE}`,
       headline: SEED_HEADLINE || 'Today’s verified news theme',
       newsUrl: SEED_NEWS_URL,
-      source: 'Seeded verified news context'
+      source: 'Seeded verified news context',
+      relatedHeadlines: [SEED_HEADLINE].filter(Boolean)
     };
   }
 
-  const query = encodeURIComponent('(world OR technology OR economy OR science OR climate OR health) sourcelang:english');
-  const endpoint = `https://api.gdeltproject.org/api/v2/doc/doc?query=${query}&mode=artlist&maxrecords=50&format=json&timespan=1d&sort=hybridrel`;
+  const query = encodeURIComponent('(world OR politics OR sports OR football OR entertainment OR culture OR technology OR economy OR science OR climate OR health) sourcelang:english');
+  const endpoint = `https://api.gdeltproject.org/api/v2/doc/doc?query=${query}&mode=artlist&maxrecords=100&format=json&timespan=1d&sort=hybridrel`;
   try {
     const response = await fetchWithRetry(endpoint, {
-      headers: { 'user-agent': 'share-capsule-daily-quote/1.1', accept: 'application/json' }
+      headers: { 'user-agent': 'share-capsule-daily-quote/1.2', accept: 'application/json' }
     });
     const payload = await response.json();
     const articles = Array.isArray(payload.articles) ? payload.articles : [];
     if (articles.length) {
-      const trusted = articles.filter(article => {
-        try {
-          const host = new URL(article.url).hostname.toLowerCase();
-          return ['reuters.com', 'apnews.com', 'bbc.com', 'bbc.co.uk', 'npr.org', 'theguardian.com', 'aljazeera.com']
-            .some(domain => host === domain || host.endsWith(`.${domain}`));
-        } catch {
-          return false;
-        }
-      });
-      const selected = (trusted.length ? trusted : articles).slice(0, 12);
-      return {
-        themeText: selected.map(article => `${article.title || ''} ${article.seendate || ''}`).join(' '),
-        headline: selected[0]?.title || 'Today’s leading news themes',
-        newsUrl: selected[0]?.url || '',
-        source: selected[0]?.domain || 'GDELT indexed news'
-      };
+      const { selected, coverage } = selectWidelyCoveredEvent(articles);
+      if (selected) {
+        return {
+          themeText: coverage.map(article => `${article.title || ''} ${article.seendate || ''}`).join(' '),
+          headline: selected.title || 'Today’s leading widely covered event',
+          newsUrl: selected.url || '',
+          source: selected.domain || new URL(selected.url).hostname,
+          relatedHeadlines: coverage.map(article => article.title).filter(Boolean)
+        };
+      }
     }
   } catch (error) {
     console.warn(`Live news fetch failed: ${error.message}`);
@@ -83,24 +132,31 @@ async function fetchNews(today) {
     themeText: `daily resilience reflection community progress ${today}`,
     headline: `Daily verified quote refresh for ${today}`,
     newsUrl: 'https://news.google.com/',
-    source: 'Continuity fallback'
+    source: 'Continuity fallback',
+    relatedHeadlines: []
   };
 }
 
 async function verifyQuote(entry) {
   const response = await fetchWithRetry(entry.sourceUrl, {
-    headers: { 'user-agent': 'share-capsule-quote-verifier/1.1' }
+    headers: { 'user-agent': 'share-capsule-quote-verifier/1.2' }
   }, 2);
   const sourceText = normalize(await response.text());
   return sourceText.includes(normalize(entry.quote));
 }
 
 function scoreQuote(entry, context, recentIds) {
-  const haystack = normalize(context.themeText);
-  const themeScore = (entry.themes || []).reduce(
-    (score, theme) => score + (haystack.includes(normalize(theme)) ? 3 : 0), 0
-  );
-  return themeScore - (recentIds.has(entry.id) ? 100 : 0);
+  const haystack = normalize(`${context.themeText} ${context.headline}`);
+  const themeScore = (entry.themes || []).reduce((score, theme) => {
+    const normalizedTheme = normalize(theme);
+    if (!normalizedTheme) return score;
+    if (haystack.includes(normalizedTheme)) return score + (normalizedTheme.includes(' ') ? 8 : 4);
+    const tokens = normalizedTheme.split(' ').filter(Boolean);
+    const tokenMatches = tokens.filter(token => haystack.includes(token)).length;
+    return score + tokenMatches;
+  }, 0);
+  const eventFitBoost = (entry.eventTypes || []).some(type => haystack.includes(normalize(type))) ? 6 : 0;
+  return themeScore + eventFitBoost - (recentIds.has(entry.id) ? 100 : 0);
 }
 
 const [data, library] = await Promise.all([
@@ -156,7 +212,8 @@ const published = {
     headline: context.headline,
     newsUrl: context.newsUrl,
     source: context.source,
-    explanation: `Selected because today’s leading news context matched the quote themes: ${(selected.themes || []).join(', ')}.`
+    relatedHeadlines: context.relatedHeadlines,
+    explanation: `Selected because a widely covered news event matched the quote themes: ${(selected.themes || []).join(', ')}.`
   }
 };
 
