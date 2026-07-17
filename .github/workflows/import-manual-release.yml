@@ -60,7 +60,7 @@ jobs:
               'coverLines': request.get('coverLines') or [request['title']],
           }
 
-          for optional in ['spotifyUrl', 'appleUrl', 'amazonUrl', 'artwork', 'publishedAt', 'featured', 'storeTitle']:
+          for optional in ['spotifyUrl', 'appleUrl', 'amazonUrl', 'artwork', 'publishedAt', 'featured', 'storeTitle', 'directUrl']:
               if request.get(optional) is not None:
                   item[optional] = request[optional]
 
