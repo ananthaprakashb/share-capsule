@@ -1,42 +1,42 @@
 {
-  "slug": "ayirai-malai-aivar-malai-history-tamil",
-  "title": "அயிரை மலை ஐவர் மலையான வரலாறு",
-  "objectKey": "அயிரை_மலை_ஐவர்_மலையான_வரலாறு.m4a",
+  "slug": "samuga-pinaippu-enum-mamarunthu",
+  "title": "சமூகப் பிணைப்பு எனும் மாமருந்து",
+  "objectKey": "சமூகப்_பிணைப்பு_எனும்_மாமருந்து.m4a",
   "creator": "Share Capsule",
   "type": "Audio article",
-  "category": "Tamil History",
+  "category": "Tamil Social Wellness",
   "language": "Tamil",
-  "publishedAt": "2026-07-15",
-  "description": "அயிரை மலை, அதன் ஐவர் மலை மரபு, வரலாற்றுச் சுவடுகள் மற்றும் பண்பாட்டு முக்கியத்துவத்தை அறிமுகப்படுத்தும் தமிழ் ஆடியோ கட்டுரை.",
-  "coverEyebrow": "தமிழ் வரலாறு",
-  "coverBackground": "linear-gradient(145deg,#3f2a1d,#7c4a2d 55%,#b7791f)",
+  "publishedAt": "2026-07-17",
+  "description": "சமூகப் பிணைப்பு, உறவுகள் மற்றும் மனித நலன் ஒன்றோடொன்று எவ்வாறு தொடர்புடையவை என்பதை அறிமுகப்படுத்தும் தமிழ் ஆடியோ கட்டுரை.",
+  "coverEyebrow": "தமிழ் சமூக நலம்",
+  "coverBackground": "linear-gradient(145deg,#3f2a56,#7c3f74 55%,#d28c6c)",
   "coverLines": [
-    "அயிரை மலை",
-    "ஐவர் மலையான வரலாறு"
+    "சமூகப் பிணைப்பு",
+    "எனும் மாமருந்து"
   ],
   "shareMessages": {
     "friend": {
       "label": "நண்பர்",
-      "icon": "🎧",
-      "text": "அயிரை மலை மற்றும் ஐவர் மலை வரலாற்றைப் பற்றிய இந்த தமிழ் ஆடியோவை கேளுங்கள்."
+      "icon": "🤝",
+      "text": "சமூகப் பிணைப்பின் முக்கியத்துவத்தைப் பற்றிய இந்த தமிழ் ஆடியோவை கேளுங்கள்."
     },
     "family": {
       "label": "குடும்பம்",
-      "icon": "⛰️",
-      "text": "தமிழர் வரலாற்றை அறிய குடும்பத்துடன் பகிர வேண்டிய அயிரை மலை ஆடியோ."
+      "icon": "👨‍👩‍👧",
+      "text": "உறவுகளும் சமூகப் பிணைப்பும் நலனுக்கு ஏன் முக்கியம் என்பதைப் பேசும் இந்த ஆடியோவை குடும்பத்துடன் பகிருங்கள்."
     },
-    "topic": {
-      "label": "வரலாற்று ஆர்வலர்",
-      "icon": "🏛️",
-      "text": "அயிரை மலை, ஐவர் மலை மரபு மற்றும் அதன் வரலாற்று முக்கியத்துவத்தை அறிமுகப்படுத்தும் தமிழ் ஆடியோ."
+    "wellness": {
+      "label": "நல வாழ்வு ஆர்வலர்",
+      "icon": "🌿",
+      "text": "மனித நலனில் சமூகத் தொடர்புகளின் பங்கை அறிமுகப்படுத்தும் தமிழ் ஆடியோ."
     }
   },
   "tags": [
     "Tamil",
-    "Ayirai Malai",
-    "Aivar Malai",
-    "Tamil history",
-    "heritage",
-    "culture"
+    "social connection",
+    "relationships",
+    "wellness",
+    "community",
+    "mental health"
   ]
 }
