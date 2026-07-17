@@ -1,15 +1,14 @@
 {
   "region": "Tamil Nadu, India",
-  "policy": "Only first-party government, venue, institution, or organizer pages are accepted. Aggregators, copied listings, social posts, and unverified submissions are excluded.",
+  "policy": "Only first-party government, public institution, or official programme portals are included. Aggregators, copied listings, social posts, and unverified submissions are excluded.",
+  "categories": ["education", "training", "employment"],
   "sources": [
-    {
-      "id": "tn-hrce",
-      "name": "Tamil Nadu Hindu Religious and Charitable Endowments Department",
-      "authority": "Government of Tamil Nadu",
-      "type": "government",
-      "officialDomain": "hrce.tn.gov.in",
-      "coverage": "Public temple festivals and observances throughout Tamil Nadu",
-      "monthUrlTemplate": "https://hrce.tn.gov.in/hrcehome/hrce-festival-calendar.php?month={month}&year={year}"
-    }
+    {"id":"tn-dce","category":"education","name":"Directorate of Collegiate Education","authority":"Department of Higher Education, Government of Tamil Nadu","officialDomain":"tndce.tn.gov.in","coverage":"Government Arts and Science College admissions, announcements and related higher-education notices","url":"https://tndce.tn.gov.in/Home/announcements_cms"},
+    {"id":"tn-tils","category":"education","name":"Tamil Nadu Institute of Labour Studies","authority":"Government of Tamil Nadu","officialDomain":"tils.tn.gov.in","coverage":"Admissions, labour-management courses, professional programmes and training calendar","url":"https://tils.tn.gov.in/"},
+    {"id":"tn-det","category":"employment","name":"Department of Employment and Training","authority":"Government of Tamil Nadu","officialDomain":"tnvelaivaaippu.gov.in","coverage":"Employment registration, career guidance, competitive-exam coaching, job fairs and skill-training guidance","url":"https://www.tnvelaivaaippu.gov.in/activities.html"},
+    {"id":"tn-jobfair","category":"employment","name":"Tamil Nadu Employment Exchange Job Fair Portal","authority":"Department of Employment and Training, Government of Tamil Nadu","officialDomain":"employmentexchange.tn.gov.in","coverage":"Official job-fair registration, candidate instructions and public placement events","url":"https://employmentexchange.tn.gov.in/jobfair/JobSeekerLogin.htm?method=logout"},
+    {"id":"tn-scd-training","category":"training","name":"Training and Employment for Differently Abled Persons","authority":"Commissionerate for Welfare of the Differently Abled, Government of Tamil Nadu","officialDomain":"scd.tn.gov.in","coverage":"District-level skill training, multimedia training, employment support and self-employment schemes","url":"https://www.scd.tn.gov.in/training_Employ.php"},
+    {"id":"tn-omcl","category":"employment","name":"Overseas Manpower Corporation Limited","authority":"Government of Tamil Nadu","officialDomain":"omcmanpower.tn.gov.in","coverage":"Official overseas employment, nursing, candidate and student registration opportunities","url":"https://www.omcmanpower.tn.gov.in/registration"},
+    {"id":"tn-naanmudhalvan","category":"training","name":"Naan Mudhalvan","authority":"Tamil Nadu Skill Development Corporation, Government of Tamil Nadu","officialDomain":"naanmudhalvan.tn.gov.in","coverage":"Student skill development, industry-aligned learning, bootcamps, competitions and career-readiness programmes","url":"https://naanmudhalvan.tn.gov.in/"}
   ]
 }
