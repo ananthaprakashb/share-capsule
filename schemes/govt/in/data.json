@@ -1,0 +1,105 @@
+{
+  "title": "இந்திய அரசு நலத்திட்டங்கள்",
+  "subtitle": "இந்தியா முழுவதும் தகுதியான மக்களுக்கு பயன்படும் மத்திய அரசுத் திட்டங்கள்",
+  "jurisdiction": "India",
+  "verifiedOn": "2026-07-16",
+  "notice": "இந்தப் பட்டியல் அதிகாரப்பூர்வ இந்திய அரசு தளங்களில் சரிபார்க்கப்பட்ட தகவல்களின் சுருக்கம். விண்ணப்பம் திறந்திருப்பது, வருமான வரம்பு, வங்கி அல்லது மாநில நடைமுறை, பயனாளி தேர்வு மற்றும் ஆவணத் தேவைகள் மாறலாம். விண்ணப்பிக்கும் முன் இணைக்கப்பட்ட அதிகாரப்பூர்வ தளத்தில் தற்போதைய விதிகளை உறுதிப்படுத்தவும்.",
+  "schemes": [
+    {
+      "id": "myscheme-india",
+      "name": "myScheme — உங்களுக்கு பொருந்தும் அரசுத் திட்டங்களைத் தேடுங்கள்",
+      "category": "திட்டத் தேடல்",
+      "summary": "வயது, பாலினம், மாநிலம், சமூக மற்றும் பொருளாதார விவரங்களின் அடிப்படையில் மத்திய மற்றும் மாநிலத் திட்டங்களை கண்டறிய உதவும் இந்திய அரசின் ஒருங்கிணைந்த தளம்.",
+      "whoMayBenefit": "தமக்கு கிடைக்கக்கூடிய அரசு உதவிகள் குறித்து உறுதி இல்லாத இந்திய குடிமக்கள்.",
+      "howToStart": "அதிகாரப்பூர்வ தளத்தில் உங்கள் அடிப்படை விவரங்களை வழங்கி பொருந்தும் திட்டங்களைப் பாருங்கள்; பின்னர் ஒவ்வொரு திட்டத்தின் அதிகாரப்பூர்வ விண்ணப்பப் பக்கத்தைத் திறக்கவும்.",
+      "status": "Official discovery portal",
+      "sourceOrganization": "National Portal of India / Government of India",
+      "sourceUrl": "https://www.india.gov.in/my-government/schemes",
+      "verifiedOn": "2026-07-16"
+    },
+    {
+      "id": "pm-kisan",
+      "name": "பிரதான் மந்திரி கிசான் சம்மான் நிதி — PM-KISAN",
+      "category": "விவசாயம்",
+      "summary": "தகுதியான நிலம் வைத்திருக்கும் விவசாயக் குடும்பங்களுக்கு ஆண்டுக்கு ₹6,000 மூன்று சம தவணைகளாக நேரடி வங்கி பரிமாற்றம் செய்யும் மத்திய அரசுத் திட்டம்.",
+      "whoMayBenefit": "திட்ட வழிகாட்டுதலின் கீழ் தகுதியுடைய நிலம் வைத்திருக்கும் விவசாயக் குடும்பங்கள்; விலக்கு விதிகள் பொருந்தும்.",
+      "howToStart": "PM-KISAN தளத்தில் புதிய விவசாயி பதிவு, e-KYC, பயனாளி நிலை மற்றும் வங்கி விவரங்களைச் சரிபார்க்கவும்.",
+      "status": "Active official portal",
+      "sourceOrganization": "Department of Agriculture and Farmers Welfare, Government of India",
+      "sourceUrl": "https://pmkisan.gov.in/homenew.aspx",
+      "verifiedOn": "2026-07-16"
+    },
+    {
+      "id": "pmay-u-2",
+      "name": "பிரதான் மந்திரி ஆவாஸ் யோஜனா — நகர்ப்புறம் 2.0",
+      "category": "வீடு",
+      "summary": "2024–2029 காலத்தில் தகுதியான நகர்ப்புற EWS, LIG மற்றும் MIG குடும்பங்களுக்கு வீடு கட்ட, வாங்க அல்லது வாடகைக்கு பெற உதவும் திட்டம்; சில பிரிவுகளில் ஒரு வீட்டுக்கு ₹2.5 லட்சம் வரை மத்திய உதவி வழங்கப்படலாம்.",
+      "whoMayBenefit": "நகர்ப்புறத்தில் வசிக்கும், இந்தியாவில் குடும்ப உறுப்பினர் பெயரில் பக்கா வீடு இல்லாத, திட்ட வருமான வரம்பிற்குள் வரும் குடும்பங்கள்.",
+      "howToStart": "PMAY-U 2.0 அதிகாரப்பூர்வ தகுதி சோதனையை முடித்து, பொருத்தமான BLC, AHP, ARH அல்லது ISS பிரிவைத் தேர்ந்தெடுக்கவும்.",
+      "status": "Applications subject to verification",
+      "sourceOrganization": "Ministry of Housing and Urban Affairs, Government of India",
+      "sourceUrl": "https://pmaymis.gov.in/PMAYMIS2_2024/PmayUrban.aspx",
+      "verifiedOn": "2026-07-16"
+    },
+    {
+      "id": "pmuy-ujjwala-2",
+      "name": "பிரதான் மந்திரி உஜ்ஜ்வலா யோஜனா 2.0",
+      "category": "சமையல் எரிவாயு",
+      "summary": "தகுதியுடைய ஏழை குடும்பத்தைச் சேர்ந்த வயது வந்த பெண்களுக்கு புதிய LPG இணைப்பைப் பெற உதவும் திட்டம்; ஒரே குடும்பத்தில் ஏற்கனவே வேறு LPG இணைப்பு இருக்கக்கூடாது.",
+      "whoMayBenefit": "18 வயது முடிந்த, தகுதியுடைய ஏழை குடும்பத்தைச் சேர்ந்த பெண்; குடும்பத்தில் வேறு எண்ணெய் நிறுவன LPG இணைப்பு இல்லாதவர்.",
+      "howToStart": "PMUY தளத்தில் ஆன்லைனில் கோரிக்கை செய்யவும் அல்லது தேர்ந்தெடுத்த LPG விநியோகஸ்தரிடம் KYC, ஆதார், குடும்ப ஆவணம் மற்றும் வங்கி விவரங்களுடன் விண்ணப்பிக்கவும்.",
+      "status": "New connections being released",
+      "sourceOrganization": "Ministry of Petroleum and Natural Gas, Government of India",
+      "sourceUrl": "https://www.pmuy.gov.in/ujjwala2.html",
+      "verifiedOn": "2026-07-16"
+    },
+    {
+      "id": "pm-mudra",
+      "name": "பிரதான் மந்திரி முத்ரா யோஜனா — PMMY",
+      "category": "சுயதொழில் மற்றும் சிறு வணிகம்",
+      "summary": "சிறு மற்றும் குறு நிறுவனங்களுக்கு அடமானமில்லா நிறுவனக் கடன் கிடைக்க உதவும் திட்டம். Shishu முதல் Tarun Plus வரை தகுதி மற்றும் முந்தைய திருப்பிச் செலுத்தல் அடிப்படையில் ₹20 லட்சம் வரை கடன் வகைகள் உள்ளன.",
+      "whoMayBenefit": "உற்பத்தி, வர்த்தகம், சேவை மற்றும் விவசாயம் சார்ந்த துணைச் செயல்பாடுகளில் ஈடுபடும் தகுதியான குறு தொழில்முனைவோர்.",
+      "howToStart": "பங்கேற்கும் வங்கி, சிறு நிதி வங்கி, RRB, NBFC அல்லது MFI-யை அணுகி வணிகத் திட்டம் மற்றும் தேவையான KYC ஆவணங்களுடன் விண்ணப்பிக்கவும்.",
+      "status": "Officially active",
+      "sourceOrganization": "Department of Financial Services, Ministry of Finance, Government of India",
+      "sourceUrl": "https://www.financialservices.gov.in/pradhan-mantri-mudra-yojana-pmmy",
+      "verifiedOn": "2026-07-16"
+    },
+    {
+      "id": "pm-jan-dhan",
+      "name": "பிரதான் மந்திரி ஜன்-தன் யோஜனா — PMJDY",
+      "category": "வங்கி சேவை",
+      "summary": "வங்கி சேவை இல்லாத மக்களுக்கு அடிப்படை சேமிப்பு வங்கி கணக்கு, பணப் பரிமாற்றம், காப்பீடு மற்றும் ஓய்வூதிய சேவைகளுக்கான நிதி உட்சேர்க்கை வாயிலை வழங்கும் திட்டம்.",
+      "whoMayBenefit": "அடிப்படை வங்கி கணக்கு இல்லாத அல்லது எளிய நிதிச் சேவைகள் தேவைப்படும் தகுதியான நபர்கள்.",
+      "howToStart": "அருகிலுள்ள வங்கி கிளை அல்லது Bank Mitra-வை அணுகி ஏற்றுக்கொள்ளப்படும் KYC ஆவணங்களுடன் PMJDY கணக்கைப் பற்றி கேட்கவும்.",
+      "status": "Officially active",
+      "sourceOrganization": "Department of Financial Services, Ministry of Finance, Government of India",
+      "sourceUrl": "https://financialservices.gov.in/schemes-and-services",
+      "verifiedOn": "2026-07-16"
+    },
+    {
+      "id": "jan-suraksha-insurance",
+      "name": "ஜன் சுரக்ஷா காப்பீடுகள் — PMSBY மற்றும் PMJJBY",
+      "category": "குறைந்த கட்டண காப்பீடு",
+      "summary": "வங்கி கணக்கின் வழியாக சேரக்கூடிய குறைந்த ஆண்டு கட்டண விபத்து காப்பீடு மற்றும் ஆயுள் காப்பீட்டு திட்டங்கள். வயது, புதுப்பித்தல் மற்றும் காப்பீட்டு விதிகள் தனித்தனியாக பொருந்தும்.",
+      "whoMayBenefit": "திட்ட வயது வரம்பிற்குள் உள்ள, பங்கேற்கும் வங்கிக் கணக்கைக் கொண்ட மற்றும் auto-debit ஒப்புதல் வழங்கும் தகுதியான நபர்கள்.",
+      "howToStart": "உங்கள் வங்கி, அஞ்சலகம் அல்லது அதிகாரப்பூர்வ டிஜிட்டல் வங்கி வழியாக PMSBY மற்றும் PMJJBY சேர்க்கை, கட்டணம் மற்றும் காப்பீட்டு நிபந்தனைகளை உறுதிப்படுத்தவும்.",
+      "status": "Officially active",
+      "sourceOrganization": "Department of Financial Services, Ministry of Finance, Government of India",
+      "sourceUrl": "https://financialservices.gov.in/schemes-and-services",
+      "verifiedOn": "2026-07-16"
+    },
+    {
+      "id": "atal-pension-yojana",
+      "name": "அடல் பென்ஷன் யோஜனா — APY",
+      "category": "ஓய்வூதியம்",
+      "summary": "தகுதியான சந்தாதாரர்கள் முறையான பங்களிப்பு செய்து 60 வயதுக்குப் பிறகு உத்தரவாத மாதாந்திர ஓய்வூதியத்தைப் பெற உதவும் மத்திய அரசின் ஓய்வூதியத் திட்டம்.",
+      "whoMayBenefit": "தற்போதைய APY வயது, வரி மற்றும் கணக்கு விதிகளுக்குள் வரும் வங்கி அல்லது அஞ்சலக சேமிப்பு கணக்குடைய தகுதியான இந்தியர்கள்.",
+      "howToStart": "வங்கி அல்லது அஞ்சலகத்தை அணுகி தற்போதைய தகுதி, பங்களிப்பு அட்டவணை, nominee மற்றும் auto-debit விவரங்களை உறுதிப்படுத்தி சேரவும்.",
+      "status": "Officially active",
+      "sourceOrganization": "Department of Financial Services, Ministry of Finance, Government of India",
+      "sourceUrl": "https://financialservices.gov.in/schemes-and-services",
+      "verifiedOn": "2026-07-16"
+    }
+  ]
+}
