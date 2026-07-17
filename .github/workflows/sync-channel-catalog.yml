@@ -49,6 +49,12 @@ jobs:
               'curious': {'label': 'Curious learner', 'icon': '💡', 'text': 'This looked useful and worth a quick watch.'},
               'special': {'label': 'Someone special', 'icon': '✨', 'text': 'This video made me think of you ❤️'}
           }
+          story_messages = {
+              'friend': {'label': 'Close friend', 'icon': '📖', 'text': 'Thought you might enjoy this five-minute Tamil story.'},
+              'family': {'label': 'Family', 'icon': '👨‍👩‍👧', 'text': 'Sharing this thoughtful Tamil story with the family.'},
+              'reader': {'label': 'Story reader', 'icon': '📚', 'text': 'Here is a Tamil story worth reading and reflecting on.'},
+              'learner': {'label': 'Curious learner', 'icon': '💡', 'text': 'This story connects history, learning and modern ideas.'}
+          }
 
           def spotify_search(title):
               return 'https://open.spotify.com/search/' + quote(f'{title} தமிழாலே', safe='')
@@ -63,10 +69,15 @@ jobs:
               video_ids = item.get('videoIds') or []
               first_video = video_ids[0] if video_ids else None
               is_music = bool(item.get('music'))
+              direct_url = item.get('directUrl')
+              is_story = bool(direct_url) and not is_music
               title = item['title']
               store_title = item.get('storeTitle') or title
 
               platforms = []
+              if is_story:
+                  platforms.append({'label': 'Read story', 'icon': '📖', 'url': direct_url})
+
               if is_music:
                   if item.get('spotifyUrl'):
                       platforms.append({'label': 'Spotify', 'icon': '●', 'url': item['spotifyUrl']})
@@ -111,22 +122,47 @@ jobs:
               else:
                   primary = None
 
+              if is_music:
+                  release_type = 'Music release'
+                  default_category = 'Tamil Music'
+                  default_language = 'Tamil'
+                  default_description = 'A Tamil music release by தமிழாலே.'
+                  cover_background = 'linear-gradient(145deg,#2b5876,#4e4376)'
+                  cover_eyebrow = 'Tamil release'
+                  share_messages = music_messages
+              elif is_story:
+                  release_type = 'Story'
+                  default_category = 'Tamil Story'
+                  default_language = 'Tamil'
+                  default_description = 'A five-minute Tamil story from Think Five Minutes.'
+                  cover_background = 'linear-gradient(145deg,#5f3b2d,#9a6a45 55%,#d4a574)'
+                  cover_eyebrow = item.get('category') or 'Tamil Story'
+                  share_messages = story_messages
+              else:
+                  release_type = 'Video release'
+                  default_category = 'Video'
+                  default_language = 'English'
+                  default_description = 'A video release by தமிழாலே.'
+                  cover_background = 'linear-gradient(145deg,#141e30,#243b55)'
+                  cover_eyebrow = item.get('category') or 'Video'
+                  share_messages = video_messages
+
               release = {
                   'slug': item['slug'],
                   'title': title,
                   'artist': item.get('artist') or 'தமிழாலே',
-                  'type': 'Music release' if is_music else 'Video release',
-                  'category': item.get('category') or ('Tamil Music' if is_music else 'Video'),
-                  'language': item.get('language') or ('Tamil' if is_music else 'English'),
-                  'description': item.get('description') or ('A Tamil music release by தமிழாலே.' if is_music else 'A video release by தமிழாலே.'),
+                  'type': release_type,
+                  'category': item.get('category') or default_category,
+                  'language': item.get('language') or default_language,
+                  'description': item.get('description') or default_description,
                   'coverImage': item.get('artwork') or (f'https://img.youtube.com/vi/{first_video}/hqdefault.jpg' if first_video else ''),
-                  'coverBackground': 'linear-gradient(145deg,#2b5876,#4e4376)' if is_music else 'linear-gradient(145deg,#141e30,#243b55)',
-                  'coverEyebrow': 'Tamil release' if is_music else (item.get('category') or 'Video'),
+                  'coverBackground': cover_background,
+                  'coverEyebrow': cover_eyebrow,
                   'coverLines': item.get('coverLines') or [title],
                   'previewUrl': '',
                   'demoTone': False,
                   'platforms': platforms,
-                  'shareMessages': music_messages if is_music else video_messages
+                  'shareMessages': share_messages
               }
               if primary:
                   release['primaryPlayer'] = primary
