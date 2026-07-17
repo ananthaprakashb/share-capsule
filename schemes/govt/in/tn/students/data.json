@@ -1,0 +1,141 @@
+{
+  "title": "தமிழ்நாடு அரசு மாணவர் நலத்திட்டங்கள்",
+  "subtitle": "பள்ளி, கல்லூரி, தொழில்நுட்பக் கல்வி மற்றும் ஆராய்ச்சி மாணவர்களுக்கு பயன்படும் தமிழ்நாடு அரசு ஆதரவு திட்டங்கள்",
+  "jurisdiction": "Tamil Nadu, India",
+  "verifiedOn": "2026-07-17",
+  "notice": "இந்தப் பட்டியல் தமிழ்நாடு அரசின் அதிகாரப்பூர்வ தளங்களில் 17 ஜூலை 2026 அன்று மறுசரிபார்க்கப்பட்டது. எல்லா மாணவர்களும் எல்லா திட்டங்களுக்கும் தகுதி பெறமாட்டார்கள். பள்ளி வகை, பாடநெறி, சமூகப் பிரிவு, மாற்றுத்திறன், குடும்ப வருமானம், மதிப்பெண், தமிழ்நாடு பூர்வீகம் மற்றும் நிறுவனம் சார்ந்த விதிகள் மாறலாம். விண்ணப்ப காலம், தொகை மற்றும் ஆவணத் தேவைகளை இணைக்கப்பட்ட அதிகாரப்பூர்வ தளத்தில் மீண்டும் உறுதிப்படுத்தவும்.",
+  "schemes": [
+    {
+      "id": "tn-pudhumai-penn",
+      "name": "மூவலூர் இராமாமிர்தம் அம்மையார் புதுமைப் பெண் திட்டம்",
+      "category": "பெண் மாணவர் உயர்கல்வி உதவி",
+      "summary": "அரசுப் பள்ளிகளில் படித்து உயர்கல்வியில் சேரும் தகுதியான பெண் மாணவர்களுக்கு மாதாந்திர நிதி உதவி வழங்கி கல்லூரி தொடர்ச்சியை ஊக்குவிக்கும் தமிழ்நாடு அரசு திட்டம்.",
+      "whoMayBenefit": "அரசுப் பள்ளிக் கல்விப் பின்னணி மற்றும் தற்போதைய உயர்கல்விச் சேர்க்கை விதிகளை பூர்த்தி செய்யும் தகுதியான பெண் மாணவர்கள்.",
+      "howToStart": "கல்லூரியின் UMIS அல்லது நியமிக்கப்பட்ட மாணவர் நல அலுவலரிடம் பதிவு, வங்கி கணக்கு மற்றும் கல்வி விவரங்கள் புதுப்பிக்கப்பட்டுள்ளதா எனச் சரிபார்க்கவும்.",
+      "status": "Active state higher-education support",
+      "sourceOrganization": "Directorate of Collegiate Education, Government of Tamil Nadu",
+      "sourceUrl": "https://tndce.tn.gov.in/Home/scholarship",
+      "verifiedOn": "2026-07-17"
+    },
+    {
+      "id": "tn-tamil-pudhalvan",
+      "name": "தமிழ்ப் புதல்வன் திட்டம்",
+      "category": "ஆண் மாணவர் உயர்கல்வி உதவி",
+      "summary": "அரசுப் பள்ளிப் பின்னணியிலிருந்து உயர்கல்வியில் சேரும் தகுதியான ஆண் மாணவர்களுக்கு மாதாந்திர உதவி வழங்கி கல்வி தொடர்ச்சியை ஆதரிக்கும் மாநிலத் திட்டம்.",
+      "whoMayBenefit": "தற்போதைய அரசு வழிகாட்டுதலில் குறிப்பிடப்பட்ட பள்ளிக் கல்வி மற்றும் உயர்கல்விச் சேர்க்கை நிபந்தனைகளை பூர்த்தி செய்யும் ஆண் மாணவர்கள்.",
+      "howToStart": "கல்லூரி நிர்வாகம் அல்லது UMIS மாணவர் பதிவில் Aadhaar, வங்கி மற்றும் கல்வி விவரங்கள் சரியாக உள்ளதா என உறுதிப்படுத்தவும்.",
+      "status": "Active state higher-education support",
+      "sourceOrganization": "Department of Higher Education, Government of Tamil Nadu",
+      "sourceUrl": "https://tndce.tn.gov.in/",
+      "verifiedOn": "2026-07-17"
+    },
+    {
+      "id": "tn-bc-mbc-dnc-scholarships",
+      "name": "BC, MBC மற்றும் DNC மாணவர் கல்வி உதவித்தொகைகள்",
+      "category": "சமூகநீதி கல்வி உதவி",
+      "summary": "பள்ளி, ITI, பாலிடெக்னிக், பட்டப்படிப்பு, முதுநிலை, தொழில்முறை மற்றும் Ph.D. படிப்புகளுக்கான கட்டணம், தேர்வுக் கட்டணம், புத்தகத் தொகை மற்றும் சில விடுதி உதவிகளை வழங்கும் திட்டத் தொகுப்பு.",
+      "whoMayBenefit": "தமிழ்நாட்டைச் சேர்ந்த BC, MBC அல்லது DNC மாணவர்கள்; குறிப்பிட்ட திட்டங்களில் குடும்ப வருமான வரம்பு மற்றும் கல்வி நிறுவனம் சார்ந்த நிபந்தனைகள் பொருந்தும்.",
+      "howToStart": "பள்ளி அல்லது கல்லூரி அலுவலகத்தில் விண்ணப்பத்தைப் பெற்று, சமூகச் சான்று, வருமானச் சான்று, வங்கி மற்றும் கல்வி ஆவணங்களுடன் நிறுவனத்தின் வழியாக சமர்ப்பிக்கவும்.",
+      "status": "Multiple active scholarship routes",
+      "sourceOrganization": "Backward Classes Welfare Department, Government of Tamil Nadu",
+      "sourceUrl": "https://www.bcw.tn.gov.in/sub_page/8",
+      "verifiedOn": "2026-07-17"
+    },
+    {
+      "id": "tn-bc-central-institutions",
+      "name": "IIT, IIM, IIIT, NIT மற்றும் மத்திய பல்கலைக்கழக மாணவர் உதவி",
+      "category": "உயர்கல்விக் கட்டண ஈடு",
+      "summary": "தமிழ்நாட்டைச் சேர்ந்த தகுதியான BC, MBC மற்றும் DNC மாணவர்கள் தேர்ந்தெடுக்கப்பட்ட மத்திய அரசு உயர்கல்வி நிறுவனங்களில் படிக்கும் போது கல்விக் கட்டணங்களுக்கான ஈடு பெற உதவும் திட்டம்.",
+      "whoMayBenefit": "தமிழ்நாடு பூர்வீக BC, MBC அல்லது DNC மாணவர்கள்; அங்கீகரிக்கப்பட்ட மத்திய நிறுவனத்தில் UG அல்லது PG படிப்பு மற்றும் தற்போதைய வருமான வரம்பு பொருந்தும்.",
+      "howToStart": "Backward Classes Welfare Directorate அறிவிப்பு மற்றும் விண்ணப்பப் படிவத்தைப் பார்த்து, நிறுவனம் உறுதிப்படுத்திய கட்டண விவரங்களுடன் விண்ணப்பிக்கவும்.",
+      "status": "State reimbursement scheme",
+      "sourceOrganization": "Backward Classes, Most Backward Classes and Minorities Welfare Department",
+      "sourceUrl": "https://bcmbcmw.tn.gov.in/welfschemes.htm",
+      "verifiedOn": "2026-07-17"
+    },
+    {
+      "id": "tn-sc-st-higher-education",
+      "name": "SC/ST மாநில சிறப்பு மற்றும் உயர்கல்வி உதவித்தொகைகள்",
+      "category": "ஆதிதிராவிடர் மற்றும் பழங்குடியினர் நலம்",
+      "summary": "Post-matric, State Special Scholarship மற்றும் Higher Education Special Scholarship போன்ற கல்வி உதவி சேவைகளை தமிழ்நாடு அரசு நிறுவனங்கள் வழியாக செயல்படுத்துகிறது.",
+      "whoMayBenefit": "தகுதியான SC அல்லது ST மாணவர்கள்; பாடநெறி, நிறுவனம், வருமானம் மற்றும் சமூகச் சான்று விதிகள் தனித்திட்டத்துக்கு மாறும்.",
+      "howToStart": "கல்வி நிறுவனத்தின் scholarship nodal officer அல்லது மாவட்ட ஆதிதிராவிடர் மற்றும் பழங்குடியினர் நல அலுவலகத்தின் வழியாக விண்ணப்ப நடைமுறையைத் தொடங்கவும்.",
+      "status": "Institution-routed scholarship services",
+      "sourceOrganization": "Information Technology and Digital Services Department, Government of Tamil Nadu",
+      "sourceUrl": "https://it.tn.gov.in/en/List_of_services_offered_through_institutions",
+      "verifiedOn": "2026-07-17"
+    },
+    {
+      "id": "tn-differently-abled-scholarship",
+      "name": "மாற்றுத்திறனாளி மாணவர்களுக்கான கல்வி உதவித்தொகை",
+      "category": "மாற்றுத்திறனாளி மாணவர் ஆதரவு",
+      "summary": "I முதல் VIII வகுப்பு வரை புத்தகம் மற்றும் நோட்டுப் புத்தக உதவியும், IX வகுப்பு முதல் கல்லூரி மற்றும் தொழில்முறை படிப்புகள் வரை வருடாந்திர கல்வி உதவித்தொகையும் வழங்கப்படுகிறது.",
+      "whoMayBenefit": "அரசால் அங்கீகரிக்கப்பட்ட பள்ளி, கல்லூரி அல்லது பயிற்சி மையத்தில் படிக்கும் தகுதியான மாற்றுத்திறனாளி மாணவர்கள்; மேல்வகுப்புகளுக்கு குறைந்தபட்ச மதிப்பெண் விதி இருக்கலாம்.",
+      "howToStart": "மாவட்ட மாற்றுத்திறனாளிகள் நல அலுவலரிடம் கல்விச் சான்று, மாற்றுத்திறன் அடையாள அட்டை மற்றும் மதிப்பெண் ஆவணங்களுடன் விண்ணப்பிக்கவும்.",
+      "status": "Active state scholarship",
+      "sourceOrganization": "Commissionerate for Welfare of the Differently Abled, Tamil Nadu",
+      "sourceUrl": "https://www.scd.tn.gov.in/specialedu.php",
+      "verifiedOn": "2026-07-17"
+    },
+    {
+      "id": "tn-readers-allowance",
+      "name": "பார்வைத்திறன் குறைபாடுள்ள மாணவர்களுக்கான வாசிப்பாளர் உதவித்தொகை",
+      "category": "அணுகல் மற்றும் கல்வி ஆதரவு",
+      "summary": "IX–XII, பட்டப்படிப்பு, முதுநிலை மற்றும் தொழில்முறை படிப்புகளில் உள்ள பார்வைத்திறன் குறைபாடுள்ள மாணவர்களுக்கு வாசிப்பாளர் செலவுக்கான வருடாந்திர உதவி வழங்கப்படுகிறது.",
+      "whoMayBenefit": "IX வகுப்பு மற்றும் அதற்கு மேல் படிக்கும் பார்வைத்திறன் குறைபாடுள்ள மாணவர்கள்; அங்கீகரிக்கப்பட்ட நிறுவனம் மற்றும் வாசிப்பாளர் சான்று தேவை.",
+      "howToStart": "மாவட்ட மாற்றுத்திறனாளிகள் நல அலுவலகத்தில் நிறுவனச் சான்று, மாற்றுத்திறன் அட்டை, மதிப்பெண் பட்டியல் மற்றும் வாசிப்பாளர் சான்றுடன் விண்ணப்பிக்கவும்.",
+      "status": "Active accessibility allowance",
+      "sourceOrganization": "Commissionerate for Welfare of the Differently Abled, Tamil Nadu",
+      "sourceUrl": "https://www.scd.tn.gov.in/financial_assist.php",
+      "verifiedOn": "2026-07-17"
+    },
+    {
+      "id": "tn-free-bicycle",
+      "name": "மேல்நிலைப் பள்ளி மாணவர்களுக்கான இலவச மிதிவண்டி",
+      "category": "பள்ளிப் போக்குவரத்து ஆதரவு",
+      "summary": "அரசு, அரசு உதவிபெறும் மற்றும் பகுதி உதவிபெறும் பள்ளிகளில் XI வகுப்பு படிக்கும் மாணவர்களுக்கு பள்ளிச்செலவை எளிதாக்க இலவச மிதிவண்டி வழங்கப்படுகிறது.",
+      "whoMayBenefit": "தகுதியான பள்ளிகளில் +1 படிக்கும் மாணவர்கள்; அதிகாரப்பூர்வப் பக்கத்தின் படி வருமானம் அல்லது சமூகப் பிரிவு நிபந்தனை இல்லை.",
+      "howToStart": "தனிப்பட்ட இணைய விண்ணப்பம் பொதுவாக தேவையில்லை; பள்ளித் தலைமை ஆசிரியரிடம் மாணவர் பட்டியலில் பெயர் உள்ளதா என சரிபார்க்கவும்.",
+      "status": "School-distributed benefit",
+      "sourceOrganization": "BC, MBC and Minorities Welfare Department, Government of Tamil Nadu",
+      "sourceUrl": "https://bcmbcmw.tn.gov.in/welfschemes.htm",
+      "verifiedOn": "2026-07-17"
+    },
+    {
+      "id": "tn-trust-scholarship",
+      "name": "Tamil Nadu Rural Students Talent Search — TRuST",
+      "category": "கிராமப்புற திறமை உதவித்தொகை",
+      "summary": "கிராமப்புற பள்ளிகளில் கல்வித் திறமை கொண்ட IX வகுப்பு மாணவர்களைத் தேர்வு செய்து மேல்கல்விக்கான உதவித்தொகை வழங்கும் மாநிலத் தேர்வு திட்டம்.",
+      "whoMayBenefit": "அங்கீகரிக்கப்பட்ட கிராமப்புற பள்ளிகளில் IX வகுப்பு படிக்கும் மற்றும் அதிகாரப்பூர்வ மதிப்பெண், வருமான விதிகளை பூர்த்தி செய்யும் மாணவர்கள்.",
+      "howToStart": "Directorate of Government Examinations அறிவிப்பை பள்ளி வழியாகப் பார்த்து, தேர்வு விண்ணப்பம் மற்றும் வருமானச் சான்றை காலக்கெடுவுக்குள் சமர்ப்பிக்கவும்.",
+      "status": "State talent examination route",
+      "sourceOrganization": "Directorate of Government Examinations, Tamil Nadu",
+      "sourceUrl": "https://dge.tn.gov.in/trust.html",
+      "verifiedOn": "2026-07-17"
+    },
+    {
+      "id": "tn-chief-minister-research-fellowship",
+      "name": "Chief Minister Research Fellowship — CMRF",
+      "category": "ஆராய்ச்சி மற்றும் Ph.D. ஆதரவு",
+      "summary": "தமிழ்நாடு அரசு மற்றும் அரசு உதவிபெறும் கல்லூரிகள் மற்றும் பல்கலைக்கழகங்களில் regular Ph.D. மேற்கொள்ளும் தேர்ந்தெடுக்கப்பட்ட ஆராய்ச்சியாளர்களுக்கான மாநில fellowship.",
+      "whoMayBenefit": "அறிவிப்பில் குறிப்பிடப்பட்ட அரசு அல்லது அரசு உதவிபெறும் உயர்கல்வி நிறுவனங்களில் regular Ph.D. படிக்கும் தகுதியான ஆராய்ச்சியாளர்கள்.",
+      "howToStart": "Directorate of Collegiate Education அல்லது TRB வெளியிடும் தற்போதைய CMRF தேர்வு அறிவிப்பு, பாடப்பிரிவு மற்றும் ஆவணத் தேவைகளைப் பார்த்து விண்ணப்பிக்கவும்.",
+      "status": "Competitive state research fellowship",
+      "sourceOrganization": "Directorate of Collegiate Education, Government of Tamil Nadu",
+      "sourceUrl": "https://tndce.tn.gov.in/Home/scholarship",
+      "verifiedOn": "2026-07-17"
+    },
+    {
+      "id": "tn-nrt-education-scholarship",
+      "name": "வெளிநாட்டில் உயிரிழந்த தமிழர்களின் குழந்தைகளுக்கான கல்வி உதவி",
+      "category": "சிறப்பு குடும்ப கல்வி ஆதரவு",
+      "summary": "வெளிநாட்டில் பணிபுரிந்து உயிரிழந்த தகுதியான தமிழர்களின் குழந்தைகள் பள்ளி, ITI, diploma, UG மற்றும் PG படிப்புகளைத் தொடர கல்வி உதவித்தொகை பெற உதவும் நலவாரியத் திட்டம்.",
+      "whoMayBenefit": "Non-Resident Tamils Welfare Board விதிகளின் கீழ் தகுதி பெறும் குடும்பங்களின் குழந்தைகள்; அங்கீகரிக்கப்பட்ட கல்வி நிறுவனச் சேர்க்கை மற்றும் பிற ஆவண விதிகள் பொருந்தும்.",
+      "howToStart": "Non-Resident Tamils Welfare Board அதிகாரப்பூர்வப் பக்கத்தில் தகுதி, பாடநெறி தொகை மற்றும் விண்ணப்ப ஆவணங்களைப் பார்த்து விண்ணப்பிக்கவும்.",
+      "status": "Special-category education scholarship",
+      "sourceOrganization": "Commissionerate of Rehabilitation and Welfare of Non-Resident Tamils",
+      "sourceUrl": "https://nrtamils.tn.gov.in/en/nrt-welfare-board/education-scholarship-board/",
+      "verifiedOn": "2026-07-17"
+    }
+  ]
+}
