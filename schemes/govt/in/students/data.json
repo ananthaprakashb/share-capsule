@@ -1,0 +1,129 @@
+{
+  "title": "மாணவர்களுக்கான இந்திய மத்திய அரசுத் திட்டங்கள்",
+  "subtitle": "பள்ளி முதல் கல்லூரி மற்றும் ஆராய்ச்சி வரை மாணவர்களுக்கு பயன்படும் அதிகாரப்பூர்வ மத்திய அரசு உதவிகள்",
+  "jurisdiction": "India",
+  "verifiedOn": "2026-07-17",
+  "notice": "இந்தப் பட்டியல் இந்திய அரசின் அதிகாரப்பூர்வ தளங்களில் 17 ஜூலை 2026 அன்று மறுசரிபார்க்கப்பட்டது. எல்லா மாணவர்களும் எல்லா திட்டங்களுக்கும் தகுதி பெறமாட்டார்கள். வகுப்பு, பாடநெறி, மதிப்பெண், குடும்ப வருமானம், சமூகப் பிரிவு, மாற்றுத்திறன், நிறுவனம் மற்றும் மாநில நடைமுறை போன்ற நிபந்தனைகள் பொருந்தலாம். விண்ணப்ப காலம் மற்றும் சமீபத்திய வழிகாட்டுதலை அதிகாரப்பூர்வ இணைப்பில் உறுதிப்படுத்திய பிறகே விண்ணப்பிக்கவும்.",
+  "schemes": [
+    {
+      "id": "national-scholarship-portal",
+      "name": "National Scholarship Portal — தேசிய கல்வி உதவித்தொகை தளம்",
+      "category": "ஒருங்கிணைந்த விண்ணப்பத் தளம்",
+      "summary": "பல மத்திய அரசு கல்வி உதவித்தொகைகளை ஒரே இடத்தில் கண்டறிந்து, புதிய மற்றும் புதுப்பிப்பு விண்ணப்பங்களைச் சமர்ப்பிக்க உதவும் அதிகாரப்பூர்வ தளம்.",
+      "whoMayBenefit": "பள்ளி, கல்லூரி மற்றும் உயர் கல்வி மாணவர்கள்; தகுதி ஒவ்வொரு உதவித்தொகைக்கும் மாறும்.",
+      "howToStart": "One-Time Registration செய்து, மாணவர் விவரங்களை நிரப்பி, தகுதியான திட்டங்களைப் பார்த்து, நிறுவனம் மற்றும் ஆவணச் சரிபார்ப்பை முடிக்கவும்.",
+      "status": "Official application portal",
+      "sourceOrganization": "National Informatics Centre / Government of India",
+      "sourceUrl": "https://scholarships.gov.in/",
+      "verifiedOn": "2026-07-17"
+    },
+    {
+      "id": "nmmss",
+      "name": "National Means-cum-Merit Scholarship Scheme — NMMSS",
+      "category": "பள்ளி மாணவர் உதவித்தொகை",
+      "summary": "பொருளாதார ரீதியாக பின்தங்கிய திறமையான மாணவர்கள் எட்டாம் வகுப்பிற்குப் பிறகு பள்ளியை விட்டு விலகாமல் IX முதல் XII வரை தொடர உதவும் மத்திய அரசு உதவித்தொகை.",
+      "whoMayBenefit": "அரசு, அரசு உதவிபெறும் அல்லது உள்ளாட்சி பள்ளிகளில் படிக்கும் தகுதியான மாணவர்கள்; மாநிலத் தேர்வு, மதிப்பெண் மற்றும் குடும்ப வருமான விதிகள் பொருந்தும்.",
+      "howToStart": "உங்கள் மாநிலத்தின் NMMSS தேர்வு அறிவிப்பைப் பார்த்து விண்ணப்பிக்கவும்; தேர்ச்சி பெற்ற பிறகு National Scholarship Portal வழியாக உதவித்தொகை செயல்முறையை முடிக்கவும்.",
+      "status": "Active central sector scheme",
+      "sourceOrganization": "Department of School Education and Literacy, Ministry of Education",
+      "sourceUrl": "https://dsel.education.gov.in/",
+      "verifiedOn": "2026-07-17"
+    },
+    {
+      "id": "pm-poshan",
+      "name": "PM POSHAN — பள்ளி மதிய உணவுத் திட்டம்",
+      "category": "பள்ளி ஊட்டச்சத்து",
+      "summary": "அரசு மற்றும் அரசு உதவிபெறும் பள்ளிகளில் தகுதியான குழந்தைகளுக்கு சூடான சமைத்த உணவு வழங்கி வருகை, தொடர்ச்சி மற்றும் ஊட்டச்சத்தை மேம்படுத்தும் மத்திய ஆதரவு திட்டம்.",
+      "whoMayBenefit": "Balvatika மற்றும் பொதுவாக I முதல் VIII வகுப்பு வரை அரசு அல்லது அரசு உதவிபெறும் பள்ளிகளில் படிக்கும் மாணவர்கள்; நடைமுறை மாநிலம் மற்றும் பள்ளி வழியாக நடைபெறும்.",
+      "howToStart": "தனிப்பட்ட ஆன்லைன் விண்ணப்பம் பொதுவாக தேவையில்லை. உங்கள் பள்ளி இந்தத் திட்டத்தை செயல்படுத்துகிறதா என்பதை தலைமை ஆசிரியர் அல்லது பள்ளி நிர்வாகத்திடம் உறுதிப்படுத்தவும்.",
+      "status": "Temporarily extended during 2026 approval cycle",
+      "sourceOrganization": "Department of School Education and Literacy, Ministry of Education",
+      "sourceUrl": "https://pmposhan.education.gov.in/aboutus.html",
+      "verifiedOn": "2026-07-17"
+    },
+    {
+      "id": "csss-college-university",
+      "name": "Central Sector Scheme of Scholarship for College and University Students — CSSS",
+      "category": "கல்லூரி உதவித்தொகை",
+      "summary": "Class XII முடிவில் உயர்ந்த சாதனை பெற்ற மற்றும் வருமான வரம்பிற்குள் வரும் மாணவர்கள் கல்லூரி அல்லது பல்கலைக்கழகப் படிப்பை தொடர உதவும் மத்திய கல்வி உதவித்தொகை.",
+      "whoMayBenefit": "அங்கீகரிக்கப்பட்ட கல்லூரி அல்லது பல்கலைக்கழகப் படிப்பில் சேர்ந்த, சம்பந்தப்பட்ட board percentile, குடும்ப வருமானம் மற்றும் பிற தகுதி விதிகளை பூர்த்தி செய்யும் மாணவர்கள்.",
+      "howToStart": "National Scholarship Portal-இல் தற்போதைய CSSS வழிகாட்டுதல், fresh/renewal காலம் மற்றும் institute verification தேவைகளைச் சரிபார்த்து விண்ணப்பிக்கவும்.",
+      "status": "Official scholarship scheme",
+      "sourceOrganization": "Department of Higher Education, Ministry of Education",
+      "sourceUrl": "https://www.education.gov.in/central-sector-scheme-scholarship-college-and-university-students",
+      "verifiedOn": "2026-07-17"
+    },
+    {
+      "id": "pm-vidyalaxmi",
+      "name": "PM-Vidyalaxmi",
+      "category": "உயர் கல்விக் கடன் ஆதரவு",
+      "summary": "தரமான உயர் கல்வி நிறுவனங்களில் சேரும் திறமையான மாணவர்களுக்கு collateral-free மற்றும் guarantor-free education loan அணுகல், மேலும் தகுதியின் அடிப்படையில் வட்டி உதவி வழங்க உருவாக்கப்பட்ட மத்திய திட்டம்.",
+      "whoMayBenefit": "அரசால் அறிவிக்கப்பட்ட Quality Higher Education Institutions-இல் merit அடிப்படையில் சேர்க்கை பெற்ற இந்திய மாணவர்கள்; வட்டி உதவிக்கு குடும்ப வருமான விதிகள் பொருந்தும்.",
+      "howToStart": "PM-Vidyalaxmi வழிகாட்டுதலில் தகுதியான நிறுவனப் பட்டியல், கடன் விதிகள் மற்றும் வட்டி உதவி அளவுகளைச் சரிபார்த்து அதிகாரப்பூர்வ விண்ணப்ப வழியைப் பயன்படுத்தவும்.",
+      "status": "Approved central scheme",
+      "sourceOrganization": "Department of Higher Education, Ministry of Education",
+      "sourceUrl": "https://www.education.gov.in/cabinet-approves-pm-vidyalaxmi-scheme-provide-financial-support-meritorious-students-so-financial",
+      "verifiedOn": "2026-07-17"
+    },
+    {
+      "id": "pm-yasasvi",
+      "name": "PM-YASASVI — OBC, EBC மற்றும் DNT மாணவர்களுக்கு",
+      "category": "சமூகப் பிரிவு கல்வி உதவி",
+      "summary": "OBC, EBC மற்றும் DNT மாணவர்களுக்கான Pre-Matric, Post-Matric, Top Class School மற்றும் Top Class College கல்வி உதவிகளை ஒருங்கிணைக்கும் மத்திய umbrella scheme.",
+      "whoMayBenefit": "திட்டத்தில் குறிப்பிடப்பட்ட OBC, EBC அல்லது DNT பிரிவைச் சேர்ந்த, குடும்ப வருமானம் மற்றும் கல்வி நிலை விதிகளை பூர்த்தி செய்யும் பள்ளி மற்றும் கல்லூரி மாணவர்கள்.",
+      "howToStart": "PM-YASASVI அதிகாரப்பூர்வ பக்கத்தில் பொருந்தும் sub-scheme-ஐ அடையாளம் கண்டு, National Scholarship Portal அல்லது அறிவிக்கப்பட்ட விண்ணப்ப வழியில் விண்ணப்பிக்கவும்.",
+      "status": "Active umbrella scheme",
+      "sourceOrganization": "Department of Social Justice and Empowerment, Government of India",
+      "sourceUrl": "https://socialjustice.gov.in/schemes/101",
+      "verifiedOn": "2026-07-17"
+    },
+    {
+      "id": "sc-student-scholarships",
+      "name": "SC மாணவர்களுக்கான Pre-Matric, Post-Matric மற்றும் Top Class கல்வி உதவிகள்",
+      "category": "SC மாணவர் உதவி",
+      "summary": "Scheduled Caste மாணவர்களுக்கு பள்ளி முதல் உயர்கல்வி வரை பல நிலைகளில் கல்விச்செலவு, maintenance மற்றும் top-class education ஆதரவு வழங்கும் மத்திய திட்டத் தொகுப்பு.",
+      "whoMayBenefit": "அங்கீகரிக்கப்பட்ட SC சான்றிதழ் கொண்ட, சம்பந்தப்பட்ட கல்விநிலை, குடும்ப வருமானம் மற்றும் மாநில அல்லது மத்திய வழிகாட்டுதலை பூர்த்தி செய்யும் மாணவர்கள்.",
+      "howToStart": "Social Justice schemes பட்டியலில் பொருந்தும் திட்டத்தைத் தேர்ந்தெடுத்து, National Scholarship Portal அல்லது மாநில portal-இல் தற்போதைய விண்ணப்பத்தைச் சரிபார்க்கவும்.",
+      "status": "Official central and centrally sponsored schemes",
+      "sourceOrganization": "Department of Social Justice and Empowerment, Government of India",
+      "sourceUrl": "https://socialjustice.gov.in/schemes",
+      "verifiedOn": "2026-07-17"
+    },
+    {
+      "id": "st-student-scholarships",
+      "name": "ST மாணவர்களுக்கான Pre-Matric, Post-Matric மற்றும் Top Class Scholarships",
+      "category": "ST மாணவர் உதவி",
+      "summary": "Scheduled Tribe மாணவர்களுக்கு IX–X வகுப்பு, matric-க்கு மேற்பட்ட அங்கீகரிக்கப்பட்ட படிப்புகள் மற்றும் தேர்ந்தெடுக்கப்பட்ட சிறந்த உயர்கல்வி நிறுவனங்களில் கல்வி தொடர நிதி உதவி வழங்கும் திட்டங்கள்.",
+      "whoMayBenefit": "ST சான்றிதழ் கொண்ட, குடும்ப வருமானம், வகுப்பு அல்லது பாடநெறி மற்றும் நிறுவனம் தொடர்பான திட்ட விதிகளை பூர்த்தி செய்யும் மாணவர்கள்.",
+      "howToStart": "Ministry of Tribal Affairs scholarship பக்கத்தில் பொருந்தும் Pre-Matric, Post-Matric அல்லது Top Class திட்டத்தைத் தேர்ந்தெடுத்து NSP அல்லது மாநில portal வழியைப் பின்பற்றவும்.",
+      "status": "Active scholarship portfolio",
+      "sourceOrganization": "Ministry of Tribal Affairs, Government of India",
+      "sourceUrl": "https://tribal.nic.in/Scholarship.aspx",
+      "verifiedOn": "2026-07-17"
+    },
+    {
+      "id": "disability-scholarships",
+      "name": "Scholarships for Students with Disabilities",
+      "category": "மாற்றுத்திறனாளி மாணவர் உதவி",
+      "summary": "மாற்றுத்திறனாளி மாணவர்களுக்கு Pre-Matric, Post-Matric, Top Class Education, fellowship மற்றும் பிற கல்வி ஆதரவை வழங்கும் மத்திய umbrella scholarship திட்டம்.",
+      "whoMayBenefit": "பொதுவாக benchmark disability கொண்ட இந்திய மாணவர்கள்; UDID, குடும்ப வருமானம், கல்விநிலை மற்றும் ஒரே நேரத்தில் வேறு உதவித்தொகை பெறாதது போன்ற விதிகள் பொருந்தலாம்.",
+      "howToStart": "DEPwD அதிகாரப்பூர்வ scholarship பக்கத்தில் சமீபத்திய வழிகாட்டுதலைப் பார்த்து, UDID மற்றும் தேவையான ஆவணங்களுடன் National Scholarship Portal வழியாக விண்ணப்பிக்கவும்.",
+      "status": "Guidelines revised in 2025",
+      "sourceOrganization": "Department of Empowerment of Persons with Disabilities, Government of India",
+      "sourceUrl": "https://depwd.gov.in/en/scholarship/",
+      "verifiedOn": "2026-07-17"
+    },
+    {
+      "id": "inspire-she",
+      "name": "INSPIRE Scholarship for Higher Education — SHE",
+      "category": "அறிவியல் உயர்கல்வி",
+      "summary": "அடிப்படை மற்றும் இயற்கை அறிவியல் பாடங்களில் BSc, BS, Integrated MSc அல்லது Integrated MS படிக்கும் திறமையான மாணவர்களுக்கு ஆண்டுதோறும் scholarship மற்றும் research mentorship வழங்கும் DST திட்டம்.",
+      "whoMayBenefit": "Class XII-ல் குறிப்பிடப்பட்ட merit criteria-ஐ பூர்த்தி செய்து, அங்கீகரிக்கப்பட்ட basic or natural science பாடப்பிரிவில் சேர்ந்த தகுதியான மாணவர்கள்.",
+      "howToStart": "INSPIRE portal-இல் தற்போதைய batch notification, eligible subjects, board cut-off மற்றும் விண்ணப்ப ஆவணங்களைச் சரிபார்த்து ஆன்லைனில் விண்ணப்பிக்கவும்.",
+      "status": "Official science scholarship portal",
+      "sourceOrganization": "Department of Science and Technology, Government of India",
+      "sourceUrl": "https://online-inspire.gov.in/Account/FAQ/",
+      "verifiedOn": "2026-07-17"
+    }
+  ]
+}
