@@ -27,13 +27,34 @@
     }
     poems.forEach(poem=>{poem.thought=thoughtFor(poem)});
   };
+  const shortArticleUrl=position=>`${location.origin}/marimuthu/?p=${(position+1).toString(36)}`;
+  const applyShortWhatsAppLink=()=>{
+    const whatsapp=document.getElementById('wa');
+    if(!whatsapp||!poems[index])return;
+    const shortUrl=shortArticleUrl(index);
+    let message='';
+    try{
+      message=new URL(whatsapp.href,location.href).searchParams.get('text')||'';
+    }catch{}
+    if(message){
+      message=message.replace(/https?:\/\/\S+/g,shortUrl).trim();
+      if(!message.includes(shortUrl))message+=`\n\n${shortUrl}`;
+    }else{
+      const poem=poems[index];
+      message=`${poem.text}\n\n${poem.book} — ${poem.author}\n${shortUrl}`;
+    }
+    whatsapp.href=`https://wa.me/?text=${encodeURIComponent(message)}`;
+  };
   const chooseAndRender=()=>{
     const query=new URLSearchParams(location.search);
+    const compact=query.get('p');
+    const compactIndex=compact?parseInt(compact,36)-1:-1;
     const book=query.get('book');
     const number=query.get('poem');
     const selected=number?poems.findIndex(poem=>poem.number===number&&(!book||poem.book===book)):-1;
-    if(selected>=0)index=selected;
-    else if(!book&&!number)index=(new Date().getDate()-1)%poems.length;
+    if(Number.isInteger(compactIndex)&&compactIndex>=0&&compactIndex<poems.length)index=compactIndex;
+    else if(selected>=0)index=selected;
+    else if(!book&&!number&&!compact)index=(new Date().getDate()-1)%poems.length;
     render();
     const thoughtSection=document.querySelector('.thought');
     if(thoughtSection)thoughtSection.hidden=false;
@@ -47,6 +68,7 @@
       baseRender();
       const thoughtSection=document.querySelector('.thought');
       if(thoughtSection)thoughtSection.hidden=false;
+      applyShortWhatsAppLink();
     };
     try{
       const groups=await Promise.all(BATCHES.map(async url=>{
