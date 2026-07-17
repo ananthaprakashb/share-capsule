@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 
 const DATA_PATH = new URL('./data.json', import.meta.url);
 const FORCE = process.argv.includes('--force');
-const TARGET_SOURCE_URL = 'https://thinkfiveminutes.blogspot.com/2026/03/2.html';
+const TARGET_SOURCE_URL = 'https://thinkfiveminutes.blogspot.com/2026/03/3.html';
 
 const decodeEntities = value => String(value ?? '')
   .replace(/&nbsp;/gi, ' ')
