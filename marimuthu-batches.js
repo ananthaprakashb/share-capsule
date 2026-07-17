@@ -1,8 +1,11 @@
 (()=>{
   const BATCHES=[
     '/marimuthu/data/iniyavai-narpathu.json',
-    '/marimuthu/data/sirupanchamoolam-batch-01.json'
+    '/marimuthu/data/sirupanchamoolam-batch-01.json',
+    '/marimuthu/data/sirupanchamoolam-batch-02.json'
   ];
+  const TODAY_URL='/marimuthu/today.json';
+  let todayOverride=null;
   const COMPRESSED_BATCHES=[[
     '/marimuthu/data/inna-narpathu.part1',
     '/marimuthu/data/inna-narpathu.part2',
@@ -73,8 +76,10 @@
     const book=query.get('book');
     const number=query.get('poem');
     const selected=number?poems.findIndex(poem=>poem.number===number&&(!book||poem.book===book)):-1;
+    const dailySelected=todayOverride?.number?poems.findIndex(poem=>poem.number===String(todayOverride.number)&&(!todayOverride.book||poem.book===todayOverride.book)):-1;
     if(Number.isInteger(compactIndex)&&compactIndex>=0&&compactIndex<poems.length)index=compactIndex;
     else if(selected>=0)index=selected;
+    else if(!book&&!number&&!compact&&dailySelected>=0)index=dailySelected;
     else if(!book&&!number&&!compact)index=(new Date().getDate()-1)%poems.length;
     render();
     const thoughtSection=document.querySelector('.thought');
@@ -98,8 +103,12 @@
         return response.json();
       });
       const compressed=COMPRESSED_BATCHES.map(loadCompressed);
-      const groups=await Promise.all([...plain,...compressed]);
+      const [groups,todayResponse]=await Promise.all([
+        Promise.all([...plain,...compressed]),
+        fetch(TODAY_URL,{cache:'no-cache'}).catch(()=>null)
+      ]);
       groups.forEach(merge);
+      if(todayResponse?.ok)todayOverride=await todayResponse.json();
     }catch(error){
       console.error('Marimuthu batch loading failed',error);
     }
