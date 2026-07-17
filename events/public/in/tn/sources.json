@@ -1,0 +1,15 @@
+{
+  "region": "Tamil Nadu, India",
+  "policy": "Only first-party government, venue, institution, or organizer pages are accepted. Aggregators, copied listings, social posts, and unverified submissions are excluded.",
+  "sources": [
+    {
+      "id": "tn-hrce",
+      "name": "Tamil Nadu Hindu Religious and Charitable Endowments Department",
+      "authority": "Government of Tamil Nadu",
+      "type": "government",
+      "officialDomain": "hrce.tn.gov.in",
+      "coverage": "Public temple festivals and observances throughout Tamil Nadu",
+      "monthUrlTemplate": "https://hrce.tn.gov.in/hrcehome/hrce-festival-calendar.php?month={month}&year={year}"
+    }
+  ]
+}
