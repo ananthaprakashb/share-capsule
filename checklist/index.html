@@ -33,7 +33,7 @@
       <div class="stat privacyStat"><span class="statIcon">⌂</span><div><strong>Local only</strong><span>Nothing uploaded</span></div></div>
     </section>
 
-    <section class="browseHeader">
+    <section class="browseHeader" id="browseHeader">
       <div><div class="kicker">Browse templates</div><h2>What do you want to get done?</h2></div>
       <span id="boardResultCount" class="resultCount"></span>
     </section>
@@ -83,20 +83,9 @@
       </div>
     </section>
 
-    <details class="legacy">
-      <summary><span>Location-aware checklist composer</span><small>Advanced tool for local procedures</small></summary>
-      <section class="controls" aria-label="Checklist controls">
-        <label>Checklist<select id="checklist"></select></label><label>Country<input id="country" value="IN" autocomplete="country"></label><label>State<input id="state" value="Tamil Nadu" autocomplete="address-level1"></label><label>District<input id="district" value="Chennai" autocomplete="address-level2"></label><label>County<input id="county" value="" autocomplete="address-level2"></label><label>City<input id="city" value="Chennai" autocomplete="address-level2"></label>
-        <label class="toggle"><input id="expand" type="checkbox" checked> Expand sub-checklists</label><button id="locate" type="button" class="secondary">Use my current location</button><button id="preset" type="button" class="secondary">Use checklist location</button><button id="compose" type="button">Build checklist</button>
-      </section>
-      <section class="status" id="locationStatus" aria-live="polite">Location can be prefilled from the page URL, your saved choice, or browser permission.</section>
-      <section class="status" id="status" aria-live="polite">Loading location-aware catalog…</section>
-      <section class="result" id="result" hidden><div class="resultHeading"><div><div class="kicker">Composed checklist</div><h2 id="title"></h2></div><button id="copy" class="secondary" type="button">Copy JSON</button></div><div id="warnings"></div><ol id="tasks"></ol><details><summary>Sources</summary><ul id="sources"></ul></details><details><summary>JSON response</summary><pre id="json"></pre></details></section>
-    </details>
-
     <footer class="pageFooter"><p><strong>Privacy:</strong> Your completion state, priorities, and personal tasks stay in this browser.</p><p>Educational checklists may require professional verification.</p></footer>
   </main>
-  <script type="module" src="app.js"></script>
+  <script type="module" src="boards.js"></script>
   <script src="/site-shell.js" defer></script>
 </body>
 </html>
