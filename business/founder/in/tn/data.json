@@ -1,0 +1,117 @@
+{
+  "title": "Tamil Nadu Small-Business Growth Routes",
+  "verifiedOn": "2026-07-18",
+  "verificationMethod": "Included only pages operated by the Government of Tamil Nadu, its MSME department, FaMe TN, TIIC or the statutory Tamil Nadu Single Window Portal. Each route was checked for an active official page, current scheme dashboard, application workflow or recently updated programme details.",
+  "opportunities": [
+    {
+      "category": "Expansion subsidy",
+      "fit": "Existing business",
+      "name": "Capital Subsidy for MSMEs",
+      "authority": "Tamil Nadu MSME Department",
+      "benefit": "Eligible enterprises may receive capital subsidy on plant and machinery. The official guidance also identifies an additional 5% subsidy, up to ₹25 lakh, for qualifying existing micro and small manufacturing enterprises that graduate to a higher category through expansion or diversification.",
+      "check": ["Manufacturing activity and eligible sector", "Location and enterprise category", "Expansion or diversification investment evidence", "Filing deadlines and excluded activities"],
+      "chance": "Strong fit for an established manufacturing unit investing in capacity, diversification or cleaner technology.",
+      "validation": "Official msmeonline.tn.gov.in incentive guidance and online eligibility workflow were active when checked.",
+      "url": "https://www.msmeonline.tn.gov.in/incentives/html_cye_CS.php"
+    },
+    {
+      "category": "Operating-cost support",
+      "fit": "New or expanding manufacturing",
+      "name": "Low Tension Power Tariff Subsidy",
+      "authority": "Tamil Nadu MSME Department",
+      "benefit": "Power-tariff support for eligible new manufacturing enterprises and qualifying expansion or diversification projects in specified categories and locations.",
+      "check": ["LT Tariff III-B connection", "Eligible enterprise and block", "At least 25% plant-and-machinery and turnover growth for expansion cases", "Application within the stated filing window"],
+      "chance": "Useful where electricity is a meaningful production cost and the unit meets the location, activity and timing rules.",
+      "validation": "Official Tamil Nadu MSME eligibility and claim guidance was active when checked.",
+      "url": "https://msmeonline.tn.gov.in/incentives/html_cye_ltpt.php"
+    },
+    {
+      "category": "Inclusive growth",
+      "fit": "SC/ST-owned new or expanding business",
+      "name": "Annal Ambedkar Business Champions Scheme",
+      "authority": "Tamil Nadu MSME Department",
+      "benefit": "The official scheme page describes capital subsidy of 35% of eligible project cost, capped at ₹1.5 crore, plus eligible interest subvention. It covers new and expansion projects for enterprises fully owned by SC/ST entrepreneurs, subject to current rules.",
+      "check": ["100% SC/ST ownership", "Age and project eligibility", "Eligible capital and working-capital components", "Online application and supporting documents"],
+      "chance": "One of the most substantial state routes for eligible SC/ST founders planning expansion or a new project.",
+      "validation": "Official scheme description and online application route were active on the Tamil Nadu MSME portal.",
+      "url": "https://msmeonline.tn.gov.in/aabcs/aabcs_desc.php"
+    },
+    {
+      "category": "Women entrepreneurs",
+      "fit": "Women-led enterprise",
+      "name": "Tamil Nadu Women Entrepreneurs Empowerment Scheme",
+      "authority": "Tamil Nadu MSME Department",
+      "benefit": "State-supported loan and subsidy pathway for eligible women entrepreneurs, with an active FY 2025–26 application and sanction dashboard.",
+      "check": ["Women-founder eligibility", "Permitted activity and project size", "Promoter contribution", "Bank sanction, training and documentation stages"],
+      "chance": "Relevant for women starting or formalizing a small enterprise; confirm whether an existing-business expansion fits the current guidelines.",
+      "validation": "Official TWEES portal displayed current FY 2025–26 processing statistics and application functions.",
+      "url": "https://msmeonline.tn.gov.in/twees/"
+    },
+    {
+      "category": "First-generation founder",
+      "fit": "New enterprise",
+      "name": "New Entrepreneur-cum-Enterprise Development Scheme",
+      "authority": "Tamil Nadu MSME Department",
+      "benefit": "For eligible first-generation entrepreneurs, the official page describes projects from ₹10 lakh to ₹5 crore, capital subsidy up to the stated cap and interest subvention, with training and bank linkage.",
+      "check": ["First-generation entrepreneur status", "Age and education", "Manufacturing or service project", "Promoter contribution and bank appraisal"],
+      "chance": "Best for a new venture or a new promoter; generally not the primary route for an already established company.",
+      "validation": "Official NEEDS portal had a current FY 2025–26 dashboard and scheme guidance when checked.",
+      "url": "https://msmeonline.tn.gov.in/needs/"
+    },
+    {
+      "category": "Artisan enterprise",
+      "fit": "Traditional artisan or craft business",
+      "name": "Kalaignar Kaivinai Thittam",
+      "authority": "Tamil Nadu MSME Department",
+      "benefit": "Training, credit and subsidy pathway for eligible artisans and traditional trades, with a live FY 2025–26 state dashboard.",
+      "check": ["Recognized trade or craft", "Applicant and activity eligibility", "Training requirements", "Loan and subsidy process"],
+      "chance": "A focused route for artisans seeking equipment, formal credit and business upgrading.",
+      "validation": "Official KKT portal displayed FY 2025–26 applications, training, loan and subsidy statistics.",
+      "url": "https://msmeonline.tn.gov.in/kkt/"
+    },
+    {
+      "category": "Finance",
+      "fit": "Existing micro or small enterprise",
+      "name": "TIIC Micro and Small Enterprise Funding Scheme",
+      "authority": "Tamil Nadu Industrial Investment Corporation",
+      "benefit": "Term finance for eligible new units and existing micro or small enterprises undertaking expansion, modernization, technology upgrading or diversification, subject to project-cost and security rules.",
+      "check": ["Eligible manufacturing or service activity", "Project outlay", "Promoter contribution", "Repayment capacity and collateral"],
+      "chance": "Practical for a smaller modernization or fixed-asset project where the project outlay fits the published ceiling.",
+      "validation": "Current scheme page on TIIC, a Government of Tamil Nadu undertaking, was active when checked.",
+      "url": "https://www.tiic.org/tn/micro-small-enterprise-funding-scheme/"
+    },
+    {
+      "category": "Finance",
+      "fit": "Established or expanding enterprise",
+      "name": "TIIC General and Working-Capital Finance",
+      "authority": "Tamil Nadu Industrial Investment Corporation",
+      "benefit": "TIIC publishes term-loan routes for establishment, expansion, modernization and diversification, plus working-capital products for eligible units and service businesses.",
+      "check": ["Purpose and sector eligibility", "Financial track record", "Project assets and promoter contribution", "Security, repayment and product-specific limits"],
+      "chance": "Useful for established businesses needing machinery, buildings, modernization or structured working capital.",
+      "validation": "TIIC official product pages were recently updated and active when checked.",
+      "url": "https://www.tiic.org/general-scheme/"
+    },
+    {
+      "category": "Market and credit support",
+      "fit": "Tamil Nadu MSME",
+      "name": "FaMe TN Business Support",
+      "authority": "FaMe TN, under the Tamil Nadu MSME Department",
+      "benefit": "State MSME support covering financial-assistance discovery, credit-guarantee access, exports, e-market support, RAMP initiatives, sponsorship and grievance redressal.",
+      "check": ["Udyam and Tamil Nadu operating location", "Programme-specific intake", "Credit or export documentation", "Current application window"],
+      "chance": "A strong first stop for founders unsure whether their best growth lever is credit, export readiness, technology, market access or grievance support.",
+      "validation": "FaMe TN identifies itself as a Section 8 company under the Tamil Nadu MSME Department and lists active business-support routes.",
+      "url": "https://www.fametn.com/"
+    },
+    {
+      "category": "Approvals",
+      "fit": "New or expanding enterprise",
+      "name": "Tamil Nadu Single Window Portal",
+      "authority": "Government of Tamil Nadu",
+      "benefit": "One-stop electronic processing for business approvals, licences, clearances and renewals across more than 30 government departments and agencies.",
+      "check": ["Project location and activity", "Required pre-establishment and pre-operation clearances", "Land, building, environment, labour, fire, power and water documents", "Renewal obligations"],
+      "chance": "Essential for reducing approval delays when adding a facility, changing capacity or starting a regulated activity.",
+      "validation": "Official Tamil Nadu government portal showed current portal data and an active 24×7 digital workflow when checked.",
+      "url": "https://tnswp.com/DIGIGOV/swp-tnswp.jsp"
+    }
+  ]
+}
