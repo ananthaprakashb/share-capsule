@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#1d3157">
-  <meta name="description" content="Location-aware checklists composed from generic, country, state, district, county and city guidance.">
-  <meta property="og:title" content="Local Checklists — Share Capsule">
+  <meta name="description" content="Browse reusable checklist boards, prioritize tasks, and keep personal tasks locally in your browser.">
+  <meta property="og:title" content="Checklist Boards — Share Capsule">
   <meta property="og:url" content="https://sharecapsule.app/checklist/">
-  <title>Local Checklists — Share Capsule</title>
+  <title>Checklist Boards — Share Capsule</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,46 +18,61 @@
     </header>
 
     <section class="hero">
-      <div class="kicker">Location-aware guidance</div>
-      <h1>Build one checklist for where you live.</h1>
-      <p>Combine generic, country, state, district, county and city guidance into a single actionable checklist, with reusable sub-checklists and source references.</p>
+      <div class="kicker">Private browser workspace</div>
+      <h1>Choose a board. Make the checklist yours.</h1>
+      <p>Open any reusable checklist, complete and prioritize its tasks, and add personal tasks. Your changes stay only in this browser.</p>
     </section>
 
-    <section class="controls" aria-label="Checklist controls">
-      <label>Checklist<select id="checklist"></select></label>
-      <label>Country<input id="country" value="IN" autocomplete="country"></label>
-      <label>State<input id="state" value="Tamil Nadu" autocomplete="address-level1"></label>
-      <label>District<input id="district" value="Chennai" autocomplete="address-level2"></label>
-      <label>County<input id="county" value="" autocomplete="address-level2"></label>
-      <label>City<input id="city" value="Chennai" autocomplete="address-level2"></label>
-      <label class="toggle"><input id="expand" type="checkbox" checked> Expand sub-checklists</label>
-      <button id="locate" type="button" class="secondary">Use my current location</button>
-      <button id="preset" type="button" class="secondary">Use checklist location</button>
-      <button id="compose" type="button">Build checklist</button>
+    <section class="boardToolbar" aria-label="Board filters">
+      <label>Search boards<input id="boardSearch" type="search" placeholder="Search activities…"></label>
+      <label>Category<select id="boardCategory"><option value="">All categories</option></select></label>
+      <button id="showAllBoards" class="secondary" type="button">Show all</button>
     </section>
+    <section class="status" id="boardStatus" aria-live="polite">Loading checklist boards…</section>
+    <section class="boards" id="boards" aria-label="Checklist boards"></section>
 
-    <section class="status" id="locationStatus" aria-live="polite">Location can be prefilled from the page URL, your saved choice, or browser permission.</section>
-    <section class="status" id="status" aria-live="polite">Loading checklist catalog…</section>
-
-    <section class="result" id="result" hidden>
-      <div class="resultHeading">
-        <div><div class="kicker">Composed checklist</div><h2 id="title"></h2></div>
-        <button id="copy" class="secondary" type="button">Copy JSON</button>
+    <section class="boardDetail" id="boardDetail" hidden>
+      <div class="detailHeader">
+        <button id="closeBoard" class="secondary compact" type="button">← All boards</button>
+        <div class="detailTitle"><div class="kicker" id="detailCategory"></div><h2 id="detailTitle"></h2><p id="detailProgress"></p></div>
       </div>
-      <div id="warnings"></div>
-      <ol id="tasks"></ol>
-      <details><summary>Sources</summary><ul id="sources"></ul></details>
-      <details><summary>JSON response</summary><pre id="json"></pre></details>
+      <div class="priorityLegend"><span class="priority high">High</span><span class="priority medium">Medium</span><span class="priority low">Low</span><span class="priority none">No priority</span></div>
+      <div id="boardTasks" class="boardTasks"></div>
+      <form id="addTaskForm" class="addTaskForm">
+        <label>New task<input id="newTaskTitle" maxlength="180" required placeholder="Add another task…"></label>
+        <label>Priority<select id="newTaskPriority"><option value="high">High</option><option value="medium" selected>Medium</option><option value="low">Low</option><option value="none">No priority</option></select></label>
+        <button type="submit">Add task</button>
+      </form>
+      <button id="clearBoardData" class="dangerLink" type="button">Reset my changes for this board</button>
     </section>
 
-    <section class="note">
-      <strong>Privacy:</strong> Browser location is requested only when needed, converted into country/state/district/county/city values, and saved locally in this browser. Coordinates are not stored by Share Capsule.
-    </section>
-    <section class="note">
-      <strong>Important:</strong> These educational checklists may require professional verification. Laws, forms, fees and local procedures can change.
-    </section>
+    <details class="legacy">
+      <summary>Location-aware checklist composer</summary>
+      <section class="controls" aria-label="Checklist controls">
+        <label>Checklist<select id="checklist"></select></label>
+        <label>Country<input id="country" value="IN" autocomplete="country"></label>
+        <label>State<input id="state" value="Tamil Nadu" autocomplete="address-level1"></label>
+        <label>District<input id="district" value="Chennai" autocomplete="address-level2"></label>
+        <label>County<input id="county" value="" autocomplete="address-level2"></label>
+        <label>City<input id="city" value="Chennai" autocomplete="address-level2"></label>
+        <label class="toggle"><input id="expand" type="checkbox" checked> Expand sub-checklists</label>
+        <button id="locate" type="button" class="secondary">Use my current location</button>
+        <button id="preset" type="button" class="secondary">Use checklist location</button>
+        <button id="compose" type="button">Build checklist</button>
+      </section>
+      <section class="status" id="locationStatus" aria-live="polite">Location can be prefilled from the page URL, your saved choice, or browser permission.</section>
+      <section class="status" id="status" aria-live="polite">Loading location-aware catalog…</section>
+      <section class="result" id="result" hidden>
+        <div class="resultHeading"><div><div class="kicker">Composed checklist</div><h2 id="title"></h2></div><button id="copy" class="secondary" type="button">Copy JSON</button></div>
+        <div id="warnings"></div><ol id="tasks"></ol>
+        <details><summary>Sources</summary><ul id="sources"></ul></details>
+        <details><summary>JSON response</summary><pre id="json"></pre></details>
+      </section>
+    </details>
+
+    <section class="note"><strong>Privacy:</strong> Completion state, priorities, and personal tasks are saved only in this browser using local storage. They are not uploaded to Share Capsule.</section>
+    <section class="note"><strong>Important:</strong> Educational checklists may require professional verification. Laws, forms, fees, and procedures can change.</section>
   </main>
-
   <script type="module" src="app.js"></script>
   <script src="/site-shell.js" defer></script>
 </body>
