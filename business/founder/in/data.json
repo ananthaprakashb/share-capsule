@@ -1,0 +1,114 @@
+{
+  "title": "Enterprise Growth & Scaling Resource Guide",
+  "subtitle": "Government platforms, working-capital infrastructure and growth programmes for established MSMEs in India",
+  "sourceNote": "Structured from the uploaded Enterprise Growth & Scaling Resource Guide. Programme terms, eligibility, fees and availability can change; confirm all details on the linked official portal.",
+  "resources": [
+    {
+      "category": "Central government access",
+      "name": "myScheme Portal",
+      "authority": "Government of India",
+      "summary": "Cross-ministry scheme discovery using an adaptive eligibility questionnaire.",
+      "requirements": ["Entity PAN", "Aadhaar of the principal promoter", "Sector, investment and enterprise-age details"],
+      "bestFor": "Discovering schemes and checking preliminary eligibility",
+      "url": "https://www.myscheme.gov.in/"
+    },
+    {
+      "category": "Central government access",
+      "name": "JanSamarth Portal",
+      "authority": "Government of India",
+      "summary": "Digital gateway for credit-linked government schemes and participating lenders.",
+      "requirements": ["Udyam registration", "GSTIN and PAN validation", "Audited financials, projections and project report when requested"],
+      "bestFor": "Exploring eligible credit-linked schemes and beginning a digital application",
+      "url": "https://www.jansamarth.in/"
+    },
+    {
+      "category": "Central government access",
+      "name": "MSME Champions Portal",
+      "authority": "Ministry of MSME",
+      "summary": "Institutional support, grievance resolution and MSME modernization assistance.",
+      "requirements": ["Active Udyam registration", "Registered business contact details"],
+      "bestFor": "Support requests, payment issues and modernization guidance",
+      "url": "https://champions.gov.in/"
+    },
+    {
+      "category": "Working capital",
+      "name": "RXIL",
+      "authority": "RBI-regulated TReDS platform",
+      "summary": "Invoice discounting marketplace intended to unlock receivables from approved buyers.",
+      "requirements": ["Entity incorporation or partnership documents", "PAN, Udyam and GSTIN", "Audited financial statements"],
+      "bestFor": "Converting accepted invoices into earlier working capital",
+      "url": "https://www.rxil.in/"
+    },
+    {
+      "category": "Working capital",
+      "name": "M1xchange",
+      "authority": "RBI-regulated TReDS platform",
+      "summary": "Digital invoice-discounting platform connecting MSME sellers, buyers and financiers.",
+      "requirements": ["Corporate PAN", "Authorized-signatory documentation", "Bank statements and digital invoices"],
+      "bestFor": "Competitive financing against approved trade receivables",
+      "url": "https://www.m1xchange.com/"
+    },
+    {
+      "category": "Tamil Nadu support",
+      "name": "FaMe TN",
+      "authority": "Government of Tamil Nadu",
+      "summary": "Tamil Nadu MSME support agency covering competitiveness, modernization, marketing and related programmes.",
+      "requirements": ["Business operations in Tamil Nadu", "Programme-specific proofs and expenditure records"],
+      "bestFor": "Tamil Nadu MSME incentives, market access and RAMP-related support",
+      "url": "https://www.fametn.com/"
+    },
+    {
+      "category": "Tamil Nadu support",
+      "name": "TIIC",
+      "authority": "Tamil Nadu Industrial Investment Corporation",
+      "summary": "State financial institution offering project and modernization finance subject to scheme terms.",
+      "requirements": ["Eligible manufacturing or service enterprise", "Project cost, financial and security documents"],
+      "bestFor": "Equipment, facility and modernization funding",
+      "url": "https://www.tiic.org/"
+    },
+    {
+      "category": "Tamil Nadu support",
+      "name": "Tamil Nadu Single Window Portal",
+      "authority": "Government of Tamil Nadu",
+      "summary": "Integrated interface for state industrial clearances and approvals.",
+      "requirements": ["Project and site details", "Land, building, environmental, power and water information as applicable"],
+      "bestFor": "Coordinating expansion approvals across state departments",
+      "url": "https://tnswp.com/"
+    },
+    {
+      "category": "Growth programmes",
+      "name": "Wadhwani Foundation",
+      "authority": "Philanthropic network",
+      "summary": "Business-growth programmes and structured acceleration support for eligible enterprises.",
+      "requirements": ["Established operating history", "Founder and leadership-team commitment", "Clear growth or technology-modernization intent"],
+      "bestFor": "Mentoring, execution discipline and structured growth planning",
+      "url": "https://wadhwanifoundation.org/"
+    },
+    {
+      "category": "Growth programmes",
+      "name": "CII MSME",
+      "authority": "Confederation of Indian Industry",
+      "summary": "Industry networking, capability development and supplier-connect ecosystem for MSMEs.",
+      "requirements": ["Applicable membership or programme enrollment", "Company capability and delivery profile"],
+      "bestFor": "Corporate connections, supplier development and industry learning",
+      "url": "https://www.ciimsme.in/"
+    }
+  ],
+  "plan": [
+    {
+      "phase": "Days 1–30",
+      "title": "Diagnose eligibility and cash-flow bottlenecks",
+      "actions": ["Complete Udyam, PAN, GST and promoter-profile checks", "Run scheme discovery through myScheme and JanSamarth", "Evaluate RXIL or M1xchange for eligible receivables"]
+    },
+    {
+      "phase": "Days 31–60",
+      "title": "Prepare expansion finance and approvals",
+      "actions": ["Build a project report, financial projections and document pack", "Review FaMe TN and TIIC support", "Map required approvals through the Tamil Nadu Single Window Portal"]
+    },
+    {
+      "phase": "Days 61–90",
+      "title": "Build the growth engine",
+      "actions": ["Apply to a suitable growth or mentoring programme", "Prepare a strong corporate capability statement", "Pursue supplier, export and institutional-buyer opportunities"]
+    }
+  ]
+}
