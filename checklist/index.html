@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#1d3157">
+  <meta name="theme-color" content="#3157d5">
   <meta name="description" content="Browse reusable checklist boards, prioritize tasks, and keep personal tasks locally in your browser.">
   <meta property="og:title" content="Checklist Boards — Share Capsule">
   <meta property="og:url" content="https://sharecapsule.app/checklist/">
@@ -13,67 +13,79 @@
 <body>
   <main class="shell">
     <header class="top">
-      <a class="brand" href="/checklist/">Share Capsule Checklists</a>
+      <a class="brand" href="/checklist/"><span class="brandMark">✓</span><span>Share Capsule <strong>Checklists</strong></span></a>
       <a class="home" href="/">Home</a>
     </header>
 
     <section class="hero">
-      <div class="kicker">Private browser workspace</div>
-      <h1>Choose a board. Make the checklist yours.</h1>
-      <p>Open any reusable checklist, complete and prioritize its tasks, and add personal tasks. Your changes stay only in this browser.</p>
+      <div class="heroCopy">
+        <div class="kicker">Your private task workspace</div>
+        <h1>Start with a proven checklist. Make it your own.</h1>
+        <p>Choose a board, prioritize what matters, check off progress, and add personal tasks. Everything you change stays in this browser.</p>
+      </div>
+      <div class="heroBadge"><strong id="heroBoardCount">—</strong><span>ready-to-use boards</span></div>
+    </section>
+
+    <section class="dashboard" aria-label="Checklist summary">
+      <div class="stat"><span class="statIcon">▦</span><div><strong id="statBoards">—</strong><span>Boards</span></div></div>
+      <div class="stat"><span class="statIcon">✓</span><div><strong id="statCompleted">0</strong><span>Tasks completed</span></div></div>
+      <div class="stat"><span class="statIcon">＋</span><div><strong id="statCustom">0</strong><span>Personal tasks</span></div></div>
+      <div class="stat privacyStat"><span class="statIcon">⌂</span><div><strong>Local only</strong><span>Nothing uploaded</span></div></div>
+    </section>
+
+    <section class="browseHeader" id="browseHeader">
+      <div><div class="kicker">Browse templates</div><h2>What do you want to get done?</h2></div>
+      <span id="boardResultCount" class="resultCount"></span>
     </section>
 
     <section class="boardToolbar" id="boardToolbar" aria-label="Board filters">
-      <label>Search boards<input id="boardSearch" type="search" placeholder="Search activities…"></label>
-      <label>Category<select id="boardCategory"><option value="">All categories</option></select></label>
-      <button id="showAllBoards" class="secondary" type="button">Show all</button>
+      <label class="searchField"><span class="searchIcon">⌕</span><input id="boardSearch" type="search" placeholder="Search checklists, such as budget or travel…" aria-label="Search checklist boards"></label>
+      <label class="selectField"><span>Category</span><select id="boardCategory"><option value="">All categories</option></select></label>
+      <button id="showAllBoards" class="secondary" type="button">Clear filters</button>
     </section>
+    <div id="categoryChips" class="categoryChips" aria-label="Popular categories"></div>
     <section class="status" id="boardStatus" aria-live="polite">Loading checklist boards…</section>
     <section class="boards" id="boards" aria-label="Checklist boards"></section>
 
     <section class="boardDetail" id="boardDetail" hidden>
-      <div class="detailHeader">
-        <button id="closeBoard" class="secondary compact" type="button">← All boards</button>
-        <div class="detailTitle"><div class="kicker" id="detailCategory"></div><h2 id="detailTitle"></h2><p id="detailProgress"></p></div>
+      <div class="detailTopbar">
+        <button id="closeBoard" class="backButton" type="button">← Back to boards</button>
+        <button id="clearBoardData" class="resetButton" type="button">Reset board</button>
       </div>
-      <div class="priorityLegend"><span class="priority high">High</span><span class="priority medium">Medium</span><span class="priority low">Low</span><span class="priority none">No priority</span></div>
-      <div id="boardTasks" class="boardTasks"></div>
-      <form id="addTaskForm" class="addTaskForm">
-        <label>New task<input id="newTaskTitle" maxlength="180" required placeholder="Add another task…"></label>
-        <label>Priority<select id="newTaskPriority"><option value="high">High</option><option value="medium" selected>Medium</option><option value="low">Low</option><option value="none">No priority</option></select></label>
-        <button type="submit">Add task</button>
-      </form>
-      <button id="clearBoardData" class="dangerLink" type="button">Reset my changes for this board</button>
+      <div class="detailHero">
+        <div class="detailIcon" id="detailIcon">✓</div>
+        <div class="detailTitle"><div class="kicker" id="detailCategory"></div><h2 id="detailTitle"></h2><p id="detailProgress"></p></div>
+        <div class="detailProgressRing" id="detailProgressRing"><span id="detailProgressPercent">0%</span></div>
+      </div>
+      <div class="detailProgressTrack"><span id="detailProgressBar"></span></div>
+
+      <div class="taskWorkspace">
+        <div class="taskMain">
+          <div class="taskToolbar">
+            <div class="segmented" id="taskFilter" aria-label="Filter tasks">
+              <button class="active" data-task-filter="all" type="button">All</button>
+              <button data-task-filter="active" type="button">Active</button>
+              <button data-task-filter="completed" type="button">Completed</button>
+            </div>
+            <div class="priorityHint">Tasks sort by priority</div>
+          </div>
+          <div id="boardTasks" class="boardTasks"></div>
+        </div>
+        <aside class="taskSidebar">
+          <form id="addTaskForm" class="addTaskForm">
+            <div><div class="kicker">Personalize this board</div><h3>Add your own task</h3><p>It will be saved only on this device.</p></div>
+            <label>Task name<input id="newTaskTitle" maxlength="180" required placeholder="What else needs to be done?"></label>
+            <label>Priority<select id="newTaskPriority"><option value="high">High priority</option><option value="medium" selected>Medium priority</option><option value="low">Low priority</option><option value="none">No priority</option></select></label>
+            <button type="submit">＋ Add task</button>
+          </form>
+          <div class="privacyCard"><span>🔒</span><p><strong>Private by design</strong>Your progress and personal tasks remain in browser storage.</p></div>
+        </aside>
+      </div>
     </section>
 
-    <details class="legacy">
-      <summary>Location-aware checklist composer</summary>
-      <section class="controls" aria-label="Checklist controls">
-        <label>Checklist<select id="checklist"></select></label>
-        <label>Country<input id="country" value="IN" autocomplete="country"></label>
-        <label>State<input id="state" value="Tamil Nadu" autocomplete="address-level1"></label>
-        <label>District<input id="district" value="Chennai" autocomplete="address-level2"></label>
-        <label>County<input id="county" value="" autocomplete="address-level2"></label>
-        <label>City<input id="city" value="Chennai" autocomplete="address-level2"></label>
-        <label class="toggle"><input id="expand" type="checkbox" checked> Expand sub-checklists</label>
-        <button id="locate" type="button" class="secondary">Use my current location</button>
-        <button id="preset" type="button" class="secondary">Use checklist location</button>
-        <button id="compose" type="button">Build checklist</button>
-      </section>
-      <section class="status" id="locationStatus" aria-live="polite">Location can be prefilled from the page URL, your saved choice, or browser permission.</section>
-      <section class="status" id="status" aria-live="polite">Loading location-aware catalog…</section>
-      <section class="result" id="result" hidden>
-        <div class="resultHeading"><div><div class="kicker">Composed checklist</div><h2 id="title"></h2></div><button id="copy" class="secondary" type="button">Copy JSON</button></div>
-        <div id="warnings"></div><ol id="tasks"></ol>
-        <details><summary>Sources</summary><ul id="sources"></ul></details>
-        <details><summary>JSON response</summary><pre id="json"></pre></details>
-      </section>
-    </details>
-
-    <section class="note"><strong>Privacy:</strong> Completion state, priorities, and personal tasks are saved only in this browser using local storage. They are not uploaded to Share Capsule.</section>
-    <section class="note"><strong>Important:</strong> Educational checklists may require professional verification. Laws, forms, fees, and procedures can change.</section>
+    <footer class="pageFooter"><p><strong>Privacy:</strong> Your completion state, priorities, and personal tasks stay in this browser.</p><p>Educational checklists may require professional verification.</p></footer>
   </main>
-  <script type="module" src="app.js"></script>
+  <script type="module" src="boards.js"></script>
   <script src="/site-shell.js" defer></script>
 </body>
 </html>
