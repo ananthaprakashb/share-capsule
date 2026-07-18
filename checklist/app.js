@@ -1,8 +1,24 @@
 const DATA_ROOT='https://raw.githubusercontent.com/ananthaprakashb/checklist/main/data';
-const macroFiles=['buy-home.json','rent-home.json','lease-property-landlord.json','san-ramon-resident-activities.json'];
-const microFiles=['home-buying.json','home-renting.json','property-leasing-landlord.json','san-ramon-resident-activities.json'];
+const macroFiles=['buy-home.json','rent-home.json','lease-property-landlord.json','san-ramon-resident-activities.json','chennai-life-events.json'];
+const microFiles=['home-buying.json','home-renting.json','property-leasing-landlord.json','san-ramon-resident-activities.json','chennai-life-events.json'];
 const $=id=>document.getElementById(id);
 const state={checklists:[],microById:new Map(),last:null};
+const LOCATION_PRESETS={
+  'travel-domestic-from-chennai':{country:'IN',state:'Tamil Nadu',district:'Chennai',county:'',city:'Chennai'},
+  'travel-international-from-chennai':{country:'IN',state:'Tamil Nadu',district:'Chennai',county:'',city:'Chennai'},
+  'organize-birthday-party-chennai':{country:'IN',state:'Tamil Nadu',district:'Chennai',county:'',city:'Chennai'},
+  'organize-wedding-chennai':{country:'IN',state:'Tamil Nadu',district:'Chennai',county:'',city:'Chennai'},
+  'organize-housewarming-chennai':{country:'IN',state:'Tamil Nadu',district:'Chennai',county:'',city:'Chennai'},
+  'book-gcc-community-hall':{country:'IN',state:'Tamil Nadu',district:'Chennai',county:'',city:'Chennai'},
+  'move-to-san-ramon':{country:'US',state:'CA',district:'',county:'Contra Costa',city:'San Ramon'},
+  'prepare-san-ramon-household-emergency':{country:'US',state:'CA',district:'',county:'Contra Costa',city:'San Ramon'},
+  'complete-san-ramon-home-project':{country:'US',state:'CA',district:'',county:'Contra Costa',city:'San Ramon'},
+  'report-san-ramon-service-issue':{country:'US',state:'CA',district:'',county:'Contra Costa',city:'San Ramon'},
+  'register-san-ramon-recreation-program':{country:'US',state:'CA',district:'',county:'Contra Costa',city:'San Ramon'},
+  'rent-home':{country:'US',state:'CA',district:'',county:'San Joaquin',city:'Manteca'},
+  'lease-property-landlord':{country:'US',state:'CA',district:'',county:'San Joaquin',city:'Manteca'},
+  'buy-home':{country:'US',state:'CA',district:'',county:'Contra Costa',city:'San Ramon'}
+};
 
 function esc(value){return String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));}
 function same(a,b){return String(a??'').trim().toLowerCase()===String(b??'').trim().toLowerCase();}
@@ -42,7 +58,8 @@ function render(result){
   $('sources').innerHTML=result.sources.length?result.sources.map(source=>`<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)}</a>${source.authority?` — ${esc(source.authority)}`:''}</li>`).join(''):'<li>No sources attached.</li>';
   $('json').textContent=JSON.stringify(result,null,2);$('result').hidden=false;$('status').innerHTML=`Built <strong>${result.tasks.length}</strong> tasks from <strong>${result.applied_layers.length}</strong> matching layers.`;
 }
-function locationValues(){return {country:$('country').value,state:$('state').value,county:$('county').value,city:$('city').value};}
+function locationValues(){return {country:$('country').value,state:$('state').value,district:$('district').value,county:$('county').value,city:$('city').value};}
+function applyPreset(id){const preset=LOCATION_PRESETS[id];if(!preset)return;for(const [key,value] of Object.entries(preset)){const input=$(key);if(input)input.value=value;}}
 function composeSelected(){const checklist=state.checklists.find(item=>item.id===$('checklist').value);if(checklist)render(compose(checklist,locationValues(),{},$('expand').checked));}
 async function init(){
   try{
@@ -51,10 +68,12 @@ async function init(){
     state.checklists=macros.flatMap(normalizeMacros).sort((a,b)=>String(a.title).localeCompare(String(b.title)));
     state.microById=new Map(micros.flatMap(normalizeMicros).map(item=>[item.id,item]));
     $('checklist').innerHTML=state.checklists.map(item=>`<option value="${esc(item.id)}">${esc(item.title)}</option>`).join('');
-    const preferred=state.checklists.find(item=>item.id==='move-to-san-ramon');if(preferred)$('checklist').value=preferred.id;
+    const preferred=state.checklists.find(item=>item.id==='travel-domestic-from-chennai')??state.checklists[0];
+    if(preferred){$('checklist').value=preferred.id;applyPreset(preferred.id);}
     composeSelected();
   }catch(error){$('status').textContent=`Unable to load checklist data: ${error.message}`;}
 }
+$('checklist').addEventListener('change',()=>{applyPreset($('checklist').value);composeSelected();});
 $('compose').addEventListener('click',composeSelected);
 $('copy').addEventListener('click',async()=>{if(!state.last)return;await navigator.clipboard.writeText(JSON.stringify(state.last,null,2));$('copy').textContent='Copied';setTimeout(()=>$('copy').textContent='Copy JSON',1200);});
 init();
