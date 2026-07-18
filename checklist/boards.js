@@ -1,5 +1,6 @@
 const API_ROOT='https://api.sharecapsule.app/api/v1';
 const STORAGE_KEY='sharecapsule.checklist.boards.v1';
+const PERSONAL_TASKS_KEY='sharecapsule.personal-tasks.v1';
 const $=id=>document.getElementById(id);
 const state={boards:[],activeBoard:null,taskFilter:'all',store:loadStore()};
 const CATEGORY_META={
@@ -13,6 +14,8 @@ function esc(value){return String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;
 async function fetchJson(path){const response=await fetch(path,{cache:'no-store'});if(!response.ok)throw new Error(`Unable to load ${path}`);return response.json();}
 function loadStore(){try{const parsed=JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}');return parsed&&typeof parsed==='object'?parsed:{};}catch{return {};}}
 function saveStore(){localStorage.setItem(STORAGE_KEY,JSON.stringify(state.store));}
+function loadPersonalTasks(){try{const parsed=JSON.parse(localStorage.getItem(PERSONAL_TASKS_KEY)||'[]');return Array.isArray(parsed)?parsed:[];}catch{return [];}}
+function savePersonalTasks(tasks){localStorage.setItem(PERSONAL_TASKS_KEY,JSON.stringify(tasks));}
 function boardData(id){return state.store[id]??={completed:{},priorities:{},customTasks:[]};}
 function categoryLabel(value){return String(value??'other').split('-').map(part=>part.charAt(0).toUpperCase()+part.slice(1)).join(' ');}
 function categoryMeta(category){return CATEGORY_META[category]??['✓','#3157d5','#eef2ff'];}
@@ -23,6 +26,26 @@ function updateDashboard(){
   const custom=Object.values(state.store).reduce((sum,item)=>sum+(item.customTasks?.length??0),0);
   $('heroBoardCount').textContent=state.boards.length;$('statBoards').textContent=state.boards.length;$('statCompleted').textContent=completed;$('statCustom').textContent=custom;
 }
+function showToast(message,link=false){
+  let toast=$('taskToast');
+  if(!toast){toast=document.createElement('div');toast.id='taskToast';toast.className='taskToast';toast.setAttribute('role','status');document.body.appendChild(toast);}
+  toast.innerHTML=`<span>${esc(message)}</span>${link?'<a href="/tasks/">Open Task Board</a>':''}`;toast.classList.add('show');clearTimeout(showToast.timer);showToast.timer=setTimeout(()=>toast.classList.remove('show'),4200);
+}
+async function addBoardToTaskBoard(id,button){
+  const original=button.innerHTML;button.disabled=true;button.innerHTML='…';
+  try{
+    const board=await fetchJson(`${API_ROOT}/global-activities/${encodeURIComponent(id)}`);
+    const tasks=loadPersonalTasks();const existing=new Set(tasks.filter(task=>task.status!=='done').map(task=>String(task.title).trim().toLowerCase()));let added=0;
+    for(const task of board.tasks??[]){
+      const title=String(task.title??'').trim();if(!title||existing.has(title.toLowerCase()))continue;
+      tasks.push({id:`task-${Date.now()}-${Math.random().toString(36).slice(2,8)}`,title,priority:'medium',status:'todo',progress:0,source:board.title,createdAt:new Date().toISOString()});existing.add(title.toLowerCase());added++;
+    }
+    savePersonalTasks(tasks);
+    button.innerHTML='✓';button.classList.add('added');button.setAttribute('aria-label',`${board.title} tasks added to Task Board`);
+    showToast(added?`${added} tasks added from ${board.title}.`:`All tasks from ${board.title} are already on your Task Board.`,true);
+  }catch(error){button.innerHTML=original;showToast(`Unable to add tasks: ${error.message}`);}
+  finally{button.disabled=false;}
+}
 function renderCategoryChips(){
   const counts=new Map();state.boards.forEach(board=>counts.set(board.category,(counts.get(board.category)??0)+1));
   const categories=[...counts.entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).slice(0,8);
@@ -32,9 +55,11 @@ function renderCategoryChips(){
 function renderBoards(){
   const query=$('boardSearch').value.trim().toLowerCase();const category=$('boardCategory').value;
   const filtered=state.boards.filter(board=>(!category||board.category===category)&&(!query||`${board.title} ${board.category}`.toLowerCase().includes(query)));
-  $('boards').innerHTML=filtered.length?filtered.map(board=>{const p=progressFor(board);const [icon,accent,soft]=categoryMeta(board.category);return `<button class="boardCard" data-board-id="${esc(board.id)}" type="button" style="--card-accent:${accent};--card-soft:${soft}"><div class="boardTop"><span class="boardIcon">${icon}</span><span class="boardCategory">${esc(categoryLabel(board.category))}</span></div><h3>${esc(board.title)}</h3><p class="boardDescription">${board.task_count??0} ready-made tasks${board.subtask_count?` and ${board.subtask_count} helpful subtasks`:''}. Add your own items anytime.</p><div class="boardProgressBlock"><div class="boardProgressMeta"><span class="boardCount">${p.done} of ${p.total} done</span><span>${p.percent}%</span></div><div class="progressTrack"><span style="width:${p.percent}%"></span></div><div class="boardFoot"><span>${p.total-p.done} remaining</span><span>Open board →</span></div></div></button>`;}).join(''):'<div class="emptyTasks">No checklist boards match those filters. Try a broader search.</div>';
-  $('boardStatus').textContent='Your progress and personal tasks are saved automatically in this browser.';$('boardResultCount').textContent=`${filtered.length} of ${state.boards.length} boards`;
-  renderCategoryChips();updateDashboard();document.querySelectorAll('[data-board-id]').forEach(button=>button.addEventListener('click',()=>openBoard(button.dataset.boardId)));
+  $('boards').innerHTML=filtered.length?filtered.map(board=>{const p=progressFor(board);const [icon,accent,soft]=categoryMeta(board.category);return `<article class="boardCard" style="--card-accent:${accent};--card-soft:${soft}"><button class="boardOpen" data-board-id="${esc(board.id)}" type="button" aria-label="Open ${esc(board.title)}"><div class="boardTop"><span class="boardIcon">${icon}</span><span class="boardCategory">${esc(categoryLabel(board.category))}</span></div><h3>${esc(board.title)}</h3><p class="boardDescription">${board.task_count??0} ready-made tasks${board.subtask_count?` and ${board.subtask_count} helpful subtasks`:''}. Add your own items anytime.</p><div class="boardProgressBlock"><div class="boardProgressMeta"><span class="boardCount">${p.done} of ${p.total} done</span><span>${p.percent}%</span></div><div class="progressTrack"><span style="width:${p.percent}%"></span></div><div class="boardFoot"><span>${p.total-p.done} remaining</span><span>Open board →</span></div></div></button><button class="boardAdd" data-add-board="${esc(board.id)}" type="button" title="Add all tasks to Task Board" aria-label="Add ${esc(board.title)} tasks to Task Board">+</button></article>`;}).join(''):'<div class="emptyTasks">No checklist boards match those filters. Try a broader search.</div>';
+  $('boardStatus').textContent='Use the + button to add a checklist’s tasks to your personal Task Board.';$('boardResultCount').textContent=`${filtered.length} of ${state.boards.length} boards`;
+  renderCategoryChips();updateDashboard();
+  document.querySelectorAll('[data-board-id]').forEach(button=>button.addEventListener('click',()=>openBoard(button.dataset.boardId)));
+  document.querySelectorAll('[data-add-board]').forEach(button=>button.addEventListener('click',event=>{event.stopPropagation();addBoardToTaskBoard(button.dataset.addBoard,button);}));
 }
 async function openBoard(id){
   $('boardStatus').textContent='Loading board tasks…';
