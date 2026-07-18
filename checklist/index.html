@@ -25,15 +25,18 @@
 
     <section class="controls" aria-label="Checklist controls">
       <label>Checklist<select id="checklist"></select></label>
-      <label>Country<input id="country" value="IN"></label>
-      <label>State<input id="state" value="Tamil Nadu"></label>
-      <label>District<input id="district" value="Chennai"></label>
-      <label>County<input id="county" value=""></label>
-      <label>City<input id="city" value="Chennai"></label>
+      <label>Country<input id="country" value="IN" autocomplete="country"></label>
+      <label>State<input id="state" value="Tamil Nadu" autocomplete="address-level1"></label>
+      <label>District<input id="district" value="Chennai" autocomplete="address-level2"></label>
+      <label>County<input id="county" value="" autocomplete="address-level2"></label>
+      <label>City<input id="city" value="Chennai" autocomplete="address-level2"></label>
       <label class="toggle"><input id="expand" type="checkbox" checked> Expand sub-checklists</label>
+      <button id="locate" type="button" class="secondary">Use my current location</button>
+      <button id="preset" type="button" class="secondary">Use checklist location</button>
       <button id="compose" type="button">Build checklist</button>
     </section>
 
+    <section class="status" id="locationStatus" aria-live="polite">Location can be prefilled from the page URL, your saved choice, or browser permission.</section>
     <section class="status" id="status" aria-live="polite">Loading checklist catalog…</section>
 
     <section class="result" id="result" hidden>
@@ -47,6 +50,9 @@
       <details><summary>JSON response</summary><pre id="json"></pre></details>
     </section>
 
+    <section class="note">
+      <strong>Privacy:</strong> Browser location is requested only when needed, converted into country/state/district/county/city values, and saved locally in this browser. Coordinates are not stored by Share Capsule.
+    </section>
     <section class="note">
       <strong>Important:</strong> These educational checklists may require professional verification. Laws, forms, fees and local procedures can change.
     </section>

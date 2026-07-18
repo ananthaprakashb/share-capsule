@@ -1,6 +1,8 @@
 const DATA_ROOT='https://raw.githubusercontent.com/ananthaprakashb/checklist/main/data';
+const LOCATION_STORAGE_KEY='sharecapsule.checklist.location.v1';
 const macroFiles=['buy-home.json','rent-home.json','lease-property-landlord.json','san-ramon-resident-activities.json','chennai-life-events.json'];
 const microFiles=['home-buying.json','home-renting.json','property-leasing-landlord.json','san-ramon-resident-activities.json','chennai-life-events.json'];
+const LOCATION_FIELDS=['country','state','district','county','city'];
 const $=id=>document.getElementById(id);
 const state={checklists:[],microById:new Map(),last:null};
 const LOCATION_PRESETS={
@@ -58,9 +60,40 @@ function render(result){
   $('sources').innerHTML=result.sources.length?result.sources.map(source=>`<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)}</a>${source.authority?` — ${esc(source.authority)}`:''}</li>`).join(''):'<li>No sources attached.</li>';
   $('json').textContent=JSON.stringify(result,null,2);$('result').hidden=false;$('status').innerHTML=`Built <strong>${result.tasks.length}</strong> tasks from <strong>${result.applied_layers.length}</strong> matching layers.`;
 }
-function locationValues(){return {country:$('country').value,state:$('state').value,district:$('district').value,county:$('county').value,city:$('city').value};}
-function applyPreset(id){const preset=LOCATION_PRESETS[id];if(!preset)return;for(const [key,value] of Object.entries(preset)){const input=$(key);if(input)input.value=value;}}
-function composeSelected(){const checklist=state.checklists.find(item=>item.id===$('checklist').value);if(checklist)render(compose(checklist,locationValues(),{},$('expand').checked));}
+function locationValues(){return Object.fromEntries(LOCATION_FIELDS.map(key=>[key,$(key).value.trim()]));}
+function setLocation(values,{save=true,message='Location updated.'}={}){
+  for(const key of LOCATION_FIELDS){if(values[key]!==undefined&&$(key))$(key).value=values[key]??'';}
+  if(save)localStorage.setItem(LOCATION_STORAGE_KEY,JSON.stringify(locationValues()));
+  $('locationStatus').textContent=message;
+}
+function applyPreset(id){const preset=LOCATION_PRESETS[id];if(!preset)return false;setLocation(preset,{message:'Using the location associated with this checklist.'});return true;}
+function queryLocation(){const params=new URLSearchParams(location.search);const values={};let found=false;for(const key of LOCATION_FIELDS){if(params.has(key)){values[key]=params.get(key)??'';found=true;}}return found?values:null;}
+function savedLocation(){try{const value=JSON.parse(localStorage.getItem(LOCATION_STORAGE_KEY)||'null');return value&&typeof value==='object'?value:null;}catch{return null;}}
+function reverseLocation(address){return {
+  country:String(address.country_code??'').toUpperCase(),
+  state:address.state??address.region??'',
+  district:address.state_district??address.city_district??address.district??'',
+  county:address.county??'',
+  city:address.city??address.town??address.village??address.municipality??address.suburb??''
+};}
+async function useCurrentLocation(){
+  if(!navigator.geolocation){$('locationStatus').textContent='This browser does not provide location access.';return;}
+  $('locationStatus').textContent='Requesting browser location permission…';$('locate').disabled=true;
+  try{
+    const position=await new Promise((resolve,reject)=>navigator.geolocation.getCurrentPosition(resolve,reject,{enableHighAccuracy:false,timeout:10000,maximumAge:300000}));
+    const {latitude,longitude}=position.coords;
+    $('locationStatus').textContent='Resolving your city and region…';
+    const url=new URL('https://nominatim.openstreetmap.org/reverse');
+    url.search=new URLSearchParams({format:'jsonv2',lat:String(latitude),lon:String(longitude),addressdetails:'1','accept-language':navigator.language||'en'});
+    const response=await fetch(url,{headers:{Accept:'application/json'}});if(!response.ok)throw new Error('Reverse location lookup failed');
+    const data=await response.json();const values=reverseLocation(data.address??{});
+    setLocation(values,{message:`Using browser location: ${[values.city,values.state,values.country].filter(Boolean).join(', ')||'location detected'}.`});
+    composeSelected();
+  }catch(error){
+    const denied=error?.code===1;$('locationStatus').textContent=denied?'Location permission was not granted. You can enter the fields manually.':`Unable to determine location: ${error.message||'unknown error'}`;
+  }finally{$('locate').disabled=false;}
+}
+function composeSelected(){const checklist=state.checklists.find(item=>item.id===$('checklist').value);if(checklist){localStorage.setItem(LOCATION_STORAGE_KEY,JSON.stringify(locationValues()));render(compose(checklist,locationValues(),{},$('expand').checked));}}
 async function init(){
   try{
     const macros=await Promise.all(macroFiles.map(name=>fetchJson(`${DATA_ROOT}/macros/${name}`)));
@@ -68,12 +101,19 @@ async function init(){
     state.checklists=macros.flatMap(normalizeMacros).sort((a,b)=>String(a.title).localeCompare(String(b.title)));
     state.microById=new Map(micros.flatMap(normalizeMicros).map(item=>[item.id,item]));
     $('checklist').innerHTML=state.checklists.map(item=>`<option value="${esc(item.id)}">${esc(item.title)}</option>`).join('');
-    const preferred=state.checklists.find(item=>item.id==='travel-domestic-from-chennai')??state.checklists[0];
-    if(preferred){$('checklist').value=preferred.id;applyPreset(preferred.id);}
+    const preferred=state.checklists.find(item=>item.id==='travel-domestic-from-chennai')??state.checklists[0];if(preferred)$('checklist').value=preferred.id;
+    const fromQuery=queryLocation();const fromStorage=savedLocation();
+    if(fromQuery)setLocation(fromQuery,{save:false,message:'Location prefilled from the page URL.'});
+    else if(fromStorage)setLocation(fromStorage,{save:false,message:'Location restored from this browser.'});
+    else if(preferred)applyPreset(preferred.id);
     composeSelected();
+    if(!fromQuery&&!fromStorage)useCurrentLocation();
   }catch(error){$('status').textContent=`Unable to load checklist data: ${error.message}`;}
 }
-$('checklist').addEventListener('change',()=>{applyPreset($('checklist').value);composeSelected();});
+$('checklist').addEventListener('change',composeSelected);
+$('locate').addEventListener('click',useCurrentLocation);
+$('preset').addEventListener('click',()=>{if(applyPreset($('checklist').value))composeSelected();});
 $('compose').addEventListener('click',composeSelected);
+for(const key of LOCATION_FIELDS)$(key).addEventListener('change',()=>localStorage.setItem(LOCATION_STORAGE_KEY,JSON.stringify(locationValues())));
 $('copy').addEventListener('click',async()=>{if(!state.last)return;await navigator.clipboard.writeText(JSON.stringify(state.last,null,2));$('copy').textContent='Copied';setTimeout(()=>$('copy').textContent='Copy JSON',1200);});
 init();
