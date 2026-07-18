@@ -34,14 +34,16 @@ function showToast(message,link=false){
 async function addBoardToTaskBoard(id,button){
   const original=button.innerHTML;button.disabled=true;button.innerHTML='…';
   try{
-    const board=await fetchJson(`${API_ROOT}/global-activities/${encodeURIComponent(id)}`);
+    const board=state.activeBoard?.id===id?state.activeBoard:await fetchJson(`${API_ROOT}/global-activities/${encodeURIComponent(id)}`);
     const tasks=loadPersonalTasks();const existing=new Set(tasks.filter(task=>task.status!=='done').map(task=>String(task.title).trim().toLowerCase()));let added=0;
     for(const task of board.tasks??[]){
       const title=String(task.title??'').trim();if(!title||existing.has(title.toLowerCase()))continue;
       tasks.push({id:`task-${Date.now()}-${Math.random().toString(36).slice(2,8)}`,title,priority:'medium',status:'todo',progress:0,source:board.title,createdAt:new Date().toISOString()});existing.add(title.toLowerCase());added++;
     }
     savePersonalTasks(tasks);
-    button.innerHTML='✓';button.classList.add('added');button.setAttribute('aria-label',`${board.title} tasks added to Task Board`);
+    if(button.id==='addAllBoardTasks')button.innerHTML=added?'✓ Added all tasks':'✓ Already added';
+    else button.innerHTML='✓';
+    button.classList.add('added');button.setAttribute('aria-label',`${board.title} tasks added to Task Board`);
     showToast(added?`${added} tasks added from ${board.title}.`:`All tasks from ${board.title} are already on your Task Board.`,true);
   }catch(error){button.innerHTML=original;showToast(`Unable to add tasks: ${error.message}`);}
   finally{button.disabled=false;}
@@ -67,6 +69,7 @@ async function openBoard(id){
     const board=await fetchJson(`${API_ROOT}/global-activities/${encodeURIComponent(id)}`);state.activeBoard=board;state.taskFilter='all';
     $('boards').hidden=true;$('boardToolbar').hidden=true;$('categoryChips').hidden=true;$('boardStatus').hidden=true;$('browseHeader').hidden=true;$('boardDetail').hidden=false;
     const [icon]=categoryMeta(board.category);$('detailIcon').textContent=icon;$('detailCategory').textContent=categoryLabel(board.category);$('detailTitle').textContent=board.title;
+    $('addAllBoardTasks').innerHTML='＋ Add all tasks';$('addAllBoardTasks').classList.remove('added');$('addAllBoardTasks').setAttribute('aria-label',`Add all ${board.title} tasks to Task Board`);
     document.querySelectorAll('[data-task-filter]').forEach(button=>button.classList.toggle('active',button.dataset.taskFilter==='all'));
     renderActiveBoard();history.replaceState(null,'',`#${encodeURIComponent(id)}`);window.scrollTo({top:$('boardDetail').offsetTop-18,behavior:'smooth'});
   }catch(error){$('boardStatus').textContent=`Unable to load this board: ${error.message}`;}
@@ -95,5 +98,6 @@ async function init(){
   try{const body=await fetchJson(`${API_ROOT}/global-activities`);state.boards=body.items??[];const categories=[...new Set(state.boards.map(item=>item.category))].sort();$('boardCategory').innerHTML='<option value="">All categories</option>'+categories.map(category=>`<option value="${esc(category)}">${esc(categoryLabel(category))}</option>`).join('');renderBoards();const id=decodeURIComponent(location.hash.slice(1));if(id&&state.boards.some(board=>board.id===id))openBoard(id);}catch(error){$('boardStatus').textContent=`Unable to load checklist boards: ${error.message}`;}
 }
 $('boardSearch').addEventListener('input',renderBoards);$('boardCategory').addEventListener('change',renderBoards);$('showAllBoards').addEventListener('click',()=>{$('boardSearch').value='';$('boardCategory').value='';renderBoards();});$('closeBoard').addEventListener('click',closeBoard);$('addTaskForm').addEventListener('submit',addCustomTask);$('clearBoardData').addEventListener('click',resetBoard);
+$('addAllBoardTasks').addEventListener('click',event=>{if(state.activeBoard)addBoardToTaskBoard(state.activeBoard.id,event.currentTarget);});
 document.querySelectorAll('[data-task-filter]').forEach(button=>button.addEventListener('click',()=>{state.taskFilter=button.dataset.taskFilter;document.querySelectorAll('[data-task-filter]').forEach(item=>item.classList.toggle('active',item===button));renderActiveBoard();}));
 init();
