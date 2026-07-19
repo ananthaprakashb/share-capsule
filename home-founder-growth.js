@@ -58,3 +58,29 @@
   render();
   window.addEventListener('popstate',()=>setTimeout(render,0));
 })();
+
+(()=>{
+  const AUDIO_URL='https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev/Focus_on_the_vital_twenty_percent.m4a';
+  const installStyles=()=>{
+    if(document.getElementById('homeFocusAudioStyles'))return;
+    const style=document.createElement('style');
+    style.id='homeFocusAudioStyles';
+    style.textContent='.homeFocusAudio{margin:0 0 20px;padding:24px;border:1px solid #d8e0ef;border-radius:26px;background:linear-gradient(145deg,#f7f9ff,#fff);box-shadow:0 16px 44px rgba(30,48,90,.09)}.homeFocusAudioEyebrow{margin:0 0 7px;color:#3157d5;font-size:10px;font-weight:950;letter-spacing:.14em;text-transform:uppercase}.homeFocusAudio h2{margin:0;font-size:clamp(27px,5vw,39px);line-height:1.02;letter-spacing:-.045em}.homeFocusAudio p{max-width:720px;margin:11px 0 16px;color:#667085;font-size:14px;line-height:1.58}.homeFocusAudio audio{display:block;width:100%;max-width:760px}.homeFocusAudio a{display:inline-flex;margin-top:12px;color:#3157d5;text-decoration:none;font-size:12px;font-weight:900}.homeFocusAudio a:hover{text-decoration:underline}';
+    document.head.appendChild(style);
+  };
+  const render=()=>{
+    if(location.pathname!=='/'||new URLSearchParams(location.search).has('release'))return;
+    const toolbar=document.querySelector('#app .toolbar');
+    if(!toolbar||document.getElementById('homeFocusAudio'))return;
+    const section=document.createElement('section');
+    section.id='homeFocusAudio';
+    section.className='homeFocusAudio';
+    section.innerHTML=`<p class="homeFocusAudioEyebrow">Featured audio</p><h2>Focus on the vital twenty percent.</h2><p>Listen to this short guide on identifying the small number of tasks that create most of the value, then open the Task Board to act on them.</p><audio controls preload="metadata"><source src="${AUDIO_URL}" type="audio/mp4">Your browser does not support embedded audio.</audio><a href="${AUDIO_URL}" target="_blank" rel="noopener noreferrer">Open audio in a new tab →</a>`;
+    toolbar.insertAdjacentElement('beforebegin',section);
+  };
+  installStyles();
+  const observer=new MutationObserver(render);
+  observer.observe(document.getElementById('app')||document.body,{childList:true,subtree:true});
+  render();
+  window.addEventListener('popstate',()=>setTimeout(render,0));
+})();
