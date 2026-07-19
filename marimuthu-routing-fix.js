@@ -4,7 +4,7 @@
   const TODAY='/marimuthu/today.json';
 
   const findPoem=(entry,query)=>{
-    if(!Array.isArray(globalThis.poems))return -1;
+    if(typeof poems==='undefined'||!Array.isArray(poems))return -1;
     const book=normalize(entry?.book||query.get('book'));
     const number=normalize(entry?.number||query.get('poem'));
     const text=normalize(entry?.text||query.get('text'));
@@ -20,8 +20,8 @@
   };
 
   const renderIndex=position=>{
-    if(position<0||typeof globalThis.render!=='function')return false;
-    globalThis.index=position;
+    if(position<0||typeof render!=='function'||typeof index==='undefined')return false;
+    index=position;
     render();
     const poem=poems[position];
     const params=new URLSearchParams({book:poem.book,poem:poem.number});
