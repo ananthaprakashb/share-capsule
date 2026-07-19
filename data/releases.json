@@ -3616,6 +3616,55 @@
       },
       "publishedAt": "2026-07-19",
       "featured": true
+    },
+    {
+      "slug": "wish-a-friend-birthday-cards",
+      "title": "Wish a Friend with Share Capsule",
+      "artist": "Share Capsule",
+      "type": "Story",
+      "category": "Birthday Wishes",
+      "language": "English",
+      "description": "Choose a birthday card, personalize it in Canva, and share it instantly with friends through WhatsApp, Facebook, X, email, or your phone's share menu.",
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#5f3b2d,#9a6a45 55%,#d4a574)",
+      "coverEyebrow": "Birthday Wishes",
+      "coverLines": [
+        "Wish a Friend",
+        "Happy Birthday"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Read story",
+          "icon": "📖",
+          "url": "/birthday/"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "📖",
+          "text": "Thought you might enjoy this five-minute Tamil story."
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this thoughtful Tamil story with the family."
+        },
+        "reader": {
+          "label": "Story reader",
+          "icon": "📚",
+          "text": "Here is a Tamil story worth reading and reflecting on."
+        },
+        "learner": {
+          "label": "Curious learner",
+          "icon": "💡",
+          "text": "This story connects history, learning and modern ideas."
+        }
+      },
+      "publishedAt": "2026-07-19",
+      "featured": true
     }
   ]
 }
