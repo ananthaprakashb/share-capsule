@@ -10,6 +10,7 @@
     :root{--ink:#24143a;--muted:#6f6480;--line:#eadff5;--panel:#fff;--accent:#7c3aed}
     *{box-sizing:border-box}
     body{margin:0;background:linear-gradient(145deg,#fff7ed,#f5f3ff 55%,#ecfeff);color:var(--ink);font-family:Inter,system-ui,-apple-system,sans-serif}
+    button{font:inherit}
     .shell{width:min(1180px,100% - 28px);margin:auto;padding:38px 0 90px}
     .hero{text-align:center;padding:18px 12px 30px}
     .eyebrow{font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
@@ -26,6 +27,13 @@
     .actions{display:flex;gap:9px;margin-top:17px}
     .actions a{flex:1;display:grid;place-items:center;min-height:44px;border-radius:14px;text-decoration:none;font-weight:850;font-size:13px}
     .view{background:var(--accent);color:#fff}.edit{border:1px solid #d8c7ec;color:#5b2788;background:#fff}
+    .share-title{margin:18px 0 8px;font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#806f91}
+    .share-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .share-row a,.share-row button{display:grid;place-items:center;min-height:40px;border:1px solid #e6daf2;border-radius:12px;background:#faf7ff;color:#4f2b70;text-decoration:none;font-size:12px;font-weight:850;cursor:pointer}
+    .share-row a:hover,.share-row button:hover{background:#f3e8ff}
+    .share-row .wa{background:#ecfdf3;color:#166534;border-color:#bbf7d0}
+    .share-row .native{background:#ede9fe;color:#5b21b6;border-color:#ddd6fe}
+    .share-row .copied{background:#dcfce7;color:#166534;border-color:#86efac}
     .note{margin-top:24px;padding:16px 18px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.72);color:var(--muted);font-size:13px;line-height:1.6}
     @media(max-width:860px){.grid{grid-template-columns:1fr 1fr}}
     @media(max-width:580px){.grid{grid-template-columns:1fr}.shell{width:min(100% - 20px,1180px)}.actions{flex-direction:column}}
@@ -36,49 +44,47 @@
     <section class="hero">
       <div class="eyebrow">Canva birthday collection</div>
       <h1>Birthday Wishes</h1>
-      <p>Choose a ready-made birthday card, open it in Canva, personalize the message or recipient name, and share it with someone special.</p>
+      <p>Choose a ready-made birthday card, personalize it in Canva, and share it instantly through WhatsApp or your favorite social platform.</p>
     </section>
 
     <section class="grid" aria-label="Birthday wish cards">
-      <article class="card">
-        <a class="preview" href="https://www.canva.com/d/-A5cFlme-zExjok" target="_blank" rel="noopener">
-          <img src="https://design.canva.ai/KlXiqzSzP7dTIAc" alt="Colorful Happy Birthday Canva card with festive decorations">
-        </a>
-        <div class="content">
-          <span class="badge">Joyful</span>
-          <h2>Happy Birthday!</h2>
-          <p>Wishing you joy, good health, and wonderful memories today and always.</p>
-          <div class="actions"><a class="view" href="https://www.canva.com/d/-A5cFlme-zExjok" target="_blank" rel="noopener">View card</a><a class="edit" href="https://www.canva.com/d/-W2KE451rmEcKBw" target="_blank" rel="noopener">Edit in Canva</a></div>
-        </div>
+      <article class="card" data-title="Happy Birthday!" data-message="Wishing you joy, good health, and wonderful memories today and always." data-url="https://www.canva.com/d/-A5cFlme-zExjok">
+        <a class="preview" href="https://www.canva.com/d/-A5cFlme-zExjok" target="_blank" rel="noopener"><img src="https://design.canva.ai/KlXiqzSzP7dTIAc" alt="Colorful Happy Birthday Canva card with festive decorations"></a>
+        <div class="content"><span class="badge">Joyful</span><h2>Happy Birthday!</h2><p>Wishing you joy, good health, and wonderful memories today and always.</p><div class="actions"><a class="view" href="https://www.canva.com/d/-A5cFlme-zExjok" target="_blank" rel="noopener">View card</a><a class="edit" href="https://www.canva.com/d/-W2KE451rmEcKBw" target="_blank" rel="noopener">Edit in Canva</a></div><div class="share-title">Share this card</div><div class="share-row"></div></div>
       </article>
 
-      <article class="card">
-        <a class="preview" href="https://www.canva.com/d/yyVTbcMm447rffn" target="_blank" rel="noopener">
-          <img src="https://design.canva.ai/hv-jdnd21Gq39Lk" alt="Elegant birthday wish Canva card">
-        </a>
-        <div class="content">
-          <span class="badge">Elegant</span>
-          <h2>Beautiful Moments</h2>
-          <p>May your birthday be filled with love, laughter, and beautiful moments.</p>
-          <div class="actions"><a class="view" href="https://www.canva.com/d/yyVTbcMm447rffn" target="_blank" rel="noopener">View card</a><a class="edit" href="https://www.canva.com/d/GOs7k6Kud4iJwdT" target="_blank" rel="noopener">Edit in Canva</a></div>
-        </div>
+      <article class="card" data-title="Beautiful Moments" data-message="May your birthday be filled with love, laughter, and beautiful moments." data-url="https://www.canva.com/d/yyVTbcMm447rffn">
+        <a class="preview" href="https://www.canva.com/d/yyVTbcMm447rffn" target="_blank" rel="noopener"><img src="https://design.canva.ai/hv-jdnd21Gq39Lk" alt="Elegant birthday wish Canva card"></a>
+        <div class="content"><span class="badge">Elegant</span><h2>Beautiful Moments</h2><p>May your birthday be filled with love, laughter, and beautiful moments.</p><div class="actions"><a class="view" href="https://www.canva.com/d/yyVTbcMm447rffn" target="_blank" rel="noopener">View card</a><a class="edit" href="https://www.canva.com/d/GOs7k6Kud4iJwdT" target="_blank" rel="noopener">Edit in Canva</a></div><div class="share-title">Share this card</div><div class="share-row"></div></div>
       </article>
 
-      <article class="card">
-        <a class="preview" href="https://www.canva.com/d/oXt1iRAqy7B6ATl" target="_blank" rel="noopener">
-          <img src="https://design.canva.ai/VHzQHTqOyYrWWdn" alt="Modern minimal birthday celebration Canva card">
-        </a>
-        <div class="content">
-          <span class="badge">Modern</span>
-          <h2>Celebrate Your Journey</h2>
-          <p>Celebrate your day. Celebrate your journey. Happy Birthday!</p>
-          <div class="actions"><a class="view" href="https://www.canva.com/d/oXt1iRAqy7B6ATl" target="_blank" rel="noopener">View card</a><a class="edit" href="https://www.canva.com/d/B_MLx02NjjLyWfK" target="_blank" rel="noopener">Edit in Canva</a></div>
-        </div>
+      <article class="card" data-title="Celebrate Your Journey" data-message="Celebrate your day. Celebrate your journey. Happy Birthday!" data-url="https://www.canva.com/d/oXt1iRAqy7B6ATl">
+        <a class="preview" href="https://www.canva.com/d/oXt1iRAqy7B6ATl" target="_blank" rel="noopener"><img src="https://design.canva.ai/VHzQHTqOyYrWWdn" alt="Modern minimal birthday celebration Canva card"></a>
+        <div class="content"><span class="badge">Modern</span><h2>Celebrate Your Journey</h2><p>Celebrate your day. Celebrate your journey. Happy Birthday!</p><div class="actions"><a class="view" href="https://www.canva.com/d/oXt1iRAqy7B6ATl" target="_blank" rel="noopener">View card</a><a class="edit" href="https://www.canva.com/d/B_MLx02NjjLyWfK" target="_blank" rel="noopener">Edit in Canva</a></div><div class="share-title">Share this card</div><div class="share-row"></div></div>
       </article>
     </section>
 
-    <div class="note">These cards are intentionally name-free and age-neutral so they can be reused. Open a card in Canva to personalize the recipient, message, colors, or photos before sharing.</div>
+    <div class="note">WhatsApp, Facebook, X, email, native device sharing, and copy-link actions are available for every card. Social platforms share the card message and Canva view link.</div>
   </main>
+  <script>
+    const makeLink=(label,className,url)=>{const a=document.createElement('a');a.textContent=label;a.className=className||'';a.href=url;a.target='_blank';a.rel='noopener';return a};
+    document.querySelectorAll('.card').forEach(card=>{
+      const title=card.dataset.title;
+      const message=card.dataset.message;
+      const url=card.dataset.url;
+      const text=`${title}\n${message}\n${url}`;
+      const row=card.querySelector('.share-row');
+      row.append(
+        makeLink('WhatsApp','wa',`https://wa.me/?text=${encodeURIComponent(text)}`),
+        makeLink('Facebook','',`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(message)}`),
+        makeLink('X','',`https://twitter.com/intent/tweet?text=${encodeURIComponent(`${title} — ${message}`)}&url=${encodeURIComponent(url)}`),
+        makeLink('Email','',`mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(text)}`)
+      );
+      const native=document.createElement('button');native.type='button';native.className='native';native.textContent='Share';native.onclick=async()=>{if(navigator.share){try{await navigator.share({title,text:message,url})}catch(error){if(error.name!=='AbortError')console.error(error)}}else{await navigator.clipboard.writeText(text);native.textContent='Copied';setTimeout(()=>native.textContent='Share',1600)}};
+      const copy=document.createElement('button');copy.type='button';copy.textContent='Copy link';copy.onclick=async()=>{await navigator.clipboard.writeText(url);copy.textContent='Copied';copy.classList.add('copied');setTimeout(()=>{copy.textContent='Copy link';copy.classList.remove('copied')},1600)};
+      row.append(native,copy);
+    });
+  </script>
   <script src="/site-shell.js" defer></script>
 </body>
 </html>
