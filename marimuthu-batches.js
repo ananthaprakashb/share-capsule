@@ -3,4 +3,5 @@
   load('https://cdn.jsdelivr.net/gh/ananthaprakashb/share-capsule@ea119fa6f6143a7fb733cbba9a8580cdfc3c441b/marimuthu-batches.js');
   load('/marimuthu-validation.js');
   load('/marimuthu-routing-fix.js');
+  load('/marimuthu-side-navigation.js');
 })();
