@@ -7,6 +7,7 @@
     '/marimuthu/data/moothurai-poem-12.json'
   ];
   const TODAY_URL='/marimuthu/today.json';
+  const CORRECTIONS_URL='/marimuthu/data/inna-narpathu-corrections.json';
   let todayOverride=null;
   const COMPRESSED_BATCHES=[[
     '/marimuthu/data/inna-narpathu.part1',
@@ -24,18 +25,26 @@
     return first||'பாடலின் கருத்தை நம் நாளாந்த வாழ்வில் சிந்திப்போம்.';
   };
   const merge=list=>{
-    const positions=new Map(poems.map((poem,i)=>[`${normalize(poem.book)}|${normalize(poem.text)}`,i]));
+    const textPositions=new Map(poems.map((poem,i)=>[`${normalize(poem.book)}|${normalize(poem.text)}`,i]));
+    const numberPositions=new Map(poems.map((poem,i)=>poem.number?[`${normalize(poem.book)}|${normalize(poem.number)}`,i]:null).filter(Boolean));
     for(const item of list||[]){
       const poem={...item,thought:thoughtFor(item)};
-      const key=`${normalize(poem.book)}|${normalize(poem.text)}`;
-      if(positions.has(key)){
-        const current=poems[positions.get(key)];
+      const textKey=`${normalize(poem.book)}|${normalize(poem.text)}`;
+      const numberKey=poem.number?`${normalize(poem.book)}|${normalize(poem.number)}`:'';
+      const position=numberKey&&numberPositions.has(numberKey)?numberPositions.get(numberKey):textPositions.get(textKey);
+      if(position!==undefined){
+        const current=poems[position];
         current.author=poem.author||current.author;
         current.number=poem.number||current.number;
+        current.text=poem.text||current.text;
         current.meaning=poem.meaning||current.meaning;
         current.thought=poem.thought||thoughtFor(current);
+        textPositions.set(`${normalize(current.book)}|${normalize(current.text)}`,position);
+        if(current.number)numberPositions.set(`${normalize(current.book)}|${normalize(current.number)}`,position);
       }else{
-        positions.set(key,poems.length);
+        const next=poems.length;
+        textPositions.set(textKey,next);
+        if(numberKey)numberPositions.set(numberKey,next);
         poems.push(poem);
       }
     }
