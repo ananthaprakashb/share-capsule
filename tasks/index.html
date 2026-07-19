@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#3157d5">
+  <meta name="description" content="Maintain personal tasks, priorities, and progress in your browser, with a library of useful checklists.">
+  <title>Task Board</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .topActions{display:flex;gap:8px;align-items:center}.topbar .templatesLink{background:#3157d5;color:#fff;border-color:#3157d5}.templateCallout,.submitCallout{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:18px;padding:22px 24px;border:1px solid #cbd6fb;border-radius:22px;background:linear-gradient(135deg,#eef2ff,#fff);box-shadow:var(--shadow)}.templateCallout h2,.submitCallout h2{margin:5px 0 7px;font-size:25px;letter-spacing:-.04em}.templateCallout p,.submitCallout p{max-width:790px;margin:0;color:var(--muted);font-size:14px;line-height:1.55}.templateCallout>a,.submitCallout>a,.fullLibraryLink{flex:0 0 auto;text-decoration:none;border-radius:14px;background:var(--accent);color:#fff;padding:14px 17px;font-size:13px;font-weight:900}.fullLibraryLink{display:inline-flex;margin:2px 0 16px;padding:11px 13px;background:var(--accent-soft);color:var(--accent)}.submitCallout{margin-top:22px;background:linear-gradient(135deg,#f5f7ff,#eef8f4);border-color:#d7e2ef}.submitCallout>a{background:#172033}@media(max-width:760px){.topbar{align-items:flex-start}.topActions{flex-wrap:wrap;justify-content:flex-end}.templateCallout,.submitCallout{align-items:flex-start;flex-direction:column}.templateCallout>a,.submitCallout>a{width:100%;text-align:center}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <h1>Task Board</h1>
+      <nav class="topActions" aria-label="Task Board navigation">
+        <a class="templatesLink" href="/checklist/">Task Templates</a>
+        <a href="/">Home</a>
+      </nav>
+    </header>
+
+    <section class="intro">
+      <div>
+        <span class="eyebrow">Your private task workspace</span>
+        <h2>Keep important work visible and moving.</h2>
+        <p>Add your own tasks, set priorities, and update progress. Your information stays in this browser.</p>
+      </div>
+      <div class="summary" aria-label="Task summary">
+        <div><strong id="totalCount">0</strong><span>Total</span></div>
+        <div><strong id="activeCount">0</strong><span>Active</span></div>
+        <div><strong id="doneCount">0</strong><span>Done</span></div>
+      </div>
+    </section>
+
+    <section class="templateCallout" aria-labelledby="templateCalloutTitle">
+      <div>
+        <span class="eyebrow">Planning something bigger?</span>
+        <h2 id="templateCalloutTitle">Start with a ready-made task template.</h2>
+        <p>Organizing a move, vacation, event, job search, financial review, project, or another major goal? Browse curated checklists and import the useful tasks instead of rebuilding everything from scratch.</p>
+      </div>
+      <a href="/checklist/">Browse Task Templates →</a>
+    </section>
+
+    <section class="addPanel">
+      <form id="addTaskForm">
+        <label class="taskTitleField">Task<input id="taskTitle" maxlength="180" required placeholder="What needs to be done?"></label>
+        <label>Priority<select id="taskPriority"><option value="high">High</option><option value="medium" selected>Medium</option><option value="low">Low</option><option value="none">No priority</option></select></label>
+        <button type="submit">Add task</button>
+      </form>
+    </section>
+
+    <section class="workspace">
+      <section class="myTasks">
+        <div class="sectionHeader">
+          <div><span class="eyebrow">My tasks</span><h2>What you are working on</h2></div>
+          <div class="filters" role="group" aria-label="Task filters">
+            <button class="active" data-filter="all" type="button">All</button>
+            <button data-filter="active" type="button">Active</button>
+            <button data-filter="done" type="button">Done</button>
+          </div>
+        </div>
+        <div id="taskList" class="taskList"></div>
+      </section>
+
+      <aside class="library">
+        <div class="libraryIntro">
+          <span class="eyebrow">Quick-add library</span>
+          <h2>Important things are easy to miss.</h2>
+          <p>Quickly add individual tasks here, or open the full Task Templates page to browse complete boards, evidence notes, categories, and one-click imports.</p>
+          <a class="fullLibraryLink" href="/checklist/">Explore all Task Templates →</a>
+        </div>
+        <label class="search">Find a checklist<input id="librarySearch" type="search" placeholder="Search health, finance, travel…"></label>
+        <div id="libraryStatus" class="libraryStatus">Loading task library…</div>
+        <div id="libraryList" class="libraryList"></div>
+      </aside>
+    </section>
+
+    <section class="submitCallout">
+      <div><span class="eyebrow">Community templates</span><h2>Can’t find the checklist you need?</h2><p>Build your own useful checklist and send it for administrator review. Approved submissions can be added to the public library for others.</p></div>
+      <a href="/checklist/submit/">Submit a Checklist →</a>
+    </section>
+
+    <p class="privacy">Task titles, priorities, status, and progress are stored only in this browser using local storage.</p>
+  </main>
+  <script type="module" src="app.js"></script>
+  <script src="/site-shell.js" defer></script>
+</body>
+</html>

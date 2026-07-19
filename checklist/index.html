@@ -3,55 +3,103 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#1d3157">
-  <meta name="description" content="Location-aware checklists composed from generic, country, state, county and city guidance.">
-  <meta property="og:title" content="Local Checklists — Share Capsule">
+  <meta name="theme-color" content="#3157d5">
+  <meta name="description" content="Browse reusable checklist boards, prioritize tasks, and keep personal tasks locally in your browser.">
+  <meta property="og:title" content="Checklist Boards — Share Capsule">
   <meta property="og:url" content="https://sharecapsule.app/checklist/">
-  <title>Local Checklists — Share Capsule</title>
+  <title>Checklist Boards — Share Capsule</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .topActions{display:flex;align-items:center;justify-content:flex-end;gap:9px;min-width:0}.taskBoardLink{background:#172033!important;color:#fff!important;border-color:#172033!important}.detailTopbar{align-items:center}.detailBoardLink{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 14px;border:1px solid #cbd3e0;border-radius:12px;background:#172033;color:#fff;text-decoration:none;font-size:13px;font-weight:900}.pageTaskCta{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:24px;padding:20px 22px;border:1px solid #cbd6fb;border-radius:20px;background:linear-gradient(135deg,#eef2ff,#fff)}.pageTaskCta h2{margin:4px 0 6px;font-size:23px;letter-spacing:-.035em}.pageTaskCta p{margin:0;color:#697386;font-size:13px;line-height:1.5}.pageTaskCta a{flex:0 0 auto;padding:13px 16px;border-radius:13px;background:#3157d5;color:#fff;text-decoration:none;font-size:13px;font-weight:900}
+    @media(max-width:760px){
+      .shell{padding-inline:14px}.top{display:grid!important;grid-template-columns:1fr;align-items:stretch!important;gap:14px!important}.brand{width:100%;min-width:0;font-size:17px;line-height:1.2}.brand>span:last-child{min-width:0}.brandMark{flex:0 0 36px}.topActions{display:grid;grid-template-columns:1fr 1fr;width:100%;gap:8px}.topActions .home{display:flex;align-items:center;justify-content:center;min-width:0;min-height:44px;padding:10px 9px;text-align:center;line-height:1.2;white-space:normal}.topActions .taskBoardLink{grid-column:1/-1}.fm{margin-top:2px!important;border-radius:22px!important}.fmTop{gap:10px!important}.fmPlay{width:46px!important;height:46px!important;flex-basis:46px!important}.fmNext{padding:9px 12px!important}.fmTitle{font-size:15px!important}.detailTopbar{flex-wrap:wrap}.detailBoardLink{order:4;width:100%}.pageTaskCta{align-items:flex-start;flex-direction:column}.pageTaskCta a{width:100%;text-align:center}
+    }
+    @media(max-width:390px){.topActions{grid-template-columns:1fr}.topActions .taskBoardLink{grid-column:auto}.brand{font-size:16px}.home{font-size:12px}.fmName{font-size:10px!important;letter-spacing:.11em!important}}
+  </style>
 </head>
 <body>
   <main class="shell">
     <header class="top">
-      <a class="brand" href="/checklist/">Share Capsule Checklists</a>
-      <a class="home" href="/">Home</a>
+      <a class="brand" href="/checklist/"><span class="brandMark">✓</span><span>Share Capsule <strong>Task Templates</strong></span></a>
+      <div class="topActions"><a class="home taskBoardLink" href="/tasks/">My Task Board</a><a class="home" href="/checklist/submit/">Submit a checklist</a><a class="home" href="/">Home</a></div>
     </header>
 
     <section class="hero">
-      <div class="kicker">Location-aware guidance</div>
-      <h1>Build one checklist for where you live.</h1>
-      <p>Combine generic, country, state, county and city guidance into a single actionable checklist, with reusable sub-checklists and source references.</p>
-    </section>
-
-    <section class="controls" aria-label="Checklist controls">
-      <label>Checklist<select id="checklist"></select></label>
-      <label>Country<input id="country" value="US"></label>
-      <label>State<input id="state" value="CA"></label>
-      <label>County<input id="county" value="Contra Costa"></label>
-      <label>City<input id="city" value="San Ramon"></label>
-      <label class="toggle"><input id="expand" type="checkbox" checked> Expand sub-checklists</label>
-      <button id="compose" type="button">Build checklist</button>
-    </section>
-
-    <section class="status" id="status" aria-live="polite">Loading checklist catalog…</section>
-
-    <section class="result" id="result" hidden>
-      <div class="resultHeading">
-        <div><div class="kicker">Composed checklist</div><h2 id="title"></h2></div>
-        <button id="copy" class="secondary" type="button">Copy JSON</button>
+      <div class="heroCopy">
+        <div class="kicker">Ready-made plans for larger goals</div>
+        <h1>Start with a proven checklist. Make it your own.</h1>
+        <p>Choose a template, review the source notes, add all or selected tasks to your Task Board, and prioritize what matters. Everything you change stays in this browser.</p>
       </div>
-      <div id="warnings"></div>
-      <ol id="tasks"></ol>
-      <details><summary>Sources</summary><ul id="sources"></ul></details>
-      <details><summary>JSON response</summary><pre id="json"></pre></details>
+      <div class="heroBadge"><strong id="heroBoardCount">—</strong><span>ready-to-use boards</span></div>
     </section>
 
-    <section class="note">
-      <strong>Important:</strong> These educational checklists may require professional verification. Laws, forms, fees and local procedures can change.
+    <section class="dashboard" aria-label="Checklist summary">
+      <div class="stat"><span class="statIcon">▦</span><div><strong id="statBoards">—</strong><span>Boards</span></div></div>
+      <div class="stat"><span class="statIcon">✓</span><div><strong id="statCompleted">0</strong><span>Tasks completed</span></div></div>
+      <div class="stat"><span class="statIcon">＋</span><div><strong id="statCustom">0</strong><span>Personal tasks</span></div></div>
+      <div class="stat privacyStat"><span class="statIcon">⌂</span><div><strong>Local only</strong><span>Nothing uploaded</span></div></div>
     </section>
+
+    <section class="pageTaskCta">
+      <div><div class="kicker">Your workflow</div><h2>Choose a template here. Execute it on your Task Board.</h2><p>Imported tasks appear in your personal board, where you can change priority, status, and progress.</p></div>
+      <a href="/tasks/">Open My Task Board →</a>
+    </section>
+
+    <section class="browseHeader" id="browseHeader">
+      <div><div class="kicker">Browse templates</div><h2>What do you want to get done?</h2></div>
+      <span id="boardResultCount" class="resultCount"></span>
+    </section>
+
+    <section class="boardToolbar" id="boardToolbar" aria-label="Board filters">
+      <label class="searchField"><span class="searchIcon">⌕</span><input id="boardSearch" type="search" placeholder="Search checklists, such as budget or travel…" aria-label="Search checklist boards"></label>
+      <label class="selectField"><span>Category</span><select id="boardCategory"><option value="">All categories</option></select></label>
+      <button id="showAllBoards" class="secondary" type="button">Clear filters</button>
+    </section>
+    <div id="categoryChips" class="categoryChips" aria-label="Popular categories"></div>
+    <section class="status" id="boardStatus" aria-live="polite">Loading checklist boards…</section>
+    <section class="boards" id="boards" aria-label="Checklist boards"></section>
+
+    <section class="boardDetail" id="boardDetail" hidden>
+      <div class="detailTopbar">
+        <button id="closeBoard" class="backButton" type="button">← Back to boards</button>
+        <button id="addAllBoardTasks" type="button">＋ Add all tasks</button>
+        <a class="detailBoardLink" href="/tasks/">Open My Task Board →</a>
+        <button id="clearBoardData" class="resetButton" type="button">Reset board</button>
+      </div>
+      <div class="detailHero">
+        <div class="detailIcon" id="detailIcon">✓</div>
+        <div class="detailTitle"><div class="kicker" id="detailCategory"></div><h2 id="detailTitle"></h2><p id="detailProgress"></p></div>
+        <div class="detailProgressRing" id="detailProgressRing"><span id="detailProgressPercent">0%</span></div>
+      </div>
+      <div class="detailProgressTrack"><span id="detailProgressBar"></span></div>
+
+      <div class="taskWorkspace">
+        <div class="taskMain">
+          <div class="taskToolbar">
+            <div class="segmented" id="taskFilter" aria-label="Filter tasks">
+              <button class="active" data-task-filter="all" type="button">All</button>
+              <button data-task-filter="active" type="button">Active</button>
+              <button data-task-filter="completed" type="button">Completed</button>
+            </div>
+            <div class="priorityHint">Tasks sort by priority</div>
+          </div>
+          <div id="boardTasks" class="boardTasks"></div>
+        </div>
+        <aside class="taskSidebar">
+          <form id="addTaskForm" class="addTaskForm">
+            <div><div class="kicker">Personalize this board</div><h3>Add your own task</h3><p>It will be saved only on this device.</p></div>
+            <label>Task name<input id="newTaskTitle" maxlength="180" required placeholder="What else needs to be done?"></label>
+            <label>Priority<select id="newTaskPriority"><option value="high">High priority</option><option value="medium" selected>Medium priority</option><option value="low">Low priority</option><option value="none">No priority</option></select></label>
+            <button type="submit">＋ Add task</button>
+          </form>
+          <div class="privacyCard"><span>🔒</span><p><strong>Private by design</strong>Your progress and personal tasks remain in browser storage.</p></div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="pageFooter"><p><strong>Privacy:</strong> Your completion state, priorities, and personal tasks stay in this browser.</p><p><a href="/tasks/">Open Task Board</a> · Educational checklists may require professional verification.</p></footer>
   </main>
-
-  <script type="module" src="app.js"></script>
+  <script type="module" src="boards.js"></script>
   <script src="/site-shell.js" defer></script>
 </body>
 </html>

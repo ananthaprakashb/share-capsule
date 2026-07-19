@@ -3,7 +3,8 @@
     '/marimuthu/data/iniyavai-narpathu.json',
     '/marimuthu/data/sirupanchamoolam-batch-01.json',
     '/marimuthu/data/sirupanchamoolam-batch-02.json',
-    '/marimuthu/data/moothurai-recent.json'
+    '/marimuthu/data/moothurai-recent.json',
+    '/marimuthu/data/moothurai-poem-12.json'
   ];
   const TODAY_URL='/marimuthu/today.json';
   const CORRECTIONS_URL='/marimuthu/data/inna-narpathu-corrections.json';
@@ -55,6 +56,7 @@
     return response.text();
   };
   const loadCompressed=async parts=>{
+    if(typeof DecompressionStream==='undefined')throw new Error('Compressed poem loading is unsupported in this browser');
     const encoded=(await Promise.all(parts.map(fetchText))).join('').trim();
     const binary=atob(encoded);
     const bytes=Uint8Array.from(binary,char=>char.charCodeAt(0));
@@ -67,9 +69,7 @@
     if(!whatsapp||!poems[index])return;
     const shortUrl=shortArticleUrl(index);
     let message='';
-    try{
-      message=new URL(whatsapp.href,location.href).searchParams.get('text')||'';
-    }catch{}
+    try{message=new URL(whatsapp.href,location.href).searchParams.get('text')||''}catch{}
     if(message){
       message=message.replace(/https?:\/\/\S+/g,shortUrl).trim();
       if(!message.includes(shortUrl))message+=`\n\n${shortUrl}`;
@@ -79,14 +79,20 @@
     }
     whatsapp.href=`https://wa.me/?text=${encodeURIComponent(message)}`;
   };
+  const findLatestIndex=predicate=>{
+    for(let i=poems.length-1;i>=0;i--){
+      if(predicate(poems[i]))return i;
+    }
+    return -1;
+  };
   const chooseAndRender=()=>{
     const query=new URLSearchParams(location.search);
     const compact=query.get('p');
     const compactIndex=compact?parseInt(compact,36)-1:-1;
     const book=query.get('book');
     const number=query.get('poem');
-    const selected=number?poems.findIndex(poem=>poem.number===number&&(!book||poem.book===book)):-1;
-    const dailySelected=todayOverride?.number?poems.findIndex(poem=>poem.number===String(todayOverride.number)&&(!todayOverride.book||poem.book===todayOverride.book)):-1;
+    const selected=number?findLatestIndex(poem=>poem.number===number&&(!book||poem.book===book)):-1;
+    const dailySelected=todayOverride?.number?findLatestIndex(poem=>poem.number===String(todayOverride.number)&&(!todayOverride.book||poem.book===todayOverride.book)):-1;
     if(Number.isInteger(compactIndex)&&compactIndex>=0&&compactIndex<poems.length)index=compactIndex;
     else if(selected>=0)index=selected;
     else if(!book&&!number&&!compact&&dailySelected>=0)index=dailySelected;
@@ -106,23 +112,28 @@
       if(thoughtSection)thoughtSection.hidden=false;
       applyShortWhatsAppLink();
     };
+
+    const plainResults=await Promise.allSettled(BATCHES.map(async url=>{
+      const response=await fetch(url,{cache:'no-cache'});
+      if(!response.ok)throw new Error(`Unable to load ${url}`);
+      return response.json();
+    }));
+    plainResults.forEach(result=>{
+      if(result.status==='fulfilled')merge(result.value);
+      else console.error('Marimuthu plain batch loading failed',result.reason);
+    });
+
+    const compressedResults=await Promise.allSettled(COMPRESSED_BATCHES.map(loadCompressed));
+    compressedResults.forEach(result=>{
+      if(result.status==='fulfilled')merge(result.value);
+      else console.warn('Marimuthu compressed batch skipped',result.reason);
+    });
+
     try{
-      const plain=BATCHES.map(async url=>{
-        const response=await fetch(url,{cache:'no-cache'});
-        if(!response.ok)throw new Error(`Unable to load ${url}`);
-        return response.json();
-      });
-      const compressed=COMPRESSED_BATCHES.map(loadCompressed);
-      const [groups,todayResponse,correctionsResponse]=await Promise.all([
-        Promise.all([...plain,...compressed]),
-        fetch(TODAY_URL,{cache:'no-cache'}).catch(()=>null),
-        fetch(CORRECTIONS_URL,{cache:'no-cache'}).catch(()=>null)
-      ]);
-      groups.forEach(merge);
-      if(correctionsResponse?.ok)merge(await correctionsResponse.json());
-      if(todayResponse?.ok)todayOverride=await todayResponse.json();
+      const todayResponse=await fetch(TODAY_URL,{cache:'no-cache'});
+      if(todayResponse.ok)todayOverride=await todayResponse.json();
     }catch(error){
-      console.error('Marimuthu batch loading failed',error);
+      console.error('Marimuthu daily selection loading failed',error);
     }
     chooseAndRender();
   };

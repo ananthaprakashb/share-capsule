@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#3157d5">
+  <meta name="description" content="Build and submit a checklist for review.">
+  <title>Submit a Checklist</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><h1>Submit a Checklist</h1><nav><a href="/checklist/">Checklists</a><a href="/">Home</a></nav></header>
+
+    <section class="hero">
+      <span class="eyebrow">Community contribution</span>
+      <h2>Share a useful checklist with others.</h2>
+      <p>Build your list, review it, and send it to the site administrator. Submissions are reviewed before they are added to the public task library.</p>
+    </section>
+
+    <section class="layout">
+      <form id="submissionForm" class="builder">
+        <div class="sectionTitle"><span class="step">1</span><div><h2>Checklist details</h2><p>Explain what the list helps someone complete.</p></div></div>
+        <label>Checklist title<input id="listTitle" maxlength="120" required placeholder="Example: Prepare for a first apartment move"></label>
+        <div class="twoCols">
+          <label>Category<input id="listCategory" maxlength="60" required placeholder="Home, finance, travel…"></label>
+          <label>Your name<input id="submitterName" maxlength="80" required placeholder="Name"></label>
+        </div>
+        <label>Your email<input id="submitterEmail" type="email" maxlength="160" required placeholder="you@example.com"></label>
+        <label>Description<textarea id="listDescription" maxlength="600" rows="4" required placeholder="Who is this checklist for, and when should they use it?"></textarea></label>
+
+        <div class="sectionTitle taskHeading"><span class="step">2</span><div><h2>Build the task list</h2><p>Add tasks in the order someone should complete them.</p></div></div>
+        <div class="taskEntry"><input id="newItem" maxlength="180" placeholder="Add a task…"><button id="addItem" type="button">＋ Add</button></div>
+        <ol id="itemList" class="itemList"></ol>
+        <p id="itemHelp" class="help">Add at least three tasks.</p>
+
+        <label class="consent"><input id="consent" type="checkbox" required><span>I understand this submission will be reviewed and may be edited before publication.</span></label>
+        <button class="submitButton" type="submit">Review submission</button>
+      </form>
+
+      <aside class="preview" aria-live="polite">
+        <span class="eyebrow">Preview</span>
+        <h2 id="previewTitle">Your checklist title</h2>
+        <p id="previewDescription">The description will appear here.</p>
+        <div class="previewMeta"><span id="previewCategory">Category</span><span id="previewCount">0 tasks</span></div>
+        <ol id="previewItems"></ol>
+      </aside>
+    </section>
+  </main>
+
+  <dialog id="reviewDialog">
+    <form method="dialog" class="dialogCard">
+      <span class="eyebrow">Final review</span>
+      <h2>Ready to send this checklist?</h2>
+      <pre id="reviewContent"></pre>
+      <p>The next step opens your email app with the submission addressed to the site administrator.</p>
+      <div class="dialogActions"><button value="cancel" class="secondary">Go back</button><button id="sendSubmission" value="default">Send to admin</button></div>
+    </form>
+  </dialog>
+
+  <script type="module" src="app.js"></script>
+  <script src="/site-shell.js" defer></script>
+</body>
+</html>
