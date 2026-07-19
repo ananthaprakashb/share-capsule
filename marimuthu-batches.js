@@ -47,6 +47,7 @@
     return response.text();
   };
   const loadCompressed=async parts=>{
+    if(typeof DecompressionStream==='undefined')throw new Error('Compressed poem loading is unsupported in this browser');
     const encoded=(await Promise.all(parts.map(fetchText))).join('').trim();
     const binary=atob(encoded);
     const bytes=Uint8Array.from(binary,char=>char.charCodeAt(0));
@@ -59,9 +60,7 @@
     if(!whatsapp||!poems[index])return;
     const shortUrl=shortArticleUrl(index);
     let message='';
-    try{
-      message=new URL(whatsapp.href,location.href).searchParams.get('text')||'';
-    }catch{}
+    try{message=new URL(whatsapp.href,location.href).searchParams.get('text')||''}catch{}
     if(message){
       message=message.replace(/https?:\/\/\S+/g,shortUrl).trim();
       if(!message.includes(shortUrl))message+=`\n\n${shortUrl}`;
@@ -98,21 +97,28 @@
       if(thoughtSection)thoughtSection.hidden=false;
       applyShortWhatsAppLink();
     };
+
+    const plainResults=await Promise.allSettled(BATCHES.map(async url=>{
+      const response=await fetch(url,{cache:'no-cache'});
+      if(!response.ok)throw new Error(`Unable to load ${url}`);
+      return response.json();
+    }));
+    plainResults.forEach(result=>{
+      if(result.status==='fulfilled')merge(result.value);
+      else console.error('Marimuthu plain batch loading failed',result.reason);
+    });
+
+    const compressedResults=await Promise.allSettled(COMPRESSED_BATCHES.map(loadCompressed));
+    compressedResults.forEach(result=>{
+      if(result.status==='fulfilled')merge(result.value);
+      else console.warn('Marimuthu compressed batch skipped',result.reason);
+    });
+
     try{
-      const plain=BATCHES.map(async url=>{
-        const response=await fetch(url,{cache:'no-cache'});
-        if(!response.ok)throw new Error(`Unable to load ${url}`);
-        return response.json();
-      });
-      const compressed=COMPRESSED_BATCHES.map(loadCompressed);
-      const [groups,todayResponse]=await Promise.all([
-        Promise.all([...plain,...compressed]),
-        fetch(TODAY_URL,{cache:'no-cache'}).catch(()=>null)
-      ]);
-      groups.forEach(merge);
-      if(todayResponse?.ok)todayOverride=await todayResponse.json();
+      const todayResponse=await fetch(TODAY_URL,{cache:'no-cache'});
+      if(todayResponse.ok)todayOverride=await todayResponse.json();
     }catch(error){
-      console.error('Marimuthu batch loading failed',error);
+      console.error('Marimuthu daily selection loading failed',error);
     }
     chooseAndRender();
   };
