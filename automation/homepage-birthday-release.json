@@ -7,8 +7,8 @@
   "music": false,
   "videoIds": [],
   "youtubeExtra": [],
-  "directUrl": "/birthday/",
-  "description": "Choose a birthday card, personalize it in Canva, and share it instantly with friends through WhatsApp, Facebook, X, email, or your phone's share menu.",
+  "directUrl": "/cards/birthday/",
+  "description": "Create a personalized birthday card with a custom message and optional photo, then share the generated image with friends.",
   "coverLines": [
     "Wish a Friend",
     "Happy Birthday"
