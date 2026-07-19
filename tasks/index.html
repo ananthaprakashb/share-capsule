@@ -12,7 +12,10 @@
   <main class="shell">
     <header class="topbar">
       <h1>Task Board</h1>
-      <a href="/">Home</a>
+      <nav class="topActions" aria-label="Task Board navigation">
+        <a class="templatesLink" href="/checklist/">Task Templates</a>
+        <a href="/">Home</a>
+      </nav>
     </header>
 
     <section class="intro">
@@ -26,6 +29,15 @@
         <div><strong id="activeCount">0</strong><span>Active</span></div>
         <div><strong id="doneCount">0</strong><span>Done</span></div>
       </div>
+    </section>
+
+    <section class="templateCallout" aria-labelledby="templateCalloutTitle">
+      <div>
+        <span class="eyebrow">Planning something bigger?</span>
+        <h2 id="templateCalloutTitle">Start with a ready-made task template.</h2>
+        <p>Organizing a move, vacation, event, job search, financial review, project, or another major goal? Browse curated checklists and import the useful tasks instead of rebuilding everything from scratch.</p>
+      </div>
+      <a href="/checklist/">Browse Task Templates →</a>
     </section>
 
     <section class="addPanel">
@@ -51,14 +63,20 @@
 
       <aside class="library">
         <div class="libraryIntro">
-          <span class="eyebrow">Task library</span>
+          <span class="eyebrow">Quick-add library</span>
           <h2>Important things are easy to miss.</h2>
-          <p>Browse ready-made checklists for common responsibilities. Add only the tasks that matter to you, then manage them from your board.</p>
+          <p>Quickly add individual tasks here, or open the full Task Templates page to browse complete boards, evidence notes, categories, and one-click imports.</p>
+          <a class="fullLibraryLink" href="/checklist/">Explore all Task Templates →</a>
         </div>
         <label class="search">Find a checklist<input id="librarySearch" type="search" placeholder="Search health, finance, travel…"></label>
         <div id="libraryStatus" class="libraryStatus">Loading task library…</div>
         <div id="libraryList" class="libraryList"></div>
       </aside>
+    </section>
+
+    <section class="submitCallout">
+      <div><span class="eyebrow">Community templates</span><h2>Can’t find the checklist you need?</h2><p>Build your own useful checklist and send it for administrator review. Approved submissions can be added to the public library for others.</p></div>
+      <a href="/checklist/submit/">Submit a Checklist →</a>
     </section>
 
     <p class="privacy">Task titles, priorities, status, and progress are stored only in this browser using local storage.</p>
