@@ -84,3 +84,29 @@
   render();
   window.addEventListener('popstate',()=>setTimeout(render,0));
 })();
+
+(()=>{
+  const VIDEO_URL='https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev/taskBoardIntro.mp4';
+  const installStyles=()=>{
+    if(document.getElementById('homeTaskVideoStyles'))return;
+    const style=document.createElement('style');
+    style.id='homeTaskVideoStyles';
+    style.textContent='.homeTaskVideo{margin:0 0 20px;border:1px solid #d8e0ef;border-radius:26px;background:#fff;box-shadow:0 16px 44px rgba(30,48,90,.09);overflow:hidden}.homeTaskVideo video{display:block;width:100%;aspect-ratio:16/9;background:#111}.homeTaskVideoBody{padding:22px 24px}.homeTaskVideoEyebrow{margin:0 0 7px;color:#3157d5;font-size:10px;font-weight:950;letter-spacing:.14em;text-transform:uppercase}.homeTaskVideo h2{margin:0;font-size:clamp(27px,5vw,39px);line-height:1.02;letter-spacing:-.045em}.homeTaskVideo p{max-width:720px;margin:11px 0 0;color:#667085;font-size:14px;line-height:1.58}.homeTaskVideoActions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.homeTaskVideoActions a{display:inline-flex;padding:10px 13px;border-radius:12px;background:#3157d5;color:#fff;text-decoration:none;font-size:12px;font-weight:900}.homeTaskVideoActions a.secondary{background:#eef2ff;color:#3157d5}@media(max-width:520px){.homeTaskVideoBody{padding:18px}.homeTaskVideoActions a{width:100%;justify-content:center}}';
+    document.head.appendChild(style);
+  };
+  const render=()=>{
+    if(location.pathname!=='/'||new URLSearchParams(location.search).has('release'))return;
+    const toolbar=document.querySelector('#app .toolbar');
+    if(!toolbar||document.getElementById('homeTaskVideo'))return;
+    const section=document.createElement('article');
+    section.id='homeTaskVideo';
+    section.className='homeTaskVideo';
+    section.innerHTML=`<video controls preload="metadata" playsinline><source src="${VIDEO_URL}" type="video/mp4">Your browser does not support embedded video.</video><div class="homeTaskVideoBody"><p class="homeTaskVideoEyebrow">Featured video</p><h2>Learn how to use the Task Board.</h2><p>Watch this short walkthrough to see how to add tasks, set priorities, track progress, and use ready-made templates.</p><div class="homeTaskVideoActions"><a href="/tasks/">Open Task Board →</a><a class="secondary" href="${VIDEO_URL}" target="_blank" rel="noopener noreferrer">Open video in a new tab</a></div></div>`;
+    toolbar.insertAdjacentElement('beforebegin',section);
+  };
+  installStyles();
+  const observer=new MutationObserver(render);
+  observer.observe(document.getElementById('app')||document.body,{childList:true,subtree:true});
+  render();
+  window.addEventListener('popstate',()=>setTimeout(render,0));
+})();

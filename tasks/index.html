@@ -8,7 +8,7 @@
   <title>Task Board</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    .topActions{display:flex;gap:8px;align-items:center}.topbar .templatesLink{background:#3157d5;color:#fff;border-color:#3157d5}.templateCallout,.submitCallout{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:18px;padding:22px 24px;border:1px solid #cbd6fb;border-radius:22px;background:linear-gradient(135deg,#eef2ff,#fff);box-shadow:var(--shadow)}.templateCallout h2,.submitCallout h2{margin:5px 0 7px;font-size:25px;letter-spacing:-.04em}.templateCallout p,.submitCallout p{max-width:790px;margin:0;color:var(--muted);font-size:14px;line-height:1.55}.templateCallout>a,.submitCallout>a,.fullLibraryLink{flex:0 0 auto;text-decoration:none;border-radius:14px;background:var(--accent);color:#fff;padding:14px 17px;font-size:13px;font-weight:900}.fullLibraryLink{display:inline-flex;margin:2px 0 16px;padding:11px 13px;background:var(--accent-soft);color:var(--accent)}.submitCallout{margin-top:22px;background:linear-gradient(135deg,#f5f7ff,#eef8f4);border-color:#d7e2ef}.submitCallout>a{background:#172033}.learningMedia{margin-top:18px;padding:24px;border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow)}.learningMediaHeader h2{margin:5px 0 7px;font-size:28px;letter-spacing:-.04em}.learningMediaHeader p{max-width:760px;margin:0;color:var(--muted);font-size:14px;line-height:1.55}.mediaCard{max-width:900px;margin-top:18px;border:1px solid var(--line);border-radius:20px;background:#f8faff;overflow:hidden}.mediaCardBody{padding:17px}.mediaCard h3{margin:0 0 7px;font-size:20px;letter-spacing:-.03em}.mediaCard p{margin:0 0 14px;color:var(--muted);font-size:13px;line-height:1.5}.mediaCard video{display:block;width:100%;aspect-ratio:16/9;background:#111}.mediaLink{display:inline-flex;align-items:center;gap:7px;color:var(--accent);font-size:12px;font-weight:900;text-decoration:none}.mediaLink:hover{text-decoration:underline}@media(max-width:760px){.topbar{align-items:flex-start}.topActions{flex-wrap:wrap;justify-content:flex-end}.templateCallout,.submitCallout{align-items:flex-start;flex-direction:column}.templateCallout>a,.submitCallout>a{width:100%;text-align:center}.learningMedia{padding:18px}}
+    .topActions{display:flex;gap:8px;align-items:center}.topbar .templatesLink{background:#3157d5;color:#fff;border-color:#3157d5}.templateCallout,.submitCallout{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:18px;padding:22px 24px;border:1px solid #cbd6fb;border-radius:22px;background:linear-gradient(135deg,#eef2ff,#fff);box-shadow:var(--shadow)}.templateCallout h2,.submitCallout h2{margin:5px 0 7px;font-size:25px;letter-spacing:-.04em}.templateCallout p,.submitCallout p{max-width:790px;margin:0;color:var(--muted);font-size:14px;line-height:1.55}.templateCallout>a,.submitCallout>a,.fullLibraryLink{flex:0 0 auto;text-decoration:none;border-radius:14px;background:var(--accent);color:#fff;padding:14px 17px;font-size:13px;font-weight:900}.fullLibraryLink{display:inline-flex;margin:2px 0 16px;padding:11px 13px;background:var(--accent-soft);color:var(--accent)}.submitCallout{margin-top:22px;background:linear-gradient(135deg,#f5f7ff,#eef8f4);border-color:#d7e2ef}.submitCallout>a{background:#172033}@media(max-width:760px){.topbar{align-items:flex-start}.topActions{flex-wrap:wrap;justify-content:flex-end}.templateCallout,.submitCallout{align-items:flex-start;flex-direction:column}.templateCallout>a,.submitCallout>a{width:100%;text-align:center}}
   </style>
 </head>
 <body>
@@ -32,25 +32,6 @@
         <div><strong id="activeCount">0</strong><span>Active</span></div>
         <div><strong id="doneCount">0</strong><span>Done</span></div>
       </div>
-    </section>
-
-    <section class="learningMedia" aria-labelledby="learningMediaTitle">
-      <div class="learningMediaHeader">
-        <span class="eyebrow">Quick introduction</span>
-        <h2 id="learningMediaTitle">Learn how to use the Task Board.</h2>
-        <p>See how to add tasks, set priorities, track progress, and use ready-made templates.</p>
-      </div>
-      <article class="mediaCard">
-        <video controls preload="metadata" playsinline>
-          <source src="https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev/taskBoardIntro.mp4" type="video/mp4">
-          Your browser does not support embedded video.
-        </video>
-        <div class="mediaCardBody">
-          <h3>Task Board introduction</h3>
-          <p>Watch this short walkthrough before organizing your tasks.</p>
-          <a class="mediaLink" href="https://pub-7cc02c56240d42c98154d45ae3b67481.r2.dev/taskBoardIntro.mp4" target="_blank" rel="noopener noreferrer">Open video in a new tab →</a>
-        </div>
-      </article>
     </section>
 
     <section class="templateCallout" aria-labelledby="templateCalloutTitle">
