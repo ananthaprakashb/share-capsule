@@ -1,7 +1,14 @@
 {
   "date": "2026-07-18",
-  "book": "மூதுரை",
-  "number": "12",
+  "book": "கொன்றை வேந்தன்",
+  "number": "புதிய பதிவு 19",
+  "canonicalNumber": "86",
+  "text": "ஊக்கம் உடைமை ஆக்கத்திற்கு அழகு",
   "label": "இன்றைய பாடல்",
-  "featured": true
+  "featured": true,
+  "verifiedAgainst": [
+    "Project Madurai",
+    "Tamil Wikisource",
+    "Sangampedia"
+  ]
 }
