@@ -4,6 +4,24 @@
   },
   "items": [
     {
+      "slug": "beat-dangerous-heat-july-2026",
+      "title": "Beat Dangerous Heat Before It Beats You",
+      "artist": "Share Capsule Tips",
+      "videoIds": [],
+      "youtubeExtra": [],
+      "category": "Practical News Tip",
+      "language": "English",
+      "music": false,
+      "description": "A practical heat-safety tip selected from current U.S. heat advisories and revalidated against National Weather Service guidance, including hydration, cooling, activity timing, vulnerable-neighbor checks, vehicle safety, and emergency response.",
+      "coverLines": [
+        "Beat Dangerous Heat",
+        "Before It Beats You"
+      ],
+      "publishedAt": "2026-07-19",
+      "featured": true,
+      "directUrl": "/tips/heat-safety-july-2026/"
+    },
+    {
       "slug": "athiyayam-3-pizhaiyin-paadam",
       "title": "அத்தியாயம் 3: பிழையின் பாடம்",
       "artist": "Anantha Prakash",
