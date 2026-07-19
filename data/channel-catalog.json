@@ -4,6 +4,24 @@
   },
   "items": [
     {
+      "slug": "wish-a-friend-birthday-cards",
+      "title": "Wish a Friend with Share Capsule",
+      "artist": "Share Capsule",
+      "videoIds": [],
+      "youtubeExtra": [],
+      "category": "Birthday Wishes",
+      "language": "English",
+      "music": false,
+      "description": "Choose a birthday card, personalize it in Canva, and share it instantly with friends through WhatsApp, Facebook, X, email, or your phone's share menu.",
+      "coverLines": [
+        "Wish a Friend",
+        "Happy Birthday"
+      ],
+      "publishedAt": "2026-07-19",
+      "featured": true,
+      "directUrl": "/birthday/"
+    },
+    {
       "slug": "beat-dangerous-heat-july-2026",
       "title": "Beat Dangerous Heat Before It Beats You",
       "artist": "Share Capsule Tips",
