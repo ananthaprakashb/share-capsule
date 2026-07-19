@@ -70,14 +70,20 @@
     }
     whatsapp.href=`https://wa.me/?text=${encodeURIComponent(message)}`;
   };
+  const findLatestIndex=predicate=>{
+    for(let i=poems.length-1;i>=0;i--){
+      if(predicate(poems[i]))return i;
+    }
+    return -1;
+  };
   const chooseAndRender=()=>{
     const query=new URLSearchParams(location.search);
     const compact=query.get('p');
     const compactIndex=compact?parseInt(compact,36)-1:-1;
     const book=query.get('book');
     const number=query.get('poem');
-    const selected=number?poems.findIndex(poem=>poem.number===number&&(!book||poem.book===book)):-1;
-    const dailySelected=todayOverride?.number?poems.findIndex(poem=>poem.number===String(todayOverride.number)&&(!todayOverride.book||poem.book===todayOverride.book)):-1;
+    const selected=number?findLatestIndex(poem=>poem.number===number&&(!book||poem.book===book)):-1;
+    const dailySelected=todayOverride?.number?findLatestIndex(poem=>poem.number===String(todayOverride.number)&&(!todayOverride.book||poem.book===todayOverride.book)):-1;
     if(Number.isInteger(compactIndex)&&compactIndex>=0&&compactIndex<poems.length)index=compactIndex;
     else if(selected>=0)index=selected;
     else if(!book&&!number&&!compact&&dailySelected>=0)index=dailySelected;
