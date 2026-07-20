@@ -4,6 +4,24 @@
   },
   "items": [
     {
+      "slug": "check-iceberg-lettuce-recall-july-2026",
+      "title": "Check Iceberg Lettuce Before You Eat It",
+      "artist": "Share Capsule Tips",
+      "videoIds": [],
+      "youtubeExtra": [],
+      "category": "Practical News Tip",
+      "language": "English",
+      "music": false,
+      "description": "A practical food-safety tip selected from the July 2026 Cyclospora outbreak and iceberg lettuce recall, with official FDA and CDC actions for checking products, discarding recalled lettuce, cleaning contact surfaces, and watching for symptoms.",
+      "coverLines": [
+        "Check Iceberg Lettuce",
+        "Before You Eat It"
+      ],
+      "publishedAt": "2026-07-20",
+      "featured": true,
+      "directUrl": "/tips/iceberg-lettuce-recall-july-2026/"
+    },
+    {
       "slug": "wish-a-friend-birthday-cards",
       "title": "Wish a Friend with Share Capsule",
       "artist": "Share Capsule",
