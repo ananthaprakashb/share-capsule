@@ -116,10 +116,20 @@
     document.getElementById('sharecapsuleNotify')?.addEventListener('click',event=>subscribe(event.currentTarget));
   };
 
+  const loadDailyCustomTitle=()=>{
+    if(!/^\/cards\/daily(?:\/|$)/i.test(location.pathname)||document.querySelector('script[data-daily-custom-title]'))return;
+    const script=document.createElement('script');
+    script.src='/cards/daily/custom-title.js';
+    script.defer=true;
+    script.dataset.dailyCustomTitle='true';
+    document.body.appendChild(script);
+  };
+
   window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();deferredPrompt=event;render();});
   ready(async()=>{
     installStyles();
     if('serviceWorker'in navigator){try{await navigator.serviceWorker.register('/sw.js',{scope:'/'});}catch(error){console.warn('PWA registration failed',error);}}
     render();
+    loadDailyCustomTitle();
   });
 })();
