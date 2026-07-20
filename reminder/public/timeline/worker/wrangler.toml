@@ -1,0 +1,8 @@
+name = "sharecapsule-public-timeline"
+main = "worker.js"
+compatibility_date = "2026-07-19"
+workers_dev = true
+
+# After deployment, either:
+# 1. set window.TIMELINE_API_URL in the page to the workers.dev URL, or
+# 2. add a Cloudflare route such as sharecapsule.app/api/reminder/public/timeline*.
