@@ -3,6 +3,21 @@
   const languageSelect=document.querySelector('#language');
   if(!chips||!languageSelect||document.querySelector('[data-value="Custom"]'))return;
 
+  const originalWrapText=wrapText;
+  wrapText=(text,max,maxLines=4)=>{
+    const paragraphs=String(text??'').replace(/\r\n?/g,'\n').split('\n');
+    const lines=[];
+    for(const paragraph of paragraphs){
+      if(lines.length>=maxLines)break;
+      if(!paragraph.trim()){
+        lines.push('');
+        continue;
+      }
+      lines.push(...originalWrapText(paragraph,max,maxLines-lines.length));
+    }
+    return lines.slice(0,maxLines);
+  };
+
   const goodDay=chips.querySelector('[data-value="Have a Good Day"]');
   const customButton=document.createElement('button');
   customButton.type='button';
@@ -17,7 +32,7 @@
   field.className='field';
   field.id='customGreetingField';
   field.hidden=true;
-  field.innerHTML='<label for="customGreeting">Custom title</label><input id="customGreeting" maxlength="80" placeholder="Enter your title" autocomplete="off">';
+  field.innerHTML='<label for="customGreeting">Custom title</label><textarea id="customGreeting" rows="3" maxlength="100" placeholder="Enter your title (up to 2 lines)" autocomplete="off"></textarea>';
   chips.insertAdjacentElement('afterend',field);
   const input=field.querySelector('#customGreeting');
 
