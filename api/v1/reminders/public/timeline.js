@@ -10,7 +10,7 @@ function sendJson(response, status, payload) {
   return response.json(payload);
 }
 
-function upstreamUrl(request) {
+function upstreamUrl() {
   const explicit = process.env.CHECKLIST_TIMELINE_API_URL?.trim();
   if (explicit) return explicit;
 
@@ -20,13 +20,44 @@ function upstreamUrl(request) {
   return null;
 }
 
+function parseBody(request) {
+  if (!request.body) return {};
+  if (typeof request.body === 'object') return request.body;
+  if (typeof request.body === 'string') {
+    try {
+      return JSON.parse(request.body);
+    } catch {
+      return {};
+    }
+  }
+  return {};
+}
+
+function addInput(url, input) {
+  const allowed = ['country', 'state', 'county', 'city', 'timezone'];
+  for (const key of allowed) {
+    const value = input?.[key];
+    if (value !== undefined && value !== null && String(value).trim()) {
+      url.searchParams.set(key, String(value));
+    }
+  }
+
+  const categories = input?.categories;
+  if (Array.isArray(categories) && categories.length) {
+    url.searchParams.set('categories', categories.join(','));
+  } else if (typeof categories === 'string' && categories.trim()) {
+    url.searchParams.set('categories', categories);
+  }
+}
+
 export default async function handler(request, response) {
   if (request.method === 'OPTIONS') return sendJson(response, 204, {});
   if (!['GET', 'POST'].includes(request.method)) {
+    response.setHeader('allow', 'GET, POST, OPTIONS');
     return sendJson(response, 405, { error: 'method_not_allowed' });
   }
 
-  const target = upstreamUrl(request);
+  const target = upstreamUrl();
   if (!target) {
     return sendJson(response, 503, {
       error: 'checklist_api_not_configured',
@@ -36,26 +67,16 @@ export default async function handler(request, response) {
   }
 
   try {
-    const headers = { accept: 'application/json' };
-    let body;
-
-    if (request.method === 'POST') {
-      headers['content-type'] = 'application/json';
-      body = JSON.stringify(request.body ?? {});
-    }
-
     const url = new URL(target);
-    if (request.method === 'GET') {
-      for (const [key, value] of Object.entries(request.query ?? {})) {
-        if (Array.isArray(value)) value.forEach(item => url.searchParams.append(key, item));
-        else if (value !== undefined) url.searchParams.set(key, String(value));
-      }
-    }
+    const input = request.method === 'POST' ? parseBody(request) : request.query ?? {};
+    addInput(url, input);
 
+    // The public ShareCapsule route accepts both GET and POST. The Checklist
+    // service is queried through its idempotent GET contract to avoid proxies
+    // or redirects rejecting or rewriting POST requests.
     const upstream = await fetch(url, {
-      method: request.method,
-      headers,
-      body,
+      method: 'GET',
+      headers: { accept: 'application/json' },
       redirect: 'follow'
     });
 
