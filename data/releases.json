@@ -3714,6 +3714,55 @@
       },
       "publishedAt": "2026-07-20",
       "featured": true
+    },
+    {
+      "slug": "wildfire-smoke-clean-air-room-july-2026",
+      "title": "Make One Cleaner-Air Room for Wildfire Smoke",
+      "artist": "Share Capsule Tips",
+      "type": "Story",
+      "category": "Practical News Tip",
+      "language": "English",
+      "description": "A practical wildfire-smoke safety tip selected from widespread July 2026 air-quality alerts, with official AirNow, EPA, and CDC guidance for checking AQI, creating a cleaner-air room, filtering indoor air, limiting outdoor exertion, and using a well-fitting N95 when needed.",
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#5f3b2d,#9a6a45 55%,#d4a574)",
+      "coverEyebrow": "Practical News Tip",
+      "coverLines": [
+        "Make One Cleaner-Air Room",
+        "For Wildfire Smoke"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Read story",
+          "icon": "📖",
+          "url": "/tips/wildfire-smoke-clean-air-room-july-2026/"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "📖",
+          "text": "Thought you might enjoy this five-minute Tamil story."
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this thoughtful Tamil story with the family."
+        },
+        "reader": {
+          "label": "Story reader",
+          "icon": "📚",
+          "text": "Here is a Tamil story worth reading and reflecting on."
+        },
+        "learner": {
+          "label": "Curious learner",
+          "icon": "💡",
+          "text": "This story connects history, learning and modern ideas."
+        }
+      },
+      "publishedAt": "2026-07-21",
+      "featured": true
     }
   ]
 }
