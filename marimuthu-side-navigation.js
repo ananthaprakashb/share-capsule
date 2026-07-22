@@ -15,15 +15,14 @@
       .navigation button:hover{background:#173d2a;color:#fff}
       .navigation button:focus-visible{outline:3px solid rgba(45,96,65,.28);outline-offset:3px}
       @media(max-width:1120px){
-        #prev{left:10px}
-        #next{right:10px}
-        .navigation button{background:rgba(255,255,255,.94)}
+        .navigation{position:static;inset:auto;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px;pointer-events:auto}
+        .navigation button{position:static;top:auto;width:48px;height:48px;transform:none;background:#efe4cc;box-shadow:none}
+        #prev{left:auto;justify-self:start}
+        #next{right:auto;justify-self:end}
       }
       @media(max-width:640px){
-        .navigation button{top:38%;width:42px;height:42px}
-        .navigation button::before{font-size:25px;line-height:40px}
-        #prev{left:6px}
-        #next{right:6px}
+        .navigation button{width:44px;height:44px}
+        .navigation button::before{font-size:25px;line-height:42px}
       }
     `;
     document.head.appendChild(style);
