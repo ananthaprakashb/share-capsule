@@ -3763,6 +3763,55 @@
       },
       "publishedAt": "2026-07-21",
       "featured": true
+    },
+    {
+      "slug": "extreme-heat-90-degree-fan-rule-july-2026",
+      "title": "Know the 90°F Fan Rule During Extreme Heat",
+      "artist": "Share Capsule Tips",
+      "type": "Story",
+      "category": "Practical News Tip",
+      "language": "English",
+      "description": "A practical extreme-heat safety tip selected from widespread July 2026 heat alerts, with official CDC, OSHA, and NIOSH guidance explaining why a fan should not be relied on alone above 90°F indoors, when to move to air conditioning, and how to recognize heat stroke.",
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#5f3b2d,#9a6a45 55%,#d4a574)",
+      "coverEyebrow": "Practical News Tip",
+      "coverLines": [
+        "Know the 90°F Fan Rule",
+        "During Extreme Heat"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Read story",
+          "icon": "📖",
+          "url": "/tips/extreme-heat-90-degree-fan-rule-july-2026/"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "📖",
+          "text": "Thought you might enjoy this five-minute Tamil story."
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this thoughtful Tamil story with the family."
+        },
+        "reader": {
+          "label": "Story reader",
+          "icon": "📚",
+          "text": "Here is a Tamil story worth reading and reflecting on."
+        },
+        "learner": {
+          "label": "Curious learner",
+          "icon": "💡",
+          "text": "This story connects history, learning and modern ideas."
+        }
+      },
+      "publishedAt": "2026-07-23",
+      "featured": true
     }
   ]
 }
