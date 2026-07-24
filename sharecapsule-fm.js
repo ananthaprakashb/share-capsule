@@ -1,8 +1,26 @@
 (()=>{
+  if(!window.__sharecapsuleAbsoluteFetch){
+    const nativeFetch=window.fetch.bind(window);
+    window.fetch=(input,init)=>{
+      if(typeof input==='string'){
+        try{input=new URL(input,document.baseURI||location.href).href}catch(_){ }
+      }
+      return nativeFetch(input,init);
+    };
+    window.__sharecapsuleAbsoluteFetch=true;
+  }
+
+  const retryReleases=()=>{
+    if(location.pathname!=='/'||!document.querySelector('#app .error')||typeof window.load!=='function')return;
+    window.load();
+  };
+
   const core=document.createElement('script');
   core.src='https://cdn.jsdelivr.net/gh/ananthaprakashb/share-capsule@a7f5e020a9816dbc55481c1d1c224ac11d2541e2/sharecapsule-fm.js';
   core.defer=true;
+  core.addEventListener('load',()=>setTimeout(retryReleases,0));
   document.body.appendChild(core);
+  setTimeout(retryReleases,250);
 
   const installStyles=()=>{
     if(document.getElementById('homeTamilRadioStyles'))return;
