@@ -13,7 +13,7 @@
     const positionGroup=[...document.querySelectorAll('.panel .group')].find(group=>
       group.querySelector('h2')?.textContent.trim().toLowerCase().includes('position text')
     );
-    positionGroup?.remove();
+    if(positionGroup)positionGroup.hidden=true;
 
     const help=document.querySelector('.canvasHelp');
     if(help)help.textContent='Drag the title or message directly anywhere on the card.';
