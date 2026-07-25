@@ -4,6 +4,7 @@
 
   const PAGE_URL='https://sharecapsule.app/cards/events/birthday/';
   const WIDTH=1080,HEIGHT=1350;
+  const NOTE='The Share image button creates a personalized PNG and opens the phone share sheet. Choose WhatsApp to send the actual card image. Canva links are not included.';
   const proxyUrl=url=>'https://images.weserv.nl/?url='+encodeURIComponent(String(url).replace(/^https?:\/\//,''))+'&output=png';
 
   const show=text=>{
@@ -172,11 +173,13 @@
   },true);
 
   const updateUi=()=>{
-    document.querySelectorAll('.actions .wa').forEach(button=>button.textContent='Share image');
+    document.querySelectorAll('.actions .wa').forEach(button=>{
+      if(!button.disabled&&button.textContent!=='Share image')button.textContent='Share image';
+    });
     const modalShare=document.getElementById('modalShare');
-    if(modalShare)modalShare.textContent='Share image to WhatsApp';
+    if(modalShare&&!modalShare.disabled&&modalShare.textContent!=='Share image to WhatsApp')modalShare.textContent='Share image to WhatsApp';
     const note=document.querySelector('.note');
-    if(note)note.textContent='The Share image button creates a personalized PNG and opens the phone share sheet. Choose WhatsApp to send the actual card image. Canva links are not included.';
+    if(note&&note.textContent!==NOTE)note.textContent=NOTE;
   };
 
   const observer=new MutationObserver(updateUi);
