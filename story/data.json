@@ -12,6 +12,18 @@
   },
   "stories": [
     {
+      "id": "scripting-nomenclature-2019-02-13",
+      "title": "scripting nomenclature",
+      "author": "Anantha Prakash",
+      "contentText": "Audacity of open source spiked the progress of development to a different level. Every second someone talks about new pattern of solving existing problem. If we miss to check twitter for a day, we feel like missing lot. Why we have to burden our self with lot of details. How mastering cooking recipe can help Edison??? As a traveler of our favorite life route, we enjoy observing beauty of our path instead researching the facts behind. With these words, in journey of web development hearing attractive terms. Here are some related to scripting.\n\n• Higher Order Functions\n\n• Tail call optimization\n\n• Mutation of data\n\n• Memoization\n\n• Tabulation\n\n• Composition\n\n• Pure Function\n\n• Factory pattern\n\n• Push Notification and service workers\n\n• Async\n\n• Observer pattern\n\n• lazy loading",
+      "excerpt": "Audacity of open source spiked the progress of development to a different level. Every second someone talks about new pattern of solving existing problem. If we miss to check twitter for a day, we feel like missing lot. Why we have to burden our self with lot…",
+      "sourceUrl": "https://thinkfiveminutes.blogspot.com/2019/02/scripting-nomenclature.html",
+      "sourceName": "Think Five Minutes",
+      "originalPublishedAt": "2019-02-13T19:44:00.000-08:00",
+      "publishedOn": "2026-07-25",
+      "importedAt": "2026-07-25T15:09:32.539Z"
+    },
+    {
       "id": "infobesity-2018-09-04",
       "title": "Infobesity",
       "author": "Anantha Prakash",
