@@ -2,13 +2,15 @@
   const SCRIPT_SRC='/sharecapsule-fm.js';
   const PWA_SRC='/pwa.js';
   const FOUNDER_HOME_SRC='/home-founder-growth.js';
+  const DAILY_CARDS_SRC='/cards/daily/free-drag.js';
   const labels={audio:'Audio',tip:'Tips',tips:'Tips',quotes:'Quotes',story:'Story',jobs:'Jobs',jobs_in:'India Jobs',law:'Law',parking:'Parking',factcheck:'Fact Check',tiktok:'TikTok',paa:'PAA',tulip:'Tulip',archive:'Archive',tamilradio:'Tamil Radio',business:'Business',founder:'Founder',in:'India'};
   const ready=fn=>document.readyState==='loading'?document.addEventListener('DOMContentLoaded',fn,{once:true}):fn();
   const isJobsRoute=()=>/^\/(?:jobs|jobs_in)(?:\/|$)/i.test(location.pathname);
   const isTamilRadioRoute=()=>/^\/tamilradio(?:\/|$)/i.test(location.pathname);
   const isMarimuthuRoute=()=>/^\/marimuthu(?:\/|$)/i.test(location.pathname);
+  const isDailyCardsRoute=()=>/^\/cards\/daily(?:\/|$)/i.test(location.pathname);
   const isHomeRoute=()=>location.pathname==='/';
-  const suppressReader=()=>isJobsRoute()||isTamilRadioRoute();
+  const suppressReader=()=>isJobsRoute()||isTamilRadioRoute()||isDailyCardsRoute();
   const suppressGlobalFm=()=>isJobsRoute()||isTamilRadioRoute()||isMarimuthuRoute();
   const suppressGlobalNavigation=()=>isMarimuthuRoute();
 
@@ -90,5 +92,5 @@
 
   const loadScript=src=>{if(document.querySelector(`script[src="${src}"]`))return;const script=document.createElement('script');script.src=src;script.defer=true;document.body.appendChild(script)};
 
-  ready(()=>{ensurePwaHead();installStyles();addFinalMarimuthuEntry();if(isMarimuthuRoute())document.body.classList.add('marimuthuPoemPage');if(!suppressGlobalNavigation()){const top=ensureTop();installBreadcrumbs(top)}installTranslator();installReader();if(!suppressGlobalFm())loadScript(SCRIPT_SRC);if(isHomeRoute())loadScript(FOUNDER_HOME_SRC);loadScript(PWA_SRC)});
+  ready(()=>{ensurePwaHead();installStyles();addFinalMarimuthuEntry();if(isMarimuthuRoute())document.body.classList.add('marimuthuPoemPage');if(!suppressGlobalNavigation()){const top=ensureTop();installBreadcrumbs(top)}installTranslator();installReader();if(!suppressGlobalFm())loadScript(SCRIPT_SRC);if(isHomeRoute())loadScript(FOUNDER_HOME_SRC);if(isDailyCardsRoute())loadScript(DAILY_CARDS_SRC);loadScript(PWA_SRC)});
 })();
