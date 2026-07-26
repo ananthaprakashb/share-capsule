@@ -18,4 +18,13 @@
   document.getElementById('grid')?.addEventListener('click',event=>{const button=event.target.closest('[data-vote]');if(!button||!ready)return;event.preventDefault();event.stopImmediatePropagation();submit(button.dataset.vote,button)},true);
   new MutationObserver(syncButtons).observe(document.getElementById('grid'),{childList:true,subtree:true});
   load();
+
+  const contributionMount=document.createElement('section');
+  contributionMount.id='contribute';
+  const note=document.getElementById('note');
+  (note||document.querySelector('main'))?.insertAdjacentElement(note?'afterend':'beforeend',contributionMount);
+  const contributionScript=document.createElement('script');
+  contributionScript.src='./contribute.js';
+  contributionScript.defer=true;
+  document.head.appendChild(contributionScript);
 })();
