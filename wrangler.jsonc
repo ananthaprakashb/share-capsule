@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "share-capsule",
+  "name": "share-capsule-pages-build",
   "compatibility_date": "2026-07-25",
   "pages_build_output_dir": ".",
   "d1_databases": [
