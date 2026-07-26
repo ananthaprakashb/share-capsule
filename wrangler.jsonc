@@ -7,7 +7,7 @@
     {
       "binding": "PLACE_VOTES_DB",
       "database_name": "share-capsule-place-votes",
-      "database_id": "REPLACE_WITH_D1_DATABASE_ID",
+      "database_id": "d4fb43a0-5dd7-49d5-8179-8dfb0f1cd89d",
       "migrations_dir": "migrations"
     }
   ]
