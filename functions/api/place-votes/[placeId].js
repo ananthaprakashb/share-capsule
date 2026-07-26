@@ -10,18 +10,14 @@ export async function onRequestPost({env,request,params}){
   const placeId=params.placeId;
   if(!validPlaceId(placeId))return json({error:'Invalid place id'},400);
   let body;try{body=await request.json()}catch{return json({error:'Invalid JSON body'},400)}
-  if(!['add','remove'].includes(body?.action)||!validToken(body?.voterToken))return json({error:'Invalid vote request'},400);
+  if(body?.action!=='add'||!validToken(body?.voterToken))return json({error:'Invalid vote request'},400);
   const voterHash=await hashToken(body.voterToken);
   const existing=await env.PLACE_VOTES_DB.prepare('SELECT 1 FROM place_vote_receipts WHERE place_id = ? AND voter_hash = ?').bind(placeId,voterHash).first();
-  if(body.action==='add'&&!existing){await env.PLACE_VOTES_DB.batch([
+  await env.PLACE_VOTES_DB.batch([
     env.PLACE_VOTES_DB.prepare('INSERT OR IGNORE INTO place_votes(place_id,vote_count,updated_at) VALUES(?,0,CURRENT_TIMESTAMP)').bind(placeId),
     env.PLACE_VOTES_DB.prepare('INSERT OR IGNORE INTO place_vote_receipts(place_id,voter_hash,created_at) VALUES(?,?,CURRENT_TIMESTAMP)').bind(placeId,voterHash),
-    env.PLACE_VOTES_DB.prepare('UPDATE place_votes SET vote_count=vote_count+1,updated_at=CURRENT_TIMESTAMP WHERE place_id=?').bind(placeId)
-  ])}
-  if(body.action==='remove'&&existing){await env.PLACE_VOTES_DB.batch([
-    env.PLACE_VOTES_DB.prepare('DELETE FROM place_vote_receipts WHERE place_id=? AND voter_hash=?').bind(placeId,voterHash),
-    env.PLACE_VOTES_DB.prepare('UPDATE place_votes SET vote_count=MAX(vote_count-1,0),updated_at=CURRENT_TIMESTAMP WHERE place_id=?').bind(placeId)
-  ])}
+    env.PLACE_VOTES_DB.prepare('UPDATE place_votes SET vote_count=(SELECT COUNT(*) FROM place_vote_receipts WHERE place_id=?),updated_at=CURRENT_TIMESTAMP WHERE place_id=?').bind(placeId,placeId)
+  ]);
   const row=await env.PLACE_VOTES_DB.prepare('SELECT vote_count AS count FROM place_votes WHERE place_id=?').bind(placeId).first();
-  return json({placeId,count:Number(row?.count)||0,voted:body.action==='add'});
+  return json({placeId,count:Number(row?.count)||0,voted:true,alreadyVoted:Boolean(existing)});
 }
