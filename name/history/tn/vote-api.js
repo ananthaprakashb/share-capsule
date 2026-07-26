@@ -1,4 +1,9 @@
 (()=>{
+  const extra=document.createElement('script');
+  extra.src='./extra-places.js';
+  extra.defer=true;
+  document.head.appendChild(extra);
+
   const API='/api/place-votes';
   const counts=new Map(),voted=new Set();
   let ready=false;
