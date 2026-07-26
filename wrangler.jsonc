@@ -10,5 +10,11 @@
       "database_id": "d4fb43a0-5dd7-49d5-8179-8dfb0f1cd89d",
       "migrations_dir": "migrations"
     }
+  ],
+  "send_email": [
+    {
+      "name": "EDITOR_EMAIL",
+      "destination_address": "editor@sharecapsule.app"
+    }
   ]
 }
