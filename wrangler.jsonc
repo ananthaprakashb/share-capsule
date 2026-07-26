@@ -1,14 +1,14 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "share-capsule",
-  "compatibility_date": "2026-07-26",
-  "observability": {
-    "enabled": true
-  },
-  "assets": {
-    "directory": "."
-  },
-  "compatibility_flags": [
-    "nodejs_compat"
+  "compatibility_date": "2026-07-25",
+  "pages_build_output_dir": ".",
+  "d1_databases": [
+    {
+      "binding": "PLACE_VOTES_DB",
+      "database_name": "share-capsule-place-votes",
+      "database_id": "d4fb43a0-5dd7-49d5-8179-8dfb0f1cd89d",
+      "migrations_dir": "migrations"
+    }
   ]
 }
