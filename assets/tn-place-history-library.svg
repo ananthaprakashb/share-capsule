@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">Tamil students researching hometown history in a library</title>
+  <desc id="desc">A warm illustrated library scene with two Tamil students reading a large historical book together.</desc>
+  <defs>
+    <linearGradient id="room" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#3b1f18"/><stop offset="1" stop-color="#7b402c"/></linearGradient>
+    <linearGradient id="table" x1="0" x2="1"><stop stop-color="#8e542f"/><stop offset="1" stop-color="#5d301e"/></linearGradient>
+    <linearGradient id="book" x1="0" x2="1"><stop stop-color="#f6e7bc"/><stop offset="1" stop-color="#d8c083"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-opacity=".28"/></filter>
+  </defs>
+  <rect width="1200" height="620" fill="url(#room)"/>
+  <g opacity=".85">
+    <rect x="35" y="42" width="235" height="350" rx="14" fill="#2b1712"/>
+    <rect x="930" y="42" width="235" height="350" rx="14" fill="#2b1712"/>
+    <g fill="#c89a5d">
+      <rect x="58" y="75" width="28" height="95"/><rect x="93" y="61" width="35" height="109"/><rect x="135" y="83" width="24" height="87"/><rect x="166" y="54" width="39" height="116"/><rect x="212" y="69" width="31" height="101"/>
+      <rect x="953" y="66" width="31" height="104"/><rect x="991" y="54" width="42" height="116"/><rect x="1040" y="80" width="25" height="90"/><rect x="1072" y="61" width="34" height="109"/><rect x="1113" y="73" width="27" height="97"/>
+    </g>
+    <g fill="#76553e"><rect x="50" y="190" width="205" height="12"/><rect x="945" y="190" width="205" height="12"/></g>
+  </g>
+  <rect x="330" y="48" width="540" height="225" rx="18" fill="#d9c69b" stroke="#b98f58" stroke-width="10"/>
+  <rect x="355" y="73" width="490" height="175" rx="8" fill="#dbe8df"/>
+  <path d="M600 73v175M355 160h490" stroke="#7f917f" stroke-width="5" opacity=".65"/>
+  <ellipse cx="600" cy="590" rx="535" ry="95" fill="#2c160f" opacity=".4"/>
+  <rect x="105" y="415" width="990" height="190" rx="34" fill="url(#table)" filter="url(#shadow)"/>
+  <g filter="url(#shadow)">
+    <path d="M350 405c65-43 145-42 250-6v155c-104-34-185-34-250 4z" fill="url(#book)" stroke="#6f4c2a" stroke-width="7"/>
+    <path d="M600 399c105-36 185-37 250 6v153c-65-38-146-38-250-4z" fill="url(#book)" stroke="#6f4c2a" stroke-width="7"/>
+    <path d="M600 399v155" stroke="#7f5f38" stroke-width="8"/>
+    <g stroke="#9a8458" stroke-width="4" opacity=".7"><path d="M382 438h168M382 460h145M382 482h160M382 504h132"/><path d="M650 438h166M650 460h143M650 482h160M650 504h126"/></g>
+  </g>
+  <g>
+    <circle cx="435" cy="250" r="82" fill="#8e542f"/>
+    <path d="M360 252c0-92 150-110 158-9-38-24-97-32-158 9z" fill="#171514"/>
+    <rect x="365" y="330" width="150" height="124" rx="28" fill="#e8d6bd"/>
+    <path d="M402 430c8-37 20-67 28-82M487 430c-7-37-20-67-28-82" stroke="#8e542f" stroke-width="23" stroke-linecap="round"/>
+    <circle cx="412" cy="255" r="6" fill="#23130d"/><circle cx="463" cy="255" r="6" fill="#23130d"/>
+    <path d="M424 286q18 13 37 0" fill="none" stroke="#542e20" stroke-width="5" stroke-linecap="round"/>
+    <rect x="416" y="220" width="38" height="7" rx="3.5" fill="#f0d4aa"/>
+  </g>
+  <g>
+    <circle cx="745" cy="230" r="88" fill="#8e542f"/>
+    <path d="M666 231c5-110 168-109 169 0-46-30-115-37-169 0z" fill="#171514"/>
+    <path d="M815 185q38 16 30 70" fill="none" stroke="#171514" stroke-width="22" stroke-linecap="round"/>
+    <g fill="#f1d891"><circle cx="825" cy="194" r="8"/><circle cx="834" cy="211" r="8"/><circle cx="839" cy="229" r="8"/><circle cx="841" cy="247" r="8"/></g>
+    <rect x="657" y="320" width="175" height="136" rx="30" fill="#9f3e68"/>
+    <path d="M685 350l55 98 60-98" fill="none" stroke="#f4bd47" stroke-width="10"/>
+    <path d="M695 432c18-34 35-61 49-78M806 432c-20-34-37-61-50-78" stroke="#8e542f" stroke-width="23" stroke-linecap="round"/>
+    <circle cx="716" cy="237" r="6" fill="#23130d"/><circle cx="769" cy="237" r="6" fill="#23130d"/>
+    <path d="M724 270q20 16 43 0" fill="none" stroke="#542e20" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="743" cy="203" r="5" fill="#f0d4aa"/>
+  </g>
+  <g fill="#f7d68b" opacity=".9"><circle cx="180" cy="520" r="23"/><circle cx="1002" cy="508" r="18"/><circle cx="1070" cy="548" r="12"/></g>
+</svg>

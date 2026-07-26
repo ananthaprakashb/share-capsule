@@ -52,17 +52,21 @@
       const style=document.createElement('style');
       style.id='tnPlaceHistoryFeatureStyles';
       style.textContent=`
-        .tnPlaceHistoryFeature{display:block;margin:0 0 20px;padding:22px;border-radius:26px;background:linear-gradient(145deg,#6f241d,#a94a2f 58%,#d7893d);color:#fff;text-decoration:none;box-shadow:0 16px 44px rgba(111,36,29,.2);overflow:hidden;position:relative}
-        .tnPlaceHistoryFeature:before{content:"";position:absolute;width:210px;height:210px;border:1px solid rgba(255,255,255,.18);border-radius:50%;right:-85px;top:-105px}
-        .tnPlaceHistoryTop{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;position:relative;z-index:1}
-        .tnPlaceHistoryEyebrow{margin:0 0 8px;text-transform:uppercase;letter-spacing:.14em;font-size:10px;font-weight:900;opacity:.8}
-        .tnPlaceHistoryFeature h2{margin:0;font-size:29px;line-height:1.02;letter-spacing:-.045em;max-width:520px}
-        .tnPlaceHistoryBadge{white-space:nowrap;padding:7px 10px;border:1px solid rgba(255,255,255,.25);border-radius:999px;background:rgba(255,255,255,.1);font-size:11px;font-weight:900}
-        .tnPlaceHistoryIntro{position:relative;z-index:1;margin:12px 0 0;color:rgba(255,255,255,.87);font-size:14px;line-height:1.55;max-width:620px}
-        .tnPlaceHistoryExamples{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
-        .tnPlaceHistoryExamples span{padding:7px 9px;border-radius:999px;background:rgba(255,255,255,.11);font-size:11px;font-weight:850}
-        .tnPlaceHistoryAction{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:18px;padding-top:15px;border-top:1px solid rgba(255,255,255,.18);font-size:13px;font-weight:900}
-        @media(max-width:560px){.tnPlaceHistoryTop{display:block}.tnPlaceHistoryBadge{display:inline-block;margin-top:12px}.tnPlaceHistoryFeature h2{font-size:25px}}
+        .tnPlaceHistoryFeature{display:grid;grid-template-columns:minmax(250px,42%) 1fr;margin:0 0 20px;border-radius:28px;background:#2b1712;color:#fff;text-decoration:none;box-shadow:0 20px 54px rgba(62,29,17,.24);overflow:hidden;position:relative;isolation:isolate;transition:transform .2s ease,box-shadow .2s ease}
+        .tnPlaceHistoryFeature:hover{transform:translateY(-3px);box-shadow:0 24px 64px rgba(62,29,17,.3)}
+        .tnPlaceHistoryVisual{min-height:300px;background:#5b3022 url('/assets/tn-place-history-library.svg') center/cover no-repeat;position:relative}
+        .tnPlaceHistoryVisual:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 58%,rgba(43,23,18,.82))}
+        .tnPlaceHistoryCopy{padding:28px 28px 24px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1;background:radial-gradient(circle at 100% 0,rgba(222,151,73,.22),transparent 38%),linear-gradient(145deg,#2b1712,#743422)}
+        .tnPlaceHistoryEyebrow{margin:0 0 9px;text-transform:uppercase;letter-spacing:.14em;font-size:10px;font-weight:900;color:#f0bd75}
+        .tnPlaceHistoryFeature h2{margin:0;font-family:"Noto Sans Tamil",Inter,system-ui,sans-serif;font-size:clamp(28px,4vw,42px);line-height:1.08;letter-spacing:-.035em;max-width:560px}
+        .tnPlaceHistoryQuestion{display:inline-block;margin-top:5px;color:#ffe2a8}
+        .tnPlaceHistoryIntro{margin:14px 0 0;color:rgba(255,255,255,.84);font-size:14px;line-height:1.6;max-width:600px}
+        .tnPlaceHistoryMeta{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+        .tnPlaceHistoryMeta span{padding:7px 10px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(255,255,255,.08);font-size:11px;font-weight:850}
+        .tnPlaceHistoryAction{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.16);font-size:13px;font-weight:900;color:#ffe2a8}
+        .tnPlaceHistoryArrow{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#6e2f20;font-size:20px;flex:0 0 auto}
+        @media(max-width:700px){.tnPlaceHistoryFeature{grid-template-columns:1fr}.tnPlaceHistoryVisual{min-height:220px}.tnPlaceHistoryVisual:after{background:linear-gradient(180deg,transparent 55%,rgba(43,23,18,.88))}.tnPlaceHistoryCopy{padding:22px}.tnPlaceHistoryFeature h2{font-size:31px}}
+        @media(max-width:430px){.tnPlaceHistoryVisual{min-height:190px}.tnPlaceHistoryCopy{padding:20px}.tnPlaceHistoryFeature h2{font-size:28px}.tnPlaceHistoryIntro{font-size:13px}}
       `;
       document.head.appendChild(style);
     }
@@ -71,8 +75,8 @@
     card.id='tnPlaceHistoryFeature';
     card.className='tnPlaceHistoryFeature';
     card.href=ENDPOINT;
-    card.setAttribute('aria-label','Discover the history and meaning behind your Tamil Nadu hometown name');
-    card.innerHTML='<div class="tnPlaceHistoryTop"><div><p class="tnPlaceHistoryEyebrow">தமிழ்நாடு · Hometown stories</p><h2>What does your hometown name mean?</h2></div><span class="tnPlaceHistoryBadge">42+ places</span></div><p class="tnPlaceHistoryIntro">Search Tamil Nadu towns, cities, ancient ports and heritage sites to discover how their names developed. Read the historical context, check cited sources, vote on facts and share your hometown story.</p><div class="tnPlaceHistoryExamples"><span>Madurai · கூடல்</span><span>Korkai · Ancient port</span><span>Keezhadi · Archaeology</span><span>Thanjavur · Chola history</span></div><div class="tnPlaceHistoryAction"><span>Find your hometown story</span><span>Explore →</span></div>';
+    card.setAttribute('aria-label','நம்ம ஊரும் இந்த லிஸ்ட்ல இருக்கா? தமிழ்நாடு ஊர்ப்பெயர் வரலாறுகளை பாருங்கள்');
+    card.innerHTML='<div class="tnPlaceHistoryVisual" aria-hidden="true"></div><div class="tnPlaceHistoryCopy"><p class="tnPlaceHistoryEyebrow">தமிழ்நாடு · ஊர்ப்பெயர் வரலாறு</p><h2>நம்ம ஊரும் இந்த லிஸ்ட்ல இருக்கா?<span class="tnPlaceHistoryQuestion">தேடிப் பார்ப்போமா?</span></h2><p class="tnPlaceHistoryIntro">உங்கள் சொந்த ஊரின் பெயர் எப்படி வந்தது என்று அறியுங்கள். வரலாற்றுச் சான்றுகள், கல்வெட்டுகள், இலக்கிய குறிப்புகள் மற்றும் நம்பகமான மேற்கோள்களுடன் ஊர்ப்பெயர் கதைகளைப் படிக்கலாம்.</p><div class="tnPlaceHistoryMeta"><span>தமிழ் + English</span><span>Verified references</span><span>Community contributions</span></div><div class="tnPlaceHistoryAction"><span>உங்கள் ஊரை இப்போது தேடுங்கள்</span><span class="tnPlaceHistoryArrow">→</span></div></div>';
 
     const place=()=>{
       const daily=document.getElementById('dailyWishesFeature');
