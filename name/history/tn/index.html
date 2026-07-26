@@ -20,10 +20,11 @@
 <section class="hero"><div class="eyebrow" id="heroEyebrow">தமிழ்நாடு · Tamil Nadu</div><h1 id="heroTitle">Why is this place called that?</h1><p id="heroText">Explore the history behind 30 Tamil Nadu place names. Each card includes the naming story, key historical context, references, a community vote, and a share action.</p></section>
 <section class="toolbar" aria-label="Place search"><input id="search" class="search" type="search" placeholder="Search by place, district, history, or source…" autocomplete="off"><div id="count" class="count"></div></section>
 <section id="grid" class="grid" aria-live="polite"></section>
-<p class="note" id="note">Votes are stored on this device. A shared backend can replace the local vote store later without changing the card interface.</p>
+<p class="note" id="note">Votes are shared across devices through the Cloudflare vote service.</p>
 </main>
 <div id="toast" class="toast" role="status"></div>
 <script src="./places.js"></script>
 <script src="./tamil.js"></script>
+<script src="./vote-api.js"></script>
 </body>
 </html>
