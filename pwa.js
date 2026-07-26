@@ -125,21 +125,11 @@
     document.body.appendChild(script);
   };
 
-  const loadBirthdayImageShare=()=>{
-    if(!/^\/cards\/events\/birthday(?:\/|$)/i.test(location.pathname)||document.querySelector('script[data-birthday-image-share]'))return;
-    const script=document.createElement('script');
-    script.src='/cards/events/birthday/share-image.js';
-    script.defer=true;
-    script.dataset.birthdayImageShare='true';
-    document.body.appendChild(script);
-  };
-
   window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();deferredPrompt=event;render();});
   ready(async()=>{
     installStyles();
     if('serviceWorker'in navigator){try{await navigator.serviceWorker.register('/sw.js',{scope:'/'});}catch(error){console.warn('PWA registration failed',error);}}
     render();
     loadDailyCustomTitle();
-    loadBirthdayImageShare();
   });
 })();
