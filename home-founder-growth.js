@@ -1,7 +1,6 @@
 (()=>{
-  const isIndiaVisitor=()=>document.cookie.split(';').some(part=>part.trim()==='sharecapsule-country=IN');
   const install=()=>{
-    if(!isIndiaVisitor()||location.pathname!=='/'||document.getElementById('dailyWishesFeature'))return;
+    if(location.pathname!=='/'||document.getElementById('dailyWishesFeature'))return;
 
     const style=document.createElement('style');
     style.id='dailyWishesFeatureStyles';
@@ -46,9 +45,8 @@
 
 (()=>{
   const ENDPOINT='/name/history/tn/';
-  const isIndiaVisitor=()=>document.cookie.split(';').some(part=>part.trim()==='sharecapsule-country=IN');
   const install=()=>{
-    if(!isIndiaVisitor()||location.pathname!=='/'||new URLSearchParams(location.search).has('release')||document.getElementById('tnPlaceHistoryFeature'))return;
+    if(location.pathname!=='/'||new URLSearchParams(location.search).has('release')||document.getElementById('tnPlaceHistoryFeature'))return;
 
     if(!document.getElementById('tnPlaceHistoryFeatureStyles')){
       const style=document.createElement('style');
@@ -101,4 +99,12 @@
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install,{once:true});
   else install();
   window.addEventListener('popstate',()=>setTimeout(install,0));
+})();
+
+(()=>{
+  if(document.querySelector('script[src="/india-only-home-sections.js"]'))return;
+  const script=document.createElement('script');
+  script.src='/india-only-home-sections.js';
+  script.defer=true;
+  document.body.appendChild(script);
 })();
