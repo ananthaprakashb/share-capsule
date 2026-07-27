@@ -3861,6 +3861,55 @@
       },
       "publishedAt": "2026-07-26",
       "featured": true
+    },
+    {
+      "slug": "heat-hydration-timer-july-2026",
+      "title": "Use a Heat Hydration Timer",
+      "artist": "Share Capsule Tips",
+      "type": "Story",
+      "category": "Practical News Tip",
+      "language": "English",
+      "description": "A practical extreme-heat safety tip selected from the July 27, 2026 U.S. heat wave, with CDC/NIOSH, OSHA, CDC, and National Weather Service guidance on drinking before thirst, using small scheduled water breaks, adding electrolytes during prolonged sweating, avoiding excessive intake, and combining hydration with cooling and rest.",
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#5f3b2d,#9a6a45 55%,#d4a574)",
+      "coverEyebrow": "Practical News Tip",
+      "coverLines": [
+        "Use a Heat",
+        "Hydration Timer"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Read story",
+          "icon": "📖",
+          "url": "/tips/heat-hydration-timer-july-2026/"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "📖",
+          "text": "Thought you might enjoy this five-minute Tamil story."
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this thoughtful Tamil story with the family."
+        },
+        "reader": {
+          "label": "Story reader",
+          "icon": "📚",
+          "text": "Here is a Tamil story worth reading and reflecting on."
+        },
+        "learner": {
+          "label": "Curious learner",
+          "icon": "💡",
+          "text": "This story connects history, learning and modern ideas."
+        }
+      },
+      "publishedAt": "2026-07-27",
+      "featured": true
     }
   ]
 }
