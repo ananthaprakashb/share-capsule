@@ -4,6 +4,24 @@
   },
   "items": [
     {
+      "slug": "heat-hydration-timer-july-2026",
+      "title": "Use a Heat Hydration Timer",
+      "artist": "Share Capsule Tips",
+      "videoIds": [],
+      "youtubeExtra": [],
+      "category": "Practical News Tip",
+      "language": "English",
+      "music": false,
+      "description": "A practical extreme-heat safety tip selected from the July 27, 2026 U.S. heat wave, with CDC/NIOSH, OSHA, CDC, and National Weather Service guidance on drinking before thirst, using small scheduled water breaks, adding electrolytes during prolonged sweating, avoiding excessive intake, and combining hydration with cooling and rest.",
+      "coverLines": [
+        "Use a Heat",
+        "Hydration Timer"
+      ],
+      "publishedAt": "2026-07-27",
+      "featured": true,
+      "directUrl": "/tips/heat-hydration-timer-july-2026/"
+    },
+    {
       "slug": "hot-weather-medicine-plan-july-2026",
       "title": "Make a Hot-Weather Medicine Plan",
       "artist": "Share Capsule Tips",
