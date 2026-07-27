@@ -100,11 +100,3 @@
   else install();
   window.addEventListener('popstate',()=>setTimeout(install,0));
 })();
-
-(()=>{
-  if(document.querySelector('script[src="/india-only-home-sections.js"]'))return;
-  const script=document.createElement('script');
-  script.src='/india-only-home-sections.js';
-  script.defer=true;
-  document.body.appendChild(script);
-})();
