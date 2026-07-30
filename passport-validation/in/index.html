@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#123b66">
+  <meta name="description" content="Private, in-browser preflight checks for Indian Passport Seva digital photographs.">
+  <meta property="og:title" content="Indian Passport Photo Preflight — Share Capsule">
+  <meta property="og:url" content="https://sharecapsule.app/passport-validation/in/">
+  <title>Indian Passport Photo Preflight — Share Capsule</title>
+  <style>
+    :root{--ink:#142235;--muted:#5f6e80;--line:#dce4ec;--blue:#0b65c2;--navy:#123b66;--green:#147a55;--amber:#a45d00;--red:#bd3131;--paper:#fff;--wash:#f4f7fa}
+    *{box-sizing:border-box}body{margin:0;color:var(--ink);background:linear-gradient(180deg,#eef6fc 0,#fff 420px);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    button,input,a{font:inherit}.shell{width:min(1080px,calc(100% - 28px));margin:auto}.top{display:flex;align-items:center;justify-content:space-between;padding:20px 0}.brand{display:flex;align-items:center;gap:11px;color:var(--ink);text-decoration:none;font-weight:850}.mark{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;color:#fff;background:var(--navy);font-size:20px}.home{padding:9px 13px;border:1px solid var(--line);border-radius:11px;color:var(--ink);background:#fff;text-decoration:none;font-weight:750}
+    .hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);gap:28px;align-items:center;padding:54px 0 42px}.eyebrow{color:var(--blue);font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.hero h1{max-width:760px;margin:9px 0 14px;font-size:clamp(34px,6vw,62px);line-height:1.02;letter-spacing:-.055em}.hero p{max-width:690px;margin:0;color:var(--muted);font-size:17px}.spec{padding:23px;border:1px solid #cfe0ef;border-radius:22px;background:rgba(255,255,255,.85);box-shadow:0 16px 45px rgba(18,59,102,.08)}.spec strong{display:block;font-size:28px}.spec span{color:var(--muted)}.privacy{display:flex;gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line);color:var(--green);font-weight:800}
+    .workspace{display:grid;grid-template-columns:minmax(280px,.85fr) minmax(340px,1.15fr);gap:22px;padding-bottom:54px}.card{border:1px solid var(--line);border-radius:24px;background:var(--paper);box-shadow:0 14px 40px rgba(20,34,53,.06)}.uploadCard{padding:20px}.drop{display:grid;place-items:center;min-height:370px;padding:25px;border:2px dashed #afc2d4;border-radius:18px;background:var(--wash);text-align:center;cursor:pointer;transition:.2s}.drop:hover,.drop.drag{border-color:var(--blue);background:#edf6ff}.drop input{position:absolute;width:1px;height:1px;opacity:0}.dropIcon{font-size:42px}.drop h2{margin:8px 0 5px;font-size:21px}.drop p{margin:0;color:var(--muted)}.choose{display:inline-block;margin-top:18px;padding:11px 16px;border-radius:12px;color:#fff;background:var(--blue);font-weight:850}.preview{max-width:100%;max-height:390px;border-radius:13px;object-fit:contain}.fileMeta{margin-top:12px;color:var(--muted);font-size:13px;overflow-wrap:anywhere}
+    .results{padding:23px}.results h2{margin:0;font-size:25px}.intro{margin:4px 0 18px;color:var(--muted)}.empty{padding:30px 10px;color:var(--muted);text-align:center}.summary{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:17px 0;padding:15px;border-radius:15px;background:var(--wash)}.summary strong{font-size:19px}.checks{display:grid;gap:10px}.check{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:start;padding:13px;border:1px solid var(--line);border-radius:14px}.checkIcon{display:grid;place-items:center;width:27px;height:27px;border-radius:50%;color:#fff;font-weight:900}.pass .checkIcon{background:var(--green)}.warn .checkIcon{background:var(--amber)}.fail .checkIcon{background:var(--red)}.manual .checkIcon{background:#68798a}.check strong{display:block}.check p{margin:2px 0 0;color:var(--muted);font-size:13px}.badge{padding:4px 8px;border-radius:20px;background:var(--wash);font-size:11px;font-weight:900;text-transform:uppercase}.actions{display:grid;gap:10px;margin-top:20px}.primary,.secondary{display:flex;align-items:center;justify-content:center;min-height:48px;padding:11px 16px;border-radius:13px;text-decoration:none;font-weight:900;text-align:center;cursor:pointer}.primary{border:0;color:#fff;background:var(--blue)}.primary:disabled{cursor:not-allowed;opacity:.5}.secondary{border:1px solid var(--line);color:var(--ink);background:#fff}.notice{margin-top:13px;padding:12px;border-radius:12px;color:#6a4a12;background:#fff7df;font-size:12px}.notice a{color:inherit;font-weight:800}
+    .editor{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}.editor h3{margin:0 0 4px;font-size:20px}.editorIntro{margin:0 0 15px;color:var(--muted);font-size:13px}.photoFrame{position:relative;width:min(100%,315px);margin:auto;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:#fff;aspect-ratio:630/810}.photoFrame canvas{display:block;width:100%;height:100%}.headGuide{position:absolute;left:11%;right:11%;top:6%;height:82%;border:2px dashed rgba(11,101,194,.7);border-radius:48%;pointer-events:none}.headGuide:after{content:"Position full hair to chin inside guide";position:absolute;left:50%;bottom:-29px;width:220px;transform:translateX(-50%);color:var(--blue);font-size:10px;font-weight:800;text-align:center}.controls{display:grid;gap:11px;margin:42px 0 15px}.control{display:grid;grid-template-columns:85px 1fr 42px;gap:9px;align-items:center}.control label{font-size:12px;font-weight:850}.control output{color:var(--muted);font-size:11px;text-align:right}.control input{width:100%}.processState{min-height:20px;color:var(--muted);font-size:12px}.toggleRow{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0}.toggleRow span{font-size:12px;color:var(--muted)}
+    .guidance{margin-bottom:50px;padding:25px}.guidance h2{margin:0 0 14px}.guideGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.guide{padding:15px;border-radius:15px;background:var(--wash)}.guide strong{display:block;margin-bottom:4px}.guide span{color:var(--muted);font-size:13px}.footer{padding:22px 0 34px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}.footer a{color:var(--blue)}
+    @media(max-width:780px){.hero,.workspace{grid-template-columns:1fr}.hero{padding-top:30px}.guideGrid{grid-template-columns:1fr}.drop{min-height:300px}.check{grid-template-columns:30px 1fr}.badge{grid-column:2;justify-self:start}.top{gap:12px}.brand span:last-child{font-size:14px}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="top">
+      <a class="brand" href="/"><span class="mark">◉</span><span>Share Capsule <strong>Tools</strong></span></a>
+      <a class="home" href="/">Home</a>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Indian Passport Seva · photo preflight</div>
+        <h1>Check before you upload.</h1>
+        <p>Run measurable checks on your digital passport photograph and get clear retake guidance. Analysis happens on this device—your image is not sent to Share Capsule.</p>
+      </div>
+      <aside class="spec">
+        <span>Required digital dimensions</span>
+        <strong>630 × 810 px</strong>
+        <span>Color · white background · frontal pose</span>
+        <div class="privacy">🔒 Private in-browser analysis</div>
+      </aside>
+    </section>
+
+    <section class="workspace">
+      <div class="card uploadCard">
+        <label class="drop" id="dropZone">
+          <input id="photoInput" type="file" accept="image/jpeg,image/png,image/webp">
+          <span id="dropPrompt">
+            <span class="dropIcon">📷</span>
+            <h2>Select the original digital photo</h2>
+            <p>JPG, PNG or WebP. Avoid a scan of a printed photograph.</p>
+            <span class="choose">Choose photo</span>
+          </span>
+          <img id="preview" class="preview" alt="Selected passport photograph preview" hidden>
+        </label>
+        <div id="fileMeta" class="fileMeta"></div>
+      </div>
+
+      <div class="card results">
+        <h2>Preflight results</h2>
+        <p class="intro">Automated checks are guidance, not an acceptance guarantee.</p>
+        <div id="empty" class="empty">Choose a photo to begin.</div>
+        <div id="report" hidden>
+          <div class="summary"><div><strong id="summaryTitle"></strong><div id="summaryText"></div></div><span id="summaryIcon"></span></div>
+          <div id="checks" class="checks"></div>
+          <section class="editor" id="editor">
+            <h3>Create the 630×810 file</h3>
+            <p class="editorIntro">Position the original without stretching. Background cleanup runs locally on this device.</p>
+            <div class="photoFrame">
+              <canvas id="outputCanvas" width="630" height="810" aria-label="Passport photo output preview"></canvas>
+              <span class="headGuide" aria-hidden="true"></span>
+            </div>
+            <div class="controls">
+              <div class="control"><label for="zoom">Zoom</label><input id="zoom" type="range" min="100" max="220" value="100"><output id="zoomOut">100%</output></div>
+              <div class="control"><label for="moveX">Left / right</label><input id="moveX" type="range" min="-100" max="100" value="0"><output id="moveXOut">0</output></div>
+              <div class="control"><label for="moveY">Up / down</label><input id="moveY" type="range" min="-100" max="100" value="0"><output id="moveYOut">0</output></div>
+            </div>
+            <div class="toggleRow"><div><strong>White background cleanup</strong><br><span>Separates the person and replaces only the background.</span></div><button class="secondary" id="removeBackground" type="button">Clean background</button></div>
+            <div class="processState" id="processState" aria-live="polite"></div>
+          </section>
+          <div class="actions">
+            <button class="primary" id="downloadPhoto" type="button">Download 630×810 JPG</button>
+            <button class="secondary" id="newPhoto" type="button">Check another photo</button>
+          </div>
+          <div class="notice"><strong>Important:</strong> Passport Seva’s guidance says photos should be unaltered by computer software. Prefer a correctly taken original with a real white background. Background cleanup is provided for edge/background correction only; it cannot repair close-camera perspective, pose, expression, blur, glare or facial shadows.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card guidance">
+      <h2>Conditions software cannot safely repair</h2>
+      <div class="guideGrid">
+        <div class="guide"><strong>Camera distance</strong><span>Retake with the rear camera approximately 1.5 metres (5 feet) away. Padding cannot undo close-camera perspective.</span></div>
+        <div class="guide"><strong>Pose and expression</strong><span>Look directly into the lens, keep the head straight, eyes open and mouth closed with a natural expression.</span></div>
+        <div class="guide"><strong>Lighting and identity</strong><span>Use even light and a real white background. Do not retouch skin, replace facial details or use beauty filters.</span></div>
+      </div>
+    </section>
+
+    <footer class="footer">Based on <a href="https://mportal.passportindia.gov.in/pdf/Guidelines_for_ICAO_Compliant_Photographs_for_Passport_Applications.pdf" target="_blank" rel="noopener noreferrer">Passport Seva’s ICAO-compliant photo guidance</a>. Always follow the requirements shown in your current application portal.</footer>
+  </main>
+
+  <canvas id="analysisCanvas" hidden></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation/selfie_segmentation.js" crossorigin="anonymous"></script>
+  <script>
+    const input=document.getElementById('photoInput'),drop=document.getElementById('dropZone');
+    const preview=document.getElementById('preview'),prompt=document.getElementById('dropPrompt');
+    const report=document.getElementById('report'),empty=document.getElementById('empty');
+    const checksEl=document.getElementById('checks'),meta=document.getElementById('fileMeta');
+    const canvas=document.getElementById('analysisCanvas'),ctx=canvas.getContext('2d',{willReadFrequently:true});
+    const outputCanvas=document.getElementById('outputCanvas'),outputCtx=outputCanvas.getContext('2d');
+    const subjectCanvas=document.createElement('canvas'),subjectCtx=subjectCanvas.getContext('2d');
+    const maskCanvas=document.createElement('canvas'),maskCtx=maskCanvas.getContext('2d');
+    let sourceBitmap=null,useCutout=false,segmenter=null;
+    const MAX_BYTES=15*1024*1024;
+
+    const row=(kind,title,value,detail)=>({kind,title,value,detail});
+    const label={pass:'Pass',warn:'Review',fail:'Fail',manual:'Manual'};
+    const icon={pass:'✓',warn:'!',fail:'×',manual:'?'};
+
+    function render(rows){
+      checksEl.innerHTML='';
+      rows.forEach(r=>{
+        const el=document.createElement('div');el.className=`check ${r.kind}`;
+        el.innerHTML=`<span class="checkIcon">${icon[r.kind]}</span><div><strong>${r.title}</strong><p>${r.detail}</p></div><span class="badge">${label[r.kind]}${r.value?` · ${r.value}`:''}</span>`;
+        checksEl.appendChild(el);
+      });
+      const fails=rows.filter(r=>r.kind==='fail').length,warns=rows.filter(r=>r.kind==='warn').length;
+      document.getElementById('summaryTitle').textContent=fails?'Retake or correct before upload':warns?'Manual review recommended':'Measurable checks passed';
+      document.getElementById('summaryText').textContent=`${fails} failed · ${warns} need review · qualitative conditions still require inspection`;
+      document.getElementById('summaryIcon').textContent=fails?'🔴':warns?'🟠':'🟢';
+      empty.hidden=true;report.hidden=false;
+    }
+
+    function backgroundStats(data,w,h){
+      const band=Math.max(3,Math.round(Math.min(w,h)*.04));let white=0,total=0,sum=0,sum2=0;
+      for(let y=0;y<h;y++)for(let x=0;x<w;x++){
+        if(x>=band&&x<w-band&&y>=band&&y<h-band)continue;
+        const i=(y*w+x)*4,r=data[i],g=data[i+1],b=data[i+2],avg=(r+g+b)/3,spread=Math.max(r,g,b)-Math.min(r,g,b);
+        total++;if(avg>=235&&spread<=18)white++;sum+=avg;sum2+=avg*avg;
+      }
+      return {fraction:white/total,std:Math.sqrt(Math.max(0,sum2/total-(sum/total)**2))};
+    }
+
+    function sharpness(data,w,h){
+      const lum=(x,y)=>{const i=(y*w+x)*4;return .299*data[i]+.587*data[i+1]+.114*data[i+2]};
+      let n=0,sum=0,sum2=0;
+      for(let y=1;y<h-1;y+=2)for(let x=1;x<w-1;x+=2){
+        const v=4*lum(x,y)-lum(x-1,y)-lum(x+1,y)-lum(x,y-1)-lum(x,y+1);
+        n++;sum+=v;sum2+=v*v;
+      }
+      return sum2/n-(sum/n)**2;
+    }
+
+    async function faceCheck(bitmap,w,h){
+      if(!('FaceDetector'in window))return row('manual','Face size and centering','browser unsupported','Confirm the full head, hair and top of shoulders are visible; face occupies approximately 80–85% of the photograph and the head is centered.');
+      try{
+        const faces=await new FaceDetector({fastMode:false,maxDetectedFaces:2}).detect(bitmap);
+        if(faces.length!==1)return row('fail','One frontal face',String(faces.length),faces.length?'More than one face was detected.':'No reliable frontal face was detected.');
+        const b=faces[0].boundingBox,offset=Math.abs((b.x+b.width/2)-w/2)/w,ratio=b.height/h;
+        const good=offset<=.06&&ratio>=.48&&ratio<=.82;
+        return row(good?'pass':'warn','Face scale and centering',`${Math.round(ratio*100)}% detector height`,good?'One centered face was detected. Confirm hair-to-chin composition manually.':'Face may be off-center or unusually scaled. Padding does not correct camera perspective.');
+      }catch{return row('manual','Face size and centering','manual','Automatic face analysis was unavailable. Inspect the composition manually.')}
+    }
+
+    async function analyse(file){
+      if(!file.type.startsWith('image/'))return render([row('fail','File type',file.type||'unknown','Choose a JPG, PNG or WebP image.')]);
+      if(file.size>MAX_BYTES)return render([row('fail','File size',`${(file.size/1048576).toFixed(1)} MB`,'Choose an image under 15 MB.')]);
+      const url=URL.createObjectURL(file),bitmap=await createImageBitmap(file),w=bitmap.width,h=bitmap.height;
+      if(sourceBitmap)sourceBitmap.close();
+      sourceBitmap=bitmap;useCutout=false;
+      ['zoom','moveX','moveY'].forEach(id=>document.getElementById(id).value=id==='zoom'?100:0);
+      updateControlLabels();renderOutput();
+      preview.src=url;preview.hidden=false;prompt.hidden=true;
+      meta.textContent=`${file.name} · ${w}×${h}px · ${(file.size/1048576).toFixed(2)} MB`;
+      const scale=Math.min(1,900/Math.max(w,h)),aw=Math.max(1,Math.round(w*scale)),ah=Math.max(1,Math.round(h*scale));
+      canvas.width=aw;canvas.height=ah;ctx.drawImage(bitmap,0,0,aw,ah);
+      const pixels=ctx.getImageData(0,0,aw,ah),bg=backgroundStats(pixels.data,aw,ah),sharp=sharpness(pixels.data,aw,ah);
+      const rows=[
+        row(w===630&&h===810?'pass':'fail','Digital dimensions',`${w}×${h}`,'Passport Seva requires exactly 630×810 pixels. Resizing alone does not repair pose or perspective.'),
+        row(Math.abs(w/h-630/810)/(630/810)<.006?'pass':'fail','Aspect ratio',(w/h).toFixed(3),'The image must keep the 630:810 portrait ratio and must not be stretched.'),
+        row(bg.fraction>=.90&&bg.std<=20?'pass':bg.fraction>=.75?'warn':'fail','White, even background',`${Math.round(bg.fraction*100)}% white edge`,'Use a plain, uniformly lit white background without distracting shadows.'),
+        row(sharp>=100?'pass':sharp>=60?'warn':'fail','Sharpness',Math.round(sharp),'The photograph must be in focus and not blurred.')
+      ];
+      rows.push(await faceCheck(bitmap,w,h));
+      rows.push(
+        row('manual','Camera distance','1.5 m required','A normal image file cannot prove camera distance. Retake from about 1.5 metres if the portal reports “too close.”'),
+        row('manual','Eyes, mouth and gaze','inspect','Both eyes open and visible, no hair across eyes, mouth closed and looking directly at the camera.'),
+        row('manual','Lighting and reflections','inspect','Confirm natural skin tone, even lighting, no red-eye, face shadows, flash reflection or eyeglass glare.'),
+        row('manual','Natural, unaltered photo','inspect','No beauty filter, facial retouching or AI-generated identity changes.')
+      );
+      render(rows);
+    }
+
+    function updateControlLabels(){
+      document.getElementById('zoomOut').value=`${document.getElementById('zoom').value}%`;
+      document.getElementById('moveXOut').value=document.getElementById('moveX').value;
+      document.getElementById('moveYOut').value=document.getElementById('moveY').value;
+    }
+
+    function renderOutput(){
+      if(!sourceBitmap)return;
+      const src=useCutout?subjectCanvas:sourceBitmap,w=sourceBitmap.width,h=sourceBitmap.height;
+      const zoom=Number(document.getElementById('zoom').value)/100;
+      const scale=Math.max(630/w,810/h)*zoom,dw=w*scale,dh=h*scale;
+      const travelX=Math.max(0,(dw-630)/2),travelY=Math.max(0,(dh-810)/2);
+      const x=(630-dw)/2+(Number(document.getElementById('moveX').value)/100)*travelX;
+      const y=(810-dh)/2+(Number(document.getElementById('moveY').value)/100)*travelY;
+      outputCtx.save();outputCtx.fillStyle='#fff';outputCtx.fillRect(0,0,630,810);
+      outputCtx.imageSmoothingEnabled=true;outputCtx.imageSmoothingQuality='high';
+      outputCtx.drawImage(src,x,y,dw,dh);outputCtx.restore();
+    }
+
+    async function cleanBackground(){
+      const state=document.getElementById('processState'),button=document.getElementById('removeBackground');
+      if(!sourceBitmap)return;
+      if(!window.SelfieSegmentation){state.textContent='Background model could not load. Check the connection and retry.';return}
+      button.disabled=true;state.textContent='Loading on-device background model…';
+      try{
+        if(!segmenter){
+          segmenter=new SelfieSegmentation({locateFile:f=>`https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation/${f}`});
+          segmenter.setOptions({modelSelection:0,selfieMode:false});
+        }
+        const maxSide=1200,scale=Math.min(1,maxSide/Math.max(sourceBitmap.width,sourceBitmap.height));
+        const w=Math.round(sourceBitmap.width*scale),h=Math.round(sourceBitmap.height*scale);
+        maskCanvas.width=subjectCanvas.width=w;maskCanvas.height=subjectCanvas.height=h;
+        maskCtx.clearRect(0,0,w,h);maskCtx.drawImage(sourceBitmap,0,0,w,h);
+        const result=await new Promise((resolve,reject)=>{
+          const timer=setTimeout(()=>reject(new Error('Background model timed out')),45000);
+          segmenter.onResults(r=>{clearTimeout(timer);resolve(r)});
+          segmenter.send({image:maskCanvas}).catch(reject);
+        });
+        subjectCtx.clearRect(0,0,w,h);
+        subjectCtx.drawImage(result.segmentationMask,0,0,w,h);
+        subjectCtx.globalCompositeOperation='source-in';
+        subjectCtx.drawImage(sourceBitmap,0,0,w,h);
+        subjectCtx.globalCompositeOperation='source-over';
+        useCutout=true;renderOutput();
+        state.textContent='Background replaced with white. Inspect hair and shoulder edges closely.';
+        button.textContent='Background cleaned';
+      }catch(error){
+        state.textContent=`Could not clean the background: ${error.message}. Use the original or retake against a white wall.`;
+      }finally{button.disabled=false}
+    }
+
+    function downloadPhoto(){
+      if(!sourceBitmap)return;
+      renderOutput();
+      outputCanvas.toBlob(blob=>{
+        const a=document.createElement('a'),url=URL.createObjectURL(blob);
+        a.href=url;a.download='indian-passport-630x810.jpg';a.click();
+        setTimeout(()=>URL.revokeObjectURL(url),2000);
+        document.getElementById('processState').textContent='Downloaded exact 630×810 JPG. Upload it to the portal for final validation.';
+      },'image/jpeg',.95);
+    }
+
+    input.addEventListener('change',()=>input.files[0]&&analyse(input.files[0]));
+    ['dragenter','dragover'].forEach(e=>drop.addEventListener(e,n=>{n.preventDefault();drop.classList.add('drag')}));
+    ['dragleave','drop'].forEach(e=>drop.addEventListener(e,n=>{n.preventDefault();drop.classList.remove('drag')}));
+    drop.addEventListener('drop',e=>{const f=e.dataTransfer.files[0];if(f)analyse(f)});
+    ['zoom','moveX','moveY'].forEach(id=>document.getElementById(id).addEventListener('input',()=>{updateControlLabels();renderOutput()}));
+    document.getElementById('removeBackground').addEventListener('click',cleanBackground);
+    document.getElementById('downloadPhoto').addEventListener('click',downloadPhoto);
+    document.getElementById('newPhoto').addEventListener('click',()=>{input.value='';preview.hidden=true;prompt.hidden=false;report.hidden=true;empty.hidden=false;meta.textContent='';useCutout=false;input.click()});
+  </script>
+  <script src="/site-shell.js" defer></script>
+</body>
+</html>
