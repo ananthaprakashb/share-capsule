@@ -4,19 +4,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#123b66">
-  <meta name="description" content="Private, in-browser preflight checks for Indian Passport Seva digital photographs.">
-  <meta property="og:title" content="Indian Passport Photo Preflight — Share Capsule">
+  <meta name="description" content="Free Indian Passport photo dimensions checker tool. Resize photos to 630x810 pixels, check quality, fix a white background, and download instantly with no sign-up or watermark.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://sharecapsule.app/passport-validation/in/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Indian Passport Photo Validator & Resizer">
+  <meta property="og:description" content="Resize a photo to 630x810 for an Indian Passport online free. Validate dimensions, fix the white background, and download without a watermark.">
   <meta property="og:url" content="https://sharecapsule.app/passport-validation/in/">
-  <title>Indian Passport Photo Preflight — Share Capsule</title>
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Free Indian Passport Photo Validator & Resizer">
+  <meta name="twitter:description" content="Check Indian Passport photo dimensions, resize to 630x810, clean the white background, and download free.">
+  <title>Free Indian Passport Photo Validator & Resizer | 630x810 Tool</title>
   <style>
     :root{--ink:#142235;--muted:#5f6e80;--line:#dce4ec;--blue:#0b65c2;--navy:#123b66;--green:#147a55;--amber:#a45d00;--red:#bd3131;--paper:#fff;--wash:#f4f7fa}
     *{box-sizing:border-box}body{margin:0;color:var(--ink);background:linear-gradient(180deg,#eef6fc 0,#fff 420px);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
     button,input,a{font:inherit}.shell{width:min(1080px,calc(100% - 28px));margin:auto}.top{display:flex;align-items:center;justify-content:space-between;padding:20px 0}.brand{display:flex;align-items:center;gap:11px;color:var(--ink);text-decoration:none;font-weight:850}.mark{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;color:#fff;background:var(--navy);font-size:20px}.home{padding:9px 13px;border:1px solid var(--line);border-radius:11px;color:var(--ink);background:#fff;text-decoration:none;font-weight:750}
-    .hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);gap:28px;align-items:center;padding:54px 0 42px}.eyebrow{color:var(--blue);font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.hero h1{max-width:760px;margin:9px 0 14px;font-size:clamp(34px,6vw,62px);line-height:1.02;letter-spacing:-.055em}.hero p{max-width:690px;margin:0;color:var(--muted);font-size:17px}.spec{padding:23px;border:1px solid #cfe0ef;border-radius:22px;background:rgba(255,255,255,.85);box-shadow:0 16px 45px rgba(18,59,102,.08)}.spec strong{display:block;font-size:28px}.spec span{color:var(--muted)}.privacy{display:flex;gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line);color:var(--green);font-weight:800}
+    .valueBanner{display:flex;align-items:center;justify-content:center;gap:10px;margin:10px 0 0;padding:12px 16px;border:1px solid #b8dfce;border-radius:14px;color:#0d6847;background:#edfbf5;font-size:14px;font-weight:900;text-align:center}.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);gap:28px;align-items:center;padding:46px 0 42px}.eyebrow{color:var(--blue);font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.hero h1{max-width:760px;margin:9px 0 14px;font-size:clamp(34px,6vw,62px);line-height:1.02;letter-spacing:-.055em}.hero p{max-width:690px;margin:0;color:var(--muted);font-size:17px}.spec{padding:23px;border:1px solid #cfe0ef;border-radius:22px;background:rgba(255,255,255,.85);box-shadow:0 16px 45px rgba(18,59,102,.08)}.spec strong{display:block;font-size:28px}.spec span{color:var(--muted)}.privacy{display:flex;gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line);color:var(--green);font-weight:800}
     .workspace{display:grid;grid-template-columns:minmax(280px,.85fr) minmax(340px,1.15fr);gap:22px;padding-bottom:54px}.card{border:1px solid var(--line);border-radius:24px;background:var(--paper);box-shadow:0 14px 40px rgba(20,34,53,.06)}.uploadCard{padding:20px}.drop{display:grid;place-items:center;min-height:370px;padding:25px;border:2px dashed #afc2d4;border-radius:18px;background:var(--wash);text-align:center;cursor:pointer;transition:.2s}.drop:hover,.drop.drag{border-color:var(--blue);background:#edf6ff}.drop input{position:absolute;width:1px;height:1px;opacity:0}.dropIcon{font-size:42px}.drop h2{margin:8px 0 5px;font-size:21px}.drop p{margin:0;color:var(--muted)}.choose{display:inline-block;margin-top:18px;padding:11px 16px;border-radius:12px;color:#fff;background:var(--blue);font-weight:850}.preview{max-width:100%;max-height:390px;border-radius:13px;object-fit:contain}.fileMeta{margin-top:12px;color:var(--muted);font-size:13px;overflow-wrap:anywhere}
     .results{padding:23px}.results h2{margin:0;font-size:25px}.intro{margin:4px 0 18px;color:var(--muted)}.empty{padding:30px 10px;color:var(--muted);text-align:center}.summary{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:17px 0;padding:15px;border-radius:15px;background:var(--wash)}.summary strong{font-size:19px}.checks{display:grid;gap:10px}.check{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:start;padding:13px;border:1px solid var(--line);border-radius:14px}.checkIcon{display:grid;place-items:center;width:27px;height:27px;border-radius:50%;color:#fff;font-weight:900}.pass .checkIcon{background:var(--green)}.warn .checkIcon{background:var(--amber)}.fail .checkIcon{background:var(--red)}.manual .checkIcon{background:#68798a}.check strong{display:block}.check p{margin:2px 0 0;color:var(--muted);font-size:13px}.badge{padding:4px 8px;border-radius:20px;background:var(--wash);font-size:11px;font-weight:900;text-transform:uppercase}.actions{display:grid;gap:10px;margin-top:20px}.primary,.secondary{display:flex;align-items:center;justify-content:center;min-height:48px;padding:11px 16px;border-radius:13px;text-decoration:none;font-weight:900;text-align:center;cursor:pointer}.primary{border:0;color:#fff;background:var(--blue)}.primary:disabled{cursor:not-allowed;opacity:.5}.secondary{border:1px solid var(--line);color:var(--ink);background:#fff}.notice{margin-top:13px;padding:12px;border-radius:12px;color:#6a4a12;background:#fff7df;font-size:12px}.notice a{color:inherit;font-weight:800}
     .editor{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}.editor h3{margin:0 0 4px;font-size:20px}.editorIntro{margin:0 0 15px;color:var(--muted);font-size:13px}.photoFrame{position:relative;width:min(100%,315px);margin:auto;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:#fff;aspect-ratio:630/810}.photoFrame canvas{display:block;width:100%;height:100%}.headGuide{position:absolute;left:11%;right:11%;top:6%;height:82%;border:2px dashed rgba(11,101,194,.7);border-radius:48%;pointer-events:none}.headGuide:after{content:"Position full hair to chin inside guide";position:absolute;left:50%;bottom:-29px;width:220px;transform:translateX(-50%);color:var(--blue);font-size:10px;font-weight:800;text-align:center}.controls{display:grid;gap:11px;margin:42px 0 15px}.control{display:grid;grid-template-columns:85px 1fr 42px;gap:9px;align-items:center}.control label{font-size:12px;font-weight:850}.control output{color:var(--muted);font-size:11px;text-align:right}.control input{width:100%}.processState{min-height:20px;color:var(--muted);font-size:12px}.toggleRow{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0}.toggleRow span{font-size:12px;color:var(--muted)}
-    .guidance{margin-bottom:50px;padding:25px}.guidance h2{margin:0 0 14px}.guideGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.guide{padding:15px;border-radius:15px;background:var(--wash)}.guide strong{display:block;margin-bottom:4px}.guide span{color:var(--muted);font-size:13px}.footer{padding:22px 0 34px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}.footer a{color:var(--blue)}
+    .guidance{margin-bottom:22px;padding:25px}.guidance h2{margin:0 0 14px}.guideGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.guide{padding:15px;border-radius:15px;background:var(--wash)}.guide strong{display:block;margin-bottom:4px}.guide span{color:var(--muted);font-size:13px}.seoContent{margin-bottom:50px;padding:25px}.seoContent h2{margin:0 0 8px;font-size:25px}.seoContent p{margin:0 0 18px;color:var(--muted)}.faq{display:grid;gap:10px}.faq details{padding:14px 16px;border:1px solid var(--line);border-radius:13px;background:var(--wash)}.faq summary{cursor:pointer;font-weight:850}.faq details p{margin:8px 0 0;font-size:13px}.footer{padding:22px 0 34px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}.footer a{color:var(--blue)}
     @media(max-width:780px){.hero,.workspace{grid-template-columns:1fr}.hero{padding-top:30px}.guideGrid{grid-template-columns:1fr}.drop{min-height:300px}.check{grid-template-columns:30px 1fr}.badge{grid-column:2;justify-self:start}.top{gap:12px}.brand span:last-child{font-size:14px}}
   </style>
 </head>
@@ -27,11 +34,13 @@
       <a class="home" href="/">Home</a>
     </header>
 
+    <div class="valueBanner" role="note">100% Free • No Sign-up Required • No Watermarks • Instant Download</div>
+
     <section class="hero">
       <div>
         <div class="eyebrow">Indian Passport Seva · photo preflight</div>
-        <h1>Check before you upload.</h1>
-        <p>Run measurable checks on your digital passport photograph and get clear retake guidance. Analysis happens on this device—your image is not sent to Share Capsule.</p>
+        <h1>Free Indian Passport Photo Validator &amp; Resizer</h1>
+        <p>Resize photo to 630x810 Indian Passport online free, check the required dimensions, clean a white background, and download the finished JPG instantly. Analysis happens on this device—your image is not sent to Share Capsule.</p>
       </div>
       <aside class="spec">
         <span>Required digital dimensions</span>
@@ -57,14 +66,14 @@
       </div>
 
       <div class="card results">
-        <h2>Preflight results</h2>
+        <h2>Indian Passport photo dimensions checker tool free</h2>
         <p class="intro">Automated checks are guidance, not an acceptance guarantee.</p>
         <div id="empty" class="empty">Choose a photo to begin.</div>
         <div id="report" hidden>
           <div class="summary"><div><strong id="summaryTitle"></strong><div id="summaryText"></div></div><span id="summaryIcon"></span></div>
           <div id="checks" class="checks"></div>
           <section class="editor" id="editor">
-            <h3>Create the 630×810 file</h3>
+            <h3>Resize photo to 630x810 Indian Passport online free</h3>
             <p class="editorIntro">Position the original without stretching. Background cleanup runs locally on this device.</p>
             <div class="photoFrame">
               <canvas id="outputCanvas" width="630" height="810" aria-label="Passport photo output preview"></canvas>
@@ -75,7 +84,7 @@
               <div class="control"><label for="moveX">Left / right</label><input id="moveX" type="range" min="-100" max="100" value="0"><output id="moveXOut">0</output></div>
               <div class="control"><label for="moveY">Up / down</label><input id="moveY" type="range" min="-100" max="100" value="0"><output id="moveYOut">0</output></div>
             </div>
-            <div class="toggleRow"><div><strong>White background cleanup</strong><br><span>Separates the person and replaces only the background.</span></div><button class="secondary" id="removeBackground" type="button">Clean background</button></div>
+            <div class="toggleRow"><div><strong>Fix white background Indian passport photo free</strong><br><span>Separates the person and replaces only the background.</span></div><button class="secondary" id="removeBackground" type="button">Clean background</button></div>
             <div class="processState" id="processState" aria-live="polite"></div>
           </section>
           <div class="actions">
@@ -96,10 +105,47 @@
       </div>
     </section>
 
+    <section class="card seoContent">
+      <h2>How to resize an Indian Passport photo to 630x810 pixels</h2>
+      <p>Upload the original photograph, review the automatic checks, position the head inside the guide, optionally clean the background, and download the exact 630×810 JPG. The tool keeps the correct portrait ratio and does not stretch facial features.</p>
+      <div class="faq">
+        <details><summary>What are the Indian Passport digital photo dimensions?</summary><p>The Passport Seva upload guidance shown for this application requires a color photograph measuring exactly 630 pixels wide by 810 pixels high.</p></details>
+        <details><summary>Is this Indian Passport photo resizer really free?</summary><p>Yes. The validator, resizer, background cleanup and JPG download are free, require no account, and add no watermark.</p></details>
+        <details><summary>Can this tool fix a “standing too close” rejection?</summary><p>No software can reliably reverse close-camera perspective. Retake the photograph with the rear camera approximately 1.5 metres away, then use this tool for sizing and validation.</p></details>
+        <details><summary>Does Share Capsule upload or store my passport photograph?</summary><p>No. Validation, positioning, background processing and export happen locally inside your browser.</p></details>
+      </div>
+    </section>
+
     <footer class="footer">Based on <a href="https://mportal.passportindia.gov.in/pdf/Guidelines_for_ICAO_Compliant_Photographs_for_Passport_Applications.pdf" target="_blank" rel="noopener noreferrer">Passport Seva’s ICAO-compliant photo guidance</a>. Always follow the requirements shown in your current application portal.</footer>
   </main>
 
   <canvas id="analysisCanvas" hidden></canvas>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"Free Indian Passport Photo Validator & Resizer",
+    "url":"https://sharecapsule.app/passport-validation/in/",
+    "applicationCategory":"PhotographyApplication",
+    "operatingSystem":"Any",
+    "isAccessibleForFree":true,
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "description":"Free browser-based Indian Passport photo dimensions checker and resizer for exact 630x810 pixel JPG downloads, including optional white-background cleanup.",
+    "featureList":["630x810 pixel resizing","Indian Passport photo validation","White background cleanup","No sign-up","No watermark","Instant JPG download"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"What are the Indian Passport digital photo dimensions?","acceptedAnswer":{"@type":"Answer","text":"The Passport Seva upload guidance shown for this application requires a color photograph measuring exactly 630 pixels wide by 810 pixels high."}},
+      {"@type":"Question","name":"Is this Indian Passport photo resizer really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The validator, resizer, background cleanup and JPG download are free, require no account, and add no watermark."}},
+      {"@type":"Question","name":"Can this tool fix a standing too close rejection?","acceptedAnswer":{"@type":"Answer","text":"No software can reliably reverse close-camera perspective. Retake the photograph with the rear camera approximately 1.5 metres away, then use the tool for sizing and validation."}},
+      {"@type":"Question","name":"Does Share Capsule upload or store my passport photograph?","acceptedAnswer":{"@type":"Answer","text":"No. Validation, positioning, background processing and export happen locally inside the browser."}}
+    ]
+  }
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation/selfie_segmentation.js" crossorigin="anonymous"></script>
   <script>
     const input=document.getElementById('photoInput'),drop=document.getElementById('dropZone');
