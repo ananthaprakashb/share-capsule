@@ -4,6 +4,24 @@
   },
   "items": [
     {
+      "slug": "never-test-a-flooded-road-july-2026",
+      "title": "Never Test a Flooded Road",
+      "artist": "Share Capsule Tips",
+      "videoIds": [],
+      "youtubeExtra": [],
+      "category": "Practical News Tip",
+      "language": "English",
+      "music": false,
+      "description": "A practical flash-flood safety tip selected from the July 29, 2026 northeastern U.S. storms, with NOAA/National Weather Service, Ready.gov, and CDC guidance to never drive or walk through floodwater, obey barriers, reroute, move to higher ground, and avoid contaminated water.",
+      "coverLines": [
+        "Never Test a",
+        "Flooded Road"
+      ],
+      "publishedAt": "2026-07-29",
+      "featured": true,
+      "directUrl": "/tips/never-test-a-flooded-road-july-2026/"
+    },
+    {
       "slug": "heat-hydration-timer-july-2026",
       "title": "Use a Heat Hydration Timer",
       "artist": "Share Capsule Tips",
