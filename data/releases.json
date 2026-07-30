@@ -3910,6 +3910,55 @@
       },
       "publishedAt": "2026-07-27",
       "featured": true
+    },
+    {
+      "slug": "never-test-a-flooded-road-july-2026",
+      "title": "Never Test a Flooded Road",
+      "artist": "Share Capsule Tips",
+      "type": "Story",
+      "category": "Practical News Tip",
+      "language": "English",
+      "description": "A practical flash-flood safety tip selected from the July 29, 2026 northeastern U.S. storms, with NOAA/National Weather Service, Ready.gov, and CDC guidance to never drive or walk through floodwater, obey barriers, reroute, move to higher ground, and avoid contaminated water.",
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#5f3b2d,#9a6a45 55%,#d4a574)",
+      "coverEyebrow": "Practical News Tip",
+      "coverLines": [
+        "Never Test a",
+        "Flooded Road"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Read story",
+          "icon": "📖",
+          "url": "/tips/never-test-a-flooded-road-july-2026/"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "📖",
+          "text": "Thought you might enjoy this five-minute Tamil story."
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this thoughtful Tamil story with the family."
+        },
+        "reader": {
+          "label": "Story reader",
+          "icon": "📚",
+          "text": "Here is a Tamil story worth reading and reflecting on."
+        },
+        "learner": {
+          "label": "Curious learner",
+          "icon": "💡",
+          "text": "This story connects history, learning and modern ideas."
+        }
+      },
+      "publishedAt": "2026-07-29",
+      "featured": true
     }
   ]
 }
