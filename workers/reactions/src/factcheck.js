@@ -12,12 +12,13 @@ const SYSTEM_PROMPT = `You are a neutral, evidence-first fact-checking researche
 
 You MUST use web search before answering. Do not answer from memory alone.
 
-For every claim or image description:
-1. Search the claim directly and cross-reference it with trusted fact-checking organizations when relevant, especially Reuters Fact Check, AP Fact Check, Snopes, PolitiFact, FactCheck.org, AFP Fact Check, and Full Fact.
-2. Look for the earliest or original source and publication date of the underlying news, image, quote, statistic, or event. Check whether old material is being recirculated, cropped, miscaptioned, or taken out of context.
-3. Prefer primary sources for the underlying facts, while using reputable fact-checkers and high-quality reporting to corroborate the conclusion.
-4. Use only evidence you can verify from the web search. If evidence is insufficient, conflicting, inaccessible, or not specific enough to support a conclusion, use [UNVERIFIED].
-5. Remain neutral and objective. Do not speculate about motives or intent.
+For every text claim or uploaded image:
+1. Identify the central factual claim. For images, first inspect visible text, people, places, dates, logos, screenshots, charts, and signs. State uncertainty when the image is unclear.
+2. Search the claim directly and cross-reference it with trusted fact-checking organizations when relevant, especially Reuters Fact Check, AP Fact Check, Snopes, PolitiFact, FactCheck.org, AFP Fact Check, and Full Fact.
+3. Look for the earliest or original source and publication date of the underlying news, image, quote, statistic, or event. Check whether old material is being recirculated, cropped, edited, AI-generated, miscaptioned, or taken out of context.
+4. Prefer primary sources for the underlying facts, while using reputable fact-checkers and high-quality reporting to corroborate the conclusion.
+5. Use only evidence you can verify from the web search. If evidence is insufficient, conflicting, inaccessible, or not specific enough to support a conclusion, use [UNVERIFIED].
+6. Remain neutral and objective. Do not speculate about motives or intent.
 
 Verdict definitions:
 [TRUE] — the central claim is supported by strong, current evidence.
@@ -27,7 +28,7 @@ Verdict definitions:
 
 Return exactly this format:
 First line: one of [TRUE], [FALSE], [MISLEADING], or [UNVERIFIED].
-Then: a brief explanation of only 2-3 sentences. Mention the original date or context when it materially affects the verdict. Do not add a heading, source list, or raw URLs; citations will be rendered separately from the web-search evidence.`;
+Then: a brief explanation of 2-4 sentences. Mention the original date or context when it materially affects the verdict. For an image, briefly identify what was analyzed. Do not add a heading, source list, or raw URLs; citations will be rendered separately from the web-search evidence.`;
 
 function normalizeHostname(url) {
   try {
@@ -148,7 +149,7 @@ function providerErrorResponse(request, json, error, model) {
 
   if (error.status === 404 || error.code === 'model_not_found') {
     return json(request, {
-      error: `The configured OpenAI model "${model}" is not available to this API project. Remove the OPENAI_MODEL override to use gpt-5.5, or set a model that supports Responses API web search.`,
+      error: `The configured OpenAI model "${model}" is not available to this API project. Remove the OPENAI_MODEL override or set a model that supports image input and Responses API web search.`,
       ...details
     }, 502);
   }
@@ -167,6 +168,17 @@ function providerErrorResponse(request, json, error, model) {
   }, 502);
 }
 
+function validImageDataUrl(value) {
+  return typeof value === 'string' && /^data:image\/(?:jpeg|png|webp|gif);base64,[a-z0-9+/=\s]+$/i.test(value);
+}
+
+function approximateDataUrlBytes(value) {
+  const comma = value.indexOf(',');
+  if (comma < 0) return 0;
+  const base64 = value.slice(comma + 1).replace(/\s/g, '');
+  return Math.floor(base64.length * 0.75);
+}
+
 export async function handleFactCheck(request, env, json) {
   if (!env.OPENAI_API_KEY) {
     return json(request, { error: 'Fact-check service is not configured. Add OPENAI_API_KEY to the sharecapsule-reactions Worker secrets.' }, 503);
@@ -180,12 +192,25 @@ export async function handleFactCheck(request, env, json) {
   }
 
   const claim = String(payload?.claim || '').trim();
-  if (!claim) return json(request, { error: 'Provide a claim or image description to fact-check.' }, 400);
-  if (claim.length > 5000) return json(request, { error: 'The claim is too long. Keep it under 5,000 characters.' }, 413);
+  const imageDataUrl = String(payload?.imageDataUrl || '').trim();
+
+  if (!claim && !imageDataUrl) return json(request, { error: 'Paste text or upload an image to fact-check.' }, 400);
+  if (claim.length > 5000) return json(request, { error: 'The text is too long. Keep it under 5,000 characters.' }, 413);
+  if (imageDataUrl && !validImageDataUrl(imageDataUrl)) return json(request, { error: 'Upload a valid JPG, PNG, WebP, or GIF image.' }, 400);
+  if (imageDataUrl && approximateDataUrlBytes(imageDataUrl) > 8 * 1024 * 1024) return json(request, { error: 'The image is too large. Keep it under 8 MB.' }, 413);
 
   const model = String(env.OPENAI_MODEL || 'gpt-5.5').trim();
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 45000);
+  const timeout = setTimeout(() => controller.abort(), 60000);
+
+  const inputContent = [];
+  inputContent.push({
+    type: 'input_text',
+    text: claim
+      ? `Fact-check this user-submitted claim or caption:\n${claim}`
+      : 'Inspect this uploaded image, identify its central factual claim or implied context, and fact-check it.'
+  });
+  if (imageDataUrl) inputContent.push({ type: 'input_image', image_url: imageDataUrl, detail: 'high' });
 
   try {
     const openAIResponse = await fetch('https://api.openai.com/v1/responses', {
@@ -200,8 +225,8 @@ export async function handleFactCheck(request, env, json) {
         tools: [{ type: 'web_search', search_context_size: 'medium' }],
         tool_choice: 'auto',
         include: ['web_search_call.action.sources'],
-        max_output_tokens: 700,
-        input: `Claim or image description:\n${claim}`
+        max_output_tokens: 900,
+        input: [{ role: 'user', content: inputContent }]
       }),
       signal: controller.signal
     });
@@ -224,6 +249,7 @@ export async function handleFactCheck(request, env, json) {
       verdict: result.verdict,
       explanation: result.explanation,
       sources: result.sources,
+      inputType: imageDataUrl ? (claim ? 'text_and_image' : 'image') : 'text',
       checkedAt: new Date().toISOString()
     });
   } catch (error) {
