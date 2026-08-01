@@ -3959,6 +3959,55 @@
       },
       "publishedAt": "2026-07-29",
       "featured": true
+    },
+    {
+      "slug": "create-a-cleaner-air-room-july-2026",
+      "title": "Create One Cleaner-Air Room",
+      "artist": "Share Capsule Tips",
+      "type": "Story",
+      "category": "Practical News Tip",
+      "language": "English",
+      "description": "A practical wildfire-smoke tip selected from July 31, 2026 air-quality news, with EPA and AirNow guidance to create one closed, filtered cleaner-air room, reduce indoor particle sources, and seek a cooler cleaner location if the room becomes too hot.",
+      "coverImage": "",
+      "coverBackground": "linear-gradient(145deg,#5f3b2d,#9a6a45 55%,#d4a574)",
+      "coverEyebrow": "Practical News Tip",
+      "coverLines": [
+        "Create One",
+        "Cleaner-Air Room"
+      ],
+      "previewUrl": "",
+      "demoTone": false,
+      "platforms": [
+        {
+          "label": "Read story",
+          "icon": "📖",
+          "url": "/tips/create-a-cleaner-air-room-july-2026/"
+        }
+      ],
+      "shareMessages": {
+        "friend": {
+          "label": "Close friend",
+          "icon": "📖",
+          "text": "Thought you might enjoy this five-minute Tamil story."
+        },
+        "family": {
+          "label": "Family",
+          "icon": "👨‍👩‍👧",
+          "text": "Sharing this thoughtful Tamil story with the family."
+        },
+        "reader": {
+          "label": "Story reader",
+          "icon": "📚",
+          "text": "Here is a Tamil story worth reading and reflecting on."
+        },
+        "learner": {
+          "label": "Curious learner",
+          "icon": "💡",
+          "text": "This story connects history, learning and modern ideas."
+        }
+      },
+      "publishedAt": "2026-07-31",
+      "featured": true
     }
   ]
 }
