@@ -4,47 +4,130 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#111111">
-  <meta name="description" content="Validate text, images, and public video links against current web evidence.">
-  <title>Fact Checker — Share Capsule</title>
+  <meta name="description" content="Search published fact checks for text claims and public video links, with trusted external tools for image verification.">
+  <title>Published Fact Check Search — Share Capsule</title>
   <style>
-    :root{--bg:#f4f1eb;--card:#fff;--ink:#171717;--muted:#6d675f;--line:#e4ddd2;--bad:#b42318;--good:#137a43;--warn:#a15c00;--unknown:#596579}
-    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.shell{width:min(960px,100%);margin:auto;padding:18px 16px 60px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}.top a{color:inherit;text-decoration:none;font-weight:900}.home{background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 14px}.hero h1{font-size:clamp(40px,9vw,70px);line-height:.96;letter-spacing:-.06em;margin:0}.hero p{color:var(--muted);font-size:17px;line-height:1.6;max-width:760px}.panel{margin-top:24px;background:var(--card);border-radius:26px;padding:20px;box-shadow:0 18px 60px rgba(50,40,28,.1)}.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px;background:#f1ede7;border-radius:15px}.tab{border:0;background:transparent;padding:12px 8px;border-radius:11px;font:inherit;font-weight:900;color:var(--muted);cursor:pointer}.tab.active{background:#fff;color:var(--ink)}.pane{margin-top:18px}.pane[hidden]{display:none}.label{display:block;font-weight:900;margin-bottom:8px}.field,.area{width:100%;border:1px solid var(--line);border-radius:15px;padding:14px;font:inherit;background:#fff}.area{min-height:170px;resize:vertical;line-height:1.55}.hint{color:var(--muted);font-size:13px;line-height:1.5}.drop{position:relative;border:2px dashed #cfc5b7;border-radius:18px;min-height:220px;display:grid;place-items:center;text-align:center;overflow:hidden;background:#faf8f4}.drop input{position:absolute;inset:0;opacity:0;cursor:pointer}.preview{display:none;max-width:100%;max-height:420px}.preview.show{display:block}.context{margin-top:14px}.actions{display:flex;gap:10px;margin-top:18px}.primary,.secondary{min-height:50px;border-radius:14px;padding:13px 18px;font:inherit;font-weight:900;cursor:pointer}.primary{flex:1;border:0;background:#111;color:#fff}.secondary{border:1px solid var(--line);background:#fff}.primary:disabled{opacity:.55}.status{display:none;margin-top:16px;padding:14px;border-radius:14px;background:#f7f4ef;color:var(--muted);line-height:1.5}.status.show{display:block}.result{display:none;border-top:1px solid var(--line);margin-top:22px;padding-top:22px}.result.show{display:block}.verdict{display:inline-block;border-radius:999px;padding:9px 13px;font-weight:950}.TRUE{background:#e8f7ee;color:var(--good)}.FALSE{background:#feeceb;color:var(--bad)}.MISLEADING{background:#fff3dc;color:var(--warn)}.UNVERIFIED{background:#edf0f5;color:var(--unknown)}.explanation{font-size:17px;line-height:1.65}.source{display:block;color:inherit;text-decoration:none;border:1px solid var(--line);border-radius:13px;padding:12px;margin-top:8px}.source span{display:block;color:var(--muted);font-size:12px;margin-top:4px}.notice{color:var(--muted);font-size:12px;line-height:1.55;margin-top:18px}@media(max-width:620px){.panel{padding:14px}.tabs{grid-template-columns:1fr}.actions{flex-direction:column}.primary,.secondary{width:100%}}
+    :root{--bg:#f4f1eb;--card:#fff;--ink:#171717;--muted:#6d675f;--line:#e4ddd2;--bad:#b42318;--good:#137a43;--shadow:0 18px 60px rgba(50,40,28,.1)}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.shell{width:min(980px,100%);margin:auto;padding:18px 16px 60px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}.top a{color:inherit;text-decoration:none;font-weight:900}.home{background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 14px}.hero h1{font-size:clamp(40px,9vw,70px);line-height:.96;letter-spacing:-.06em;margin:0}.hero p{color:var(--muted);font-size:17px;line-height:1.6;max-width:800px}.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.badges span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 11px;font-size:12px;font-weight:850}.panel{margin-top:24px;background:var(--card);border-radius:26px;padding:20px;box-shadow:var(--shadow)}.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px;background:#f1ede7;border-radius:15px}.tab{border:0;background:transparent;padding:12px 8px;border-radius:11px;font:inherit;font-weight:900;color:var(--muted);cursor:pointer}.tab.active{background:#fff;color:var(--ink)}.pane{margin-top:18px}.pane[hidden]{display:none}.label{display:block;font-weight:900;margin-bottom:8px}.field,.area{width:100%;border:1px solid var(--line);border-radius:15px;padding:14px;font:inherit;background:#fff}.area{min-height:170px;resize:vertical;line-height:1.55}.hint,.notice{color:var(--muted);font-size:13px;line-height:1.55}.actions{display:flex;gap:10px;margin-top:18px}.primary,.secondary,.external{min-height:48px;border-radius:14px;padding:12px 16px;font:inherit;font-weight:900;cursor:pointer;text-decoration:none;text-align:center}.primary{flex:1;border:0;background:#111;color:#fff}.secondary,.external{border:1px solid var(--line);background:#fff;color:var(--ink)}.primary:disabled{opacity:.55}.status{display:none;margin-top:16px;padding:14px;border-radius:14px;background:#f7f4ef;color:var(--muted);line-height:1.5}.status.show{display:block}.results{display:none;border-top:1px solid var(--line);margin-top:22px;padding-top:22px}.results.show{display:block}.match{border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:12px}.match h3{margin:0 0 8px;font-size:17px}.rating{display:inline-block;background:#eef6f0;color:var(--good);border-radius:999px;padding:6px 10px;font-weight:900;font-size:13px}.meta{color:var(--muted);font-size:12px;line-height:1.5;margin-top:8px}.match a{display:inline-block;margin-top:12px;color:inherit;font-weight:900}.fallback{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}.imageBox{border:2px dashed #cfc5b7;border-radius:18px;padding:24px;text-align:center;background:#faf8f4}.imageBox input{max-width:100%}.preview{display:none;max-width:100%;max-height:360px;margin:16px auto 0;border-radius:12px}.preview.show{display:block}@media(max-width:640px){.tabs,.fallback{grid-template-columns:1fr}.actions{flex-direction:column}.primary,.secondary{width:100%}.panel{padding:14px}}
   </style>
 </head>
 <body>
   <main class="shell">
     <div class="top"><a href="/">Share Capsule</a><a class="home" href="/">Home</a></div>
-    <section class="hero"><h1>Fact check<br>anything shared</h1><p>Paste text, upload an image, or share a public video link. The checker searches current web evidence and returns sources for review.</p></section>
+    <section class="hero">
+      <h1>Find published<br>fact checks</h1>
+      <p>Search reviews already published by independent fact-checking organizations. Share Capsule does not generate its own verdict and does not charge you for AI queries.</p>
+      <div class="badges"><span>Published reviews only</span><span>No AI verdict</span><span>No sign-up</span><span>Trusted-site fallbacks</span></div>
+    </section>
+
     <section class="panel">
       <div class="tabs" role="tablist">
         <button class="tab active" data-mode="text" type="button">Paste text</button>
-        <button class="tab" data-mode="image" type="button">Upload image</button>
         <button class="tab" data-mode="video" type="button">Video link</button>
+        <button class="tab" data-mode="image" type="button">Check image</button>
       </div>
-      <div class="pane" id="textPane"><label class="label" for="claim">Text to validate</label><textarea class="area" id="claim" maxlength="5000" placeholder="Paste a forwarded message, headline, quote, statistic, or claim..."></textarea></div>
-      <div class="pane" id="imagePane" hidden><label class="label" for="imageInput">Image to validate</label><div class="drop"><input id="imageInput" type="file" accept="image/jpeg,image/png,image/webp,image/gif"><div id="dropCopy"><strong>Tap to upload an image</strong><p class="hint">JPG, PNG, WebP, or GIF — maximum 8 MB</p></div><img class="preview" id="preview" alt="Selected image preview"></div><div class="context"><label class="label" for="caption">Optional context</label><input class="field" id="caption" maxlength="1000" placeholder="What should be checked in this image?"></div></div>
-      <div class="pane" id="videoPane" hidden><label class="label" for="videoUrl">Public video link</label><input class="field" id="videoUrl" maxlength="2048" inputmode="url" autocomplete="off" placeholder="https://youtube.com/watch?v=..."><p class="hint">Public YouTube, Facebook, Instagram, TikTok, X, Vimeo, or news video pages work best.</p><div class="context"><label class="label" for="videoClaim">Optional claim or timestamp</label><textarea class="area" id="videoClaim" maxlength="2000" style="min-height:110px" placeholder="Describe the statement or timestamp to evaluate."></textarea></div></div>
-      <div class="actions"><button class="primary" id="check" type="button">Check the facts</button><button class="secondary" id="clear" type="button">Clear</button></div>
+
+      <div class="pane" id="textPane">
+        <label class="label" for="claim">Claim or forwarded message</label>
+        <textarea class="area" id="claim" maxlength="5000" placeholder="Paste a headline, quote, statistic, WhatsApp message, or social-media claim..."></textarea>
+      </div>
+
+      <div class="pane" id="videoPane" hidden>
+        <label class="label" for="videoUrl">Public video link</label>
+        <input class="field" id="videoUrl" maxlength="2048" inputmode="url" autocomplete="off" placeholder="https://youtube.com/watch?v=...">
+        <div style="height:12px"></div>
+        <label class="label" for="videoClaim">Claim, caption, or timestamp</label>
+        <textarea class="area" id="videoClaim" maxlength="2000" style="min-height:110px" placeholder="Describe what should be checked. This helps find relevant published reviews."></textarea>
+        <p class="hint">The video itself is not downloaded or analyzed. The link and your description are used only to search published fact checks.</p>
+      </div>
+
+      <div class="pane" id="imagePane" hidden>
+        <div class="imageBox">
+          <label class="label" for="imageInput">Preview an image locally</label>
+          <input id="imageInput" type="file" accept="image/jpeg,image/png,image/webp,image/gif">
+          <img class="preview" id="preview" alt="Selected image preview">
+          <p class="hint">The image stays in your browser and is not uploaded to Share Capsule. Use Google Lens or Fact Check Explorer below to investigate it.</p>
+        </div>
+      </div>
+
+      <div class="actions" id="searchActions">
+        <button class="primary" id="search" type="button">Search published fact checks</button>
+        <button class="secondary" id="clear" type="button">Clear</button>
+      </div>
+
       <div class="status" id="status" role="status" aria-live="polite"></div>
-      <section class="result" id="result" aria-live="polite"><div class="verdict" id="verdict"></div><p class="explanation" id="explanation"></p><div id="sources"></div></section>
+      <section class="results" id="results" aria-live="polite"><div id="matches"></div></section>
+
+      <div class="fallback" id="fallbacks">
+        <a class="external" id="googleExplorer" target="_blank" rel="noopener noreferrer nofollow">Google Fact Check Explorer</a>
+        <a class="external" id="reuters" target="_blank" rel="noopener noreferrer nofollow">Reuters Fact Check</a>
+        <a class="external" id="ap" target="_blank" rel="noopener noreferrer nofollow">AP Fact Check</a>
+        <a class="external" id="snopes" target="_blank" rel="noopener noreferrer nofollow">Snopes</a>
+        <a class="external" id="politifact" target="_blank" rel="noopener noreferrer nofollow">PolitiFact</a>
+        <a class="external" id="googleLens" href="https://lens.google.com/" target="_blank" rel="noopener noreferrer nofollow">Open Google Lens</a>
+      </div>
     </section>
-    <p class="notice">All submitted content is treated as untrusted input. Private-network and non-web links are rejected. Video checks rely on publicly searchable evidence and may return UNVERIFIED when transcripts or context are unavailable.</p>
+
+    <p class="notice"><strong>Important:</strong> No matching review does not prove that a claim is true or false. Always open the original review, check its date, and compare the claim’s exact wording and context.</p>
   </main>
+
   <script>
     'use strict';
     const API='https://sharecapsule-reactions.subhafash-86.workers.dev/api/factcheck';
-    const tabs=[...document.querySelectorAll('.tab')],panes={text:document.getElementById('textPane'),image:document.getElementById('imagePane'),video:document.getElementById('videoPane')};
-    const claim=document.getElementById('claim'),imageInput=document.getElementById('imageInput'),preview=document.getElementById('preview'),dropCopy=document.getElementById('dropCopy'),caption=document.getElementById('caption'),videoUrl=document.getElementById('videoUrl'),videoClaim=document.getElementById('videoClaim'),check=document.getElementById('check'),clear=document.getElementById('clear'),status=document.getElementById('status'),result=document.getElementById('result'),verdict=document.getElementById('verdict'),explanation=document.getElementById('explanation'),sources=document.getElementById('sources');
-    let mode='text',imageDataUrl='';
+    const tabs=[...document.querySelectorAll('.tab')];
+    const panes={text:document.getElementById('textPane'),video:document.getElementById('videoPane'),image:document.getElementById('imagePane')};
+    const claim=document.getElementById('claim'),videoUrl=document.getElementById('videoUrl'),videoClaim=document.getElementById('videoClaim');
+    const imageInput=document.getElementById('imageInput'),preview=document.getElementById('preview');
+    const searchButton=document.getElementById('search'),clear=document.getElementById('clear'),status=document.getElementById('status'),results=document.getElementById('results'),matches=document.getElementById('matches'),searchActions=document.getElementById('searchActions');
+    let mode='text';
+
     function clean(value,max){return String(value||'').replace(/\0/g,'').replace(/[\u0001-\u0008\u000B\u000C\u000E-\u001F\u007F]/g,' ').normalize('NFKC').trim().slice(0,max)}
-    function publicUrl(value){try{const u=new URL(clean(value,2048));if(!['http:','https:'].includes(u.protocol)||u.username||u.password||u.port&&!['80','443'].includes(u.port))return false;const h=u.hostname.toLowerCase().replace(/\.$/,'');return !!h&&h!=='localhost'&&!h.endsWith('.local')&&!/^127\.|^10\.|^192\.168\.|^169\.254\.|^172\.(1[6-9]|2\d|3[01])\./.test(h)&&h!=='::1'&&!h.startsWith('fc')&&!h.startsWith('fd')&&!h.startsWith('fe80:')}catch{return false}}
+    function safeUrl(value){try{const u=new URL(value);return ['http:','https:'].includes(u.protocol)&&!u.username&&!u.password?u.toString():''}catch{return ''}}
     function show(message,error=false){status.textContent=message;status.style.color=error?'var(--bad)':'var(--muted)';status.classList.add('show')}
     function hide(){status.classList.remove('show');status.textContent=''}
-    tabs.forEach(tab=>tab.addEventListener('click',()=>{mode=tab.dataset.mode;tabs.forEach(t=>t.classList.toggle('active',t===tab));Object.entries(panes).forEach(([key,pane])=>pane.hidden=key!==mode);result.classList.remove('show')}));
-    imageInput.addEventListener('change',()=>{const file=imageInput.files&&imageInput.files[0];if(!file)return;if(!['image/jpeg','image/png','image/webp','image/gif'].includes(file.type)||file.size>8*1024*1024){show('Choose a valid JPG, PNG, WebP, or GIF image under 8 MB.',true);imageInput.value='';return}const reader=new FileReader();reader.onload=()=>{const value=String(reader.result||'');if(!/^data:image\/(jpeg|png|webp|gif);base64,/i.test(value)){show('The selected file is not a valid supported image.',true);return}imageDataUrl=value;preview.src=value;preview.classList.add('show');dropCopy.style.display='none';hide()};reader.onerror=()=>show('The image could not be read.',true);reader.readAsDataURL(file)});
-    function renderSources(items){sources.replaceChildren();const heading=document.createElement('h3');heading.textContent='Evidence and sources';sources.appendChild(heading);(Array.isArray(items)?items:[]).slice(0,10).forEach(item=>{try{const u=new URL(item.url);if(!['http:','https:'].includes(u.protocol)||u.username||u.password)return;const a=document.createElement('a');a.className='source';a.href=u.toString();a.target='_blank';a.rel='noopener noreferrer nofollow';const strong=document.createElement('strong');strong.textContent=clean(item.title||item.domain||'Source',240);const meta=document.createElement('span');meta.textContent=clean(item.domain||'',200);a.append(strong,meta);sources.appendChild(a)}catch{}})}
-    clear.addEventListener('click',()=>{claim.value='';caption.value='';videoUrl.value='';videoClaim.value='';imageInput.value='';imageDataUrl='';preview.removeAttribute('src');preview.classList.remove('show');dropCopy.style.display='block';hide();result.classList.remove('show')});
-    check.addEventListener('click',async()=>{const payload={claim:'',imageDataUrl:'',videoUrl:''};if(mode==='text'){payload.claim=clean(claim.value,5000);if(!payload.claim){show('Paste some text to fact-check.',true);return}}else if(mode==='image'){payload.claim=clean(caption.value,1000);payload.imageDataUrl=imageDataUrl;if(!payload.imageDataUrl){show('Upload an image to fact-check.',true);return}}else{payload.videoUrl=clean(videoUrl.value,2048);payload.claim=clean(videoClaim.value,2000);if(!publicUrl(payload.videoUrl)){show('Enter a valid public HTTP or HTTPS video link.',true);return}}check.disabled=true;check.textContent='Checking…';result.classList.remove('show');show('Searching current web evidence.');try{const response=await fetch(API,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(payload)});const data=await response.json().catch(()=>({}));if(!response.ok)throw new Error(clean(data.error||`Fact-check service returned HTTP ${response.status}.`,500));const v=['TRUE','FALSE','MISLEADING','UNVERIFIED'].includes(data.verdict)?data.verdict:'UNVERIFIED';verdict.textContent=v;verdict.className='verdict '+v;explanation.textContent=clean(data.explanation||'No explanation was returned.',5000);renderSources(data.sources);result.classList.add('show');show('Fact-check completed. Review the evidence below.')}catch(error){const message=error instanceof TypeError?'Could not reach the fact-check service. Please try again.':clean(error.message||'The fact-check could not be completed.',500);show(message,true)}finally{check.disabled=false;check.textContent='Check the facts'}});
+    function queryText(){return mode==='video'?clean(`${videoClaim.value} ${videoUrl.value}`,5000):clean(claim.value,5000)}
+    function updateFallbacks(){
+      const q=encodeURIComponent(queryText());
+      document.getElementById('googleExplorer').href=`https://toolbox.google.com/factcheck/explorer/search/${q};hl=en`;
+      document.getElementById('reuters').href=`https://www.google.com/search?q=site%3Areuters.com%2Ffact-check+${q}`;
+      document.getElementById('ap').href=`https://www.google.com/search?q=site%3Aapnews.com+AP+Fact+Check+${q}`;
+      document.getElementById('snopes').href=`https://www.snopes.com/?s=${q}`;
+      document.getElementById('politifact').href=`https://www.politifact.com/search/?q=${q}`;
+    }
+
+    tabs.forEach(tab=>tab.addEventListener('click',()=>{
+      mode=tab.dataset.mode;
+      tabs.forEach(t=>t.classList.toggle('active',t===tab));
+      Object.entries(panes).forEach(([key,pane])=>pane.hidden=key!==mode);
+      searchActions.style.display=mode==='image'?'none':'flex';
+      results.classList.remove('show');hide();updateFallbacks();
+    }));
+    [claim,videoUrl,videoClaim].forEach(el=>el.addEventListener('input',updateFallbacks));
+
+    imageInput.addEventListener('change',()=>{
+      const file=imageInput.files&&imageInput.files[0];
+      if(!file)return;
+      if(!['image/jpeg','image/png','image/webp','image/gif'].includes(file.type)||file.size>8*1024*1024){show('Choose a JPG, PNG, WebP, or GIF image under 8 MB.',true);imageInput.value='';return}
+      const reader=new FileReader();reader.onload=()=>{preview.src=String(reader.result||'');preview.classList.add('show');hide()};reader.onerror=()=>show('The image could not be previewed.',true);reader.readAsDataURL(file);
+    });
+
+    function render(items){
+      matches.replaceChildren();
+      const list=Array.isArray(items)?items:[];
+      const heading=document.createElement('h2');heading.textContent=list.length?`${list.length} published review${list.length===1?'':'s'} found`:'No published fact check found';matches.appendChild(heading);
+      if(!list.length){const p=document.createElement('p');p.className='hint';p.textContent='This does not mean the claim is true or false. Try shorter wording or use the trusted-site searches below.';matches.appendChild(p);return}
+      list.forEach(item=>{const href=safeUrl(item.url);if(!href)return;const card=document.createElement('article');card.className='match';const title=document.createElement('h3');title.textContent=clean(item.title||item.claim||'Published fact check',300);card.appendChild(title);if(item.rating){const rating=document.createElement('span');rating.className='rating';rating.textContent=clean(item.rating,160);card.appendChild(rating)}const claimText=document.createElement('p');claimText.textContent=clean(item.claim||'',1000);card.appendChild(claimText);const meta=document.createElement('div');meta.className='meta';meta.textContent=[item.publisher,item.reviewDate,item.claimant?`Claimant: ${item.claimant}`:''].filter(Boolean).join(' • ');card.appendChild(meta);const link=document.createElement('a');link.href=href;link.target='_blank';link.rel='noopener noreferrer nofollow';link.textContent='Open original fact-check review';card.appendChild(link);matches.appendChild(card)});
+    }
+
+    clear.addEventListener('click',()=>{claim.value='';videoUrl.value='';videoClaim.value='';imageInput.value='';preview.removeAttribute('src');preview.classList.remove('show');results.classList.remove('show');hide();updateFallbacks()});
+
+    searchButton.addEventListener('click',async()=>{
+      const payload={claim:mode==='video'?clean(videoClaim.value,2000):clean(claim.value,5000),videoUrl:mode==='video'?clean(videoUrl.value,2048):''};
+      if(!payload.claim&&!payload.videoUrl){show('Paste a claim or provide a public video link.',true);return}
+      searchButton.disabled=true;searchButton.textContent='Searching…';results.classList.remove('show');show('Searching published fact-check reviews.');
+      try{const response=await fetch(API,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(payload)});const data=await response.json().catch(()=>({}));if(!response.ok)throw new Error(clean(data.error||`Search returned HTTP ${response.status}.`,400));render(data.matches);results.classList.add('show');show(data.matches?.length?'Published reviews found. Open the originals to compare context.':'No published match found. Try the trusted-site searches below.');results.scrollIntoView({behavior:'smooth',block:'start'})}catch(error){show(clean(error.message||'Published fact-check search failed.',400),true)}finally{searchButton.disabled=false;searchButton.textContent='Search published fact checks'}
+    });
+    updateFallbacks();
   </script>
   <script src="/site-shell.js" defer></script>
 </body>
