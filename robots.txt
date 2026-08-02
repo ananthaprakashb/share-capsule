@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Allow: /okf/
+Allow: /llms.txt
+
+User-agent: GPTBot
+Allow: /okf/
+Allow: /llms.txt
+
+User-agent: ClaudeBot
+Allow: /okf/
+Allow: /llms.txt
+
+User-agent: Googlebot
+Allow: /okf/
+Allow: /llms.txt
+
+Sitemap: https://sharecapsule.app/sitemap.xml
