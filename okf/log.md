@@ -6,3 +6,6 @@
 - Added site, fact-check, passport validation, events, sharing, safety, and privacy concepts.
 - Added `/okf/` human-readable landing page.
 - Added `/llms.txt` discovery entrypoint.
+- Added explicit crawler discovery through `robots.txt` and `sitemap.xml`.
+- Added Markdown and discovery-file content-type headers.
+- Added an automated OKF validator and GitHub Actions workflow.
