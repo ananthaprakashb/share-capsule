@@ -1,0 +1,19 @@
+# ShareCapsule
+
+> Public tools and shareable content for media, events, passport photos, and news investigation.
+
+## Open Knowledge Format
+
+- [OKF bundle index](https://sharecapsule.app/okf/index.md)
+- [Site overview](https://sharecapsule.app/okf/site-overview.md)
+- [News investigation](https://sharecapsule.app/okf/factcheck.md)
+- [Passport photo validation](https://sharecapsule.app/okf/passport-validation.md)
+- [Public events](https://sharecapsule.app/okf/events.md)
+- [Sharing and releases](https://sharecapsule.app/okf/sharing.md)
+- [Safety and privacy](https://sharecapsule.app/okf/safety-and-privacy.md)
+
+## Human entrypoints
+
+- [ShareCapsule](https://sharecapsule.app/)
+- [OKF landing page](https://sharecapsule.app/okf/)
+- [Fact-check and news investigation](https://sharecapsule.app/factcheck/)
