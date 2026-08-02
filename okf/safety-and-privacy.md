@@ -1,6 +1,6 @@
 ---
 type: Policy
-ntitle: ShareCapsule safety, privacy, and limitations
+title: ShareCapsule safety, privacy, and limitations
 description: General safety boundaries, privacy expectations, and limitations for ShareCapsule public tools.
 resource: https://sharecapsule.app/
 tags:
