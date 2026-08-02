@@ -4,11 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#171717">
-  <meta name="description" content="Investigate Tamil, Telugu, Malayalam, Hindi, Kannada, and English messages, articles, screenshots, and videos using regional OCR, claim selection, timelines, evidence signals, and published fact checks.">
+  <meta name="description" content="Investigate Tamil, Telugu, Malayalam, Hindi, Kannada, and English messages, articles, screenshots, and videos using regional OCR, article comparison, history, source transparency, and published fact checks.">
   <title>News Investigation Assistant — Share Capsule</title>
   <link rel="stylesheet" href="/factcheck/phase-a.css">
   <link rel="stylesheet" href="/factcheck/phase-b.css">
   <link rel="stylesheet" href="/factcheck/ui-refresh.css">
+  <link rel="stylesheet" href="/factcheck/phase-c.css">
 </head>
 <body>
 <main class="shell">
@@ -25,8 +26,8 @@
 
   <section class="hero">
     <h1 id="heroTitle">Investigate before you forward</h1>
-    <p id="heroBody">Check messages, articles, screenshots, and videos using claim extraction, regional OCR, source dates, timelines, and published evidence.</p>
-    <div class="badges"><span>Tamil-first</span><span>Regional OCR</span><span>Claim selection</span><span>Evidence timeline</span><span>Private OCR</span></div>
+    <p id="heroBody">Check messages, articles, screenshots, and videos using claim extraction, regional OCR, article comparison, source transparency, timelines, and published evidence.</p>
+    <div class="badges"><span>Tamil-first</span><span>Regional OCR</span><span>Article comparison</span><span>Local history</span><span>Shareable reports</span></div>
   </section>
 
   <section class="panel">
@@ -44,6 +45,15 @@
       <div class="claimPanel" id="textClaims"></div>
       <label class="label" id="labelSource" for="sourceUrl">Article or original-source URL</label>
       <input class="field" id="sourceUrl" maxlength="2048" inputmode="url" placeholder="https://news-site.example/article">
+      <div class="compareInputRow">
+        <div>
+          <label class="label" for="compareUrl">Possible original article URL</label>
+          <input class="field" id="compareUrl" maxlength="2048" inputmode="url" placeholder="https://original-source.example/article">
+        </div>
+        <button class="secondary" id="compareButton" type="button">Compare articles</button>
+      </div>
+      <p class="phaseCNotice">Article comparison checks visible metadata such as headline, publisher, author, dates, host, and canonical URL. It does not claim the full article text is identical.</p>
+      <div id="compareResult"></div>
     </div>
 
     <div class="pane" id="videoPane" hidden>
@@ -86,19 +96,38 @@
     </div>
 
     <div class="actions" id="standardActions"><button class="primary" id="searchButton" type="button">Build investigation report</button><button class="secondary" id="clearButton" type="button">Clear</button></div>
+    <div class="phaseCBar">
+      <strong>Investigation tools</strong>
+      <div class="phaseCActions">
+        <button class="phaseCButton" id="historyButton" type="button">History</button>
+        <button class="phaseCButton" id="copyReportButton" type="button">Copy report</button>
+        <button class="phaseCButton" id="shareReportButton" type="button">Share report</button>
+      </div>
+    </div>
     <div class="status" id="statusBox" role="status" aria-live="polite"></div>
-    <section class="results" id="results"><div id="report"></div><div id="evidence"></div><div id="timeline"></div><div id="articleResult"></div><div id="matches"></div><div id="noResults"></div></section>
+    <section class="results" id="results"><div id="report"></div><div id="evidence"></div><div id="transparency"></div><div id="timeline"></div><div id="articleResult"></div><div id="matches"></div><div id="noResults"></div></section>
+
+    <section class="historyPanel" id="historyPanel" hidden>
+      <div class="phaseCBar"><strong>Investigation history</strong><button class="phaseCButton" id="clearHistoryButton" type="button">Clear history</button></div>
+      <p class="phaseCNotice">Up to 20 investigation summaries are stored only in this browser. No account is required.</p>
+      <div class="historyList" id="historyList"></div>
+    </section>
+    <section class="shareCard" id="sharePanel" hidden>
+      <h2>Shareable investigation summary</h2>
+      <div class="shareSummary" id="shareSummary"></div>
+    </section>
 
     <h2 class="sectionTitle" id="mediaContextTitle">Investigate media context</h2>
     <div class="fallback"><a class="external" href="https://lens.google.com/" target="_blank" rel="noopener noreferrer">Google Lens</a><a class="external" href="https://www.bing.com/visualsearch" target="_blank" rel="noopener noreferrer">Bing Visual Search</a><a class="external" href="https://tineye.com/" target="_blank" rel="noopener noreferrer">TinEye</a><a class="external" href="https://contentcredentials.org/verify" target="_blank" rel="noopener noreferrer">Content Credentials</a></div>
     <h2 class="sectionTitle" id="trustedSourcesTitle">Investigate with trusted sources</h2>
     <div class="fallback"><a class="external" id="officialTN" target="_blank" rel="noopener noreferrer">Tamil Nadu official sources</a><a class="external" id="pib" target="_blank" rel="noopener noreferrer">PIB Fact Check</a><a class="external" id="googleNews" target="_blank" rel="noopener noreferrer">Google News</a><a class="external" id="googleExplorer" target="_blank" rel="noopener noreferrer">Fact Check Explorer</a></div>
   </section>
-  <p class="notice"><strong id="noticeLead">Important:</strong> <span id="noticeText">Script detection and evidence strength are not truth scores. OCR can make mistakes, and no published result does not mean a claim is true.</span></p>
+  <p class="notice"><strong id="noticeLead">Important:</strong> <span id="noticeText">Script detection, source transparency, and evidence strength are not truth scores. OCR can make mistakes, and no published result does not mean a claim is true.</span></p>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/tesseract.js@7/dist/tesseract.min.js" defer></script>
 <script src="/factcheck/phase-a.js" defer></script>
 <script src="/factcheck/phase-b.js" defer></script>
 <script src="/factcheck/i18n.js" defer></script>
+<script src="/factcheck/phase-c.js" defer></script>
 </body>
 </html>
