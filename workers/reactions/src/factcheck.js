@@ -2,6 +2,7 @@ const MAX_QUERY_LENGTH = 5000;
 const MAX_VIDEO_URL_LENGTH = 2048;
 const CACHE_TTL_SECONDS = 21600;
 const DAILY_LIMIT = 30;
+const MAX_VARIANTS = 6;
 
 function cleanText(value, maxLength) {
   return String(value ?? '')
@@ -34,6 +35,46 @@ function safeResultUrl(value) {
   return url ? url.toString() : '';
 }
 
+function containsTamil(value) {
+  return /[\u0B80-\u0BFF]/.test(value);
+}
+
+function stripNoise(value) {
+  return cleanText(value, MAX_QUERY_LENGTH)
+    .replace(/https?:\/\/\S+/gi, ' ')
+    .replace(/(?:forwarded|share|viral|whatsapp|facebook|youtube|instagram|tiktok|urgent|breaking|please|kindly)/gi, ' ')
+    .replace(/[📢🚨⚠️✅❌🔥🙏]+/gu, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function buildQueryVariants(value) {
+  const original = stripNoise(value);
+  if (!original) return [];
+  const variants = [];
+  const add = candidate => {
+    const cleaned = cleanText(candidate, 500);
+    if (cleaned.length >= 4 && !variants.some(item => item.toLowerCase() === cleaned.toLowerCase())) variants.push(cleaned);
+  };
+
+  add(original.slice(0, 500));
+  const sentences = original
+    .split(/[.!?\n।]+/u)
+    .map(part => cleanText(part, 300))
+    .filter(part => part.length >= 12)
+    .sort((a, b) => b.length - a.length);
+  sentences.slice(0, 3).forEach(add);
+
+  const words = original
+    .split(/\s+/u)
+    .map(word => word.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, ''))
+    .filter(word => word.length >= 3);
+  add(words.slice(0, 14).join(' '));
+  if (words.length > 14) add(words.slice(-14).join(' '));
+
+  return variants.slice(0, MAX_VARIANTS);
+}
+
 async function sha256(value) {
   const bytes = new TextEncoder().encode(value);
   const hash = await crypto.subtle.digest('SHA-256', bytes);
@@ -58,11 +99,7 @@ async function verifyTurnstile(request, env, token) {
   const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({
-      secret: env.TURNSTILE_SECRET_KEY,
-      response: token,
-      remoteip: request.headers.get('CF-Connecting-IP') || undefined
-    })
+    body: JSON.stringify({ secret: env.TURNSTILE_SECRET_KEY, response: token, remoteip: request.headers.get('CF-Connecting-IP') || undefined })
   });
   if (!response.ok) return false;
   const result = await response.json();
@@ -95,24 +132,13 @@ function normalizeGoogleResponse(data) {
       if (normalized) matches.push(normalized);
     }
   }
-  return matches.slice(0, 20);
+  return matches;
 }
 
-async function searchPublishedFactChecks(query, env) {
-  const params = new URLSearchParams({
-    query,
-    languageCode: 'en',
-    pageSize: '20',
-    key: env.GOOGLE_FACT_CHECK_API_KEY
-  });
-  const cacheKey = new Request(`https://factcheck-cache.invalid/search/${await sha256(query.toLowerCase())}`);
-  const cache = caches.default;
-  const cached = await cache.match(cacheKey);
-  if (cached) return { matches: await cached.json(), cached: true };
-
-  const response = await fetch(`https://factchecktools.googleapis.com/v1alpha1/claims:search?${params}`, {
-    headers: { accept: 'application/json' }
-  });
+async function searchOneVariant(query, languageCode, env) {
+  const params = new URLSearchParams({ query, pageSize: '20', key: env.GOOGLE_FACT_CHECK_API_KEY });
+  if (languageCode) params.set('languageCode', languageCode);
+  const response = await fetch(`https://factchecktools.googleapis.com/v1alpha1/claims:search?${params}`, { headers: { accept: 'application/json' } });
   if (!response.ok) {
     let message = 'Published fact-check search is temporarily unavailable.';
     try {
@@ -125,18 +151,51 @@ async function searchPublishedFactChecks(query, env) {
     error.status = response.status === 429 ? 429 : 502;
     throw error;
   }
+  return normalizeGoogleResponse(await response.json());
+}
 
-  const matches = normalizeGoogleResponse(await response.json());
+async function searchPublishedFactChecks(query, env) {
+  const variants = buildQueryVariants(query);
+  const tamil = containsTamil(query);
+  const cacheKey = new Request(`https://factcheck-cache.invalid/search-v2/${await sha256(JSON.stringify({ variants, tamil }))}`);
+  const cache = caches.default;
+  const cached = await cache.match(cacheKey);
+  if (cached) return { matches: await cached.json(), cached: true, variants };
+
+  const searches = [];
+  for (const variant of variants) {
+    if (tamil) searches.push(searchOneVariant(variant, 'ta', env));
+    searches.push(searchOneVariant(variant, '', env));
+  }
+
+  const settled = await Promise.allSettled(searches);
+  const merged = [];
+  const seen = new Set();
+  let firstError = null;
+  for (const item of settled) {
+    if (item.status === 'rejected') {
+      firstError ||= item.reason;
+      continue;
+    }
+    for (const match of item.value) {
+      const key = `${match.url}|${match.claim}`.toLowerCase();
+      if (!seen.has(key)) {
+        seen.add(key);
+        merged.push(match);
+      }
+    }
+  }
+  if (!merged.length && firstError && settled.every(item => item.status === 'rejected')) throw firstError;
+
+  const matches = merged.slice(0, 30);
   await cache.put(cacheKey, new Response(JSON.stringify(matches), {
     headers: { 'content-type': 'application/json', 'Cache-Control': `max-age=${CACHE_TTL_SECONDS}` }
   }));
-  return { matches, cached: false };
+  return { matches, cached: false, variants };
 }
 
 export async function handleFactCheck(request, env, json) {
-  if (!env.GOOGLE_FACT_CHECK_API_KEY) {
-    return json(request, { error: 'Published fact-check search is not configured. Add GOOGLE_FACT_CHECK_API_KEY to the Worker secrets.' }, 503);
-  }
+  if (!env.GOOGLE_FACT_CHECK_API_KEY) return json(request, { error: 'Published fact-check search is not configured. Add GOOGLE_FACT_CHECK_API_KEY to the Worker secrets.' }, 503);
 
   const contentLength = Number(request.headers.get('content-length') || 0);
   if (contentLength > 32 * 1024) return json(request, { error: 'The submission is too large.' }, 413);
@@ -144,12 +203,8 @@ export async function handleFactCheck(request, env, json) {
   let payload;
   try { payload = await request.json(); } catch { return json(request, { error: 'Request body must be valid JSON.' }, 400); }
 
-  if (!(await verifyTurnstile(request, env, cleanText(payload?.turnstileToken, 2048)))) {
-    return json(request, { error: 'Human verification failed. Refresh the page and try again.' }, 403);
-  }
-  if (!(await enforceRateLimit(request))) {
-    return json(request, { error: `Daily search limit reached. Try again tomorrow.` }, 429);
-  }
+  if (!(await verifyTurnstile(request, env, cleanText(payload?.turnstileToken, 2048)))) return json(request, { error: 'Human verification failed. Refresh the page and try again.' }, 403);
+  if (!(await enforceRateLimit(request))) return json(request, { error: 'Daily search limit reached. Try again tomorrow.' }, 429);
 
   const claim = cleanText(payload?.claim, MAX_QUERY_LENGTH);
   const rawVideoUrl = cleanText(payload?.videoUrl, MAX_VIDEO_URL_LENGTH);
@@ -164,11 +219,13 @@ export async function handleFactCheck(request, env, json) {
     const result = await searchPublishedFactChecks(query, env);
     return json(request, {
       query,
+      searchLanguage: containsTamil(query) ? 'ta' : 'auto',
+      queryVariants: result.variants,
       matches: result.matches,
       matchCount: result.matches.length,
       cached: result.cached,
       checkedAt: new Date().toISOString(),
-      disclaimer: 'These are published fact-check reviews. No match does not prove that a claim is true or false.'
+      disclaimer: 'These are related published fact-check reviews. No match does not prove that a claim is true or false.'
     });
   } catch (error) {
     console.error('Published fact-check search failed', error);
