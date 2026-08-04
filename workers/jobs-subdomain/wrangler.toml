@@ -1,0 +1,12 @@
+name = "sharecapsule-jobs"
+main = "worker.js"
+compatibility_date = "2026-08-04"
+workers_dev = true
+
+# After the worker is deployed, attach this custom domain in Cloudflare:
+# jobs.sharecapsule.app
+#
+# A route can also be configured when the zone is already in Cloudflare:
+# routes = [
+#   { pattern = "jobs.sharecapsule.app/*", zone_name = "sharecapsule.app" }
+# ]
