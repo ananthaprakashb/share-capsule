@@ -12,6 +12,18 @@
   },
   "stories": [
     {
+      "id": "stop-using-ai-as-a-search-engine-start-using-it-as-a-partner-2026-01-05",
+      "title": "Stop Using AI as a Search Engine, Start Using it as a Partner!",
+      "author": "Anantha Prakash",
+      "contentText": "Welcome back! Yesterday, we learned the G.C.C.F. framework to give better instructions. Today, we are moving from \"Asking Questions\" to \"Collaborating.\"\n\nThe biggest mistake people make is treating ChatGPT or Gemini like a \"Super Google.\" Google gives you links; AI gives you drafts . To get the best results, you need to learn two \"Pro Skills\": Role-Play and Iterative Feedback.\n\n1. Role-Play: Giving the AI a \"Job Title\"\n\nAI is like a world-class actor. If you don't tell it who to be, it gives you a generic, \"robotic\" answer. But if you give it a Role , it changes its entire vocabulary and logic to suit your needs.\n\nThe Secret: Start your prompt with \"Act as a...\" or \"You are a...\"\n\nIf you want to... Tell the AI to act as... Plan a diet \"Act as a professional nutritionist.\" Fix a computer \"Act as a senior IT support specialist.\" Prepare for an interview \"Act as a hiring manager at a top tech firm.\" Learn a new hobby \"Act as a patient and encouraging coach.\" Why this works: It narrows down the \"pattern matching\" from the whole internet to just the knowledge relevant to that profession.\n\n2. Iterative Feedback: The \"Sculpting\" Process\n\nNever take the first answer as the final one. Think of the first response as a rough block of marble . You need to chip away at it until it becomes a statue. This is called Iterative Feedback .\n\nInstead of starting over if the answer is bad, talk to it like a teammate:\n\n• \"That's too formal. Make it sound more friendly.\"\n\n• \"Great, but remove the second option and expand more on the first one.\"\n\n• \"Can you explain this again, but like I'm 10 years old?\"\n\nPutting it Together: The \"Real-World\" Example\n\nImagine you want to start a small home business selling organic soaps.\n\nStep 1: The Role-Play (The Setup)\n\n\"Act as a Small Business Consultant with 20 years of experience in e-commerce. I want to start a home-based organic soap business. Give me a 5-step checklist to get started.\"\n\nStep 2: The Iterative Feedback (The Refinement)\n\n\"The checklist is great, but step 3 (Marketing) is too expensive. Refine the marketing step to focus only on free social media strategies like Instagram and WhatsApp. Also, format this as a weekly schedule for my first month.\"\n\nThe Result: Instead of a generic list of \"how to start a business,\" you now have a custom-tailored, low-cost marketing plan and a calendar to follow.",
+      "excerpt": "Welcome back! Yesterday, we learned the G.C.C.F. framework to give better instructions. Today, we are moving from \"Asking Questions\" to \"Collaborating.\"\n\nThe biggest mistake people make is treating ChatGPT or Gemini like a \"Super Google.\" Google gives you link…",
+      "sourceUrl": "https://thinkfiveminutes.blogspot.com/2026/01/stop-using-ai-as-search-engine-start.html",
+      "sourceName": "Think Five Minutes",
+      "originalPublishedAt": "2026-01-05T17:30:00.000-08:00",
+      "publishedOn": "2026-08-06",
+      "importedAt": "2026-08-06T15:19:43.984Z"
+    },
+    {
       "id": "ai-ய-டம-வ-ல-வ-ங-க-வத-எப-பட-ஒர-ப-த-த-ச-ல-த-தனம-ன-வழ-க-ட-ட-2026-01-04",
       "title": "AI-யிடம் வேலை வாங்குவது எப்படி? - ஒரு புத்திசாலித்தனமான வழிகாட்டி!",
       "author": "Anantha Prakash",
