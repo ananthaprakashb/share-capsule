@@ -1,6 +1,10 @@
 # ShareCapsule
 
-> Public tools and shareable content for media, events, passport photos, and news investigation.
+> Public tools and shareable content for media, events, passport photos, news investigation, and technology architecture.
+
+## Technology
+
+- [Multi-Cloud Challenge: Token-Aware AI](https://sharecapsule.app/technology/tokenawareai/) — A technical article about identity, policy, compliance, observability, and transaction context across hybrid multi-cloud financial systems. Author: Anantha Prakash Nithiyanantham.
 
 ## Open Knowledge Format
 
