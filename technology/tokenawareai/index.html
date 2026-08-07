@@ -24,20 +24,15 @@
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{margin:0;background:radial-gradient(circle at 82% 4%,rgba(57,213,255,.16),transparent 28%),radial-gradient(circle at 8% 30%,rgba(75,225,180,.09),transparent 23%),var(--bg);color:#eef7ff;font-family:var(--sans);-webkit-font-smoothing:antialiased}
-    a{color:inherit}
     .progress{position:fixed;inset:0 0 auto;z-index:1000;height:3px;background:rgba(255,255,255,.1)}
     .progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--mint),var(--cyan))}
     .shell{width:min(100% - 32px,1160px);margin:auto;padding:22px 0 96px}
-    .top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:2px 0 22px}
-    .brand{text-decoration:none;font-weight:900;letter-spacing:-.03em}
-    .brand span{color:var(--cyan)}
-    .series{font:700 11px/1 var(--mono);letter-spacing:.11em;text-transform:uppercase;color:#a9bdd0}
     .hero{display:grid;gap:38px;align-items:end;padding:56px 0 46px}
     .kicker,.sectionTag,.caseNumber{font:700 11px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--cyan)}
     h1{max-width:930px;margin:15px 0 0;font-size:clamp(48px,10vw,102px);line-height:.89;letter-spacing:-.065em}
     .deck{max-width:780px;margin:24px 0 0;color:#b9c9d8;font-size:clamp(18px,2.3vw,24px);line-height:1.5}
     .meta{display:flex;align-items:center;gap:11px;flex-wrap:wrap;margin-top:28px;color:#93a8bb;font:600 12px/1.5 var(--mono)}
-    .meta a{text-underline-offset:4px}.dot{width:4px;height:4px;border-radius:50%;background:var(--mint)}
+    .dot{width:4px;height:4px;border-radius:50%;background:var(--mint)}
     .architecture{display:grid;grid-template-columns:repeat(7,auto);align-items:center;gap:11px;padding:19px;border:1px solid rgba(126,208,234,.24);border-radius:18px;background:rgba(12,25,41,.72);box-shadow:0 20px 70px rgba(0,0,0,.18);overflow:auto}
     .node{min-width:116px;padding:15px 13px;border:1px solid rgba(255,255,255,.12);border-radius:12px;background:#10233a}
     .node strong{display:block;font:700 12px/1.2 var(--mono);color:#fff}.node span{display:block;margin-top:6px;color:#8fa6ba;font-size:11px}
@@ -79,19 +74,13 @@
 <body>
   <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
   <main class="shell">
-    <header class="top">
-      <a class="brand" href="/">Share Capsule <span>/ Technology</span></a>
-      <div class="series">Architecture note · 01</div>
-    </header>
-
     <section class="hero">
       <div>
         <div class="kicker">Hybrid infrastructure · Identity · Zero trust</div>
         <h1>Multi-Cloud<br>Challenge</h1>
         <p class="deck">Why financial transactions fracture across cloud boundaries—and why modern systems need token-aware AI agents.</p>
         <div class="meta">
-          <span>August 06, 2026</span><span class="dot"></span><span>8 minute read</span><span class="dot"></span>
-          <a href="https://engineeringstepstone.blogspot.com/2026/08/multi-cloud-challenge.html" target="_blank" rel="noopener noreferrer">Original article ↗</a>
+          <span>August 06, 2026</span><span class="dot"></span><span>8 minute read</span>
         </div>
       </div>
       <div class="architecture" role="img" aria-label="Illustration of a transaction crossing on-premises systems and three public clouds">
@@ -171,6 +160,5 @@
     addEventListener('scroll',updateProgress,{passive:true});updateProgress();
     document.getElementById('copyLink').addEventListener('click',async event=>{try{await navigator.clipboard.writeText(location.href);event.currentTarget.textContent='Link copied'}catch{event.currentTarget.textContent='Copy unavailable'}setTimeout(()=>event.currentTarget.textContent='Copy article link',1800)});
   </script>
-  <script src="/site-shell.js" defer></script>
 </body>
 </html>
