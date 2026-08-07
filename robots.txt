@@ -3,16 +3,27 @@ Allow: /
 Allow: /okf/
 Allow: /llms.txt
 
+User-agent: Applebot
+Allow: /technology/tokenawareai/
+Allow: /llms.txt
+
 User-agent: GPTBot
 Allow: /okf/
+Allow: /technology/tokenawareai/
 Allow: /llms.txt
 
 User-agent: ClaudeBot
 Allow: /okf/
+Allow: /technology/tokenawareai/
 Allow: /llms.txt
 
 User-agent: Googlebot
 Allow: /okf/
+Allow: /technology/tokenawareai/
+Allow: /llms.txt
+
+User-agent: Google-Extended
+Allow: /technology/tokenawareai/
 Allow: /llms.txt
 
 Sitemap: https://sharecapsule.app/sitemap.xml
