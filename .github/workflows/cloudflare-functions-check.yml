@@ -40,9 +40,16 @@ jobs:
             echo "Tamil poem route was not found in the generated Pages Functions output"
             exit 1
           }
-      - name: Confirm voting source and migration exist
+          grep -R "cards/api/poem" .cloudflare/functions-build .cloudflare 2>/dev/null || {
+            echo "Protected cards poem route was not found in the generated Pages Functions output"
+            exit 1
+          }
+      - name: Confirm source files and migration exist
         run: |
           test -f functions/api/place-votes/index.js
           test -f 'functions/api/place-votes/[placeId].js'
           test -f functions/api/tamil-poem.js
+          test -f functions/cards/_middleware.js
+          test -f functions/cards/api/poem.js
+          test -f functions/cards/api/session.js
           test -f migrations/0001_place_votes.sql
