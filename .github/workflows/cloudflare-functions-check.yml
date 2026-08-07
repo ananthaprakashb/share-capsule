@@ -13,6 +13,7 @@ on:
       - 'functions/**'
       - 'migrations/**'
       - 'wrangler.jsonc'
+      - '.github/workflows/cloudflare-functions-check.yml'
 
 permissions:
   contents: read
@@ -24,10 +25,10 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
       - name: Validate Wrangler configuration
         run: npx --yes wrangler@latest pages functions build functions --outdir=.cloudflare/functions-build --project-directory=.
-      - name: Confirm voting routes were generated
+      - name: Confirm expected API routes were generated
         shell: bash
         run: |
           test -f .cloudflare/functions-build/index.js
@@ -35,8 +36,13 @@ jobs:
             echo "Voting route was not found in the generated Pages Functions output"
             exit 1
           }
+          grep -R "api/tamil-poem" .cloudflare/functions-build .cloudflare 2>/dev/null || {
+            echo "Tamil poem route was not found in the generated Pages Functions output"
+            exit 1
+          }
       - name: Confirm voting source and migration exist
         run: |
           test -f functions/api/place-votes/index.js
           test -f 'functions/api/place-votes/[placeId].js'
+          test -f functions/api/tamil-poem.js
           test -f migrations/0001_place_votes.sql
