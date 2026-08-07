@@ -13,10 +13,47 @@
   <meta property="article:author" content="https://ananthaprakashb.github.io/profile/">
   <meta property="article:published_time" content="2026-08-06">
   <meta name="author" content="Anantha Prakash Nithiyanantham">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://sharecapsule.app/technology/tokenawareai/">
   <link rel="author" href="https://ananthaprakashb.github.io/profile/">
   <title>Multi-Cloud Challenge — Token-Aware AI | Share Capsule</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "@id": "https://sharecapsule.app/technology/tokenawareai/#article",
+    "mainEntityOfPage": "https://sharecapsule.app/technology/tokenawareai/",
+    "url": "https://sharecapsule.app/technology/tokenawareai/",
+    "headline": "Multi-Cloud Challenge",
+    "alternativeHeadline": "Why financial systems need token-aware AI agents",
+    "description": "Why fragmented identity, policy, compliance and observability make multi-cloud financial transactions difficult—and why modern systems need token-aware AI agents.",
+    "abstract": "Financial transactions spanning public clouds and on-premises systems encounter fragmented identity, policy enforcement, compliance and observability. Token-aware AI agents offer a way to carry identity, intent, policy and state across those boundaries.",
+    "datePublished": "2026-08-06",
+    "dateModified": "2026-08-07",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "articleSection": ["Cloud Architecture", "Identity and Access Management", "Zero Trust", "Financial Technology"],
+    "keywords": ["multi-cloud", "token-aware AI", "zero trust", "IAM", "financial technology", "cloud security"],
+    "author": {
+      "@type": "Person",
+      "name": "Anantha Prakash Nithiyanantham",
+      "url": "https://ananthaprakashb.github.io/profile/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Share Capsule",
+      "url": "https://sharecapsule.app/"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["#article-title", ".speakable-summary", "#takeaways"]
+    },
+    "accessMode": ["textual", "visual"],
+    "accessibilityFeature": ["structuralNavigation", "readingOrder", "alternativeText"],
+    "accessibilitySummary": "A semantically structured technical article with descriptive headings and a text alternative for its architecture diagram."
+  }
+  </script>
   <style>
     :root{
       --bg:#07111f;--surface:#0c1929;--paper:#f7f8fa;--ink:#142033;--muted:#667085;
@@ -79,27 +116,28 @@
 <body>
   <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
   <main class="shell">
-    <section class="hero">
-      <div>
-        <div class="kicker">Hybrid infrastructure · Identity · Zero trust</div>
-        <h1>Multi-Cloud<br>Challenge</h1>
-        <p class="deck">Why financial transactions fracture across cloud boundaries—and why modern systems need token-aware AI agents.</p>
-        <div class="meta">
-          <span>By <a href="https://ananthaprakashb.github.io/profile/" rel="author noopener" target="_blank">Anantha Prakash Nithiyanantham</a></span><span class="dot"></span><span>August 06, 2026</span><span class="dot"></span><span>8 minute read</span>
+    <article aria-labelledby="article-title" data-read-aloud>
+      <section class="hero">
+        <div>
+          <div class="kicker">Hybrid infrastructure · Identity · Zero trust</div>
+          <h1 id="article-title">Multi-Cloud<br>Challenge</h1>
+          <p class="deck speakable-summary">Why financial transactions fracture across cloud boundaries—and why modern systems need token-aware AI agents.</p>
+          <div class="meta">
+            <span>By <a href="https://ananthaprakashb.github.io/profile/" rel="author noopener" target="_blank">Anantha Prakash Nithiyanantham</a></span><span class="dot"></span><span>August 06, 2026</span><span class="dot"></span><span>8 minute read</span>
+          </div>
         </div>
-      </div>
-      <div class="architecture" role="img" aria-label="Illustration of a transaction crossing on-premises systems and three public clouds">
-        <div class="node"><strong>ON-PREM</strong><span>Core ledger · RACF</span></div><span class="arrow">→</span>
-        <div class="node"><strong>AZURE</strong><span>Identity · Portal</span></div><span class="arrow">→</span>
-        <div class="node core"><strong>TOKEN CONTEXT</strong><span>Policy · State · Intent</span></div><span class="arrow">→</span>
-        <div class="node"><strong>AWS / GCP</strong><span>Risk · Analytics</span></div>
-      </div>
-    </section>
+        <div class="architecture" role="img" aria-label="A transaction moves from an on-premises core ledger through Azure identity services, carries token context containing policy, state and intent, and reaches risk and analytics services in AWS or Google Cloud.">
+          <div class="node"><strong>ON-PREM</strong><span>Core ledger · RACF</span></div><span class="arrow" aria-hidden="true">→</span>
+          <div class="node"><strong>AZURE</strong><span>Identity · Portal</span></div><span class="arrow" aria-hidden="true">→</span>
+          <div class="node core"><strong>TOKEN CONTEXT</strong><span>Policy · State · Intent</span></div><span class="arrow" aria-hidden="true">→</span>
+          <div class="node"><strong>AWS / GCP</strong><span>Risk · Analytics</span></div>
+        </div>
+      </section>
 
-    <article class="article" data-read-aloud>
-      <div class="articleGrid">
-        <div class="content">
-          <p class="lead">Multi-cloud architecture to enjoy the benefit of different services and improve availability is the trend. Financial institutions and global enterprises, especially, deploy workloads across public clouds (AWS, Azure, GCP) alongside legacy on-premises mainframes and private datacenters to balance scalability, vendor independence, and strict regulatory compliance.</p>
+      <div class="article">
+        <div class="articleGrid">
+          <div class="content">
+          <p class="lead speakable-summary">Multi-cloud architecture to enjoy the benefit of different services and improve availability is the trend. Financial institutions and global enterprises, especially, deploy workloads across public clouds (AWS, Azure, GCP) alongside legacy on-premises mainframes and private datacenters to balance scalability, vendor independence, and strict regulatory compliance.</p>
           <p>However, operating financial transactions across these disparate environments introduces <strong>critical architectural fragmentation and operational security gaps</strong>. Pretty hard to manage.</p>
 
           <section aria-labelledby="core-problem">
@@ -153,6 +191,7 @@
             <p>To solve this, modern architectures require <strong>Token-Aware AI Agents</strong> that can dynamically evaluate transaction context, enforce zero-trust security policies at the payload level, and seamlessly orchestrate workflows across heterogeneous cloud boundaries—which we will break down step-by-step over the coming days.</p>
             <span class="agentPill">IDENTITY + INTENT + POLICY + STATE</span>
           </section>
+          </div>
         </div>
       </div>
     </article>
