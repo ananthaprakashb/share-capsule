@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="Why fragmented identity, policy, compliance and observability make multi-cloud financial transactions difficult—and why modern systems need token-aware AI agents.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Multi-Cloud Challenge — Share Capsule">
+  <meta property="og:description" content="The architectural and operational friction behind multi-cloud financial systems, from IAM silos to fragmented transaction context.">
+  <meta property="og:url" content="https://sharecapsule.app/technology/tokenawareai/">
+  <meta property="og:site_name" content="Share Capsule">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://sharecapsule.app/technology/tokenawareai/">
+  <title>Multi-Cloud Challenge — Token-Aware AI | Share Capsule</title>
+  <style>
+    :root{
+      --bg:#07111f;--surface:#0c1929;--paper:#f7f8fa;--ink:#142033;--muted:#667085;
+      --line:#dfe5ec;--cyan:#39d5ff;--mint:#4be1b4;--amber:#ffbd66;--navy:#07111f;
+      --sans:"IBM Plex Sans",Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      --mono:"IBM Plex Mono","SFMono-Regular",Consolas,"Liberation Mono",monospace;
+      --shadow:0 28px 90px rgba(0,0,0,.28)
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(circle at 82% 4%,rgba(57,213,255,.16),transparent 28%),radial-gradient(circle at 8% 30%,rgba(75,225,180,.09),transparent 23%),var(--bg);color:#eef7ff;font-family:var(--sans);-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .progress{position:fixed;inset:0 0 auto;z-index:1000;height:3px;background:rgba(255,255,255,.1)}
+    .progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--mint),var(--cyan))}
+    .shell{width:min(100% - 32px,1160px);margin:auto;padding:22px 0 96px}
+    .top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:2px 0 22px}
+    .brand{text-decoration:none;font-weight:900;letter-spacing:-.03em}
+    .brand span{color:var(--cyan)}
+    .series{font:700 11px/1 var(--mono);letter-spacing:.11em;text-transform:uppercase;color:#a9bdd0}
+    .hero{display:grid;gap:38px;align-items:end;padding:56px 0 46px}
+    .kicker,.sectionTag,.caseNumber{font:700 11px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--cyan)}
+    h1{max-width:930px;margin:15px 0 0;font-size:clamp(48px,10vw,102px);line-height:.89;letter-spacing:-.065em}
+    .deck{max-width:780px;margin:24px 0 0;color:#b9c9d8;font-size:clamp(18px,2.3vw,24px);line-height:1.5}
+    .meta{display:flex;align-items:center;gap:11px;flex-wrap:wrap;margin-top:28px;color:#93a8bb;font:600 12px/1.5 var(--mono)}
+    .meta a{text-underline-offset:4px}.dot{width:4px;height:4px;border-radius:50%;background:var(--mint)}
+    .architecture{display:grid;grid-template-columns:repeat(7,auto);align-items:center;gap:11px;padding:19px;border:1px solid rgba(126,208,234,.24);border-radius:18px;background:rgba(12,25,41,.72);box-shadow:0 20px 70px rgba(0,0,0,.18);overflow:auto}
+    .node{min-width:116px;padding:15px 13px;border:1px solid rgba(255,255,255,.12);border-radius:12px;background:#10233a}
+    .node strong{display:block;font:700 12px/1.2 var(--mono);color:#fff}.node span{display:block;margin-top:6px;color:#8fa6ba;font-size:11px}
+    .node.core{border-color:rgba(75,225,180,.55);box-shadow:inset 0 0 22px rgba(75,225,180,.06)}
+    .arrow{color:var(--cyan);font:700 17px/1 var(--mono)}
+    .article{background:var(--paper);color:var(--ink);border-radius:30px;box-shadow:var(--shadow);overflow:hidden}
+    .articleGrid{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+    .content{max-width:830px;margin:auto;padding:clamp(30px,6vw,76px) clamp(22px,7vw,82px) 84px}
+    .lead{font-size:clamp(20px,2.6vw,27px);line-height:1.55;letter-spacing:-.018em;color:#26364d}
+    .content p{font-size:17px;line-height:1.82;color:#34445a}
+    .content strong{color:#13233a}
+    .content h2{scroll-margin-top:32px;margin:76px 0 23px;font-size:clamp(31px,4vw,47px);line-height:1.04;letter-spacing:-.048em;color:#0e1c2e}
+    .content h3{margin:0;font-size:22px;line-height:1.2;letter-spacing:-.025em;color:#102138}
+    .sectionHead{padding-top:12px;border-top:1px solid var(--line)}
+    .sectionTag{display:block;margin-bottom:14px;color:#087c99}
+    .problemGrid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:30px 0 8px}
+    .problem{padding:21px;border:1px solid var(--line);border-radius:16px;background:#fff}
+    .problem h3{font-size:17px}.problem p{margin:11px 0 0;font-size:14px;line-height:1.65;color:#5b6b80}
+    .signal{display:flex;gap:10px;align-items:center;margin-bottom:16px;color:#087c99;font:700 10px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+    .signal:before{content:"";width:8px;height:8px;border-radius:2px;background:currentColor;box-shadow:0 0 0 5px rgba(8,124,153,.1)}
+    .cases{display:grid;gap:18px;margin-top:31px}
+    .case{position:relative;padding:27px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,#fff,#f4f7fa)}
+    .caseNumber{color:#087c99}.case h3{margin:8px 0 14px;font-size:25px}.case p{margin:12px 0;font-size:15px;line-height:1.72}
+    .failure{margin-top:20px;padding:18px 19px;border-left:3px solid #d96d50;border-radius:0 13px 13px 0;background:#fff3ef}
+    .failureLabel{display:block;margin-bottom:10px;color:#a2422b;font:700 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+    .failure p:last-child{margin-bottom:0}
+    .takeaway{margin-top:34px;padding:30px;border-radius:20px;background:var(--navy);color:#eaf4ff}
+    .takeaway .sectionTag{color:var(--mint)}
+    .takeaway h2{margin:0 0 18px;color:#fff}
+    .takeaway p{color:#bdccda}
+    .takeaway strong{color:#fff}
+    .agentPill{display:inline-block;margin-top:7px;padding:10px 13px;border:1px solid rgba(75,225,180,.38);border-radius:999px;color:var(--mint);font:700 11px/1 var(--mono);letter-spacing:.05em}
+    .footer{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:24px 0 0;color:#8ea3b6;font-size:12px}
+    .copy{border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(255,255,255,.07);color:#eef7ff;padding:11px 14px;font:700 11px/1 var(--mono);cursor:pointer}
+    @media(max-width:720px){.shell{width:min(100% - 22px,1160px)}.hero{padding:38px 0 32px}.architecture{grid-template-columns:1fr;overflow:visible}.node{min-width:0}.arrow{transform:rotate(90deg);justify-self:center}.article{border-radius:22px}.problemGrid{grid-template-columns:1fr}.content{padding-bottom:64px}.content h2{margin-top:60px}.case{padding:22px}.footer{align-items:flex-start;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+  <main class="shell">
+    <header class="top">
+      <a class="brand" href="/">Share Capsule <span>/ Technology</span></a>
+      <div class="series">Architecture note · 01</div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="kicker">Hybrid infrastructure · Identity · Zero trust</div>
+        <h1>Multi-Cloud<br>Challenge</h1>
+        <p class="deck">Why financial transactions fracture across cloud boundaries—and why modern systems need token-aware AI agents.</p>
+        <div class="meta">
+          <span>August 06, 2026</span><span class="dot"></span><span>8 minute read</span><span class="dot"></span>
+          <a href="https://engineeringstepstone.blogspot.com/2026/08/multi-cloud-challenge.html" target="_blank" rel="noopener noreferrer">Original article ↗</a>
+        </div>
+      </div>
+      <div class="architecture" role="img" aria-label="Illustration of a transaction crossing on-premises systems and three public clouds">
+        <div class="node"><strong>ON-PREM</strong><span>Core ledger · RACF</span></div><span class="arrow">→</span>
+        <div class="node"><strong>AZURE</strong><span>Identity · Portal</span></div><span class="arrow">→</span>
+        <div class="node core"><strong>TOKEN CONTEXT</strong><span>Policy · State · Intent</span></div><span class="arrow">→</span>
+        <div class="node"><strong>AWS / GCP</strong><span>Risk · Analytics</span></div>
+      </div>
+    </section>
+
+    <article class="article" data-read-aloud>
+      <div class="articleGrid">
+        <div class="content">
+          <p class="lead">Multi-cloud architecture to enjoy the benefit of different services and improve availability is the trend. Financial institutions and global enterprises, especially, deploy workloads across public clouds (AWS, Azure, GCP) alongside legacy on-premises mainframes and private datacenters to balance scalability, vendor independence, and strict regulatory compliance.</p>
+          <p>However, operating financial transactions across these disparate environments introduces <strong>critical architectural fragmentation and operational security gaps</strong>. Pretty hard to manage.</p>
+
+          <section aria-labelledby="core-problem">
+            <div class="sectionHead">
+              <h2 id="core-problem"><span class="sectionTag">01 · The core problem</span>Architectural &amp; operational friction</h2>
+            </div>
+            <p>When a financial transaction or data flow spans multiple cloud boundaries and on-prem systems, traditional perimeter-based security and monolithic orchestration engines break down.</p>
+            <div class="problemGrid">
+              <div class="problem"><div class="signal">Identity</div><h3>Fragmented Identity &amp; Authorization (IAM Silos)</h3><p>Each cloud provider and on-prem system maintains its own Identity and Access Management (IAM) framework, role definitions, and token formats (e.g., AWS IAM roles, Azure Entra ID, OAuth2 tokens, Kerberos/Active Directory). Orchestrating a transaction across boundaries requires translating context without losing security semantics or auditability.</p></div>
+              <div class="problem"><div class="signal">Policy</div><h3>Brittle Integration &amp; Policy Enforcement</h3><p>Traditional point-to-point APIs or middleware lack dynamic, stateful context. Security policies are often enforced at boundaries rather than remaining attached to the transaction payload itself, leading to policy drift and security blind spots.</p></div>
+              <div class="problem"><div class="signal">Compliance</div><h3>Data Residency &amp; Cross-Border Compliance</h3><p>Regulations such as GDPR, CCPA, PCI-DSS v4.0, and local financial data localization laws restrict how sensitive payload data (e.g., PII, PAN, account balances) can move across regions and clouds.</p></div>
+              <div class="problem"><div class="signal">Observability</div><h3>Observability &amp; Ledger Disintegration</h3><p>Without unified context tracking, tracing a transaction from an on-prem core banking engine through a public cloud analytics microservice and onto a vendor ledger produces disjointed logs, making fraud detection and auditing extremely difficult.</p></div>
+            </div>
+          </section>
+
+          <section aria-labelledby="enterprise-failures">
+            <div class="sectionHead">
+              <h2 id="enterprise-failures"><span class="sectionTag">02 · In production</span>Enterprise failures</h2>
+            </div>
+            <div class="cases">
+              <article class="case">
+                <div class="caseNumber">Case 01 · Global banking</div>
+                <h3>Identity breaks mid-transaction</h3>
+                <p>A tier-1 global bank routes international payment instructions. Customer authentication occurs via an Azure-hosted web portal, risk modeling runs on AWS machine learning infrastructure, and final settlement/ledger update happens on an on-premises IBM z/OS mainframe.</p>
+                <p>During peak transaction volume, token translation between Azure Entra ID, AWS IAM, and on-prem RACF/OAuth caused session drops and token expiration mid-transaction.</p>
+                <div class="failure"><span class="failureLabel">The failure</span><p><strong>Dangling Transactions &amp; Settlement Discrepancies:</strong> Transactions were authorized on the cloud front-end but failed during state commit on the core ledger, requiring complex manual reconciliation.</p><p><strong>Compliance Violations:</strong> To fix latency caused by token validation hops, engineers temporarily cached unencrypted PII in cross-cloud intermediate message queues (Kafka), leading to audit flags for storing unmasked PCI data across public cloud storage nodes.</p></div>
+              </article>
+
+              <article class="case">
+                <div class="caseNumber">Case 02 · Capital markets</div>
+                <h3>Static tokens lose execution intent</h3>
+                <p>A fintech capital markets platform uses GCP for real-time market data ingestion and analytics, AWS for execution logic, and private datacenters for high-frequency order books.</p>
+                <p>The lack of token-aware, zero-trust context propagation across cloud boundaries.</p>
+                <div class="failure"><span class="failureLabel">The failure</span><p><strong>Security Gaps (Token Replay / Identity Forgery):</strong> Attackers exploited a misconfigured API gateway bridging GCP and AWS. Because intermediate service-to-service calls relied on static, long-lived bearer tokens rather than dynamic, context-aware tokens tied to the specific execution intent, an attacker intercepted a token and issued unauthorized order routing instructions.</p><p><strong>Latency &amp; Rate Limiting Locks:</strong> API gateways across the two clouds independently enforced rate limits without awareness of the underlying transaction state, dropping legitimate high-value trade execution bursts.</p></div>
+              </article>
+
+              <article class="case">
+                <div class="caseNumber">Case 03 · Payment processing</div>
+                <h3>Risk context stays trapped in a silo</h3>
+                <p>A global payment processor runs real-time fraud scoring microservices across multiple public clouds to meet regional low-latency requirements before clearing transactions on-prem.</p>
+                <p>State fragmentation across cloud environments.</p>
+                <div class="failure"><span class="failureLabel">The failure</span><p><strong>Siloed Context &amp; High Fraud Rates:</strong> A fraud scoring model in Azure flagged an account for suspicious velocity, but because the risk token/context could not be dynamically attached to the transaction header moving to AWS, the AWS clearing pipeline processed subsequent transactions without seeing the updated risk context.</p><p><strong>Audit Nightmares:</strong> Reconstructing the end-to-end lineage of a flagged transaction required aggregating logs across three cloud providers and two on-prem SIEM systems, taking weeks instead of minutes during regulatory reviews.</p></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="takeaway" aria-labelledby="takeaways">
+            <span class="sectionTag">03 · Key takeaways</span>
+            <h2 id="takeaways">The transaction needs portable context.</h2>
+            <p>Current enterprise approaches rely on <strong>static middleware, hardcoded API bridges, and perimeter security</strong>, which fall short in hybrid multi-cloud financial ecosystems.</p>
+            <p>To solve this, modern architectures require <strong>Token-Aware AI Agents</strong> that can dynamically evaluate transaction context, enforce zero-trust security policies at the payload level, and seamlessly orchestrate workflows across heterogeneous cloud boundaries—which we will break down step-by-step over the coming days.</p>
+            <span class="agentPill">IDENTITY + INTENT + POLICY + STATE</span>
+          </section>
+        </div>
+      </div>
+    </article>
+
+    <footer class="footer"><span>Share Capsule · Technology notes worth passing on.</span><button class="copy" id="copyLink" type="button">Copy article link</button></footer>
+  </main>
+  <script>
+    const progressBar=document.getElementById('progressBar');
+    const updateProgress=()=>{const max=document.documentElement.scrollHeight-innerHeight;progressBar.style.width=(max>0?Math.min(100,scrollY/max*100):0)+'%'};
+    addEventListener('scroll',updateProgress,{passive:true});updateProgress();
+    document.getElementById('copyLink').addEventListener('click',async event=>{try{await navigator.clipboard.writeText(location.href);event.currentTarget.textContent='Link copied'}catch{event.currentTarget.textContent='Copy unavailable'}setTimeout(()=>event.currentTarget.textContent='Copy article link',1800)});
+  </script>
+  <script src="/site-shell.js" defer></script>
+</body>
+</html>
