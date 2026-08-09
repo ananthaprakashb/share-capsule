@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0b1220">
   <meta name="description" content="A privacy-first personal finance workspace. Your financial data stays encrypted on your device and is never sent to ShareCapsule.">
   <meta name="robots" content="index,follow">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="no-referrer">
   <title>Private Finance Planner — ShareCapsule</title>
   <link rel="stylesheet" href="./styles.css">
@@ -50,11 +50,11 @@
             <form id="createVaultForm" autocomplete="off">
               <label class="field">
                 <span>Vault passphrase</span>
-                <input id="newPassphrase" type="password" minlength="12" autocomplete="new-password" required placeholder="12+ characters">
+                <input id="newPassphrase" type="password" minlength="12" autocomplete="off" spellcheck="false" required placeholder="12+ characters">
               </label>
               <label class="field">
                 <span>Confirm passphrase</span>
-                <input id="confirmPassphrase" type="password" minlength="12" autocomplete="new-password" required placeholder="Re-enter passphrase">
+                <input id="confirmPassphrase" type="password" minlength="12" autocomplete="off" spellcheck="false" required placeholder="Re-enter passphrase">
               </label>
               <p class="form-error" id="createError" role="alert"></p>
               <button class="primary-button wide" type="submit">Create encrypted vault</button>
@@ -69,7 +69,7 @@
             <form id="unlockVaultForm" autocomplete="off">
               <label class="field">
                 <span>Vault passphrase</span>
-                <input id="unlockPassphrase" type="password" autocomplete="current-password" required autofocus>
+                <input id="unlockPassphrase" type="password" autocomplete="off" spellcheck="false" required autofocus>
               </label>
               <p class="form-error" id="unlockError" role="alert"></p>
               <button class="primary-button wide" type="submit">Unlock vault</button>
