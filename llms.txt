@@ -2,6 +2,10 @@
 
 > Public tools and shareable content for media, events, passport photos, news investigation, and technology architecture.
 
+## Tools
+
+- [YouTube to WhatsApp Status Clips](https://sharecapsule.app/tools/whatsapp-share/) — Browser-local splitter for turning a video the user owns into short MP4 clips for WhatsApp Status while preserving a click-through link to the original YouTube video on ShareCapsule.
+
 ## Technology
 
 - [Multi-Cloud Challenge: Token-Aware AI](https://sharecapsule.app/technology/tokenawareai/) — A technical article about identity, policy, compliance, observability, and transaction context across hybrid multi-cloud financial systems. Author: Anantha Prakash Nithiyanantham.
@@ -21,3 +25,4 @@
 - [ShareCapsule](https://sharecapsule.app/)
 - [OKF landing page](https://sharecapsule.app/okf/)
 - [Fact-check and news investigation](https://sharecapsule.app/factcheck/)
+- [YouTube to WhatsApp Status Clips](https://sharecapsule.app/tools/whatsapp-share/)
