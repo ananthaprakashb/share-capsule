@@ -12,6 +12,18 @@
   },
   "stories": [
     {
+      "id": "reclaim-your-time-the-one-word-trick-to-a-clean-inbox-2026-01-08",
+      "title": "Reclaim Your Time! 🛑 The \"One-Word\" Trick to a Clean Inbox",
+      "author": "Anantha Prakash",
+      "contentText": "We’ve been talking about how to talk to AI, but today let’s talk about Automation .\n\nBefore we ask AI to do our big tasks, let’s see how a tiny bit of \"logic\" (the same logic AI uses!) can save you hours of scrolling every week. Look at your inbox right now. How many marketing emails, newsletters, and \"special offers\" are burying the messages that actually matter?\n\nThe Secret Key: Almost every promotional email has one thing in common—the word \"Unsubscribe.\" Today, we are going to use that one word to build a \"Digital Gatekeeper.\"\n\n🛠 The 3-Minute Mission: Create Your \"Read Later\" Folder\n\nDon't delete them; just move them! Keep your main inbox for People , not Promotions .\n\nStep 1: The Setup\n\n• Open your Gmail on a computer.\n\n• Click the Settings (Gear) Icon ⚙️ at the top right.\n\n• Click \"See all settings.\"\n\n• Go to the \"Filters and Blocked Addresses\" tab and click \"Create a new filter.\"\n\nPro Tip: Think of a filter as a \"Manual for your Inbox.\" You are telling Gmail, \"If you see X, then do Y.\"\n\nStep 2: The Logic (The \"Unsubscribe\" Trick)\n\nIn the \"Has the words\" box, simply type: Unsubscribe\n\nThe Automation\n\nClick \"Create filter.\" On the next screen, tell Gmail exactly what to do with these emails:\n\n• Check \"Skip the Inbox (Archive it).\"\n\n• Check \"Apply the label\" and create a new label called \"Read Later\" or \"Newsletters.\"\n\n• (Optional) Check \"Also apply filter to matching conversations\" to clean up your existing mess instantly!\n\n💎 The Value: Total Focus\n\nBy doing this, you aren’t losing information; you are organizing it.\n\n• 9:00 AM: You see only important work/family emails. No distractions!\n\n• Sunday Evening: You open your \"Read Later\" folder and enjoy your newsletters with a cup of coffee.\n\n📣 Join the Challenge!\n\nDid your inbox count just drop? Run this filter right now and tell me in the comments: How many emails did Gmail just \"clean up\" for you? (For me, it was over 500!)\n\nPost a screenshot of your new \"Read Later\" label or share how much \"cleaner\" your inbox feels today! 👇\n\nHow to make this stick with readers:\n\n• The \"Before & After\": Ask them to check their \"Unread\" count before the filter and after. The sudden drop is very satisfying!\n\n• Visual Guidance: Since you have the screenshots, highlight them with Red Circles or Arrows so they don't have to hunt for the buttons.\n\n• The \"Why\": Remind them that this is \"Rule-Based Logic\"—the foundation of how we eventually give complex instructions to AI.",
+      "excerpt": "We’ve been talking about how to talk to AI, but today let’s talk about Automation .\n\nBefore we ask AI to do our big tasks, let’s see how a tiny bit of \"logic\" (the same logic AI uses!) can save you hours of scrolling every week. Look at your inbox right now. H…",
+      "sourceUrl": "https://thinkfiveminutes.blogspot.com/2026/01/reclaim-your-time-one-word-trick-to.html",
+      "sourceName": "Think Five Minutes",
+      "originalPublishedAt": "2026-01-08T17:30:00.002-08:00",
+      "publishedOn": "2026-08-15",
+      "importedAt": "2026-08-15T15:27:14.560Z"
+    },
+    {
       "id": "essential-strategies-to-ensure-ai-works-for-you-every-single-day-2026-01-08",
       "title": "Essential strategies to ensure AI works for you every single day",
       "author": "Anantha Prakash",
