@@ -1,7 +1,12 @@
 name = "sharecapsule-finance-market"
 main = "index.js"
 compatibility_date = "2026-08-16"
-workers_dev = true
+workers_dev = false
+secrets = ["POLYGON_API_KEY", "SEC_USER_AGENT"]
+
+[[routes]]
+pattern = "finance-market.sharecapsule.app"
+custom_domain = true
 
 [observability]
 enabled = false
