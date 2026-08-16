@@ -31,13 +31,16 @@ function json(body, status, origin, extra = {}) {
   });
 }
 
-async function polygon(path, apiKey) {
+async function polygon(path, apiKey, required = true) {
   const join = path.includes('?') ? '&' : '?';
   const response = await fetch(`${POLYGON_BASE}${path}${join}apiKey=${encodeURIComponent(apiKey)}`, {
     headers: {'Accept': 'application/json'},
     cf: {cacheTtl: 60, cacheEverything: true}
   });
-  if (!response.ok) throw new Error(`Market provider returned ${response.status}`);
+  if (!response.ok) {
+    if (required) throw new Error(`Market provider returned ${response.status}`);
+    return null;
+  }
   return response.json();
 }
 
@@ -108,36 +111,53 @@ async function secFilings(cik, userAgent) {
   return filings;
 }
 
-function normalizedQuote(snapshot) {
-  const ticker = snapshot?.ticker || {};
-  const day = ticker.day || {};
-  const price = ticker.lastTrade?.p ?? day.c ?? null;
-  const updated = ticker.updated ? new Date(Number(ticker.updated) / 1e6).toISOString() : null;
+function normalizedQuote(snapshot, previousDay) {
+  if (snapshot?.ticker) {
+    const ticker = snapshot.ticker;
+    const day = ticker.day || {};
+    const price = ticker.lastTrade?.p ?? day.c ?? null;
+    const updated = ticker.updated ? new Date(Number(ticker.updated) / 1e6).toISOString() : null;
+    return {
+      price,
+      change: ticker.todaysChange ?? null,
+      changePercent: ticker.todaysChangePerc ?? null,
+      open: day.o ?? null,
+      high: day.h ?? null,
+      low: day.l ?? null,
+      close: day.c ?? null,
+      volume: day.v ?? null,
+      asOf: updated,
+      mode: 'snapshot'
+    };
+  }
+  const bar = previousDay?.results?.[0] || {};
   return {
-    price,
-    change: ticker.todaysChange ?? null,
-    changePercent: ticker.todaysChangePerc ?? null,
-    open: day.o ?? null,
-    high: day.h ?? null,
-    low: day.l ?? null,
-    close: day.c ?? null,
-    volume: day.v ?? null,
-    asOf: updated
+    price: bar.c ?? null,
+    change: null,
+    changePercent: null,
+    open: bar.o ?? null,
+    high: bar.h ?? null,
+    low: bar.l ?? null,
+    close: bar.c ?? null,
+    volume: bar.v ?? null,
+    asOf: bar.t ? new Date(Number(bar.t)).toISOString() : null,
+    mode: 'previous-close'
   };
 }
 
 async function buildPayload(symbol, env) {
-  const [snapshot, news, details] = await Promise.all([
-    polygon(`/v2/snapshot/locale/us/markets/stocks/tickers/${encodeURIComponent(symbol)}`, env.POLYGON_API_KEY),
-    polygon(`/v2/reference/news?ticker=${encodeURIComponent(symbol)}&limit=15&sort=published_utc&order=desc`, env.POLYGON_API_KEY),
-    polygon(`/v3/reference/tickers/${encodeURIComponent(symbol)}`, env.POLYGON_API_KEY)
+  const [snapshot, previousDay, news, details] = await Promise.all([
+    polygon(`/v2/snapshot/locale/us/markets/stocks/tickers/${encodeURIComponent(symbol)}`, env.POLYGON_API_KEY, false),
+    polygon(`/v2/aggs/ticker/${encodeURIComponent(symbol)}/prev?adjusted=true`, env.POLYGON_API_KEY, false),
+    polygon(`/v2/reference/news?ticker=${encodeURIComponent(symbol)}&limit=15&sort=published_utc&order=desc`, env.POLYGON_API_KEY, true),
+    polygon(`/v3/reference/tickers/${encodeURIComponent(symbol)}`, env.POLYGON_API_KEY, true)
   ]);
   const company = details?.results || {};
   const filings = await secFilings(company.cik, env.SEC_USER_AGENT);
   return {
     ticker: symbol,
     company: {name: company.name || symbol, exchange: company.primary_exchange || null, cik: company.cik || null},
-    quote: normalizedQuote(snapshot),
+    quote: normalizedQuote(snapshot, previousDay),
     news: normalizeNews(symbol, news?.results),
     filings,
     generatedAt: new Date().toISOString(),
@@ -171,10 +191,10 @@ export default {
     try {
       const payload = await buildPayload(symbol, env);
       const response = json(payload, 200, origin, {'Cache-Control':`public, max-age=60, s-maxage=${CACHE_SECONDS}`,'X-ShareCapsule-Cache':'MISS'});
-      const cacheCopy = new Response(response.body, response);
+      const cacheCopy = new Response(response.clone().body, {status: response.status, statusText: response.statusText, headers: response.headers});
       cacheCopy.headers.delete('Access-Control-Allow-Origin');
       cacheCopy.headers.delete('Vary');
-      ctx.waitUntil(cache.put(cacheKey, cacheCopy.clone()));
+      ctx.waitUntil(cache.put(cacheKey, cacheCopy));
       return response;
     } catch (error) {
       return json({error: error?.message || 'Unable to load public market data'}, 502, origin, {'Cache-Control':'no-store'});
