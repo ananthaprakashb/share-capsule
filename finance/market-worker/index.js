@@ -1,7 +1,7 @@
 const POLYGON_BASE = 'https://api.polygon.io';
 const SEC_BASE = 'https://data.sec.gov';
 const CACHE_SECONDS = 120;
-const ALLOWED_ORIGINS = new Set(['https://finance.sharecapsule.app', 'https://sharecapsule.app']);
+const ALLOWED_ORIGINS = new Set(['https://finance.sharecapsule.org', 'https://finance.sharecapsule.app', 'https://sharecapsule.app']);
 const HIGH_WORDS = ['earnings','guidance','acquisition','acquire','merger','fda','lawsuit','investigation','bankruptcy','offering','buyback','repurchase','dividend','ceo','cfo','cyber','breach','recall','restatement','default','contract'];
 const MEDIUM_WORDS = ['upgrade','downgrade','price target','analyst','partnership','launch','approval','forecast','restructuring','layoff','settlement'];
 const HIGH_FORMS = new Set(['8-K','10-Q','10-K','S-1','S-3','424B2','424B3','424B4','424B5']);
