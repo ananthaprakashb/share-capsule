@@ -7,7 +7,7 @@ workers_dev = false
 required = ["POLYGON_API_KEY", "SEC_USER_AGENT"]
 
 [[routes]]
-pattern = "finance-market.sharecapsule.app"
+pattern = "finance-market.sharecapsule.org"
 custom_domain = true
 
 [observability]
