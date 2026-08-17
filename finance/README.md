@@ -63,14 +63,10 @@ Optional:
 
 If `type` is omitted, negative amounts are treated as expenses and positive amounts as income. Because bank CSV conventions differ, imported classifications should always be reviewed.
 
-## Development URL
+## Production URL
 
-When the branch is merged into the main ShareCapsule site, the development endpoint is:
+The finance application is deployed on the dedicated production origin:
 
-`https://sharecapsule.app/finance/`
+`https://finance.sharecapsule.org/`
 
-Do **not** treat the shared-origin endpoint as the final high-security deployment for real financial data. The production target should be isolated at:
-
-`https://finance.sharecapsule.app/`
-
-with the response headers and origin-isolation controls listed in `SECURITY.md`.
+The dedicated origin should use the response headers and origin-isolation controls listed in `SECURITY.md`.
