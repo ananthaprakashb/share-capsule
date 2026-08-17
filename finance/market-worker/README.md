@@ -30,7 +30,7 @@ Cloudflare/platform-level operational metadata is outside the application data m
 
 ## Sources
 
-### Polygon
+### Polygon / Massive
 
 Used for:
 
@@ -76,20 +76,17 @@ ShareCapsule Finance contact@example.com
 
 Do not commit either value to Git.
 
-After the Worker is deployed, attach the custom domain:
+The Worker custom domain is configured as:
 
 ```text
-finance-market.sharecapsule.app
+finance-market.sharecapsule.org
 ```
 
-The browser client is intentionally hard-coded to that host. The Worker allows requests only from:
+The browser client is intentionally hard-coded to that host. The production browser origin is:
 
 ```text
-https://finance.sharecapsule.app
-https://sharecapsule.app
+https://finance.sharecapsule.org
 ```
-
-The second origin is for the current review/development endpoint. Remove it after the finance site is fully isolated on its dedicated origin.
 
 ## Response
 
@@ -105,4 +102,4 @@ News items contain a deterministic `impact` classification (`high`, `medium`, `l
 
 ## Market-data plan behavior
 
-If the Polygon account supports ticker snapshots, the response uses the snapshot. If snapshots are not included in the plan, the Worker attempts to fall back to the previous trading day's aggregate bar. News/reference access still depends on the provider plan in use.
+If the market-data account supports ticker snapshots, the response uses the snapshot. If snapshots are not included in the plan, the Worker attempts to fall back to the previous trading day's aggregate bar. News/reference access still depends on the provider plan in use.
