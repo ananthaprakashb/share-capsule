@@ -10,52 +10,40 @@ The endpoint accepts only one application input:
 symbol=AAPL
 ```
 
-It does not accept or need:
-
-- user identity
-- finance-vault contents
-- balances
-- holdings or share counts
-- cost basis
-- transactions
-- debts
-- goals
-- bank credentials
+It does not accept or need user identity, finance-vault contents, balances, holdings, share counts, cost basis, transactions, debts, goals, or bank credentials.
 
 The browser watchlist remains on the user's device. A ticker leaves the browser only when that ticker is refreshed.
 
-The Worker does not use a database, KV, Durable Objects, cookies, authentication profiles, or application-level request logging. Public responses are cached by ticker for a short period so requests for the same public symbol can reuse the same market payload.
+The Worker does not use a database, KV, Durable Objects, cookies, authentication profiles, or application-level request logging. Public responses are cached briefly by ticker.
 
 Cloudflare/platform-level operational metadata is outside the application data model and should be reviewed in the Cloudflare account configuration before production claims are finalized.
 
 ## Sources
 
-### Polygon / Massive
+### Massive market data
 
-Used for:
+Used for company/ticker reference data, snapshot or previous-close fallback, ticker-linked recent news, publisher metadata, and ticker-specific sentiment/insight reasoning when provided.
 
-- company/ticker reference data
-- current/delayed snapshot when the configured plan supports it
-- previous-day OHLC fallback
-- ticker-linked recent news
-- publisher metadata
-- ticker sentiment/insight fields when provided
-
-The API key is stored only as a Cloudflare Worker secret.
+The API key remains stored only as the Cloudflare Worker secret named `POLYGON_API_KEY` for compatibility with the existing deployment configuration.
 
 ### SEC EDGAR
 
-Used for primary-source company filings such as:
+Used for primary-source company filings such as 8-K, 10-Q, 10-K, S-1/S-3/prospectus filings, DEF 14A, Schedule 13D/13G, and Form 4.
 
-- 8-K
-- 10-Q
-- 10-K
-- S-1 / S-3 / prospectus filings
-- DEF 14A
-- Schedule 13D / 13G
-- Form 4
+The SEC submissions API does not require an API key. Automated requests must declare an identifying user agent containing an organization/app name and a monitored contact email and comply with SEC rate guidance.
 
-The SEC submissions API does not require an API key. Automated requests must declare an identifying user agent containing an organization/app name and a contact email and comply with SEC rate guidance.
+## News direction and impact
+
+Each returned news item keeps two separate research labels:
+
+- `direction`: `positive`, `negative`, or `neutral`, based on the provider's ticker-specific sentiment insight when available.
+- `impact`: `high`, `medium`, or `low`, based on deterministic event/topic rules in the Worker.
+
+The response also includes `newsSummary` with counts and a weighted news-tone index from -100 to +100. High-impact stories receive more weight than medium/low-impact stories.
+
+The index describes the directional skew of recent ticker-linked coverage. It is **not** a prediction of future stock-price movement and is not a buy/sell/hold recommendation.
+
+SEC filings are intentionally not assigned a positive/negative direction. They are shown as primary-source events with importance labels only.
 
 ## Deploy
 
@@ -68,21 +56,21 @@ npx wrangler secret put SEC_USER_AGENT
 npx wrangler deploy
 ```
 
-For `SEC_USER_AGENT`, enter a value in this pattern using a real monitored contact address:
+For `SEC_USER_AGENT`, enter a value using a real monitored contact address, for example:
 
 ```text
 ShareCapsule Finance contact@example.com
 ```
 
-Do not commit either value to Git.
+Do not commit secret values to Git.
 
-The Worker custom domain is configured as:
+Production Worker custom domain:
 
 ```text
-finance-market.sharecapsule.org
+https://finance-market.sharecapsule.org
 ```
 
-The browser client is intentionally hard-coded to that host. The production browser origin is:
+Production browser origin allowed by CORS:
 
 ```text
 https://finance.sharecapsule.org
@@ -94,12 +82,11 @@ https://finance.sharecapsule.org
 
 - `company`
 - `quote`
+- `newsSummary`
 - `news[]`
 - `filings[]`
 - `generatedAt`
 
-News items contain a deterministic `impact` classification (`high`, `medium`, `low`) and an explanation of why the item was flagged. This classification is a research prioritization aid, not a price prediction or buy/sell recommendation.
-
 ## Market-data plan behavior
 
-If the market-data account supports ticker snapshots, the response uses the snapshot. If snapshots are not included in the plan, the Worker attempts to fall back to the previous trading day's aggregate bar. News/reference access still depends on the provider plan in use.
+If the configured market-data plan supports ticker snapshots, the response uses the snapshot. If snapshots are unavailable, the Worker attempts to fall back to the previous trading day's aggregate bar. News/reference access still depends on the provider plan in use.
