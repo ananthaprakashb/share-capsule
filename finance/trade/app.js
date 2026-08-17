@@ -6,7 +6,7 @@
   const WATCHLIST_ID = 'watchlist';
   const KEY_ID = 'device-key';
   const $ = (id) => document.getElementById(id);
-  const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c]));
+  const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const usd = new Intl.NumberFormat('en-US', {style:'currency',currency:'USD',maximumFractionDigits:2});
   const compact = new Intl.NumberFormat('en-US', {notation:'compact',maximumFractionDigits:1});
   let db;
