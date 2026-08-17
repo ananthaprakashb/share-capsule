@@ -1,11 +1,13 @@
-const POLYGON_BASE = 'https://api.polygon.io';
+const MARKET_BASE = 'https://api.massive.com';
 const SEC_BASE = 'https://data.sec.gov';
 const CACHE_SECONDS = 120;
-const ALLOWED_ORIGINS = new Set(['https://finance.sharecapsule.org', 'https://finance.sharecapsule.app', 'https://sharecapsule.app']);
+const ALLOWED_ORIGINS = new Set(['https://finance.sharecapsule.org']);
+
 const HIGH_WORDS = ['earnings','guidance','acquisition','acquire','merger','fda','lawsuit','investigation','bankruptcy','offering','buyback','repurchase','dividend','ceo','cfo','cyber','breach','recall','restatement','default','contract'];
 const MEDIUM_WORDS = ['upgrade','downgrade','price target','analyst','partnership','launch','approval','forecast','restructuring','layoff','settlement'];
 const HIGH_FORMS = new Set(['8-K','10-Q','10-K','S-1','S-3','424B2','424B3','424B4','424B5']);
 const MEDIUM_FORMS = new Set(['DEF 14A','SC 13D','SC 13G','4']);
+const IMPACT_WEIGHT = {high: 3, medium: 2, low: 1};
 
 function cors(origin) {
   const allowed = ALLOWED_ORIGINS.has(origin) ? origin : '';
@@ -31,9 +33,9 @@ function json(body, status, origin, extra = {}) {
   });
 }
 
-async function polygon(path, apiKey, required = true) {
+async function market(path, apiKey, required = true) {
   const join = path.includes('?') ? '&' : '?';
-  const response = await fetch(`${POLYGON_BASE}${path}${join}apiKey=${encodeURIComponent(apiKey)}`, {
+  const response = await fetch(`${MARKET_BASE}${path}${join}apiKey=${encodeURIComponent(apiKey)}`, {
     headers: {'Accept': 'application/json'},
     cf: {cacheTtl: 60, cacheEverything: true}
   });
@@ -53,10 +55,20 @@ function impactFromText(title, description) {
   return {impact: 'low', reason: 'Recent ticker-linked coverage; no high-priority catalyst keyword was detected.'};
 }
 
+function normalizeDirection(sentiment) {
+  const value = String(sentiment || '').trim().toLowerCase();
+  if (value === 'positive' || value === 'bullish') return 'positive';
+  if (value === 'negative' || value === 'bearish') return 'negative';
+  return 'neutral';
+}
+
 function normalizeNews(ticker, results) {
-  return (Array.isArray(results) ? results : []).slice(0, 15).map(article => {
-    const insight = Array.isArray(article.insights) ? article.insights.find(item => String(item.ticker || '').toUpperCase() === ticker) : null;
+  return (Array.isArray(results) ? results : []).slice(0, 20).map(article => {
+    const insight = Array.isArray(article.insights)
+      ? article.insights.find(item => String(item.ticker || '').toUpperCase() === ticker)
+      : null;
     const scored = impactFromText(article.title, article.description);
+    const direction = normalizeDirection(insight?.sentiment);
     return {
       id: article.id,
       title: article.title || 'Untitled article',
@@ -64,12 +76,50 @@ function normalizeNews(ticker, results) {
       publisher: article.publisher?.name || 'Publisher',
       publishedAt: article.published_utc || null,
       url: article.article_url || article.amp_url || '',
-      sentiment: String(insight?.sentiment || 'neutral').toLowerCase(),
+      direction,
+      sentiment: direction,
       sentimentReason: insight?.sentiment_reasoning || '',
       impact: scored.impact,
       impactReason: scored.reason
     };
   }).filter(item => item.url);
+}
+
+function summarizeNews(news) {
+  const summary = {
+    positive: 0,
+    negative: 0,
+    neutral: 0,
+    highImpact: 0,
+    mediumImpact: 0,
+    lowImpact: 0,
+    score: 0,
+    label: 'No recent news',
+    basis: 'No ticker-linked news was returned.'
+  };
+  if (!news.length) return summary;
+
+  let signedWeight = 0;
+  let totalWeight = 0;
+  for (const item of news) {
+    const direction = item.direction || 'neutral';
+    summary[direction] = (summary[direction] || 0) + 1;
+    const impact = item.impact || 'low';
+    summary[`${impact}Impact`] = (summary[`${impact}Impact`] || 0) + 1;
+    const weight = IMPACT_WEIGHT[impact] || 1;
+    totalWeight += weight;
+    if (direction === 'positive') signedWeight += weight;
+    if (direction === 'negative') signedWeight -= weight;
+  }
+
+  summary.score = totalWeight ? Math.round((signedWeight / totalWeight) * 100) : 0;
+  if (summary.score >= 35) summary.label = 'Positive news skew';
+  else if (summary.score >= 10) summary.label = 'Slightly positive';
+  else if (summary.score <= -35) summary.label = 'Negative news skew';
+  else if (summary.score <= -10) summary.label = 'Slightly negative';
+  else summary.label = 'Mixed / neutral';
+  summary.basis = 'Weighted by article sentiment and event significance. This describes recent news tone, not expected price direction.';
+  return summary;
 }
 
 function secFilingUrl(cik, accession, primaryDocument) {
@@ -146,19 +196,21 @@ function normalizedQuote(snapshot, previousDay) {
 }
 
 async function buildPayload(symbol, env) {
-  const [snapshot, previousDay, news, details] = await Promise.all([
-    polygon(`/v2/snapshot/locale/us/markets/stocks/tickers/${encodeURIComponent(symbol)}`, env.POLYGON_API_KEY, false),
-    polygon(`/v2/aggs/ticker/${encodeURIComponent(symbol)}/prev?adjusted=true`, env.POLYGON_API_KEY, false),
-    polygon(`/v2/reference/news?ticker=${encodeURIComponent(symbol)}&limit=15&sort=published_utc&order=desc`, env.POLYGON_API_KEY, true),
-    polygon(`/v3/reference/tickers/${encodeURIComponent(symbol)}`, env.POLYGON_API_KEY, true)
+  const [snapshot, previousDay, newsResponse, details] = await Promise.all([
+    market(`/v2/snapshot/locale/us/markets/stocks/tickers/${encodeURIComponent(symbol)}`, env.POLYGON_API_KEY, false),
+    market(`/v2/aggs/ticker/${encodeURIComponent(symbol)}/prev?adjusted=true`, env.POLYGON_API_KEY, false),
+    market(`/v2/reference/news?ticker=${encodeURIComponent(symbol)}&limit=20&sort=published_utc&order=desc`, env.POLYGON_API_KEY, true),
+    market(`/v3/reference/tickers/${encodeURIComponent(symbol)}`, env.POLYGON_API_KEY, true)
   ]);
   const company = details?.results || {};
+  const news = normalizeNews(symbol, newsResponse?.results);
   const filings = await secFilings(company.cik, env.SEC_USER_AGENT);
   return {
     ticker: symbol,
     company: {name: company.name || symbol, exchange: company.primary_exchange || null, cik: company.cik || null},
     quote: normalizedQuote(snapshot, previousDay),
-    news: normalizeNews(symbol, news?.results),
+    newsSummary: summarizeNews(news),
+    news,
     filings,
     generatedAt: new Date().toISOString(),
     privacy: 'Public market data response. No user finance data is accepted or stored by this application endpoint.'
@@ -168,7 +220,10 @@ async function buildPayload(symbol, env) {
 export default {
   async fetch(request, env, ctx) {
     const origin = request.headers.get('Origin') || '';
-    if (request.method === 'OPTIONS') return new Response(null, {status: 204, headers: cors(origin)});
+    if (request.method === 'OPTIONS') {
+      if (origin && !ALLOWED_ORIGINS.has(origin)) return json({error: 'Origin not allowed'}, 403, origin, {'Cache-Control':'no-store'});
+      return new Response(null, {status: 204, headers: cors(origin)});
+    }
     if (request.method !== 'GET') return json({error: 'Method not allowed'}, 405, origin, {'Cache-Control':'no-store'});
     if (origin && !ALLOWED_ORIGINS.has(origin)) return json({error: 'Origin not allowed'}, 403, origin, {'Cache-Control':'no-store'});
     if (!env.POLYGON_API_KEY) return json({error: 'Market provider is not configured'}, 503, origin, {'Cache-Control':'no-store'});
