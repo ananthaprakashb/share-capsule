@@ -1,12 +1,12 @@
 (() => {
   'use strict';
-  const API = 'https://finance-market.sharecapsule.app/v1/ticker';
+  const API = 'https://finance-market.sharecapsule.org/v1/ticker';
   const DB_NAME = 'sharecapsule-trade-monitor';
   const STORE = 'local';
   const WATCHLIST_ID = 'watchlist';
   const KEY_ID = 'device-key';
   const $ = (id) => document.getElementById(id);
-  const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c]));
   const usd = new Intl.NumberFormat('en-US', {style:'currency',currency:'USD',maximumFractionDigits:2});
   const compact = new Intl.NumberFormat('en-US', {notation:'compact',maximumFractionDigits:1});
   let db;
