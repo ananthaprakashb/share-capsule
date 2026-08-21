@@ -12,6 +12,18 @@
   },
   "stories": [
     {
+      "id": "the-gps-magic-hack-make-your-phone-act-based-on-where-you-are-2026-01-11",
+      "title": "The \"GPS Magic\" Hack – Make Your Phone Act Based on Where You Are! 📍✨",
+      "author": "Anantha Prakash",
+      "contentText": "How many times have you forgotten to buy milk when passing the grocery store? Or forgotten to turn off your house lights when leaving for work? Or maybe you always forget to put your phone on \"Silent\" when you enter the office?\n\nToday, we are moving beyond just \"talking\" to AI. We are going to use Location-Based Automation (using tools like IFTTT or Zapier ). Think of it as giving your phone a brain that reacts to your GPS.\n\n🛠 The \"Geo-Fencing\" Hack: Setting Up Digital Boundaries\n\nGeo-fencing is just a fancy word for a \"Digital Fence.\" You define an area (like your office or home). When your phone (and you!) cross that digital fence, it triggers an action.\n\n1. The Tools you need:\n\n• IFTTT (If This Then That): The easiest app for beginners (Available on Android & iOS). Think of it as \"If X happens, then do Y.\"\n\n• Zapier: Great for professional or business-related automations (more complex, but powerful).\n\n2. Three \"Must-Try\" Automations:\n\nYou can set these up easily in the IFTTT app. Each automation is called an \"Applet.\"\n\n• The \"Work-Mode\" Switcher:\n\n• Trigger (If This): \"If I enter my Office area (GPS defined).\"\n\n• Action (Then That): \"...Then set phone to Silent/Vibrate and send a pre-defined WhatsApp/SMS to my spouse saying 'Reached Office!'\"\n`\n\n•\n\n• The \"Smart Grocery\" Reminder:\n\n• Trigger (If This): \"If I am within 100 meters of the Supermarket (GPS defined).\"\n\n• Action (Then That): \"...Then send a notification to my phone with my 'Shopping List' from my notes app or pop up a reminder.\"\n\n• The \"Safety Shield\":\n\n• Trigger (If This): \"If I leave the City limits (GPS defined).\"\n\n• Action (Then That): \"...Then automatically email my current location to my emergency contact (e.g., family member).\"\n\n💡 Why is this important?\n\nThis is \"invisible AI\" working for you. Your phone learns your routine (or you teach it specific locations) and automatically performs tasks, saving you mental energy and preventing forgotten chores.\n\n🏆 Today’s Practice Challenge:\n\nDownload the IFTTT app (it's free!). Set up ONE simple automation based on your location (e.g., get a reminder when you reach home, or put your phone on silent when you enter a specific place).\n\nTell us in the comments: What \"Geo-Fencing\" automation did you set up today? 👇",
+      "excerpt": "How many times have you forgotten to buy milk when passing the grocery store? Or forgotten to turn off your house lights when leaving for work? Or maybe you always forget to put your phone on \"Silent\" when you enter the office?\n\nToday, we are moving beyond jus…",
+      "sourceUrl": "https://thinkfiveminutes.blogspot.com/2026/01/the-gps-magic-hack-make-your-phone-act.html",
+      "sourceName": "Think Five Minutes",
+      "originalPublishedAt": "2026-01-11T23:12:00.000-08:00",
+      "publishedOn": "2026-08-21",
+      "importedAt": "2026-08-21T15:39:39.477Z"
+    },
+    {
       "id": "your-pocket-financial-guru-let-ai-help-you-save-money-budget-better-2026-01-10",
       "title": "Your Pocket Financial Guru – Let AI Help You Save Money & Budget Better! 💰📈",
       "author": "Anantha Prakash",
