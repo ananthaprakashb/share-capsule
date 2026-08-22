@@ -12,6 +12,18 @@
   },
   "stories": [
     {
+      "id": "உங-கள-இர-ப-ப-டத-த-ற-க-ஏற-ப-வ-ல-ச-ய-ய-ம-ப-ன-2026-01-11",
+      "title": "உங்கள் இருப்பிடத்திற்கு ஏற்ப வேலை செய்யும் போன்! 📍",
+      "author": "Anantha Prakash",
+      "contentText": "பால் வாங்க மறந்தீர்களா? ஆபீஸ் வந்ததும் போனை சைலன்ட்டில் போட மறந்துவிட்டீர்களா?\n\nநாம் வெறும் AI-யிடம் பேசுவதைத் தாண்டி, அது நம் இருப்பிடத்திற்கு ஏற்ப (Location-Based) தானாகவே வேலை செய்ய வைக்கலாம். இதற்கு Geo-fencing என்ற ஒரு நுட்பத்தைப் பயன்படுத்துகிறோம். உங்கள் போன் ஒரு குறிப்பிட்ட இடத்திற்குச் செல்லும்போது அல்லது அங்கிருந்து வெளியேறும்போது, அது தானாகவே ஒரு வேலையைச் செய்யும்.\n\nகருவிகள்:\n\n• IFTTT (If This Then That): மிகவும் எளிமையான ஆப் (Android & iOS-ல் உள்ளது).\n\n• Zapier: சற்று தொழில்முறை பயன்பாடுகளுக்கு ஏற்றது.\n\nமூன்று பயனுள்ள ஆட்டோமேஷன்ஸ்:\n\n• \"ஆபீஸ் மோட்\" மாற்றி:\n\n• \"இது நடந்தால்\" (If This): \"நான் என் ஆபீஸ் பகுதிக்குள் நுழைந்தால்...\"\n\n• \"பின் இதைச் செய்\" (Then That): \"...போனை சைலன்ட் மோடில் வைத்து, என் மனைவிக்கு 'ஆபீஸ் வந்தாச்சு!' என்று ஒரு WhatsApp மெசேஜ் அனுப்பவும்.\"\n\n• \"ஸ்மார்ட் மளிகைப் பொருள்\" நினைவூட்டல்:\n\n• \"இது நடந்தால்\": \"நான் சூப்பர் மார்க்கெட்டிற்கு 100 மீட்டருக்குள் சென்றால்...\"\n\n• \"பின் இதைச் செய்\": \"...எனது 'ஷாப்பிங் லிஸ்ட்' நோட்ஸ்-ல் இருந்து எனக்கு ஒரு நோட்டிஃபிகேஷன் அனுப்பவும்.\"\n\n• \"பாதுகாப்பு கவசம்\":\n\n• \"இது நடந்தால்\": \"நான் நகர எல்லையைத் தாண்டினால்...\"\n\n• \"பின் இதைச் செய்\": \"...எனது அவசரக் காலத் தொடர்பு எண்ணுக்கு (Emergency Contact) எனது தற்போதைய இருப்பிடத்தை (Location) தானாகவே மின்னஞ்சல் அனுப்பவும்.\"\n\n🏆 Today’s Practice Challenge:\n\nDownload the IFTTT app (it's free!). Set up ONE simple automation based on your location (e.g., get a reminder when you reach home, or put your phone on silent when you enter a specific place).\n\nTell us in the comments: What \"Geo-Fencing\" automation did you set up today? 👇",
+      "excerpt": "பால் வாங்க மறந்தீர்களா? ஆபீஸ் வந்ததும் போனை சைலன்ட்டில் போட மறந்துவிட்டீர்களா?\n\nநாம் வெறும் AI-யிடம் பேசுவதைத் தாண்டி, அது நம் இருப்பிடத்திற்கு ஏற்ப (Location-Based) தானாகவே வேலை செய்ய வைக்கலாம். இதற்கு Geo-fencing என்ற ஒரு நுட்பத்தைப் பயன்படுத்துகிறோம். உங்கள…",
+      "sourceUrl": "https://thinkfiveminutes.blogspot.com/2026/01/blog-post_11.html",
+      "sourceName": "Think Five Minutes",
+      "originalPublishedAt": "2026-01-11T23:14:00.000-08:00",
+      "publishedOn": "2026-08-22",
+      "importedAt": "2026-08-22T15:27:18.591Z"
+    },
+    {
       "id": "the-gps-magic-hack-make-your-phone-act-based-on-where-you-are-2026-01-11",
       "title": "The \"GPS Magic\" Hack – Make Your Phone Act Based on Where You Are! 📍✨",
       "author": "Anantha Prakash",
