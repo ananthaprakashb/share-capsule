@@ -12,6 +12,18 @@
   },
   "stories": [
     {
+      "id": "உங-கள-ச-லவ-கள-ai-த-ன-கவ-ந-ர-வக-க-கல-ம-2026-01-12",
+      "title": "உங்கள் செலவுகளை AI தானாகவே நிர்வகிக்கலாம்! 🚀🧾",
+      "author": "Anantha Prakash",
+      "contentText": "ரசீதுகளைச் சேகரித்து, ஒவ்வொன்றையும் கையால் எழுதி, பட்ஜெட் போடுவது உங்களுக்குக் கஷ்டமா? கவலைப்படாதீர்கள்! உங்கள் போன் இனி உங்கள் சார்பாகச் செலவுகளை நிர்வகிக்கும்.\n\nஇன்று, நாம் Google Drive, ChatGPT Vision மற்றும் Google Sheets ஆகியவற்றை இணைத்து, உங்கள் பயண மற்றும் பிற செலவுகளை (Travel & Expense) தானாகவே நிர்வகிக்கும் ஒரு அமைப்பை உருவாக்கப் போகிறோம்.\n\nஎப்படி வேலை செய்கிறது? (Zapier மூலம்):\n\n• புகைப்படம் எடுங்கள்: நீங்கள் ஒரு ரசீதை (Receipt) உங்கள் போனில் புகைப்படம் எடுத்து, அதை Google Drive-ல் உள்ள ஒரு குறிப்பிட்ட ஃபோல்டரில் போட்டால் போதும்.\n\n• AI பார்க்கும்: Zapier அந்தப் புதிய ஃபைலைக் கண்டுபிடித்து, ChatGPT Vision-க்கு அனுப்பும்.\n\n• AI படிக்கும்: ChatGPT Vision ரசீதைப் பார்த்து, \"நிறுவனத்தின் பெயர் (Vendor Name)\", \"தேதி (Date)\", \"தொகை (Amount)\", \"பிரிவு (Category)\" போன்ற முக்கியமான தகவல்களைப் பிரித்தெடுக்கும்.\n\n• AI ஒருங்கிணைக்கும்: பின்னர், Zapier இந்தத் தகவல்களை எடுத்து, உங்கள் Google Sheet-ல் ஒரு புதிய வரிசையாகத் (Row) தானாகவே சேர்க்கும்.\n\nஉங்கள் ஒரே வேலை? ரசீதைப் படம் எடுப்பதுதான்!\n\n🏆 Today’s Practice Challenge:\n\nSet up the first two steps of this Zap:\n\n• Create your \"My Expenses\" Google Sheet.\n\n• Create your \"Receipts to Process\" Google Drive folder.\n\n• Go to Zapier and connect your Google Drive account.\n\nTell us in the comments: What's the one expense you always forget to log? 👇",
+      "excerpt": "ரசீதுகளைச் சேகரித்து, ஒவ்வொன்றையும் கையால் எழுதி, பட்ஜெட் போடுவது உங்களுக்குக் கஷ்டமா? கவலைப்படாதீர்கள்! உங்கள் போன் இனி உங்கள் சார்பாகச் செலவுகளை நிர்வகிக்கும்.\n\nஇன்று, நாம் Google Drive, ChatGPT Vision மற்றும் Google Sheets ஆகியவற்றை இணைத்து, உங்கள் பயண மற்ற…",
+      "sourceUrl": "https://thinkfiveminutes.blogspot.com/2026/01/ai_12.html",
+      "sourceName": "Think Five Minutes",
+      "originalPublishedAt": "2026-01-12T09:41:00.000-08:00",
+      "publishedOn": "2026-08-23",
+      "importedAt": "2026-08-23T15:28:22.748Z"
+    },
+    {
       "id": "உங-கள-இர-ப-ப-டத-த-ற-க-ஏற-ப-வ-ல-ச-ய-ய-ம-ப-ன-2026-01-11",
       "title": "உங்கள் இருப்பிடத்திற்கு ஏற்ப வேலை செய்யும் போன்! 📍",
       "author": "Anantha Prakash",
