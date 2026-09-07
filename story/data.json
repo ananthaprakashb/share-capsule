@@ -12,6 +12,18 @@
   },
   "stories": [
     {
+      "id": "double-lock-secret-stop-hackers-even-if-they-have-your-password-2026-01-14",
+      "title": "Double Lock\" Secret 🔐🔐 – Stop Hackers Even If They Have Your Password!",
+      "author": "Anantha Prakash",
+      "contentText": "Yesterday, we put your keys in a safe (Password Manager). Today, we are going to put a Security Guard in front of that safe.\n\nHere is a scary fact: Even the strongest password can be stolen. You might type it on a fake website, or a virus might record your keystrokes.\n\nSo, if a hacker has your password, is it Game Over?\nNO. Not if you have \"The Double Lock\" turned on.\n\n🛠 The Specialist Move: Two-Factor Authentication (2FA)\n\nIn technical terms, this is called 2FA (Two-Factor Authentication) . But let's call it \"Two-Step Verification.\"\n\nThink of your ATM card. To get money, you need two things:\n\n• The Card (Something you have )\n\n• The PIN (Something you know )\n\nIf a thief steals your card but doesn't know the PIN, he gets nothing. If he knows the PIN but doesn't have the card, he gets nothing. He needs BOTH.\n\nHow to Turn It On (The 2-Minute Fix):\n\nYou need to enable this on your \"Big Three\": Google (Gmail), Facebook, and WhatsApp.\n\n• Go to Settings: Look for \"Security\" or \"Login & Security.\"\n\n• Find the Option: It will be called \"2-Step Verification\" or \"Two-Factor Authentication.\"\n\n• Turn it On:\n\n• Level 1 (Good): SMS. The site sends a code to your phone number.\n\n• Level 2 (Better): Google Authenticator App. The app generates a code that changes every 30 seconds (works even without internet!).\n\nThe Result: Next time a hacker in another country tries to log into your account with your stolen password, they will hit a wall. They need the code sent to YOUR phone. And they don't have your phone. Game over for them! 🚫\n\n🏆 Today’s Practice Challenge:\n\nGo to your WhatsApp Settings -> Account -> Two-Step Verification and turn it on. Set a 6-digit PIN.\n\nTell us in the comments: Did you turn on the \"Double Lock\" for WhatsApp or Google today? 👇",
+      "excerpt": "Yesterday, we put your keys in a safe (Password Manager). Today, we are going to put a Security Guard in front of that safe.\n\nHere is a scary fact: Even the strongest password can be stolen. You might type it on a fake website, or a virus might record your key…",
+      "sourceUrl": "https://thinkfiveminutes.blogspot.com/2026/01/double-lock-secret-stop-hackers-even-if.html",
+      "sourceName": "Think Five Minutes",
+      "originalPublishedAt": "2026-01-14T09:52:00.000-08:00",
+      "publishedOn": "2026-09-07",
+      "importedAt": "2026-09-07T15:41:27.623Z"
+    },
+    {
       "id": "உங-கள-ப-ஸ-வ-ர-ட-க-ர-வட-வ-ல-ய-ல-இர-க-க-றத-2026-01-13",
       "title": "உங்கள் பாஸ்வேர்ட் \"கீரை வடை\" விலையில் இருக்கிறதா? 🔐",
       "author": "Anantha Prakash",
