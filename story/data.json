@@ -12,6 +12,18 @@
   },
   "stories": [
     {
+      "id": "இரட-ட-ப-ப-ட-ட-ரகச-யம-2026-01-14",
+      "title": "இரட்டைப் பூட்டு\" ரகசியம்! 🔐🔐",
+      "author": "Anantha Prakash",
+      "contentText": "ஹேக்கர்களிடம் உங்கள் பாஸ்வேர்ட் சிக்கினால் கூட, அவர்களால் உங்கள் கணக்கைத் திறக்க முடியாது. எப்படி?\n\nஇதற்குப் பெயர்தான் 2FA (Two-Factor Authentication) அல்லது இரண்டு படி பாதுகாப்பு .\n\nஇதை ஒரு ATM போல நினைத்துக் கொள்ளுங்கள். பணம் எடுக்க உங்களுக்கு இரண்டு விஷயங்கள் தேவை:\n\n• ATM கார்டு (உங்கள் கையில் இருப்பது)\n\n• PIN நம்பர் (உங்களுக்குத் தெரிந்தது)\n\nஇதே முறையை உங்கள் ஜிமெயில் மற்றும் ஃபேஸ்புக்கிற்கும் பயன்படுத்தலாம்.\n\n• முதல் படி: உங்கள் பாஸ்வேர்ட் .\n\n• இரண்டாம் படி: உங்கள் போனுக்கு வரும் OTP அல்லது Code .\n\nஹேக்கருக்கு உங்கள் பாஸ்வேர்ட் தெரிந்தாலும், உங்கள் போன் அவர் கையில் இல்லை. அதனால் அவரால் உள்ளே நுழையவே முடியாது.\n\nஇன்றைய வேலை:\nஉங்கள் Gmail மற்றும் Facebook செட்டிங்ஸ் சென்று \"2-Step Verification\" என்பதை ஆன் (On) செய்யுங்கள். இதுதான் உங்களின் மிகச்சிறந்த பாதுகாப்பு கவசம்!\n\n🏆 Today’s Practice Challenge:\n\nGo to your WhatsApp Settings -> Account -> Two-Step Verification and turn it on. Set a 6-digit PIN.\n\nTell us in the comments: Did you turn on the \"Double Lock\" for WhatsApp or Google today? 👇",
+      "excerpt": "ஹேக்கர்களிடம் உங்கள் பாஸ்வேர்ட் சிக்கினால் கூட, அவர்களால் உங்கள் கணக்கைத் திறக்க முடியாது. எப்படி?\n\nஇதற்குப் பெயர்தான் 2FA (Two-Factor Authentication) அல்லது இரண்டு படி பாதுகாப்பு .\n\nஇதை ஒரு ATM போல நினைத்துக் கொள்ளுங்கள். பணம் எடுக்க உங்களுக்கு இரண்டு விஷயங்க…",
+      "sourceUrl": "https://thinkfiveminutes.blogspot.com/2026/01/blog-post_14.html",
+      "sourceName": "Think Five Minutes",
+      "originalPublishedAt": "2026-01-14T10:09:00.000-08:00",
+      "publishedOn": "2026-09-08",
+      "importedAt": "2026-09-08T15:01:32.903Z"
+    },
+    {
       "id": "double-lock-secret-stop-hackers-even-if-they-have-your-password-2026-01-14",
       "title": "Double Lock\" Secret 🔐🔐 – Stop Hackers Even If They Have Your Password!",
       "author": "Anantha Prakash",
