@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f7f1e6">
+<meta name="description" content="Share Capsule Novels — immersive chapter-by-chapter reading from the Stories library.">
+<title>Novels · Share Capsule</title>
+<style>
+:root{--paper:#f7f1e6;--ink:#211d18;--muted:#786f64;--line:#dfd5c7;--card:#fffdf8;--accent:#7a4d2a;--reader-width:720px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,a{font:inherit}.shell{width:min(100%,1080px);margin:auto;padding:max(18px,env(safe-area-inset-top)) 18px calc(90px + env(safe-area-inset-bottom))}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-weight:900;color:inherit;text-decoration:none;font-size:20px}.topActions{display:flex;gap:8px}.icon{border:1px solid var(--line);background:var(--card);border-radius:50%;width:44px;height:44px;font-size:18px}
+.hero{padding:52px 0 30px;max-width:720px}.hero small{font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}.hero h1{font-family:Georgia,serif;font-size:clamp(46px,10vw,78px);line-height:.94;letter-spacing:-.05em;margin:10px 0 14px}.hero p{color:var(--muted);line-height:1.65;font-size:17px}
+.status{color:var(--muted);padding:12px 0}.library{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}.book{border:1px solid var(--line);background:var(--card);border-radius:24px;padding:24px;min-height:250px;display:flex;flex-direction:column;box-shadow:0 14px 35px rgba(61,45,28,.06);cursor:pointer;text-align:left;color:inherit}.book:hover{transform:translateY(-2px)}.bookNo{font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:var(--accent);font-weight:850}.book h2{font-family:Georgia,serif;font-size:28px;line-height:1.05;margin:22px 0 10px}.book p{color:var(--muted);line-height:1.5;margin:0}.book .open{margin-top:auto;padding-top:28px;font-weight:850}
+.reader{display:none;max-width:var(--reader-width);margin:auto}.reader.active{display:block}.libraryView.hidden{display:none}.readerBar{position:sticky;top:0;z-index:4;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(16px);padding:12px 0;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--line)}.readerBar button{border:0;background:transparent;padding:10px;font-weight:800;color:inherit}.progress{height:3px;background:var(--line);position:sticky;top:68px;z-index:5}.progress span{display:block;height:100%;width:0;background:var(--accent)}
+.chapterHead{padding:58px 0 25px;text-align:center}.chapterHead .novelName{color:var(--accent);font-weight:800;font-size:13px}.chapterHead h1{font-family:Georgia,serif;font-size:clamp(36px,8vw,56px);line-height:1.05;margin:12px 0}.chapterHead .chapterCount{color:var(--muted)}
+.prose{font-family:Georgia,"Times New Roman",serif;font-size:var(--font-size,20px);line-height:var(--line-height,1.85);letter-spacing:.005em}.prose p{margin:0 0 1.35em}.prose h1,.prose h2,.prose h3{line-height:1.2;margin:1.6em 0 .7em}.prose blockquote{border-left:3px solid var(--accent);margin:1.6em 0;padding-left:20px;color:var(--muted)}.prose hr{border:0;border-top:1px solid var(--line);margin:2.5em 0}.prose img{max-width:100%;border-radius:14px}
+.chapterNav{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:55px 0 30px}.chapterNav button{min-height:58px;border:1px solid var(--line);background:var(--card);border-radius:16px;font-weight:850;color:inherit}.chapterNav button:disabled{opacity:.35}
+.drawer{position:fixed;inset:0 0 0 auto;width:min(88vw,380px);background:var(--card);z-index:20;box-shadow:-20px 0 60px rgba(0,0,0,.15);padding:24px;transform:translateX(105%);transition:.22s}.drawer.open{transform:none}.drawer h2{font-family:Georgia,serif}.chapterList button{width:100%;text-align:left;padding:14px;border:0;border-bottom:1px solid var(--line);background:transparent;color:inherit}.chapterList button.active{font-weight:900;color:var(--accent)}
+.settings label{display:block;margin:18px 0 8px;font-weight:800}.settings select,.settings input{width:100%}
+.empty{padding:36px;border:1px dashed var(--line);border-radius:22px;color:var(--muted);background:var(--card)}
+body.dark{--paper:#181715;--ink:#eee8df;--muted:#aaa095;--line:#37332e;--card:#211f1c;--accent:#d9a574}
+body.sepia{--paper:#efe2c8;--ink:#3b2b20;--muted:#756252;--line:#d4c09e;--card:#f6ead1;--accent:#85542d}
+@media(max-width:600px){.hero{padding-top:36px}.prose{font-size:var(--font-size,19px)}}
+</style>
+</head>
+<body>
+<main class="shell">
+<section id="libraryView" class="libraryView">
+<header class="top"><a class="brand" href="../">Share Capsule</a><div class="topActions"><button class="icon" id="refresh" title="Refresh library">↻</button></div></header>
+<div class="hero"><small>Share Capsule Reader</small><h1>Novels</h1><p>Long-form stories, one chapter at a time. Your reading position and display preferences stay on this device.</p></div>
+<div id="status" class="status">Loading Stories repository…</div><div id="library" class="library"></div>
+</section>
+<section id="reader" class="reader">
+<div class="readerBar"><button id="back">← Library</button><span style="flex:1"></span><button id="chapters">☰ Chapters</button><button id="prefs">Aa</button></div>
+<div class="progress"><span id="progress"></span></div>
+<header class="chapterHead"><div id="novelName" class="novelName"></div><h1 id="chapterTitle"></h1><div id="chapterCount" class="chapterCount"></div></header>
+<article id="prose" class="prose"></article>
+<nav class="chapterNav"><button id="prev">← Previous</button><button id="next">Next →</button></nav>
+</section>
+</main>
+<aside id="chapterDrawer" class="drawer"><button class="icon" onclick="closeDrawers()">×</button><h2>Chapters</h2><div id="chapterList" class="chapterList"></div></aside>
+<aside id="settingsDrawer" class="drawer settings"><button class="icon" onclick="closeDrawers()">×</button><h2>Reading settings</h2><label>Theme</label><select id="theme"><option value="">Paper</option><option value="sepia">Sepia</option><option value="dark">Dark</option></select><label>Text size</label><input id="fontSize" type="range" min="17" max="28" value="20"><label>Line spacing</label><input id="lineHeight" type="range" min="15" max="24" value="19"></aside>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+const OWNER='ananthaprakashb',REPO='Stories',BRANCH='main';
+const API='https://api.github.com/repos/'+OWNER+'/'+REPO;
+let books=[],currentBook=null,currentChapter=0;
+const $=id=>document.getElementById(id), pretty=s=>decodeURIComponent(s).replace(/[-_]+/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
+async function api(path){const r=await fetch(API+path,{headers:{Accept:'application/vnd.github+json'}});if(!r.ok)throw new Error('GitHub '+r.status);return r.json()}
+async function loadLibrary(){
+ $('status').textContent='Loading Stories repository…';$('library').innerHTML='';
+ try{
+  const root=await api('/contents?ref='+BRANCH);
+  const dirs=root.filter(x=>x.type==='dir');
+  books=await Promise.all(dirs.map(async d=>{const files=await api('/contents/'+encodeURIComponent(d.path)+'?ref='+BRANCH);const chapters=files.filter(f=>f.type==='file'&&/\.(md|markdown|txt)$/i.test(f.name)&&!/^readme/i.test(f.name)).sort(natural);return{name:pretty(d.name),path:d.path,chapters}}));
+  books=books.filter(b=>b.chapters.length);
+  $('status').textContent=books.length?books.length+' novel'+(books.length===1?'':'s')+' available':'';
+  if(!books.length){$('library').innerHTML='<div class="empty"><strong>The Stories repository is ready.</strong><br><br>Create one folder per novel and add chapter files such as <code>01-chapter-one.md</code>, <code>02-chapter-two.md</code>. They will appear here automatically.</div>';return}
+  $('library').innerHTML=books.map((b,i)=>'<button class="book" data-i="'+i+'"><span class="bookNo">Book '+String(i+1).padStart(2,'0')+'</span><h2>'+escapeHtml(b.name)+'</h2><p>'+b.chapters.length+' chapter'+(b.chapters.length===1?'':'s')+'</p><span class="open">Start reading →</span></button>').join('');
+  document.querySelectorAll('.book').forEach(x=>x.onclick=()=>openBook(+x.dataset.i));
+ }catch(e){$('status').textContent='';$('library').innerHTML='<div class="empty">Unable to load the Stories library right now. '+escapeHtml(e.message)+'</div>'}
+}
+function natural(a,b){return a.name.localeCompare(b.name,undefined,{numeric:true,sensitivity:'base'})}
+async function openBook(i){currentBook=books[i];const saved=JSON.parse(localStorage.getItem('novel-progress:'+currentBook.path)||'{}');currentChapter=Math.min(saved.chapter||0,currentBook.chapters.length-1);$('libraryView').classList.add('hidden');$('reader').classList.add('active');await loadChapter(currentChapter)}
+async function loadChapter(i){
+ currentChapter=i;const ch=currentBook.chapters[i];$('novelName').textContent=currentBook.name;$('chapterTitle').textContent=pretty(ch.name.replace(/\.(md|markdown|txt)$/i,'').replace(/^\d+[._ -]*/,''));$('chapterCount').textContent='Chapter '+(i+1)+' of '+currentBook.chapters.length;$('prose').innerHTML='<p>Loading chapter…</p>';
+ try{const r=await fetch(ch.download_url);if(!r.ok)throw new Error('Chapter '+r.status);const raw=await r.text();$('prose').innerHTML=/\.txt$/i.test(ch.name)?'<p>'+escapeHtml(raw).replace(/\n\s*\n/g,'</p><p>').replace(/\n/g,'<br>')+'</p>':marked.parse(raw,{mangle:false,headerIds:false});}
+ catch(e){$('prose').innerHTML='<p>Unable to load this chapter. '+escapeHtml(e.message)+'</p>'}
+ $('prev').disabled=i===0;$('next').disabled=i===currentBook.chapters.length-1;renderChapters();localStorage.setItem('novel-progress:'+currentBook.path,JSON.stringify({chapter:i,updatedAt:new Date().toISOString()}));history.replaceState(null,'','#'+encodeURIComponent(currentBook.path)+'/'+(i+1));scrollTo(0,0)
+}
+function renderChapters(){$('chapterList').innerHTML=currentBook.chapters.map((c,i)=>'<button data-i="'+i+'" class="'+(i===currentChapter?'active':'')+'">'+(i+1)+'. '+escapeHtml(pretty(c.name.replace(/\.(md|markdown|txt)$/i,'').replace(/^\d+[._ -]*/,'')))+'</button>').join('');$('chapterList').querySelectorAll('button').forEach(b=>b.onclick=()=>{closeDrawers();loadChapter(+b.dataset.i)})}
+function closeDrawers(){document.querySelectorAll('.drawer').forEach(x=>x.classList.remove('open'))}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+$('back').onclick=()=>{$('reader').classList.remove('active');$('libraryView').classList.remove('hidden');history.replaceState(null,'','','./')};$('prev').onclick=()=>currentChapter&&loadChapter(currentChapter-1);$('next').onclick=()=>currentChapter<currentBook.chapters.length-1&&loadChapter(currentChapter+1);$('chapters').onclick=()=>{$('chapterDrawer').classList.add('open')};$('prefs').onclick=()=>{$('settingsDrawer').classList.add('open')};$('refresh').onclick=loadLibrary;
+const pref=JSON.parse(localStorage.getItem('novel-reader-prefs')||'{}');$('theme').value=pref.theme||'';$('fontSize').value=pref.fontSize||20;$('lineHeight').value=pref.lineHeight||19;
+function applyPrefs(){document.body.className=$('theme').value;document.documentElement.style.setProperty('--font-size',$('fontSize').value+'px');document.documentElement.style.setProperty('--line-height',($('lineHeight').value/10));localStorage.setItem('novel-reader-prefs',JSON.stringify({theme:$('theme').value,fontSize:$('fontSize').value,lineHeight:$('lineHeight').value}))}
+['theme','fontSize','lineHeight'].forEach(id=>$(id).oninput=applyPrefs);applyPrefs();
+addEventListener('scroll',()=>{if(!$('reader').classList.contains('active'))return;const h=document.documentElement.scrollHeight-innerHeight;$('progress').style.width=(h?Math.min(100,scrollY/h*100):0)+'%'});
+loadLibrary();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token":"0eea133492b342da911e8cc91271e622"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
