@@ -12,6 +12,18 @@
   },
   "stories": [
     {
+      "id": "the-robot-is-listening-stop-feeding-your-secrets-to-ai-2026-01-17",
+      "title": "The Robot is Listening! 🤖👂 Stop Feeding Your Secrets to AI",
+      "author": "Anantha Prakash",
+      "contentText": "We’ve locked our passwords and secured our galleries. But there is a new \"friend\" we talk to every day: AI (ChatGPT, Gemini, Claude).\n\nIt feels like chatting with a smart friend. You ask for help with an email, a coding problem, or even relationship advice. But here is the scary truth: Unless you change the settings, that \"friend\" remembers everything.\n\nIf you paste your company’s confidential sales data or your personal medical report into a public AI chatbot, that information can become part of its \"Training Data.\" Theoretically, it could accidentally reveal that secret to someone else in the future.\n\n🛠 The Specialist Move: The \"Redaction\" Rule\n\nA cybersecurity specialist knows that Public AI is not a Vault. It is a public library.\n\n1. The \"Redact & Replace\" Technique\n\nBefore you paste a document or email into AI to summarize or fix:\n\n• Remove Names: Change \"John Doe\" to \"[Employee]\".\n\n• Remove Numbers: Change \" 1,000,000\" to \"[ Amount]\".\n\n• Remove IDs: Never, ever paste an API Key, Password, or Aadhaar number.\n\nBad Prompt: \"Write an email to my boss, Suresh, telling him I have Diabetes and need leave.\"\n\nSafe Prompt: \"Write an email to my boss telling him I have a medical condition and need leave.\"\n\n2. Turn Off \"Training\" (The Incognito Mode)\n\nMost AI tools have a setting to stop them from learning from your chats.\n\n• ChatGPT: Go to Settings → Data Controls → Turn off \"Chat History & Training\" . Now, your chats are temporary (like Incognito mode).\n\n• Gemini/Google: Check your \"Gemini Apps Activity\" settings in your Google Account.\n\n3. Don't Trust the \"Links\"\n\nAI Agents can sometimes \"hallucinate\" (make things up).\n\n• If an AI says, \"Download this tool to fix your PC,\" and gives a link— BE CAREFUL.\n\n• Hackers can sometimes trick AI into recommending fake or malicious software. Always Google the tool name yourself separately before downloading.\n\n🏆 Today’s Practice Challenge:\n\nGo to your favorite AI tool (ChatGPT/Gemini) right now.\n\nLook at your \"Settings\" or \"Data Controls\" .\n\nFind the button that says \"Improve the model for everyone\" or \"Chat History\" and see if you can turn it OFF for sensitive conversations.\n\nTell us in the comments: Did you know this \"Incognito\" setting existed? 👇",
+      "excerpt": "We’ve locked our passwords and secured our galleries. But there is a new \"friend\" we talk to every day: AI (ChatGPT, Gemini, Claude).\n\nIt feels like chatting with a smart friend. You ask for help with an email, a coding problem, or even relationship advice. Bu…",
+      "sourceUrl": "https://thinkfiveminutes.blogspot.com/2026/01/the-robot-is-listening-stop-feeding.html",
+      "sourceName": "Think Five Minutes",
+      "originalPublishedAt": "2026-01-17T07:00:00.000-08:00",
+      "publishedOn": "2026-10-17",
+      "importedAt": "2026-10-17T15:21:40.695Z"
+    },
+    {
       "id": "pov-your-boomer-grandpa-is-stuck-in-1990-2026-01-17",
       "title": "POV: Your Boomer Grandpa is stuck in 1990",
       "author": "Anantha Prakash",
