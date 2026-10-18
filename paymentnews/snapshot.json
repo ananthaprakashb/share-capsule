@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-18T05:11:00.447262+00:00",
-  "sourceCount": 2,
+  "generatedAt": "2026-10-18T05:11:23.521409+00:00",
+  "sourceCount": 4,
   "feedFailures": [],
   "articles": [
     {
@@ -9,6 +9,96 @@
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261016a.htm",
       "published": "2026-10-16T15:00:00Z",
       "source": "Federal Reserve",
+      "kind": "Primary institution",
+      "topic": "Policy"
+    },
+    {
+      "title": "MoU on information sharing in support of non-bank payment service providers access to central bank operated payment systems",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//pub/pdf/other/ecb.2026-10-16_MoU.en.pdf",
+      "published": "2026-10-16T11:00:00Z",
+      "source": "European Central Bank Publications",
+      "kind": "Primary institution",
+      "topic": "Payments"
+    },
+    {
+      "title": "When less is more: behavioral effects of CBDC holding limits",
+      "summary": "Holding limits are a central design feature of proposed retail central bank digital currencies (CBDC). While such limits mechanically prevent individuals from exceeding a maximum balance, they may also generate behavioral responses whose directions are a priori unclear. We conducted an incentivized ",
+      "url": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp3300~0277bae3af.en.pdf",
+      "published": "2026-10-15T09:00:00Z",
+      "source": "European Central Bank Publications",
+      "kind": "Primary institution",
+      "topic": "Research"
+    },
+    {
+      "title": "The heterogeneous bank lending channel of monetary policy",
+      "summary": "How does heterogeneity in banks’ interest-rate risk exposure shape monetary policy transmission? We develop a quantitative macroeconomic model of heterogeneous banks to answer this question. We establish an irrelevance result: differences in interest-rate risk exposure between fixed- and variable-ra",
+      "url": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp3299~01776adb36.en.pdf",
+      "published": "2026-10-14T09:00:00Z",
+      "source": "European Central Bank Publications",
+      "kind": "Primary institution",
+      "topic": "Policy"
+    },
+    {
+      "title": "What analysts hear and why it matters for monetary policy",
+      "summary": "We introduce a novel measure of how European Central Bank (ECB) monetary policy is interpreted by analysts at major investment banks. We construct a “policy interpretation shock” based on the language used in analysts’ reports covering monetary policy decisions by the ECB’s Governing Council (GovC).",
+      "url": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp3298~06485c09a7.en.pdf",
+      "published": "2026-10-14T09:00:00Z",
+      "source": "European Central Bank Publications",
+      "kind": "Primary institution",
+      "topic": "Policy"
+    },
+    {
+      "title": "Frank Elderson: Ensuring resilience in the face of uncertainty",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261014~e4ca33588e.en.html",
+      "published": "2026-10-14T00:00:00Z",
+      "source": "European Central Bank",
+      "kind": "Primary institution",
+      "topic": "Security"
+    },
+    {
+      "title": "Does shareholder diversification enhance firm investment resilience? Evidence from the euro area",
+      "summary": "This paper develops novel firm-level measures of shareholder geographical concentration and examines how elevated home bias in equity holdings affects investment resilience in the euro area. We combine security-level holdings data from the ECB’s Securities Holdings Statistics (SHS-S) with firm-level",
+      "url": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp3296~db309862b0.en.pdf",
+      "published": "2026-10-07T09:00:00Z",
+      "source": "European Central Bank Publications",
+      "kind": "Primary institution",
+      "topic": "Security"
+    },
+    {
+      "title": "Monitoring banks’ vulnerabilities using stressed depletion indices",
+      "summary": "We introduce two indicators to track the build-up of vulnerabilities in the euro area banking sector on a quarterly basis by leveraging the information collected in EU-wide solvency stress tests. First, we introduce an indicator of conditional capital depletion, the Stress Vulnerability Index (SVI),",
+      "url": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp3295~5961ce0e96.en.pdf",
+      "published": "2026-10-07T09:00:00Z",
+      "source": "European Central Bank Publications",
+      "kind": "Primary institution",
+      "topic": "Research"
+    },
+    {
+      "title": "Frank Elderson: Effective supervision through timely remediation",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261006_1~0df91e4e44.en.html",
+      "published": "2026-10-06T13:00:00Z",
+      "source": "European Central Bank",
+      "kind": "Primary institution",
+      "topic": "Policy"
+    },
+    {
+      "title": "Piero Cipollone: Money in the digital age: digital euro, tokenisation and the role of central banks",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261006~0da978f159.en.html",
+      "published": "2026-10-06T13:00:00Z",
+      "source": "European Central Bank",
+      "kind": "Primary institution",
+      "topic": "Policy"
+    },
+    {
+      "title": "The institutional and operational frameworks for macroprudential policy in the EU",
+      "summary": "After the global financial crisis, all EU countries have developed within their jurisdictions a dedicated macroprudential pillar of financial oversight, in line with EU regulations and recommendations. However, governance structures differ, reflecting country-specific rationales and path-dependent c",
+      "url": "https://www.ecb.europa.eu//pub/pdf/scpops/ecb.op400.en.pdf",
+      "published": "2026-10-06T09:00:00Z",
+      "source": "European Central Bank Publications",
       "kind": "Primary institution",
       "topic": "Policy"
     },
@@ -27,6 +117,33 @@
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261002a.htm",
       "published": "2026-10-02T20:00:00Z",
       "source": "Federal Reserve",
+      "kind": "Primary institution",
+      "topic": "Policy"
+    },
+    {
+      "title": "Boris Vujčić: Resilience, integration and competitiveness: building the future of European banking",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261002_1~419efe18e0.en.html",
+      "published": "2026-10-02T11:30:00Z",
+      "source": "European Central Bank",
+      "kind": "Primary institution",
+      "topic": "Security"
+    },
+    {
+      "title": "Isabel Schnabel: Central banks on-chain",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261001_1~a0be67193b.en.pdf",
+      "published": "2026-10-01T15:30:00Z",
+      "source": "European Central Bank",
+      "kind": "Primary institution",
+      "topic": "Policy"
+    },
+    {
+      "title": "Monetary policy surprises with imperfect information",
+      "summary": "High-frequency interest rate surprises around Fed announcements do not identify monetary policy (MP) shocks if markets are imperfectly informed. Instead, they can also reflect central bank information (CBI) shocks, when the Fed assesses the economy differently, and Fed-response-to-news (FRN) shocks,",
+      "url": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp3292~76d878a0cf.en.pdf",
+      "published": "2026-10-01T09:00:00Z",
+      "source": "European Central Bank Publications",
       "kind": "Primary institution",
       "topic": "Policy"
     },
