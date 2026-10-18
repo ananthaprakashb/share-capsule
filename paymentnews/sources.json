@@ -22,6 +22,28 @@
         "www.federalreserve.gov",
         "federalreserve.gov"
       ]
+    },
+    {
+      "id": "ecb",
+      "name": "European Central Bank",
+      "kind": "Primary institution",
+      "topic": "Policy",
+      "feed": "https://www.ecb.europa.eu/rss/press.html",
+      "allowedHosts": [
+        "www.ecb.europa.eu",
+        "ecb.europa.eu"
+      ]
+    },
+    {
+      "id": "ecb-research",
+      "name": "European Central Bank Publications",
+      "kind": "Primary institution",
+      "topic": "Research",
+      "feed": "https://www.ecb.europa.eu/rss/pub.html",
+      "allowedHosts": [
+        "www.ecb.europa.eu",
+        "ecb.europa.eu"
+      ]
     }
   ]
 }
