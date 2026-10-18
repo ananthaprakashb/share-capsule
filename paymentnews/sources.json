@@ -1,0 +1,27 @@
+{
+  "policy": "Official institutional domains only. Feeds may include general policy and research items; filter by relevant payment topics. Social accounts need separate manual verification.",
+  "sources": [
+    {
+      "id": "bis",
+      "name": "Bank for International Settlements",
+      "kind": "Primary institution",
+      "topic": "Research",
+      "feed": "https://www.bis.org/doclist/all_pressrels.rss",
+      "allowedHosts": [
+        "bis.org",
+        "www.bis.org"
+      ]
+    },
+    {
+      "id": "fed",
+      "name": "Federal Reserve",
+      "kind": "Primary institution",
+      "topic": "Policy",
+      "feed": "https://www.federalreserve.gov/feeds/press_all.xml",
+      "allowedHosts": [
+        "www.federalreserve.gov",
+        "federalreserve.gov"
+      ]
+    }
+  ]
+}
