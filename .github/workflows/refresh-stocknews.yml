@@ -1,0 +1,33 @@
+name: Refresh stock news
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "stocknews/**"
+      - ".github/workflows/refresh-stocknews.yml"
+  schedule:
+    - cron: "29 */6 * * *"
+permissions:
+  contents: write
+concurrency:
+  group: refresh-stock-news
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Collect original regulator publications
+        run: python stocknews/refresh.py
+      - name: Commit updated snapshot
+        run: |
+          if git diff --quiet -- stocknews/snapshot.json; then exit 0; fi
+          git config user.name share-capsule-bot
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stocknews/snapshot.json
+          git commit -m "Refresh stock news source snapshot"
+          git push
