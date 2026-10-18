@@ -1,6 +1,10 @@
 name: Refresh payment news
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - "paymentnews/**"
+      - ".github/workflows/refresh-paymentnews.yml"
   schedule:
     - cron: "17 */6 * * *"
 permissions:
