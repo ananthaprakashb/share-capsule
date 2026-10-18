@@ -1,0 +1,27 @@
+{
+  "policy": "Official U.S. securities regulator and central-bank feeds only. Source authenticity is not verification of investment claims; no real-time pricing, analyst ratings or investment advice.",
+  "sources": [
+    {
+      "id": "sec",
+      "name": "U.S. Securities and Exchange Commission",
+      "kind": "Regulatory release",
+      "topic": "Markets",
+      "feed": "https://www.sec.gov/news/pressreleases.rss",
+      "allowedHosts": [
+        "www.sec.gov",
+        "sec.gov"
+      ]
+    },
+    {
+      "id": "fed",
+      "name": "Federal Reserve",
+      "kind": "Central bank publication",
+      "topic": "Policy",
+      "feed": "https://www.federalreserve.gov/feeds/press_all.xml",
+      "allowedHosts": [
+        "www.federalreserve.gov",
+        "federalreserve.gov"
+      ]
+    }
+  ]
+}
