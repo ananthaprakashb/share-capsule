@@ -1,8 +1,17 @@
 {
-  "generatedAt": "2026-10-19T13:47:22.205441+00:00",
+  "generatedAt": "2026-10-19T22:33:05.431178+00:00",
   "sourceCount": 2,
   "feedFailures": [],
   "articles": [
+    {
+      "title": "SEC Announces Roundtable on Machine-Understandable Data in the Age of Super Intelligence",
+      "summary": "The Securities and Exchange Commission announced today that it will host a roundtable on November 9, 2026, to discuss the use of machine-understandable data and Super Intelligence (SI) and related risks and costs.“In the age of SI, high-quality…",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-106-sec-announces-roundtable-machine-understandable-data-age-super-intelligence",
+      "published": "2026-10-19T17:19:43Z",
+      "source": "U.S. Securities and Exchange Commission",
+      "kind": "Regulatory release",
+      "topic": "Markets"
+    },
     {
       "title": "SEC Small Business Advisory Committee to Discuss IPO Modernization and Regulation Crowdfunding",
       "summary": "The Securities and Exchange Commission’s Small Business Capital Formation Advisory Committee announced that it will hold a meeting on Tuesday, October 27, 2026, at 10 a.m. to continue discussing IPO modernization and explore potential policy…",
@@ -245,15 +254,6 @@
       "source": "U.S. Securities and Exchange Commission",
       "kind": "Regulatory release",
       "topic": "Security"
-    },
-    {
-      "title": "SEC Proposes to Modernize Rules for Registered Transfer Agents",
-      "summary": "The Securities and Exchange Commission today proposed to update the rules and forms that apply to registered transfer agents.Transfer agents are a key component of the national clearance and settlement system. Transfer agents now perform a more diverse…",
-      "url": "https://www.sec.gov/newsroom/press-releases/2026-81-sec-proposes-modernize-rules-registered-transfer-agents",
-      "published": "2026-09-01T14:57:00Z",
-      "source": "U.S. Securities and Exchange Commission",
-      "kind": "Regulatory release",
-      "topic": "Markets"
     }
   ]
 }
