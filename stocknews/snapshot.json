@@ -1,8 +1,26 @@
 {
-  "generatedAt": "2026-10-20T11:56:44.247321+00:00",
+  "generatedAt": "2026-10-20T17:25:22.322778+00:00",
   "sourceCount": 2,
   "feedFailures": [],
   "articles": [
+    {
+      "title": "SEC and AMF Announce Supervisory MOU To Enhance Cooperation for Investment Advisers and Investment Service Providers",
+      "summary": "The U.S. Securities and Exchange Commission (SEC) and the French Autorité des Marchés Financiers (AMF) announced that they have entered into a Memorandum of Understanding (MOU) designed to facilitate consultation and information-sharing in the…",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-108-sec-amf-announce-supervisory-mou-enhance-cooperation-investment-advisers-investment-service",
+      "published": "2026-10-20T13:25:16Z",
+      "source": "U.S. Securities and Exchange Commission",
+      "kind": "Regulatory release",
+      "topic": "Markets"
+    },
+    {
+      "title": "SEC, FSA Hold Autumn Financial Regulatory Dialogue",
+      "summary": "The U.S. Securities and Exchange Commission (SEC) and the Financial Services Agency of Japan (FSA) convened the Autumn SEC-FSA Financial Regulatory Dialogue in Tokyo on Oct. 19, 2026.The SEC–FSA Dialogue builds upon longstanding efforts between the two…",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-107-sec-fsa-hold-autumn-financial-regulatory-dialogue",
+      "published": "2026-10-20T12:51:00Z",
+      "source": "U.S. Securities and Exchange Commission",
+      "kind": "Regulatory release",
+      "topic": "Markets"
+    },
     {
       "title": "SEC Announces Roundtable on Machine-Understandable Data in the Age of Super Intelligence",
       "summary": "The Securities and Exchange Commission announced today that it will host a roundtable on November 9, 2026, to discuss the use of machine-understandable data and Super Intelligence (SI) and related risks and costs.“In the age of SI, high-quality…",
@@ -236,24 +254,6 @@
       "source": "U.S. Securities and Exchange Commission",
       "kind": "Regulatory release",
       "topic": "AI"
-    },
-    {
-      "title": "SEC Announces Agenda and Panelists for Roundtable on Preparations for 24-Hour Trading",
-      "summary": "The Securities and Exchange Commission today announced the agenda and panelists for its Sept. 17, 2026, roundtable on preparations for 24-hour trading.The roundtable will be held at the SEC’s headquarters at 100 F Street, N.E., Washington, D.C., from 10…",
-      "url": "https://www.sec.gov/newsroom/press-releases/2026-83-sec-announces-agenda-panelists-roundtable-preparations-24-hour-trading",
-      "published": "2026-09-01T19:17:39Z",
-      "source": "U.S. Securities and Exchange Commission",
-      "kind": "Regulatory release",
-      "topic": "Markets"
-    },
-    {
-      "title": "SEC Charges San Francisco Bay Area Private Fund Executives with Multimillion Dollar Ponzi-Like Scheme",
-      "summary": "The Securities and Exchange Commission today charged Mark D. Hanf, the former CEO of Novato, California-based Pacific Private Money Group LLC (PPMG), and Hoai-Nam Chu Phan, the former COO of a PPMG subsidiary, with orchestrating an offering fraud that…",
-      "url": "https://www.sec.gov/newsroom/press-releases/2026-82-sec-charges-san-francisco-bay-area-private-fund-executives-multimillion-dollar-ponzi-scheme",
-      "published": "2026-09-01T17:52:32Z",
-      "source": "U.S. Securities and Exchange Commission",
-      "kind": "Regulatory release",
-      "topic": "Security"
     }
   ]
 }
