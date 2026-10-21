@@ -1,8 +1,17 @@
 {
-  "generatedAt": "2026-10-20T21:41:54.889517+00:00",
+  "generatedAt": "2026-10-21T04:57:24.053559+00:00",
   "sourceCount": 4,
   "feedFailures": [],
   "articles": [
+    {
+      "title": "Philip R. Lane: Euro liquidity lines and the international monetary system",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261021~401d6c4b70.en.html",
+      "published": "2026-10-21T04:15:00Z",
+      "source": "European Central Bank",
+      "kind": "Primary institution",
+      "topic": "Policy"
+    },
     {
       "title": "Headwind or tailwind? How banks interpret borrowers’ AI exposure",
       "summary": "General-purpose technologies create large opportunities but make their distribution across firms difficult to assess in real time. We use banks as interpreters of the rise of generative AI by studying lender-specific probability-of-default (PD) estimates for private firms in four large euro-area eco",
@@ -155,15 +164,6 @@
       "source": "European Central Bank",
       "kind": "Primary institution",
       "topic": "Security"
-    },
-    {
-      "title": "Isabel Schnabel: Central banks on-chain",
-      "summary": "",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261001_1~a0be67193b.en.pdf",
-      "published": "2026-10-01T15:30:00Z",
-      "source": "European Central Bank",
-      "kind": "Primary institution",
-      "topic": "Policy"
     },
     {
       "title": "Agencies publish resolution plan feedback letters for 15 banking organizations",
