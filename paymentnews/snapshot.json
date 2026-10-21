@@ -1,8 +1,17 @@
 {
-  "generatedAt": "2026-10-21T04:57:24.053559+00:00",
+  "generatedAt": "2026-10-21T11:58:59.267136+00:00",
   "sourceCount": 4,
   "feedFailures": [],
   "articles": [
+    {
+      "title": "Piero Cipollone: Pontes and Appia: unlocking opportunities for banks",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261021_1~d190f2c349.en.pdf",
+      "published": "2026-10-21T08:00:00Z",
+      "source": "European Central Bank",
+      "kind": "Primary institution",
+      "topic": "Policy"
+    },
     {
       "title": "Philip R. Lane: Euro liquidity lines and the international monetary system",
       "summary": "",
@@ -155,15 +164,6 @@
       "source": "Federal Reserve",
       "kind": "Primary institution",
       "topic": "Policy"
-    },
-    {
-      "title": "Boris Vujčić: Resilience, integration and competitiveness: building the future of European banking",
-      "summary": "",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261002_1~419efe18e0.en.html",
-      "published": "2026-10-02T11:30:00Z",
-      "source": "European Central Bank",
-      "kind": "Primary institution",
-      "topic": "Security"
     },
     {
       "title": "Agencies publish resolution plan feedback letters for 15 banking organizations",
