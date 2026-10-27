@@ -1,8 +1,26 @@
 {
-  "generatedAt": "2026-10-27T05:13:20.709826+00:00",
+  "generatedAt": "2026-10-27T12:21:18.169567+00:00",
   "sourceCount": 4,
   "feedFailures": [],
   "articles": [
+    {
+      "title": "The euro area bank lending survey - Third quarter of 2026",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//stats/ecb_surveys/bank_lending_survey/html/ecb.blssurvey2026q3~c6a731e213.en.html",
+      "published": "2026-10-27T09:00:00Z",
+      "source": "European Central Bank Publications",
+      "kind": "Primary institution",
+      "topic": "Research"
+    },
+    {
+      "title": "October 2026 euro area bank lending survey",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261027~506ef03145.en.html",
+      "published": "2026-10-27T00:00:00Z",
+      "source": "European Central Bank",
+      "kind": "Primary institution",
+      "topic": "Policy"
+    },
     {
       "title": "Frank Elderson: Taking action for nature – investing in economic resilience and prosperity",
       "summary": "",
@@ -128,15 +146,6 @@
       "source": "European Central Bank Publications",
       "kind": "Primary institution",
       "topic": "Research"
-    },
-    {
-      "title": "Frank Elderson: Effective supervision through timely remediation",
-      "summary": "",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261006_1~0df91e4e44.en.html",
-      "published": "2026-10-06T13:00:00Z",
-      "source": "European Central Bank",
-      "kind": "Primary institution",
-      "topic": "Policy"
     },
     {
       "title": "The institutional and operational frameworks for macroprudential policy in the EU",
