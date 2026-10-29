@@ -1,8 +1,17 @@
 {
-  "generatedAt": "2026-10-29T13:29:58.377231+00:00",
+  "generatedAt": "2026-10-29T22:54:10.807612+00:00",
   "sourceCount": 2,
   "feedFailures": [],
   "articles": [
+    {
+      "title": "Two Entities Charged in $130 Million Fraud Scheme That Used False SEC Filings to Boost Investor Confidence",
+      "summary": "The Securities and Exchange Commission today charged two foreign-operated, Colorado-incorporated entities, BG Wealth Sharing Ltd and DSJ Exchange Pty Ltd, for orchestrating a fraud scheme that used false SEC filings to boost confidence in their…",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-110-two-entities-charged-130-million-fraud-scheme-used-false-sec-filings-boost-investor-confidence",
+      "published": "2026-10-29T16:42:37Z",
+      "source": "U.S. Securities and Exchange Commission",
+      "kind": "Regulatory release",
+      "topic": "Security"
+    },
     {
       "title": "SEC Announces Fiscal Year 2027 Examination Priorities",
       "summary": "The Securities and Exchange Commission today announced the Division of Examinations’ Fiscal Year 2027 examination priorities. The annual report identifies key areas of focus as the Division carries out its mission to promote compliance, prevent fraud,…",
@@ -202,15 +211,6 @@
       "topic": "Markets"
     },
     {
-      "title": "Federal Reserve Board and Federal Open Market Committee release economic projections from the September 15-16 FOMC meeting",
-      "summary": "Federal Reserve Board and Federal Open Market Committee release economic projections from the September 15-16 FOMC meeting",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916b.htm",
-      "published": "2026-09-16T18:00:00Z",
-      "source": "Federal Reserve",
-      "kind": "Central bank publication",
-      "topic": "Markets"
-    },
-    {
       "title": "SEC Proposes Rescission of Shareholder Proposal Rule and Reforms to Proxy Solicitation Process",
       "summary": "The Securities and Exchange Commission today proposed to rescind Rule 14a-8 under the Securities Exchange Act of 1934, which exceeds the scope of the Commission's statutory authority and intrudes into matters of state law.The Commission outlined…",
       "url": "https://www.sec.gov/newsroom/press-releases/2026-89-sec-proposes-rescission-shareholder-proposal-rule-reforms-proxy-solicitation-process",
@@ -242,15 +242,6 @@
       "summary": "The Securities and Exchange Commission today charged Ernest Ossei Boateng and two New Jersey-based companies he controls, Intercontinental Wealth Network LLC and I Wealth Network LP, for allegedly raising approximately $16 million from more than 200…",
       "url": "https://www.sec.gov/newsroom/press-releases/2026-86-sec-charges-founder-his-two-new-jersey-based-companies-alleged-16-million-ponzi-scheme",
       "published": "2026-09-10T17:45:22Z",
-      "source": "U.S. Securities and Exchange Commission",
-      "kind": "Regulatory release",
-      "topic": "Markets"
-    },
-    {
-      "title": "SEC Proposes Rescission of Political Contribution Rule for Investment Advisers",
-      "summary": "The Securities and Exchange Commission today issued a proposal to rescind its “pay-to-play” rule that prohibits investment advisers from providing compensated investment advisory services to a government client for two years…",
-      "url": "https://www.sec.gov/newsroom/press-releases/2026-85-sec-proposes-rescission-political-contribution-rule-investment-advisers",
-      "published": "2026-09-03T20:30:00Z",
       "source": "U.S. Securities and Exchange Commission",
       "kind": "Regulatory release",
       "topic": "Markets"
