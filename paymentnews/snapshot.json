@@ -1,8 +1,26 @@
 {
-  "generatedAt": "2026-10-29T13:12:05.892129+00:00",
+  "generatedAt": "2026-10-29T22:49:48.173911+00:00",
   "sourceCount": 4,
   "feedFailures": [],
   "articles": [
+    {
+      "title": "Federal Reserve Board announces approval of application by The Bank of Nova Scotia",
+      "summary": "Federal Reserve Board announces approval of application by The Bank of Nova Scotia",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261029a.htm",
+      "published": "2026-10-29T20:30:00Z",
+      "source": "Federal Reserve",
+      "kind": "Primary institution",
+      "topic": "Policy"
+    },
+    {
+      "title": "Piero Cipollone: Next-day securities settlement, tokenisation and the transformation of Europe’s financial infrastructure",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261029~e9b57c3495.en.html",
+      "published": "2026-10-29T15:50:00Z",
+      "source": "European Central Bank",
+      "kind": "Primary institution",
+      "topic": "Payments"
+    },
     {
       "title": "The euro area bank lending survey - Third quarter of 2026",
       "summary": "",
