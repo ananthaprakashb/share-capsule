@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T05:56:25.172384+00:00",
+  "generatedAt": "2026-10-30T13:04:48.974256+00:00",
   "sourceCount": 4,
   "feedFailures": [],
   "articles": [
@@ -139,15 +139,6 @@
       "topic": "Policy"
     },
     {
-      "title": "Frank Elderson: Ensuring resilience in the face of uncertainty",
-      "summary": "",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261014~e4ca33588e.en.html",
-      "published": "2026-10-14T00:00:00Z",
-      "source": "European Central Bank",
-      "kind": "Primary institution",
-      "topic": "Security"
-    },
-    {
       "title": "Does shareholder diversification enhance firm investment resilience? Evidence from the euro area",
       "summary": "This paper develops novel firm-level measures of shareholder geographical concentration and examines how elevated home bias in equity holdings affects investment resilience in the euro area. We combine security-level holdings data from the ECB’s Securities Holdings Statistics (SHS-S) with firm-level",
       "url": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp3296~db309862b0.en.pdf",
@@ -155,24 +146,6 @@
       "source": "European Central Bank Publications",
       "kind": "Primary institution",
       "topic": "Security"
-    },
-    {
-      "title": "Monitoring banks’ vulnerabilities using stressed depletion indices",
-      "summary": "We introduce two indicators to track the build-up of vulnerabilities in the euro area banking sector on a quarterly basis by leveraging the information collected in EU-wide solvency stress tests. First, we introduce an indicator of conditional capital depletion, the Stress Vulnerability Index (SVI),",
-      "url": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp3295~5961ce0e96.en.pdf",
-      "published": "2026-10-07T09:00:00Z",
-      "source": "European Central Bank Publications",
-      "kind": "Primary institution",
-      "topic": "Research"
-    },
-    {
-      "title": "The institutional and operational frameworks for macroprudential policy in the EU",
-      "summary": "After the global financial crisis, all EU countries have developed within their jurisdictions a dedicated macroprudential pillar of financial oversight, in line with EU regulations and recommendations. However, governance structures differ, reflecting country-specific rationales and path-dependent c",
-      "url": "https://www.ecb.europa.eu//pub/pdf/scpops/ecb.op400.en.pdf",
-      "published": "2026-10-06T09:00:00Z",
-      "source": "European Central Bank Publications",
-      "kind": "Primary institution",
-      "topic": "Policy"
     },
     {
       "title": "Federal Reserve Board announces approval of application by Isabella Bank Corporation",
