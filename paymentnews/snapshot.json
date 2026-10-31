@@ -1,7 +1,9 @@
 {
-  "generatedAt": "2026-10-31T12:43:11.583214+00:00",
-  "sourceCount": 4,
-  "feedFailures": [],
+  "generatedAt": "2026-10-31T21:41:09.923669+00:00",
+  "sourceCount": 3,
+  "feedFailures": [
+    "fed"
+  ],
   "articles": [
     {
       "title": "Federal Reserve Board announces approval of application by The Bank of Nova Scotia",
