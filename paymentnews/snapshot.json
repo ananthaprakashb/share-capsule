@@ -1,8 +1,26 @@
 {
-  "generatedAt": "2026-11-02T06:18:52.752383+00:00",
+  "generatedAt": "2026-11-02T21:45:12.341765+00:00",
   "sourceCount": 4,
   "feedFailures": [],
   "articles": [
+    {
+      "title": "ECB perception of non-banks: a machine learning-based approach",
+      "summary": "This paper studies the European Central Bank’s (ECB) perception of non-bank financial intermediaries (NBFIs) and how this perception is publicly communicated. We construct a perception index based on ECB speeches over the period 1998–2025. Sentiment in references to non-banks is classified by a larg",
+      "url": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp3304~9082a5f181.en.pdf",
+      "published": "2026-11-02T11:00:00Z",
+      "source": "European Central Bank Publications",
+      "kind": "Primary institution",
+      "topic": "AI"
+    },
+    {
+      "title": "Boris Vujčić: Integrated, open and resilient: Europe’s strengths in a fragmenting world",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp.261102~70003226e9.en.html",
+      "published": "2026-11-02T09:30:00Z",
+      "source": "European Central Bank",
+      "kind": "Primary institution",
+      "topic": "Security"
+    },
     {
       "title": "Federal Reserve Board announces approval of application by The Bank of Nova Scotia",
       "summary": "Federal Reserve Board announces approval of application by The Bank of Nova Scotia",
@@ -128,15 +146,6 @@
       "source": "European Central Bank Publications",
       "kind": "Primary institution",
       "topic": "Policy"
-    },
-    {
-      "title": "Does shareholder diversification enhance firm investment resilience? Evidence from the euro area",
-      "summary": "This paper develops novel firm-level measures of shareholder geographical concentration and examines how elevated home bias in equity holdings affects investment resilience in the euro area. We combine security-level holdings data from the ECB’s Securities Holdings Statistics (SHS-S) with firm-level",
-      "url": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp3296~db309862b0.en.pdf",
-      "published": "2026-10-07T09:00:00Z",
-      "source": "European Central Bank Publications",
-      "kind": "Primary institution",
-      "topic": "Security"
     },
     {
       "title": "Federal Reserve Board announces approval of application by Isabella Bank Corporation",
