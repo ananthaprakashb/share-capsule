@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T06:56:37.963171+00:00",
+  "generatedAt": "2026-11-05T20:02:10.071203+00:00",
   "sourceCount": 4,
   "feedFailures": [],
   "articles": [
@@ -65,15 +65,6 @@
       "source": "European Central Bank",
       "kind": "Primary institution",
       "topic": "Security"
-    },
-    {
-      "title": "Piero Cipollone: Pontes and Appia: unlocking opportunities for banks",
-      "summary": "",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261021_1~d190f2c349.en.pdf",
-      "published": "2026-10-21T08:00:00Z",
-      "source": "European Central Bank",
-      "kind": "Primary institution",
-      "topic": "Policy"
     },
     {
       "title": "Headwind or tailwind? How banks interpret borrowers’ AI exposure",
