@@ -1,8 +1,17 @@
 {
-  "generatedAt": "2026-11-06T06:56:03.127043+00:00",
+  "generatedAt": "2026-11-06T19:28:55.923975+00:00",
   "sourceCount": 4,
   "feedFailures": [],
   "articles": [
+    {
+      "title": "ECB publishes consolidated banking data for end-June 2026",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261106~356f2fc73a.en.html",
+      "published": "2026-11-06T09:00:00Z",
+      "source": "European Central Bank",
+      "kind": "Primary institution",
+      "topic": "Policy"
+    },
     {
       "title": "ECB perception of non-banks: a machine learning-based approach",
       "summary": "This paper studies the European Central Bank’s (ECB) perception of non-bank financial intermediaries (NBFIs) and how this perception is publicly communicated. We construct a perception index based on ECB speeches over the period 1998–2025. Sentiment in references to non-banks is classified by a larg",
@@ -101,15 +110,6 @@
       "source": "European Central Bank Publications",
       "kind": "Primary institution",
       "topic": "Payments"
-    },
-    {
-      "title": "When less is more: behavioral effects of CBDC holding limits",
-      "summary": "Holding limits are a central design feature of proposed retail central bank digital currencies (CBDC). While such limits mechanically prevent individuals from exceeding a maximum balance, they may also generate behavioral responses whose directions are a priori unclear. We conducted an incentivized ",
-      "url": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp3300~0277bae3af.en.pdf",
-      "published": "2026-10-15T09:00:00Z",
-      "source": "European Central Bank Publications",
-      "kind": "Primary institution",
-      "topic": "Research"
     },
     {
       "title": "Federal Reserve Board announces approval of application by Isabella Bank Corporation",
