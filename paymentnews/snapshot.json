@@ -1,9 +1,7 @@
 {
-  "generatedAt": "2026-11-08T22:13:29.173852+00:00",
-  "sourceCount": 3,
-  "feedFailures": [
-    "fed"
-  ],
+  "generatedAt": "2026-11-09T06:46:19.441417+00:00",
+  "sourceCount": 4,
+  "feedFailures": [],
   "articles": [
     {
       "title": "ECB publishes consolidated banking data for end-June 2026",
