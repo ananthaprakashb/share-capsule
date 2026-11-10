@@ -1,8 +1,26 @@
 {
-  "generatedAt": "2026-11-10T07:26:39.349787+00:00",
+  "generatedAt": "2026-11-10T19:49:27.107258+00:00",
   "sourceCount": 4,
   "feedFailures": [],
   "articles": [
+    {
+      "title": "Bank competitiveness and its role for monetary policy",
+      "summary": "Banks are at the heart of the EU economy, making them a key channel for monetary policy transmission. However, institutional factors continue to lead to fragmentation in the sector, constraining scale, efficiency and competitiveness. As shown by Altavilla et al. (2024), more competitive banks are mo",
+      "url": "https://www.ecb.europa.eu//press/economic-bulletin/focus/2026/html/ecb.ebbox202607_07~5cefb128e2.en.html",
+      "published": "2026-11-10T13:00:00Z",
+      "source": "European Central Bank Publications",
+      "kind": "Primary institution",
+      "topic": "Policy"
+    },
+    {
+      "title": "Industrial policy in the EU: new opportunities, old risks?",
+      "summary": "Motivated by the renewed use of industrial policy, this article examines the conditions under which sector-specific interventions can support productivity, competitiveness, and economic resilience. While industrial policy may be justified where market failures or dependencies are well-identified, se",
+      "url": "https://www.ecb.europa.eu//press/economic-bulletin/articles/2026/html/ecb.ebart202607_01~3ac9592e8b.en.html",
+      "published": "2026-11-10T09:00:00Z",
+      "source": "European Central Bank Publications",
+      "kind": "Primary institution",
+      "topic": "Security"
+    },
     {
       "title": "Unlocking supervisory effectiveness in credit risk: insights from the ECB’s supervisory findings and measures",
       "summary": "This paper provides an assessment of supervisory effectiveness in credit risk using confidential data from ECB Banking Supervision. The analysis covers 8,106 supervisory measures issued and closed between 2016 and 2025. A central contribution is the construction of a measure level indicator of super",
@@ -62,24 +80,6 @@
       "summary": "",
       "url": "https://www.ecb.europa.eu//stats/ecb_surveys/bank_lending_survey/html/ecb.blssurvey2026q3~c6a731e213.en.html",
       "published": "2026-10-27T09:00:00Z",
-      "source": "European Central Bank Publications",
-      "kind": "Primary institution",
-      "topic": "Research"
-    },
-    {
-      "title": "October 2026 euro area bank lending survey",
-      "summary": "",
-      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261027~506ef03145.en.html",
-      "published": "2026-10-27T00:00:00Z",
-      "source": "European Central Bank",
-      "kind": "Primary institution",
-      "topic": "Policy"
-    },
-    {
-      "title": "Headwind or tailwind? How banks interpret borrowers’ AI exposure",
-      "summary": "General-purpose technologies create large opportunities but make their distribution across firms difficult to assess in real time. We use banks as interpreters of the rise of generative AI by studying lender-specific probability-of-default (PD) estimates for private firms in four large euro-area eco",
-      "url": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp3302~7ff8a286bc.en.pdf",
-      "published": "2026-10-19T09:00:00Z",
       "source": "European Central Bank Publications",
       "kind": "Primary institution",
       "topic": "Research"
