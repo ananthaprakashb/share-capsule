@@ -1,8 +1,26 @@
 {
-  "generatedAt": "2026-11-11T06:37:03.816595+00:00",
+  "generatedAt": "2026-11-11T19:40:58.440707+00:00",
   "sourceCount": 4,
   "feedFailures": [],
   "articles": [
+    {
+      "title": "Who holds stablecoins? New evidence on euro area consumer holdings",
+      "summary": "This box looks at whether stablecoins are on the rise in the euro area and what the implications are for financial stability, using data from the ECB’s Consumer Expectations Survey. It highlights the transactional nature of stablecoins and the risks posed by an increase in consumer holdings. While c",
+      "url": "https://www.ecb.europa.eu//press/economic-bulletin/focus/2026/html/ecb.ebbox202607_08~f4ddf0117c.en.html",
+      "published": "2026-11-11T13:00:00Z",
+      "source": "European Central Bank Publications",
+      "kind": "Primary institution",
+      "topic": "Research"
+    },
+    {
+      "title": "The real and financial effects of local corporate tax increases: evidence from linked firm–bank data",
+      "summary": "We study how local corporate tax increases affect firms’ financing and real activity. In Portugal, municipalities independently set a surtax on corporate income, generating plausibly exogenous variation across space and time. We link the universe of corporate balance sheets and profit-and-loss state",
+      "url": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp3309~4e8af93b3a.en.pdf",
+      "published": "2026-11-11T10:00:00Z",
+      "source": "European Central Bank Publications",
+      "kind": "Primary institution",
+      "topic": "Research"
+    },
     {
       "title": "Bank competitiveness and its role for monetary policy",
       "summary": "Banks are at the heart of the EU economy, making them a key channel for monetary policy transmission. However, institutional factors continue to lead to fragmentation in the sector, constraining scale, efficiency and competitiveness. As shown by Altavilla et al. (2024), more competitive banks are mo",
@@ -74,15 +92,6 @@
       "source": "European Central Bank",
       "kind": "Primary institution",
       "topic": "Payments"
-    },
-    {
-      "title": "The euro area bank lending survey - Third quarter of 2026",
-      "summary": "",
-      "url": "https://www.ecb.europa.eu//stats/ecb_surveys/bank_lending_survey/html/ecb.blssurvey2026q3~c6a731e213.en.html",
-      "published": "2026-10-27T09:00:00Z",
-      "source": "European Central Bank Publications",
-      "kind": "Primary institution",
-      "topic": "Research"
     },
     {
       "title": "Federal Reserve Board announces termination of enforcement actions with Gardner Bancshares, Inc. and Small Business Bank",
