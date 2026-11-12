@@ -1,8 +1,35 @@
 {
-  "generatedAt": "2026-11-12T07:20:17.222497+00:00",
+  "generatedAt": "2026-11-12T20:01:44.381964+00:00",
   "sourceCount": 4,
   "feedFailures": [],
   "articles": [
+    {
+      "title": "Federal Reserve Board announces pricing, effective January 1, 2027, for payment services the Federal Reserve Banks provide to banks and credit unions, and changes to streamline and adjust their check ",
+      "summary": "Federal Reserve Board announces pricing, effective January 1, 2027, for payment services the Federal Reserve Banks provide to banks and credit unions, and changes to streamline and adjust their check services",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261112a.htm",
+      "published": "2026-11-12T18:30:00Z",
+      "source": "Federal Reserve",
+      "kind": "Primary institution",
+      "topic": "Payments"
+    },
+    {
+      "title": "Federal Reserve Board issues enforcement action with former employee of United Community Bank",
+      "summary": "Federal Reserve Board issues enforcement action with former employee of United Community Bank",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261112a.htm",
+      "published": "2026-11-12T16:00:00Z",
+      "source": "Federal Reserve",
+      "kind": "Primary institution",
+      "topic": "Policy"
+    },
+    {
+      "title": "Artificial intelligence and European firms: the cost of market-based financing",
+      "summary": "This box examines how exposure to artificial intelligence (AI) is reflected in the market-based financing conditions of European firms. Using a novel firm-level measure of AI exposure derived from the earnings call transcripts of STOXX Europe 600 constituents, we show that AI exposure extends beyond",
+      "url": "https://www.ecb.europa.eu//press/economic-bulletin/focus/2026/html/ecb.ebbox202607_06~a36e367caf.en.html",
+      "published": "2026-11-12T09:00:00Z",
+      "source": "European Central Bank Publications",
+      "kind": "Primary institution",
+      "topic": "AI"
+    },
     {
       "title": "Who holds stablecoins? New evidence on euro area consumer holdings",
       "summary": "This box looks at whether stablecoins are on the rise in the euro area and what the implications are for financial stability, using data from the ECB’s Consumer Expectations Survey. It highlights the transactional nature of stablecoins and the risks posed by an increase in consumer holdings. While c",
@@ -56,15 +83,6 @@
       "source": "European Central Bank",
       "kind": "Primary institution",
       "topic": "Policy"
-    },
-    {
-      "title": "ECB perception of non-banks: a machine learning-based approach",
-      "summary": "This paper studies the European Central Bank’s (ECB) perception of non-bank financial intermediaries (NBFIs) and how this perception is publicly communicated. We construct a perception index based on ECB speeches over the period 1998–2025. Sentiment in references to non-banks is classified by a larg",
-      "url": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp3304~9082a5f181.en.pdf",
-      "published": "2026-11-02T11:00:00Z",
-      "source": "European Central Bank Publications",
-      "kind": "Primary institution",
-      "topic": "AI"
     },
     {
       "title": "Boris Vujčić: Integrated, open and resilient: Europe’s strengths in a fragmenting world",
@@ -137,24 +155,6 @@
       "source": "Federal Reserve",
       "kind": "Primary institution",
       "topic": "Payments"
-    },
-    {
-      "title": "Federal Reserve Board issues enforcement action with former employee of Sandy Spring Bank",
-      "summary": "Federal Reserve Board issues enforcement action with former employee of Sandy Spring Bank",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260924a.htm",
-      "published": "2026-09-24T15:00:00Z",
-      "source": "Federal Reserve",
-      "kind": "Primary institution",
-      "topic": "Policy"
-    },
-    {
-      "title": "Federal Reserve Board issues enforcement actions with former employee of Northstar Bank, former employee of American Express Travel Related Services Company, Inc., and former employee of Regions Bank",
-      "summary": "Federal Reserve Board issues enforcement actions with former employee of Northstar Bank, former employee of American Express Travel Related Services Company, Inc., and former employee of Regions Bank",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260918a.htm",
-      "published": "2026-09-18T15:00:00Z",
-      "source": "Federal Reserve",
-      "kind": "Primary institution",
-      "topic": "Policy"
     }
   ]
 }
