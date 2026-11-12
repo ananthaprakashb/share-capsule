@@ -1,8 +1,17 @@
 {
-  "generatedAt": "2026-11-12T07:31:08.852774+00:00",
+  "generatedAt": "2026-11-12T20:15:53.548508+00:00",
   "sourceCount": 2,
   "feedFailures": [],
   "articles": [
+    {
+      "title": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
+      "summary": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261112a.htm",
+      "published": "2026-11-12T17:45:00Z",
+      "source": "Federal Reserve",
+      "kind": "Central bank publication",
+      "topic": "Markets"
+    },
     {
       "title": "SEC Announces Enforcement Annual Results for Fiscal Year 2026",
       "summary": "The Securities and Exchange Commission today provided its enforcement results for the past fiscal year which ended September 30. Throughout the fiscal year, the SEC’s Division of Enforcement remained focused on its fundamental responsibility: protecting…",
