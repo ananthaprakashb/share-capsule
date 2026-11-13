@@ -1,8 +1,17 @@
 {
-  "generatedAt": "2026-11-13T07:02:20.205492+00:00",
+  "generatedAt": "2026-11-13T19:56:01.510060+00:00",
   "sourceCount": 2,
   "feedFailures": [],
   "articles": [
+    {
+      "title": "SEC Proposes Executive and Director Compensation Disclosure Reforms",
+      "summary": "The Securities and Exchange Commission today proposed rule amendments to make its executive and director compensation disclosure requirements more principles-based and materiality-driven, providing investors with clearer, more concise, and less complex…",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-114-sec-proposes-executive-director-compensation-disclosure-reforms",
+      "published": "2026-11-13T16:57:00Z",
+      "source": "U.S. Securities and Exchange Commission",
+      "kind": "Regulatory release",
+      "topic": "Markets"
+    },
     {
       "title": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
       "summary": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
@@ -242,15 +251,6 @@
       "summary": "The SEC is taking a significant step forward, within its statutory authority, to bring America’s capital markets into the digital age by facilitating onchain trading of certain tokenized stocks.",
       "url": "https://www.sec.gov/newsroom/press-releases/2026-90-sec-issues-innovation-exemption-facilitate-trading-tokenized-nms-stock-request-comment",
       "published": "2026-09-17T12:55:00Z",
-      "source": "U.S. Securities and Exchange Commission",
-      "kind": "Regulatory release",
-      "topic": "Markets"
-    },
-    {
-      "title": "SEC Proposes Rescission of Shareholder Proposal Rule and Reforms to Proxy Solicitation Process",
-      "summary": "The Securities and Exchange Commission today proposed to rescind Rule 14a-8 under the Securities Exchange Act of 1934, which exceeds the scope of the Commission's statutory authority and intrudes into matters of state law.The Commission outlined…",
-      "url": "https://www.sec.gov/newsroom/press-releases/2026-89-sec-proposes-rescission-shareholder-proposal-rule-reforms-proxy-solicitation-process",
-      "published": "2026-09-16T14:00:00Z",
       "source": "U.S. Securities and Exchange Commission",
       "kind": "Regulatory release",
       "topic": "Markets"
