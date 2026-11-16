@@ -1,8 +1,44 @@
 {
-  "generatedAt": "2026-11-16T06:42:14.696566+00:00",
+  "generatedAt": "2026-11-16T22:14:26.255812+00:00",
   "sourceCount": 4,
   "feedFailures": [],
   "articles": [
+    {
+      "title": "Frank Elderson: Smart supervision for small banks",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261116_1~11dd7f62af.en.html",
+      "published": "2026-11-16T13:00:00Z",
+      "source": "European Central Bank",
+      "kind": "Primary institution",
+      "topic": "Policy"
+    },
+    {
+      "title": "Decoding the cyber-AI nexus",
+      "summary": "The rapid evolution of artificial intelligence (AI) is reshaping the cyber-threat landscape, with significant implications for financial stability in the euro area. This special feature explores the complex interplay between AI and cybersecurity, highlighting how advanced AI models are enabling atta",
+      "url": "https://www.ecb.europa.eu//press/financial-stability-publications/fsr/special/html/ecb.fsrart202611_02~8cca80a3c3.en.html",
+      "published": "2026-11-16T09:00:00Z",
+      "source": "European Central Bank Publications",
+      "kind": "Primary institution",
+      "topic": "AI"
+    },
+    {
+      "title": "Boris Vujčić: Risks and resilience in the euro area financial system",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261116~db374b56ab.en.html",
+      "published": "2026-11-16T08:30:00Z",
+      "source": "European Central Bank",
+      "kind": "Primary institution",
+      "topic": "Security"
+    },
+    {
+      "title": "The impact of monetary policy on productivity",
+      "summary": "This occasional paper extends previous analyses by the WGF Expert Group on Productivity of the impact of monetary policy on productivity by exploring new interactions, particularly the influence of market power and the role of productivity in the transmission of monetary policy through the banking s",
+      "url": "https://www.ecb.europa.eu//pub/pdf/scpops/ecb.op402.en.pdf",
+      "published": "2026-11-15T23:00:00Z",
+      "source": "European Central Bank Publications",
+      "kind": "Primary institution",
+      "topic": "Policy"
+    },
     {
       "title": "Federal Reserve Board announces pricing, effective January 1, 2027, for payment services the Federal Reserve Banks provide to banks and credit unions, and changes to streamline and adjust their check ",
       "summary": "Federal Reserve Board announces pricing, effective January 1, 2027, for payment services the Federal Reserve Banks provide to banks and credit unions, and changes to streamline and adjust their check services",
