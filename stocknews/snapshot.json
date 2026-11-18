@@ -1,8 +1,17 @@
 {
-  "generatedAt": "2026-11-18T07:48:57.437476+00:00",
+  "generatedAt": "2026-11-18T20:47:51.128071+00:00",
   "sourceCount": 2,
   "feedFailures": [],
   "articles": [
+    {
+      "title": "Minutes of the Federal Open Market Committee, October 27-28, 2026",
+      "summary": "Minutes of the Federal Open Market Committee, October 27-28, 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261118a.htm",
+      "published": "2026-11-18T19:00:00Z",
+      "source": "Federal Reserve",
+      "kind": "Central bank publication",
+      "topic": "Markets"
+    },
     {
       "title": "SEC Proposes Executive and Director Compensation Disclosure Reforms",
       "summary": "The Securities and Exchange Commission today proposed rule amendments to make its executive and director compensation disclosure requirements more principles-based and materiality-driven, providing investors with clearer, more concise, and less complex…",
