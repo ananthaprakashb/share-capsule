@@ -1,8 +1,53 @@
 {
-  "generatedAt": "2026-11-18T07:38:13.205826+00:00",
+  "generatedAt": "2026-11-18T20:38:38.974178+00:00",
   "sourceCount": 4,
   "feedFailures": [],
   "articles": [
+    {
+      "title": "Boris Vujčić: Financial Stability Review - November 2026",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261118~86f1e8147e.en.pdf",
+      "published": "2026-11-18T09:00:00Z",
+      "source": "European Central Bank",
+      "kind": "Primary institution",
+      "topic": "Policy"
+    },
+    {
+      "title": "Risks from AI valuations, fiscal imbalances and geoeconomic tensions weigh on financial stability outlook",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261118~83c5c60158.en.html",
+      "published": "2026-11-18T09:00:00Z",
+      "source": "European Central Bank",
+      "kind": "Primary institution",
+      "topic": "Policy"
+    },
+    {
+      "title": "Financial stability risks from large IPOs, equity issuance and passive investing",
+      "summary": "A new wave of equity issuance, concentrated in AI-related sectors, has brought public equity financing back to the forefront of capital markets. SpaceX’s record initial public offering (IPO) has led the way, with OpenAI and Anthropic planning to follow. This special feature assesses the financial st",
+      "url": "https://www.ecb.europa.eu//press/financial-stability-publications/fsr/special/html/ecb.fsrart202611_03~46e116aeb8.en.html",
+      "published": "2026-11-18T09:00:00Z",
+      "source": "European Central Bank Publications",
+      "kind": "Primary institution",
+      "topic": "Research"
+    },
+    {
+      "title": "Financial stability implications of AI adoption in the financial industry and the real economy",
+      "summary": "The rapid adoption of artificial intelligence (AI) is reshaping the financial industry as well as the broader economy, creating both opportunities and risks. Banks and asset managers, which represent key channels of financial intermediation in the euro area, are increasingly using AI for tasks such ",
+      "url": "https://www.ecb.europa.eu//press/financial-stability-publications/fsr/special/html/ecb.fsrart202611_01~dd6e15a84a.en.html",
+      "published": "2026-11-18T09:00:00Z",
+      "source": "European Central Bank Publications",
+      "kind": "Primary institution",
+      "topic": "AI"
+    },
+    {
+      "title": "Financial Stability Review, November 2026",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//press/financial-stability-publications/fsr/html/ecb.fsr202611~e03b919d36.en.html",
+      "published": "2026-11-18T09:00:00Z",
+      "source": "European Central Bank Publications",
+      "kind": "Primary institution",
+      "topic": "Research"
+    },
     {
       "title": "Frank Elderson: Smart supervision for small banks",
       "summary": "",
@@ -14,7 +59,7 @@
     },
     {
       "title": "Decoding the cyber-AI nexus",
-      "summary": "The rapid evolution of artificial intelligence (AI) is reshaping the cyber-threat landscape, with significant implications for financial stability in the euro area. This special feature explores the complex interplay between AI and cybersecurity, highlighting how advanced AI models are enabling atta",
+      "summary": "The rapid evolution of artificial intelligence (AI) is reshaping the cyber threat landscape, with significant implications for financial stability in the euro area. This special feature explores the complex interplay between AI and cybersecurity, highlighting how advanced AI models are enabling atta",
       "url": "https://www.ecb.europa.eu//press/financial-stability-publications/fsr/special/html/ecb.fsrart202611_02~8cca80a3c3.en.html",
       "published": "2026-11-16T09:00:00Z",
       "source": "European Central Bank Publications",
@@ -89,24 +134,6 @@
       "summary": "Banks are at the heart of the EU economy, making them a key channel for monetary policy transmission. However, institutional factors continue to lead to fragmentation in the sector, constraining scale, efficiency and competitiveness. As shown by Altavilla et al. (2024), more competitive banks are mo",
       "url": "https://www.ecb.europa.eu//press/economic-bulletin/focus/2026/html/ecb.ebbox202607_07~5cefb128e2.en.html",
       "published": "2026-11-10T13:00:00Z",
-      "source": "European Central Bank Publications",
-      "kind": "Primary institution",
-      "topic": "Policy"
-    },
-    {
-      "title": "Industrial policy in the EU: new opportunities, old risks?",
-      "summary": "Motivated by the renewed use of industrial policy, this article examines the conditions under which sector-specific interventions can support productivity, competitiveness, and economic resilience. While industrial policy may be justified where market failures or dependencies are well-identified, se",
-      "url": "https://www.ecb.europa.eu//press/economic-bulletin/articles/2026/html/ecb.ebart202607_01~3ac9592e8b.en.html",
-      "published": "2026-11-10T09:00:00Z",
-      "source": "European Central Bank Publications",
-      "kind": "Primary institution",
-      "topic": "Security"
-    },
-    {
-      "title": "Unlocking supervisory effectiveness in credit risk: insights from the ECB’s supervisory findings and measures",
-      "summary": "This paper provides an assessment of supervisory effectiveness in credit risk using confidential data from ECB Banking Supervision. The analysis covers 8,106 supervisory measures issued and closed between 2016 and 2025. A central contribution is the construction of a measure level indicator of super",
-      "url": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp3308~a6e82e37aa.en.pdf",
-      "published": "2026-11-09T10:00:00Z",
       "source": "European Central Bank Publications",
       "kind": "Primary institution",
       "topic": "Policy"
