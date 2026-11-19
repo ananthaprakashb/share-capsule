@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T07:33:51.357518+00:00",
+  "generatedAt": "2026-11-19T20:44:01.597768+00:00",
   "sourceCount": 4,
   "feedFailures": [],
   "articles": [
@@ -130,15 +130,6 @@
       "topic": "Research"
     },
     {
-      "title": "Bank competitiveness and its role for monetary policy",
-      "summary": "Banks are at the heart of the EU economy, making them a key channel for monetary policy transmission. However, institutional factors continue to lead to fragmentation in the sector, constraining scale, efficiency and competitiveness. As shown by Altavilla et al. (2024), more competitive banks are mo",
-      "url": "https://www.ecb.europa.eu//press/economic-bulletin/focus/2026/html/ecb.ebbox202607_07~5cefb128e2.en.html",
-      "published": "2026-11-10T13:00:00Z",
-      "source": "European Central Bank Publications",
-      "kind": "Primary institution",
-      "topic": "Policy"
-    },
-    {
       "title": "ECB publishes consolidated banking data for end-June 2026",
       "summary": "",
       "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261106~356f2fc73a.en.html",
@@ -188,15 +179,6 @@
       "summary": "Federal Reserve Board announces it will extend, until November 4, the comment period on its proposal to modernize Regulation O",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261002a.htm",
       "published": "2026-10-02T20:00:00Z",
-      "source": "Federal Reserve",
-      "kind": "Primary institution",
-      "topic": "Policy"
-    },
-    {
-      "title": "Agencies publish resolution plan feedback letters for 15 banking organizations",
-      "summary": "Agencies publish resolution plan feedback letters for 15 banking organizations",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20260929a.htm",
-      "published": "2026-09-29T20:00:00Z",
       "source": "Federal Reserve",
       "kind": "Primary institution",
       "topic": "Policy"
