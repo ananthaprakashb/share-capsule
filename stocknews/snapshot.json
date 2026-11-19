@@ -1,8 +1,26 @@
 {
-  "generatedAt": "2026-11-19T07:45:03.722122+00:00",
+  "generatedAt": "2026-11-19T20:53:26.714271+00:00",
   "sourceCount": 2,
   "feedFailures": [],
   "articles": [
+    {
+      "title": "Federal Reserve Board issues enforcement action with former employee of First Security Bancorp",
+      "summary": "Federal Reserve Board issues enforcement action with former employee of First Security Bancorp",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261119a.htm",
+      "published": "2026-11-19T16:00:00Z",
+      "source": "Federal Reserve",
+      "kind": "Central bank publication",
+      "topic": "Markets"
+    },
+    {
+      "title": "SEC: Eight Entities Used Fake Crypto Asset Trading Platforms to Steal More Than $37 Million From U.S. Investors",
+      "summary": "The Securities and Exchange Commission today charged eight Colorado-based entities, likely operated by individuals located overseas, for defrauding U.S. investors out of more than $37 million. The defendants allegedly lured investors to believe they were…",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-115-sec-eight-entities-used-fake-crypto-asset-trading-platforms-steal-more-37-million-us-investors",
+      "published": "2026-11-19T14:39:02Z",
+      "source": "U.S. Securities and Exchange Commission",
+      "kind": "Regulatory release",
+      "topic": "Security"
+    },
     {
       "title": "Minutes of the Federal Open Market Committee, October 27-28, 2026",
       "summary": "Minutes of the Federal Open Market Committee, October 27-28, 2026",
@@ -251,15 +269,6 @@
       "summary": "The Securities and Exchange Commission today censured New York-based broker dealer OTC Link LLC and ordered it to pay a $575,000 civil penalty for longstanding violations of Regulation Systems Compliance and Integrity (SCI).According to the SEC’s settled…",
       "url": "https://www.sec.gov/newsroom/press-releases/2026-91-sec-censures-otc-link-llc-repeated-compliance-failures-related-regulation-sci",
       "published": "2026-09-22T16:41:11Z",
-      "source": "U.S. Securities and Exchange Commission",
-      "kind": "Regulatory release",
-      "topic": "Markets"
-    },
-    {
-      "title": "SEC Issues “Innovation Exemption” to Facilitate the Trading of Tokenized NMS Stock and Request for Comment",
-      "summary": "The SEC is taking a significant step forward, within its statutory authority, to bring America’s capital markets into the digital age by facilitating onchain trading of certain tokenized stocks.",
-      "url": "https://www.sec.gov/newsroom/press-releases/2026-90-sec-issues-innovation-exemption-facilitate-trading-tokenized-nms-stock-request-comment",
-      "published": "2026-09-17T12:55:00Z",
       "source": "U.S. Securities and Exchange Commission",
       "kind": "Regulatory release",
       "topic": "Markets"
