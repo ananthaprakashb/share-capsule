@@ -1,8 +1,17 @@
 {
-  "generatedAt": "2026-11-20T07:25:38.255640+00:00",
+  "generatedAt": "2026-11-20T20:28:16.545657+00:00",
   "sourceCount": 4,
   "feedFailures": [],
   "articles": [
+    {
+      "title": "Federal Reserve Board releases results from survey of senior financial officers at banks about their strategies and practices for managing reserve balances",
+      "summary": "Federal Reserve Board releases results from survey of senior financial officers at banks about their strategies and practices for managing reserve balances",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261120a.htm",
+      "published": "2026-11-20T15:00:00Z",
+      "source": "Federal Reserve",
+      "kind": "Primary institution",
+      "topic": "Policy"
+    },
     {
       "title": "Boris Vujčić: Financial Stability Review - November 2026",
       "summary": "",
