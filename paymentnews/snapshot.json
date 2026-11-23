@@ -1,8 +1,17 @@
 {
-  "generatedAt": "2026-11-23T07:49:25.583820+00:00",
+  "generatedAt": "2026-11-23T23:59:09.646290+00:00",
   "sourceCount": 4,
   "feedFailures": [],
   "articles": [
+    {
+      "title": "The geography of financial frictions",
+      "summary": "This paper studies the aggregate implications of the geography of financial frictions faced by firms in Europe. Using proprietary data from the European Central Bank’s Survey on the Access to Finance of Enterprises, we document substantial regional heterogeneity in the access to external finance, wh",
+      "url": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp3312~6f0e0bfceb.en.pdf",
+      "published": "2026-11-23T10:00:00Z",
+      "source": "European Central Bank Publications",
+      "kind": "Primary institution",
+      "topic": "Research"
+    },
     {
       "title": "Federal Reserve Board releases results from survey of senior financial officers at banks about their strategies and practices for managing reserve balances",
       "summary": "Federal Reserve Board releases results from survey of senior financial officers at banks about their strategies and practices for managing reserve balances",
@@ -146,15 +155,6 @@
       "source": "European Central Bank",
       "kind": "Primary institution",
       "topic": "Policy"
-    },
-    {
-      "title": "Boris Vujčić: Integrated, open and resilient: Europe’s strengths in a fragmenting world",
-      "summary": "",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp.261102~70003226e9.en.html",
-      "published": "2026-11-02T09:30:00Z",
-      "source": "European Central Bank",
-      "kind": "Primary institution",
-      "topic": "Security"
     },
     {
       "title": "Federal Reserve Board announces approval of application by The Bank of Nova Scotia",
