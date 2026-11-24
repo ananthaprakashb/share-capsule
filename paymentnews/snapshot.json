@@ -1,8 +1,26 @@
 {
-  "generatedAt": "2026-11-24T10:01:07.042779+00:00",
+  "generatedAt": "2026-11-24T22:32:28.304630+00:00",
   "sourceCount": 4,
   "feedFailures": [],
   "articles": [
+    {
+      "title": "Introduction to the ECB Token Reference Model - a framework for standardisation discussions",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//pub/pdf/other/ecb.introproposalTRM2026.en.pdf",
+      "published": "2026-11-24T14:00:00Z",
+      "source": "European Central Bank Publications",
+      "kind": "Primary institution",
+      "topic": "Policy"
+    },
+    {
+      "title": "Boris Vujčić: Resilience in an age of shocks: lessons from central and eastern Europe",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261124~17928e5456.en.html",
+      "published": "2026-11-24T11:00:00Z",
+      "source": "European Central Bank",
+      "kind": "Primary institution",
+      "topic": "Security"
+    },
     {
       "title": "The geography of financial frictions",
       "summary": "This paper studies the aggregate implications of the geography of financial frictions faced by firms in Europe. Using proprietary data from the European Central Bank’s Survey on the Access to Finance of Enterprises, we document substantial regional heterogeneity in the access to external finance, wh",
@@ -139,15 +157,6 @@
       "topic": "Research"
     },
     {
-      "title": "The real and financial effects of local corporate tax increases: evidence from linked firm–bank data",
-      "summary": "We study how local corporate tax increases affect firms’ financing and real activity. In Portugal, municipalities independently set a surtax on corporate income, generating plausibly exogenous variation across space and time. We link the universe of corporate balance sheets and profit-and-loss state",
-      "url": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp3309~4e8af93b3a.en.pdf",
-      "published": "2026-11-11T10:00:00Z",
-      "source": "European Central Bank Publications",
-      "kind": "Primary institution",
-      "topic": "Research"
-    },
-    {
       "title": "ECB publishes consolidated banking data for end-June 2026",
       "summary": "",
       "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261106~356f2fc73a.en.html",
@@ -179,15 +188,6 @@
       "summary": "Federal Reserve Board announces approval of application by Isabella Bank Corporation",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261005a.htm",
       "published": "2026-10-05T20:30:00Z",
-      "source": "Federal Reserve",
-      "kind": "Primary institution",
-      "topic": "Policy"
-    },
-    {
-      "title": "Federal Reserve Board announces it will extend, until November 4, the comment period on its proposal to modernize Regulation O",
-      "summary": "Federal Reserve Board announces it will extend, until November 4, the comment period on its proposal to modernize Regulation O",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261002a.htm",
-      "published": "2026-10-02T20:00:00Z",
       "source": "Federal Reserve",
       "kind": "Primary institution",
       "topic": "Policy"
