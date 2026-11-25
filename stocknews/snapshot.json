@@ -1,8 +1,17 @@
 {
-  "generatedAt": "2026-11-25T08:57:54.093273+00:00",
+  "generatedAt": "2026-11-25T21:54:17.186003+00:00",
   "sourceCount": 2,
   "feedFailures": [],
   "articles": [
+    {
+      "title": "SEC Investor Advisory Committee to Host Dec. 3 Virtual Meeting",
+      "summary": "The Securities and Exchange Commission’s Investor Advisory Committee will hold a virtual public meeting on Dec. 3, at 9:30 a.m. ET to discuss the trading of tokenized securities, bankruptcy, and accounting oversight. The meeting will be webcast…",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-118-sec-investor-advisory-committee-host-dec-3-virtual-meeting",
+      "published": "2026-11-25T14:10:24Z",
+      "source": "U.S. Securities and Exchange Commission",
+      "kind": "Regulatory release",
+      "topic": "Markets"
+    },
     {
       "title": "SEC Issues Proposal to Restructure the Consolidated Audit Trail",
       "summary": "The Securities and Exchange Commission today issued a proposal to address the inefficiencies in the current governance and funding model of the Consolidated Audit Trail (CAT). The Commission is proposing to rescind Rule 613 of Regulation NMS, which…",
@@ -251,15 +260,6 @@
       "summary": "The Securities and Exchange Commission today announced settled charges against New York-based investment adviser Zoe Financial Inc. for failing to fully and fairly disclose material facts concerning conflicts of interest to its clients and prospective…",
       "url": "https://www.sec.gov/newsroom/press-releases/2026-94-sec-charges-registered-investment-adviser-zoe-financial-failure-disclose-conflict-interest",
       "published": "2026-09-28T17:46:30Z",
-      "source": "U.S. Securities and Exchange Commission",
-      "kind": "Regulatory release",
-      "topic": "Markets"
-    },
-    {
-      "title": "SEC Publishes Updated Market Statistics, Highlighting Increase in IPOs and Proceeds Raised",
-      "summary": "The Securities and Exchange Commission’s Division of Economic and Risk Analysis (DERA) published updated statistics and data visualizations covering key segments of the U.S. capital markets, including a notable increase in the number of initial public…",
-      "url": "https://www.sec.gov/newsroom/press-releases/2026-93-sec-publishes-updated-market-statistics-highlighting-increase-ipos-proceeds-raised",
-      "published": "2026-09-23T18:27:00Z",
       "source": "U.S. Securities and Exchange Commission",
       "kind": "Regulatory release",
       "topic": "Markets"
