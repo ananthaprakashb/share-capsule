@@ -1,8 +1,26 @@
 {
-  "generatedAt": "2026-11-25T08:44:53.948959+00:00",
+  "generatedAt": "2026-11-25T21:47:21.722696+00:00",
   "sourceCount": 4,
   "feedFailures": [],
   "articles": [
+    {
+      "title": "ECB and Sveriges Riksbank conclude agreement for Sweden to join T2",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261125_1~6333a90f3a.en.html",
+      "published": "2026-11-25T17:30:00Z",
+      "source": "European Central Bank",
+      "kind": "Primary institution",
+      "topic": "Policy"
+    },
+    {
+      "title": "Card payments edge past cash in shops; euro area consumers want both",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261125~26d1ade228.en.html",
+      "published": "2026-11-25T10:00:00Z",
+      "source": "European Central Bank",
+      "kind": "Primary institution",
+      "topic": "Payments"
+    },
     {
       "title": "Introduction to the ECB Token Reference Model - a framework for standardisation discussions",
       "summary": "",
@@ -157,15 +175,6 @@
       "topic": "Research"
     },
     {
-      "title": "ECB publishes consolidated banking data for end-June 2026",
-      "summary": "",
-      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261106~356f2fc73a.en.html",
-      "published": "2026-11-06T09:00:00Z",
-      "source": "European Central Bank",
-      "kind": "Primary institution",
-      "topic": "Policy"
-    },
-    {
       "title": "Federal Reserve Board announces approval of application by The Bank of Nova Scotia",
       "summary": "Federal Reserve Board announces approval of application by The Bank of Nova Scotia",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261029a.htm",
@@ -179,15 +188,6 @@
       "summary": "Federal Reserve Board announces termination of enforcement actions with Gardner Bancshares, Inc. and Small Business Bank",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261016a.htm",
       "published": "2026-10-16T15:00:00Z",
-      "source": "Federal Reserve",
-      "kind": "Primary institution",
-      "topic": "Policy"
-    },
-    {
-      "title": "Federal Reserve Board announces approval of application by Isabella Bank Corporation",
-      "summary": "Federal Reserve Board announces approval of application by Isabella Bank Corporation",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261005a.htm",
-      "published": "2026-10-05T20:30:00Z",
       "source": "Federal Reserve",
       "kind": "Primary institution",
       "topic": "Policy"
