@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T08:44:05.193787+00:00",
+  "generatedAt": "2026-11-27T21:24:41.133165+00:00",
   "sourceCount": 4,
   "feedFailures": [],
   "articles": [
@@ -164,15 +164,6 @@
       "source": "European Central Bank Publications",
       "kind": "Primary institution",
       "topic": "AI"
-    },
-    {
-      "title": "Who holds stablecoins? New evidence on euro area consumer holdings",
-      "summary": "This box looks at whether stablecoins are on the rise in the euro area and what the implications are for financial stability, using data from the ECB’s Consumer Expectations Survey. It highlights the transactional nature of stablecoins and the risks posed by an increase in consumer holdings. While c",
-      "url": "https://www.ecb.europa.eu//press/economic-bulletin/focus/2026/html/ecb.ebbox202607_08~f4ddf0117c.en.html",
-      "published": "2026-11-11T13:00:00Z",
-      "source": "European Central Bank Publications",
-      "kind": "Primary institution",
-      "topic": "Research"
     },
     {
       "title": "Federal Reserve Board announces approval of application by The Bank of Nova Scotia",
